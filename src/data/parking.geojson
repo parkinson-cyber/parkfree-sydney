@@ -1,0 +1,205 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2055, -33.8745],
+          [151.2055, -33.8730],
+          [151.2055, -33.8715]
+        ]
+      },
+      "properties": {
+        "streetName": "Pyrmont Bridge Road",
+        "suburb": "Pyrmont",
+        "council": "City of Sydney",
+        "notes": "Unrestricted on western kerb. No clearway. No time limit. Check southern end near Harris St intersection.",
+        "lastVerified": "2026-06-01",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.1985, -33.8720],
+          [151.1998, -33.8720],
+          [151.2010, -33.8720]
+        ]
+      },
+      "properties": {
+        "streetName": "Allen Street",
+        "suburb": "Pyrmont",
+        "council": "City of Sydney",
+        "notes": "Both kerbs unrestricted between Pyrmont St and Miller St. Residential pocket. No meters.",
+        "lastVerified": "2026-06-01",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2005, -33.8700],
+          [151.2005, -33.8688],
+          [151.2005, -33.8675]
+        ]
+      },
+      "properties": {
+        "streetName": "Saunders Street",
+        "suburb": "Pyrmont",
+        "council": "City of Sydney",
+        "notes": "Eastern kerb unrestricted. Western kerb has permit zone Mon–Fri. Verify after 6pm and weekends for both kerbs.",
+        "lastVerified": "2026-06-01",
+        "status": "verified",
+        "confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2125, -33.8635],
+          [151.2130, -33.8640],
+          [151.2135, -33.8645]
+        ]
+      },
+      "properties": {
+        "streetName": "Forbes Street",
+        "suburb": "Woolloomooloo",
+        "council": "City of Sydney",
+        "notes": "North end near Plunkett St. Unrestricted on eastern kerb. No meters. Narrow street — confirm no clearway signage.",
+        "lastVerified": "2026-05-20",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2088, -33.8598],
+          [151.2095, -33.8598],
+          [151.2102, -33.8598]
+        ]
+      },
+      "properties": {
+        "streetName": "Cathedral Street",
+        "suburb": "Woolloomooloo",
+        "council": "City of Sydney",
+        "notes": "Between Bourke St and Young St. Southern kerb unrestricted. Verify clearway times on the northern kerb.",
+        "lastVerified": "2026-05-20",
+        "status": "unverified",
+        "confidence": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2055, -33.8605],
+          [151.2058, -33.8598],
+          [151.2060, -33.8590]
+        ]
+      },
+      "properties": {
+        "streetName": "McElhone Street",
+        "suburb": "Woolloomooloo",
+        "council": "City of Sydney",
+        "notes": "Steep residential street. Both kerbs unrestricted. Watch for driveways — don't block. Free 24/7.",
+        "lastVerified": "2026-06-10",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2138, -33.8388],
+          [151.2145, -33.8388],
+          [151.2155, -33.8388]
+        ]
+      },
+      "properties": {
+        "streetName": "Holt Street",
+        "suburb": "Lavender Bay",
+        "council": "North Sydney Council",
+        "notes": "Western stretch near Lavender St. Unrestricted both kerbs. Quiet residential. Free 24/7.",
+        "lastVerified": "2026-05-15",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2065, -33.8400],
+          [151.2068, -33.8410],
+          [151.2070, -33.8420]
+        ]
+      },
+      "properties": {
+        "streetName": "Alfred Street South",
+        "suburb": "Milsons Point",
+        "council": "North Sydney Council",
+        "notes": "Between Broughton St and Blues Point Rd. Eastern kerb unrestricted. No meters this block. Walk to Milsons Point station ~5 min.",
+        "lastVerified": "2026-05-15",
+        "status": "verified",
+        "confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2072, -33.8378],
+          [151.2080, -33.8375],
+          [151.2090, -33.8372]
+        ]
+      },
+      "properties": {
+        "streetName": "Blues Point Road",
+        "suburb": "McMahons Point",
+        "council": "North Sydney Council",
+        "notes": "Northern section approaching Blues Point Reserve. Unrestricted on eastern kerb. Scenic spot. Free 24/7.",
+        "lastVerified": "2026-06-05",
+        "status": "verified",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [151.2148, -33.8418],
+          [151.2148, -33.8410],
+          [151.2148, -33.8400]
+        ]
+      },
+      "properties": {
+        "streetName": "Carabatta Street",
+        "suburb": "Kirribilli",
+        "council": "North Sydney Council",
+        "notes": "Short residential street. Both kerbs unrestricted. Tight turning at top — suit smaller vehicles. Free 24/7.",
+        "lastVerified": "2026-06-05",
+        "status": "unverified",
+        "confidence": "low"
+      }
+    }
+  ]
+}

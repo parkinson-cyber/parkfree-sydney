@@ -1,0 +1,68 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #00E676;
+  --green-dim: rgba(0, 230, 118, 0.12);
+  --amber: #FFB300;
+  --amber-dim: rgba(255, 179, 0, 0.12);
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-2: #1e1e1e;
+  --surface-3: #2a2a2a;
+  --border: rgba(255,255,255,0.08);
+  --text: #f0f0f0;
+  --text-muted: #888;
+  --text-dim: #555;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --header-h: 60px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+.leaflet-container {
+  background: #111 !important;
+  font-family: var(--font) !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 18px !important;
+}
+
+.leaflet-control-zoom-in { border-radius: 8px 8px 0 0 !important; }
+.leaflet-control-zoom-out { border-radius: 0 0 8px 8px !important; }
+
+.leaflet-control-attribution {
+  background: rgba(10,10,10,0.75) !important;
+  color: #444 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a { color: #666 !important; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
