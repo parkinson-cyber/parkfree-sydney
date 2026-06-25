@@ -98,14 +98,14 @@ export default function BottomSheet({ street, onClose }) {
           zIndex: 2000,
           transform: open ? 'translateY(0)' : 'translateY(110%)',
           transition: 'transform 0.32s cubic-bezier(0.32, 0.72, 0, 1)',
-          padding: '0 20px 32px',
           maxHeight: '55vh',
           overflow: 'hidden',
-          paddingBottom: 'max(32px, env(safe-area-inset-bottom, 0px))',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        {/* Handle bar */}
-        <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 8px' }}>
+        {/* Handle bar — always visible at top */}
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 8px', flexShrink: 0 }}>
           <div style={{
             width: '36px', height: '4px',
             background: 'rgba(255,255,255,0.15)',
@@ -115,49 +115,64 @@ export default function BottomSheet({ street, onClose }) {
 
         {street && (
           <>
-            {/* Title row */}
-            <div style={{ marginBottom: '12px' }}>
-              <h2 style={{
-                fontSize: '22px', fontWeight: '800',
-                color: '#f0f0f0', letterSpacing: '-0.5px',
+            {/* Scrollable content */}
+            <div style={{
+              overflowY: 'auto',
+              flex: 1,
+              padding: '0 20px',
+              WebkitOverflowScrolling: 'touch',
+            }}>
+              {/* Title row */}
+              <div style={{ marginBottom: '12px' }}>
+                <h2 style={{
+                  fontSize: '22px', fontWeight: '800',
+                  color: '#f0f0f0', letterSpacing: '-0.5px',
+                  marginBottom: '4px',
+                }}>
+                  {p.streetName}
+                </h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '13px', color: '#888' }}>{p.suburb}</span>
+                  <span style={{ color: '#333' }}>·</span>
+                  <CouncilBadge council={p.council} />
+                </div>
+              </div>
+
+              {/* Notes */}
+              <div style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: '12px',
+                padding: '12px 14px',
+                marginBottom: '12px',
+              }}>
+                <p style={{ fontSize: '13px', color: '#ccc', lineHeight: '1.5' }}>
+                  {p.notes || 'No additional notes.'}
+                </p>
+              </div>
+
+              {/* Meta row */}
+              <div style={{
+                display: 'flex', alignItems: 'center',
+                justifyContent: 'space-between',
                 marginBottom: '4px',
               }}>
-                {p.streetName}
-              </h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '13px', color: '#888' }}>{p.suburb}</span>
-                <span style={{ color: '#333' }}>·</span>
-                <CouncilBadge council={p.council} />
+                <ConfidenceDot confidence={p.confidence} />
+                <span style={{ fontSize: '12px', color: '#555' }}>
+                  {p.status === 'verified' ? 'Verified' : 'Added'} {formatDate(p.lastVerified)}
+                </span>
               </div>
             </div>
 
-            {/* Notes */}
+            {/* Actions — always visible at bottom */}
             <div style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.07)',
-              borderRadius: '12px',
-              padding: '12px 14px',
-              marginBottom: '12px',
+              padding: '12px 20px',
+              paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))',
+              borderTop: '1px solid rgba(255,255,255,0.05)',
+              flexShrink: 0,
+              display: 'flex',
+              gap: '10px',
             }}>
-              <p style={{ fontSize: '13px', color: '#ccc', lineHeight: '1.5' }}>
-                {p.notes || 'No additional notes.'}
-              </p>
-            </div>
-
-            {/* Meta row */}
-            <div style={{
-              display: 'flex', alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '16px',
-            }}>
-              <ConfidenceDot confidence={p.confidence} />
-              <span style={{ fontSize: '12px', color: '#555' }}>
-                Verified {formatDate(p.lastVerified)}
-              </span>
-            </div>
-
-            {/* Actions */}
-            <div style={{ display: 'flex', gap: '10px' }}>
               <button
                 onClick={handleDirections}
                 style={{

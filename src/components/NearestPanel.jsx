@@ -6,7 +6,7 @@ export default function NearestPanel({ streets, onSelect, onClose }) {
   return (
     <div style={{
       position: 'fixed',
-      bottom: 'max(88px, calc(env(safe-area-inset-bottom, 0px) + 88px))',
+      bottom: 'max(24px, env(safe-area-inset-bottom, 24px))',
       left: '12px',
       right: '12px',
       zIndex: 1000,

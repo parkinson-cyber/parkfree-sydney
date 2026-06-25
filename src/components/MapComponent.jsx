@@ -106,8 +106,8 @@ const MapComponent = forwardRef(function MapComponent({ features, onStreetClick 
       }
     ).addTo(map)
 
-    // Zoom control — bottom right
-    L.control.zoom({ position: 'bottomright' }).addTo(map)
+    // Zoom control — bottom left (keeps right side clear for Park Near Me button)
+    L.control.zoom({ position: 'bottomleft' }).addTo(map)
 
     return () => {
       map.remove()
