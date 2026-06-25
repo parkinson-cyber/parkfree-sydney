@@ -18,14 +18,27 @@ function ConfidenceDot({ confidence }) {
 }
 
 function CouncilBadge({ council }) {
-  const isNorth = council?.includes('North')
+  let color, bg, border
+  if (council?.includes('North Sydney')) {
+    color = '#82b1ff'; bg = 'rgba(130,177,255,0.1)'; border = 'rgba(130,177,255,0.2)'
+  } else if (council?.includes('Mosman')) {
+    color = '#FFB300'; bg = 'rgba(255,179,0,0.1)'; border = 'rgba(255,179,0,0.2)'
+  } else if (council?.includes('Woollahra')) {
+    color = '#CE93D8'; bg = 'rgba(206,147,216,0.1)'; border = 'rgba(206,147,216,0.2)'
+  } else if (council?.includes('Randwick')) {
+    color = '#80CBC4'; bg = 'rgba(128,203,196,0.1)'; border = 'rgba(128,203,196,0.2)'
+  } else if (council?.includes('Inner West')) {
+    color = '#FFAB40'; bg = 'rgba(255,171,64,0.1)'; border = 'rgba(255,171,64,0.2)'
+  } else {
+    color = '#00E676'; bg = 'rgba(0,230,118,0.1)'; border = 'rgba(0,230,118,0.2)'
+  }
   return (
     <span style={{
       fontSize: '11px',
       fontWeight: '600',
-      color: isNorth ? '#82b1ff' : '#00E676',
-      background: isNorth ? 'rgba(130,177,255,0.1)' : 'rgba(0,230,118,0.1)',
-      border: `1px solid ${isNorth ? 'rgba(130,177,255,0.2)' : 'rgba(0,230,118,0.2)'}`,
+      color,
+      background: bg,
+      border: `1px solid ${border}`,
       borderRadius: '6px',
       padding: '3px 8px',
       letterSpacing: '0.02em',

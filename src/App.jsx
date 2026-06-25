@@ -189,121 +189,116 @@ const PARKING_FEATURES = [
     properties: { streetName: 'Balfour Street', suburb: 'Chippendale', council: 'City of Sydney', notes: 'Quiet block near Victoria Park. Both kerbs unrestricted. Good for Sydney Uni access. Free 24/7.', lastVerified: '2026-06-12', status: 'verified', confidence: 'high' }
   },
 
-  // ── ROZELLE ───────────────────────────────────────────────
+  // ── CREMORNE ─────────────────────────────────────────────
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1722,-33.8618],[151.1735,-33.8618],[151.1748,-33.8618]] },
-    properties: { streetName: 'Terry Street', suburb: 'Rozelle', council: 'Inner West Council', notes: 'Residential pocket between Mansfield St and Parker St. Away from Victoria Road permit zone. Both kerbs likely unrestricted — verify signs on the day.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2314936,-33.8247603],[151.2322759,-33.8248577],[151.2330582,-33.8249550]] },
+    properties: { streetName: 'Erith Street', suburb: 'Cremorne', council: 'North Sydney Council', notes: 'Short E-W residential block. Both kerbs likely unrestricted. Away from Military Road commercial zone. Quiet pocket street near Cremorne Reserve.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1738,-33.8630],[151.1738,-33.8618],[151.1738,-33.8608]] },
-    properties: { streetName: 'Fern Street', suburb: 'Rozelle', council: 'Inner West Council', notes: 'Quiet N-S residential street running off Victoria Road. No meters on this block. Not in a clearway corridor. Good for Balmain East Wharf access.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
-  },
-
-  // ── BALMAIN ───────────────────────────────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1785,-33.8548],[151.1795,-33.8548],[151.1805,-33.8548]] },
-    properties: { streetName: 'Beattie Street', suburb: 'Balmain', council: 'Inner West Council', notes: 'Short block near Mort Bay Park. Residential, very low traffic. Both kerbs likely unrestricted. Balmain has many permit zones — confirm the full block before relying on it.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
-  },
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1802,-33.8538],[151.1802,-33.8528],[151.1802,-33.8518]] },
-    properties: { streetName: 'Merton Street', suburb: 'Balmain', council: 'Inner West Council', notes: 'Side street running north toward Darling Street. Permit zone likely applies Mon–Fri — check signs carefully. May be free evenings and weekends. Worth verifying.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'low' }
-  },
-
-  // ── CAMPERDOWN / CHIPPENDALE BORDER ───────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1812,-33.8902],[151.1822,-33.8902],[151.1832,-33.8902]] },
-    properties: { streetName: 'Church Street', suburb: 'Camperdown', council: 'Inner West Council', notes: 'Near Camperdown Park. Residential block with no meters on this section. Outside the Inner West 2P permit zone boundary here. Good for Sydney Uni / RPA Hospital overflow.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
-  },
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1978,-33.8872],[151.1988,-33.8872],[151.1998,-33.8872]] },
-    properties: { streetName: 'Shepherd Street', suburb: 'Chippendale', council: 'City of Sydney', notes: 'Block between Abercrombie St and O\'Connor St. Southern end near the Chippendale/Camperdown border. Outside known permit zone boundary on this section. Walk to Central ~10 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
-  },
-
-  // ── POTTS POINT / ELIZABETH BAY ───────────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2222,-33.8738],[151.2232,-33.8738],[151.2242,-33.8738]] },
-    properties: { streetName: 'Challis Avenue', suburb: 'Potts Point', council: 'City of Sydney', notes: 'Potts Point is mostly permit zones. This block at the eastern end may have unrestricted spots — check signs carefully. Likely free outside permit hours (evenings and weekends). Do not rely without confirming signage.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'low' }
-  },
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2258,-33.8718],[151.2265,-33.8715],[151.2272,-33.8712]] },
-    properties: { streetName: 'Roslyn Gardens', suburb: 'Elizabeth Bay', council: 'City of Sydney', notes: 'Quiet street near Elizabeth Bay Marina. May be unrestricted in the upper section. Largely permit zone area — confirm signage before parking. Worth checking for evening and weekend free spots.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'low' }
-  },
-
-  // ── CROWS NEST ────────────────────────────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2068,-33.8282],[151.2068,-33.8268],[151.2068,-33.8255]] },
-    properties: { streetName: 'Holtermann Street', suburb: 'Crows Nest', council: 'North Sydney Council', notes: 'Residential side street away from Pacific Highway clearways. Both kerbs likely unrestricted on this block. Close to Crows Nest village shops. Free 24/7 on residential section.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
-  },
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2082,-33.8262],[151.2092,-33.8262],[151.2102,-33.8262]] },
-    properties: { streetName: 'Ernest Street', suburb: 'Crows Nest', council: 'North Sydney Council', notes: 'Cross street between Holtermann St and Willoughby Rd. Low traffic residential. Both kerbs unrestricted. No meters. Walk to Crows Nest village 3–4 min.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
-  },
-
-  // ── ST LEONARDS ───────────────────────────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1972,-33.8248],[151.1982,-33.8248],[151.1992,-33.8248]] },
-    properties: { streetName: 'Chandos Street', suburb: 'St Leonards', council: 'North Sydney Council', notes: 'Residential section between Pacific Hwy and the rail corridor. Likely unrestricted on this block. Walk to St Leonards station ~5 min. Check for any hospital zone restrictions near RNSH.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2329277,-33.8263555],[151.2340371,-33.8265505],[151.2351465,-33.8267455]] },
+    properties: { streetName: 'Prince Street', suburb: 'Cremorne', council: 'North Sydney Council', notes: 'Residential block running east through Cremorne. Both kerbs likely unrestricted. No meters. Walk to Cremorne Junction 5–8 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
 
   // ── NEUTRAL BAY ───────────────────────────────────────────
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2178,-33.8378],[151.2188,-33.8378],[151.2198,-33.8378]] },
-    properties: { streetName: 'Ben Boyd Road', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'Upper residential stretch of Ben Boyd Rd away from Military Rd. No meters on this block. Both kerbs likely unrestricted. Good for Neutral Bay Junction access. Bus routes nearby.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2197755,-33.8342008],[151.2199767,-33.8331160],[151.2201778,-33.8320311]] },
+    properties: { streetName: 'Bydown Street', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'N-S residential block. Both kerbs likely unrestricted. Outside the Military Road clearway zone. Good for Neutral Bay village access.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.2152,-33.8408],[151.2152,-33.8398],[151.2152,-33.8388]] },
-    properties: { streetName: 'Spruson Street', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'Quiet residential side street running N-S. Between Ben Boyd Rd and Military Rd. Very low traffic. Both kerbs likely free 24/7 on this block.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
-  },
-
-  // ── GLEBE (additional blocks) ─────────────────────────────
-  {
-    type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1858,-33.8828],[151.1866,-33.8825],[151.1875,-33.8822]] },
-    properties: { streetName: 'Cowper Street', suburb: 'Glebe', council: 'City of Sydney', notes: 'Block between Glebe Point Rd and Bridge Road. Outside the Glebe permit zone boundary on this section. Both kerbs unrestricted. Quiet residential. Free 24/7.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2201778,-33.8320311],[151.2212177,-33.8321693],[151.2222575,-33.8323075]] },
+    properties: { streetName: 'Yeo Street', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'Short E-W residential cross street. Both kerbs likely free. Low traffic. No meters. Walk to Military Road 3–4 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1870,-33.8808],[151.1880,-33.8808],[151.1890,-33.8808]] },
-    properties: { streetName: 'Wigram Road', suburb: 'Glebe', council: 'City of Sydney', notes: 'Adjacent to the Harold Park development. New residential precinct — very few meters installed. Both kerbs likely unrestricted. Check signs as the area is still growing.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2172161,-33.8316441],[151.2173296,-33.8309687],[151.2174430,-33.8302933]] },
+    properties: { streetName: 'Laycock Street', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'Quiet N-S residential pocket. Both kerbs likely unrestricted. Away from Military Road. Very low traffic. Check signs on the day.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2400521,-33.8284805],[151.2398654,-33.8294862],[151.2396786,-33.8304919]] },
+    properties: { streetName: 'Noble Street', suburb: 'Neutral Bay', council: 'North Sydney Council', notes: 'Short N-S residential block near Military Road. Both kerbs likely unrestricted on this section. No meters here. Good for Neutral Bay Junction access.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
 
-  // ── ERSKINEVILLE ─────────────────────────────────────────
+  // ── MOSMAN ───────────────────────────────────────────────
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1862,-33.9008],[151.1872,-33.9008],[151.1882,-33.9008]] },
-    properties: { streetName: 'Henderson Road', suburb: 'Erskineville', council: 'Inner West Council', notes: 'Near Erskineville village. Residential block between King St and the rail line. Both kerbs unrestricted on this section. Walk to Erskineville station ~5 min. Free 24/7.', lastVerified: '2026-06-26', status: 'verified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2356486,-33.8216642],[151.2354737,-33.8225364],[151.2352987,-33.8234085]] },
+    properties: { streetName: 'Countess Street', suburb: 'Mosman', council: 'Mosman Council', notes: 'Quiet residential block. Mosman Council manages this area with relatively few permit zones compared to City of Sydney. Both kerbs likely unrestricted. Check signs at both ends before parking.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1898,-33.9005],[151.1898,-33.8995],[151.1898,-33.8985]] },
-    properties: { streetName: 'Swanson Street', suburb: 'Erskineville', council: 'Inner West Council', notes: 'Quiet residential cross street. Both kerbs likely free. Outside 2P zone on this block. Good for Newtown overflow parking. Low traffic residential pocket.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2352987,-33.8234085],[151.2360097,-33.8235082],[151.2367206,-33.8236079]] },
+    properties: { streetName: 'Earl Street', suburb: 'Mosman', council: 'Mosman Council', notes: 'Short E-W residential cross street. Both kerbs likely unrestricted. Low traffic. Connects Countess St to Rosebery St. Walk to Mosman Junction ~5 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2408861,-33.8232616],[151.2413850,-33.8229434],[151.2418839,-33.8226251]] },
+    properties: { streetName: 'Heydon Street', suburb: 'Mosman', council: 'Mosman Council', notes: 'Residential street in eastern Mosman. Both kerbs likely unrestricted. Walk to Balmoral Beach ~15 min. No clearway on this block.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2403484,-33.8285202],[151.2405862,-33.8274709],[151.2408240,-33.8264215]] },
+    properties: { streetName: 'Myahgah Road', suburb: 'Mosman', council: 'Mosman Council', notes: 'Residential street near Sirius Cove Reserve. Both kerbs likely unrestricted on this section. Scenic area. Walk to Sirius Cove beach ~5 min. Free 24/7 on residential blocks.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
 
-  // ── ANNANDALE ─────────────────────────────────────────────
+  // ── PADDINGTON ───────────────────────────────────────────
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1712,-33.8832],[151.1722,-33.8832],[151.1732,-33.8832]] },
-    properties: { streetName: 'Johnston Street', suburb: 'Annandale', council: 'Inner West Council', notes: 'Residential block near Johnston St bridge end. Both kerbs likely unrestricted. Good for Glebe / Parramatta Rd access. Away from Parramatta Rd clearway zone.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2267869,-33.8831691],[151.2266359,-33.8840805],[151.2264849,-33.8849919]] },
+    properties: { streetName: 'Ormond Street', suburb: 'Paddington', council: 'City of Sydney', notes: 'Residential N-S block west of Oxford Street. Away from the main permit zone boundary. Check signage carefully — Paddington has many permit zones. May be free evenings and weekends.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2275702,-33.8835744],[151.2287185,-33.8837679],[151.2298668,-33.8839613]] },
+    properties: { streetName: 'Stafford Street', suburb: 'Paddington', council: 'City of Sydney', notes: 'Residential E-W block in Paddington. Confirm signs on the day — many streets here are permit zones. If outside zone, both kerbs free 24/7. Good for Oxford Street access.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2289648,-33.8861165],[151.2297764,-33.8853223],[151.2305879,-33.8845280]] },
+    properties: { streetName: 'William Street', suburb: 'Paddington', council: 'City of Sydney', notes: 'Diagonal residential block in central Paddington. Permit zones common here — check signs. May be free outside permit hours. Walk to Oxford Street 5 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2305879,-33.8845280],[151.2306533,-33.8840058],[151.2307186,-33.8834835]] },
+    properties: { streetName: 'Hopetoun Street', suburb: 'Paddington', council: 'City of Sydney', notes: 'Short N-S residential block. Both kerbs may be unrestricted if outside the City of Sydney permit zone — verify the full block. Walk to Paddington RSL ~3 min.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   },
 
-  // ── ROZELLE (additional) ──────────────────────────────────
+  // ── WOOLLAHRA ─────────────────────────────────────────────
   {
     type: 'Feature',
-    geometry: { type: 'LineString', coordinates: [[151.1712,-33.8608],[151.1722,-33.8608],[151.1732,-33.8608]] },
-    properties: { streetName: 'Flood Street', suburb: 'Rozelle', council: 'Inner West Council', notes: 'Short residential street west of Victoria Rd. Outside the Victoria Road clearway zone. Both kerbs likely unrestricted. Check southern end for any loading zone signage.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+    geometry: { type: 'LineString', coordinates: [[151.2260094,-33.8860925],[151.2271693,-33.8863512],[151.2283292,-33.8866098]] },
+    properties: { streetName: 'Renny Street', suburb: 'Woollahra', council: 'Woollahra Council', notes: 'Residential E-W block. Woollahra has fewer permit zones than Paddington. Both kerbs likely unrestricted. Walk to Queen Street village ~8 min. Free 24/7 on residential section.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2374920,-33.8867418],[151.2376848,-33.8875286],[151.2378775,-33.8883154]] },
+    properties: { streetName: 'Spicer Street', suburb: 'Woollahra', council: 'Woollahra Council', notes: 'Short N-S residential block in Woollahra. Both kerbs likely unrestricted. Low traffic. Quiet pocket near Centennial Park. Free 24/7 on this section.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2339872,-33.8886065],[151.2355306,-33.8883228],[151.2370739,-33.8880391]] },
+    properties: { streetName: 'Smith Street', suburb: 'Woollahra', council: 'Woollahra Council', notes: 'Residential E-W block between Jersey Road and Nelson Street. Both kerbs likely unrestricted. Good for Queen Street and Centennial Park access.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+
+  // ── RANDWICK ─────────────────────────────────────────────
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2364673,-33.9051137],[151.2382119,-33.9045314],[151.2399565,-33.9039490]] },
+    properties: { streetName: 'Govett Street', suburb: 'Randwick', council: 'Randwick Council', notes: 'Longer residential block. Both kerbs likely unrestricted. Away from main commercial strips. Good access to UNSW and Prince of Wales Hospital. Free 24/7 on residential section.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2392033,-33.9042950],[151.2401693,-33.9044504],[151.2411352,-33.9046058]] },
+    properties: { streetName: 'White Street', suburb: 'Randwick', council: 'Randwick Council', notes: 'Short residential block in Randwick. Both kerbs likely unrestricted. Walk to Randwick Racecourse ~8 min. Free 24/7 on residential section.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2367393,-33.9079102],[151.2377414,-33.9080385],[151.2387435,-33.9081668]] },
+    properties: { streetName: 'Burton Street', suburb: 'Randwick', council: 'Randwick Council', notes: 'Residential E-W block near Randwick town centre. Both kerbs likely unrestricted. Good for Randwick shops and UNSW access. Free 24/7 on residential section.', lastVerified: '2026-06-26', status: 'unverified', confidence: 'medium' }
   }
 ]
 
