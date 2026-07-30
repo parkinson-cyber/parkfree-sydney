@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Bike Parking in North Sydney Council area</name>
+    <description>North Sydney Council area bicycle parking rails</description>
+    <Style id="icon-1522-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1522-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1522-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1522-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1522-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Bike Rails in North Sydney Council area</name>
+      <Placemark>
+        <name>Milsons Point bike rail</name>
+        <description>Bicycle parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.211934,-33.846454,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Balls Head bike rail</name>
+        <description>Bicycle parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.195111,-33.846965,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Sydney Council bike rail</name>
+        <description>Bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.207163,-33.834078,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stanton Library bike rail</name>
+        <description>Bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.207788,-33.833193,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crows Nest bike rail</name>
+        <description>Bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.200757,-33.826754,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crows Nest bike rail</name>
+        <description>Bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.200966,-33.826108,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crows Nest bike rail</name>
+        <description>Bicycle parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.200964,-33.824647,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mount Street Plaza bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.207868,-33.839063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tunks Park bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.218657,-33.817918,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rangers Road bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.223619,-33.831816,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Waters Lane bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.222883,-33.830765,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Lane bike rail</name>
+        <description>south side of car park bike rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.222354,-33.830983,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cammeraygal Place bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.210561,-33.821966,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cammeray Road bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.219135,-33.822875,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crows Nest bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.200886,-33.827294,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Sydney Oval bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.211413,-33.830894,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Sydney Netball courts bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.210402,-33.832962,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Forsyth Park bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.215384,-33.834397,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Sydney Community Centre bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.206929,-33.833602,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Sydney Olympic Pool bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.211821,-33.849301,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alexander St bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.2020045,-33.827002,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blue St bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.2074597,-33.8408338,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pacific Hwy</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.2059069,-33.837274,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Berry St bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.2062531,-33.8365866,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ennis Rd bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.212412,-33.8457286,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burton St bike rail</name>
+        <description>bike parking rail</description>
+        <styleUrl>#icon-1522-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            151.2133544,-33.8461387,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,25 @@
+resident parking permit zones_090216.swd
+Resident Parking Permit Zones
+Area 7
+Area 11Area 15
+Area 16
+ Area 17
+Area 24Area 25
+Area 28
+Area 26Area 27Area 29
+Area 20
+Area 18
+Area 21
+Area 19
+Area 12Area 14
+Area 31Area 30
+Area 1Area 23 Area 32Area 33Area 2Area 3Area 4Area 5
+Area 22Area 10
+Area 6Area 9Area 8
+Area 13
+No ResidentPermits
+N
+SWE
+LEGENDZONE AZONE CZONE B
+N
+SWE

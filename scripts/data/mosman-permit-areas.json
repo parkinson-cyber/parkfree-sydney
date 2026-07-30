@@ -1,0 +1,10 @@
+{
+ "1": {"zone": "A", "streets": ["Prince Street", "Bardwell Road", "Cardinal Street", "Belmont Road", "Glover Street", "Cabramatta Road", "Lindsay Lane", "Spofforth Street"], "anchor": false, "source": "vision"},
+ "2": {"zone": "A", "streets": ["Cowles Road", "Wudgong Street", "Harbour Street", "Vista Street", "Prince Street"], "anchor": false, "source": "vision"},
+ "3": {"zone": "A", "streets": ["Raglan Street", "Curraghbeena Road"], "anchor": false, "source": "vision"},
+ "5": {"zone": "A", "streets": ["Gouldsbury Street"], "anchor": false, "source": "vision"},
+ "6": {"zone": "A", "streets": ["Bond Street"], "anchor": false, "source": "vision"},
+ "7": {"zone": "A", "streets": ["The Crescent"], "anchor": false, "source": "vision"},
+ "8": {"zone": "A", "streets": ["Clifford Street"], "anchor": false, "source": "vision"},
+ "9": {"zone": "A", "streets": ["Spit Road"], "anchor": false, "source": "vision"}
+}

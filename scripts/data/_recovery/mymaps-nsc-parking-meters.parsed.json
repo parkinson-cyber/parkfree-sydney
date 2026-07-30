@@ -1,0 +1,6001 @@
+{
+ "map_name": "NSC Parking Meters",
+ "map_description": "Location of Parking Meters at North Sydney LGA.",
+ "source_url": "https://www.google.com/maps/d/kml?mid=16KThCLnxfa0NgZr_qWFb9yd4mm1mI5w&forcekml=1",
+ "mid": "16KThCLnxfa0NgZr_qWFb9yd4mm1mI5w",
+ "retrieved": "2026-07-30",
+ "placemark_count": 374,
+ "extendedData_fields_present": [
+  "Latitude",
+  "Longitude",
+  "Machine Id",
+  "Model"
+ ],
+ "note": "KML description/ExtendedData contain ONLY Machine Id, Model, Latitude, Longitude. No operating hours, time limits, tariff, or demand-tier data are present anywhere in this map. Style colors encode Model type (Touch N Go vs Parking Meter), not demand tier.",
+ "placemarks": [
+  {
+   "name": "Christie Street",
+   "description": "Machine Id: NSDAVRTLTNG0200-AU<br>Model: Touch N Go<br>Latitude: -33.82246857<br>Longitude: 151.1953506948514000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0200-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82246857",
+    "Longitude": "151.1953506948514000"
+   },
+   "coordinates": {
+    "lon": 151.195350694851,
+    "lat": -33.82246857,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Sergeants Lane",
+   "description": "Machine Id: NSDAVRTLTNG0201-AU<br>Model: Touch N Go<br>Latitude: -33.82216516<br>Longitude: 151.1948267446236400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0201-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82216516",
+    "Longitude": "151.1948267446236400"
+   },
+   "coordinates": {
+    "lon": 151.194826744624,
+    "lat": -33.82216516,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Christie Street",
+   "description": "Machine Id: NSDAVRTLTNG0202-AU<br>Model: Touch N Go<br>Latitude: -33.82207456<br>Longitude: 151.1955019089822700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0202-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82207456",
+    "Longitude": "151.1955019089822700"
+   },
+   "coordinates": {
+    "lon": 151.195501908982,
+    "lat": -33.82207456,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSDAVRTLTNG0203-AU<br>Model: Touch N Go<br>Latitude: -33.82207054<br>Longitude: 151.1961877950991800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0203-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82207054",
+    "Longitude": "151.1961877950991800"
+   },
+   "coordinates": {
+    "lon": 151.196187795099,
+    "lat": -33.82207054,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mitchell Street",
+   "description": "Machine Id: NSDAVRTLTNG0204-AU<br>Model: Touch N Go<br>Latitude: -33.82230114<br>Longitude: 151.1970337837369000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0204-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82230114",
+    "Longitude": "151.1970337837369000"
+   },
+   "coordinates": {
+    "lon": 151.197033783737,
+    "lat": -33.82230114,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSDAVRTLTNG0205-AU<br>Model: Touch N Go<br>Latitude: -33.82210773<br>Longitude: 151.1977946898998400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0205-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82210773",
+    "Longitude": "151.1977946898998400"
+   },
+   "coordinates": {
+    "lon": 151.1977946899,
+    "lat": -33.82210773,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSDAVRTLTNG0206-AU<br>Model: Touch N Go<br>Latitude: -33.82213149<br>Longitude: 151.2005421150210500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0206-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82213149",
+    "Longitude": "151.2005421150210500"
+   },
+   "coordinates": {
+    "lon": 151.200542115021,
+    "lat": -33.82213149,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0207-AU<br>Model: Touch N Go<br>Latitude: -33.82262071<br>Longitude: 151.1989954593665900",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0207-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82262071",
+    "Longitude": "151.1989954593665900"
+   },
+   "coordinates": {
+    "lon": 151.198995459367,
+    "lat": -33.82262071,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0208-AU<br>Model: Touch N Go<br>Latitude: -33.82261491<br>Longitude: 151.1991252910268000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0208-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82261491",
+    "Longitude": "151.1991252910268000"
+   },
+   "coordinates": {
+    "lon": 151.199125291027,
+    "lat": -33.82261491,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSDAVRTLTNG0209-AU<br>Model: Touch N Go<br>Latitude: -33.82287195<br>Longitude: 151.1977566436354200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0209-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82287195",
+    "Longitude": "151.1977566436354200"
+   },
+   "coordinates": {
+    "lon": 151.197756643635,
+    "lat": -33.82287195,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mitchell Street",
+   "description": "Machine Id: NSDAVRTLTNG0210-AU<br>Model: Touch N Go<br>Latitude: -33.8227003<br>Longitude: 151.1971266555993000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0210-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8227003",
+    "Longitude": "151.1971266555993000"
+   },
+   "coordinates": {
+    "lon": 151.197126655599,
+    "lat": -33.8227003,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSDAVRTLTNG0211-AU<br>Model: Touch N Go<br>Latitude: -33.82284263<br>Longitude: 151.1958701494469000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0211-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82284263",
+    "Longitude": "151.1958701494469000"
+   },
+   "coordinates": {
+    "lon": 151.195870149447,
+    "lat": -33.82284263,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSDAVRTLTNG0212-AU<br>Model: Touch N Go<br>Latitude: -33.82297173<br>Longitude: 151.1965834272734800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0212-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82297173",
+    "Longitude": "151.1965834272734800"
+   },
+   "coordinates": {
+    "lon": 151.196583427273,
+    "lat": -33.82297173,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSDAVRTLTNG0213-AU<br>Model: Touch N Go<br>Latitude: -33.82300996<br>Longitude: 151.1984518396854800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0213-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82300996",
+    "Longitude": "151.1984518396854800"
+   },
+   "coordinates": {
+    "lon": 151.198451839685,
+    "lat": -33.82300996,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0214-AU<br>Model: Touch N Go<br>Latitude: -33.82329663<br>Longitude: 151.1991005086577500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0214-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82329663",
+    "Longitude": "151.1991005086577500"
+   },
+   "coordinates": {
+    "lon": 151.199100508658,
+    "lat": -33.82329663,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSDAVRTLTNG0215-AU<br>Model: Touch N Go<br>Latitude: -33.82369493<br>Longitude: 151.1974828714968200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0215-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82369493",
+    "Longitude": "151.1974828714968200"
+   },
+   "coordinates": {
+    "lon": 151.197482871497,
+    "lat": -33.82369493,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSDAVRTLTNG0216-AU<br>Model: Touch N Go<br>Latitude: -33.82385637<br>Longitude: 151.2000428846470800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0216-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82385637",
+    "Longitude": "151.2000428846470800"
+   },
+   "coordinates": {
+    "lon": 151.200042884647,
+    "lat": -33.82385637,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSDAVRTLTNG0217-AU<br>Model: Touch N Go<br>Latitude: -33.82386067<br>Longitude: 151.1995624399826300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0217-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82386067",
+    "Longitude": "151.1995624399826300"
+   },
+   "coordinates": {
+    "lon": 151.199562439983,
+    "lat": -33.82386067,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0218-AU<br>Model: Touch N Go<br>Latitude: -33.82432045<br>Longitude: 151.1990817351659500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0218-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82432045",
+    "Longitude": "151.1990817351659500"
+   },
+   "coordinates": {
+    "lon": 151.199081735166,
+    "lat": -33.82432045,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Street",
+   "description": "Machine Id: NSDAVRTLTNG0219-AU<br>Model: Touch N Go<br>Latitude: -33.82589986<br>Longitude: 151.2003077521669000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0219-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82589986",
+    "Longitude": "151.2003077521669000"
+   },
+   "coordinates": {
+    "lon": 151.200307752167,
+    "lat": -33.82589986,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Street",
+   "description": "Machine Id: NSDAVRTLTNG0220-AU<br>Model: Touch N Go<br>Latitude: -33.82611021<br>Longitude: 151.2005160476721200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0220-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82611021",
+    "Longitude": "151.2005160476721200"
+   },
+   "coordinates": {
+    "lon": 151.200516047672,
+    "lat": -33.82611021,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSDAVRTLTNG0223-AU<br>Model: Touch N Go<br>Latitude: -33.82408<br>Longitude: 151.2008600000000000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0223-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82408",
+    "Longitude": "151.2008600000000000"
+   },
+   "coordinates": {
+    "lon": 151.20086,
+    "lat": -33.82408,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burlington Street",
+   "description": "Machine Id: NSDAVRTLTNG0224-AU<br>Model: Touch N Go<br>Latitude: -33.82685186<br>Longitude: 151.2025742847936300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0224-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82685186",
+    "Longitude": "151.2025742847936300"
+   },
+   "coordinates": {
+    "lon": 151.202574284794,
+    "lat": -33.82685186,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSDAVRTLTNG0225-AU<br>Model: Touch N Go<br>Latitude: -33.82626794<br>Longitude: 151.2022061700086800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0225-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82626794",
+    "Longitude": "151.2022061700086800"
+   },
+   "coordinates": {
+    "lon": 151.202206170009,
+    "lat": -33.82626794,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ernest Street",
+   "description": "Machine Id: NSDAVRTLTNG0226-AU<br>Model: Touch N Go<br>Latitude: -33.82588045<br>Longitude: 151.2027321412233800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0226-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82588045",
+    "Longitude": "151.2027321412233800"
+   },
+   "coordinates": {
+    "lon": 151.202732141223,
+    "lat": -33.82588045,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSDAVRTLTNG0227-AU<br>Model: Touch N Go<br>Latitude: -33.82621883<br>Longitude: 151.2068653424640800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0227-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82621883",
+    "Longitude": "151.2068653424640800"
+   },
+   "coordinates": {
+    "lon": 151.206865342464,
+    "lat": -33.82621883,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSDAVRTLTNG0228-AU<br>Model: Touch N Go<br>Latitude: -33.82491671<br>Longitude: 151.2071492289549300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0228-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82491671",
+    "Longitude": "151.2071492289549300"
+   },
+   "coordinates": {
+    "lon": 151.207149228955,
+    "lat": -33.82491671,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Devonshire Street",
+   "description": "Machine Id: NSDAVRTLTNG0229-AU<br>Model: Touch N Go<br>Latitude: -33.8238926<br>Longitude: 151.2029561087166000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0229-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8238926",
+    "Longitude": "151.2029561087166000"
+   },
+   "coordinates": {
+    "lon": 151.202956108717,
+    "lat": -33.8238926,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSDAVRTLTNG0230-AU<br>Model: Touch N Go<br>Latitude: -33.8240693<br>Longitude: 151.2022866446804400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0230-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8240693",
+    "Longitude": "151.2022866446804400"
+   },
+   "coordinates": {
+    "lon": 151.20228664468,
+    "lat": -33.8240693,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSDAVRTLTNG0231-AU<br>Model: Touch N Go<br>Latitude: -33.82510464<br>Longitude: 151.2034019348254200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0231-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82510464",
+    "Longitude": "151.2034019348254200"
+   },
+   "coordinates": {
+    "lon": 151.203401934825,
+    "lat": -33.82510464,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSDAVRTLTNG0232-AU<br>Model: Touch N Go<br>Latitude: -33.82531084<br>Longitude: 151.2025108563720000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0232-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82531084",
+    "Longitude": "151.2025108563720000"
+   },
+   "coordinates": {
+    "lon": 151.202510856372,
+    "lat": -33.82531084,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSDAVRTLTNG0233-AU<br>Model: Touch N Go<br>Latitude: -33.82487566<br>Longitude: 151.2022450631439200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0233-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82487566",
+    "Longitude": "151.2022450631439200"
+   },
+   "coordinates": {
+    "lon": 151.202245063144,
+    "lat": -33.82487566,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSDAVRTLTNG0234-AU<br>Model: Touch N Go<br>Latitude: -33.82480894<br>Longitude: 151.2014088731507400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0234-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82480894",
+    "Longitude": "151.2014088731507400"
+   },
+   "coordinates": {
+    "lon": 151.201408873151,
+    "lat": -33.82480894,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0235-AU<br>Model: Touch N Go<br>Latitude: -33.82485222<br>Longitude: 151.1985404952511400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0235-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82485222",
+    "Longitude": "151.1985404952511400"
+   },
+   "coordinates": {
+    "lon": 151.198540495251,
+    "lat": -33.82485222,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Lane",
+   "description": "Machine Id: NSDAVRTLTNG0236-AU<br>Model: Touch N Go<br>Latitude: -33.82452393<br>Longitude: 151.1984333147325400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0236-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82452393",
+    "Longitude": "151.1984333147325400"
+   },
+   "coordinates": {
+    "lon": 151.198433314733,
+    "lat": -33.82452393,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pole Lane",
+   "description": "Machine Id: NSDAVRTLTNG0237-AU<br>Model: Touch N Go<br>Latitude: -33.82421676<br>Longitude: 151.1985927318697800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0237-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82421676",
+    "Longitude": "151.1985927318697800"
+   },
+   "coordinates": {
+    "lon": 151.19859273187,
+    "lat": -33.82421676,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Lane",
+   "description": "Machine Id: NSDAVRTLTNG0238-AU<br>Model: Touch N Go<br>Latitude: -33.82409546<br>Longitude: 151.1980524363472000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0238-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82409546",
+    "Longitude": "151.1980524363472000"
+   },
+   "coordinates": {
+    "lon": 151.198052436347,
+    "lat": -33.82409546,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0239-AU<br>Model: Touch N Go<br>Latitude: -33.82448<br>Longitude: 151.1989555066112400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0239-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82448",
+    "Longitude": "151.1989555066112400"
+   },
+   "coordinates": {
+    "lon": 151.198955506611,
+    "lat": -33.82448,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hume Street",
+   "description": "Machine Id: NSDAVRTLTNG0240-AU<br>Model: Touch N Go<br>Latitude: -33.82548025<br>Longitude: 151.1999339255572500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0240-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82548025",
+    "Longitude": "151.1999339255572500"
+   },
+   "coordinates": {
+    "lon": 151.199933925557,
+    "lat": -33.82548025,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lithgow Street",
+   "description": "Machine Id: NSDAVRTLTNG0241-AU<br>Model: Touch N Go<br>Latitude: -33.82695276<br>Longitude: 151.1958695401783000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0241-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82695276",
+    "Longitude": "151.1958695401783000"
+   },
+   "coordinates": {
+    "lon": 151.195869540178,
+    "lat": -33.82695276,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lithgow Street",
+   "description": "Machine Id: NSDAVRTLTNG0242-AU<br>Model: Touch N Go<br>Latitude: -33.82735038<br>Longitude: 151.1961251065676200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0242-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82735038",
+    "Longitude": "151.1961251065676200"
+   },
+   "coordinates": {
+    "lon": 151.196125106568,
+    "lat": -33.82735038,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lithgow Street",
+   "description": "Machine Id: NSDAVRTLTNG0243-AU<br>Model: Touch N Go<br>Latitude: -33.82663158<br>Longitude: 151.1958784688854000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0243-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82663158",
+    "Longitude": "151.1958784688854000"
+   },
+   "coordinates": {
+    "lon": 151.195878468885,
+    "lat": -33.82663158,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0244-AU<br>Model: Touch N Go<br>Latitude: -33.82623539<br>Longitude: 151.1961023886577200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0244-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82623539",
+    "Longitude": "151.1961023886577200"
+   },
+   "coordinates": {
+    "lon": 151.196102388658,
+    "lat": -33.82623539,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Christie Street",
+   "description": "Machine Id: NSDAVRTLTNG0245-AU<br>Model: Touch N Go<br>Latitude: -33.82636357<br>Longitude: 151.1966746177649600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0245-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82636357",
+    "Longitude": "151.1966746177649600"
+   },
+   "coordinates": {
+    "lon": 151.196674617765,
+    "lat": -33.82636357,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0246-AU<br>Model: Touch N Go<br>Latitude: -33.82526408<br>Longitude: 151.1981679372474300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0246-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82526408",
+    "Longitude": "151.1981679372474300"
+   },
+   "coordinates": {
+    "lon": 151.198167937247,
+    "lat": -33.82526408,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Nicholson Street",
+   "description": "Machine Id: NSDAVRTLTNG0247-AU<br>Model: Touch N Go<br>Latitude: -33.82740039<br>Longitude: 151.1992425850297000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0247-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82740039",
+    "Longitude": "151.1992425850297000"
+   },
+   "coordinates": {
+    "lon": 151.19924258503,
+    "lat": -33.82740039,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0248-AU<br>Model: Touch N Go<br>Latitude: -33.83234119<br>Longitude: 151.2080509547276700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0248-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83234119",
+    "Longitude": "151.2080509547276700"
+   },
+   "coordinates": {
+    "lon": 151.208050954728,
+    "lat": -33.83234119,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0249-AU<br>Model: Touch N Go<br>Latitude: -33.83164363<br>Longitude: 151.2084070186577700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0249-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83164363",
+    "Longitude": "151.2084070186577700"
+   },
+   "coordinates": {
+    "lon": 151.208407018658,
+    "lat": -33.83164363,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0250-AU<br>Model: Touch N Go<br>Latitude: -33.83055049<br>Longitude: 151.2086866453863400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0250-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83055049",
+    "Longitude": "151.2086866453863400"
+   },
+   "coordinates": {
+    "lon": 151.208686645386,
+    "lat": -33.83055049,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0251-AU<br>Model: Touch N Go<br>Latitude: -33.83289476<br>Longitude: 151.2083972119713000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0251-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83289476",
+    "Longitude": "151.2083972119713000"
+   },
+   "coordinates": {
+    "lon": 151.208397211971,
+    "lat": -33.83289476,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0252-AU<br>Model: Touch N Go<br>Latitude: -33.83312653<br>Longitude: 151.2097895329482400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0252-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83312653",
+    "Longitude": "151.2097895329482400"
+   },
+   "coordinates": {
+    "lon": 151.209789532948,
+    "lat": -33.83312653,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Eliot Street",
+   "description": "Machine Id: NSDAVRTLTNG0253-AU<br>Model: Touch N Go<br>Latitude: -33.83356712<br>Longitude: 151.2088337448093400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0253-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83356712",
+    "Longitude": "151.2088337448093400"
+   },
+   "coordinates": {
+    "lon": 151.208833744809,
+    "lat": -33.83356712,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bruce Street",
+   "description": "Machine Id: NSDAVRTLTNG0254-AU<br>Model: Touch N Go<br>Latitude: -33.82956701<br>Longitude: 151.2009058106234000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0254-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82956701",
+    "Longitude": "151.2009058106234000"
+   },
+   "coordinates": {
+    "lon": 151.200905810623,
+    "lat": -33.82956701,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rocklands Road",
+   "description": "Machine Id: NSDAVRTLTNG0255-AU<br>Model: Touch N Go<br>Latitude: -33.83076905<br>Longitude: 151.2023190643353400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0255-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83076905",
+    "Longitude": "151.2023190643353400"
+   },
+   "coordinates": {
+    "lon": 151.202319064335,
+    "lat": -33.83076905,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "David Street",
+   "description": "Machine Id: NSDAVRTLTNG0256-AU<br>Model: Touch N Go<br>Latitude: -33.82936579<br>Longitude: 151.2030551735705000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0256-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82936579",
+    "Longitude": "151.2030551735705000"
+   },
+   "coordinates": {
+    "lon": 151.203055173571,
+    "lat": -33.82936579,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Eden Street",
+   "description": "Machine Id: NSDAVRTLTNG0258-AU<br>Model: Touch N Go<br>Latitude: -33.83136908<br>Longitude: 151.2046965996081800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0258-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83136908",
+    "Longitude": "151.2046965996081800"
+   },
+   "coordinates": {
+    "lon": 151.204696599608,
+    "lat": -33.83136908,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Myrtle Street",
+   "description": "Machine Id: NSDAVRTLTNG0260-AU<br>Model: Touch N Go<br>Latitude: -33.83103672<br>Longitude: 151.2035554058223300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0260-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83103672",
+    "Longitude": "151.2035554058223300"
+   },
+   "coordinates": {
+    "lon": 151.203555405822,
+    "lat": -33.83103672,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "David Street",
+   "description": "Machine Id: NSDAVRTLTNG0261-AU<br>Model: Touch N Go<br>Latitude: -33.82950132<br>Longitude: 151.2029024585636000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0261-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82950132",
+    "Longitude": "151.2029024585636000"
+   },
+   "coordinates": {
+    "lon": 151.202902458564,
+    "lat": -33.82950132,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hayberry Street",
+   "description": "Machine Id: NSDAVRTLTNG0263-AU<br>Model: Touch N Go<br>Latitude: -33.82877643<br>Longitude: 151.2021381925582700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0263-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82877643",
+    "Longitude": "151.2021381925582700"
+   },
+   "coordinates": {
+    "lon": 151.202138192558,
+    "lat": -33.82877643,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0264-AU<br>Model: Touch N Go<br>Latitude: -33.82880556<br>Longitude: 151.2018863233308500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0264-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82880556",
+    "Longitude": "151.2018863233308500"
+   },
+   "coordinates": {
+    "lon": 151.201886323331,
+    "lat": -33.82880556,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSDAVRTLTNG0265-AU<br>Model: Touch N Go<br>Latitude: -33.8282634<br>Longitude: 151.2018893424641000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0265-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8282634",
+    "Longitude": "151.2018893424641000"
+   },
+   "coordinates": {
+    "lon": 151.201889342464,
+    "lat": -33.8282634,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0266-AU<br>Model: Touch N Go<br>Latitude: -33.83686<br>Longitude: 151.2079500000000000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0266-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83686",
+    "Longitude": "151.2079500000000000"
+   },
+   "coordinates": {
+    "lon": 151.20795,
+    "lat": -33.83686,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0267-AU<br>Model: Touch N Go<br>Latitude: -33.83282574<br>Longitude: 151.2076389841208800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0267-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83282574",
+    "Longitude": "151.2076389841208800"
+   },
+   "coordinates": {
+    "lon": 151.207638984121,
+    "lat": -33.83282574,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0268-AU<br>Model: Touch N Go<br>Latitude: -33.83256705<br>Longitude: 151.2059656420426600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0268-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83256705",
+    "Longitude": "151.2059656420426600"
+   },
+   "coordinates": {
+    "lon": 151.205965642043,
+    "lat": -33.83256705,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0269-AU<br>Model: Touch N Go<br>Latitude: -33.83253577<br>Longitude: 151.2063104112520000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0269-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83253577",
+    "Longitude": "151.2063104112520000"
+   },
+   "coordinates": {
+    "lon": 151.206310411252,
+    "lat": -33.83253577,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0270-AU<br>Model: Touch N Go<br>Latitude: -33.83276071<br>Longitude: 151.2075906102893700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0270-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83276071",
+    "Longitude": "151.2075906102893700"
+   },
+   "coordinates": {
+    "lon": 151.207590610289,
+    "lat": -33.83276071,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0271-AU<br>Model: Touch N Go<br>Latitude: -33.83324452<br>Longitude: 151.2079410686491000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0271-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83324452",
+    "Longitude": "151.2079410686491000"
+   },
+   "coordinates": {
+    "lon": 151.207941068649,
+    "lat": -33.83324452,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0272-AU<br>Model: Touch N Go<br>Latitude: -33.83260192<br>Longitude: 151.2061857377943900",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0272-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83260192",
+    "Longitude": "151.2061857377943900"
+   },
+   "coordinates": {
+    "lon": 151.206185737794,
+    "lat": -33.83260192,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0273-AU<br>Model: Touch N Go<br>Latitude: -33.83548541<br>Longitude: 151.2074320492604600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0273-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83548541",
+    "Longitude": "151.2074320492604600"
+   },
+   "coordinates": {
+    "lon": 151.20743204926,
+    "lat": -33.83548541,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0274-AU<br>Model: Touch N Go<br>Latitude: -33.83667558<br>Longitude: 151.2072493946471000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0274-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83667558",
+    "Longitude": "151.2072493946471000"
+   },
+   "coordinates": {
+    "lon": 151.207249394647,
+    "lat": -33.83667558,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0275-AU<br>Model: Touch N Go<br>Latitude: -33.83458892<br>Longitude: 151.2077913052247300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0275-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83458892",
+    "Longitude": "151.2077913052247300"
+   },
+   "coordinates": {
+    "lon": 151.207791305225,
+    "lat": -33.83458892,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0276-AU<br>Model: Touch N Go<br>Latitude: -33.83518688<br>Longitude: 151.2096687539934000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0276-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83518688",
+    "Longitude": "151.2096687539934000"
+   },
+   "coordinates": {
+    "lon": 151.209668753993,
+    "lat": -33.83518688,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hampden Street",
+   "description": "Machine Id: NSDAVRTLTNG0277-AU<br>Model: Touch N Go<br>Latitude: -33.83562572<br>Longitude: 151.2099564461102500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0277-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83562572",
+    "Longitude": "151.2099564461102500"
+   },
+   "coordinates": {
+    "lon": 151.20995644611,
+    "lat": -33.83562572,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hampden Street",
+   "description": "Machine Id: NSDAVRTLTNG0278-AU<br>Model: Touch N Go<br>Latitude: -33.83580172<br>Longitude: 151.2099523977823000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0278-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83580172",
+    "Longitude": "151.2099523977823000"
+   },
+   "coordinates": {
+    "lon": 151.209952397782,
+    "lat": -33.83580172,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0279-AU<br>Model: Touch N Go<br>Latitude: -33.83632443<br>Longitude: 151.2093174638744000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0279-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83632443",
+    "Longitude": "151.2093174638744000"
+   },
+   "coordinates": {
+    "lon": 151.209317463874,
+    "lat": -33.83632443,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0280-AU<br>Model: Touch N Go<br>Latitude: -33.83511428<br>Longitude: 151.2092653403823000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0280-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83511428",
+    "Longitude": "151.2092653403823000"
+   },
+   "coordinates": {
+    "lon": 151.209265340382,
+    "lat": -33.83511428,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0281-AU<br>Model: Touch N Go<br>Latitude: -33.83479236<br>Longitude: 151.2072232476040200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0281-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83479236",
+    "Longitude": "151.2072232476040200"
+   },
+   "coordinates": {
+    "lon": 151.207223247604,
+    "lat": -33.83479236,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0282-AU<br>Model: Touch N Go<br>Latitude: -33.83302891<br>Longitude: 151.2095916852967700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0282-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83302891",
+    "Longitude": "151.2095916852967700"
+   },
+   "coordinates": {
+    "lon": 151.209591685297,
+    "lat": -33.83302891,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0283-AU<br>Model: Touch N Go<br>Latitude: -33.83443062<br>Longitude: 151.2053023627612700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0283-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83443062",
+    "Longitude": "151.2053023627612700"
+   },
+   "coordinates": {
+    "lon": 151.205302362761,
+    "lat": -33.83443062,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Harnett Street",
+   "description": "Machine Id: NSDAVRTLTNG0284-AU<br>Model: Touch N Go<br>Latitude: -33.83547734<br>Longitude: 151.2089462336532800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0284-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83547734",
+    "Longitude": "151.2089462336532800"
+   },
+   "coordinates": {
+    "lon": 151.208946233653,
+    "lat": -33.83547734,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSDAVRTLTNG0285-AU<br>Model: Touch N Go<br>Latitude: -33.8334871<br>Longitude: 151.2050786533081000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0285-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8334871",
+    "Longitude": "151.2050786533081000"
+   },
+   "coordinates": {
+    "lon": 151.205078653308,
+    "lat": -33.8334871,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSDAVRTLTNG0286-AU<br>Model: Touch N Go<br>Latitude: -33.83367827<br>Longitude: 151.2048867402212400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0286-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83367827",
+    "Longitude": "151.2048867402212400"
+   },
+   "coordinates": {
+    "lon": 151.204886740221,
+    "lat": -33.83367827,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Angelo Street",
+   "description": "Machine Id: NSDAVRTLTNG0287-AU<br>Model: Touch N Go<br>Latitude: -33.83508223<br>Longitude: 151.2056773690170000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0287-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83508223",
+    "Longitude": "151.2056773690170000"
+   },
+   "coordinates": {
+    "lon": 151.205677369017,
+    "lat": -33.83508223,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Angelo Street",
+   "description": "Machine Id: NSDAVRTLTNG0288-AU<br>Model: Touch N Go<br>Latitude: -33.83649594<br>Longitude: 151.2063418083198500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0288-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83649594",
+    "Longitude": "151.2063418083198500"
+   },
+   "coordinates": {
+    "lon": 151.20634180832,
+    "lat": -33.83649594,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0289-AU<br>Model: Touch N Go<br>Latitude: -33.83371309<br>Longitude: 151.2077531803764700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0289-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83371309",
+    "Longitude": "151.2077531803764700"
+   },
+   "coordinates": {
+    "lon": 151.207753180376,
+    "lat": -33.83371309,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0290-AU<br>Model: Touch N Go<br>Latitude: -33.83461521<br>Longitude: 151.2064394509283000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0290-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83461521",
+    "Longitude": "151.2064394509283000"
+   },
+   "coordinates": {
+    "lon": 151.206439450928,
+    "lat": -33.83461521,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0291-AU<br>Model: Touch N Go<br>Latitude: -33.83906541<br>Longitude: 151.2082334289848700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0291-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83906541",
+    "Longitude": "151.2082334289848700"
+   },
+   "coordinates": {
+    "lon": 151.208233428985,
+    "lat": -33.83906541,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0292-AU<br>Model: Touch N Go<br>Latitude: -33.8399348<br>Longitude: 151.2080498722250500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0292-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8399348",
+    "Longitude": "151.2080498722250500"
+   },
+   "coordinates": {
+    "lon": 151.208049872225,
+    "lat": -33.8399348,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0293-AU<br>Model: Touch N Go<br>Latitude: -33.839943<br>Longitude: 151.2087189164808500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0293-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.839943",
+    "Longitude": "151.2087189164808500"
+   },
+   "coordinates": {
+    "lon": 151.208718916481,
+    "lat": -33.839943,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0294-AU<br>Model: Touch N Go<br>Latitude: -33.84006265<br>Longitude: 151.2092780489651600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0294-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84006265",
+    "Longitude": "151.2092780489651600"
+   },
+   "coordinates": {
+    "lon": 151.209278048965,
+    "lat": -33.84006265,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0295-AU<br>Model: Touch N Go<br>Latitude: -33.84107232<br>Longitude: 151.2091900620294200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0295-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84107232",
+    "Longitude": "151.2091900620294200"
+   },
+   "coordinates": {
+    "lon": 151.209190062029,
+    "lat": -33.84107232,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0298-AU<br>Model: Touch N Go<br>Latitude: -33.8390847<br>Longitude: 151.2089918092190100",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0298-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8390847",
+    "Longitude": "151.2089918092190100"
+   },
+   "coordinates": {
+    "lon": 151.208991809219,
+    "lat": -33.8390847,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Arthur Street",
+   "description": "Machine Id: NSDAVRTLTNG0299-AU<br>Model: Touch N Go<br>Latitude: -33.83812975<br>Longitude: 151.2101445941247800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0299-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83812975",
+    "Longitude": "151.2101445941247800"
+   },
+   "coordinates": {
+    "lon": 151.210144594125,
+    "lat": -33.83812975,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0300-AU<br>Model: Touch N Go<br>Latitude: -33.83804777<br>Longitude: 151.2090840182566200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0300-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83804777",
+    "Longitude": "151.2090840182566200"
+   },
+   "coordinates": {
+    "lon": 151.209084018257,
+    "lat": -33.83804777,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSDAVRTLTNG0301-AU<br>Model: Touch N Go<br>Latitude: -33.83914641<br>Longitude: 151.2059049364153200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0301-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83914641",
+    "Longitude": "151.2059049364153200"
+   },
+   "coordinates": {
+    "lon": 151.205904936415,
+    "lat": -33.83914641,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSDAVRTLTNG0302-AU<br>Model: Touch N Go<br>Latitude: -33.84050171<br>Longitude: 151.2056320232554200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0302-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84050171",
+    "Longitude": "151.2056320232554200"
+   },
+   "coordinates": {
+    "lon": 151.205632023255,
+    "lat": -33.84050171,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSDAVRTLTNG0303-AU<br>Model: Touch N Go<br>Latitude: -33.84201853<br>Longitude: 151.2053200484434400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0303-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84201853",
+    "Longitude": "151.2053200484434400"
+   },
+   "coordinates": {
+    "lon": 151.205320048443,
+    "lat": -33.84201853,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Road",
+   "description": "Machine Id: NSDAVRTLTNG0304-AU<br>Model: Touch N Go<br>Latitude: -33.84218394<br>Longitude: 151.2054005971593000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0304-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84218394",
+    "Longitude": "151.2054005971593000"
+   },
+   "coordinates": {
+    "lon": 151.205400597159,
+    "lat": -33.84218394,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Road",
+   "description": "Machine Id: NSDAVRTLTNG0305-AU<br>Model: Touch N Go<br>Latitude: -33.84118806<br>Longitude: 151.2063185076561000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0305-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84118806",
+    "Longitude": "151.2063185076561000"
+   },
+   "coordinates": {
+    "lon": 151.206318507656,
+    "lat": -33.84118806,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blue Street",
+   "description": "Machine Id: NSDAVRTLTNG0306-AU<br>Model: Touch N Go<br>Latitude: -33.84068559<br>Longitude: 151.2059520621656600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0306-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84068559",
+    "Longitude": "151.2059520621656600"
+   },
+   "coordinates": {
+    "lon": 151.205952062166,
+    "lat": -33.84068559,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0307-AU<br>Model: Touch N Go<br>Latitude: -33.84026326<br>Longitude: 151.2065309837469000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0307-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84026326",
+    "Longitude": "151.2065309837469000"
+   },
+   "coordinates": {
+    "lon": 151.206530983747,
+    "lat": -33.84026326,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSDAVRTLTNG0308-AU<br>Model: Touch N Go<br>Latitude: -33.84037568<br>Longitude: 151.2066302236020200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0308-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84037568",
+    "Longitude": "151.2066302236020200"
+   },
+   "coordinates": {
+    "lon": 151.206630223602,
+    "lat": -33.84037568,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blue Street",
+   "description": "Machine Id: NSDAVRTLTNG0309-AU<br>Model: Touch N Go<br>Latitude: -33.84075813<br>Longitude: 151.2066767424848600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0309-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84075813",
+    "Longitude": "151.2066767424848600"
+   },
+   "coordinates": {
+    "lon": 151.206676742485,
+    "lat": -33.84075813,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blue Street",
+   "description": "Machine Id: NSDAVRTLTNG0310-AU<br>Model: Touch N Go<br>Latitude: -33.84093521<br>Longitude: 151.2078805544580000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0310-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84093521",
+    "Longitude": "151.2078805544580000"
+   },
+   "coordinates": {
+    "lon": 151.207880554458,
+    "lat": -33.84093521,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0311-AU<br>Model: Touch N Go<br>Latitude: -33.8377079<br>Longitude: 151.2062653575459000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0311-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8377079",
+    "Longitude": "151.2062653575459000"
+   },
+   "coordinates": {
+    "lon": 151.206265357546,
+    "lat": -33.8377079,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0312-AU<br>Model: Touch N Go<br>Latitude: -33.83653248<br>Longitude: 151.2056065451514000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0312-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83653248",
+    "Longitude": "151.2056065451514000"
+   },
+   "coordinates": {
+    "lon": 151.205606545151,
+    "lat": -33.83653248,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Doohat Avenue",
+   "description": "Machine Id: NSDAVRTLTNG0313-AU<br>Model: Touch N Go<br>Latitude: -33.83595265<br>Longitude: 151.2050946614711000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0313-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83595265",
+    "Longitude": "151.2050946614711000"
+   },
+   "coordinates": {
+    "lon": 151.205094661471,
+    "lat": -33.83595265,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bay Road",
+   "description": "Machine Id: NSDAVRTLTNG0314-AU<br>Model: Touch N Go<br>Latitude: -33.83517591<br>Longitude: 151.2047460579138000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0314-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83517591",
+    "Longitude": "151.2047460579138000"
+   },
+   "coordinates": {
+    "lon": 151.204746057914,
+    "lat": -33.83517591,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Edward Street",
+   "description": "Machine Id: NSDAVRTLTNG0315-AU<br>Model: Touch N Go<br>Latitude: -33.83597793<br>Longitude: 151.2035796347980200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0315-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83597793",
+    "Longitude": "151.2035796347980200"
+   },
+   "coordinates": {
+    "lon": 151.203579634798,
+    "lat": -33.83597793,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0316-AU<br>Model: Touch N Go<br>Latitude: -33.83691537<br>Longitude: 151.2041701154450000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0316-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83691537",
+    "Longitude": "151.2041701154450000"
+   },
+   "coordinates": {
+    "lon": 151.204170115445,
+    "lat": -33.83691537,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0317-AU<br>Model: Touch N Go<br>Latitude: -33.83689435<br>Longitude: 151.2048340045250300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0317-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83689435",
+    "Longitude": "151.2048340045250300"
+   },
+   "coordinates": {
+    "lon": 151.204834004525,
+    "lat": -33.83689435,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Napier Street",
+   "description": "Machine Id: NSDAVRTLTNG0318-AU<br>Model: Touch N Go<br>Latitude: -33.83716575<br>Longitude: 151.2053107495973700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0318-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83716575",
+    "Longitude": "151.2053107495973700"
+   },
+   "coordinates": {
+    "lon": 151.205310749597,
+    "lat": -33.83716575,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0319-AU<br>Model: Touch N Go<br>Latitude: -33.83789131<br>Longitude: 151.2061450867953200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0319-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83789131",
+    "Longitude": "151.2061450867953200"
+   },
+   "coordinates": {
+    "lon": 151.206145086795,
+    "lat": -33.83789131,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0320-AU<br>Model: Touch N Go<br>Latitude: -33.83851501<br>Longitude: 151.2065655173675800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0320-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83851501",
+    "Longitude": "151.2065655173675800"
+   },
+   "coordinates": {
+    "lon": 151.206565517368,
+    "lat": -33.83851501,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSDAVRTLTNG0321-AU<br>Model: Touch N Go<br>Latitude: -33.83808055<br>Longitude: 151.2061879118579700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0321-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83808055",
+    "Longitude": "151.2061879118579700"
+   },
+   "coordinates": {
+    "lon": 151.206187911858,
+    "lat": -33.83808055,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0322-AU<br>Model: Touch N Go<br>Latitude: -33.83855109<br>Longitude: 151.2052433547599400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0322-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83855109",
+    "Longitude": "151.2052433547599400"
+   },
+   "coordinates": {
+    "lon": 151.20524335476,
+    "lat": -33.83855109,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oak Street",
+   "description": "Machine Id: NSDAVRTLTNG0323-AU<br>Model: Touch N Go<br>Latitude: -33.83772517<br>Longitude: 151.2046076683345700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0323-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83772517",
+    "Longitude": "151.2046076683345700"
+   },
+   "coordinates": {
+    "lon": 151.204607668335,
+    "lat": -33.83772517,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0324-AU<br>Model: Touch N Go<br>Latitude: -33.83854586<br>Longitude: 151.2046198445667000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0324-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83854586",
+    "Longitude": "151.2046198445667000"
+   },
+   "coordinates": {
+    "lon": 151.204619844567,
+    "lat": -33.83854586,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lord Street",
+   "description": "Machine Id: NSDAVRTLTNG0325-AU<br>Model: Touch N Go<br>Latitude: -33.83899621<br>Longitude: 151.2036907718797600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0325-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83899621",
+    "Longitude": "151.2036907718797600"
+   },
+   "coordinates": {
+    "lon": 151.20369077188,
+    "lat": -33.83899621,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Short Street",
+   "description": "Machine Id: NSDAVRTLTNG0326-AU<br>Model: Touch N Go<br>Latitude: -33.83883845<br>Longitude: 151.2030371301095000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0326-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83883845",
+    "Longitude": "151.2030371301095000"
+   },
+   "coordinates": {
+    "lon": 151.203037130109,
+    "lat": -33.83883845,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ward Street",
+   "description": "Machine Id: NSDAVRTLTNG0327-AU<br>Model: Touch N Go<br>Latitude: -33.83649169<br>Longitude: 151.2084824548761600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0327-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83649169",
+    "Longitude": "151.2084824548761600"
+   },
+   "coordinates": {
+    "lon": 151.208482454876,
+    "lat": -33.83649169,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Spring Street",
+   "description": "Machine Id: NSDAVRTLTNG0328-AU<br>Model: Touch N Go<br>Latitude: -33.83724701<br>Longitude: 151.2085964686585600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0328-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83724701",
+    "Longitude": "151.2085964686585600"
+   },
+   "coordinates": {
+    "lon": 151.208596468659,
+    "lat": -33.83724701,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Denison Street",
+   "description": "Machine Id: NSDAVRTLTNG0329-AU<br>Model: Touch N Go<br>Latitude: -33.83731846<br>Longitude: 151.2081734979995000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0329-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83731846",
+    "Longitude": "151.2081734979995000"
+   },
+   "coordinates": {
+    "lon": 151.208173497999,
+    "lat": -33.83731846,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0330-AU<br>Model: Touch N Go<br>Latitude: -33.84900686<br>Longitude: 151.2119187838965200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0330-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84900686",
+    "Longitude": "151.2119187838965200"
+   },
+   "coordinates": {
+    "lon": 151.211918783897,
+    "lat": -33.84900686,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0331-AU<br>Model: Touch N Go<br>Latitude: -33.84783622<br>Longitude: 151.2116847632467000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0331-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84783622",
+    "Longitude": "151.2116847632467000"
+   },
+   "coordinates": {
+    "lon": 151.211684763247,
+    "lat": -33.84783622,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Whaling Road",
+   "description": "Machine Id: NSDAVRTLTNG0332-AU<br>Model: Touch N Go<br>Latitude: -33.84065368<br>Longitude: 151.2113037197128200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0332-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84065368",
+    "Longitude": "151.2113037197128200"
+   },
+   "coordinates": {
+    "lon": 151.211303719713,
+    "lat": -33.84065368,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0333-AU<br>Model: Touch N Go<br>Latitude: -33.84539422<br>Longitude: 151.2113154345346000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0333-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84539422",
+    "Longitude": "151.2113154345346000"
+   },
+   "coordinates": {
+    "lon": 151.211315434535,
+    "lat": -33.84539422,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0334-AU<br>Model: Touch N Go<br>Latitude: -33.84504021<br>Longitude: 151.2110755724541000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0334-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84504021",
+    "Longitude": "151.2110755724541000"
+   },
+   "coordinates": {
+    "lon": 151.211075572454,
+    "lat": -33.84504021,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0335-AU<br>Model: Touch N Go<br>Latitude: -33.84663514<br>Longitude: 151.2113998619365700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0335-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84663514",
+    "Longitude": "151.2113998619365700"
+   },
+   "coordinates": {
+    "lon": 151.211399861937,
+    "lat": -33.84663514,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0336-AU<br>Model: Touch N Go<br>Latitude: -33.84659469<br>Longitude: 151.2114728653745000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0336-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84659469",
+    "Longitude": "151.2114728653745000"
+   },
+   "coordinates": {
+    "lon": 151.211472865375,
+    "lat": -33.84659469,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSDAVRTLTNG0337-AU<br>Model: Touch N Go<br>Latitude: -33.84845017<br>Longitude: 151.2116721966483500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0337-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84845017",
+    "Longitude": "151.2116721966483500"
+   },
+   "coordinates": {
+    "lon": 151.211672196648,
+    "lat": -33.84845017,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Middlemiss Street",
+   "description": "Machine Id: NSDAVRTLTNG0338-AU<br>Model: Touch N Go<br>Latitude: -33.84309798<br>Longitude: 151.2104144052948400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0338-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84309798",
+    "Longitude": "151.2104144052948400"
+   },
+   "coordinates": {
+    "lon": 151.210414405295,
+    "lat": -33.84309798,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Middlemiss Street",
+   "description": "Machine Id: NSDAVRTLTNG0339-AU<br>Model: Touch N Go<br>Latitude: -33.84211063<br>Longitude: 151.2094903842471000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0339-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84211063",
+    "Longitude": "151.2094903842471000"
+   },
+   "coordinates": {
+    "lon": 151.209490384247,
+    "lat": -33.84211063,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lavender Street",
+   "description": "Machine Id: NSDAVRTLTNG0340-AU<br>Model: Touch N Go<br>Latitude: -33.84349487<br>Longitude: 151.2098419228220500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0340-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84349487",
+    "Longitude": "151.2098419228220500"
+   },
+   "coordinates": {
+    "lon": 151.209841922822,
+    "lat": -33.84349487,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Harbourview Crescent",
+   "description": "Machine Id: NSDAVRTLTNG0341-AU<br>Model: Touch N Go<br>Latitude: -33.84407832<br>Longitude: 151.2094247514658300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0341-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84407832",
+    "Longitude": "151.2094247514658300"
+   },
+   "coordinates": {
+    "lon": 151.209424751466,
+    "lat": -33.84407832,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Cliff Street",
+   "description": "Machine Id: NSDAVRTLTNG0342-AU<br>Model: Touch N Go<br>Latitude: -33.84424758<br>Longitude: 151.2102466836688000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0342-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84424758",
+    "Longitude": "151.2102466836688000"
+   },
+   "coordinates": {
+    "lon": 151.210246683669,
+    "lat": -33.84424758,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Cliff Street",
+   "description": "Machine Id: NSDAVRTLTNG0343-AU<br>Model: Touch N Go<br>Latitude: -33.84567489<br>Longitude: 151.2108325736862000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0343-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84567489",
+    "Longitude": "151.2108325736862000"
+   },
+   "coordinates": {
+    "lon": 151.210832573686,
+    "lat": -33.84567489,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Glen Street",
+   "description": "Machine Id: NSDAVRTLTNG0344-AU<br>Model: Touch N Go<br>Latitude: -33.84605319<br>Longitude: 151.2109037377328800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0344-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84605319",
+    "Longitude": "151.2109037377328800"
+   },
+   "coordinates": {
+    "lon": 151.210903737733,
+    "lat": -33.84605319,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Glen Street",
+   "description": "Machine Id: NSDAVRTLTNG0345-AU<br>Model: Touch N Go<br>Latitude: -33.84742927<br>Longitude: 151.2106758581804500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0345-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84742927",
+    "Longitude": "151.2106758581804500"
+   },
+   "coordinates": {
+    "lon": 151.21067585818,
+    "lat": -33.84742927,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Glen Street",
+   "description": "Machine Id: NSDAVRTLTNG0346-AU<br>Model: Touch N Go<br>Latitude: -33.84781137<br>Longitude: 151.2106377779258500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0346-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84781137",
+    "Longitude": "151.2106377779258500"
+   },
+   "coordinates": {
+    "lon": 151.210637777926,
+    "lat": -33.84781137,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Northcliff Street",
+   "description": "Machine Id: NSDAVRTLTNG0347-AU<br>Model: Touch N Go<br>Latitude: -33.84832501<br>Longitude: 151.2110041543325600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0347-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84832501",
+    "Longitude": "151.2110041543325600"
+   },
+   "coordinates": {
+    "lon": 151.211004154333,
+    "lat": -33.84832501,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Dind Street",
+   "description": "Machine Id: NSDAVRTLTNG0348-AU<br>Model: Touch N Go<br>Latitude: -33.8479043<br>Longitude: 151.2113427790659000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0348-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8479043",
+    "Longitude": "151.2113427790659000"
+   },
+   "coordinates": {
+    "lon": 151.211342779066,
+    "lat": -33.8479043,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSDAVRTLTNG0349-AU<br>Model: Touch N Go<br>Latitude: -33.84915484<br>Longitude: 151.2137609578330700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0349-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84915484",
+    "Longitude": "151.2137609578330700"
+   },
+   "coordinates": {
+    "lon": 151.213760957833,
+    "lat": -33.84915484,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSDAVRTLTNG0350-AU<br>Model: Touch N Go<br>Latitude: -33.84949214<br>Longitude: 151.2139224791966000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0350-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84949214",
+    "Longitude": "151.2139224791966000"
+   },
+   "coordinates": {
+    "lon": 151.213922479197,
+    "lat": -33.84949214,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSDAVRTLTNG0351-AU<br>Model: Touch N Go<br>Latitude: -33.84950247<br>Longitude: 151.2132010530176800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0351-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84950247",
+    "Longitude": "151.2132010530176800"
+   },
+   "coordinates": {
+    "lon": 151.213201053018,
+    "lat": -33.84950247,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton Street",
+   "description": "Machine Id: NSDAVRTLTNG0352-AU<br>Model: Touch N Go<br>Latitude: -33.84371515<br>Longitude: 151.2128078598564000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0352-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84371515",
+    "Longitude": "151.2128078598564000"
+   },
+   "coordinates": {
+    "lon": 151.212807859856,
+    "lat": -33.84371515,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton Street",
+   "description": "Machine Id: NSDAVRTLTNG0353-AU<br>Model: Touch N Go<br>Latitude: -33.8452719<br>Longitude: 151.2125075323118300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0353-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8452719",
+    "Longitude": "151.2125075323118300"
+   },
+   "coordinates": {
+    "lon": 151.212507532312,
+    "lat": -33.8452719,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ennis Road",
+   "description": "Machine Id: NSDAVRTLTNG0354-AU<br>Model: Touch N Go<br>Latitude: -33.84515161<br>Longitude: 151.2123347120714000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0354-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84515161",
+    "Longitude": "151.2123347120714000"
+   },
+   "coordinates": {
+    "lon": 151.212334712071,
+    "lat": -33.84515161,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ennis Road",
+   "description": "Machine Id: NSDAVRTLTNG0355-AU<br>Model: Touch N Go<br>Latitude: -33.84385568<br>Longitude: 151.2117525382104200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0355-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84385568",
+    "Longitude": "151.2117525382104200"
+   },
+   "coordinates": {
+    "lon": 151.21175253821,
+    "lat": -33.84385568,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ennis Road",
+   "description": "Machine Id: NSDAVRTLTNG0356-AU<br>Model: Touch N Go<br>Latitude: -33.84378982<br>Longitude: 151.2117984618065500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0356-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84378982",
+    "Longitude": "151.2117984618065500"
+   },
+   "coordinates": {
+    "lon": 151.211798461807,
+    "lat": -33.84378982,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ennis Road",
+   "description": "Machine Id: NSDAVRTLTNG0357-AU<br>Model: Touch N Go<br>Latitude: -33.84491741<br>Longitude: 151.2121765051382000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0357-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84491741",
+    "Longitude": "151.2121765051382000"
+   },
+   "coordinates": {
+    "lon": 151.212176505138,
+    "lat": -33.84491741,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Fitzroy Street",
+   "description": "Machine Id: NSDAVRTLTNG0358-AU<br>Model: Touch N Go<br>Latitude: -33.84745504<br>Longitude: 151.2124731344994000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0358-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84745504",
+    "Longitude": "151.2124731344994000"
+   },
+   "coordinates": {
+    "lon": 151.212473134499,
+    "lat": -33.84745504,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Fitzroy Street",
+   "description": "Machine Id: NSDAVRTLTNG0359-AU<br>Model: Touch N Go<br>Latitude: -33.84740936<br>Longitude: 151.2119671512294300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0359-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84740936",
+    "Longitude": "151.2119671512294300"
+   },
+   "coordinates": {
+    "lon": 151.211967151229,
+    "lat": -33.84740936,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton Street",
+   "description": "Machine Id: NSDAVRTLTNG0360-AU<br>Model: Touch N Go<br>Latitude: -33.84639626<br>Longitude: 151.2115810352650300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0360-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84639626",
+    "Longitude": "151.2115810352650300"
+   },
+   "coordinates": {
+    "lon": 151.211581035265,
+    "lat": -33.84639626,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton Street",
+   "description": "Machine Id: NSDAVRTLTNG0361-AU<br>Model: Touch N Go<br>Latitude: -33.84639631<br>Longitude: 151.2115346418640300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0361-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84639631",
+    "Longitude": "151.2115346418640300"
+   },
+   "coordinates": {
+    "lon": 151.211534641864,
+    "lat": -33.84639631,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Union Street",
+   "description": "Machine Id: NSDAVRTLTNG0362-AU<br>Model: Touch N Go<br>Latitude: -33.84184499<br>Longitude: 151.2030418492278700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0362-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84184499",
+    "Longitude": "151.2030418492278700"
+   },
+   "coordinates": {
+    "lon": 151.203041849228,
+    "lat": -33.84184499,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton Street",
+   "description": "Machine Id: NSDAVRTLTNG0363-AU<br>Model: Touch N Go<br>Latitude: -33.84735277<br>Longitude: 151.2130702928835000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0363-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84735277",
+    "Longitude": "151.2130702928835000"
+   },
+   "coordinates": {
+    "lon": 151.213070292883,
+    "lat": -33.84735277,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSDAVRTLTNG0364-AU<br>Model: Touch N Go<br>Latitude: -33.83011309<br>Longitude: 151.2223357755360000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0364-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83011309",
+    "Longitude": "151.2223357755360000"
+   },
+   "coordinates": {
+    "lon": 151.222335775536,
+    "lat": -33.83011309,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSDAVRTLTNG0365-AU<br>Model: Touch N Go<br>Latitude: -33.82976179<br>Longitude: 151.2208653344509000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0365-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82976179",
+    "Longitude": "151.2208653344509000"
+   },
+   "coordinates": {
+    "lon": 151.220865334451,
+    "lat": -33.82976179,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSDAVRTLTNG0366-AU<br>Model: Touch N Go<br>Latitude: -33.82970121<br>Longitude: 151.2209514575329800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0366-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82970121",
+    "Longitude": "151.2209514575329800"
+   },
+   "coordinates": {
+    "lon": 151.220951457533,
+    "lat": -33.82970121,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Barry Street",
+   "description": "Machine Id: NSDAVRTLTNG0368-AU<br>Model: Touch N Go<br>Latitude: -33.83207354<br>Longitude: 151.2210515435648700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0368-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83207354",
+    "Longitude": "151.2210515435648700"
+   },
+   "coordinates": {
+    "lon": 151.221051543565,
+    "lat": -33.83207354,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Yeo Street",
+   "description": "Machine Id: NSDAVRTLTNG0371-AU<br>Model: Touch N Go<br>Latitude: -33.83231318<br>Longitude: 151.2225201309328000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0371-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83231318",
+    "Longitude": "151.2225201309328000"
+   },
+   "coordinates": {
+    "lon": 151.222520130933,
+    "lat": -33.83231318,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Yeo Street",
+   "description": "Machine Id: NSDAVRTLTNG0372-AU<br>Model: Touch N Go<br>Latitude: -33.83236828<br>Longitude: 151.2229172693601800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0372-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83236828",
+    "Longitude": "151.2229172693601800"
+   },
+   "coordinates": {
+    "lon": 151.22291726936,
+    "lat": -33.83236828,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0373-AU<br>Model: Touch N Go<br>Latitude: -33.82912637<br>Longitude: 151.2270447561975300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0373-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82912637",
+    "Longitude": "151.2270447561975300"
+   },
+   "coordinates": {
+    "lon": 151.227044756198,
+    "lat": -33.82912637,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0374-AU<br>Model: Touch N Go<br>Latitude: -33.82766404<br>Longitude: 151.2300500075055000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0374-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82766404",
+    "Longitude": "151.2300500075055000"
+   },
+   "coordinates": {
+    "lon": 151.230050007505,
+    "lat": -33.82766404,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0375-AU<br>Model: Touch N Go<br>Latitude: -33.82728208<br>Longitude: 151.2307020417391000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0375-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82728208",
+    "Longitude": "151.2307020417391000"
+   },
+   "coordinates": {
+    "lon": 151.230702041739,
+    "lat": -33.82728208,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0376-AU<br>Model: Touch N Go<br>Latitude: -33.82783779<br>Longitude: 151.2294697810357600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0376-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82783779",
+    "Longitude": "151.2294697810357600"
+   },
+   "coordinates": {
+    "lon": 151.229469781036,
+    "lat": -33.82783779,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0377-AU<br>Model: Touch N Go<br>Latitude: -33.828319<br>Longitude: 151.2285162682069000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0377-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.828319",
+    "Longitude": "151.2285162682069000"
+   },
+   "coordinates": {
+    "lon": 151.228516268207,
+    "lat": -33.828319,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSDAVRTLTNG0378-AU<br>Model: Touch N Go<br>Latitude: -33.82892233<br>Longitude: 151.2271314201695400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0378-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82892233",
+    "Longitude": "151.2271314201695400"
+   },
+   "coordinates": {
+    "lon": 151.22713142017,
+    "lat": -33.82892233,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Waters Road",
+   "description": "Machine Id: NSDAVRTLTNG0379-AU<br>Model: Touch N Go<br>Latitude: -33.83109852<br>Longitude: 151.2234630190230000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0379-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83109852",
+    "Longitude": "151.2234630190230000"
+   },
+   "coordinates": {
+    "lon": 151.223463019023,
+    "lat": -33.83109852,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "",
+   "description": "Machine Id: NSDAVRTLTNG0382-AU<br>Model: Touch N Go<br>Latitude: -33.82848966<br>Longitude: 151.2016943967957000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0382-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82848966",
+    "Longitude": "151.2016943967957000"
+   },
+   "coordinates": {
+    "lon": 151.201694396796,
+    "lat": -33.82848966,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSDAVRTLTNG0402-AU<br>Model: Touch N Go<br>Latitude: -33.8230444<br>Longitude: 151.1991201326136700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0402-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8230444",
+    "Longitude": "151.1991201326136700"
+   },
+   "coordinates": {
+    "lon": 151.199120132614,
+    "lat": -33.8230444,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSDAVRTLTNG0403-AU<br>Model: Touch N Go<br>Latitude: -33.82494577<br>Longitude: 151.2027918959793500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0403-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82494577",
+    "Longitude": "151.2027918959793500"
+   },
+   "coordinates": {
+    "lon": 151.202791895979,
+    "lat": -33.82494577,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSDAVRTLTNG0404-AU<br>Model: Touch N Go<br>Latitude: -33.82501797<br>Longitude: 151.2032360637104200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0404-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82501797",
+    "Longitude": "151.2032360637104200"
+   },
+   "coordinates": {
+    "lon": 151.20323606371,
+    "lat": -33.82501797,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Devonshire Street",
+   "description": "Machine Id: NSDAVRTLTNG0405-AU<br>Model: Touch N Go<br>Latitude: -33.82402028<br>Longitude: 151.2038921918545500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0405-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82402028",
+    "Longitude": "151.2038921918545500"
+   },
+   "coordinates": {
+    "lon": 151.203892191855,
+    "lat": -33.82402028,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSDAVRTLTNG0406-AU<br>Model: Touch N Go<br>Latitude: -33.82607324<br>Longitude: 151.2069033358872300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0406-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82607324",
+    "Longitude": "151.2069033358872300"
+   },
+   "coordinates": {
+    "lon": 151.206903335887,
+    "lat": -33.82607324,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0410-AU<br>Model: Touch N Go<br>Latitude: -33.8301518<br>Longitude: 151.2024330705545200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0410-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8301518",
+    "Longitude": "151.2024330705545200"
+   },
+   "coordinates": {
+    "lon": 151.202433070555,
+    "lat": -33.8301518,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bruce Street",
+   "description": "Machine Id: NSDAVRTLTNG0411-AU<br>Model: Touch N Go<br>Latitude: -33.82934785<br>Longitude: 151.2014076011374000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0411-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82934785",
+    "Longitude": "151.2014076011374000"
+   },
+   "coordinates": {
+    "lon": 151.201407601137,
+    "lat": -33.82934785,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rocklands Street",
+   "description": "Machine Id: NSDAVRTLTNG0413-AU<br>Model: Touch N Go<br>Latitude: -33.83072004<br>Longitude: 151.2021433065629300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0413-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83072004",
+    "Longitude": "151.2021433065629300"
+   },
+   "coordinates": {
+    "lon": 151.202143306563,
+    "lat": -33.83072004,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "David Street",
+   "description": "Machine Id: NSDAVRTLTNG0414-AU<br>Model: Touch N Go<br>Latitude: -33.82969894<br>Longitude: 151.2027856808472600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0414-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82969894",
+    "Longitude": "151.2027856808472600"
+   },
+   "coordinates": {
+    "lon": 151.202785680847,
+    "lat": -33.82969894,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Browns Lane",
+   "description": "Machine Id: NSDAVRTLTNG0415-AU<br>Model: Touch N Go<br>Latitude: -33.83555079<br>Longitude: 151.2047930766887600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0415-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83555079",
+    "Longitude": "151.2047930766887600"
+   },
+   "coordinates": {
+    "lon": 151.204793076689,
+    "lat": -33.83555079,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0416-AU<br>Model: Touch N Go<br>Latitude: -33.83676446<br>Longitude: 151.2054829510125600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0416-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83676446",
+    "Longitude": "151.2054829510125600"
+   },
+   "coordinates": {
+    "lon": 151.205482951013,
+    "lat": -33.83676446,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0417-AU<br>Model: Touch N Go<br>Latitude: -33.8370664<br>Longitude: 151.2041259114347400",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0417-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8370664",
+    "Longitude": "151.2041259114347400"
+   },
+   "coordinates": {
+    "lon": 151.204125911435,
+    "lat": -33.8370664,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0418-AU<br>Model: Touch N Go<br>Latitude: -33.83662132<br>Longitude: 151.2065051985101100",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0418-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83662132",
+    "Longitude": "151.2065051985101100"
+   },
+   "coordinates": {
+    "lon": 151.20650519851,
+    "lat": -33.83662132,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0419-AU<br>Model: Touch N Go<br>Latitude: -33.836982<br>Longitude: 151.2080451870909000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0419-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.836982",
+    "Longitude": "151.2080451870909000"
+   },
+   "coordinates": {
+    "lon": 151.208045187091,
+    "lat": -33.836982,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSDAVRTLTNG0420-AU<br>Model: Touch N Go<br>Latitude: -33.83698412<br>Longitude: 151.2088465074603200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0420-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83698412",
+    "Longitude": "151.2088465074603200"
+   },
+   "coordinates": {
+    "lon": 151.20884650746,
+    "lat": -33.83698412,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSDAVRTLTNG0421-AU<br>Model: Touch N Go<br>Latitude: -33.8372114<br>Longitude: 151.2058806692689600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0421-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8372114",
+    "Longitude": "151.2058806692689600"
+   },
+   "coordinates": {
+    "lon": 151.205880669269,
+    "lat": -33.8372114,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Napier Street",
+   "description": "Machine Id: NSDAVRTLTNG0422-AU<br>Model: Touch N Go<br>Latitude: -33.83753186<br>Longitude: 151.2054207999474600",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0422-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83753186",
+    "Longitude": "151.2054207999474600"
+   },
+   "coordinates": {
+    "lon": 151.205420799947,
+    "lat": -33.83753186,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Edward Street",
+   "description": "Machine Id: NSDAVRTLTNG0423-AU<br>Model: Touch N Go<br>Latitude: -33.83828638<br>Longitude: 151.2042518650618800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0423-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83828638",
+    "Longitude": "151.2042518650618800"
+   },
+   "coordinates": {
+    "lon": 151.204251865062,
+    "lat": -33.83828638,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0424-AU<br>Model: Touch N Go<br>Latitude: -33.83789539<br>Longitude: 151.2097619455690000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0424-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83789539",
+    "Longitude": "151.2097619455690000"
+   },
+   "coordinates": {
+    "lon": 151.209761945569,
+    "lat": -33.83789539,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0425-AU<br>Model: Touch N Go<br>Latitude: -33.838707<br>Longitude: 151.2096430000000000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0425-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.838707",
+    "Longitude": "151.2096430000000000"
+   },
+   "coordinates": {
+    "lon": 151.209643,
+    "lat": -33.838707,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Arthur Street",
+   "description": "Machine Id: NSDAVRTLTNG0426-AU<br>Model: Touch N Go<br>Latitude: -33.83857237<br>Longitude: 151.2100266695224200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0426-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83857237",
+    "Longitude": "151.2100266695224200"
+   },
+   "coordinates": {
+    "lon": 151.210026669522,
+    "lat": -33.83857237,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0427-AU<br>Model: Touch N Go<br>Latitude: -33.83913522<br>Longitude: 151.2093519340677700",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0427-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83913522",
+    "Longitude": "151.2093519340677700"
+   },
+   "coordinates": {
+    "lon": 151.209351934068,
+    "lat": -33.83913522,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSDAVRTLTNG0428-AU<br>Model: Touch N Go<br>Latitude: -33.83926887<br>Longitude: 151.2095217616220300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0428-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83926887",
+    "Longitude": "151.2095217616220300"
+   },
+   "coordinates": {
+    "lon": 151.209521761622,
+    "lat": -33.83926887,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSDAVRTLTNG0429-AU<br>Model: Touch N Go<br>Latitude: -33.8393258<br>Longitude: 151.2087213498071200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0429-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8393258",
+    "Longitude": "151.2087213498071200"
+   },
+   "coordinates": {
+    "lon": 151.208721349807,
+    "lat": -33.8393258,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Gas Lane",
+   "description": "Machine Id: NSDAVRTLTNG0430-AU<br>Model: Touch N Go<br>Latitude: -33.84025661<br>Longitude: 151.2066731220207000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0430-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84025661",
+    "Longitude": "151.2066731220207000"
+   },
+   "coordinates": {
+    "lon": 151.206673122021,
+    "lat": -33.84025661,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Road",
+   "description": "Machine Id: NSDAVRTLTNG0431-AU<br>Model: Touch N Go<br>Latitude: -33.84143265<br>Longitude: 151.2059524883455300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0431-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84143265",
+    "Longitude": "151.2059524883455300"
+   },
+   "coordinates": {
+    "lon": 151.205952488346,
+    "lat": -33.84143265,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bradly Avenue",
+   "description": "Machine Id: NSDAVRTLTNG0432-AU<br>Model: Touch N Go<br>Latitude: -33.8441087<br>Longitude: 151.2155193036415000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0432-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.8441087",
+    "Longitude": "151.2155193036415000"
+   },
+   "coordinates": {
+    "lon": 151.215519303642,
+    "lat": -33.8441087,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Whaling Road",
+   "description": "Machine Id: NSDAVRTLTNG0434-AU<br>Model: Touch N Go<br>Latitude: -33.84064447<br>Longitude: 151.2116437542900000",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0434-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84064447",
+    "Longitude": "151.2116437542900000"
+   },
+   "coordinates": {
+    "lon": 151.21164375429,
+    "lat": -33.84064447,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton Street",
+   "description": "Machine Id: NSDAVRTLTNG0435-AU<br>Model: Touch N Go<br>Latitude: -33.84633648<br>Longitude: 151.2115077383478200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0435-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84633648",
+    "Longitude": "151.2115077383478200"
+   },
+   "coordinates": {
+    "lon": 151.211507738348,
+    "lat": -33.84633648,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSDAVRTLTNG0446-AU<br>Model: Touch N Go<br>Latitude: -33.82552643<br>Longitude: 151.2018305411068300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0446-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82552643",
+    "Longitude": "151.2018305411068300"
+   },
+   "coordinates": {
+    "lon": 151.201830541107,
+    "lat": -33.82552643,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Waters Road",
+   "description": "Machine Id: NSDAVRTLTNG0447-AU<br>Model: Touch N Go<br>Latitude: -33.83095675<br>Longitude: 151.2235183280335800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0447-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83095675",
+    "Longitude": "151.2235183280335800"
+   },
+   "coordinates": {
+    "lon": 151.223518328034,
+    "lat": -33.83095675,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSDAVRTLTNG0450-AU<br>Model: Touch N Go<br>Latitude: -33.82743246<br>Longitude: 151.2007999867727500",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0450-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.82743246",
+    "Longitude": "151.2007999867727500"
+   },
+   "coordinates": {
+    "lon": 151.200799986773,
+    "lat": -33.82743246,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSDAVRTLTNG0452-AU<br>Model: Touch N Go<br>Latitude: -33.83478747<br>Longitude: 151.2087702675452200",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0452-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83478747",
+    "Longitude": "151.2087702675452200"
+   },
+   "coordinates": {
+    "lon": 151.208770267545,
+    "lat": -33.83478747,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bradly Avenue",
+   "description": "Machine Id: NSDAVRTLTNG0454-AU<br>Model: Touch N Go<br>Latitude: -33.84365677<br>Longitude: 151.2142647533110300",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0454-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.84365677",
+    "Longitude": "151.2142647533110300"
+   },
+   "coordinates": {
+    "lon": 151.214264753311,
+    "lat": -33.84365677,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSDAVRTLTNG0455-AU<br>Model: Touch N Go<br>Latitude: -33.83327831<br>Longitude: 151.2104059935229800",
+   "styleUrl": "#icon-1899-0288D1",
+   "extendedData": {
+    "Machine Id": "NSDAVRTLTNG0455-AU",
+    "Model": "Touch N Go",
+    "Latitude": "-33.83327831",
+    "Longitude": "151.2104059935229800"
+   },
+   "coordinates": {
+    "lon": 151.210405993523,
+    "lat": -33.83327831,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSD_1101-AU<br>Model: Parking Meter<br>Latitude: -33.82213642<br>Longitude: 151.1950158386043800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82213642",
+    "Longitude": "151.1950158386043800"
+   },
+   "coordinates": {
+    "lon": 151.195015838604,
+    "lat": -33.82213642,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSD_1102-AU<br>Model: Parking Meter<br>Latitude: -33.82210385<br>Longitude: 151.1967524072387300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82210385",
+    "Longitude": "151.1967524072387300"
+   },
+   "coordinates": {
+    "lon": 151.196752407239,
+    "lat": -33.82210385,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSD_1103-AU<br>Model: Parking Meter<br>Latitude: -33.82212161<br>Longitude: 151.1981652566938400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82212161",
+    "Longitude": "151.1981652566938400"
+   },
+   "coordinates": {
+    "lon": 151.198165256694,
+    "lat": -33.82212161,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Chandos Street",
+   "description": "Machine Id: NSD_1104-AU<br>Model: Parking Meter<br>Latitude: -33.82209636<br>Longitude: 151.1997452487592600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1104-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82209636",
+    "Longitude": "151.1997452487592600"
+   },
+   "coordinates": {
+    "lon": 151.199745248759,
+    "lat": -33.82209636,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSD_1105-AU<br>Model: Parking Meter<br>Latitude: -33.82283938<br>Longitude: 151.1963388644423700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82283938",
+    "Longitude": "151.1963388644423700"
+   },
+   "coordinates": {
+    "lon": 151.196338864442,
+    "lat": -33.82283938,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSD_1107-AU<br>Model: Parking Meter<br>Latitude: -33.82298008<br>Longitude: 151.1977353534324200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82298008",
+    "Longitude": "151.1977353534324200"
+   },
+   "coordinates": {
+    "lon": 151.197735353432,
+    "lat": -33.82298008,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSD_1108-AU<br>Model: Parking Meter<br>Latitude: -33.8231452<br>Longitude: 151.1989991784026600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1108-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8231452",
+    "Longitude": "151.1989991784026600"
+   },
+   "coordinates": {
+    "lon": 151.198999178403,
+    "lat": -33.8231452,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1109-AU<br>Model: Parking Meter<br>Latitude: -33.82377176<br>Longitude: 151.1981301380113500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82377176",
+    "Longitude": "151.1981301380113500"
+   },
+   "coordinates": {
+    "lon": 151.198130138011,
+    "lat": -33.82377176,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1110-AU<br>Model: Parking Meter<br>Latitude: -33.82376892<br>Longitude: 151.1997841355312000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82376892",
+    "Longitude": "151.1997841355312000"
+   },
+   "coordinates": {
+    "lon": 151.199784135531,
+    "lat": -33.82376892,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Street",
+   "description": "Machine Id: NSD_1111-AU<br>Model: Parking Meter<br>Latitude: -33.82488157<br>Longitude: 151.1992845788868200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82488157",
+    "Longitude": "151.1992845788868200"
+   },
+   "coordinates": {
+    "lon": 151.199284578887,
+    "lat": -33.82488157,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Street",
+   "description": "Machine Id: NSD_1112-AU<br>Model: Parking Meter<br>Latitude: -33.82594965<br>Longitude: 151.2002604857295000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1112-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82594965",
+    "Longitude": "151.2002604857295000"
+   },
+   "coordinates": {
+    "lon": 151.20026048573,
+    "lat": -33.82594965,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1113-AU<br>Model: Parking Meter<br>Latitude: -33.82669634<br>Longitude: 151.2007844396534000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82669634",
+    "Longitude": "151.2007844396534000"
+   },
+   "coordinates": {
+    "lon": 151.200784439653,
+    "lat": -33.82669634,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1114-AU<br>Model: Parking Meter<br>Latitude: -33.82557734<br>Longitude: 151.2007786474591200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82557734",
+    "Longitude": "151.2007786474591200"
+   },
+   "coordinates": {
+    "lon": 151.200778647459,
+    "lat": -33.82557734,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1115-AU<br>Model: Parking Meter<br>Latitude: -33.8239775<br>Longitude: 151.2009465419118600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1115-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8239775",
+    "Longitude": "151.2009465419118600"
+   },
+   "coordinates": {
+    "lon": 151.200946541912,
+    "lat": -33.8239775,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1116-AU<br>Model: Parking Meter<br>Latitude: -33.82712747<br>Longitude: 151.2021012276426600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1116-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82712747",
+    "Longitude": "151.2021012276426600"
+   },
+   "coordinates": {
+    "lon": 151.202101227643,
+    "lat": -33.82712747,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1117-AU<br>Model: Parking Meter<br>Latitude: -33.82646802<br>Longitude: 151.2022538628554300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1117-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82646802",
+    "Longitude": "151.2022538628554300"
+   },
+   "coordinates": {
+    "lon": 151.202253862855,
+    "lat": -33.82646802,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1120-AU<br>Model: Parking Meter<br>Latitude: -33.82459252<br>Longitude: 151.2026971881870200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1120-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82459252",
+    "Longitude": "151.2026971881870200"
+   },
+   "coordinates": {
+    "lon": 151.202697188187,
+    "lat": -33.82459252,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1121-AU<br>Model: Parking Meter<br>Latitude: -33.82402595<br>Longitude: 151.2020177437703000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1121-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82402595",
+    "Longitude": "151.2020177437703000"
+   },
+   "coordinates": {
+    "lon": 151.20201774377,
+    "lat": -33.82402595,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSD_1122-AU<br>Model: Parking Meter<br>Latitude: -33.82505609<br>Longitude: 151.2033034500807400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1122-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82505609",
+    "Longitude": "151.2033034500807400"
+   },
+   "coordinates": {
+    "lon": 151.203303450081,
+    "lat": -33.82505609,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1123-AU<br>Model: Parking Meter<br>Latitude: -33.8254728<br>Longitude: 151.2023889793336000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1123-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8254728",
+    "Longitude": "151.2023889793336000"
+   },
+   "coordinates": {
+    "lon": 151.202388979334,
+    "lat": -33.8254728,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSD_1124-AU<br>Model: Parking Meter<br>Latitude: -33.82478344<br>Longitude: 151.2016074517816800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1124-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82478344",
+    "Longitude": "151.2016074517816800"
+   },
+   "coordinates": {
+    "lon": 151.201607451782,
+    "lat": -33.82478344,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_1125-AU<br>Model: Parking Meter<br>Latitude: -33.82446412<br>Longitude: 151.1979004707261000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1125-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82446412",
+    "Longitude": "151.1979004707261000"
+   },
+   "coordinates": {
+    "lon": 151.197900470726,
+    "lat": -33.82446412,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hume Street",
+   "description": "Machine Id: NSD_1126-AU<br>Model: Parking Meter<br>Latitude: -33.82477447<br>Longitude: 151.2000125453000400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1126-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82477447",
+    "Longitude": "151.2000125453000400"
+   },
+   "coordinates": {
+    "lon": 151.2000125453,
+    "lat": -33.82477447,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSD_1128-AU<br>Model: Parking Meter<br>Latitude: -33.82594234<br>Longitude: 151.1970295974470000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1128-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82594234",
+    "Longitude": "151.1970295974470000"
+   },
+   "coordinates": {
+    "lon": 151.197029597447,
+    "lat": -33.82594234,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_1129-AU<br>Model: Parking Meter<br>Latitude: -33.82684162<br>Longitude: 151.1997706418529200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1129-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82684162",
+    "Longitude": "151.1997706418529200"
+   },
+   "coordinates": {
+    "lon": 151.199770641853,
+    "lat": -33.82684162,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Eden Street",
+   "description": "Machine Id: NSD_2111-AU<br>Model: Parking Meter<br>Latitude: -33.83135105<br>Longitude: 151.2048230005912000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83135105",
+    "Longitude": "151.2048230005912000"
+   },
+   "coordinates": {
+    "lon": 151.204823000591,
+    "lat": -33.83135105,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_2101-AU<br>Model: Parking Meter<br>Latitude: -33.8320218<br>Longitude: 151.2081349429015500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8320218",
+    "Longitude": "151.2081349429015500"
+   },
+   "coordinates": {
+    "lon": 151.208134942902,
+    "lat": -33.8320218,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_2102-AU<br>Model: Parking Meter<br>Latitude: -33.82977781<br>Longitude: 151.2088401446353300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82977781",
+    "Longitude": "151.2088401446353300"
+   },
+   "coordinates": {
+    "lon": 151.208840144635,
+    "lat": -33.82977781,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_2103-AU<br>Model: Parking Meter<br>Latitude: -33.83208005<br>Longitude: 151.2082691625363700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83208005",
+    "Longitude": "151.2082691625363700"
+   },
+   "coordinates": {
+    "lon": 151.208269162536,
+    "lat": -33.83208005,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSD_2104-AU<br>Model: Parking Meter<br>Latitude: -33.83327636<br>Longitude: 151.2109777531452200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2104-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83327636",
+    "Longitude": "151.2109777531452200"
+   },
+   "coordinates": {
+    "lon": 151.210977753145,
+    "lat": -33.83327636,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSD_2105-AU<br>Model: Parking Meter<br>Latitude: -33.83319166<br>Longitude: 151.2103971323926100",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83319166",
+    "Longitude": "151.2103971323926100"
+   },
+   "coordinates": {
+    "lon": 151.210397132393,
+    "lat": -33.83319166,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Elliott Street",
+   "description": "Machine Id: NSD_2106-AU<br>Model: Parking Meter<br>Latitude: -33.83332884<br>Longitude: 151.2087652682580800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2106-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83332884",
+    "Longitude": "151.2087652682580800"
+   },
+   "coordinates": {
+    "lon": 151.208765268258,
+    "lat": -33.83332884,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "David Street",
+   "description": "Machine Id: NSD_2107-AU<br>Model: Parking Meter<br>Latitude: -33.82963147<br>Longitude: 151.2029966720407000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82963147",
+    "Longitude": "151.2029966720407000"
+   },
+   "coordinates": {
+    "lon": 151.202996672041,
+    "lat": -33.82963147,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bruce Street",
+   "description": "Machine Id: NSD_2108-AU<br>Model: Parking Meter<br>Latitude: -33.82939593<br>Longitude: 151.2011460297196400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2108-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82939593",
+    "Longitude": "151.2011460297196400"
+   },
+   "coordinates": {
+    "lon": 151.20114602972,
+    "lat": -33.82939593,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_2109-AU<br>Model: Parking Meter<br>Latitude: -33.83002684<br>Longitude: 151.2022936814011300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83002684",
+    "Longitude": "151.2022936814011300"
+   },
+   "coordinates": {
+    "lon": 151.202293681401,
+    "lat": -33.83002684,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Myrtle Street",
+   "description": "Machine Id: NSD_2110-AU<br>Model: Parking Meter<br>Latitude: -33.83097172<br>Longitude: 151.2037226705522800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83097172",
+    "Longitude": "151.2037226705522800"
+   },
+   "coordinates": {
+    "lon": 151.203722670552,
+    "lat": -33.83097172,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSD_3101-AU<br>Model: Parking Meter<br>Latitude: -33.83271311<br>Longitude: 151.2068876390080700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83271311",
+    "Longitude": "151.2068876390080700"
+   },
+   "coordinates": {
+    "lon": 151.206887639008,
+    "lat": -33.83271311,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSD_3102-AU<br>Model: Parking Meter<br>Latitude: -33.83258063<br>Longitude: 151.2064779270170000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83258063",
+    "Longitude": "151.2064779270170000"
+   },
+   "coordinates": {
+    "lon": 151.206477927017,
+    "lat": -33.83258063,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_3103-AU<br>Model: Parking Meter<br>Latitude: -33.83407977<br>Longitude: 151.2077616956366600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83407977",
+    "Longitude": "151.2077616956366600"
+   },
+   "coordinates": {
+    "lon": 151.207761695637,
+    "lat": -33.83407977,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_3104-AU<br>Model: Parking Meter<br>Latitude: -33.83628034<br>Longitude: 151.2073374057589500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3104-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83628034",
+    "Longitude": "151.2073374057589500"
+   },
+   "coordinates": {
+    "lon": 151.207337405759,
+    "lat": -33.83628034,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_3105-AU<br>Model: Parking Meter<br>Latitude: -33.83605084<br>Longitude: 151.2075094851833000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83605084",
+    "Longitude": "151.2075094851833000"
+   },
+   "coordinates": {
+    "lon": 151.207509485183,
+    "lat": -33.83605084,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_3106-AU<br>Model: Parking Meter<br>Latitude: -33.8332127<br>Longitude: 151.2080968071819300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3106-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8332127",
+    "Longitude": "151.2080968071819300"
+   },
+   "coordinates": {
+    "lon": 151.208096807182,
+    "lat": -33.8332127,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_3107-AU<br>Model: Parking Meter<br>Latitude: -33.83496928<br>Longitude: 151.2096897869642200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83496928",
+    "Longitude": "151.2096897869642200"
+   },
+   "coordinates": {
+    "lon": 151.209689786964,
+    "lat": -33.83496928,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_3109-AU<br>Model: Parking Meter<br>Latitude: -33.83575818<br>Longitude: 151.2094229094564400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83575818",
+    "Longitude": "151.2094229094564400"
+   },
+   "coordinates": {
+    "lon": 151.209422909456,
+    "lat": -33.83575818,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSD_3110-AU<br>Model: Parking Meter<br>Latitude: -33.83499494<br>Longitude: 151.2084907523846800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83499494",
+    "Longitude": "151.2084907523846800"
+   },
+   "coordinates": {
+    "lon": 151.208490752385,
+    "lat": -33.83499494,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSD_3111-AU<br>Model: Parking Meter<br>Latitude: -33.83458782<br>Longitude: 151.2058704860916000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83458782",
+    "Longitude": "151.2058704860916000"
+   },
+   "coordinates": {
+    "lon": 151.205870486092,
+    "lat": -33.83458782,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Church Street",
+   "description": "Machine Id: NSD_3112-AU<br>Model: Parking Meter<br>Latitude: -33.83399827<br>Longitude: 151.2055970773302500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3112-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83399827",
+    "Longitude": "151.2055970773302500"
+   },
+   "coordinates": {
+    "lon": 151.20559707733,
+    "lat": -33.83399827,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_4101-AU<br>Model: Parking Meter<br>Latitude: -33.83790795<br>Longitude: 151.2090205790377700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83790795",
+    "Longitude": "151.2090205790377700"
+   },
+   "coordinates": {
+    "lon": 151.209020579038,
+    "lat": -33.83790795,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4102-AU<br>Model: Parking Meter<br>Latitude: -33.83901615<br>Longitude: 151.2084838032541300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83901615",
+    "Longitude": "151.2084838032541300"
+   },
+   "coordinates": {
+    "lon": 151.208483803254,
+    "lat": -33.83901615,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_4103-AU<br>Model: Parking Meter<br>Latitude: -33.8400132<br>Longitude: 151.2086030744934800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8400132",
+    "Longitude": "151.2086030744934800"
+   },
+   "coordinates": {
+    "lon": 151.208603074493,
+    "lat": -33.8400132,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_4104-AU<br>Model: Parking Meter<br>Latitude: -33.83936864<br>Longitude: 151.2088051604768000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4104-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83936864",
+    "Longitude": "151.2088051604768000"
+   },
+   "coordinates": {
+    "lon": 151.208805160477,
+    "lat": -33.83936864,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4105-AU<br>Model: Parking Meter<br>Latitude: -33.83917825<br>Longitude: 151.2092154551980300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83917825",
+    "Longitude": "151.2092154551980300"
+   },
+   "coordinates": {
+    "lon": 151.209215455198,
+    "lat": -33.83917825,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSD_4106-AU<br>Model: Parking Meter<br>Latitude: -33.8378728<br>Longitude: 151.2097223953629200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4106-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8378728",
+    "Longitude": "151.2097223953629200"
+   },
+   "coordinates": {
+    "lon": 151.209722395363,
+    "lat": -33.8378728,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_4107-AU<br>Model: Parking Meter<br>Latitude: -33.83872506<br>Longitude: 151.2089728881228700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83872506",
+    "Longitude": "151.2089728881228700"
+   },
+   "coordinates": {
+    "lon": 151.208972888123,
+    "lat": -33.83872506,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSD_4108-AU<br>Model: Parking Meter<br>Latitude: -33.83970695<br>Longitude: 151.2057378064587300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4108-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83970695",
+    "Longitude": "151.2057378064587300"
+   },
+   "coordinates": {
+    "lon": 151.205737806459,
+    "lat": -33.83970695,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William Street",
+   "description": "Machine Id: NSD_4109-AU<br>Model: Parking Meter<br>Latitude: -33.84123016<br>Longitude: 151.2054762851138600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84123016",
+    "Longitude": "151.2054762851138600"
+   },
+   "coordinates": {
+    "lon": 151.205476285114,
+    "lat": -33.84123016,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Road",
+   "description": "Machine Id: NSD_4110-AU<br>Model: Parking Meter<br>Latitude: -33.84195119<br>Longitude: 151.2057347918003500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84195119",
+    "Longitude": "151.2057347918003500"
+   },
+   "coordinates": {
+    "lon": 151.2057347918,
+    "lat": -33.84195119,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Road",
+   "description": "Machine Id: NSD_4111-AU<br>Model: Parking Meter<br>Latitude: -33.84126572<br>Longitude: 151.2061033445035300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84126572",
+    "Longitude": "151.2061033445035300"
+   },
+   "coordinates": {
+    "lon": 151.206103344504,
+    "lat": -33.84126572,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blue Street",
+   "description": "Machine Id: NSD_4112-AU<br>Model: Parking Meter<br>Latitude: -33.84081667<br>Longitude: 151.2061694718611000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4112-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84081667",
+    "Longitude": "151.2061694718611000"
+   },
+   "coordinates": {
+    "lon": 151.206169471861,
+    "lat": -33.84081667,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Street",
+   "description": "Machine Id: NSD_4113-AU<br>Model: Parking Meter<br>Latitude: -33.83946759<br>Longitude: 151.2068224207826000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83946759",
+    "Longitude": "151.2068224207826000"
+   },
+   "coordinates": {
+    "lon": 151.206822420783,
+    "lat": -33.83946759,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4114-AU<br>Model: Parking Meter<br>Latitude: -33.83797725<br>Longitude: 151.2064186634497700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83797725",
+    "Longitude": "151.2064186634497700"
+   },
+   "coordinates": {
+    "lon": 151.20641866345,
+    "lat": -33.83797725,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4115-AU<br>Model: Parking Meter<br>Latitude: -33.8371574<br>Longitude: 151.2060520389041500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4115-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8371574",
+    "Longitude": "151.2060520389041500"
+   },
+   "coordinates": {
+    "lon": 151.206052038904,
+    "lat": -33.8371574,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Doohat Avenue",
+   "description": "Machine Id: NSD_4116-AU<br>Model: Parking Meter<br>Latitude: -33.8358589<br>Longitude: 151.2049483097622700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4116-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8358589",
+    "Longitude": "151.2049483097622700"
+   },
+   "coordinates": {
+    "lon": 151.204948309762,
+    "lat": -33.8358589,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Edward Street",
+   "description": "Machine Id: NSD_4117-AU<br>Model: Parking Meter<br>Latitude: -33.83640964<br>Longitude: 151.2037339464487200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4117-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83640964",
+    "Longitude": "151.2037339464487200"
+   },
+   "coordinates": {
+    "lon": 151.203733946449,
+    "lat": -33.83640964,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4118-AU<br>Model: Parking Meter<br>Latitude: -33.83675361<br>Longitude: 151.2051634777575700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4118-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83675361",
+    "Longitude": "151.2051634777575700"
+   },
+   "coordinates": {
+    "lon": 151.205163477758,
+    "lat": -33.83675361,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4120-AU<br>Model: Parking Meter<br>Latitude: -33.83865444<br>Longitude: 151.2061576583506300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4120-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83865444",
+    "Longitude": "151.2061576583506300"
+   },
+   "coordinates": {
+    "lon": 151.206157658351,
+    "lat": -33.83865444,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4121-AU<br>Model: Parking Meter<br>Latitude: -33.83847062<br>Longitude: 151.2046965244006700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4121-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83847062",
+    "Longitude": "151.2046965244006700"
+   },
+   "coordinates": {
+    "lon": 151.204696524401,
+    "lat": -33.83847062,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Edward Street",
+   "description": "Machine Id: NSD_4122-AU<br>Model: Parking Meter<br>Latitude: -33.83743951<br>Longitude: 151.2040036745282000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4122-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83743951",
+    "Longitude": "151.2040036745282000"
+   },
+   "coordinates": {
+    "lon": 151.204003674528,
+    "lat": -33.83743951,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4124-AU<br>Model: Parking Meter<br>Latitude: -33.83865545<br>Longitude: 151.2054897054283600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4124-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83865545",
+    "Longitude": "151.2054897054283600"
+   },
+   "coordinates": {
+    "lon": 151.205489705428,
+    "lat": -33.83865545,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lord Street",
+   "description": "Machine Id: NSD_4125-AU<br>Model: Parking Meter<br>Latitude: -33.83897025<br>Longitude: 151.2032944756413700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4125-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83897025",
+    "Longitude": "151.2032944756413700"
+   },
+   "coordinates": {
+    "lon": 151.203294475641,
+    "lat": -33.83897025,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5101-AU<br>Model: Parking Meter<br>Latitude: -33.84847999<br>Longitude: 151.2118016132541000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84847999",
+    "Longitude": "151.2118016132541000"
+   },
+   "coordinates": {
+    "lon": 151.211801613254,
+    "lat": -33.84847999,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5102-AU<br>Model: Parking Meter<br>Latitude: -33.84812337<br>Longitude: 151.2117374870430800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84812337",
+    "Longitude": "151.2117374870430800"
+   },
+   "coordinates": {
+    "lon": 151.211737487043,
+    "lat": -33.84812337,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5103-AU<br>Model: Parking Meter<br>Latitude: -33.84702963<br>Longitude: 151.2115529214611000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84702963",
+    "Longitude": "151.2115529214611000"
+   },
+   "coordinates": {
+    "lon": 151.211552921461,
+    "lat": -33.84702963,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5105-AU<br>Model: Parking Meter<br>Latitude: -33.84448645<br>Longitude: 151.2107601589376000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84448645",
+    "Longitude": "151.2107601589376000"
+   },
+   "coordinates": {
+    "lon": 151.210760158938,
+    "lat": -33.84448645,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5106-AU<br>Model: Parking Meter<br>Latitude: -33.84816886<br>Longitude: 151.2116098268648200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5106-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84816886",
+    "Longitude": "151.2116098268648200"
+   },
+   "coordinates": {
+    "lon": 151.211609826865,
+    "lat": -33.84816886,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Middlemiss Street",
+   "description": "Machine Id: NSD_5107-AU<br>Model: Parking Meter<br>Latitude: -33.84255797<br>Longitude: 151.2099202049282000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84255797",
+    "Longitude": "151.2099202049282000"
+   },
+   "coordinates": {
+    "lon": 151.209920204928,
+    "lat": -33.84255797,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lavender Street",
+   "description": "Machine Id: NSD_5108-AU<br>Model: Parking Meter<br>Latitude: -33.84337678<br>Longitude: 151.2097627158878500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5108-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84337678",
+    "Longitude": "151.2097627158878500"
+   },
+   "coordinates": {
+    "lon": 151.209762715888,
+    "lat": -33.84337678,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Harbourview Crescent",
+   "description": "Machine Id: NSD_5109-AU<br>Model: Parking Meter<br>Latitude: -33.84402821<br>Longitude: 151.2094977614611000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84402821",
+    "Longitude": "151.2094977614611000"
+   },
+   "coordinates": {
+    "lon": 151.209497761461,
+    "lat": -33.84402821,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Cliff Street",
+   "description": "Machine Id: NSD_5110-AU<br>Model: Parking Meter<br>Latitude: -33.84474363<br>Longitude: 151.2104261408073300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84474363",
+    "Longitude": "151.2104261408073300"
+   },
+   "coordinates": {
+    "lon": 151.210426140807,
+    "lat": -33.84474363,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Glen Street",
+   "description": "Machine Id: NSD_5111-AU<br>Model: Parking Meter<br>Latitude: -33.84732092<br>Longitude: 151.2105476730410800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84732092",
+    "Longitude": "151.2105476730410800"
+   },
+   "coordinates": {
+    "lon": 151.210547673041,
+    "lat": -33.84732092,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Northcliff Street",
+   "description": "Machine Id: NSD_5112-AU<br>Model: Parking Meter<br>Latitude: -33.84837361<br>Longitude: 151.2109138828033400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5112-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84837361",
+    "Longitude": "151.2109138828033400"
+   },
+   "coordinates": {
+    "lon": 151.210913882803,
+    "lat": -33.84837361,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Dind Street",
+   "description": "Machine Id: NSD_5113-AU<br>Model: Parking Meter<br>Latitude: -33.84787752<br>Longitude: 151.2110745600000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84787752",
+    "Longitude": "151.2110745600000000"
+   },
+   "coordinates": {
+    "lon": 151.21107456,
+    "lat": -33.84787752,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSD_5114-AU<br>Model: Parking Meter<br>Latitude: -33.84922984<br>Longitude: 151.2136240846818400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84922984",
+    "Longitude": "151.2136240846818400"
+   },
+   "coordinates": {
+    "lon": 151.213624084682,
+    "lat": -33.84922984,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSD_5115-AU<br>Model: Parking Meter<br>Latitude: -33.84981458<br>Longitude: 151.2127517836033200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5115-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84981458",
+    "Longitude": "151.2127517836033200"
+   },
+   "coordinates": {
+    "lon": 151.212751783603,
+    "lat": -33.84981458,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton Street",
+   "description": "Machine Id: NSD_5118-AU<br>Model: Parking Meter<br>Latitude: -33.84422574<br>Longitude: 151.2126914516257700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5118-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84422574",
+    "Longitude": "151.2126914516257700"
+   },
+   "coordinates": {
+    "lon": 151.212691451626,
+    "lat": -33.84422574,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ennis Road",
+   "description": "Machine Id: NSD_5119-AU<br>Model: Parking Meter<br>Latitude: -33.84470778<br>Longitude: 151.2121713329990000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5119-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84470778",
+    "Longitude": "151.2121713329990000"
+   },
+   "coordinates": {
+    "lon": 151.212171332999,
+    "lat": -33.84470778,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6101-AU<br>Model: Parking Meter<br>Latitude: -33.83018464<br>Longitude: 151.2226684955472800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6101-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83018464",
+    "Longitude": "151.2226684955472800"
+   },
+   "coordinates": {
+    "lon": 151.222668495547,
+    "lat": -33.83018464,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6102-AU<br>Model: Parking Meter<br>Latitude: -33.82979992<br>Longitude: 151.2211294955906500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6102-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82979992",
+    "Longitude": "151.2211294955906500"
+   },
+   "coordinates": {
+    "lon": 151.221129495591,
+    "lat": -33.82979992,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6103-AU<br>Model: Parking Meter<br>Latitude: -33.82963787<br>Longitude: 151.2205162770431000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6103-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82963787",
+    "Longitude": "151.2205162770431000"
+   },
+   "coordinates": {
+    "lon": 151.220516277043,
+    "lat": -33.82963787,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Barry Street",
+   "description": "Machine Id: NSD_6104-AU<br>Model: Parking Meter<br>Latitude: -33.83188841<br>Longitude: 151.2211520369836800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6104-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83188841",
+    "Longitude": "151.2211520369836800"
+   },
+   "coordinates": {
+    "lon": 151.221152036984,
+    "lat": -33.83188841,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Yeo Street",
+   "description": "Machine Id: NSD_6105-AU<br>Model: Parking Meter<br>Latitude: -33.83248713<br>Longitude: 151.2240638335091800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6105-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83248713",
+    "Longitude": "151.2240638335091800"
+   },
+   "coordinates": {
+    "lon": 151.224063833509,
+    "lat": -33.83248713,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rangers Road",
+   "description": "Machine Id: NSD_6106-AU<br>Model: Parking Meter<br>Latitude: -33.83197951<br>Longitude: 151.2240581336453700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6106-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83197951",
+    "Longitude": "151.2240581336453700"
+   },
+   "coordinates": {
+    "lon": 151.224058133645,
+    "lat": -33.83197951,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSD_6107-AU<br>Model: Parking Meter<br>Latitude: -33.82916529<br>Longitude: 151.2268646448253800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6107-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82916529",
+    "Longitude": "151.2268646448253800"
+   },
+   "coordinates": {
+    "lon": 151.226864644825,
+    "lat": -33.82916529,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSD_6108-AU<br>Model: Parking Meter<br>Latitude: -33.82818223<br>Longitude: 151.2289664098304000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6108-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82818223",
+    "Longitude": "151.2289664098304000"
+   },
+   "coordinates": {
+    "lon": 151.22896640983,
+    "lat": -33.82818223,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween Street",
+   "description": "Machine Id: NSD_6109-AU<br>Model: Parking Meter<br>Latitude: -33.82874126<br>Longitude: 151.2276223639512400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6109-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82874126",
+    "Longitude": "151.2276223639512400"
+   },
+   "coordinates": {
+    "lon": 151.227622363951,
+    "lat": -33.82874126,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSD_3113-AU<br>Model: Parking Meter<br>Latitude: -33.83454064<br>Longitude: 151.2061392939175700",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83454064",
+    "Longitude": "151.2061392939175700"
+   },
+   "coordinates": {
+    "lon": 151.206139293918,
+    "lat": -33.83454064,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "West Street",
+   "description": "Machine Id: NSD_3114-AU<br>Model: Parking Meter<br>Latitude: -33.83280762<br>Longitude: 151.2053771316951000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83280762",
+    "Longitude": "151.2053771316951000"
+   },
+   "coordinates": {
+    "lon": 151.205377131695,
+    "lat": -33.83280762,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Angelo Street",
+   "description": "Machine Id: NSD_3115-AU<br>Model: Parking Meter<br>Latitude: -33.83564642<br>Longitude: 151.2059330006116500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3115-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83564642",
+    "Longitude": "151.2059330006116500"
+   },
+   "coordinates": {
+    "lon": 151.205933000612,
+    "lat": -33.83564642,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Fitzroy Street",
+   "description": "Machine Id: NSD_5120-AU<br>Model: Parking Meter<br>Latitude: -33.84734922<br>Longitude: 151.2124970555251200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5120-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84734922",
+    "Longitude": "151.2124970555251200"
+   },
+   "coordinates": {
+    "lon": 151.212497055525,
+    "lat": -33.84734922,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton Street",
+   "description": "Machine Id: NSD_5121-AU<br>Model: Parking Meter<br>Latitude: -33.84635792<br>Longitude: 151.2122020125334800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5121-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84635792",
+    "Longitude": "151.2122020125334800"
+   },
+   "coordinates": {
+    "lon": 151.212202012533,
+    "lat": -33.84635792,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Oxley Street",
+   "description": "Machine Id: NSD_1131-AU<br>Model: Parking Meter<br>Latitude: -33.82438259<br>Longitude: 151.1989147017848400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1131-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82438259",
+    "Longitude": "151.1989147017848400"
+   },
+   "coordinates": {
+    "lon": 151.198914701785,
+    "lat": -33.82438259,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1132-AU<br>Model: Parking Meter<br>Latitude: -33.82632908<br>Longitude: 151.2008277658246400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1132-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82632908",
+    "Longitude": "151.2008277658246400"
+   },
+   "coordinates": {
+    "lon": 151.200827765825,
+    "lat": -33.82632908,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1133-AU<br>Model: Parking Meter<br>Latitude: -33.82705027<br>Longitude: 151.2008814243944000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1133-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82705027",
+    "Longitude": "151.2008814243944000"
+   },
+   "coordinates": {
+    "lon": 151.200881424394,
+    "lat": -33.82705027,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road",
+   "description": "Machine Id: NSD_1134-AU<br>Model: Parking Meter<br>Latitude: -33.82535153<br>Longitude: 151.2009510171966400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1134-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82535153",
+    "Longitude": "151.2009510171966400"
+   },
+   "coordinates": {
+    "lon": 151.200951017197,
+    "lat": -33.82535153,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSD_3117-AU<br>Model: Parking Meter<br>Latitude: -33.83477772<br>Longitude: 151.2067506705522500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3117-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83477772",
+    "Longitude": "151.2067506705522500"
+   },
+   "coordinates": {
+    "lon": 151.206750670552,
+    "lat": -33.83477772,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge Street",
+   "description": "Machine Id: NSD_2113-AU<br>Model: Parking Meter<br>Latitude: -33.832972<br>Longitude: 151.2091666647238800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.832972",
+    "Longitude": "151.2091666647238800"
+   },
+   "coordinates": {
+    "lon": 151.209166664724,
+    "lat": -33.832972,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Fitzroy Street",
+   "description": "Machine Id: NSD_5129-AU<br>Model: Parking Meter<br>Latitude: -33.84753707<br>Longitude: 151.2119984957008400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5129-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84753707",
+    "Longitude": "151.2119984957008400"
+   },
+   "coordinates": {
+    "lon": 151.211998495701,
+    "lat": -33.84753707,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6110-AU<br>Model: Parking Meter<br>Latitude: -33.82953733<br>Longitude: 151.2200537213617000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6110-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82953733",
+    "Longitude": "151.2200537213617000"
+   },
+   "coordinates": {
+    "lon": 151.220053721362,
+    "lat": -33.82953733,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSD_1137-AU<br>Model: Parking Meter<br>Latitude: -33.82285209<br>Longitude: 151.1982766588955000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1137-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82285209",
+    "Longitude": "151.1982766588955000"
+   },
+   "coordinates": {
+    "lon": 151.198276658896,
+    "lat": -33.82285209,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton Street",
+   "description": "Machine Id: NSD_5127-AU<br>Model: Parking Meter<br>Latitude: -33.84628131<br>Longitude: 151.2117843175653300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5127-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84628131",
+    "Longitude": "151.2117843175653300"
+   },
+   "coordinates": {
+    "lon": 151.211784317565,
+    "lat": -33.84628131,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Spring Street",
+   "description": "Machine Id: NSD_4127-AU<br>Model: Parking Meter<br>Latitude: -33.83723109<br>Longitude: 151.2086048614660900",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4127-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83723109",
+    "Longitude": "151.2086048614660900"
+   },
+   "coordinates": {
+    "lon": 151.208604861466,
+    "lat": -33.83723109,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSD_5131-AU<br>Model: Parking Meter<br>Latitude: -33.84952045<br>Longitude: 151.2139129766864600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5131-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84952045",
+    "Longitude": "151.2139129766864600"
+   },
+   "coordinates": {
+    "lon": 151.213912976686,
+    "lat": -33.84952045,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1140-AU<br>Model: Parking Meter<br>Latitude: -33.82388648<br>Longitude: 151.2001999042644800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1140-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82388648",
+    "Longitude": "151.2001999042644800"
+   },
+   "coordinates": {
+    "lon": 151.200199904264,
+    "lat": -33.82388648,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ward Street",
+   "description": "Machine Id: NSD_4126-AU<br>Model: Parking Meter<br>Latitude: -33.836611<br>Longitude: 151.2084443352761000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4126-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.836611",
+    "Longitude": "151.2084443352761000"
+   },
+   "coordinates": {
+    "lon": 151.208444335276,
+    "lat": -33.836611,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4128-AU<br>Model: Parking Meter<br>Latitude: -33.83911072<br>Longitude: 151.2085290058283500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4128-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83911072",
+    "Longitude": "151.2085290058283500"
+   },
+   "coordinates": {
+    "lon": 151.208529005828,
+    "lat": -33.83911072,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Christie Street",
+   "description": "Machine Id: NSD_1141-AU<br>Model: Parking Meter<br>Latitude: -33.82230109<br>Longitude: 151.1952689257453000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1141-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82230109",
+    "Longitude": "151.1952689257453000"
+   },
+   "coordinates": {
+    "lon": 151.195268925745,
+    "lat": -33.82230109,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atchison Street",
+   "description": "Machine Id: NSD_1142-AU<br>Model: Parking Meter<br>Latitude: -33.82293437<br>Longitude: 151.1960161190695500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1142-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82293437",
+    "Longitude": "151.1960161190695500"
+   },
+   "coordinates": {
+    "lon": 151.19601611907,
+    "lat": -33.82293437,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1143-AU<br>Model: Parking Meter<br>Latitude: -33.82383751<br>Longitude: 151.1983768791316200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1143-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82383751",
+    "Longitude": "151.1983768791316200"
+   },
+   "coordinates": {
+    "lon": 151.198376879132,
+    "lat": -33.82383751,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Albany Street",
+   "description": "Machine Id: NSD_1144-AU<br>Model: Parking Meter<br>Latitude: -33.82392022<br>Longitude: 151.1999093628065000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1144-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82392022",
+    "Longitude": "151.1999093628065000"
+   },
+   "coordinates": {
+    "lon": 151.199909362806,
+    "lat": -33.82392022,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Street",
+   "description": "Machine Id: NSD_1145-AU<br>Model: Parking Meter<br>Latitude: -33.825599<br>Longitude: 151.2000110000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1145-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.825599",
+    "Longitude": "151.2000110000000000"
+   },
+   "coordinates": {
+    "lon": 151.200011,
+    "lat": -33.825599,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann Street",
+   "description": "Machine Id: NSD_1146-AU<br>Model: Parking Meter<br>Latitude: -33.824891<br>Longitude: 151.2016260000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1146-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.824891",
+    "Longitude": "151.2016260000000000"
+   },
+   "coordinates": {
+    "lon": 151.201626,
+    "lat": -33.824891,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1147-AU<br>Model: Parking Meter<br>Latitude: -33.8247093<br>Longitude: 151.2024987656761000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1147-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8247093",
+    "Longitude": "151.2024987656761000"
+   },
+   "coordinates": {
+    "lon": 151.202498765676,
+    "lat": -33.8247093,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alexander Street",
+   "description": "Machine Id: NSD_1148-AU<br>Model: Parking Meter<br>Latitude: -33.8264719<br>Longitude: 151.2020484037048200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1148-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8264719",
+    "Longitude": "151.2020484037048200"
+   },
+   "coordinates": {
+    "lon": 151.202048403705,
+    "lat": -33.8264719,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rocklands Road",
+   "description": "Machine Id: NSD_2114-AU<br>Model: Parking Meter<br>Latitude: -33.830728<br>Longitude: 151.2021420000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.830728",
+    "Longitude": "151.2021420000000000"
+   },
+   "coordinates": {
+    "lon": 151.202142,
+    "lat": -33.830728,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Angelo Street",
+   "description": "Machine Id: NSD_3118-AU<br>Model: Parking Meter<br>Latitude: -33.834919<br>Longitude: 151.2056050000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3118-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.834919",
+    "Longitude": "151.2056050000000000"
+   },
+   "coordinates": {
+    "lon": 151.205605,
+    "lat": -33.834919,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Angelo Street",
+   "description": "Machine Id: NSD_3119-AU<br>Model: Parking Meter<br>Latitude: -33.83590172<br>Longitude: 151.2060823352761400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3119-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83590172",
+    "Longitude": "151.2060823352761400"
+   },
+   "coordinates": {
+    "lon": 151.206082335276,
+    "lat": -33.83590172,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker Street",
+   "description": "Machine Id: NSD_3120-AU<br>Model: Parking Meter<br>Latitude: -33.836864<br>Longitude: 151.2091850000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3120-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.836864",
+    "Longitude": "151.2091850000000000"
+   },
+   "coordinates": {
+    "lon": 151.209185,
+    "lat": -33.836864,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Mount Street",
+   "description": "Machine Id: NSD_4129-AU<br>Model: Parking Meter<br>Latitude: -33.838594<br>Longitude: 151.2057280000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4129-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.838594",
+    "Longitude": "151.2057280000000000"
+   },
+   "coordinates": {
+    "lon": 151.205728,
+    "lat": -33.838594,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Lavender Street",
+   "description": "Machine Id: NSD_5132-AU<br>Model: Parking Meter<br>Latitude: -33.843672<br>Longitude: 151.2103580000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5132-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.843672",
+    "Longitude": "151.2103580000000000"
+   },
+   "coordinates": {
+    "lon": 151.210358,
+    "lat": -33.843672,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton Street",
+   "description": "Machine Id: NSD_5133-AU<br>Model: Parking Meter<br>Latitude: -33.845026<br>Longitude: 151.2123910000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5133-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.845026",
+    "Longitude": "151.2123910000000000"
+   },
+   "coordinates": {
+    "lon": 151.212391,
+    "lat": -33.845026,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5134-AU<br>Model: Parking Meter<br>Latitude: -33.844495<br>Longitude: 151.2109100000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5134-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.844495",
+    "Longitude": "151.2109100000000000"
+   },
+   "coordinates": {
+    "lon": 151.21091,
+    "lat": -33.844495,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5135-AU<br>Model: Parking Meter<br>Latitude: -33.847016<br>Longitude: 151.2114120000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5135-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.847016",
+    "Longitude": "151.2114120000000000"
+   },
+   "coordinates": {
+    "lon": 151.211412,
+    "lat": -33.847016,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive",
+   "description": "Machine Id: NSD_5136-AU<br>Model: Parking Meter<br>Latitude: -33.849688<br>Longitude: 151.2116140000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5136-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.849688",
+    "Longitude": "151.2116140000000000"
+   },
+   "coordinates": {
+    "lon": 151.211614,
+    "lat": -33.849688,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6111-AU<br>Model: Parking Meter<br>Latitude: -33.830051<br>Longitude: 151.2218980000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6111-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.830051",
+    "Longitude": "151.2218980000000000"
+   },
+   "coordinates": {
+    "lon": 151.221898,
+    "lat": -33.830051,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6112-AU<br>Model: Parking Meter<br>Latitude: -33.829598<br>Longitude: 151.2206390000000000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6112-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.829598",
+    "Longitude": "151.2206390000000000"
+   },
+   "coordinates": {
+    "lon": 151.220639,
+    "lat": -33.829598,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_1149-AU<br>Model: Parking Meter<br>Latitude: -33.82674889<br>Longitude: 151.1999726705522600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1149-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82674889",
+    "Longitude": "151.1999726705522600"
+   },
+   "coordinates": {
+    "lon": 151.199972670552,
+    "lat": -33.82674889,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Clarke Lane",
+   "description": "Machine Id: NSD_1150-AU<br>Model: Parking Meter<br>Latitude: -33.824222<br>Longitude: 151.1981666647238900",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1150-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.824222",
+    "Longitude": "151.1981666647238900"
+   },
+   "coordinates": {
+    "lon": 151.198166664724,
+    "lat": -33.824222,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Lane",
+   "description": "Machine Id: NSD_1151-AU<br>Model: Parking Meter<br>Latitude: -33.82575<br>Longitude: 151.2018016414103600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_1151-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82575",
+    "Longitude": "151.2018016414103600"
+   },
+   "coordinates": {
+    "lon": 151.20180164141,
+    "lat": -33.82575,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hayberry Street",
+   "description": "Machine Id: NSD_2115-AU<br>Model: Parking Meter<br>Latitude: -33.82875139<br>Longitude: 151.2019996647238400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_2115-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.82875139",
+    "Longitude": "151.2019996647238400"
+   },
+   "coordinates": {
+    "lon": 151.201999664724,
+    "lat": -33.82875139,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Denison Street",
+   "description": "Machine Id: NSD_4130-AU<br>Model: Parking Meter<br>Latitude: -33.83725084<br>Longitude: 151.2081656588955000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4130-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83725084",
+    "Longitude": "151.2081656588955000"
+   },
+   "coordinates": {
+    "lon": 151.208165658895,
+    "lat": -33.83725084,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Denison Street",
+   "description": "Machine Id: NSD_4131-AU<br>Model: Parking Meter<br>Latitude: -33.8371934<br>Longitude: 151.2080903462695300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4131-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.8371934",
+    "Longitude": "151.2080903462695300"
+   },
+   "coordinates": {
+    "lon": 151.20809034627,
+    "lat": -33.8371934,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4132-AU<br>Model: Parking Meter<br>Latitude: -33.83669484<br>Longitude: 151.2067773294478000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4132-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83669484",
+    "Longitude": "151.2067773294478000"
+   },
+   "coordinates": {
+    "lon": 151.206777329448,
+    "lat": -33.83669484,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4133-AU<br>Model: Parking Meter<br>Latitude: -33.83691784<br>Longitude: 151.2043053294477200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4133-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83691784",
+    "Longitude": "151.2043053294477200"
+   },
+   "coordinates": {
+    "lon": 151.204305329448,
+    "lat": -33.83691784,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4134-AU<br>Model: Parking Meter<br>Latitude: -33.83697144<br>Longitude: 151.2045006705522500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4134-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83697144",
+    "Longitude": "151.2045006705522500"
+   },
+   "coordinates": {
+    "lon": 151.204500670552,
+    "lat": -33.83697144,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4135-AU<br>Model: Parking Meter<br>Latitude: -33.836778<br>Longitude: 151.2054166647238800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4135-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.836778",
+    "Longitude": "151.2054166647238800"
+   },
+   "coordinates": {
+    "lon": 151.205416664724,
+    "lat": -33.836778,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSD_4136-AU<br>Model: Parking Meter<br>Latitude: -33.83744456<br>Longitude: 151.2098326647238800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4136-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83744456",
+    "Longitude": "151.2098326647238800"
+   },
+   "coordinates": {
+    "lon": 151.209832664724,
+    "lat": -33.83744456,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4137-AU<br>Model: Parking Meter<br>Latitude: -33.83686072<br>Longitude: 151.2078063352761300",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4137-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83686072",
+    "Longitude": "151.2078063352761300"
+   },
+   "coordinates": {
+    "lon": 151.207806335276,
+    "lat": -33.83686072,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Berry Street",
+   "description": "Machine Id: NSD_4138-AU<br>Model: Parking Meter<br>Latitude: -33.83697172<br>Longitude: 151.2087223352761000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4138-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83697172",
+    "Longitude": "151.2087223352761000"
+   },
+   "coordinates": {
+    "lon": 151.208722335276,
+    "lat": -33.83697172,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Gas Lane",
+   "description": "Machine Id: NSD_4139-AU<br>Model: Parking Meter<br>Latitude: -33.84036016<br>Longitude: 151.2068893352761200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4139-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84036016",
+    "Longitude": "151.2068893352761200"
+   },
+   "coordinates": {
+    "lon": 151.206889335276,
+    "lat": -33.84036016,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSD_4140-AU<br>Model: Parking Meter<br>Latitude: -33.839389<br>Longitude: 151.2093346763806500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4140-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.839389",
+    "Longitude": "151.2093346763806500"
+   },
+   "coordinates": {
+    "lon": 151.209334676381,
+    "lat": -33.839389,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Little Walker Street",
+   "description": "Machine Id: NSD_4141-AU<br>Model: Parking Meter<br>Latitude: -33.84005711<br>Longitude: 151.2092783352761400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4141-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84005711",
+    "Longitude": "151.2092783352761400"
+   },
+   "coordinates": {
+    "lon": 151.209278335276,
+    "lat": -33.84005711,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4142-AU<br>Model: Parking Meter<br>Latitude: -33.83630516<br>Longitude: 151.2055013411045000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4142-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83630516",
+    "Longitude": "151.2055013411045000"
+   },
+   "coordinates": {
+    "lon": 151.205501341105,
+    "lat": -33.83630516,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4143-AU<br>Model: Parking Meter<br>Latitude: -33.83844289<br>Longitude: 151.2064723352761000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4143-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83844289",
+    "Longitude": "151.2064723352761000"
+   },
+   "coordinates": {
+    "lon": 151.206472335276,
+    "lat": -33.83844289,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4144-AU<br>Model: Parking Meter<br>Latitude: -33.840861<br>Longitude: 151.2089446705522800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4144-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.840861",
+    "Longitude": "151.2089446705522800"
+   },
+   "coordinates": {
+    "lon": 151.208944670552,
+    "lat": -33.840861,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Pacific Highway",
+   "description": "Machine Id: NSD_4145-AU<br>Model: Parking Meter<br>Latitude: -33.84000111<br>Longitude: 151.2081659941716200",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4145-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84000111",
+    "Longitude": "151.2081659941716200"
+   },
+   "coordinates": {
+    "lon": 151.208165994172,
+    "lat": -33.84000111,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blue Street",
+   "description": "Machine Id: NSD_4146-AU<br>Model: Parking Meter<br>Latitude: -33.84077967<br>Longitude: 151.2067786705522400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_4146-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84077967",
+    "Longitude": "151.2067786705522400"
+   },
+   "coordinates": {
+    "lon": 151.206778670552,
+    "lat": -33.84077967,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Arthur Street",
+   "description": "Machine Id: NSD_5137-AU<br>Model: Parking Meter<br>Latitude: -33.838<br>Longitude: 151.2101120058284000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5137-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.838",
+    "Longitude": "151.2101120058284000"
+   },
+   "coordinates": {
+    "lon": 151.210112005828,
+    "lat": -33.838,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Arthur Street",
+   "description": "Machine Id: NSD_5138-AU<br>Model: Parking Meter<br>Latitude: -33.84199916<br>Longitude: 151.2097216647238400",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5138-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84199916",
+    "Longitude": "151.2097216647238400"
+   },
+   "coordinates": {
+    "lon": 151.209721664724,
+    "lat": -33.84199916,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Arthur Street",
+   "description": "Machine Id: NSD_5139-AU<br>Model: Parking Meter<br>Latitude: -33.84202772<br>Longitude: 151.2097520116567800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5139-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84202772",
+    "Longitude": "151.2097520116567800"
+   },
+   "coordinates": {
+    "lon": 151.209752011657,
+    "lat": -33.84202772,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Cliff Street",
+   "description": "Machine Id: NSD_5140-AU<br>Model: Parking Meter<br>Latitude: -33.845667<br>Longitude: 151.2109433294477600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5140-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.845667",
+    "Longitude": "151.2109433294477600"
+   },
+   "coordinates": {
+    "lon": 151.210943329448,
+    "lat": -33.845667,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Street",
+   "description": "Machine Id: NSD_6113-AU<br>Model: Parking Meter<br>Latitude: -33.83041616<br>Longitude: 151.2234730058284000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6113-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83041616",
+    "Longitude": "151.2234730058284000"
+   },
+   "coordinates": {
+    "lon": 151.223473005828,
+    "lat": -33.83041616,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Waters Road",
+   "description": "Machine Id: NSD_6114-AU<br>Model: Parking Meter<br>Latitude: -33.83122284<br>Longitude: 151.2233606647238800",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_6114-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83122284",
+    "Longitude": "151.2233606647238800"
+   },
+   "coordinates": {
+    "lon": 151.223360664724,
+    "lat": -33.83122284,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McLaren Street",
+   "description": "Machine Id: NSD_3123-AU<br>Model: Parking Meter<br>Latitude: -33.83497196<br>Longitude: 151.2091676370844500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3123-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83497196",
+    "Longitude": "151.2091676370844500"
+   },
+   "coordinates": {
+    "lon": 151.209167637084,
+    "lat": -33.83497196,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Harnett Street",
+   "description": "Machine Id: NSD_3124-AU<br>Model: Parking Meter<br>Latitude: -33.83521355<br>Longitude: 151.2089857129967600",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_3124-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.83521355",
+    "Longitude": "151.2089857129967600"
+   },
+   "coordinates": {
+    "lon": 151.208985712997,
+    "lat": -33.83521355,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Bradly Avenue",
+   "description": "Machine Id: NSD_5141-AU<br>Model: Parking Meter<br>Latitude: -33.84386267<br>Longitude: 151.2148336705522500",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5141-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84386267",
+    "Longitude": "151.2148336705522500"
+   },
+   "coordinates": {
+    "lon": 151.214833670552,
+    "lat": -33.84386267,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5143-AU<br>Model: Parking Meter<br>Latitude: -33.84886128<br>Longitude: 151.2118599941716000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5143-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84886128",
+    "Longitude": "151.2118599941716000"
+   },
+   "coordinates": {
+    "lon": 151.211859994172,
+    "lat": -33.84886128,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5144-AU<br>Model: Parking Meter<br>Latitude: -33.84911184<br>Longitude: 151.2118886647239000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5144-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84911184",
+    "Longitude": "151.2118886647239000"
+   },
+   "coordinates": {
+    "lon": 151.211888664724,
+    "lat": -33.84911184,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South",
+   "description": "Machine Id: NSD_5145-AU<br>Model: Parking Meter<br>Latitude: -33.84927828<br>Longitude: 151.2119433294477000",
+   "styleUrl": "#icon-1899-FF5252",
+   "extendedData": {
+    "Machine Id": "NSD_5145-AU",
+    "Model": "Parking Meter",
+    "Latitude": "-33.84927828",
+    "Longitude": "151.2119433294477000"
+   },
+   "coordinates": {
+    "lon": 151.211943329448,
+    "lat": -33.84927828,
+    "alt": 0.0
+   }
+  }
+ ]
+}

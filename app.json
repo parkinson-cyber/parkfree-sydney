@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "ParkFree Sydney",
+    "slug": "parkfree-sydney",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0F1115",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.parkfree.sydney",
+      "buildNumber": "1",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "ParkFree uses your location to show free parking streets near you.",
+        "UIBackgroundModes": []
+      }
+    },
+    "android": {
+      "package": "com.parkfree.sydney",
+      "adaptiveIcon": {
+        "backgroundColor": "#0F1115",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "ParkFree uses your location to show free parking streets near you."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#34D399"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset": "Waverley Council Data",
+  "publisher": "Waverley Council (via Transport for NSW Open Data Hub)",
+  "package_url": "https://opendata.transport.nsw.gov.au/data/dataset/waverley-council-data",
+  "ckan_id": "5a6d694f-fbbf-49d9-a147-b7d7b00c8013",
+  "coverage_area": "Waverley LGA (Bondi, Bondi Junction, Bronte, Tamarama, Waverley) - approx lat -33.87..-33.92, lon 151.24..151.29",
+  "north_sydney_lga_coverage": "NONE - Waverley LGA is in Sydney's eastern suburbs, ~10km southeast of North Sydney.",
+  "relevant_parking_resources": {
+    "Traffic and parking signs (ZIP)": "https://opendata.transport.nsw.gov.au/data/dataset/5a6d694f-fbbf-49d9-a147-b7d7b00c8013/resource/6b7fa599-9b3f-40c6-b5ab-78cc002c1462/download/traffic-and-parking-signs_3.zip",
+    "On street car parking bays v2 (ZIP)": "https://opendata.transport.nsw.gov.au/data/dataset/5a6d694f-fbbf-49d9-a147-b7d7b00c8013/resource/b3b2959c-ea26-4817-81d6-d2159f60bbe9/download/onstreetcarparkingspacesv2_3.zip",
+    "Parking meters (ZIP)": "https://opendata.transport.nsw.gov.au/data/dataset/5a6d694f-fbbf-49d9-a147-b7d7b00c8013/resource/bc55f663-3403-4bc8-9bff-a43c1a00d6f7/download/parkingmeters_5.zip",
+    "Accessible parking bays (ZIP)": "https://opendata.transport.nsw.gov.au/data/dataset/5a6d694f-fbbf-49d9-a147-b7d7b00c8013/resource/e38cf204-a8d8-430e-bed4-f89ba3271552/download/accessibleparkingbays_5.zip",
+    "Truck and loading zones (ZIP)": "https://opendata.transport.nsw.gov.au/data/dataset/5a6d694f-fbbf-49d9-a147-b7d7b00c8013/resource/786bbf46-d679-4680-8430-7f5cf8bd5fe3/download/truckandloadingzones_6.zip"
+  },
+  "note": "Richest per-council kerbside/signs open dataset on the TfNSW hub. Demonstrates the format a NSW council CAN publish, but covers Waverley, not North Sydney. Retained only to document the (unfulfilled) hope of a comparable North Sydney release. Not downloaded in full."
+}

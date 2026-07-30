@@ -1,0 +1,273 @@
+{
+ "map_name": "Bike Parking in North Sydney Council area",
+ "map_description": "North Sydney Council area bicycle parking rails",
+ "source_url": "https://www.google.com/maps/d/kml?mid=1dVp1fYGE0BgAq9uYmlFsXqxVEvg&forcekml=1",
+ "mid": "1dVp1fYGE0BgAq9uYmlFsXqxVEvg",
+ "retrieved": "2026-07-30",
+ "embedded_on": "https://www.northsydney.nsw.gov.au/homepage/98/find-a-council-car-park (iframe title \"Map of bicycle rails\"; the car-park page embeds this bike map)",
+ "placemark_count": 26,
+ "extendedData_fields_present": [],
+ "note": "Bicycle parking rail locations (points). Only name + generic description \"Bicycle parking rail\"; no ExtendedData, no hours/time-limits/rates.",
+ "placemarks": [
+  {
+   "name": "Milsons Point bike rail",
+   "description": "Bicycle parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.211934,
+    "lat": -33.846454
+   }
+  },
+  {
+   "name": "Balls Head bike rail",
+   "description": "Bicycle parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.195111,
+    "lat": -33.846965
+   }
+  },
+  {
+   "name": "North Sydney Council bike rail",
+   "description": "Bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.207163,
+    "lat": -33.834078
+   }
+  },
+  {
+   "name": "Stanton Library bike rail",
+   "description": "Bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.207788,
+    "lat": -33.833193
+   }
+  },
+  {
+   "name": "Crows Nest bike rail",
+   "description": "Bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.200757,
+    "lat": -33.826754
+   }
+  },
+  {
+   "name": "Crows Nest bike rail",
+   "description": "Bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.200966,
+    "lat": -33.826108
+   }
+  },
+  {
+   "name": "Crows Nest bike rail",
+   "description": "Bicycle parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.200964,
+    "lat": -33.824647
+   }
+  },
+  {
+   "name": "Mount Street Plaza bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.207868,
+    "lat": -33.839063
+   }
+  },
+  {
+   "name": "Tunks Park bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.218657,
+    "lat": -33.817918
+   }
+  },
+  {
+   "name": "Rangers Road bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.223619,
+    "lat": -33.831816
+   }
+  },
+  {
+   "name": "Waters Lane bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.222883,
+    "lat": -33.830765
+   }
+  },
+  {
+   "name": "Grosvenor Lane bike rail",
+   "description": "south side of car park bike rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.222354,
+    "lat": -33.830983
+   }
+  },
+  {
+   "name": "Cammeraygal Place bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.210561,
+    "lat": -33.821966
+   }
+  },
+  {
+   "name": "Cammeray Road bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.219135,
+    "lat": -33.822875
+   }
+  },
+  {
+   "name": "Crows Nest bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.200886,
+    "lat": -33.827294
+   }
+  },
+  {
+   "name": "North Sydney Oval bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.211413,
+    "lat": -33.830894
+   }
+  },
+  {
+   "name": "North Sydney Netball courts bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.210402,
+    "lat": -33.832962
+   }
+  },
+  {
+   "name": "Forsyth Park bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.215384,
+    "lat": -33.834397
+   }
+  },
+  {
+   "name": "North Sydney Community Centre bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.206929,
+    "lat": -33.833602
+   }
+  },
+  {
+   "name": "North Sydney Olympic Pool bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.211821,
+    "lat": -33.849301
+   }
+  },
+  {
+   "name": "Alexander St bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.2020045,
+    "lat": -33.827002
+   }
+  },
+  {
+   "name": "Blue St bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.2074597,
+    "lat": -33.8408338
+   }
+  },
+  {
+   "name": "Pacific Hwy",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.2059069,
+    "lat": -33.837274
+   }
+  },
+  {
+   "name": "Berry St bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.2062531,
+    "lat": -33.8365866
+   }
+  },
+  {
+   "name": "Ennis Rd bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.212412,
+    "lat": -33.8457286
+   }
+  },
+  {
+   "name": "Burton St bike rail",
+   "description": "bike parking rail",
+   "styleUrl": "#icon-1522-0288D1",
+   "extendedData": {},
+   "coordinates": {
+    "lon": 151.2133544,
+    "lat": -33.8461387
+   }
+  }
+ ]
+}

@@ -1,25 +1,37 @@
 {
   "name": "parkfree-sydney",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
-  },
+  "version": "1.0.0",
+  "main": "index.ts",
   "dependencies": {
-    "leaflet": "^1.9.4",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-leaflet": "^5.0.0"
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.4",
+    "expo-haptics": "~57.0.0",
+    "expo-location": "~57.0.2",
+    "expo-notifications": "~57.0.3",
+    "expo-status-bar": "~57.0.0",
+    "maplibre-gl": "^5.24.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.0",
+    "react-native-maps": "1.27.2",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-web": "^0.21.2",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.2",
-    "oxlint": "^1.69.0",
-    "vite": "^8.1.0"
-  }
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "tsc --ignoreConfig src/lib/rules.ts src/lib/types.ts src/lib/geo.ts src/lib/findPark.ts --outDir .cache/test --module commonjs --target es2020 --esModuleInterop --skipLibCheck && node scripts/test-rules.mjs",
+    "typecheck": "tsc --noEmit",
+    "fetch-data": "node scripts/fetch-parking-data.mjs --area all",
+    "web:preview": "CI=1 EXPO_NO_TELEMETRY=1 expo start --web --port ${PORT:-8090}",
+    "vercel-build": "expo export -p web"
+  },
+  "private": true
 }

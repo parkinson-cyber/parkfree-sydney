@@ -1,0 +1,591 @@
+{
+  "source": "OpenStreetMap via Overpass API",
+  "endpoint_used": "https://overpass-api.de/api/interpreter",
+  "bbox_S_W_N_E": [
+    -33.86,
+    151.18,
+    -33.79,
+    151.245
+  ],
+  "query_date": "2026-07-30",
+  "raw_element_counts": {
+    "total_elements": 443,
+    "streets_highway_ways": 360,
+    "off_street_parking_lots": 35,
+    "parking_meter_nodes": 0,
+    "vending_parking_tickets_nodes": 22,
+    "mooring_seamark_noise_excluded": 21,
+    "other": 5
+  },
+  "on_street_rule_counts": {
+    "maxstay_time_limit": {
+      "ways": 26,
+      "distinct_street_names": 20
+    },
+    "fee_price": {
+      "ways": 14,
+      "distinct_street_names": 10
+    },
+    "permit_resident_restriction": {
+      "ways": 2,
+      "distinct_street_names": 1
+    },
+    "any_parking_restriction_or_condition": {
+      "ways": 21,
+      "distinct_street_names": 11
+    },
+    "any_parking_namespace_tag": {
+      "ways": 360,
+      "distinct_street_names": 103
+    }
+  },
+  "distinct_street_names": {
+    "maxstay": [
+      "(unnamed)",
+      "Anderson Street",
+      "Bellevue Avenue",
+      "Blues Point Road",
+      "Bradly Avenue",
+      "Christie Street",
+      "Darling Street",
+      "Day Street",
+      "Elizabeth Street",
+      "Herbert Street",
+      "Hercules Street",
+      "Malvern Avenue",
+      "McDougall Street",
+      "O'Brien Street",
+      "Oxley Street",
+      "Quiamong Street",
+      "Ridge Street",
+      "Robinson Street",
+      "Victoria Avenue",
+      "Westbourne Street"
+    ],
+    "fee": [
+      "Blues Point Road",
+      "Bradly Avenue",
+      "Christie Street",
+      "Darling Street",
+      "Day Street",
+      "Herbert Street",
+      "Hipwood Street",
+      "Malvern Avenue",
+      "McDougall Street",
+      "O'Brien Street"
+    ],
+    "permit": [
+      "Westbourne Street"
+    ]
+  },
+  "restriction_value_distribution": {
+    "no_stopping": 17,
+    "free": 2,
+    "no_parking": 2
+  },
+  "samples": {
+    "maxstay": [
+      {
+        "name": "Bradly Avenue",
+        "id": "way/4331545",
+        "tags": {
+          "parking:left:maxstay:conditional": "1 hour @ (Mo-Su 08:30-22:00)"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/4995476",
+        "tags": {
+          "parking:condition:left:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00)",
+          "parking:condition:right:maxstay": "unlimited"
+        }
+      },
+      {
+        "name": "McDougall Street",
+        "id": "way/55677112",
+        "tags": {
+          "parking:left:maxstay:conditional": "1 hour @ (Mo-Su 08:30-22:30); 4 hours @ (Mo-Su 10:30-14:30,16:30-22:00); 2 hours @ (Mo-Su 14:30-16:30)",
+          "parking:right:maxstay:conditional": "2 hours @ (08:30-22:00)"
+        }
+      },
+      {
+        "name": "Bellevue Avenue",
+        "id": "way/173135249",
+        "tags": {
+          "parking:condition:both:maxstay:conditional": "2 h @ (Mo-Fr 08:00-18:00)"
+        }
+      },
+      {
+        "name": "Malvern Avenue",
+        "id": "way/173384816",
+        "tags": {
+          "parking:both:maxstay:conditional": "4 hours @ (08:30-18:00)"
+        }
+      },
+      {
+        "name": "Hercules Street",
+        "id": "way/173385746",
+        "tags": {
+          "parking:left:maxstay:conditional": "2 hours @ (08:30-18:00)"
+        }
+      },
+      {
+        "name": "Westbourne Street",
+        "id": "way/203966455",
+        "tags": {
+          "parking:left:maxstay": "3 h"
+        }
+      },
+      {
+        "name": "Day Street",
+        "id": "way/288180470",
+        "tags": {
+          "parking:both:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00)"
+        }
+      },
+      {
+        "name": "O'Brien Street",
+        "id": "way/332232188",
+        "tags": {
+          "parking:both:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00); no @ residents"
+        }
+      },
+      {
+        "name": "Quiamong Street",
+        "id": "way/422586592",
+        "tags": {
+          "parking:lane:right:maxstay": "1h"
+        }
+      },
+      {
+        "name": "(unnamed way/475247094)",
+        "id": "way/475247094",
+        "tags": {
+          "parking:both:maxstay": "15 minutes"
+        }
+      },
+      {
+        "name": "Quiamong Street",
+        "id": "way/503994822",
+        "tags": {
+          "parking:both:maxstay": "1 hour"
+        }
+      },
+      {
+        "name": "Ridge Street",
+        "id": "way/504205023",
+        "tags": {
+          "parking:lane:right:maxstay": "2"
+        }
+      },
+      {
+        "name": "Anderson Street",
+        "id": "way/507710048",
+        "tags": {
+          "parking:right:maxstay": "2 hours"
+        }
+      },
+      {
+        "name": "Westbourne Street",
+        "id": "way/844436953",
+        "tags": {
+          "parking:both:maxstay": "3 h"
+        }
+      },
+      {
+        "name": "Robinson Street",
+        "id": "way/1119999002",
+        "tags": {
+          "parking:condition:left:maxstay:conditional": "1 hour @ (Mo-Fr 08:30-18:00; Sa 08:30-16:30)"
+        }
+      },
+      {
+        "name": "Herbert Street",
+        "id": "way/1202211393",
+        "tags": {
+          "parking:condition:right:maxstay:conditional": "1 h @ (Mo-Sa 08:30 - 17:00)"
+        }
+      },
+      {
+        "name": "Herbert Street",
+        "id": "way/1202211394",
+        "tags": {
+          "parking:condition:right:maxstay:conditional": "1 h @ (Mo-Sa 08:30 - 17:00)"
+        }
+      },
+      {
+        "name": "Blues Point Road",
+        "id": "way/1213794327",
+        "tags": {
+          "parking:right:maxstay:conditional": "4 hours @ (Mo-Fr 08:30-18:00); no @ residents"
+        }
+      },
+      {
+        "name": "Oxley Street",
+        "id": "way/1308708374",
+        "tags": {
+          "parking:both:maxstay": "2 minutes"
+        }
+      },
+      {
+        "name": "Christie Street",
+        "id": "way/1318590727",
+        "tags": {
+          "parking:left:maxstay:conditional": "2 hours @ (Mo-Sa 08:00-18:00)"
+        }
+      },
+      {
+        "name": "Malvern Avenue",
+        "id": "way/1347040274",
+        "tags": {
+          "parking:both:maxstay:conditional": "4 hours @ (08:30-18:00)"
+        }
+      },
+      {
+        "name": "Elizabeth Street",
+        "id": "way/1361349477",
+        "tags": {
+          "parking:left:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00; Sa 08:30-12:30)"
+        }
+      },
+      {
+        "name": "Victoria Avenue",
+        "id": "way/1372892608",
+        "tags": {
+          "parking:left:maxstay": "1 hour"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/1425910055",
+        "tags": {
+          "parking:condition:left:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00)",
+          "parking:condition:right:maxstay": "unlimited"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/1425910056",
+        "tags": {
+          "parking:condition:left:maxstay:conditional": "2 hours @ (Mo-Fr 08:30-18:00)",
+          "parking:condition:right:maxstay": "unlimited"
+        }
+      }
+    ],
+    "fee": [
+      {
+        "name": "Bradly Avenue",
+        "id": "way/4331545",
+        "tags": {
+          "parking:left:fee:conditional": "yes @ (Mo-Su 08:30-22:00)"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/4995476",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "Hipwood Street",
+        "id": "way/23286838",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "McDougall Street",
+        "id": "way/55677112",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "Malvern Avenue",
+        "id": "way/173384816",
+        "tags": {
+          "parking:both:fee:conditional": "yes @ (08:30-18:00)"
+        }
+      },
+      {
+        "name": "Day Street",
+        "id": "way/288180470",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "O'Brien Street",
+        "id": "way/332232188",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "Herbert Street",
+        "id": "way/1202211393",
+        "tags": {
+          "parking:right:fee:conditional": "yes @ (Mo-Sa 08:30 - 17:00)"
+        }
+      },
+      {
+        "name": "Herbert Street",
+        "id": "way/1202211394",
+        "tags": {
+          "parking:right:fee:conditional": "yes @ (Mo-Sa 08:30 - 17:00)"
+        }
+      },
+      {
+        "name": "Blues Point Road",
+        "id": "way/1213794327",
+        "tags": {
+          "parking:right:fee": "no"
+        }
+      },
+      {
+        "name": "Christie Street",
+        "id": "way/1318590727",
+        "tags": {
+          "parking:left:fee:conditional": "yes @ (Mo-Sa 08:00-18:00)"
+        }
+      },
+      {
+        "name": "Malvern Avenue",
+        "id": "way/1347040274",
+        "tags": {
+          "parking:both:fee:conditional": "yes @ (08:30-18:00)"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/1425910055",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      },
+      {
+        "name": "Darling Street",
+        "id": "way/1425910056",
+        "tags": {
+          "parking:both:fee": "no"
+        }
+      }
+    ],
+    "permit": [
+      {
+        "name": "Westbourne Street",
+        "id": "way/203966455",
+        "tags": {
+          "parking:left:authentication:ticket": "yes"
+        }
+      },
+      {
+        "name": "Westbourne Street",
+        "id": "way/844436953",
+        "tags": {
+          "parking:both:authentication:ticket": "yes"
+        }
+      }
+    ]
+  },
+  "meters": [],
+  "vending_parking_tickets": [
+    {
+      "id": "node/12736248936",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/12809053455",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13058995985",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13059013969",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13505943000",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13505966111",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349942",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349943",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349944",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349945",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349946",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13516349947",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487309",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487355",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487356",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487361",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487363",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13519487364",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/13609342086",
+      "tags": {
+        "amenity": "vending_machine",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "no",
+        "payment:visa": "yes",
+        "ref": "30075",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/14019258827",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/14019265313",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    },
+    {
+      "id": "node/14048240849",
+      "tags": {
+        "amenity": "vending_machine",
+        "vending": "parking_tickets"
+      }
+    }
+  ],
+  "fee_paid_vs_free_streets": {
+    "paid_fee_yes_distinct_streets": [
+      "Bradly Avenue",
+      "Christie Street",
+      "Herbert Street",
+      "Malvern Avenue"
+    ],
+    "free_fee_no_distinct_streets": [
+      "Blues Point Road",
+      "Darling Street",
+      "Day Street",
+      "Hipwood Street",
+      "McDougall Street",
+      "O'Brien Street"
+    ],
+    "note": "Of 14 fee-tagged street ways (10 distinct names), only 4 streets carry fee=yes (actual paid parking); 6 carry fee=no (explicitly free)."
+  },
+  "off_street_parking_lots": {
+    "total": 35,
+    "with_maxstay": 33,
+    "note": "Off-street car parks (amenity=parking) are well-tagged for maxstay/fee but are NOT on-street. A few (e.g. Westfield Chatswood) fall just outside North Sydney LGA but inside the requested bbox."
+  },
+  "residents_permit_signal": {
+    "structured_restriction_residents_or_permit": 0,
+    "authentication_ticket_streets": [
+      "Westbourne Street"
+    ],
+    "residents_mentioned_inside_conditional_maxstay": {
+      "O'Brien Street": "2 hours @ (Mo-Fr 08:30-18:00); no @ residents",
+      "Blues Point Road": "4 hours @ (Mo-Fr 08:30-18:00); no @ residents"
+    },
+    "note": "No street carries a dedicated residents/permit-zone restriction value. Only 2 streets encode a resident exemption embedded inside a conditional maxstay string, and 1 street (Westbourne) tags ticket-machine authentication. NSW resident-permit parking areas are essentially UNMAPPED in OSM here."
+  },
+  "bbox_vs_lga_caveat": "The supplied bbox (-33.86,151.18,-33.79,151.245) is a rectangle, not the exact North Sydney LGA polygon; it catches a few edge elements in neighbouring LGAs (e.g. Chatswood/Willoughby). Counts reported are for the bbox as instructed."
+}

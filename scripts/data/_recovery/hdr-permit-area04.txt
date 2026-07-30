@@ -1,0 +1,16 @@
+HTTP/2 200 
+date: Thu, 30 Jul 2026 12:49:30 GMT
+content-type: application/pdf
+server: Web Server
+expires: Thu, 30 Jul 2026 12:49:30 GMT
+cache-control: max-age=0, must-revalidate, post-check=0, pre-check=0, private
+pragma: public
+content-disposition: inline; filename=residentparking_area04.pdf
+accept-ranges: bytes
+strict-transport-security: max-age=2592000
+x-frame-options: SAMEORIGIN
+last-modified: Thu, 07 Jul 2022 01:56:41 GMT
+node: jadu-web-1
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+

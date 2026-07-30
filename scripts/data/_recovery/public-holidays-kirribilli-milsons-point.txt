@@ -1,0 +1,297 @@
+GLEN
+ENNIS                  ROAD
+BURTON                   LANE
+SOUTH
+Lavender BayWharf
+Luna ParkWharf
+OLYMPIC
+MILSONS POINT  STATION
+LAVENDER BAY FORESHORE
+LavenderBay
+ALFRED
+MARY     WOLLSTONECRAFT     LANE
+PAUL         STREET
+NORTHCLIFF      STREET
+DIND   STREET
+STREET
+HOPKINS PARK
+STREET
+OLYMPIC PARK
+STREET
+CLIFF
+WENDYS GARDEN
+CRESCENT
+BURTONSTREET
+HARBOURVIEWWALKER STREET ROAD RESERVE STREET
+CLARK   PARK
+STREET
+FITZROY STREET
+McDOUGALL
+BRADFIELD    PARK
+GREENWAY  DRIVE
+(Private Road)
+BROUGHTON
+WILLOUGHBY
+STREET
+DRIVE
+BRADFIELD    PARK
+CLARK
+HUMPHREY                PLACE
+MILSON PARK
+HUMPHREY                PLACE
+COPESLOOKOUT
+Jeffreys StreetWharf
+KIRRIBILLIVILLAGE SQUARE
+Milsons Point
+WINSLOW LANEROAD CLOSURE
+WINSLOW STREET
+ROAD CLOSURE
+BROUGHTON                                STREET
+UPPER PITT STREET PEDESTRIAN LINK
+STREET
+JEFFREYS                                          STREET
+ROBERTSON
+UPPER
+FITZROY                                                                  STREETBLIGH                                                                           STREET
+PLACE
+CRESCENT
+BURTON                                STREET
+HIPWOOD
+BRADLY                                         AVENUE
+WINSLOW  
+STREET
+WINSLOW                                  LANE
+PITT    STREET
+CARABELLA
+CAPTAIN HENRY WATERHOUSE RESERVE
+STANTON LOOKOUT
+1
+43
+2
+11
+2
+5
+21
+132
+4
+12
+2
+5
+3
+3
+21
+4533
+1
+6
+4
+3
+5 7
+4
+8
+2
+4
+53
+2121
+6
+3
+5
+4
+4
+5
+3
+6
+2
+78
+7
+198
+9564
+3
+1
+4
+2
+11110910 2345678910
+431
+39
+5
+10
+678
+5
+6
+42
+2231
+2
+764
+1
+5 1
+2
+2
+1
+5
+4
+4
+3
+53 1
+32
+32
+1
+4
+4
+5
+3
+6
+6
+1
+810732
+9
+145
+1
+2
+1
+45
+2
+7
+2
+3
+3
+31
+1
+321
+5
+4
+4
+3
+432
+13
+432
+21
+2
+567
+1
+6
+4
+35
+4
+61
+4
+1725
+24
+6
+31
+4
+246
+56
+3
+1 34
+235
+12543
+4321
+7
+3
+1
+4765
+12
+5
+24
+6
+35
+4
+6
+6
+7
+8
+19
+5
+87(Bays 7, 8 & 9 are Disabled
+Parking on Sundays & public holidays)
+8
+32
+9
+6732185
+1234
+73
+65
+412 56789
+15
+10
+101314
+1
+1
+1211 765432
+3 123
+4
+2956
+2
+81784
+12
+4321
+9131011121514
+7431
+8
+14256
+1311
+1
+17161512
+65
+14
+234 3455612 61
+13
+4
+12
+23
+1011
+32
+76
+4
+8
+6
+9
+15
+54321124356
+8
+54
+4
+1
+6
+5674
+35
+27
+32
+5
+3
+1644
+2
+332
+1
+1
+643
+2
+34
+5
+1
+21
+3
+1
+4
+4
+1
+21
+3
+85
+42
+5
+32
+9876 8
+1
+4
+109
+657
+12
+32
+3
+2165
+4
+1098765
+Parking Meters Operating on Public HolidaysMilsons Point and KirribilliRevised 1 July 2024 parking meters on public holidays_Milsons Point_July 2024.swd
+N
+SWE
+- Street signs take priority over parking information displayed on the maps - for example,  Special Event Clearways, construction work zones and road closures.- Before using a parking meter, check nearby parking signs to confirm parking hours and restriction.Disclaimer - Signage conditions may change temporarily due to various events.Indicates zones that are operational during public holidays.Note: it is advisable to recheck this website priorto next public holiday for possible changes.  Map Key

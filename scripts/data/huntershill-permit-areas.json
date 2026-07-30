@@ -1,0 +1,15 @@
+{
+  "w1": {
+    "label": "Woolwich (W1)",
+    "zone": "W1",
+    "streets": [
+      "Woolwich Road", "The Point Road", "Valentia Street", "Gale Street",
+      "George Street", "Margaret Street", "Mary Street", "Stuart Street",
+      "Richard Street", "Mitchell Street", "Wallace Street", "View Street",
+      "Franki Avenue", "Alfred Street", "Collingwood Street", "Elgin Street",
+      "Harrison Street", "Hunter Street", "Lucretia Avenue", "Mayfield Avenue",
+      "Mount Morris Street", "Poole Street", "Werambie Street", "Aspinall Place",
+      "Lower Serpentine Road", "Upper Serpentine Road"
+    ]
+  }
+}

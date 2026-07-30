@@ -1,0 +1,19 @@
+{
+  "area6": {
+    "label": "Five Dock Area 6",
+    "streets": [
+      "Gildea Avenue", "Charles Street", "McKinnon Avenue", "Innes Street",
+      "Preston Avenue", "Udall Avenue", "Lyons Road", "Lyons Road West",
+      "Elizabeth Street", "Scott Street", "Newcastle Street",
+      "West Street", "East Street", "Rodd Road", "Barnstaple Road",
+      "Henry Street", "Harris Road", "Great North Road",
+      "Second Avenue", "Sutton Street", "Waterview Street",
+      "First Avenue", "Fairlight Street", "Park Road", "Tennyson Road",
+      "Queens Road", "Longview Street", "Kingsford Avenue",
+      "Cromarty Street", "Llewellyn Street", "Fox Avenue",
+      "Wangal Place", "Harrabrook Avenue", "Muratina Avenue",
+      "McGrath Avenue", "Kerin Avenue", "Lancelot Street", "Kings Road",
+      "Trevanion Street"
+    ]
+  }
+}

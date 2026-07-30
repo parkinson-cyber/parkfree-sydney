@@ -1,0 +1,14 @@
+services:
+  fetch:
+    build: .
+    volumes:
+      # Only the data output dir is writable; scripts/*.py|*.mjs come baked
+      # into the image so a compromised fetch target can't rewrite your source.
+      - ./data:/app/scripts/data
+    cap_drop:
+      - ALL
+    security_opt:
+      - "no-new-privileges:true"
+    mem_limit: 1g
+    cpus: 1
+    pids_limit: 128

@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Accessible parking spaces in North Sydney area</name>
+    <description/>
+    <Style id="icon-1735-0288D1-labelson">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>Accessible car parking.xlsx</name>
+      <Placemark>
+        <name>Alexander St car park, Crows Nest</name>
+        <description><![CDATA[capacity: 10<br>Origin Latitude: -33.8269218028<br>Origin Longitude: 151.2016462807<br>Street name: Alexander St, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>10.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8269218028</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2016462807</value>
+          </Data>
+          <Data name="Street name">
+            <value>Alexander St, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2016462807,-33.8269218028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alfred Street South, Milsons Point </name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8491122124<br>Origin Longitude: 151.2117715697<br>Street name: Alfred Street South, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8491122124</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2117715697</value>
+          </Data>
+          <Data name="Street name">
+            <value>Alfred Street South, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2117715697,-33.8491122124,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alfred Street South, Milsons Point </name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8491658749<br>Origin Longitude: 151.2117797437<br>Street name: Alfred Street South, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8491658749</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2117797437</value>
+          </Data>
+          <Data name="Street name">
+            <value>Alfred Street South, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2117797437,-33.8491658749,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alfred Street South, Milsons Point </name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8492204336<br>Origin Longitude: 151.2117880541<br>Street name: Alfred Street South, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8492204336</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2117880541</value>
+          </Data>
+          <Data name="Street name">
+            <value>Alfred Street South, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2117880541,-33.8492204336,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Atichison Street, St Leonards - outside 27 Atchison St</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8229874067<br>Origin Longitude: 151.1985207886<br>Street name: Atichison Street, St Leonards]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8229874067</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.1985207886</value>
+          </Data>
+          <Data name="Street name">
+            <value>Atichison Street, St Leonards</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.1985207886,-33.8229874067,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Barry Street, Neutral Bay - near May Lane</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8317786864<br>Origin Longitude: 151.2211052615<br>Street name: Barry Street, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8317786864</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2211052615</value>
+          </Data>
+          <Data name="Street name">
+            <value>Barry Street, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2211052615,-33.8317786864,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blues Point Rd, McMahons Point - outside 139 Blues Pt Road</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8441675979<br>Origin Longitude: 151.2044504271<br>Street name: Blues Point Rd, McMahons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8441675979</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2044504271</value>
+          </Data>
+          <Data name="Street name">
+            <value>Blues Point Rd, McMahons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2044504271,-33.8441675979,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Broughton St, Kirribilli - at the lookout</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8492592033<br>Origin Longitude: 151.2132769017<br>Street name: Broughton St, Kirribilli]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8492592033</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2132769017</value>
+          </Data>
+          <Data name="Street name">
+            <value>Broughton St, Kirribilli</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2132769017,-33.8492592033,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Broughton St, Kirribilli </name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8467482044<br>Origin Longitude: 151.2128695001<br>Street name: Broughton St, Kirribilli]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8467482044</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2128695001</value>
+          </Data>
+          <Data name="Street name">
+            <value>Broughton St, Kirribilli</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2128695001,-33.8467482044,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burton St, Kirribilli - outside 34 Burton Street</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8461636875<br>Origin Longitude: 151.2133771288<br>Street name: Burton St, Kirribilli ]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8461636875</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2133771288</value>
+          </Data>
+          <Data name="Street name">
+            <value>Burton St, Kirribilli </value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2133771288,-33.8461636875,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burton St, Milsons Point</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8463980168<br>Origin Longitude: 151.2117985217<br>Street name: Burton St, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8463980168</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2117985217</value>
+          </Data>
+          <Data name="Street name">
+            <value>Burton St, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2117985217,-33.8463980168,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Council Visitor car park</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8342165224<br>Origin Longitude: 151.2070458601<br>Street name: Kelrose Lane, North Sydney]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8342165224</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2070458601</value>
+          </Data>
+          <Data name="Street name">
+            <value>Kelrose Lane, North Sydney</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2070458601,-33.8342165224,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Council Visitor car park</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8342075629<br>Origin Longitude: 151.2070896705<br>Street name: Kelrose Lane, North Sydney]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8342075629</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2070896705</value>
+          </Data>
+          <Data name="Street name">
+            <value>Kelrose Lane, North Sydney</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2070896705,-33.8342075629,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ernest Street, Crows Nest - near Ernest Place</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8257935860<br>Origin Longitude: 151.2019494399<br>Street name: Ernest Street, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8257935860</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2019494399</value>
+          </Data>
+          <Data name="Street name">
+            <value>Ernest Street, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2019494399,-33.825793586,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ernest Street, Crows Nest - near Ernest Place</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8258050684<br>Origin Longitude: 151.2020230394<br>Street name: Ernest Street, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8258050684</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2020230394</value>
+          </Data>
+          <Data name="Street name">
+            <value>Ernest Street, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2020230394,-33.8258050684,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Lane car park, Neutral Bay</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8309498469<br>Origin Longitude: 151.2227413369<br>Street name: Grosvenor Lane, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8309498469</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2227413369</value>
+          </Data>
+          <Data name="Street name">
+            <value>Grosvenor Lane, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2227413369,-33.8309498469,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Lane car park, Neutral Bay</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8309617240<br>Origin Longitude: 151.2227898177<br>Street name: Grosvenor Lane, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8309617240</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2227898177</value>
+          </Data>
+          <Data name="Street name">
+            <value>Grosvenor Lane, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2227898177,-33.830961724,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Lane car park, Neutral Bay</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8309931024<br>Origin Longitude: 151.2227261215<br>Street name: Grosvenor Lane, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8309931024</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2227261215</value>
+          </Data>
+          <Data name="Street name">
+            <value>Grosvenor Lane, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2227261215,-33.8309931024,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Lane car park, Neutral Bay</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8310049796<br>Origin Longitude: 151.2227746023<br>Street name: Grosvenor Lane, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8310049796</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2227746023</value>
+          </Data>
+          <Data name="Street name">
+            <value>Grosvenor Lane, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2227746023,-33.8310049796,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Henry Lawson Drive, McMahons Point - near McMahons Point Wharf</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8488586101<br>Origin Longitude: 151.2059776557<br>Street name: Henry Lawson Drive, McMahons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8488586101</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2059776557</value>
+          </Data>
+          <Data name="Street name">
+            <value>Henry Lawson Drive, McMahons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2059776557,-33.8488586101,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Holtermann St car park, Crows Nest</name>
+        <description><![CDATA[capacity: 5<br>Origin Latitude: -33.8250903253<br>Origin Longitude: 151.2016830630<br>Street name: Holtermann St, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>5.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8250903253</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2016830630</value>
+          </Data>
+          <Data name="Street name">
+            <value>Holtermann St, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.201683063,-33.8250903253,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hume St car park, Crows Nest</name>
+        <description><![CDATA[capacity: 4<br>Origin Latitude: -33.8244384714<br>Origin Longitude: 151.1995176324<br>Street name: Hume St, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>4.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8244384714</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.1995176324</value>
+          </Data>
+          <Data name="Street name">
+            <value>Hume St, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.1995176324,-33.8244384714,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>McDougall St, Kirribilli - adjacent to the Ensemble Theatre</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8454707476<br>Origin Longitude: 151.2151882920<br>Street name: McDougall St, Kirribilli]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8454707476</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2151882920</value>
+          </Data>
+          <Data name="Street name">
+            <value>McDougall St, Kirribilli</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.215188292,-33.8454707476,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>McDougall St, Kirribilli - adjacent to Sydney Flying Squandron Club</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8450741109<br>Origin Longitude: 151.2149133840<br>Street name: McDougall St, Kirribilli]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8450741109</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2149133840</value>
+          </Data>
+          <Data name="Street name">
+            <value>McDougall St, Kirribilli</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.214913384,-33.8450741109,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Miller Lane car park, Cammeray - behind the Cammeray shops</name>
+        <description><![CDATA[capacity: 4<br>Origin Latitude: -33.8224586071<br>Origin Longitude: 151.2109785660<br>Street name: Miller Lane, Cammeray]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>4.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8224586071</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2109785660</value>
+          </Data>
+          <Data name="Street name">
+            <value>Miller Lane, Cammeray</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.210978566,-33.8224586071,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nicholson Street car park, Crows Nest</name>
+        <description><![CDATA[capacity: 2<br>Origin Latitude: -33.8272224493<br>Origin Longitude: 151.1992969250<br>Street name: Nicholson Street, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>2.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8272224493</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.1992969250</value>
+          </Data>
+          <Data name="Street name">
+            <value>Nicholson Street, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.199296925,-33.8272224493,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympic Drive, Milsons Point - near the Jeffrey St Wharf</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8494812229<br>Origin Longitude: 151.2135725552<br>Street name: Olympic Drive, Kirribilli]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8494812229</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2135725552</value>
+          </Data>
+          <Data name="Street name">
+            <value>Olympic Drive, Kirribilli</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2135725552,-33.8494812229,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympic Drive, Milsons Point - near Harbour Bridge</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8502020260<br>Origin Longitude: 151.2126390734<br>Street name: Olympic Drive, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8502020260</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2126390734</value>
+          </Data>
+          <Data name="Street name">
+            <value>Olympic Drive, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2126390734,-33.850202026,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympic Drive, Milsons Point - near Harbour Bridge</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8502544912<br>Origin Longitude: 151.2126095002<br>Street name: Olympic Drive, Milsons Point]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8502544912</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2126095002</value>
+          </Data>
+          <Data name="Street name">
+            <value>Olympic Drive, Milsons Point</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2126095002,-33.8502544912,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parraween St car park, Cremorne</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8272814363<br>Origin Longitude: 151.2301955896<br>Street name: Parraween St, Cremorne]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8272814363</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2301955896</value>
+          </Data>
+          <Data name="Street name">
+            <value>Parraween St, Cremorne</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2301955896,-33.8272814363,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parraween St, Cremorne - outside 61 Parraween St</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8283070834<br>Origin Longitude: 151.2287411763<br>Street name: Parraween St, Cremorne]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8283070834</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2287411763</value>
+          </Data>
+          <Data name="Street name">
+            <value>Parraween St, Cremorne</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2287411763,-33.8283070834,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rangers Road, Neutral Bay - outside 9 Rangers Road</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8321435204<br>Origin Longitude: 151.2240789152<br>Street name: Rangers Road, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8321435204</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2240789152</value>
+          </Data>
+          <Data name="Street name">
+            <value>Rangers Road, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2240789152,-33.8321435204,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rangers Road, Neutral Bay - outside 9 Rangers Road</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8321997266<br>Origin Longitude: 151.2241570774<br>Street name: Rangers Road, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8321997266</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2241570774</value>
+          </Data>
+          <Data name="Street name">
+            <value>Rangers Road, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2241570774,-33.8321997266,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ridge St car park, North Sydney</name>
+        <description><![CDATA[capacity: 4<br>Origin Latitude: -33.8329461719<br>Origin Longitude: 151.2067380137<br>Street name: Ridge St, North Sydney]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>4.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8329461719</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2067380137</value>
+          </Data>
+          <Data name="Street name">
+            <value>Ridge St, North Sydney</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2067380137,-33.8329461719,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Walker St, North Sydney - outside 168 Walker St</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8346358156<br>Origin Longitude: 151.2096497396<br>Street name: Walker St, North Sydney ]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8346358156</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2096497396</value>
+          </Data>
+          <Data name="Street name">
+            <value>Walker St, North Sydney </value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2096497396,-33.8346358156,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ward Street car park, North Sydney</name>
+        <description><![CDATA[capacity: 8<br>Origin Latitude: -33.8362426398<br>Origin Longitude: 151.2082768164<br>Street name: Ward Street, North Sydney]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>8.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8362426398</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2082768164</value>
+          </Data>
+          <Data name="Street name">
+            <value>Ward Street, North Sydney</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2082768164,-33.8362426398,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>William St, North Sydney - at rear of the North Sydney Post Office</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8385783171<br>Origin Longitude: 151.2060602382<br>Street name: William St, North Sydney]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8385783171</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2060602382</value>
+          </Data>
+          <Data name="Street name">
+            <value>William St, North Sydney</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2060602382,-33.8385783171,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Willoughby Road, Crows Nest - outside 16 Willoughby Road</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8270648000<br>Origin Longitude: 151.2008293115<br>Street name: Willoughby Road, Crows Nest]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8270648000</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2008293115</value>
+          </Data>
+          <Data name="Street name">
+            <value>Willoughby Road, Crows Nest</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2008293115,-33.8270648,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yeo St, Neutral Bay - outside 48 Yeo Street</name>
+        <description><![CDATA[capacity: 1<br>Origin Latitude: -33.8323153370<br>Origin Longitude: 151.2226081902<br>Street name: Yeo St, Neutral Bay]]></description>
+        <styleUrl>#icon-1735-0288D1-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="capacity">
+            <value>1.0</value>
+          </Data>
+          <Data name="Origin Latitude">
+            <value>-33.8323153370</value>
+          </Data>
+          <Data name="Origin Longitude">
+            <value>151.2226081902</value>
+          </Data>
+          <Data name="Street name">
+            <value>Yeo St, Neutral Bay</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            151.2226081902,-33.832315337,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

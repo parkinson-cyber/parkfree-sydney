@@ -1,0 +1,11 @@
+{
+ "RA1": {"zone": "A", "streets": ["Bradley Street", "Silver Street", "Waratah Avenue", "Elizabeth Street", "Arthur Street", "Wansey Street", "Blenheim Street", "Clara Street", "Eurimbla Avenue"], "anchor": false, "source": "vision"},
+ "RA5": {"zone": "A", "streets": ["Botany Street", "Eurimbla Avenue", "Magill Street", "Hay Street", "Maud Street", "Barker Street", "Middle Street", "Young Street"], "anchor": false, "source": "vision"},
+ "RA7": {"zone": "A", "streets": ["Gilderthorpe Avenue", "Roscrea Avenue", "Frenchmans Avenue", "Kemmis Street", "Searle Road", "Ravenswood Avenue", "Roberts Avenue"], "anchor": false, "source": "vision"},
+ "RA10": {"zone": "A", "streets": ["Pine Street", "Douglas Street", "Carey Street", "Bishops Avenue", "Greville Street", "Conway Avenue"], "anchor": false, "source": "vision"},
+ "CO1": {"zone": "A", "streets": ["Arcadia Street", "Beach Street", "Moore Street", "Major Street", "Hill Street", "Bream Street", "Arden Street", "Baden Street", "Dolphin Street", "Brook Street"], "anchor": false, "source": "vision"},
+ "CO2": {"zone": "A", "streets": ["Mount Street", "Glenwood Avenue", "Alfreda Street", "Kidman Street", "Brook Street", "Vicar Street", "Berwick Street", "Havelock Avenue", "Edgecumbe Avenue", "Dudley Street", "Byron Street"], "anchor": false, "source": "vision"},
+ "CO3": {"zone": "A", "streets": ["Waltham Street", "Havelock Avenue", "Asher Street", "Kurrawa Avenue", "Neptune Street", "Beach Street"], "anchor": false, "source": "vision"},
+ "CO5": {"zone": "A", "streets": ["Abbott Street", "Bream Street", "Melody Street", "Dolphin Street", "Powell Street", "Nathan Street", "Brighton Road", "Stark Street", "Byron Street", "Mount Street"], "anchor": false, "source": "vision"},
+ "KF2": {"zone": "A", "streets": ["Winburn Avenue", "Goodrich Avenue", "Shaw Avenue", "Tresidder Avenue", "Maitland Avenue", "Aboud Avenue", "Eastern Avenue", "Cottenham Avenue", "Leonard Avenue", "Doncaster Avenue", "Borrodale Road", "Doran Street", "Bruce Street", "Houston Road", "Strachan Avenue", "See Street", "Edward Avenue", "Tunstall Avenue"], "anchor": false, "source": "vision"}
+}

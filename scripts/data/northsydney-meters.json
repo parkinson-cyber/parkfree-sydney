@@ -1,0 +1,2997 @@
+{
+ "source": "North Sydney Council \"NSC Parking Meters\" Google My Maps (mid 16KThCLnxfa0NgZr_qWFb9yd4mm1mI5w); demand tiers georeferenced from the council map-of-parking-meter-rates-and-demand-areas PDF (file 3974), Alfred St South south of Fitzroy St forced High per the council rates page",
+ "machines": [
+  {
+   "street": "Christie Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0200-AU",
+   "lat": -33.8224686,
+   "lon": 151.1953507,
+   "tier": "medium"
+  },
+  {
+   "street": "Sergeants Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0201-AU",
+   "lat": -33.8221652,
+   "lon": 151.1948267,
+   "tier": "medium"
+  },
+  {
+   "street": "Christie Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0202-AU",
+   "lat": -33.8220746,
+   "lon": 151.1955019,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0203-AU",
+   "lat": -33.8220705,
+   "lon": 151.1961878,
+   "tier": "medium"
+  },
+  {
+   "street": "Mitchell Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0204-AU",
+   "lat": -33.8223011,
+   "lon": 151.1970338,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0205-AU",
+   "lat": -33.8221077,
+   "lon": 151.1977947,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0206-AU",
+   "lat": -33.8221315,
+   "lon": 151.2005421,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0207-AU",
+   "lat": -33.8226207,
+   "lon": 151.1989955,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0208-AU",
+   "lat": -33.8226149,
+   "lon": 151.1991253,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0209-AU",
+   "lat": -33.8228719,
+   "lon": 151.1977566,
+   "tier": "medium"
+  },
+  {
+   "street": "Mitchell Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0210-AU",
+   "lat": -33.8227003,
+   "lon": 151.1971267,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0211-AU",
+   "lat": -33.8228426,
+   "lon": 151.1958701,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0212-AU",
+   "lat": -33.8229717,
+   "lon": 151.1965834,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0213-AU",
+   "lat": -33.82301,
+   "lon": 151.1984518,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0214-AU",
+   "lat": -33.8232966,
+   "lon": 151.1991005,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0215-AU",
+   "lat": -33.8236949,
+   "lon": 151.1974829,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0216-AU",
+   "lat": -33.8238564,
+   "lon": 151.2000429,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0217-AU",
+   "lat": -33.8238607,
+   "lon": 151.1995624,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0218-AU",
+   "lat": -33.8243205,
+   "lon": 151.1990817,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0219-AU",
+   "lat": -33.8258999,
+   "lon": 151.2003078,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0220-AU",
+   "lat": -33.8261102,
+   "lon": 151.200516,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0223-AU",
+   "lat": -33.82408,
+   "lon": 151.20086,
+   "tier": "medium"
+  },
+  {
+   "street": "Burlington Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0224-AU",
+   "lat": -33.8268519,
+   "lon": 151.2025743,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0225-AU",
+   "lat": -33.8262679,
+   "lon": 151.2022062,
+   "tier": "medium"
+  },
+  {
+   "street": "Ernest Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0226-AU",
+   "lat": -33.8258804,
+   "lon": 151.2027321,
+   "tier": "medium"
+  },
+  {
+   "street": "West Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0227-AU",
+   "lat": -33.8262188,
+   "lon": 151.2068653,
+   "tier": "low"
+  },
+  {
+   "street": "West Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0228-AU",
+   "lat": -33.8249167,
+   "lon": 151.2071492,
+   "tier": "low"
+  },
+  {
+   "street": "Devonshire Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0229-AU",
+   "lat": -33.8238926,
+   "lon": 151.2029561,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0230-AU",
+   "lat": -33.8240693,
+   "lon": 151.2022866,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0231-AU",
+   "lat": -33.8251046,
+   "lon": 151.2034019,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0232-AU",
+   "lat": -33.8253108,
+   "lon": 151.2025109,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0233-AU",
+   "lat": -33.8248757,
+   "lon": 151.2022451,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0234-AU",
+   "lat": -33.8248089,
+   "lon": 151.2014089,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0235-AU",
+   "lat": -33.8248522,
+   "lon": 151.1985405,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0236-AU",
+   "lat": -33.8245239,
+   "lon": 151.1984333,
+   "tier": "medium"
+  },
+  {
+   "street": "Pole Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0237-AU",
+   "lat": -33.8242168,
+   "lon": 151.1985927,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0238-AU",
+   "lat": -33.8240955,
+   "lon": 151.1980524,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0239-AU",
+   "lat": -33.82448,
+   "lon": 151.1989555,
+   "tier": "medium"
+  },
+  {
+   "street": "Hume Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0240-AU",
+   "lat": -33.8254802,
+   "lon": 151.1999339,
+   "tier": "medium"
+  },
+  {
+   "street": "Lithgow Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0241-AU",
+   "lat": -33.8269528,
+   "lon": 151.1958695,
+   "tier": "low"
+  },
+  {
+   "street": "Lithgow Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0242-AU",
+   "lat": -33.8273504,
+   "lon": 151.1961251,
+   "tier": "low"
+  },
+  {
+   "street": "Lithgow Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0243-AU",
+   "lat": -33.8266316,
+   "lon": 151.1958785,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0244-AU",
+   "lat": -33.8262354,
+   "lon": 151.1961024,
+   "tier": "medium"
+  },
+  {
+   "street": "Christie Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0245-AU",
+   "lat": -33.8263636,
+   "lon": 151.1966746,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0246-AU",
+   "lat": -33.8252641,
+   "lon": 151.1981679,
+   "tier": "medium"
+  },
+  {
+   "street": "Nicholson Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0247-AU",
+   "lat": -33.8274004,
+   "lon": 151.1992426,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0248-AU",
+   "lat": -33.8323412,
+   "lon": 151.208051,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0249-AU",
+   "lat": -33.8316436,
+   "lon": 151.208407,
+   "tier": "low"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0250-AU",
+   "lat": -33.8305505,
+   "lon": 151.2086866,
+   "tier": "low"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0251-AU",
+   "lat": -33.8328948,
+   "lon": 151.2083972,
+   "tier": "low"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0252-AU",
+   "lat": -33.8331265,
+   "lon": 151.2097895,
+   "tier": "low"
+  },
+  {
+   "street": "Eliot Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0253-AU",
+   "lat": -33.8335671,
+   "lon": 151.2088337,
+   "tier": "medium"
+  },
+  {
+   "street": "Bruce Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0254-AU",
+   "lat": -33.829567,
+   "lon": 151.2009058,
+   "tier": "low"
+  },
+  {
+   "street": "Rocklands Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0255-AU",
+   "lat": -33.8307691,
+   "lon": 151.2023191,
+   "tier": "low"
+  },
+  {
+   "street": "David Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0256-AU",
+   "lat": -33.8293658,
+   "lon": 151.2030552,
+   "tier": "low"
+  },
+  {
+   "street": "Eden Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0258-AU",
+   "lat": -33.8313691,
+   "lon": 151.2046966,
+   "tier": "low"
+  },
+  {
+   "street": "Myrtle Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0260-AU",
+   "lat": -33.8310367,
+   "lon": 151.2035554,
+   "tier": "low"
+  },
+  {
+   "street": "David Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0261-AU",
+   "lat": -33.8295013,
+   "lon": 151.2029025,
+   "tier": "low"
+  },
+  {
+   "street": "Hayberry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0263-AU",
+   "lat": -33.8287764,
+   "lon": 151.2021382,
+   "tier": "low"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0264-AU",
+   "lat": -33.8288056,
+   "lon": 151.2018863,
+   "tier": "low"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0265-AU",
+   "lat": -33.8282634,
+   "lon": 151.2018893,
+   "tier": "low"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0266-AU",
+   "lat": -33.83686,
+   "lon": 151.20795,
+   "tier": "high"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0267-AU",
+   "lat": -33.8328257,
+   "lon": 151.207639,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0268-AU",
+   "lat": -33.8325671,
+   "lon": 151.2059656,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0269-AU",
+   "lat": -33.8325358,
+   "lon": 151.2063104,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0270-AU",
+   "lat": -33.8327607,
+   "lon": 151.2075906,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0271-AU",
+   "lat": -33.8332445,
+   "lon": 151.2079411,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0272-AU",
+   "lat": -33.8326019,
+   "lon": 151.2061857,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0273-AU",
+   "lat": -33.8354854,
+   "lon": 151.207432,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0274-AU",
+   "lat": -33.8366756,
+   "lon": 151.2072494,
+   "tier": "high"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0275-AU",
+   "lat": -33.8345889,
+   "lon": 151.2077913,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0276-AU",
+   "lat": -33.8351869,
+   "lon": 151.2096688,
+   "tier": "medium"
+  },
+  {
+   "street": "Hampden Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0277-AU",
+   "lat": -33.8356257,
+   "lon": 151.2099564,
+   "tier": "medium"
+  },
+  {
+   "street": "Hampden Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0278-AU",
+   "lat": -33.8358017,
+   "lon": 151.2099524,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0279-AU",
+   "lat": -33.8363244,
+   "lon": 151.2093175,
+   "tier": "high"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0280-AU",
+   "lat": -33.8351143,
+   "lon": 151.2092653,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0281-AU",
+   "lat": -33.8347924,
+   "lon": 151.2072232,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0282-AU",
+   "lat": -33.8330289,
+   "lon": 151.2095917,
+   "tier": "low"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0283-AU",
+   "lat": -33.8344306,
+   "lon": 151.2053024,
+   "tier": "medium"
+  },
+  {
+   "street": "Harnett Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0284-AU",
+   "lat": -33.8354773,
+   "lon": 151.2089462,
+   "tier": "medium"
+  },
+  {
+   "street": "West Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0285-AU",
+   "lat": -33.8334871,
+   "lon": 151.2050787,
+   "tier": "low"
+  },
+  {
+   "street": "West Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0286-AU",
+   "lat": -33.8336783,
+   "lon": 151.2048867,
+   "tier": "low"
+  },
+  {
+   "street": "Angelo Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0287-AU",
+   "lat": -33.8350822,
+   "lon": 151.2056774,
+   "tier": "medium"
+  },
+  {
+   "street": "Angelo Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0288-AU",
+   "lat": -33.8364959,
+   "lon": 151.2063418,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0289-AU",
+   "lat": -33.8337131,
+   "lon": 151.2077532,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0290-AU",
+   "lat": -33.8346152,
+   "lon": 151.2064395,
+   "tier": "medium"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0291-AU",
+   "lat": -33.8390654,
+   "lon": 151.2082334,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0292-AU",
+   "lat": -33.8399348,
+   "lon": 151.2080499,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0293-AU",
+   "lat": -33.839943,
+   "lon": 151.2087189,
+   "tier": "high"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0294-AU",
+   "lat": -33.8400627,
+   "lon": 151.209278,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0295-AU",
+   "lat": -33.8410723,
+   "lon": 151.2091901,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0298-AU",
+   "lat": -33.8390847,
+   "lon": 151.2089918,
+   "tier": "high"
+  },
+  {
+   "street": "Arthur Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0299-AU",
+   "lat": -33.8381298,
+   "lon": 151.2101446,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0300-AU",
+   "lat": -33.8380478,
+   "lon": 151.209084,
+   "tier": "high"
+  },
+  {
+   "street": "William Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0301-AU",
+   "lat": -33.8391464,
+   "lon": 151.2059049,
+   "tier": "medium"
+  },
+  {
+   "street": "William Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0302-AU",
+   "lat": -33.8405017,
+   "lon": 151.205632,
+   "tier": "high"
+  },
+  {
+   "street": "William Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0303-AU",
+   "lat": -33.8420185,
+   "lon": 151.20532,
+   "tier": "high"
+  },
+  {
+   "street": "Blues Point Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0304-AU",
+   "lat": -33.8421839,
+   "lon": 151.2054006,
+   "tier": "high"
+  },
+  {
+   "street": "Blues Point Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0305-AU",
+   "lat": -33.8411881,
+   "lon": 151.2063185,
+   "tier": "high"
+  },
+  {
+   "street": "Blue Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0306-AU",
+   "lat": -33.8406856,
+   "lon": 151.2059521,
+   "tier": "high"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0307-AU",
+   "lat": -33.8402633,
+   "lon": 151.206531,
+   "tier": "high"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0308-AU",
+   "lat": -33.8403757,
+   "lon": 151.2066302,
+   "tier": "high"
+  },
+  {
+   "street": "Blue Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0309-AU",
+   "lat": -33.8407581,
+   "lon": 151.2066767,
+   "tier": "high"
+  },
+  {
+   "street": "Blue Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0310-AU",
+   "lat": -33.8409352,
+   "lon": 151.2078806,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0311-AU",
+   "lat": -33.8377079,
+   "lon": 151.2062654,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0312-AU",
+   "lat": -33.8365325,
+   "lon": 151.2056065,
+   "tier": "medium"
+  },
+  {
+   "street": "Doohat Avenue",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0313-AU",
+   "lat": -33.8359527,
+   "lon": 151.2050947,
+   "tier": "medium"
+  },
+  {
+   "street": "Bay Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0314-AU",
+   "lat": -33.8351759,
+   "lon": 151.2047461,
+   "tier": "medium"
+  },
+  {
+   "street": "Edward Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0315-AU",
+   "lat": -33.8359779,
+   "lon": 151.2035796,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0316-AU",
+   "lat": -33.8369154,
+   "lon": 151.2041701,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0317-AU",
+   "lat": -33.8368944,
+   "lon": 151.204834,
+   "tier": "medium"
+  },
+  {
+   "street": "Napier Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0318-AU",
+   "lat": -33.8371657,
+   "lon": 151.2053107,
+   "tier": "medium"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0319-AU",
+   "lat": -33.8378913,
+   "lon": 151.2061451,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0320-AU",
+   "lat": -33.838515,
+   "lon": 151.2065655,
+   "tier": "high"
+  },
+  {
+   "street": "William Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0321-AU",
+   "lat": -33.8380806,
+   "lon": 151.2061879,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0322-AU",
+   "lat": -33.8385511,
+   "lon": 151.2052434,
+   "tier": "medium"
+  },
+  {
+   "street": "Oak Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0323-AU",
+   "lat": -33.8377252,
+   "lon": 151.2046077,
+   "tier": "medium"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0324-AU",
+   "lat": -33.8385459,
+   "lon": 151.2046198,
+   "tier": "medium"
+  },
+  {
+   "street": "Lord Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0325-AU",
+   "lat": -33.8389962,
+   "lon": 151.2036908,
+   "tier": "medium"
+  },
+  {
+   "street": "Short Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0326-AU",
+   "lat": -33.8388384,
+   "lon": 151.2030371,
+   "tier": "medium"
+  },
+  {
+   "street": "Ward Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0327-AU",
+   "lat": -33.8364917,
+   "lon": 151.2084825,
+   "tier": "high"
+  },
+  {
+   "street": "Little Spring Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0328-AU",
+   "lat": -33.837247,
+   "lon": 151.2085965,
+   "tier": "high"
+  },
+  {
+   "street": "Denison Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0329-AU",
+   "lat": -33.8373185,
+   "lon": 151.2081735,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0330-AU",
+   "lat": -33.8490069,
+   "lon": 151.2119188,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0331-AU",
+   "lat": -33.8478362,
+   "lon": 151.2116848,
+   "tier": "high"
+  },
+  {
+   "street": "Whaling Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0332-AU",
+   "lat": -33.8406537,
+   "lon": 151.2113037,
+   "tier": "low"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0333-AU",
+   "lat": -33.8453942,
+   "lon": 151.2113154,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0334-AU",
+   "lat": -33.8450402,
+   "lon": 151.2110756,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0335-AU",
+   "lat": -33.8466351,
+   "lon": 151.2113999,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0336-AU",
+   "lat": -33.8465947,
+   "lon": 151.2114729,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0337-AU",
+   "lat": -33.8484502,
+   "lon": 151.2116722,
+   "tier": "high"
+  },
+  {
+   "street": "Middlemiss Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0338-AU",
+   "lat": -33.843098,
+   "lon": 151.2104144,
+   "tier": "medium"
+  },
+  {
+   "street": "Middlemiss Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0339-AU",
+   "lat": -33.8421106,
+   "lon": 151.2094904,
+   "tier": "medium"
+  },
+  {
+   "street": "Lavender Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0340-AU",
+   "lat": -33.8434949,
+   "lon": 151.2098419,
+   "tier": "medium"
+  },
+  {
+   "street": "Harbourview Crescent",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0341-AU",
+   "lat": -33.8440783,
+   "lon": 151.2094248,
+   "tier": "medium"
+  },
+  {
+   "street": "Cliff Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0342-AU",
+   "lat": -33.8442476,
+   "lon": 151.2102467,
+   "tier": "medium"
+  },
+  {
+   "street": "Cliff Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0343-AU",
+   "lat": -33.8456749,
+   "lon": 151.2108326,
+   "tier": "medium"
+  },
+  {
+   "street": "Glen Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0344-AU",
+   "lat": -33.8460532,
+   "lon": 151.2109037,
+   "tier": "medium"
+  },
+  {
+   "street": "Glen Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0345-AU",
+   "lat": -33.8474293,
+   "lon": 151.2106759,
+   "tier": "medium"
+  },
+  {
+   "street": "Glen Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0346-AU",
+   "lat": -33.8478114,
+   "lon": 151.2106378,
+   "tier": "medium"
+  },
+  {
+   "street": "Northcliff Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0347-AU",
+   "lat": -33.848325,
+   "lon": 151.2110042,
+   "tier": "medium"
+  },
+  {
+   "street": "Dind Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0348-AU",
+   "lat": -33.8479043,
+   "lon": 151.2113428,
+   "tier": "medium"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0349-AU",
+   "lat": -33.8491548,
+   "lon": 151.213761,
+   "tier": "medium"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0350-AU",
+   "lat": -33.8494921,
+   "lon": 151.2139225,
+   "tier": "medium"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0351-AU",
+   "lat": -33.8495025,
+   "lon": 151.2132011,
+   "tier": "high"
+  },
+  {
+   "street": "Broughton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0352-AU",
+   "lat": -33.8437152,
+   "lon": 151.2128079,
+   "tier": "low"
+  },
+  {
+   "street": "Broughton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0353-AU",
+   "lat": -33.8452719,
+   "lon": 151.2125075,
+   "tier": "low"
+  },
+  {
+   "street": "Ennis Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0354-AU",
+   "lat": -33.8451516,
+   "lon": 151.2123347,
+   "tier": "medium"
+  },
+  {
+   "street": "Ennis Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0355-AU",
+   "lat": -33.8438557,
+   "lon": 151.2117525,
+   "tier": "medium"
+  },
+  {
+   "street": "Ennis Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0356-AU",
+   "lat": -33.8437898,
+   "lon": 151.2117985,
+   "tier": "medium"
+  },
+  {
+   "street": "Ennis Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0357-AU",
+   "lat": -33.8449174,
+   "lon": 151.2121765,
+   "tier": "medium"
+  },
+  {
+   "street": "Fitzroy Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0358-AU",
+   "lat": -33.847455,
+   "lon": 151.2124731,
+   "tier": "medium"
+  },
+  {
+   "street": "Fitzroy Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0359-AU",
+   "lat": -33.8474094,
+   "lon": 151.2119672,
+   "tier": "medium"
+  },
+  {
+   "street": "Burton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0360-AU",
+   "lat": -33.8463963,
+   "lon": 151.211581,
+   "tier": "medium"
+  },
+  {
+   "street": "Burton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0361-AU",
+   "lat": -33.8463963,
+   "lon": 151.2115346,
+   "tier": "medium"
+  },
+  {
+   "street": "Union Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0362-AU",
+   "lat": -33.841845,
+   "lon": 151.2030418,
+   "tier": "low"
+  },
+  {
+   "street": "Broughton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0363-AU",
+   "lat": -33.8473528,
+   "lon": 151.2130703,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0364-AU",
+   "lat": -33.8301131,
+   "lon": 151.2223358,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0365-AU",
+   "lat": -33.8297618,
+   "lon": 151.2208653,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0366-AU",
+   "lat": -33.8297012,
+   "lon": 151.2209515,
+   "tier": "medium"
+  },
+  {
+   "street": "Barry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0368-AU",
+   "lat": -33.8320735,
+   "lon": 151.2210515,
+   "tier": "medium"
+  },
+  {
+   "street": "Yeo Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0371-AU",
+   "lat": -33.8323132,
+   "lon": 151.2225201,
+   "tier": "medium"
+  },
+  {
+   "street": "Yeo Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0372-AU",
+   "lat": -33.8323683,
+   "lon": 151.2229173,
+   "tier": "medium"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0373-AU",
+   "lat": -33.8291264,
+   "lon": 151.2270448,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0374-AU",
+   "lat": -33.827664,
+   "lon": 151.23005,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0375-AU",
+   "lat": -33.8272821,
+   "lon": 151.230702,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0376-AU",
+   "lat": -33.8278378,
+   "lon": 151.2294698,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0377-AU",
+   "lat": -33.828319,
+   "lon": 151.2285163,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0378-AU",
+   "lat": -33.8289223,
+   "lon": 151.2271314,
+   "tier": "low"
+  },
+  {
+   "street": "Waters Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0379-AU",
+   "lat": -33.8310985,
+   "lon": 151.223463,
+   "tier": "medium"
+  },
+  {
+   "street": "",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0382-AU",
+   "lat": -33.8284897,
+   "lon": 151.2016944,
+   "tier": "low"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0402-AU",
+   "lat": -33.8230444,
+   "lon": 151.1991201,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0403-AU",
+   "lat": -33.8249458,
+   "lon": 151.2027919,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0404-AU",
+   "lat": -33.825018,
+   "lon": 151.2032361,
+   "tier": "medium"
+  },
+  {
+   "street": "Devonshire Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0405-AU",
+   "lat": -33.8240203,
+   "lon": 151.2038922,
+   "tier": "medium"
+  },
+  {
+   "street": "West Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0406-AU",
+   "lat": -33.8260732,
+   "lon": 151.2069033,
+   "tier": "low"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0410-AU",
+   "lat": -33.8301518,
+   "lon": 151.2024331,
+   "tier": "low"
+  },
+  {
+   "street": "Bruce Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0411-AU",
+   "lat": -33.8293478,
+   "lon": 151.2014076,
+   "tier": "low"
+  },
+  {
+   "street": "Rocklands Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0413-AU",
+   "lat": -33.83072,
+   "lon": 151.2021433,
+   "tier": "low"
+  },
+  {
+   "street": "David Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0414-AU",
+   "lat": -33.8296989,
+   "lon": 151.2027857,
+   "tier": "low"
+  },
+  {
+   "street": "Browns Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0415-AU",
+   "lat": -33.8355508,
+   "lon": 151.2047931,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0416-AU",
+   "lat": -33.8367645,
+   "lon": 151.205483,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0417-AU",
+   "lat": -33.8370664,
+   "lon": 151.2041259,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0418-AU",
+   "lat": -33.8366213,
+   "lon": 151.2065052,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0419-AU",
+   "lat": -33.836982,
+   "lon": 151.2080452,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0420-AU",
+   "lat": -33.8369841,
+   "lon": 151.2088465,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0421-AU",
+   "lat": -33.8372114,
+   "lon": 151.2058807,
+   "tier": "medium"
+  },
+  {
+   "street": "Napier Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0422-AU",
+   "lat": -33.8375319,
+   "lon": 151.2054208,
+   "tier": "medium"
+  },
+  {
+   "street": "Edward Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0423-AU",
+   "lat": -33.8382864,
+   "lon": 151.2042519,
+   "tier": "medium"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0424-AU",
+   "lat": -33.8378954,
+   "lon": 151.2097619,
+   "tier": "high"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0425-AU",
+   "lat": -33.838707,
+   "lon": 151.209643,
+   "tier": "high"
+  },
+  {
+   "street": "Arthur Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0426-AU",
+   "lat": -33.8385724,
+   "lon": 151.2100267,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0427-AU",
+   "lat": -33.8391352,
+   "lon": 151.2093519,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0428-AU",
+   "lat": -33.8392689,
+   "lon": 151.2095218,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0429-AU",
+   "lat": -33.8393258,
+   "lon": 151.2087213,
+   "tier": "high"
+  },
+  {
+   "street": "Gas Lane",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0430-AU",
+   "lat": -33.8402566,
+   "lon": 151.2066731,
+   "tier": "high"
+  },
+  {
+   "street": "Blues Point Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0431-AU",
+   "lat": -33.8414327,
+   "lon": 151.2059525,
+   "tier": "high"
+  },
+  {
+   "street": "Bradly Avenue",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0432-AU",
+   "lat": -33.8441087,
+   "lon": 151.2155193,
+   "tier": "low"
+  },
+  {
+   "street": "Whaling Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0434-AU",
+   "lat": -33.8406445,
+   "lon": 151.2116438,
+   "tier": "low"
+  },
+  {
+   "street": "Burton Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0435-AU",
+   "lat": -33.8463365,
+   "lon": 151.2115077,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0446-AU",
+   "lat": -33.8255264,
+   "lon": 151.2018305,
+   "tier": "medium"
+  },
+  {
+   "street": "Waters Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0447-AU",
+   "lat": -33.8309567,
+   "lon": 151.2235183,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0450-AU",
+   "lat": -33.8274325,
+   "lon": 151.2008,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0452-AU",
+   "lat": -33.8347875,
+   "lon": 151.2087703,
+   "tier": "medium"
+  },
+  {
+   "street": "Bradly Avenue",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0454-AU",
+   "lat": -33.8436568,
+   "lon": 151.2142648,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Touch N Go",
+   "id": "NSDAVRTLTNG0455-AU",
+   "lat": -33.8332783,
+   "lon": 151.210406,
+   "tier": "low"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Parking Meter",
+   "id": "NSD_1101-AU",
+   "lat": -33.8221364,
+   "lon": 151.1950158,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Parking Meter",
+   "id": "NSD_1102-AU",
+   "lat": -33.8221038,
+   "lon": 151.1967524,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Parking Meter",
+   "id": "NSD_1103-AU",
+   "lat": -33.8221216,
+   "lon": 151.1981653,
+   "tier": "medium"
+  },
+  {
+   "street": "Chandos Street",
+   "model": "Parking Meter",
+   "id": "NSD_1104-AU",
+   "lat": -33.8220964,
+   "lon": 151.1997452,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Parking Meter",
+   "id": "NSD_1105-AU",
+   "lat": -33.8228394,
+   "lon": 151.1963389,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Parking Meter",
+   "id": "NSD_1107-AU",
+   "lat": -33.8229801,
+   "lon": 151.1977354,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Parking Meter",
+   "id": "NSD_1108-AU",
+   "lat": -33.8231452,
+   "lon": 151.1989992,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1109-AU",
+   "lat": -33.8237718,
+   "lon": 151.1981301,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1110-AU",
+   "lat": -33.8237689,
+   "lon": 151.1997841,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Street",
+   "model": "Parking Meter",
+   "id": "NSD_1111-AU",
+   "lat": -33.8248816,
+   "lon": 151.1992846,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Street",
+   "model": "Parking Meter",
+   "id": "NSD_1112-AU",
+   "lat": -33.8259496,
+   "lon": 151.2002605,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1113-AU",
+   "lat": -33.8266963,
+   "lon": 151.2007844,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1114-AU",
+   "lat": -33.8255773,
+   "lon": 151.2007786,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1115-AU",
+   "lat": -33.8239775,
+   "lon": 151.2009465,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1116-AU",
+   "lat": -33.8271275,
+   "lon": 151.2021012,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1117-AU",
+   "lat": -33.826468,
+   "lon": 151.2022539,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1120-AU",
+   "lat": -33.8245925,
+   "lon": 151.2026972,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1121-AU",
+   "lat": -33.8240259,
+   "lon": 151.2020177,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Parking Meter",
+   "id": "NSD_1122-AU",
+   "lat": -33.8250561,
+   "lon": 151.2033035,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1123-AU",
+   "lat": -33.8254728,
+   "lon": 151.202389,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Parking Meter",
+   "id": "NSD_1124-AU",
+   "lat": -33.8247834,
+   "lon": 151.2016075,
+   "tier": "medium"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_1125-AU",
+   "lat": -33.8244641,
+   "lon": 151.1979005,
+   "tier": "medium"
+  },
+  {
+   "street": "Hume Street",
+   "model": "Parking Meter",
+   "id": "NSD_1126-AU",
+   "lat": -33.8247745,
+   "lon": 151.2000125,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Parking Meter",
+   "id": "NSD_1128-AU",
+   "lat": -33.8259423,
+   "lon": 151.1970296,
+   "tier": "medium"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_1129-AU",
+   "lat": -33.8268416,
+   "lon": 151.1997706,
+   "tier": "medium"
+  },
+  {
+   "street": "Eden Street",
+   "model": "Parking Meter",
+   "id": "NSD_2111-AU",
+   "lat": -33.8313511,
+   "lon": 151.204823,
+   "tier": "low"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_2101-AU",
+   "lat": -33.8320218,
+   "lon": 151.2081349,
+   "tier": "low"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_2102-AU",
+   "lat": -33.8297778,
+   "lon": 151.2088401,
+   "tier": "low"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_2103-AU",
+   "lat": -33.8320801,
+   "lon": 151.2082692,
+   "tier": "low"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Parking Meter",
+   "id": "NSD_2104-AU",
+   "lat": -33.8332764,
+   "lon": 151.2109778,
+   "tier": "low"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Parking Meter",
+   "id": "NSD_2105-AU",
+   "lat": -33.8331917,
+   "lon": 151.2103971,
+   "tier": "low"
+  },
+  {
+   "street": "Elliott Street",
+   "model": "Parking Meter",
+   "id": "NSD_2106-AU",
+   "lat": -33.8333288,
+   "lon": 151.2087653,
+   "tier": "medium"
+  },
+  {
+   "street": "David Street",
+   "model": "Parking Meter",
+   "id": "NSD_2107-AU",
+   "lat": -33.8296315,
+   "lon": 151.2029967,
+   "tier": "low"
+  },
+  {
+   "street": "Bruce Street",
+   "model": "Parking Meter",
+   "id": "NSD_2108-AU",
+   "lat": -33.8293959,
+   "lon": 151.201146,
+   "tier": "low"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_2109-AU",
+   "lat": -33.8300268,
+   "lon": 151.2022937,
+   "tier": "low"
+  },
+  {
+   "street": "Myrtle Street",
+   "model": "Parking Meter",
+   "id": "NSD_2110-AU",
+   "lat": -33.8309717,
+   "lon": 151.2037227,
+   "tier": "low"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Parking Meter",
+   "id": "NSD_3101-AU",
+   "lat": -33.8327131,
+   "lon": 151.2068876,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Parking Meter",
+   "id": "NSD_3102-AU",
+   "lat": -33.8325806,
+   "lon": 151.2064779,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_3103-AU",
+   "lat": -33.8340798,
+   "lon": 151.2077617,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_3104-AU",
+   "lat": -33.8362803,
+   "lon": 151.2073374,
+   "tier": "high"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_3105-AU",
+   "lat": -33.8360508,
+   "lon": 151.2075095,
+   "tier": "medium"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_3106-AU",
+   "lat": -33.8332127,
+   "lon": 151.2080968,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_3107-AU",
+   "lat": -33.8349693,
+   "lon": 151.2096898,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_3109-AU",
+   "lat": -33.8357582,
+   "lon": 151.2094229,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Parking Meter",
+   "id": "NSD_3110-AU",
+   "lat": -33.8349949,
+   "lon": 151.2084908,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Parking Meter",
+   "id": "NSD_3111-AU",
+   "lat": -33.8345878,
+   "lon": 151.2058705,
+   "tier": "medium"
+  },
+  {
+   "street": "Church Street",
+   "model": "Parking Meter",
+   "id": "NSD_3112-AU",
+   "lat": -33.8339983,
+   "lon": 151.2055971,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4101-AU",
+   "lat": -33.837908,
+   "lon": 151.2090206,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4102-AU",
+   "lat": -33.8390161,
+   "lon": 151.2084838,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4103-AU",
+   "lat": -33.8400132,
+   "lon": 151.2086031,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4104-AU",
+   "lat": -33.8393686,
+   "lon": 151.2088052,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4105-AU",
+   "lat": -33.8391783,
+   "lon": 151.2092155,
+   "tier": "high"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4106-AU",
+   "lat": -33.8378728,
+   "lon": 151.2097224,
+   "tier": "high"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4107-AU",
+   "lat": -33.8387251,
+   "lon": 151.2089729,
+   "tier": "high"
+  },
+  {
+   "street": "William Street",
+   "model": "Parking Meter",
+   "id": "NSD_4108-AU",
+   "lat": -33.839707,
+   "lon": 151.2057378,
+   "tier": "high"
+  },
+  {
+   "street": "William Street",
+   "model": "Parking Meter",
+   "id": "NSD_4109-AU",
+   "lat": -33.8412302,
+   "lon": 151.2054763,
+   "tier": "high"
+  },
+  {
+   "street": "Blues Point Road",
+   "model": "Parking Meter",
+   "id": "NSD_4110-AU",
+   "lat": -33.8419512,
+   "lon": 151.2057348,
+   "tier": "high"
+  },
+  {
+   "street": "Blues Point Road",
+   "model": "Parking Meter",
+   "id": "NSD_4111-AU",
+   "lat": -33.8412657,
+   "lon": 151.2061033,
+   "tier": "high"
+  },
+  {
+   "street": "Blue Street",
+   "model": "Parking Meter",
+   "id": "NSD_4112-AU",
+   "lat": -33.8408167,
+   "lon": 151.2061695,
+   "tier": "high"
+  },
+  {
+   "street": "Miller Street",
+   "model": "Parking Meter",
+   "id": "NSD_4113-AU",
+   "lat": -33.8394676,
+   "lon": 151.2068224,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4114-AU",
+   "lat": -33.8379773,
+   "lon": 151.2064187,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4115-AU",
+   "lat": -33.8371574,
+   "lon": 151.206052,
+   "tier": "medium"
+  },
+  {
+   "street": "Doohat Avenue",
+   "model": "Parking Meter",
+   "id": "NSD_4116-AU",
+   "lat": -33.8358589,
+   "lon": 151.2049483,
+   "tier": "medium"
+  },
+  {
+   "street": "Edward Street",
+   "model": "Parking Meter",
+   "id": "NSD_4117-AU",
+   "lat": -33.8364096,
+   "lon": 151.2037339,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4118-AU",
+   "lat": -33.8367536,
+   "lon": 151.2051635,
+   "tier": "medium"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4120-AU",
+   "lat": -33.8386544,
+   "lon": 151.2061577,
+   "tier": "medium"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4121-AU",
+   "lat": -33.8384706,
+   "lon": 151.2046965,
+   "tier": "medium"
+  },
+  {
+   "street": "Edward Street",
+   "model": "Parking Meter",
+   "id": "NSD_4122-AU",
+   "lat": -33.8374395,
+   "lon": 151.2040037,
+   "tier": "medium"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4124-AU",
+   "lat": -33.8386554,
+   "lon": 151.2054897,
+   "tier": "medium"
+  },
+  {
+   "street": "Lord Street",
+   "model": "Parking Meter",
+   "id": "NSD_4125-AU",
+   "lat": -33.8389703,
+   "lon": 151.2032945,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5101-AU",
+   "lat": -33.84848,
+   "lon": 151.2118016,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5102-AU",
+   "lat": -33.8481234,
+   "lon": 151.2117375,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5103-AU",
+   "lat": -33.8470296,
+   "lon": 151.2115529,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5105-AU",
+   "lat": -33.8444864,
+   "lon": 151.2107602,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5106-AU",
+   "lat": -33.8481689,
+   "lon": 151.2116098,
+   "tier": "high"
+  },
+  {
+   "street": "Middlemiss Street",
+   "model": "Parking Meter",
+   "id": "NSD_5107-AU",
+   "lat": -33.842558,
+   "lon": 151.2099202,
+   "tier": "medium"
+  },
+  {
+   "street": "Lavender Street",
+   "model": "Parking Meter",
+   "id": "NSD_5108-AU",
+   "lat": -33.8433768,
+   "lon": 151.2097627,
+   "tier": "medium"
+  },
+  {
+   "street": "Harbourview Crescent",
+   "model": "Parking Meter",
+   "id": "NSD_5109-AU",
+   "lat": -33.8440282,
+   "lon": 151.2094978,
+   "tier": "medium"
+  },
+  {
+   "street": "Cliff Street",
+   "model": "Parking Meter",
+   "id": "NSD_5110-AU",
+   "lat": -33.8447436,
+   "lon": 151.2104261,
+   "tier": "medium"
+  },
+  {
+   "street": "Glen Street",
+   "model": "Parking Meter",
+   "id": "NSD_5111-AU",
+   "lat": -33.8473209,
+   "lon": 151.2105477,
+   "tier": "medium"
+  },
+  {
+   "street": "Northcliff Street",
+   "model": "Parking Meter",
+   "id": "NSD_5112-AU",
+   "lat": -33.8483736,
+   "lon": 151.2109139,
+   "tier": "medium"
+  },
+  {
+   "street": "Dind Street",
+   "model": "Parking Meter",
+   "id": "NSD_5113-AU",
+   "lat": -33.8478775,
+   "lon": 151.2110746,
+   "tier": "medium"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Parking Meter",
+   "id": "NSD_5114-AU",
+   "lat": -33.8492298,
+   "lon": 151.2136241,
+   "tier": "medium"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Parking Meter",
+   "id": "NSD_5115-AU",
+   "lat": -33.8498146,
+   "lon": 151.2127518,
+   "tier": "high"
+  },
+  {
+   "street": "Broughton Street",
+   "model": "Parking Meter",
+   "id": "NSD_5118-AU",
+   "lat": -33.8442257,
+   "lon": 151.2126915,
+   "tier": "low"
+  },
+  {
+   "street": "Ennis Road",
+   "model": "Parking Meter",
+   "id": "NSD_5119-AU",
+   "lat": -33.8447078,
+   "lon": 151.2121713,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6101-AU",
+   "lat": -33.8301846,
+   "lon": 151.2226685,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6102-AU",
+   "lat": -33.8297999,
+   "lon": 151.2211295,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6103-AU",
+   "lat": -33.8296379,
+   "lon": 151.2205163,
+   "tier": "medium"
+  },
+  {
+   "street": "Barry Street",
+   "model": "Parking Meter",
+   "id": "NSD_6104-AU",
+   "lat": -33.8318884,
+   "lon": 151.221152,
+   "tier": "medium"
+  },
+  {
+   "street": "Yeo Street",
+   "model": "Parking Meter",
+   "id": "NSD_6105-AU",
+   "lat": -33.8324871,
+   "lon": 151.2240638,
+   "tier": "medium"
+  },
+  {
+   "street": "Rangers Road",
+   "model": "Parking Meter",
+   "id": "NSD_6106-AU",
+   "lat": -33.8319795,
+   "lon": 151.2240581,
+   "tier": "medium"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Parking Meter",
+   "id": "NSD_6107-AU",
+   "lat": -33.8291653,
+   "lon": 151.2268646,
+   "tier": "medium"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Parking Meter",
+   "id": "NSD_6108-AU",
+   "lat": -33.8281822,
+   "lon": 151.2289664,
+   "tier": "low"
+  },
+  {
+   "street": "Parraween Street",
+   "model": "Parking Meter",
+   "id": "NSD_6109-AU",
+   "lat": -33.8287413,
+   "lon": 151.2276224,
+   "tier": "low"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Parking Meter",
+   "id": "NSD_3113-AU",
+   "lat": -33.8345406,
+   "lon": 151.2061393,
+   "tier": "medium"
+  },
+  {
+   "street": "West Street",
+   "model": "Parking Meter",
+   "id": "NSD_3114-AU",
+   "lat": -33.8328076,
+   "lon": 151.2053771,
+   "tier": "medium"
+  },
+  {
+   "street": "Angelo Street",
+   "model": "Parking Meter",
+   "id": "NSD_3115-AU",
+   "lat": -33.8356464,
+   "lon": 151.205933,
+   "tier": "medium"
+  },
+  {
+   "street": "Fitzroy Street",
+   "model": "Parking Meter",
+   "id": "NSD_5120-AU",
+   "lat": -33.8473492,
+   "lon": 151.2124971,
+   "tier": "medium"
+  },
+  {
+   "street": "Burton Street",
+   "model": "Parking Meter",
+   "id": "NSD_5121-AU",
+   "lat": -33.8463579,
+   "lon": 151.212202,
+   "tier": "medium"
+  },
+  {
+   "street": "Oxley Street",
+   "model": "Parking Meter",
+   "id": "NSD_1131-AU",
+   "lat": -33.8243826,
+   "lon": 151.1989147,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1132-AU",
+   "lat": -33.8263291,
+   "lon": 151.2008278,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1133-AU",
+   "lat": -33.8270503,
+   "lon": 151.2008814,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Road",
+   "model": "Parking Meter",
+   "id": "NSD_1134-AU",
+   "lat": -33.8253515,
+   "lon": 151.200951,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Parking Meter",
+   "id": "NSD_3117-AU",
+   "lat": -33.8347777,
+   "lon": 151.2067507,
+   "tier": "medium"
+  },
+  {
+   "street": "Ridge Street",
+   "model": "Parking Meter",
+   "id": "NSD_2113-AU",
+   "lat": -33.832972,
+   "lon": 151.2091667,
+   "tier": "low"
+  },
+  {
+   "street": "Fitzroy Street",
+   "model": "Parking Meter",
+   "id": "NSD_5129-AU",
+   "lat": -33.8475371,
+   "lon": 151.2119985,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6110-AU",
+   "lat": -33.8295373,
+   "lon": 151.2200537,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Parking Meter",
+   "id": "NSD_1137-AU",
+   "lat": -33.8228521,
+   "lon": 151.1982767,
+   "tier": "medium"
+  },
+  {
+   "street": "Burton Street",
+   "model": "Parking Meter",
+   "id": "NSD_5127-AU",
+   "lat": -33.8462813,
+   "lon": 151.2117843,
+   "tier": "medium"
+  },
+  {
+   "street": "Little Spring Street",
+   "model": "Parking Meter",
+   "id": "NSD_4127-AU",
+   "lat": -33.8372311,
+   "lon": 151.2086049,
+   "tier": "high"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Parking Meter",
+   "id": "NSD_5131-AU",
+   "lat": -33.8495204,
+   "lon": 151.213913,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1140-AU",
+   "lat": -33.8238865,
+   "lon": 151.2001999,
+   "tier": "medium"
+  },
+  {
+   "street": "Ward Street",
+   "model": "Parking Meter",
+   "id": "NSD_4126-AU",
+   "lat": -33.836611,
+   "lon": 151.2084443,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4128-AU",
+   "lat": -33.8391107,
+   "lon": 151.208529,
+   "tier": "high"
+  },
+  {
+   "street": "Christie Street",
+   "model": "Parking Meter",
+   "id": "NSD_1141-AU",
+   "lat": -33.8223011,
+   "lon": 151.1952689,
+   "tier": "medium"
+  },
+  {
+   "street": "Atchison Street",
+   "model": "Parking Meter",
+   "id": "NSD_1142-AU",
+   "lat": -33.8229344,
+   "lon": 151.1960161,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1143-AU",
+   "lat": -33.8238375,
+   "lon": 151.1983769,
+   "tier": "medium"
+  },
+  {
+   "street": "Albany Street",
+   "model": "Parking Meter",
+   "id": "NSD_1144-AU",
+   "lat": -33.8239202,
+   "lon": 151.1999094,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Street",
+   "model": "Parking Meter",
+   "id": "NSD_1145-AU",
+   "lat": -33.825599,
+   "lon": 151.200011,
+   "tier": "medium"
+  },
+  {
+   "street": "Holtermann Street",
+   "model": "Parking Meter",
+   "id": "NSD_1146-AU",
+   "lat": -33.824891,
+   "lon": 151.201626,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1147-AU",
+   "lat": -33.8247093,
+   "lon": 151.2024988,
+   "tier": "medium"
+  },
+  {
+   "street": "Alexander Street",
+   "model": "Parking Meter",
+   "id": "NSD_1148-AU",
+   "lat": -33.8264719,
+   "lon": 151.2020484,
+   "tier": "medium"
+  },
+  {
+   "street": "Rocklands Road",
+   "model": "Parking Meter",
+   "id": "NSD_2114-AU",
+   "lat": -33.830728,
+   "lon": 151.202142,
+   "tier": "low"
+  },
+  {
+   "street": "Angelo Street",
+   "model": "Parking Meter",
+   "id": "NSD_3118-AU",
+   "lat": -33.834919,
+   "lon": 151.205605,
+   "tier": "medium"
+  },
+  {
+   "street": "Angelo Street",
+   "model": "Parking Meter",
+   "id": "NSD_3119-AU",
+   "lat": -33.8359017,
+   "lon": 151.2060823,
+   "tier": "medium"
+  },
+  {
+   "street": "Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_3120-AU",
+   "lat": -33.836864,
+   "lon": 151.209185,
+   "tier": "high"
+  },
+  {
+   "street": "Mount Street",
+   "model": "Parking Meter",
+   "id": "NSD_4129-AU",
+   "lat": -33.838594,
+   "lon": 151.205728,
+   "tier": "medium"
+  },
+  {
+   "street": "Lavender Street",
+   "model": "Parking Meter",
+   "id": "NSD_5132-AU",
+   "lat": -33.843672,
+   "lon": 151.210358,
+   "tier": "medium"
+  },
+  {
+   "street": "Broughton Street",
+   "model": "Parking Meter",
+   "id": "NSD_5133-AU",
+   "lat": -33.845026,
+   "lon": 151.212391,
+   "tier": "low"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5134-AU",
+   "lat": -33.844495,
+   "lon": 151.21091,
+   "tier": "medium"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5135-AU",
+   "lat": -33.847016,
+   "lon": 151.211412,
+   "tier": "high"
+  },
+  {
+   "street": "Olympic Drive",
+   "model": "Parking Meter",
+   "id": "NSD_5136-AU",
+   "lat": -33.849688,
+   "lon": 151.211614,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6111-AU",
+   "lat": -33.830051,
+   "lon": 151.221898,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6112-AU",
+   "lat": -33.829598,
+   "lon": 151.220639,
+   "tier": "medium"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_1149-AU",
+   "lat": -33.8267489,
+   "lon": 151.1999727,
+   "tier": "medium"
+  },
+  {
+   "street": "Clarke Lane",
+   "model": "Parking Meter",
+   "id": "NSD_1150-AU",
+   "lat": -33.824222,
+   "lon": 151.1981667,
+   "tier": "medium"
+  },
+  {
+   "street": "Willoughby Lane",
+   "model": "Parking Meter",
+   "id": "NSD_1151-AU",
+   "lat": -33.82575,
+   "lon": 151.2018016,
+   "tier": "medium"
+  },
+  {
+   "street": "Hayberry Street",
+   "model": "Parking Meter",
+   "id": "NSD_2115-AU",
+   "lat": -33.8287514,
+   "lon": 151.2019997,
+   "tier": "low"
+  },
+  {
+   "street": "Denison Street",
+   "model": "Parking Meter",
+   "id": "NSD_4130-AU",
+   "lat": -33.8372508,
+   "lon": 151.2081657,
+   "tier": "high"
+  },
+  {
+   "street": "Denison Street",
+   "model": "Parking Meter",
+   "id": "NSD_4131-AU",
+   "lat": -33.8371934,
+   "lon": 151.2080903,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4132-AU",
+   "lat": -33.8366948,
+   "lon": 151.2067773,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4133-AU",
+   "lat": -33.8369178,
+   "lon": 151.2043053,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4134-AU",
+   "lat": -33.8369714,
+   "lon": 151.2045007,
+   "tier": "medium"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4135-AU",
+   "lat": -33.836778,
+   "lon": 151.2054167,
+   "tier": "medium"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4136-AU",
+   "lat": -33.8374446,
+   "lon": 151.2098327,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4137-AU",
+   "lat": -33.8368607,
+   "lon": 151.2078063,
+   "tier": "high"
+  },
+  {
+   "street": "Berry Street",
+   "model": "Parking Meter",
+   "id": "NSD_4138-AU",
+   "lat": -33.8369717,
+   "lon": 151.2087223,
+   "tier": "high"
+  },
+  {
+   "street": "Gas Lane",
+   "model": "Parking Meter",
+   "id": "NSD_4139-AU",
+   "lat": -33.8403602,
+   "lon": 151.2068893,
+   "tier": "high"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4140-AU",
+   "lat": -33.839389,
+   "lon": 151.2093347,
+   "tier": "high"
+  },
+  {
+   "street": "Little Walker Street",
+   "model": "Parking Meter",
+   "id": "NSD_4141-AU",
+   "lat": -33.8400571,
+   "lon": 151.2092783,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4142-AU",
+   "lat": -33.8363052,
+   "lon": 151.2055013,
+   "tier": "medium"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4143-AU",
+   "lat": -33.8384429,
+   "lon": 151.2064723,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4144-AU",
+   "lat": -33.840861,
+   "lon": 151.2089447,
+   "tier": "high"
+  },
+  {
+   "street": "Pacific Highway",
+   "model": "Parking Meter",
+   "id": "NSD_4145-AU",
+   "lat": -33.8400011,
+   "lon": 151.208166,
+   "tier": "high"
+  },
+  {
+   "street": "Blue Street",
+   "model": "Parking Meter",
+   "id": "NSD_4146-AU",
+   "lat": -33.8407797,
+   "lon": 151.2067787,
+   "tier": "high"
+  },
+  {
+   "street": "Arthur Street",
+   "model": "Parking Meter",
+   "id": "NSD_5137-AU",
+   "lat": -33.838,
+   "lon": 151.210112,
+   "tier": "high"
+  },
+  {
+   "street": "Arthur Street",
+   "model": "Parking Meter",
+   "id": "NSD_5138-AU",
+   "lat": -33.8419992,
+   "lon": 151.2097217,
+   "tier": "medium"
+  },
+  {
+   "street": "Arthur Street",
+   "model": "Parking Meter",
+   "id": "NSD_5139-AU",
+   "lat": -33.8420277,
+   "lon": 151.209752,
+   "tier": "medium"
+  },
+  {
+   "street": "Cliff Street",
+   "model": "Parking Meter",
+   "id": "NSD_5140-AU",
+   "lat": -33.845667,
+   "lon": 151.2109433,
+   "tier": "medium"
+  },
+  {
+   "street": "Grosvenor Street",
+   "model": "Parking Meter",
+   "id": "NSD_6113-AU",
+   "lat": -33.8304162,
+   "lon": 151.223473,
+   "tier": "medium"
+  },
+  {
+   "street": "Waters Road",
+   "model": "Parking Meter",
+   "id": "NSD_6114-AU",
+   "lat": -33.8312228,
+   "lon": 151.2233607,
+   "tier": "medium"
+  },
+  {
+   "street": "McLaren Street",
+   "model": "Parking Meter",
+   "id": "NSD_3123-AU",
+   "lat": -33.834972,
+   "lon": 151.2091676,
+   "tier": "medium"
+  },
+  {
+   "street": "Harnett Street",
+   "model": "Parking Meter",
+   "id": "NSD_3124-AU",
+   "lat": -33.8352135,
+   "lon": 151.2089857,
+   "tier": "medium"
+  },
+  {
+   "street": "Bradly Avenue",
+   "model": "Parking Meter",
+   "id": "NSD_5141-AU",
+   "lat": -33.8438627,
+   "lon": 151.2148337,
+   "tier": "low"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5143-AU",
+   "lat": -33.8488613,
+   "lon": 151.21186,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5144-AU",
+   "lat": -33.8491118,
+   "lon": 151.2118887,
+   "tier": "high"
+  },
+  {
+   "street": "Alfred Street South",
+   "model": "Parking Meter",
+   "id": "NSD_5145-AU",
+   "lat": -33.8492783,
+   "lon": 151.2119433,
+   "tier": "high"
+  }
+ ]
+}

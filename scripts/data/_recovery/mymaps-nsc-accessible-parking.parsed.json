@@ -1,0 +1,642 @@
+{
+ "map_name": "Accessible parking spaces in North Sydney area",
+ "map_description": "",
+ "source_url": "https://www.google.com/maps/d/kml?mid=1Uaqg_Nh3t0eVAPPGZH6FbYLmElNbzRi-&forcekml=1",
+ "mid": "1Uaqg_Nh3t0eVAPPGZH6FbYLmElNbzRi-",
+ "retrieved": "2026-07-30",
+ "embedded_on": "https://www.northsydney.nsw.gov.au/homepage/97/find-accessible-parking-spaces",
+ "placemark_count": 39,
+ "extendedData_fields_present": [
+  "Origin Latitude",
+  "Origin Longitude",
+  "Street name",
+  "capacity"
+ ],
+ "note": "Accessible (disabled) parking locations. Fields: capacity (# spaces), Street name, Origin Latitude/Longitude. No operating hours, time limits, tariff or tier present.",
+ "placemarks": [
+  {
+   "name": "Alexander St car park, Crows Nest",
+   "description": "capacity: 10<br>Origin Latitude: -33.8269218028<br>Origin Longitude: 151.2016462807<br>Street name: Alexander St, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "10.0",
+    "Origin Latitude": "-33.8269218028",
+    "Origin Longitude": "151.2016462807",
+    "Street name": "Alexander St, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.2016462807,
+    "lat": -33.8269218028,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South, Milsons Point ",
+   "description": "capacity: 1<br>Origin Latitude: -33.8491122124<br>Origin Longitude: 151.2117715697<br>Street name: Alfred Street South, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8491122124",
+    "Origin Longitude": "151.2117715697",
+    "Street name": "Alfred Street South, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2117715697,
+    "lat": -33.8491122124,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South, Milsons Point ",
+   "description": "capacity: 1<br>Origin Latitude: -33.8491658749<br>Origin Longitude: 151.2117797437<br>Street name: Alfred Street South, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8491658749",
+    "Origin Longitude": "151.2117797437",
+    "Street name": "Alfred Street South, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2117797437,
+    "lat": -33.8491658749,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Alfred Street South, Milsons Point ",
+   "description": "capacity: 1<br>Origin Latitude: -33.8492204336<br>Origin Longitude: 151.2117880541<br>Street name: Alfred Street South, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8492204336",
+    "Origin Longitude": "151.2117880541",
+    "Street name": "Alfred Street South, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2117880541,
+    "lat": -33.8492204336,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Atichison Street, St Leonards - outside 27 Atchison St",
+   "description": "capacity: 1<br>Origin Latitude: -33.8229874067<br>Origin Longitude: 151.1985207886<br>Street name: Atichison Street, St Leonards",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8229874067",
+    "Origin Longitude": "151.1985207886",
+    "Street name": "Atichison Street, St Leonards"
+   },
+   "coordinates": {
+    "lon": 151.1985207886,
+    "lat": -33.8229874067,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Barry Street, Neutral Bay - near May Lane",
+   "description": "capacity: 1<br>Origin Latitude: -33.8317786864<br>Origin Longitude: 151.2211052615<br>Street name: Barry Street, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8317786864",
+    "Origin Longitude": "151.2211052615",
+    "Street name": "Barry Street, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2211052615,
+    "lat": -33.8317786864,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Blues Point Rd, McMahons Point - outside 139 Blues Pt Road",
+   "description": "capacity: 1<br>Origin Latitude: -33.8441675979<br>Origin Longitude: 151.2044504271<br>Street name: Blues Point Rd, McMahons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8441675979",
+    "Origin Longitude": "151.2044504271",
+    "Street name": "Blues Point Rd, McMahons Point"
+   },
+   "coordinates": {
+    "lon": 151.2044504271,
+    "lat": -33.8441675979,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton St, Kirribilli - at the lookout",
+   "description": "capacity: 1<br>Origin Latitude: -33.8492592033<br>Origin Longitude: 151.2132769017<br>Street name: Broughton St, Kirribilli",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8492592033",
+    "Origin Longitude": "151.2132769017",
+    "Street name": "Broughton St, Kirribilli"
+   },
+   "coordinates": {
+    "lon": 151.2132769017,
+    "lat": -33.8492592033,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Broughton St, Kirribilli ",
+   "description": "capacity: 1<br>Origin Latitude: -33.8467482044<br>Origin Longitude: 151.2128695001<br>Street name: Broughton St, Kirribilli",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8467482044",
+    "Origin Longitude": "151.2128695001",
+    "Street name": "Broughton St, Kirribilli"
+   },
+   "coordinates": {
+    "lon": 151.2128695001,
+    "lat": -33.8467482044,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton St, Kirribilli - outside 34 Burton Street",
+   "description": "capacity: 1<br>Origin Latitude: -33.8461636875<br>Origin Longitude: 151.2133771288<br>Street name: Burton St, Kirribilli ",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8461636875",
+    "Origin Longitude": "151.2133771288",
+    "Street name": "Burton St, Kirribilli "
+   },
+   "coordinates": {
+    "lon": 151.2133771288,
+    "lat": -33.8461636875,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Burton St, Milsons Point",
+   "description": "capacity: 1<br>Origin Latitude: -33.8463980168<br>Origin Longitude: 151.2117985217<br>Street name: Burton St, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8463980168",
+    "Origin Longitude": "151.2117985217",
+    "Street name": "Burton St, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2117985217,
+    "lat": -33.8463980168,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Council Visitor car park",
+   "description": "capacity: 1<br>Origin Latitude: -33.8342165224<br>Origin Longitude: 151.2070458601<br>Street name: Kelrose Lane, North Sydney",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8342165224",
+    "Origin Longitude": "151.2070458601",
+    "Street name": "Kelrose Lane, North Sydney"
+   },
+   "coordinates": {
+    "lon": 151.2070458601,
+    "lat": -33.8342165224,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Council Visitor car park",
+   "description": "capacity: 1<br>Origin Latitude: -33.8342075629<br>Origin Longitude: 151.2070896705<br>Street name: Kelrose Lane, North Sydney",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8342075629",
+    "Origin Longitude": "151.2070896705",
+    "Street name": "Kelrose Lane, North Sydney"
+   },
+   "coordinates": {
+    "lon": 151.2070896705,
+    "lat": -33.8342075629,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ernest Street, Crows Nest - near Ernest Place",
+   "description": "capacity: 1<br>Origin Latitude: -33.8257935860<br>Origin Longitude: 151.2019494399<br>Street name: Ernest Street, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8257935860",
+    "Origin Longitude": "151.2019494399",
+    "Street name": "Ernest Street, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.2019494399,
+    "lat": -33.825793586,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ernest Street, Crows Nest - near Ernest Place",
+   "description": "capacity: 1<br>Origin Latitude: -33.8258050684<br>Origin Longitude: 151.2020230394<br>Street name: Ernest Street, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8258050684",
+    "Origin Longitude": "151.2020230394",
+    "Street name": "Ernest Street, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.2020230394,
+    "lat": -33.8258050684,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Lane car park, Neutral Bay",
+   "description": "capacity: 1<br>Origin Latitude: -33.8309498469<br>Origin Longitude: 151.2227413369<br>Street name: Grosvenor Lane, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8309498469",
+    "Origin Longitude": "151.2227413369",
+    "Street name": "Grosvenor Lane, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2227413369,
+    "lat": -33.8309498469,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Lane car park, Neutral Bay",
+   "description": "capacity: 1<br>Origin Latitude: -33.8309617240<br>Origin Longitude: 151.2227898177<br>Street name: Grosvenor Lane, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8309617240",
+    "Origin Longitude": "151.2227898177",
+    "Street name": "Grosvenor Lane, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2227898177,
+    "lat": -33.830961724,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Lane car park, Neutral Bay",
+   "description": "capacity: 1<br>Origin Latitude: -33.8309931024<br>Origin Longitude: 151.2227261215<br>Street name: Grosvenor Lane, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8309931024",
+    "Origin Longitude": "151.2227261215",
+    "Street name": "Grosvenor Lane, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2227261215,
+    "lat": -33.8309931024,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Grosvenor Lane car park, Neutral Bay",
+   "description": "capacity: 1<br>Origin Latitude: -33.8310049796<br>Origin Longitude: 151.2227746023<br>Street name: Grosvenor Lane, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8310049796",
+    "Origin Longitude": "151.2227746023",
+    "Street name": "Grosvenor Lane, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2227746023,
+    "lat": -33.8310049796,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Henry Lawson Drive, McMahons Point - near McMahons Point Wharf",
+   "description": "capacity: 1<br>Origin Latitude: -33.8488586101<br>Origin Longitude: 151.2059776557<br>Street name: Henry Lawson Drive, McMahons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8488586101",
+    "Origin Longitude": "151.2059776557",
+    "Street name": "Henry Lawson Drive, McMahons Point"
+   },
+   "coordinates": {
+    "lon": 151.2059776557,
+    "lat": -33.8488586101,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Holtermann St car park, Crows Nest",
+   "description": "capacity: 5<br>Origin Latitude: -33.8250903253<br>Origin Longitude: 151.2016830630<br>Street name: Holtermann St, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "5.0",
+    "Origin Latitude": "-33.8250903253",
+    "Origin Longitude": "151.2016830630",
+    "Street name": "Holtermann St, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.201683063,
+    "lat": -33.8250903253,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Hume St car park, Crows Nest",
+   "description": "capacity: 4<br>Origin Latitude: -33.8244384714<br>Origin Longitude: 151.1995176324<br>Street name: Hume St, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "4.0",
+    "Origin Latitude": "-33.8244384714",
+    "Origin Longitude": "151.1995176324",
+    "Street name": "Hume St, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.1995176324,
+    "lat": -33.8244384714,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McDougall St, Kirribilli - adjacent to the Ensemble Theatre",
+   "description": "capacity: 1<br>Origin Latitude: -33.8454707476<br>Origin Longitude: 151.2151882920<br>Street name: McDougall St, Kirribilli",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8454707476",
+    "Origin Longitude": "151.2151882920",
+    "Street name": "McDougall St, Kirribilli"
+   },
+   "coordinates": {
+    "lon": 151.215188292,
+    "lat": -33.8454707476,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "McDougall St, Kirribilli - adjacent to Sydney Flying Squandron Club",
+   "description": "capacity: 1<br>Origin Latitude: -33.8450741109<br>Origin Longitude: 151.2149133840<br>Street name: McDougall St, Kirribilli",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8450741109",
+    "Origin Longitude": "151.2149133840",
+    "Street name": "McDougall St, Kirribilli"
+   },
+   "coordinates": {
+    "lon": 151.214913384,
+    "lat": -33.8450741109,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Miller Lane car park, Cammeray - behind the Cammeray shops",
+   "description": "capacity: 4<br>Origin Latitude: -33.8224586071<br>Origin Longitude: 151.2109785660<br>Street name: Miller Lane, Cammeray",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "4.0",
+    "Origin Latitude": "-33.8224586071",
+    "Origin Longitude": "151.2109785660",
+    "Street name": "Miller Lane, Cammeray"
+   },
+   "coordinates": {
+    "lon": 151.210978566,
+    "lat": -33.8224586071,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Nicholson Street car park, Crows Nest",
+   "description": "capacity: 2<br>Origin Latitude: -33.8272224493<br>Origin Longitude: 151.1992969250<br>Street name: Nicholson Street, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "2.0",
+    "Origin Latitude": "-33.8272224493",
+    "Origin Longitude": "151.1992969250",
+    "Street name": "Nicholson Street, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.199296925,
+    "lat": -33.8272224493,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive, Milsons Point - near the Jeffrey St Wharf",
+   "description": "capacity: 1<br>Origin Latitude: -33.8494812229<br>Origin Longitude: 151.2135725552<br>Street name: Olympic Drive, Kirribilli",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8494812229",
+    "Origin Longitude": "151.2135725552",
+    "Street name": "Olympic Drive, Kirribilli"
+   },
+   "coordinates": {
+    "lon": 151.2135725552,
+    "lat": -33.8494812229,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive, Milsons Point - near Harbour Bridge",
+   "description": "capacity: 1<br>Origin Latitude: -33.8502020260<br>Origin Longitude: 151.2126390734<br>Street name: Olympic Drive, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8502020260",
+    "Origin Longitude": "151.2126390734",
+    "Street name": "Olympic Drive, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2126390734,
+    "lat": -33.850202026,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Olympic Drive, Milsons Point - near Harbour Bridge",
+   "description": "capacity: 1<br>Origin Latitude: -33.8502544912<br>Origin Longitude: 151.2126095002<br>Street name: Olympic Drive, Milsons Point",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8502544912",
+    "Origin Longitude": "151.2126095002",
+    "Street name": "Olympic Drive, Milsons Point"
+   },
+   "coordinates": {
+    "lon": 151.2126095002,
+    "lat": -33.8502544912,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween St car park, Cremorne",
+   "description": "capacity: 1<br>Origin Latitude: -33.8272814363<br>Origin Longitude: 151.2301955896<br>Street name: Parraween St, Cremorne",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8272814363",
+    "Origin Longitude": "151.2301955896",
+    "Street name": "Parraween St, Cremorne"
+   },
+   "coordinates": {
+    "lon": 151.2301955896,
+    "lat": -33.8272814363,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Parraween St, Cremorne - outside 61 Parraween St",
+   "description": "capacity: 1<br>Origin Latitude: -33.8283070834<br>Origin Longitude: 151.2287411763<br>Street name: Parraween St, Cremorne",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8283070834",
+    "Origin Longitude": "151.2287411763",
+    "Street name": "Parraween St, Cremorne"
+   },
+   "coordinates": {
+    "lon": 151.2287411763,
+    "lat": -33.8283070834,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rangers Road, Neutral Bay - outside 9 Rangers Road",
+   "description": "capacity: 1<br>Origin Latitude: -33.8321435204<br>Origin Longitude: 151.2240789152<br>Street name: Rangers Road, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8321435204",
+    "Origin Longitude": "151.2240789152",
+    "Street name": "Rangers Road, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2240789152,
+    "lat": -33.8321435204,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Rangers Road, Neutral Bay - outside 9 Rangers Road",
+   "description": "capacity: 1<br>Origin Latitude: -33.8321997266<br>Origin Longitude: 151.2241570774<br>Street name: Rangers Road, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8321997266",
+    "Origin Longitude": "151.2241570774",
+    "Street name": "Rangers Road, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2241570774,
+    "lat": -33.8321997266,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ridge St car park, North Sydney",
+   "description": "capacity: 4<br>Origin Latitude: -33.8329461719<br>Origin Longitude: 151.2067380137<br>Street name: Ridge St, North Sydney",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "4.0",
+    "Origin Latitude": "-33.8329461719",
+    "Origin Longitude": "151.2067380137",
+    "Street name": "Ridge St, North Sydney"
+   },
+   "coordinates": {
+    "lon": 151.2067380137,
+    "lat": -33.8329461719,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Walker St, North Sydney - outside 168 Walker St",
+   "description": "capacity: 1<br>Origin Latitude: -33.8346358156<br>Origin Longitude: 151.2096497396<br>Street name: Walker St, North Sydney ",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8346358156",
+    "Origin Longitude": "151.2096497396",
+    "Street name": "Walker St, North Sydney "
+   },
+   "coordinates": {
+    "lon": 151.2096497396,
+    "lat": -33.8346358156,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Ward Street car park, North Sydney",
+   "description": "capacity: 8<br>Origin Latitude: -33.8362426398<br>Origin Longitude: 151.2082768164<br>Street name: Ward Street, North Sydney",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "8.0",
+    "Origin Latitude": "-33.8362426398",
+    "Origin Longitude": "151.2082768164",
+    "Street name": "Ward Street, North Sydney"
+   },
+   "coordinates": {
+    "lon": 151.2082768164,
+    "lat": -33.8362426398,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "William St, North Sydney - at rear of the North Sydney Post Office",
+   "description": "capacity: 1<br>Origin Latitude: -33.8385783171<br>Origin Longitude: 151.2060602382<br>Street name: William St, North Sydney",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8385783171",
+    "Origin Longitude": "151.2060602382",
+    "Street name": "William St, North Sydney"
+   },
+   "coordinates": {
+    "lon": 151.2060602382,
+    "lat": -33.8385783171,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Willoughby Road, Crows Nest - outside 16 Willoughby Road",
+   "description": "capacity: 1<br>Origin Latitude: -33.8270648000<br>Origin Longitude: 151.2008293115<br>Street name: Willoughby Road, Crows Nest",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8270648000",
+    "Origin Longitude": "151.2008293115",
+    "Street name": "Willoughby Road, Crows Nest"
+   },
+   "coordinates": {
+    "lon": 151.2008293115,
+    "lat": -33.8270648,
+    "alt": 0.0
+   }
+  },
+  {
+   "name": "Yeo St, Neutral Bay - outside 48 Yeo Street",
+   "description": "capacity: 1<br>Origin Latitude: -33.8323153370<br>Origin Longitude: 151.2226081902<br>Street name: Yeo St, Neutral Bay",
+   "styleUrl": "#icon-1735-0288D1-labelson",
+   "extendedData": {
+    "capacity": "1.0",
+    "Origin Latitude": "-33.8323153370",
+    "Origin Longitude": "151.2226081902",
+    "Street name": "Yeo St, Neutral Bay"
+   },
+   "coordinates": {
+    "lon": 151.2226081902,
+    "lat": -33.832315337,
+    "alt": 0.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+  "zone01": {
+    "label": "Lane Cove West Zone 1",
+    "zone": "1",
+    "streets": [
+      "Orion Road", "Moore Street", "Sirius Road", "Apollo Place",
+      "Mars Road", "Yethonga Avenue", "Currawong Avenue", "Lincoln Street",
+      "Lloyd Rees Drive", "Wood Street", "Beatrice Street", "Penrose Street",
+      "Myee Crescent", "Lihon Street", "Cope Street", "The Avenue",
+      "The Crescent", "Haughton Street", "Burton Street", "Carisbrook Street",
+      "Brooks Street", "Linley Place", "View Street", "Boyle Lane",
+      "Waterview Drive"
+    ]
+  },
+  "zone02": {
+    "label": "Lane Cove North Zone 2",
+    "zone": "2",
+    "streets": [
+      "Mowbray Road West", "Willandra Street", "Mindarie Street", "Kullah Parade",
+      "Gordon Crescent", "Johnston Crescent", "Fraser Street",
+      "Kariolday Street", "Roslyn Street", "Karilla Avenue",
+      "Kurri Street", "Parklands Avenue", "Nundah Street", "Landers Road",
+      "Murray Street", "Murray Lane", "Huttable Avenue", "Helen Street",
+      "Ralston Street", "Stokes Street", "Burley Street", "Kara Street",
+      "Tantallon Road", "Wychwood Avenue", "Norton Street"
+    ]
+  },
+  "zone03": {
+    "label": "Lane Cove Zone 3",
+    "zone": "3",
+    "streets": [
+      "Mafeking Avenue", "Kimberley Avenue", "Gatacre Avenue", "Phoenix Street",
+      "Allison Avenue", "Haldane Crescent", "Angus Avenue", "Cobden Avenue",
+      "Joseph Street", "Marsh Place", "Dorritt Street", "Rothwell Road",
+      "First Avenue", "Alpha Road", "Gamma Road", "Beta Road",
+      "Zeta Road", "Dela Road", "Second Avenue", "Third Avenue",
+      "Osborne Road", "Richardson Street East", "Richardson Street West",
+      "Cogan Place", "Stevenson Street", "Little Street", "Central Avenue",
+      "Longueville Road"
+    ]
+  },
+  "zone04": {
+    "label": "Greenwich Zone 4",
+    "zone": "4",
+    "streets": [
+      "Ronald Avenue", "Crowther Avenue", "Innes Road", "Wisdom Road",
+      "Morven Grove", "Belle Vue Avenue", "Elcedo Lane", "Anglo Road",
+      "Portview Road", "Valleyview Crescent", "Hinkler Street", "Omar Street",
+      "Balfour Street", "Lansdowne Street", "Kingslangley Road", "River Road",
+      "Standish Street", "Coolabah Avenue", "Coolabah Lane", "Greendale Street",
+      "Wilona Avenue", "Gore Street", "St Giles Avenue", "Oscar Street",
+      "Handcock Street", "Glenview Street", "French Street", "Seaman Street",
+      "Bent Street", "Bent Lane", "King William Street", "Carlotta Street",
+      "Carlotta Lane", "Greenwich Road", "Wardrop Street", "Vista Street",
+      "Vista Lane", "Ford Street", "Ellison Lane", "Robertson Street",
+      "Bay Street", "Evelyn Street", "Edwin Street", "Chisholm Street",
+      "Iago Street", "Church Street", "Wallace Street", "St Lawrence Street",
+      "Manns Avenue", "George Street", "Garrison Street", "Mitchell Street",
+      "Albert Street", "Victoria Street", "O'Connell Street", "East Street",
+      "Prospect Street", "Robert Street", "Gother Avenue", "Upper Serpentine Street"
+    ]
+  },
+  "zone05": {
+    "label": "St Leonards Zone 5",
+    "zone": "5",
+    "streets": [
+      "Marshall Lane", "Marshall Avenue", "Christie Lane", "Christie Street",
+      "Nicholson Street", "Lithgow Street", "Park Road", "Park Lane",
+      "Holterman Street", "Oxley Street", "Berry Avenue", "Flander Place"
+    ]
+  }
+}

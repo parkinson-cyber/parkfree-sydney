@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "parkfree-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "web:preview"],
+      "port": 8090,
+      "autoPort": true
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+ "Bellevue Hill": {
+  "label": "Bellevue Hill",
+  "streets": [
+   "Bellevue Road (Bellevue Hill)",
+   "Butler Street",
+   "Riddell Street",
+   "Darling Point Road"
+  ]
+ },
+ "Darling Point 1": {
+  "label": "Darling Point 1",
+  "streets": [
+   "Eastbourne Road",
+   "Elizabeth Place (Darling Point)",
+   "Marathon Road",
+   "Mona Road",
+   "New South Head Road (Edgecliff)",
+   "Octagon Road",
+   "Anderson Street"
+  ]
+ },
+ "Double Bay": {
+  "label": "Double Bay",
+  "streets": [
+   "Bay Street",
+   "Beach Street",
+   "Bellevue Road (Double Bay)",
+   "Carlotta Road",
+   "Cooper Street (Double Bay)",
+   "Court Road",
+   "Cross Street",
+   "Epping Road",
+   "Forest Road",
+   "Gladswood Gardens",
+   "Guilfoyle Avenue",
+   "Henrietta Lane",
+   "Henrietta Street",
+   "Holt Street",
+   "Kioara Road",
+   "Leura Road",
+   "Manning Road",
+   "New South Head Road (Edgecliff)",
+   "New South Head Road (Double Bay)",
+   "Ocean Avenue (Double Bay)",
+   "Patterson Street",
+   "Pearce Street",
+   "South Avenue (Double Bay)",
+   "Spring Street (Double Bay)",
+   "Stafford Street (Double Bay)",
+   "Transvaal Avenue",
+   "William Street (Double Bay)",
+   "Wiston Gardens",
+   "Arthur Street"
+  ]
+ },
+ "Edgecliff 1": {
+  "label": "Edgecliff 1",
+  "streets": [
+   "Bowes Avenue",
+   "Cameron Street",
+   "Glebe Street",
+   "Great Thorne Street",
+   "Herbert Road",
+   "High Street",
+   "Jersey Road (Woollahra)",
+   "Thorne Street",
+   "Albert Street (Edgecliff)"
+  ]
+ },
+ "Edgecliff 2": {
+  "label": "Edgecliff 2",
+  "streets": [
+   "Edgecliff Road (Edgecliff)",
+   "New South Head Road (Edgecliff)",
+   "Ocean Street (Woollahra)",
+   "Ocean Street (Edgecliff)",
+   "Quambi Place",
+   "Rosemont Avenue",
+   "Roslyndale Avenue",
+   "Barcom Avenue"
+  ]
+ },
+ "Paddington 1": {
+  "label": "Paddington 1",
+  "streets": [
+   "Boundary Street",
+   "Bourke Street",
+   "Brodie Street",
+   "Brown Street",
+   "Campbell Avenue",
+   "Comber Street",
+   "Cooper Street (Paddington)",
+   "Dillon Street",
+   "Elfred Street",
+   "Gipps Street",
+   "Glenmore Road (Paddington)",
+   "Glenview Street",
+   "Gosbell Street",
+   "Hopewell Street",
+   "Kidman Lane",
+   "Little Comber Street",
+   "Liverpool Street",
+   "Margaret Place",
+   "Mary Place",
+   "Neild Avenue",
+   "Oxford Street (Paddington)",
+   "Prospect Street (Paddington)",
+   "Shadforth Street",
+   "Spring Street (Paddington)",
+   "Walker Lane",
+   "West Street",
+   "Albert Square (Paddington)"
+  ]
+ },
+ "Paddington 2": {
+  "label": "Paddington 2",
+  "streets": [
+   "Albert Street (Paddington)",
+   "Ashwood Lane",
+   "Bellevue Avenue (Paddington)",
+   "Belmore Place",
+   "Bennetts Grove Avenue",
+   "Broughton Street",
+   "Caledonia Street (Paddington)",
+   "County Avenue",
+   "Dudley Street (Paddington)",
+   "Duxford Street",
+   "Elizabeth Place (Paddington)",
+   "Elizabeth Street (Paddington)",
+   "George Street (Paddington)",
+   "Glenmore Road (Paddington)",
+   "Heeley Street",
+   "Hopetoun Street (Paddington)",
+   "Jersey Road (Paddington)",
+   "Jersey Road (Woollahra)",
+   "Olive Street",
+   "Ormond Street",
+   "Oxford Street (Paddington)",
+   "Paddington Street",
+   "Point Piper Lane",
+   "Queen Road (Paddington)",
+   "Scouts Lane",
+   "Stafford Street (Paddington)",
+   "Taylor Street",
+   "Tivoli Street",
+   "Underwood Lane",
+   "Underwood Street",
+   "Union Street",
+   "Victoria Place (Paddington)",
+   "Victoria Street (Paddington)",
+   "Weedon Avenue",
+   "Wentworth Street (Paddington)",
+   "Whelan Lane",
+   "White Lane",
+   "William Street (Paddington)",
+   "Young Street",
+   "Alma Street"
+  ]
+ },
+ "Paddington 3": {
+  "label": "Paddington 3",
+  "streets": [
+   "Bates Avenue",
+   "Cambridge Lane (Paddington)",
+   "Cambridge Street (Paddington)",
+   "Cascade Street (Paddington)",
+   "Duxford Street",
+   "Glen Street",
+   "Glenmore Road (Paddington)",
+   "Goodhope Street",
+   "Gurner Street",
+   "Hoddle Street",
+   "Lawson Street (Paddington)",
+   "Lawson Lane (Paddington)",
+   "Norfolk Street",
+   "Stephen Street",
+   "Suffolk Street",
+   "Vialoux Avenue",
+   "Alton Street"
+  ]
+ },
+ "Paddington 4": {
+  "label": "Paddington 4",
+  "streets": [
+   "Bowden Street",
+   "Brittania Lane",
+   "Holdsworth Street",
+   "James Street (Woollahra)",
+   "John Street (Woollahra)",
+   "Moncur Street",
+   "Morrell Street",
+   "Oxford Street (Woollahra)",
+   "Queen Street (Woollahra)",
+   "Rush Street",
+   "Spicer Street",
+   "Tara Street (Woollahra)",
+   "Victoria Ave (Woollahra)",
+   "Wallis Street (Woollahra)",
+   "Weldon Lane",
+   "Artlett Street"
+  ]
+ },
+ "Paddington 5": {
+  "label": "Paddington 5",
+  "streets": [
+   "Cascade Street (Paddington)",
+   "Cecil Street (Paddington) Glenmore Road (Edgecliff) (between Cascade St & New South Head Rd)",
+   "Hampden Street",
+   "New South Head Road (Edgecliff)",
+   "Reddy Street",
+   "Roylston Street",
+   "South Street (Edgecliff)",
+   "Sutherland Ave (Paddington)",
+   "Walker Avenue",
+   "Cascade Street"
+  ]
+ },
+ "Paddington 6": {
+  "label": "Paddington 6",
+  "streets": [
+   "Elizabeth Street (Paddington)",
+   "Forbes Street",
+   "Hargrave Lane",
+   "Hargrave Street",
+   "Harris Street",
+   "Holdsworth Street",
+   "Jersey Road (Paddington)",
+   "Jersey Road (Woollahra)",
+   "Quarry Street",
+   "Sutherland Avenue (Paddington)",
+   "Sutherland Street (Paddington)",
+   "Trelawney Street",
+   "Windsor Street"
+  ]
+ },
+ "Rose Bay": {
+  "label": "Rose Bay",
+  "streets": [
+   "Iluka Street",
+   "Manion Avenue",
+   "Albemarle Avenue",
+   "Elanora Road"
+  ]
+ },
+ "Rose Bay 2": {
+  "label": "Rose Bay 2",
+  "streets": [
+   "Newcastle Street",
+   "O'Sullivan Road",
+   "Annandale Street"
+  ]
+ },
+ "Rushcutters Bay": {
+  "label": "Rushcutters Bay",
+  "streets": [
+   "Loftus Road",
+   "New Beach Road",
+   "New South Head Road (Edgecliff)",
+   "Oswald Street",
+   "Yarranabbe Road"
+  ]
+ },
+ "Watsons Bay": {
+  "label": "Watsons Bay",
+  "streets": [
+   "Clovelly Street",
+   "Cove Street",
+   "Dunbar Street",
+   "Gap Road",
+   "Marine Pde (Watsons Bay)",
+   "Military Road",
+   "Pacific Street",
+   "Robertson Place",
+   "Salisbury Street",
+   "Victoria Street (Watsons Bay)",
+   "Cliff Street"
+  ]
+ },
+ "Woollahra 1": {
+  "label": "Woollahra 1",
+  "streets": [
+   "Adelaide Street (Woollahra)",
+   "Australia Lane",
+   "Bathurst Street",
+   "Bellevue Gardens",
+   "Davis Lane",
+   "Dyson Lane",
+   "Edgecliff Road (Woollahra)",
+   "Edward Street",
+   "Fern Place",
+   "Fletcher Lane",
+   "Fletcher Street",
+   "Grosvenor Street",
+   "Icasia Lane",
+   "Junction Street",
+   "Kendall Street",
+   "Magney Lane (Woollahra)",
+   "Old South Head Road (Woollahra)",
+   "Old South Head Road (Bellevue Hill)",
+   "Pringle Place",
+   "Raine Street",
+   "Rowe Street",
+   "Russell Street",
+   "Small Street",
+   "View Street",
+   "Adelaide Parade"
+  ]
+ },
+ "Woollahra 2": {
+  "label": "Woollahra 2",
+  "streets": [
+   "Forth Street",
+   "Harkness Street",
+   "Kilminster Lane",
+   "Magney Street (Woollahra)",
+   "Nelson Street (Woollahra)",
+   "Ocean Street (Woollahra)",
+   "Pickering Lane (Woollahra)",
+   "Queen Street (Woollahra)",
+   "Saber Street",
+   "Vernon Lane (Woollahra)",
+   "Vernon Street (Woollahra)",
+   "Wallis Street (Woollahra)",
+   "Waimea Ave (Woollahra)",
+   "Woods Avenue"
+  ]
+ }
+}

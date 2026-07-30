@@ -1,0 +1,56 @@
+{
+ "BE": {
+  "label": "Balmain East (BE)",
+  "streets": ["Simmons Street", "Clifton Street", "Clifton Lane", "School Street", "Brett Avenue",
+              "Nicholson Street", "Duke Street", "Paul Street", "Johnston Street", "Weston Street",
+              "Pearson Street", "William Street", "Hosking Street", "St Marys Street", "Union Street",
+              "Darling Street"]
+ },
+ "BG": {
+  "label": "Birchgrove (BG)",
+  "streets": ["Louisa Road", "Numa Street", "Deloitte Avenue", "Rose Street"]
+ },
+ "L1": {
+  "label": "Leichhardt L1",
+  "streets": ["Norton Street", "James Street", "Francis Street", "Beeson Street", "Tebbutt Street"]
+ },
+ "LY": {
+  "label": "Lilyfield (LY)",
+  "streets": ["Lilyfield Road", "Charles Street", "Hubert Street", "Fairlight Street", "Wragge Street",
+              "Henry Street", "Derbyshire Road", "Rayner Street", "Eric Street", "Balmain Road",
+              "Moore Street"]
+ },
+ "A1": {
+  "label": "Annandale A1",
+  "streets": ["Johnston Street", "Collins Street", "Wells Street", "Susan Street", "The Avenue",
+              "Water Street", "Cahill Street", "Chester Street", "Young Street", "Reserve Street"]
+ },
+ "A2": {
+  "label": "Annandale A2",
+  "streets": ["Booth Street", "Nelson Street", "Trafalgar Street", "View Street", "Taylor Street"]
+ },
+ "ashfield9": {
+  "label": "Ashfield Area 9 (Haberfield)",
+  "streets": ["Stanton Road", "Ramsay Street", "Sloane Street"]
+ },
+ "ashfield10": {
+  "label": "Ashfield Area 10 (Summer Hill)",
+  "streets": ["Bogan Street", "Kensington Road", "Dover Street", "Haig Avenue"]
+ },
+ "rozelle": {
+  "label": "Rozelle (R1–R5)",
+  "streets": ["Norman Street", "Wise Street", "Nelson Street", "Hamilton Street", "Bruce Street",
+              "Merton Street", "Wisebeach Street", "Harris Street", "Slade Street", "Clare Street",
+              "Beattie Street", "Cambridge Street", "Waterloo Street", "Moodie Street", "Mansfield Street",
+              "Springside Street", "Belmore Street", "Wellcombe Street", "Ellen Street", "Red Lion Street",
+              "Percy Street", "Evans Street", "Charlotte Street", "Elizabeth Street", "Quirk Street",
+              "Hornsey Street", "Gordon Street", "Burt Street", "Alfred Street", "Emily Street",
+              "Crystal Street", "Waragal Avenue", "Terry Street", "Nagurra Place", "Wellington Street",
+              "Prosper Street", "Denson Street", "Cook Street"]
+ },
+ "balmainB1": {
+  "label": "Balmain B1",
+  "streets": ["Ewell Street", "Carrington Street", "Reynolds Street", "George Street", "Mullens Street",
+              "Palmer Street", "Valley Street", "Little Street", "Stewart Place", "Davidson Street"]
+ }
+}

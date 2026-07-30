@@ -1,0 +1,368 @@
+{
+  "_meta": {
+    "harvested_utc": "2026-07-30",
+    "council": "North Sydney Council",
+    "abn_area": "North Sydney LGA, NSW 2060",
+    "harvest_notes": "All values transcribed verbatim from live northsydney.nsw.gov.au pages and official council PDFs on 2026-07-30. No values guessed. Meter rates confirmed against raw HTML heading 'Parking meter rates (including GST) 2026-27'. Per-street numeric time limits (1P/2P/4P) are NOT published in machine-readable form by the council; they exist only on physical street signs and on image-based per-area map PDFs.",
+    "access_notes": "No authentication, Cloudflare or bot-detection encountered. All pages and PDFs fetched successfully over plain HTTPS."
+  },
+  "meter_rates_2026_27": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+    "heading_verbatim": "Parking meter rates (including GST) 2026-27",
+    "gst_included": true,
+    "unit": "AUD per hour",
+    "tiers": {
+      "High": {
+        "daytime_per_hour": 8.95,
+        "evening_per_hour": 5.04
+      },
+      "Medium": {
+        "daytime_per_hour": 7.4,
+        "evening_per_hour": 4.8
+      },
+      "Low": {
+        "daytime_per_hour": 4.63,
+        "evening_per_hour": 3.6
+      }
+    },
+    "sub_hour_rule_verbatim": "Parking for periods of less than one hour will be charged at a pro rata rate."
+  },
+  "operating_hours": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+    "verbatim": "Daytime metered parking hours are 8.30am to 6pm and evening metered parking hours are from 6pm to midnight.",
+    "daytime_window": {
+      "start": "08:30",
+      "end": "18:00"
+    },
+    "evening_window": {
+      "start": "18:00",
+      "end": "24:00"
+    },
+    "daytime_rate_applies": "08:30-18:00",
+    "evening_rate_window": "18:00-24:00 (6pm to midnight)"
+  },
+  "demand_areas": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+    "definition_verbatim": "Data gathered from regular traffic studies and parking surveys have enabled Council to determine three Parking Demand Areas within the parking meter zones.",
+    "areas": {
+      "High": "North Sydney CBD and Alfred Street South (Fitzroy Street to the Harbour Bridge)",
+      "Medium": "North Sydney CBD shoulder area – Crows Nest, St Leonards, Milsons Point and Kirribilli areas",
+      "Low": "Fringe areas"
+    },
+    "demand_area_map_pdf": {
+      "url": "https://www.northsydney.nsw.gov.au/downloads/file/3974/map-of-parking-meter-rates-and-demand-areas",
+      "title_verbatim": "PARKING METER RATES 2025-2026",
+      "date_of_publication": "01/07/2025",
+      "format": "Image/colour-coded map (per-street demand tier shown graphically, not as text). Full street-name list extracted to meter-rates-demand-map.txt",
+      "local_file": "scripts/data/_recovery/meter-rates-demand-map.pdf"
+    }
+  },
+  "infrastructure": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+    "verbatim": "Our area has 114 parking meters and 177 Touch N Go boxes.",
+    "parking_meters": 114,
+    "touch_n_go_boxes": 177,
+    "payment": "Council's parking meters, Touch N Gos and the PayStay app are Orikan.",
+    "interactive_map": "https://www.northsydney.nsw.gov.au/homepage/185/parking-meter-locations"
+  },
+  "public_holidays": {
+    "source": "https://www.northsydney.nsw.gov.au/parking/parking-meters-public-holidays",
+    "summary_verbatim": "Fees apply to some parking meters on public holidays.",
+    "operate_when": [
+      "When parking signs do not state any days of the week",
+      "When a sign states 'and public holidays'"
+    ],
+    "priority_rule_verbatim": "Street signs take priority over parking information displayed on the maps or parking meters.",
+    "affected_areas": [
+      "Milsons Point",
+      "Kirribilli",
+      "Crows Nest"
+    ],
+    "maps": [
+      {
+        "area": "Crows Nest",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/3490/parking-meters-on-public-holidays-crows-nest",
+        "revised": "1 July 2024",
+        "local_file": "scripts/data/_recovery/public-holidays-crows-nest.pdf"
+      },
+      {
+        "area": "Milsons Point and Kirribilli",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/3491/parking-meters-on-public-holidays-kirribilli-milsons-point",
+        "revised": "1 July 2024",
+        "note_verbatim": "Bays 7, 8 & 9 are Disabled Parking on Sundays & public holidays",
+        "local_file": "scripts/data/_recovery/public-holidays-kirribilli-milsons-point.pdf"
+      }
+    ]
+  },
+  "time_limits": {
+    "sources": [
+      "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+      "https://www.northsydney.nsw.gov.au/downloads/file/304/resident-parking-permit-policy",
+      "https://www.northsydney.nsw.gov.au/parking-enforcement/parking-fines"
+    ],
+    "meter_max_stay": "Not published. The meter rates page states no maximum-stay time limit for meters; sub-hour parking is pro rata.",
+    "resident_permit_exemption_verbatim": "Resident Parking Permit - a permit that exempts the vehicle noted on the permit, from the time limit shown on the parking control signs that designate the resident parking area. (Policy s3.1)",
+    "visitor_permit_exemption_verbatim": "Visitor Parking Permits - exempt the bearer from time limits and/or meter parking fees for one day only in the parking area written on the front of the Permit where parking is signposted “Permit Holders Excepted”. (Policy s3.2)",
+    "numeric_limits_finding": "The council does NOT publish per-street numeric time limits (e.g. 1P/2P/4P) in any machine-readable form on these pages. Time limits are stated only on physical parking-control street signs and are depicted graphically on the 33 per-area image map PDFs. No numeric time-limit value was fabricated.",
+    "gap": true
+  },
+  "resident_permit_zones": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-permits/resident-parking-form/3",
+    "policy_source": "https://www.northsydney.nsw.gov.au/downloads/file/304/resident-parking-permit-policy",
+    "structure_verbatim": "three resident parking zones (A, B, C) subdivided into 33 Resident Parking Areas; a permit is only valid for the area the residence is situated within.",
+    "validity": "12 months, 1 April – 31 March",
+    "permit_formats": [
+      "Digital permit (no vehicle sticker)",
+      "Shared permit (physical, shareable between two residents of same dwelling, from 7 September 2004)"
+    ],
+    "zone_to_areas": {
+      "Zone A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13,
+        16,
+        20,
+        21,
+        23,
+        27
+      ],
+      "Zone B": [
+        10,
+        12,
+        19,
+        22,
+        28,
+        29,
+        32
+      ],
+      "Zone C": [
+        11,
+        14,
+        15,
+        17,
+        18,
+        24,
+        25,
+        26,
+        30,
+        31,
+        33
+      ]
+    },
+    "zone_to_areas_source_verbatim": "Policy s4.1 Zone A includes Parking Areas 1,2,3,4,5,6,7,8,9,13,16,20,21,23 and 27; s4.2 Zone B includes 10,12,19,22,28,29 and 32; s4.3 Zone C includes 11,14,15,17,18,24,25,26,30,31 and 33.",
+    "abc_zone_map_pdf": "https://www.northsydney.nsw.gov.au/downloads/file/236/residentparkingpermitzones-map",
+    "areas_index_page": "https://www.northsydney.nsw.gov.au/downloads/download/118/resident-parking-permit-zones"
+  },
+  "resident_permit_entitlements": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-permits/resident-parking-form/2",
+    "note": "Maximum permits by property type and zone (before subtracting off-street spaces). Confirmed against Policy s4.",
+    "table": {
+      "Detached/semi-detached house, boarding house, duplex": {
+        "A": 2,
+        "B": 3,
+        "C": 3
+      },
+      "Townhouse 3+ bedrooms": {
+        "A": 2,
+        "B": 3,
+        "C": 3
+      },
+      "Townhouse 1-2 bedrooms": {
+        "A": 1,
+        "B": 2,
+        "C": 2
+      },
+      "Apartment in mixed-use/commercial zone (DA before 30/6/1998 or OC before 30/6/1999)": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "Apartment in mixed-use/commercial zone (DA from 1/7/1998 or OC from 1/7/1999)": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "3+ bedroom apartment outside mixed-use/commercial zone": {
+        "A": 1,
+        "B": 2,
+        "C": 2
+      },
+      "1-2 bedroom apartment outside mixed-use/commercial zone": {
+        "A": 1,
+        "B": 1,
+        "C": 2
+      }
+    }
+  },
+  "resident_permit_fees_2026_27": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-permits/resident-parking-form/4",
+    "currency": "AUD",
+    "note": "Fees reduce ~25% each quarter through the permit year (Apr–Mar). Pensioners with an eligible card receive 50% discount.",
+    "first_permit_vehicle": {
+      "Jul-Sep 2026": 75,
+      "Oct-Dec 2026": 56,
+      "Jan-Mar 2027": 28,
+      "Apr-Jun 2027": 101
+    },
+    "first_permit_motorcycle": {
+      "Jul-Sep 2026": 60,
+      "Oct-Dec 2026": 45,
+      "Jan-Mar 2027": 25,
+      "Apr-Jun 2027": 76
+    },
+    "second_permit_vehicle": {
+      "Jul-Sep 2026": 163,
+      "Oct-Dec 2026": 111,
+      "Jan-Mar 2027": 60,
+      "Apr-Jun 2027": 218
+    },
+    "second_permit_motorcycle": {
+      "Jul-Sep 2026": 118,
+      "Oct-Dec 2026": 80,
+      "Jan-Mar 2027": 40,
+      "Apr-Jun 2027": 157
+    },
+    "other": {
+      "Shared permit sticker (plus standard fee)": 27,
+      "Standard digital permit replacement": 52,
+      "Shared permit sticker replacement": 64,
+      "Vehicle in repair / building works": 27,
+      "Tradesman's (per week, max 2 weeks)": 136,
+      "Interstate (3-month)": 27,
+      "Care worker / doctor's": 87,
+      "Care worker / doctor's replacement": 44,
+      "GoGet and Pop car share": 510
+    }
+  },
+  "visitor_permit": {
+    "source": "https://www.northsydney.nsw.gov.au/parking-permits/visitor-parking",
+    "policy_source": "https://www.northsydney.nsw.gov.au/downloads/file/304/resident-parking-permit-policy",
+    "eligibility": [
+      "Permanent residents of North Sydney Council area",
+      "Owners of untenanted properties (non-resident owners)"
+    ],
+    "allowance": {
+      "standard_resident_per_year": 30,
+      "untenanted_owner_per_year": 5,
+      "holiday_permits_per_year": 5,
+      "holiday_permit_validity": "1 December – 31 January"
+    },
+    "validity": "One day only; day of use scratched off; display left of front windscreen; valid only where signposted 'Permit Holders Excepted'",
+    "not_valid_for": "Caravans, trailers, or vehicles exceeding 3 tonnes",
+    "fees": {
+      "standard": 2.0,
+      "senior_or_health_care_card": 1.0,
+      "pensioner_TPI_veterans_affairs": 0.0
+    }
+  },
+  "downloadable_files_enumerated": {
+    "source_pages": [
+      "https://www.northsydney.nsw.gov.au/parking-meters/parking-meter-rates-locations-guidelines",
+      "https://www.northsydney.nsw.gov.au/parking-permits",
+      "https://www.northsydney.nsw.gov.au/parking-permits/resident-parking-form",
+      "https://www.northsydney.nsw.gov.au/parking-permits/resident-parking-form/3",
+      "https://www.northsydney.nsw.gov.au/parking/parking-meters-public-holidays",
+      "https://www.northsydney.nsw.gov.au/parking-enforcement/parking-fines"
+    ],
+    "downloaded_and_parsed": [
+      {
+        "name": "Meter rates & demand areas map",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/3974/map-of-parking-meter-rates-and-demand-areas",
+        "type": "PDF (image map)",
+        "local": "scripts/data/_recovery/meter-rates-demand-map.pdf"
+      },
+      {
+        "name": "Resident Parking Permit Policy",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/304/resident-parking-permit-policy",
+        "type": "PDF (text, 9pp)",
+        "local": "scripts/data/_recovery/rpp-policy.pdf / .txt"
+      },
+      {
+        "name": "Resident Parking Permit application form",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/270/resident-parking-permit-application-form",
+        "type": "PDF (form, 4pp)",
+        "local": "scripts/data/_recovery/rpp-application-form.pdf / .txt"
+      },
+      {
+        "name": "Resident zones A/B/C map",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/236/residentparkingpermitzones-map",
+        "type": "PDF (image map)",
+        "local": "scripts/data/_recovery/resident-zones-ABC-map.pdf"
+      },
+      {
+        "name": "Public holidays meters - Crows Nest",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/3490/parking-meters-on-public-holidays-crows-nest",
+        "type": "PDF (image map)",
+        "local": "scripts/data/_recovery/public-holidays-crows-nest.pdf"
+      },
+      {
+        "name": "Public holidays meters - Milsons Point & Kirribilli",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/3491/parking-meters-on-public-holidays-kirribilli-milsons-point",
+        "type": "PDF (image map)",
+        "local": "scripts/data/_recovery/public-holidays-kirribilli-milsons-point.pdf"
+      }
+    ],
+    "enumerated_not_downloaded": [
+      {
+        "name": "Doctor / care worker permit application form",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/file/224/doctor-care-worker-parking-permit-application-form",
+        "type": "PDF"
+      },
+      {
+        "name": "Parking fines report",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/download/607/parking-fines-report",
+        "type": "download page"
+      },
+      {
+        "name": "Resident Parking Areas index (33 per-area maps)",
+        "url": "https://www.northsydney.nsw.gov.au/downloads/download/118/resident-parking-permit-zones",
+        "type": "index"
+      }
+    ],
+    "resident_parking_area_maps": {
+      "note": "33 per-area image-map PDFs (Areas 01-33; Area 23 has no standalone map file but exists in Zone A). Numeric time limits appear graphically on these maps only.",
+      "files": {
+        "01": 237,
+        "02": 241,
+        "03": 239,
+        "04": 243,
+        "05": 240,
+        "06": 238,
+        "07": 242,
+        "08": 248,
+        "09": 245,
+        "10": 249,
+        "11": 244,
+        "12": 255,
+        "13": 246,
+        "14": 268,
+        "15": 250,
+        "16": 252,
+        "17": 247,
+        "18": 254,
+        "19": 253,
+        "20": 258,
+        "21": 256,
+        "22": 251,
+        "24": 259,
+        "25": 260,
+        "26": 257,
+        "27": 261,
+        "28": 263,
+        "29": 262,
+        "30": 267,
+        "31": 264,
+        "32": 265,
+        "33": 266
+      },
+      "url_template": "https://www.northsydney.nsw.gov.au/downloads/file/{file_id}/residentparking-area{NN}"
+    }
+  }
+}

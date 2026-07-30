@@ -1,0 +1,52 @@
+{
+  "rps1": {
+    "label": "Strathfield RPS1",
+    "zone": "1",
+    "streets": [
+      "Beresford Road", "Duke Lane", "Elva Street", "Pilgrim Avenue",
+      "Albert Road", "Ardittos Lane", "Stewart Place", "Churchill Avenue",
+      "Redmyre Road"
+    ]
+  },
+  "rps10": {
+    "label": "Strathfield RPS10",
+    "zone": "10",
+    "streets": [
+      "Margaret Street", "Carrington Avenue", "Strathfield Avenue",
+      "Torrington Road", "Woodward Avenue", "Brunswick Avenue",
+      "Alviston Street", "Vernon Street", "Nichol Parade", "Parsons Avenue",
+      "Albyn Road"
+    ]
+  },
+  "rps20": {
+    "label": "Strathfield RPS20",
+    "zone": "20",
+    "streets": [
+      "Smallwood Avenue", "Bridge Road", "Crane Street", "Loftus Crescent",
+      "Loftus Lane", "Knight Street", "Station Street", "Flemington Road"
+    ]
+  },
+  "rps30": {
+    "label": "Strathfield RPS30",
+    "zone": "30",
+    "streets": [
+      "Bellona Avenue", "Coleman Avenue", "Underwood Road", "Cartwright Avenue",
+      "Wentworth Road South", "Wentworth Road North", "Verley Drive",
+      "Pomeroy Street", "Ismay Avenue"
+    ]
+  },
+  "rps40": {
+    "label": "Strathfield RPS40",
+    "zone": "40",
+    "streets": [
+      "Wentworth Street"
+    ]
+  },
+  "rps50": {
+    "label": "Strathfield RPS50",
+    "zone": "50",
+    "streets": [
+      "Telopea Avenue", "Courallie Avenue", "Marlborough Road", "Mandemar Avenue"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "task": "Exhaustive search for a government OPEN DATASET covering North Sydney LGA parking (meters, time limits, permit zones, rates)",
+  "date": "2026-07-30",
+  "north_sydney_lga_bbox_searched": {
+    "lat": [
+      -33.86,
+      -33.79
+    ],
+    "lon": [
+      151.18,
+      151.245
+    ]
+  },
+  "conclusion": "NO government open dataset publishes North Sydney LGA parking meters, time limits, permit zones, or rates. North Sydney Council does not publish parking data on any open-data portal (data.nsw, data.gov.au, TfNSW Open Data Hub) nor as an ArcGIS Online/Hub feature service. The only machine-readable North Sydney parking sources are the council's own custom Google My Maps + a council PDF (already captured in ../northsydney-meters.json and ../northsydney-permit-areas.json), which are NOT formal open datasets.",
+  "sources_searched": {
+    "data.nsw.gov.au (CKAN)": {
+      "endpoint": "https://data.nsw.gov.au/data/api/3/action/{package_search,package_show,resource_search,organization_show}",
+      "queries": [
+        "north sydney parking",
+        "parking meter",
+        "kerbside",
+        "time limit parking",
+        "resident parking",
+        "on-street parking",
+        "north sydney council",
+        "parking signs",
+        "street parking signs",
+        "resource_search name:parking"
+      ],
+      "north_sydney_council_org": {
+        "slug": "north-sydney-council",
+        "package_count": 7,
+        "all_datasets": "flood studies only - zero parking"
+      },
+      "result": "No North Sydney parking dataset. Parking datasets are City of Sydney (meters, permit areas, ticket rates) + TfNSW hub items. resource_search returned 43 parking resources, none for North Sydney."
+    },
+    "opendata.transport.nsw.gov.au (TfNSW Open Data Hub, CKAN)": {
+      "endpoint": "https://opendata.transport.nsw.gov.au/data/api/3/action/package_search",
+      "parking_dataset_count": 46,
+      "per_council_kerbside_signs_datasets": [
+        "Willoughby Street Parking Signs (Chatswood CBD only)",
+        "Waverley Council Data (Waverley LGA)"
+      ],
+      "statewide_signs_dataset": "NONE - no NSW-wide 'parking signs'/'kerbside' layer exists; signs data is per-council and only Willoughby & Waverley opted in.",
+      "result": "No North Sydney dataset among the 46 parking datasets."
+    },
+    "data.gov.au (federal CKAN)": {
+      "endpoint": "https://data.gov.au/data/api/3/action/package_search",
+      "queries": [
+        "north sydney parking",
+        "parking meter",
+        "north sydney council"
+      ],
+      "result": "Mirrors data.nsw + other councils (City of Sydney, Ballarat, Brisbane, Hobart, Ipswich, Melbourne, Geelong, Port Phillip). North Sydney Council publishes flood data only. No North Sydney parking."
+    },
+    "ArcGIS Hub + ArcGIS Online": {
+      "endpoints": [
+        "https://hub.arcgis.com/api/v3/search",
+        "https://www.arcgis.com/sharing/rest/search"
+      ],
+      "queries": [
+        "north sydney parking",
+        "north sydney council",
+        "'north sydney' parking (type:Feature Service)"
+      ],
+      "result": "No North Sydney Council parking feature service. All authoritative parking services are City of Sydney (owner cityofsydneyspatial). Only NS-parking hit was a consultant web map 'P2945 North Sydney Traffic and Parking Study LATM Assessment' (owner: Bitzios, a traffic consultancy) - a study, not an authoritative rules dataset, not downloadable as structured parking layers."
+    }
+  },
+  "adjacent_lga_datasets_found_not_north_sydney": [
+    {
+      "name": "Willoughby Street Parking Signs",
+      "lga": "Willoughby (Chatswood CBD)",
+      "file": "opendata-willoughby-street-parking-signs.json + willoughby_signs.csv"
+    },
+    {
+      "name": "Waverley Council Data",
+      "lga": "Waverley (Bondi)",
+      "file": "opendata-waverley-council-data.json"
+    },
+    {
+      "name": "City of Sydney parking (meters/permit areas/ticket rates)",
+      "lga": "City of Sydney",
+      "note": "has structured maxstay/fee/permit fields but only City of Sydney LGA"
+    }
+  ],
+  "flags_for_north_sydney_open_data": {
+    "hasTimeLimits": false,
+    "hasPrices": false,
+    "hasPermitZones": false,
+    "hasMeterLocations": false,
+    "explanation": "All false: no OPEN dataset carries these for the North Sydney LGA. (Meter locations + demand tiers and permit-area polygons exist for North Sydney only via the council's own Google My Maps/PDF, already recovered separately - not an open dataset.)"
+  }
+}

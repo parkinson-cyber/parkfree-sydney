@@ -1,0 +1,157 @@
+{
+  "area1": {
+    "label": "Burwood Area 1",
+    "streets": [
+      "Mosely Street", "Roberts Street", "Philip Street", "Cooper Street", "Cowdery Lane"
+    ]
+  },
+  "area2": {
+    "label": "Burwood Area 2",
+    "streets": [
+      "Moore Street", "White Street", "Nixon Lane", "Grantham Street", "Park Road"
+    ]
+  },
+  "area3": {
+    "label": "Burwood Area 3",
+    "streets": [
+      "Milton Street", "Esher Street", "Archer Street", "New Street", "Meryla Street",
+      "Wilga Street", "Webbs Lane"
+    ]
+  },
+  "area4": {
+    "label": "Burwood Area 4",
+    "streets": [
+      "Luke Avenue", "Bennett Street", "Stuart Street", "Arthursleigh Street",
+      "Lucas Road", "Selborne Street", "Princes Street"
+    ]
+  },
+  "area4a": {
+    "label": "Burwood Area 4a",
+    "streets": [
+      "Luke Avenue"
+    ]
+  },
+  "area5": {
+    "label": "Burwood Area 5",
+    "streets": [
+      "Paisley Road", "Brooklyn Street", "Charles Street", "Wyalong Street",
+      "Wallace Street", "Clifton Avenue", "Brady Street", "Rosa Street",
+      "Reed Street", "Fitzroy Street", "Weldon Street", "Tahlee Street",
+      "Devonshire Street", "David Street", "Murray Street", "Wyatt Avenue"
+    ]
+  },
+  "area6": {
+    "label": "Burwood Area 6",
+    "streets": [
+      "Froggatt Crescent", "Wright Street", "Gibbs Street"
+    ]
+  },
+  "area7": {
+    "label": "Burwood Area 7",
+    "streets": [
+      "Lyons Street", "Parnell Street", "Morwick Street", "Russell Street",
+      "Russell Lane", "Bells Lane"
+    ]
+  },
+  "area8": {
+    "label": "Burwood Area 8",
+    "streets": [
+      "Wentworth Road", "Oxford Street", "Stanley Street", "Conder Street",
+      "Hornsey Street", "Norwood Street", "Woodside Avenue", "Belgrave Street",
+      "Nicholson Street", "Bold Street", "Minna Street", "Genders Avenue",
+      "Highclere Avenue", "Lindsay Street", "Sunbeam Avenue", "Angelo Street",
+      "Sherars Avenue", "Williams Lane", "Emu Street", "Angel Road",
+      "Wonga Street", "Eslin Avenue", "Arrowfield Avenue", "Jersey Road",
+      "Belmore Street", "Livingstone Street", "Wynne Avenue", "Morris Lane",
+      "Iceton Street", "St Pauls Close", "Orontes Lane", "Genders Lane"
+    ]
+  },
+  "area9": {
+    "label": "Burwood Area 9",
+    "streets": [
+      "Selborne Street", "Eurella Street", "Princes Street", "Victoria Street",
+      "Queen Street", "Lucas Road", "Cheltenham Road", "Wilga Street"
+    ]
+  },
+  "area10": {
+    "label": "Burwood Area 10",
+    "streets": [
+      "Victoria Street", "Simpson Avenue", "Boronia Avenue", "Waimea Street",
+      "Albert Crescent", "Lucas Road", "Cheltenham Road", "Queen Street",
+      "Cross Street", "Brand Street", "King Street", "Webb Street",
+      "George Street", "Deane Street", "Irrara Street"
+    ]
+  },
+  "area11": {
+    "label": "Burwood Area 11",
+    "streets": [
+      "Mt Pleasant Avenue", "Gordon Street", "Ilfracombe Avenue", "Gladstone Street",
+      "Carilla Street", "Park Road", "Park Avenue", "Rowley Street",
+      "Railway Crescent", "Everton Road", "Gloucester Avenue", "Everton Lane"
+    ]
+  },
+  "area12": {
+    "label": "Burwood Area 12",
+    "streets": [
+      "Livingstone Street", "Woodside Avenue", "Belmore Street", "Nicholson Street",
+      "Bold Street", "Minna Street", "Ireland Street", "Angelo Street",
+      "Orontes Lane", "Ethel Street", "Wyatt Avenue", "Sym Lane",
+      "Clarence Street", "Church Street", "Duff Street",
+      "Conder Street", "Morris Lane", "Iceton Street", "St Pauls Close",
+      "Fitzroy Street", "Pilchers Lane", "Wyatt Lane"
+    ]
+  },
+  "area13": {
+    "label": "Burwood Area 13",
+    "streets": [
+      "George Street", "Waimea Street", "Deane Street", "Marmaduke Street"
+    ]
+  },
+  "area14": {
+    "label": "Burwood Area 14",
+    "streets": [
+      "Jersey Road", "Woodside Avenue", "McDonald Crescent", "Sherars Avenue",
+      "Nicholson Street", "Williams Lane", "Angel Road", "Wonga Street",
+      "Esplin Avenue", "Emu Street", "Dunns Lane"
+    ]
+  },
+  "area15": {
+    "label": "Burwood Area 15",
+    "streets": [
+      "Belmore Street", "Clarence Street", "Church Street", "Duff Street",
+      "Fitzroy Street", "Ethel Street", "Wyatt Avenue", "Weldon Street",
+      "Tahlee Street", "Murray Street", "Devonshire Street", "Appian Way",
+      "Clifton Avenue", "Pilchers Lane"
+    ]
+  },
+  "area16": {
+    "label": "Burwood Area 16",
+    "streets": [
+      "Victoria Street", "Gloucester Avenue", "George Street", "Elsie Street",
+      "Park Road", "Park Avenue"
+    ]
+  },
+  "area17": {
+    "label": "Burwood Area 17",
+    "streets": [
+      "Britannia Avenue", "Neich Parade", "Comer Street", "Milton Street",
+      "Meryla Street", "Esher Street", "Britannia Lane", "Emanuel Lane",
+      "Nicoll Lane", "Riley Lane", "Webbs Lane"
+    ]
+  },
+  "area18": {
+    "label": "Burwood Area 18",
+    "streets": [
+      "Henry Street", "Willee Street", "Byer Street", "Beaumaris Street",
+      "Plymouth Street", "Emu Street", "Cervetto Lane"
+    ]
+  },
+  "area19": {
+    "label": "Burwood Area 19",
+    "streets": [
+      "Wychbury Lane", "Wychbury Avenue", "King Edward Street", "Alexandra Avenue",
+      "Monash Parade", "Royce Avenue", "Grogan Street", "Acton Street",
+      "Bay Street", "Rostherne Avenue"
+    ]
+  }
+}

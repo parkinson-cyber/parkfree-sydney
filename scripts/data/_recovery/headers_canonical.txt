@@ -1,0 +1,16 @@
+HTTP/2 200 
+date: Thu, 30 Jul 2026 12:42:04 GMT
+content-type: application/pdf
+server: Web Server
+expires: Thu, 30 Jul 2026 12:42:04 GMT
+cache-control: max-age=0, must-revalidate, post-check=0, pre-check=0, private
+pragma: public
+content-disposition: inline; filename=parking_meter_rates_and_demand_areas_2025_2026_1.pdf
+accept-ranges: bytes
+strict-transport-security: max-age=2592000
+x-frame-options: SAMEORIGIN
+last-modified: Tue, 01 Jul 2025 03:10:58 GMT
+node: jadu-web-1
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+

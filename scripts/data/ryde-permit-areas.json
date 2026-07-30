@@ -1,0 +1,47 @@
+{
+ "zone1": {
+  "label": "Ryde Zone 1",
+  "streets": ["Windsor Drive", "Lachlan Avenue", "Cottonwood Crescent", "Peach Tree Road"]
+ },
+ "zone3": {
+  "label": "Ryde Zone 3",
+  "streets": ["Booth Street", "Nola Street", "Dora Street", "Scott Street", "Adelphi Road",
+              "Kent Road", "Parklands Road", "Trevitt Road", "Leslie Street", "Wilson Street",
+              "Eastview Avenue", "Ada Street", "Whiteside Street", "David Avenue", "Paul Street",
+              "McGregor Street", "Holt Street", "Beswick Avenue", "Michael Street", "Milroy Street",
+              "Pine Street", "Napier Crescent", "Pindari Street", "Gibb Street", "Grana Street",
+              "Barinca Street", "Stanhill Place"]
+ },
+ "zone4": {
+  "label": "Ryde Zone 4",
+  "streets": ["Allengrove Crescent", "Lorna Avenue", "Amelia Street", "Larkard Street", "Cam Street",
+              "Barr Street", "Avon Road", "Beatrice Street", "Kathleen Street", "Folkard Street",
+              "Donald Street", "Morshead Street", "Blenheim Road"]
+ },
+ "zone6": {
+  "label": "Ryde Zone 6",
+  "streets": ["Taranto Road", "Talavera Road", "Culloden Road"]
+ },
+ "zone7": {
+  "label": "Ryde Zone 7",
+  "streets": ["Searle Street", "Weaver Street", "Brereton Street"]
+ },
+ "zone8": {
+  "label": "Ryde Zone 8",
+  "streets": ["Macpherson Street", "Forsyth Street", "See Street", "Stone Street", "Angas Street",
+              "Bowden Street", "Thorn Street", "Richard Johnson Crescent"]
+ },
+ "zone9": {
+  "label": "Ryde Zone 9",
+  "streets": ["Bright Street", "Cressy Road", "Holly Avenue"]
+ },
+ "zone10": {
+  "label": "Ryde Zone 10",
+  "streets": ["Koorong Street", "Zanco Road", "Katoa Place", "Biara Close", "Sobraon Road",
+              "Waring Street", "Alan Bond Place", "Bertrand Close", "Wilding Street", "Winston Street"]
+ },
+ "zone11": {
+  "label": "Ryde Zone 11",
+  "streets": ["Curzon Street", "Watt Avenue", "Bavin Avenue", "Pratten Avenue", "Argyle Avenue"]
+ }
+}
