@@ -164,6 +164,28 @@ export default function BottomSheet({ street, onClose }) {
                 </p>
               </div>
 
+              {/* Meter info */}
+              {p.meter && (
+                <div style={{
+                  background: 'rgba(255,179,0,0.06)',
+                  border: '1px solid rgba(255,179,0,0.15)',
+                  borderRadius: '12px',
+                  padding: '12px 14px',
+                  marginBottom: '12px',
+                }}>
+                  <div style={{ fontSize: '11px', fontWeight: '700', color: '#FFB300', letterSpacing: '0.03em', marginBottom: '6px' }}>
+                    METERED PARKING {p.meter.verified ? '' : '· UNCONFIRMED'}
+                  </div>
+                  <div style={{ fontSize: '13px', color: '#ccc', lineHeight: '1.6' }}>
+                    {p.meter.provider && <div>Provider: {p.meter.provider}</div>}
+                    {p.meter.zoneNumber && <div>Zone number: {p.meter.zoneNumber}</div>}
+                    {p.meter.machineNumber && <div>Machine number: {p.meter.machineNumber}</div>}
+                    {p.meter.permitType && <div>Permit type: {p.meter.permitType}</div>}
+                    {p.meter.hours && <div>Hours: {p.meter.hours}</div>}
+                  </div>
+                </div>
+              )}
+
               {/* Meta row */}
               <div style={{
                 display: 'flex', alignItems: 'center',
