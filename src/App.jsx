@@ -92,7 +92,12 @@ const PARKING_FEATURES = [
   {
     type: 'Feature',
     geometry: { type: 'LineString', coordinates: [[151.2162,-33.8408],[151.2168,-33.8405],[151.2175,-33.8402]] },
-    properties: { streetName: 'Holbrook Avenue', suburb: 'Kirribilli', council: 'North Sydney Council', notes: 'Residential strip. Eastern kerb unrestricted. Western kerb 2P permit zone Mon–Fri. Both sides free evenings and weekends.', lastVerified: '2026-05-20', status: 'verified', confidence: 'medium' }
+    properties: {
+      streetName: 'Holbrook Avenue', suburb: 'Kirribilli', council: 'North Sydney Council',
+      notes: 'Residential strip. Eastern kerb unrestricted. Western kerb 2P permit zone Mon–Fri. Both sides free evenings and weekends.',
+      lastVerified: '2026-05-20', status: 'verified', confidence: 'medium',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Mon–Fri, western kerb only', permitType: '2P', verified: false, confidence: 'low' }
+    }
   },
 
   // ── ULTIMO ────────────────────────────────────────────────
@@ -145,12 +150,67 @@ const PARKING_FEATURES = [
   {
     type: 'Feature',
     geometry: { type: 'LineString', coordinates: [[151.2068,-33.8395],[151.2075,-33.8390],[151.2082,-33.8385]] },
-    properties: { streetName: 'Napier Street', suburb: 'North Sydney', council: 'North Sydney Council', notes: 'Residential end near Berry St. Eastern kerb unrestricted evenings and weekends. 2P Mon–Fri 8am–6pm.', lastVerified: '2026-05-22', status: 'verified', confidence: 'medium' }
+    properties: {
+      streetName: 'Napier Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'Residential end near Berry St. Eastern kerb unrestricted evenings and weekends. 2P Mon–Fri 8am–6pm.',
+      lastVerified: '2026-05-22', status: 'verified', confidence: 'medium',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Mon–Fri 8am–6pm', permitType: '2P', verified: false, confidence: 'low' }
+    }
   },
   {
     type: 'Feature',
     geometry: { type: 'LineString', coordinates: [[151.2095,-33.8362],[151.2102,-33.8362],[151.2110,-33.8362]] },
     properties: { streetName: 'Ridge Street', suburb: 'North Sydney', council: 'North Sydney Council', notes: 'Between Walker St and Blue St. Southern kerb unrestricted. Good for North Sydney station overflow. Free 24/7 on this block.', lastVerified: '2026-05-22', status: 'unverified', confidence: 'low' }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2075,-33.8378],[151.2077,-33.8392],[151.2079,-33.8406]] },
+    properties: {
+      streetName: 'Miller Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'Major N-S commercial spine through the North Sydney CBD. PayStay/Orikan meters on-street. Zone number and exact hours not yet confirmed on-site — verify signage before relying on this entry.',
+      lastVerified: '2026-07-30', status: 'unverified', confidence: 'low',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Likely 8:30am–6pm Mon–Fri — unconfirmed', verified: false, confidence: 'low' }
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2088,-33.8380],[151.2090,-33.8394],[151.2092,-33.8408]] },
+    properties: {
+      streetName: 'Walker Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'Runs parallel to Miller St through the CBD, past North Sydney station. PayStay/Orikan meters on-street. Zone number not yet confirmed — verify signage before relying on this entry.',
+      lastVerified: '2026-07-30', status: 'unverified', confidence: 'low',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Likely 8:30am–6pm Mon–Fri — unconfirmed', verified: false, confidence: 'low' }
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2065,-33.8390],[151.2078,-33.8391],[151.2091,-33.8392]] },
+    properties: {
+      streetName: 'Mount Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'E-W commercial street through the CBD, crosses Miller St and Walker St. PayStay/Orikan meters on-street. Zone number not yet confirmed — verify signage before relying on this entry.',
+      lastVerified: '2026-07-30', status: 'unverified', confidence: 'low',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Likely 8:30am–6pm Mon–Fri — unconfirmed', verified: false, confidence: 'low' }
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2068,-33.8399],[151.2081,-33.8400],[151.2094,-33.8401]] },
+    properties: {
+      streetName: 'Berry Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'E-W commercial street through the CBD near North Sydney station. PayStay/Orikan meters on-street. Zone number not yet confirmed — verify signage before relying on this entry.',
+      lastVerified: '2026-07-30', status: 'unverified', confidence: 'low',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Likely 8:30am–6pm Mon–Fri — unconfirmed', verified: false, confidence: 'low' }
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: { type: 'LineString', coordinates: [[151.2070,-33.8409],[151.2083,-33.8410],[151.2096,-33.8411]] },
+    properties: {
+      streetName: 'Denison Street', suburb: 'North Sydney', council: 'North Sydney Council',
+      notes: 'E-W commercial street through the CBD. PayStay/Orikan meters on-street. Zone number not yet confirmed — verify signage before relying on this entry.',
+      lastVerified: '2026-07-30', status: 'unverified', confidence: 'low',
+      meter: { provider: 'PayStay (Orikan)', zoneNumber: null, machineNumber: null, hours: 'Likely 8:30am–6pm Mon–Fri — unconfirmed', verified: false, confidence: 'low' }
+    }
   },
 
   // ── NEWTOWN ───────────────────────────────────────────────
