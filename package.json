@@ -24,8 +24,8 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "test": "tsc --ignoreConfig src/lib/rules.ts src/lib/types.ts src/lib/geo.ts src/lib/findPark.ts --outDir .cache/test --module commonjs --target es2020 --esModuleInterop --skipLibCheck && node scripts/test-rules.mjs",
     "typecheck": "tsc --noEmit",
