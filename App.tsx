@@ -12,7 +12,6 @@ import {
   type ParkingMapHandle, SHOW_CLASSIFIED_MAX_DELTA,
 } from './src/components/ParkingMap.shared';
 import { SearchBar } from './src/components/SearchBar';
-import { FilterBar } from './src/components/FilterBar';
 import { StreetSheet } from './src/components/StreetSheet';
 import { LegendModal } from './src/components/LegendModal';
 import { TimerModal, TimerPill } from './src/components/ParkingTimer';
@@ -184,7 +183,6 @@ function Main() {
           </View>
         </View>
         <SearchBar onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)} />
-        <FilterBar />
         {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
           <View style={styles.zoomHint}>
             <Text style={styles.zoomHintText}>Zoom in to see parking streets</Text>
@@ -198,28 +196,37 @@ function Main() {
         </View>
       )}
 
-      {/* the app's headline action — always reachable */}
+      {/* right-side utilities — stacked above the primary action */}
+      <View style={[styles.fabs, { bottom: selected ? 330 : 108 + insets.bottom }]}>
+        <Pressable
+          style={styles.fab}
+          onPress={() => mapRef.current?.animateToUser()}
+          accessibilityLabel="Centre map on my location"
+        >
+          <Text style={styles.fabIcon}>◎</Text>
+        </Pressable>
+        <Pressable
+          style={styles.fab}
+          onPress={() => showLegend(true)}
+          accessibilityLabel="What the colours mean"
+        >
+          <Text style={styles.fabIcon}>?</Text>
+        </Pressable>
+      </View>
+
+      {/* the app's headline action — full width, centred, always reachable */}
       {!selected && (
         <Pressable
-          style={[styles.findBtn, { bottom: 40 + insets.bottom }, finding && styles.findBtnBusy]}
+          style={[styles.findBtn, { bottom: 34 + insets.bottom }, finding && styles.findBtnBusy]}
           onPress={onFindPark}
           disabled={finding}
+          accessibilityLabel="Find me a park"
         >
           <Text style={styles.findBtnText}>
-            {finding ? 'Finding…' : '✨ Find me a park'}
+            {finding ? 'Finding a spot…' : 'Find me a park'}
           </Text>
         </Pressable>
       )}
-
-      {/* right-side floating buttons */}
-      <View style={[styles.fabs, { bottom: selected ? 330 : 40 + insets.bottom }]}>
-        <Pressable style={styles.fab} onPress={() => mapRef.current?.animateToUser()}>
-          <Text style={styles.fabText}>📍</Text>
-        </Pressable>
-        <Pressable style={styles.fab} onPress={() => showLegend(true)}>
-          <Text style={styles.fabText}>ℹ️</Text>
-        </Pressable>
-      </View>
 
       <TimerPill />
       {selected && <StreetSheet street={selected} onStartTimer={onStartTimer} />}
@@ -245,81 +252,91 @@ export default function App() {
   );
 }
 
+/** Single side gutter for every floating control, so nothing is off-grid. */
+const GUTTER = 16;
+
+/** Soft elevation. Premium map UIs separate layers with shadow, not borders. */
+const shadow = (opacity: number, radius: number, y: number) => ({
+  shadowColor: '#000',
+  shadowOpacity: opacity,
+  shadowRadius: radius,
+  shadowOffset: { width: 0, height: y },
+  elevation: Math.round(radius / 2),
+});
+
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
   top: { position: 'absolute', top: 0, left: 0, right: 0 },
   brandRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 14,
-    marginBottom: 10,
+    paddingHorizontal: GUTTER,
+    marginBottom: 12,
     gap: 10,
   },
   brand: { flexDirection: 'row', alignItems: 'baseline', gap: 6 },
   brandText: {
-    color: colors.text, fontSize: 22, fontWeight: '900',
-    textShadowColor: 'rgba(0,0,0,0.7)', textShadowRadius: 6,
+    color: colors.text, fontSize: 21, fontWeight: '800', letterSpacing: -0.4,
+    textShadowColor: 'rgba(0,0,0,0.75)', textShadowRadius: 8,
   },
   brandSub: {
-    color: colors.textDim, fontSize: 10, fontWeight: '800', letterSpacing: 2,
-    textShadowColor: 'rgba(0,0,0,0.7)', textShadowRadius: 6,
+    color: colors.textDim, fontSize: 9.5, fontWeight: '800', letterSpacing: 2.4,
+    textShadowColor: 'rgba(0,0,0,0.75)', textShadowRadius: 8,
   },
+  // Live count reads as a status indicator, not a button — no border, just a
+  // dark scrim so it stays legible over both light and dark map areas.
   freeNow: {
     flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: 'rgba(15,17,21,0.85)',
-    borderRadius: 999, paddingHorizontal: 10, paddingVertical: 5,
-    borderWidth: 1, borderColor: colors.border,
+    backgroundColor: 'rgba(15,17,21,0.78)',
+    borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7,
     marginLeft: 'auto',
+    ...shadow(0.3, 10, 3),
   },
   freeNowDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.accent },
-  freeNowText: { color: colors.text, fontSize: 11, fontWeight: '700' },
+  freeNowText: { color: colors.text, fontSize: 11.5, fontWeight: '700', letterSpacing: 0.1 },
   findBtn: {
     position: 'absolute',
-    left: 14,
-    // clear of the right-hand FAB stack
-    right: 74,
+    left: GUTTER,
+    right: GUTTER,
     backgroundColor: colors.accent,
-    borderRadius: 26,
-    paddingVertical: 14,
+    borderRadius: 999,
+    paddingVertical: 17,
     alignItems: 'center',
-    shadowColor: '#000', shadowOpacity: 0.4, shadowRadius: 14, shadowOffset: { width: 0, height: 6 },
-    elevation: 10,
+    ...shadow(0.45, 20, 8),
   },
-  findBtnBusy: { opacity: 0.6 },
-  findBtnText: { color: '#04291B', fontSize: 16, fontWeight: '800' },
+  findBtnBusy: { opacity: 0.55 },
+  findBtnText: {
+    color: '#04291B', fontSize: 17, fontWeight: '800', letterSpacing: -0.2,
+  },
   toast: {
     position: 'absolute',
-    left: 14,
-    right: 14,
-    backgroundColor: 'rgba(26,29,36,0.96)',
-    borderRadius: 12,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.border,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    shadowColor: '#000', shadowOpacity: 0.4, shadowRadius: 12, shadowOffset: { width: 0, height: 4 },
-    elevation: 10,
+    left: GUTTER,
+    right: GUTTER,
+    backgroundColor: 'rgba(26,29,36,0.97)',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    ...shadow(0.4, 16, 6),
   },
   toastText: { color: colors.text, fontSize: 13.5, fontWeight: '600', textAlign: 'center' },
-  fabs: { position: 'absolute', right: 14, gap: 10 },
+  fabs: { position: 'absolute', right: GUTTER, gap: 10 },
+  // 48pt: Apple's minimum comfortable touch target, and big enough that the
+  // glyph reads clearly against a busy map.
   fab: {
-    width: 46, height: 46, borderRadius: 23,
-    backgroundColor: colors.surface,
-    borderWidth: 1, borderColor: colors.border,
+    width: 48, height: 48, borderRadius: 24,
+    backgroundColor: 'rgba(26,29,36,0.94)',
     alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 10, shadowOffset: { width: 0, height: 4 },
-    elevation: 8,
+    ...shadow(0.4, 14, 5),
   },
-  fabText: { fontSize: 18 },
+  fabIcon: { color: colors.text, fontSize: 20, fontWeight: '700', lineHeight: 24 },
   zoomHint: {
     alignSelf: 'center',
-    marginTop: 10,
-    backgroundColor: 'rgba(15,17,21,0.85)',
+    marginTop: 12,
+    backgroundColor: 'rgba(15,17,21,0.82)',
     borderRadius: 999,
     paddingHorizontal: 14,
-    paddingVertical: 7,
-    borderWidth: 1,
-    borderColor: colors.border,
+    paddingVertical: 8,
+    ...shadow(0.3, 10, 3),
   },
   zoomHintText: { color: colors.textDim, fontSize: 12, fontWeight: '600' },
 });
