@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Region, StreetFeature } from '../lib/types';
-import { purchases } from '../purchases';
+// import { purchases } from '../purchases'; // re-enable if a paid tier comes back
 
 export const SYDNEY_REGION: Region = {
   latitude: -33.8845,
@@ -73,7 +73,10 @@ export const useStore = create<AppState>((set, get) => ({
   now: new Date(),
   tick: () => set({ now: new Date() }),
 
-  premium: false,
+  // Everything is free — no paid tier while we grow the user base and
+  // gather parking data. Flip back to false (and restore the purchases
+  // lookup in hydrate) if a premium tier ever returns.
+  premium: true,
   setPremium: (premium) => set({ premium }),
   paywallVisible: false,
   showPaywall: (paywallVisible) => set({ paywallVisible }),
@@ -96,13 +99,12 @@ export const useStore = create<AppState>((set, get) => ({
 
   hydrate: async () => {
     try {
-      const [premium, timerRaw, onboardedRaw] = await Promise.all([
-        purchases.getPremiumStatus(),
+      const [timerRaw, onboardedRaw] = await Promise.all([
         AsyncStorage.getItem(TIMER_KEY),
         AsyncStorage.getItem(ONBOARDED_KEY),
       ]);
       const updates: Partial<AppState> = {
-        premium,
+        premium: true, // free for everyone — see note above
         onboarded: onboardedRaw === 'true',
       };
       if (timerRaw) {

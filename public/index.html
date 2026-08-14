@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <title>%WEB_TITLE%</title>
+
+    <!--
+      viewport-fit=cover is what lets safe-area-inset-* report real values on
+      notched iPhones; without it the UI sits under the notch in standalone mode.
+      Zoom is disabled because the map owns pinch-to-zoom — double-tap zooming
+      the whole page is the single biggest "this is a website" tell.
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+
+    <!-- Add to Home Screen: launches fullscreen with no Safari chrome. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ParkFree" />
+
+    <meta name="theme-color" content="#0F1115" />
+    <meta
+      name="description"
+      content="Find free street parking in Sydney, live. Streets are colour-coded from real parking-sign data and turn green the minute they're free."
+    />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <style>
+      /* Dark ground everywhere so there's no white flash on cold start. */
+      html,
+      body,
+      #root {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #0f1115;
+      }
+
+      body {
+        /* Lock the page: the map pans, the page never scrolls or rubber-bands. */
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        overscroll-behavior: none;
+
+        /* Kill the remaining browser tells: long-press menus, text selection,
+           and the grey flash iOS paints over tapped elements. */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      /* Inputs are the one place selection must keep working. */
+      input,
+      textarea {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -32,7 +32,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "bundler": "metro"
+      "bundler": "metro",
+      "name": "ParkFree Sydney",
+      "shortName": "ParkFree",
+      "description": "Find free street parking in Sydney, live. Streets turn green the minute they're free.",
+      "lang": "en-AU",
+      "themeColor": "#0F1115",
+      "backgroundColor": "#0F1115",
+      "display": "standalone",
+      "orientation": "portrait",
+      "startUrl": "/",
+      "scope": "/"
     },
     "plugins": [
       [

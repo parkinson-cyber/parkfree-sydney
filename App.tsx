@@ -15,7 +15,6 @@ import { SearchBar } from './src/components/SearchBar';
 import { FilterBar } from './src/components/FilterBar';
 import { StreetSheet } from './src/components/StreetSheet';
 import { LegendModal } from './src/components/LegendModal';
-import { PaywallModal } from './src/components/PaywallModal';
 import { TimerModal, TimerPill } from './src/components/ParkingTimer';
 import { WelcomeOverlay } from './src/components/WelcomeOverlay';
 
@@ -44,8 +43,6 @@ function Main() {
   const select = useStore((s) => s.select);
   const region = useStore((s) => s.region);
   const setRegion = useStore((s) => s.setRegion);
-  const premium = useStore((s) => s.premium);
-  const showPaywall = useStore((s) => s.showPaywall);
   const showLegend = useStore((s) => s.showLegend);
   const hydrate = useStore((s) => s.hydrate);
 
@@ -139,13 +136,9 @@ function Main() {
 
   const onStartTimer = useCallback(
     (street: StreetFeature, suggestedMin?: number) => {
-      if (!premium) {
-        showPaywall(true);
-        return;
-      }
       setTimerFor({ street, suggestedMin });
     },
-    [premium, showPaywall],
+    [],
   );
 
   /** Streets free right now — scoped to the viewport once the user zooms in. */
@@ -189,12 +182,6 @@ function Main() {
               {freeNow.count} free {freeNow.nearby ? 'nearby' : 'now'}
             </Text>
           </View>
-          <Pressable
-            style={[styles.premiumBtn, premium && styles.premiumBtnActive]}
-            onPress={() => showPaywall(true)}
-          >
-            <Text style={styles.premiumBtnText}>{premium ? '★' : '☆'}</Text>
-          </Pressable>
         </View>
         <SearchBar onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)} />
         <FilterBar />
@@ -239,7 +226,6 @@ function Main() {
 
       <WelcomeOverlay onFindPark={onFindPark} />
       <LegendModal />
-      <PaywallModal />
       <TimerModal
         street={timerFor?.street ?? null}
         suggestedMin={timerFor?.suggestedMin}
@@ -287,14 +273,6 @@ const styles = StyleSheet.create({
   },
   freeNowDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.accent },
   freeNowText: { color: colors.text, fontSize: 11, fontWeight: '700' },
-  premiumBtn: {
-    width: 36, height: 36, borderRadius: 18,
-    backgroundColor: 'rgba(15,17,21,0.85)',
-    borderWidth: 1, borderColor: colors.border,
-    alignItems: 'center', justifyContent: 'center',
-  },
-  premiumBtnActive: { borderColor: colors.premium },
-  premiumBtnText: { color: colors.premium, fontSize: 16 },
   findBtn: {
     position: 'absolute',
     left: 14,
