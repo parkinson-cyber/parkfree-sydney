@@ -101,6 +101,58 @@ const AREAS = {
     bbox: [-33.995, 151.22, -33.94, 151.27],
     tiles: [2, 2],
   },
+
+  // -------------------------------------------------------------------------
+  // 25km -> 30km ring. The areas above form a disc out to ~25km; these five
+  // close the remaining gap to a genuine 30km-from-CBD radius.
+  //
+  // skipTagged: true, and smaller grids than the inner areas — `farwest`
+  // (fetched with full tagged+base tiling) came back with 9 tagged ways out
+  // of 6,942 total: OSM's detailed parking:lane tagging is overwhelmingly an
+  // inner-Sydney phenomenon, so paying for that query out here bought almost
+  // nothing while doubling the request count against a rate-limited API.
+  // -------------------------------------------------------------------------
+  farwest: {
+    label: 'Parramatta CBD, Merrylands, Guildford, Blacktown edge (Harris Park, '
+      + 'Granville, Westmead, Toongabbie)',
+    // West of `west` (which stops at 150.97) out towards Blacktown, ~24-29km.
+    bbox: [-33.86, 150.86, -33.75, 150.99],
+    tiles: [3, 3],
+  },
+  hills: {
+    label: 'The Hills District (Castle Hill, Baulkham Hills, Kellyville, '
+      + 'Bella Vista, Rouse Hill)',
+    // North of `farwest`, not covered by any existing area — ~20-28km.
+    bbox: [-33.80, 150.90, -33.68, 151.02],
+    tiles: [2, 2],
+    skipTagged: true,
+  },
+  bankstown: {
+    label: 'Bankstown, Padstow, Revesby, Panania, Picnic Point',
+    // South of `west` (which stops at -33.90) — Bankstown itself sits just
+    // outside that bound. ~17-23km.
+    bbox: [-33.98, 150.95, -33.89, 151.08],
+    tiles: [2, 2],
+    skipTagged: true,
+  },
+  sutherland: {
+    label: 'Sutherland Shire (Sutherland, Miranda, Caringbah, Cronulla, Menai, '
+      + 'Engadine, Sylvania)',
+    // South of `south`/`southeast` (which stop at -33.98/-33.995) — the single
+    // biggest remaining gap, out to Cronulla at ~27km.
+    bbox: [-34.10, 150.95, -33.97, 151.20],
+    tiles: [2, 2],
+    skipTagged: true,
+  },
+  farnorth2: {
+    label: 'Hornsby to Berowra (Asquith, Mount Colah, Mount Kuring-gai, Berowra, '
+      + 'Hornsby Heights)',
+    // North of `farnorth` (which stops at -33.68) out to the edge of the
+    // 30km disc at Berowra, ~28-30km.
+    bbox: [-33.68, 151.02, -33.58, 151.16],
+    tiles: [2, 2],
+    skipTagged: true,
+  },
 };
 
 const OVERPASS_ENDPOINTS = [
@@ -144,8 +196,16 @@ async function overpass(query, attempt = 0) {
     // Overpass mirrors periodically all 504/429 together during global load
     // spikes; be patient rather than losing a whole area's fetched tiles. Up to
     // 14 attempts, backoff capped at 45s with jitter, rotating mirrors.
+    //
+    // 429 specifically means "you are over quota right now" — retrying it on
+    // the generic 8s/16s/24s schedule just re-triggers the same limit and can
+    // retry-storm for hours without making progress (measured: 8h stuck on
+    // tile 7/9 of one area). A 429 gets a real penalty — 90s flat — instead.
     if (attempt >= 14) throw err;
-    const wait = Math.min(8000 * (attempt + 1), 45000) + Math.floor(Math.random() * 3000);
+    const isRateLimited = /HTTP 429/.test(err.message);
+    const wait = isRateLimited
+      ? 90000 + Math.floor(Math.random() * 15000)
+      : Math.min(8000 * (attempt + 1), 45000) + Math.floor(Math.random() * 3000);
     console.log(`  retry ${attempt + 1} (${err.message.slice(0, 80)}) — waiting ${Math.round(wait / 1000)}s`);
     await new Promise((r) => setTimeout(r, wait));
     return overpass(query, attempt + 1);
@@ -169,38 +229,46 @@ function tileBbox([s, w, n, e], [rows, cols]) {
   return out;
 }
 
-async function fetchTile(bb) {
-  const tagged = await overpass(`[out:json][timeout:90];
-    (
-      way["highway"]["parking:lane:left"](${bb});
-      way["highway"]["parking:lane:right"](${bb});
-      way["highway"]["parking:lane:both"](${bb});
-      way["highway"]["parking:left"](${bb});
-      way["highway"]["parking:right"](${bb});
-      way["highway"]["parking:both"](${bb});
-      way["highway"]["parking:condition:left"](${bb});
-      way["highway"]["parking:condition:right"](${bb});
-      way["highway"]["parking:condition:both"](${bb});
-    );
-    out geom;`);
-  await sleep(1500); // be polite to the Overpass servers
+// Gap between any two Overpass requests. Public mirrors are free, shared
+// infrastructure; 1.5s turned out to be optimistic enough to trigger 429s
+// under normal daytime load. 5s is comfortably inside fair-use.
+const REQUEST_GAP_MS = 5000;
+
+async function fetchTile(bb, { skipTagged = false } = {}) {
+  let tagged = { elements: [] };
+  if (!skipTagged) {
+    tagged = await overpass(`[out:json][timeout:90];
+      (
+        way["highway"]["parking:lane:left"](${bb});
+        way["highway"]["parking:lane:right"](${bb});
+        way["highway"]["parking:lane:both"](${bb});
+        way["highway"]["parking:left"](${bb});
+        way["highway"]["parking:right"](${bb});
+        way["highway"]["parking:both"](${bb});
+        way["highway"]["parking:condition:left"](${bb});
+        way["highway"]["parking:condition:right"](${bb});
+        way["highway"]["parking:condition:both"](${bb});
+      );
+      out geom;`);
+    await sleep(REQUEST_GAP_MS);
+  }
   const base = await overpass(`[out:json][timeout:90];
     way["highway"~"^(${BASE_HIGHWAYS})$"]["area"!="yes"](${bb});
     out geom;`);
   return { tagged: tagged.elements, base: base.elements };
 }
 
-async function fetchArea(name, { label, bbox, tiles }) {
-  console.log(`\n▸ ${name}: ${label}`);
+async function fetchArea(name, { label, bbox, tiles, skipTagged }) {
+  console.log(`\n▸ ${name}: ${label}${skipTagged ? ' (base network only — sparse OSM parking tagging out here)' : ''}`);
   const grid = tiles ? tileBbox(bbox, tiles) : [bbox];
   const tagged = [];
   const base = [];
   for (let i = 0; i < grid.length; i++) {
     if (grid.length > 1) console.log(`  tile ${i + 1}/${grid.length}…`);
-    const res = await fetchTile(bboxStr(grid[i]));
+    const res = await fetchTile(bboxStr(grid[i]), { skipTagged });
     tagged.push(...res.tagged);
     base.push(...res.base);
-    if (i < grid.length - 1) await sleep(1500);
+    if (i < grid.length - 1) await sleep(REQUEST_GAP_MS);
   }
   console.log(`    ${tagged.length} tagged ways, ${base.length} base ways`);
   return { tagged, base, area: name };

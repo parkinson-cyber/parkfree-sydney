@@ -90,6 +90,39 @@ export const PLACES: { name: string; latitude: number; longitude: number }[] = [
   { name: 'Strathfield', latitude: -33.8736, longitude: 151.0917 },
   { name: 'Homebush', latitude: -33.8646, longitude: 151.0865 },
   { name: 'Homebush West', latitude: -33.8686, longitude: 151.0669 },
+  // 25km -> 30km ring
+  // Parramatta / farwest
+  { name: 'Parramatta', latitude: -33.8148, longitude: 151.0011 },
+  { name: 'Harris Park', latitude: -33.8225, longitude: 151.0059 },
+  { name: 'Granville', latitude: -33.8324, longitude: 151.0093 },
+  { name: 'Merrylands', latitude: -33.8347, longitude: 150.9836 },
+  { name: 'Guildford', latitude: -33.8578, longitude: 150.9906 },
+  { name: 'Westmead', latitude: -33.8064, longitude: 150.9885 },
+  { name: 'Toongabbie', latitude: -33.7838, longitude: 150.9648 },
+  // The Hills District
+  { name: 'Castle Hill', latitude: -33.7315, longitude: 150.9998 },
+  { name: 'Baulkham Hills', latitude: -33.7666, longitude: 150.9931 },
+  { name: 'Kellyville', latitude: -33.7075, longitude: 150.9502 },
+  { name: 'Bella Vista', latitude: -33.7423, longitude: 150.9583 },
+  { name: 'Rouse Hill', latitude: -33.6822, longitude: 150.9192 },
+  // Bankstown / Padstow
+  { name: 'Bankstown', latitude: -33.9174, longitude: 151.0343 },
+  { name: 'Padstow', latitude: -33.9502, longitude: 151.0357 },
+  { name: 'Revesby', latitude: -33.9524, longitude: 151.0173 },
+  { name: 'Panania', latitude: -33.9600, longitude: 150.9987 },
+  // Sutherland Shire
+  { name: 'Sutherland', latitude: -34.0311, longitude: 151.0578 },
+  { name: 'Miranda', latitude: -34.0342, longitude: 151.1027 },
+  { name: 'Caringbah', latitude: -34.0453, longitude: 151.1201 },
+  { name: 'Cronulla', latitude: -34.0575, longitude: 151.1522 },
+  { name: 'Menai', latitude: -34.0167, longitude: 151.0167 },
+  { name: 'Engadine', latitude: -34.0656, longitude: 151.0148 },
+  { name: 'Sylvania', latitude: -34.0231, longitude: 151.0929 },
+  // Hornsby -> Berowra
+  { name: 'Hornsby', latitude: -33.7044, longitude: 151.0999 },
+  { name: 'Asquith', latitude: -33.6842, longitude: 151.1058 },
+  { name: 'Mount Colah', latitude: -33.6716, longitude: 151.1174 },
+  { name: 'Berowra', latitude: -33.6247, longitude: 151.1466 },
 ];
 
 export interface SearchResult {
