@@ -1,4 +1,24 @@
+import { Platform } from 'react-native';
 import type { ParkingKind, LiveStatus } from './lib/types';
+
+/**
+ * San Francisco on Apple platforms, the platform default elsewhere. SF is what
+ * makes dense UI read as native rather than as a web page in a wrapper — it is
+ * optically tighter than Roboto at the same size, so pair it with the negative
+ * tracking below on anything 17pt or larger.
+ */
+export const font = Platform.select({
+  ios: 'System',
+  android: 'sans-serif',
+  default: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif',
+}) as string;
+
+/** Apple tracks large text tighter and small text looser. */
+export const tracking = {
+  title: -0.45,
+  body: -0.1,
+  caption: 0.3,
+};
 
 export const colors = {
   bg: '#0F1115',

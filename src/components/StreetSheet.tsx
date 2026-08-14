@@ -6,7 +6,7 @@ import {
   nextFreeAt, formatCountdown,
 } from '../lib/rules';
 import { featureCenter, sideLabels } from '../lib/geo';
-import { colors, statusColors, statusLabels } from '../theme';
+import { colors, font, statusColors, statusLabels, tracking } from '../theme';
 import { useStore } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
 
@@ -71,42 +71,43 @@ export function StreetSheet({
   return (
     <View style={styles.sheet}>
       <View style={styles.handle} />
+
       <View style={styles.headerRow}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.title} numberOfLines={1}>
-            {p.name ?? 'Unnamed street'}
-          </Text>
-          <View style={[styles.badge, { backgroundColor: statusColors[overall.status] + '26', borderColor: statusColors[overall.status] }]}>
-            <View style={[styles.dot, { backgroundColor: statusColors[overall.status] }]} />
-            <Text style={[styles.badgeText, { color: statusColors[overall.status] }]}>
-              {statusLabels[overall.status]}
-            </Text>
-          </View>
-        </View>
-        <Pressable onPress={() => select(null)} hitSlop={12} style={styles.close}>
+        <Text style={styles.title} numberOfLines={1}>
+          {p.name ?? 'Unnamed street'}
+        </Text>
+        <Pressable onPress={() => select(null)} hitSlop={14} style={styles.close}>
           <Text style={styles.closeText}>✕</Text>
         </Pressable>
       </View>
 
-      {chips.length > 0 && (
-        <View style={styles.chips}>
-          {chips.map((c) => (
-            <View key={c} style={styles.chip}>
-              <Text style={styles.chipText}>{c}</Text>
-            </View>
-          ))}
-        </View>
-      )}
+      {/* Status and the headline facts share one line — stacked as a badge over
+          a chip row they cost ~60pt of screen and said little more. Status
+          never shrinks: with 3-4 chips the row can run long, and it's the one
+          word that must never truncate. Only price + zone show here — cut-off
+          time and permit notes are already covered by the sentence below, so
+          cutting them from the headline loses nothing, not just space. */}
+      <View style={styles.metaRow}>
+        <View style={[styles.dot, { backgroundColor: statusColors[overall.status] }]} />
+        <Text style={[styles.metaStatus, { color: statusColors[overall.status] }]}>
+          {statusLabels[overall.status]}
+        </Text>
+        {chips.length > 0 && (
+          // Non-breaking spaces around the separator: RN-Web collapses plain
+          // ASCII spaces sitting at a text-node boundary, which was rendering
+          // as "FREE now· $7/hr" with no gap before the dot.
+          <Text style={styles.metaChips} numberOfLines={1}>
+            {' · '}{chips.slice(0, 2).join(' · ')}
+          </Text>
+        )}
+      </View>
 
-      <Text style={styles.detail} numberOfLines={3}>{overall.detail}</Text>
+      <Text style={styles.detail} numberOfLines={2}>{overall.detail}</Text>
 
       {soon && (
-        <View style={[styles.soon, imminent && styles.soonImminent]}>
-          <Text style={[styles.soonText, imminent && styles.soonTextImminent]} numberOfLines={1}>
-            🕐 Free from {soon.at}
-            <Text style={styles.soonCount}> · {formatCountdown(soon.inMin)}</Text>
-          </Text>
-        </View>
+        <Text style={[styles.soonText, imminent && styles.soonTextImminent]} numberOfLines={1}>
+          Free from {soon.at} · {formatCountdown(soon.inMin)}
+        </Text>
       )}
 
       {sidesDiffer && (
@@ -134,7 +135,7 @@ export function StreetSheet({
           {/* sign-style short form ("½P") keeps this on one line — the verbose
               limit is already spelled out in the detail text above */}
           <Text style={styles.buttonSecondaryText} numberOfLines={1}>
-            ⏱ Park here{overall.maxstayMin ? ` · ${pShort(overall.maxstayMin)}` : ''}
+            Park here{overall.maxstayMin ? ` · ${pShort(overall.maxstayMin)}` : ''}
           </Text>
         </Pressable>
       </View>
@@ -148,89 +149,102 @@ const styles = StyleSheet.create({
     left: 12,
     right: 12,
     bottom: 20,
-    backgroundColor: colors.surface,
-    borderRadius: 20,
-    padding: 14,
+    backgroundColor: 'rgba(26,29,36,0.98)',
+    borderRadius: 24,
+    paddingHorizontal: 18,
     paddingTop: 8,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.border,
+    paddingBottom: 16,
     shadowColor: '#000',
-    shadowOpacity: 0.4,
-    shadowRadius: 20,
-    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.45,
+    shadowRadius: 24,
+    shadowOffset: { width: 0, height: 10 },
     elevation: 12,
   },
   handle: {
     alignSelf: 'center',
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: colors.border,
-    marginBottom: 8,
+    width: 36,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: 'rgba(255,255,255,0.18)',
+    marginBottom: 12,
   },
-  headerRow: { flexDirection: 'row', alignItems: 'flex-start' },
-  title: { color: colors.text, fontSize: 18, fontWeight: '700', marginBottom: 6 },
-  badge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 999,
-    borderWidth: 1,
+  headerRow: { flexDirection: 'row', alignItems: 'center' },
+  title: {
+    flex: 1,
+    fontFamily: font,
+    color: colors.text,
+    fontSize: 20,
+    fontWeight: '700',
+    letterSpacing: tracking.title,
   },
-  dot: { width: 8, height: 8, borderRadius: 4, marginRight: 6 },
-  badgeText: { fontSize: 13, fontWeight: '700' },
+  // Borderless and barely-there: closing is a fallback, tapping the map works too.
   close: {
-    width: 30, height: 30, borderRadius: 15,
-    backgroundColor: colors.surfaceRaised,
+    width: 28, height: 28, borderRadius: 14,
+    backgroundColor: 'rgba(255,255,255,0.08)',
     alignItems: 'center', justifyContent: 'center',
+    marginLeft: 8,
   },
-  closeText: { color: colors.textDim, fontSize: 14, fontWeight: '600' },
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 10 },
-  chip: {
-    backgroundColor: colors.surfaceRaised,
-    borderRadius: 8,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.border,
-    paddingHorizontal: 9,
-    paddingVertical: 4,
+  closeText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
+
+  metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 7 },
+  dot: { width: 7, height: 7, borderRadius: 4, marginRight: 7 },
+  metaStatus: {
+    flexShrink: 0,
+    fontFamily: font, fontSize: 14, fontWeight: '600', letterSpacing: tracking.body,
   },
-  chipText: { color: colors.text, fontSize: 12, fontWeight: '700' },
-  detail: { color: colors.textDim, fontSize: 13.5, lineHeight: 19, marginTop: 8 },
-  soon: {
+  metaChips: {
+    flexShrink: 1,
+    fontFamily: font, color: colors.textDim, fontSize: 14, fontWeight: '500',
+    letterSpacing: tracking.body,
+  },
+
+  detail: {
+    fontFamily: font,
+    color: colors.textDim,
+    fontSize: 14,
+    lineHeight: 19,
+    letterSpacing: tracking.body,
     marginTop: 8,
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-    backgroundColor: colors.surfaceRaised,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.border,
   },
-  // Within the hour it's a decision you can act on — make it glow.
-  soonImminent: { backgroundColor: colors.accent + '1F', borderColor: colors.accent + '66' },
-  soonText: { color: colors.textDim, fontSize: 13, fontWeight: '700' },
+  // A plain line of text, not a boxed callout — the colour carries the urgency.
+  soonText: {
+    fontFamily: font, color: colors.textDim, fontSize: 14, fontWeight: '600',
+    letterSpacing: tracking.body, marginTop: 7,
+  },
   soonTextImminent: { color: colors.accent },
-  soonCount: { fontWeight: '800' },
-  sides: { flexDirection: 'row', gap: 8, marginTop: 10 },
+
+  sides: { flexDirection: 'row', gap: 8, marginTop: 12 },
   sideCard: {
     flex: 1,
-    backgroundColor: colors.surfaceRaised,
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 9,
   },
-  sideLabel: { color: colors.textDim, fontSize: 10, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 0.6 },
-  sideStatus: { fontSize: 13, fontWeight: '700', marginTop: 3 },
-  actions: { flexDirection: 'row', gap: 10, marginTop: 12 },
+  sideLabel: {
+    fontFamily: font, color: colors.textDim, fontSize: 11, fontWeight: '600',
+    textTransform: 'uppercase', letterSpacing: tracking.caption,
+  },
+  sideStatus: {
+    fontFamily: font, fontSize: 14, fontWeight: '600',
+    letterSpacing: tracking.body, marginTop: 2,
+  },
+
+  actions: { flexDirection: 'row', gap: 10, marginTop: 16 },
   button: {
     flex: 1,
-    borderRadius: 12,
-    paddingVertical: 11,
+    borderRadius: 14,
+    paddingVertical: 13,
     alignItems: 'center',
   },
   buttonPrimary: { backgroundColor: colors.accent },
-  buttonPrimaryText: { color: '#04291B', fontSize: 15, fontWeight: '800' },
-  buttonSecondary: { backgroundColor: colors.surfaceRaised, borderWidth: 1, borderColor: colors.border },
-  buttonSecondaryText: { color: colors.text, fontSize: 15, fontWeight: '700' },
+  buttonPrimaryText: {
+    fontFamily: font, color: '#04291B', fontSize: 16, fontWeight: '600',
+    letterSpacing: tracking.body,
+  },
+  buttonSecondary: { backgroundColor: 'rgba(255,255,255,0.09)' },
+  buttonSecondaryText: {
+    fontFamily: font, color: colors.text, fontSize: 16, fontWeight: '600',
+    letterSpacing: tracking.body,
+  },
 });
