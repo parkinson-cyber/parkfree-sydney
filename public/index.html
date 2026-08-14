@@ -41,6 +41,16 @@
         background-color: #0f1115;
       }
 
+      /*
+        react-native-web's root view is `flex: 1` with no intrinsic height, so
+        it collapses to 0 unless #root is a flex container — the map and the
+        bottom controls silently disappear. This rule is part of Expo's default
+        web template; keep it whenever this file is customised.
+      */
+      #root {
+        display: flex;
+      }
+
       body {
         /* Lock the page: the map pans, the page never scrolls or rubber-bands. */
         position: fixed;
