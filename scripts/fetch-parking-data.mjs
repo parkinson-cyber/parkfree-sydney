@@ -285,20 +285,91 @@ async function fetchTile(bb, { skipTagged = false } = {}) {
   return { tagged: tagged.elements, base: base.elements };
 }
 
-async function fetchArea(name, { label, bbox, tiles, skipTagged }) {
+async function fetchArea(name, { label, bbox, tiles, skipTagged, tileList }) {
   console.log(`\n▸ ${name}: ${label}${skipTagged ? ' (base network only — sparse OSM parking tagging out here)' : ''}`);
-  const grid = tiles ? tileBbox(bbox, tiles) : [bbox];
+  // tileList wins when present (the disc grid below supplies its own cells);
+  // otherwise fall back to slicing the bbox.
+  const grid = tileList ?? (tiles ? tileBbox(bbox, tiles) : [bbox]);
   const tagged = [];
   const base = [];
   for (let i = 0; i < grid.length; i++) {
     if (grid.length > 1) console.log(`  tile ${i + 1}/${grid.length}…`);
-    const res = await fetchTile(bboxStr(grid[i]), { skipTagged });
+    const res = await fetchTile(bboxStr(grid[i]), { skipTagged: skipTagged ?? grid[i].skipTagged });
     tagged.push(...res.tagged);
     base.push(...res.base);
     if (i < grid.length - 1) await sleep(REQUEST_GAP_MS);
   }
   console.log(`    ${tagged.length} tagged ways, ${base.length} base ways`);
   return { tagged, base, area: name };
+}
+
+// ---------------------------------------------------------------------------
+// Whole-disc grid coverage
+//
+// The hand-placed AREAS above are a patchwork of rectangles chosen suburb by
+// suburb. They were never going to tessellate: measured against a 30km disc
+// around the CBD, they leave ~45% of it outside any bbox, which is what shows
+// up in the app as blank streets between covered suburbs.
+//
+// This grids the entire disc instead, so coverage is complete by construction
+// rather than by whichever rectangles someone remembered to add. Cells that
+// land on water or bushland come back empty and cost almost nothing.
+// ---------------------------------------------------------------------------
+const CBD = { lat: -33.8688, lon: 151.2093 };
+const DISC_RADIUS_KM = 30;
+
+// ~3.3km per cell. Small enough that even the CBD's density stays well under
+// the point where Overpass silently truncates a response (the failure that
+// previously dropped whole streets from `inner` and `east`).
+const CELL_DEG = 0.03;
+
+// Detailed parking:lane tagging is an inner-Sydney phenomenon: fetching it for
+// `farwest` returned 9 tagged ways out of 6,942. Pay for that second query
+// where it actually pays off, and skip it further out.
+const TAGGED_QUERY_RADIUS_KM = 18;
+
+function haversineKm(lat1, lon1, lat2, lon2) {
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a = Math.sin(dLat / 2) ** 2
+    + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 6371 * 2 * Math.asin(Math.sqrt(a));
+}
+
+/** Every CELL_DEG cell whose centre falls inside the disc. */
+/**
+ * All 30km-disc cells NOT already inside one of the hand-placed AREAS boxes.
+ * A full disc sweep re-pays for the ~58% of the disc that's already covered
+ * (measured: 180 of 309 cells) — this fetches only the real gaps.
+ */
+function existingAreaBoxes() {
+  return Object.entries(AREAS)
+    .filter(([, a]) => a.bbox)
+    .map(([, { bbox: [s, w, n, e] }]) => ({ s, w, n, e }));
+}
+
+function discCells({ gapsOnly = false } = {}) {
+  const boxes = gapsOnly ? existingAreaBoxes() : [];
+  const cells = [];
+  const latSpan = DISC_RADIUS_KM / 111.32;
+  const lonSpan = DISC_RADIUS_KM / (111.32 * Math.cos((CBD.lat * Math.PI) / 180));
+  for (let lat = CBD.lat - latSpan; lat < CBD.lat + latSpan; lat += CELL_DEG) {
+    for (let lon = CBD.lon - lonSpan; lon < CBD.lon + lonSpan; lon += CELL_DEG) {
+      const cLat = lat + CELL_DEG / 2;
+      const cLon = lon + CELL_DEG / 2;
+      const d = haversineKm(CBD.lat, CBD.lon, cLat, cLon);
+      if (d > DISC_RADIUS_KM) continue;
+      if (boxes.some((b) => b.s <= cLat && cLat <= b.n && b.w <= cLon && cLon <= b.e)) continue;
+      const cell = [
+        round(lat), round(lon), round(lat + CELL_DEG), round(lon + CELL_DEG),
+      ];
+      cell.skipTagged = d > TAGGED_QUERY_RADIUS_KM;
+      cell.distKm = d;
+      cells.push(cell);
+    }
+  }
+  return cells;
 }
 
 // ---------------------------------------------------------------------------
@@ -464,7 +535,38 @@ function wayCoords(el) {
 const areaArg = process.argv.includes('--area')
   ? process.argv[process.argv.indexOf('--area') + 1]
   : 'inner';
-const areaNames = areaArg === 'all' ? Object.keys(AREAS) : [areaArg];
+
+// `--area disc` grids the whole 30km disc. `--from N` / `--count N` fetch a
+// slice of that grid, so a long run can be done in resumable chunks instead of
+// one process that has to survive hours of a rate-limited public API.
+const isDisc = areaArg === 'disc';
+const gapsOnly = process.argv.includes('--gaps-only');
+let discAreaName = null;
+if (isDisc) {
+  const discGrid = discCells({ gapsOnly });
+  const from = process.argv.includes('--from')
+    ? Number(process.argv[process.argv.indexOf('--from') + 1]) : 0;
+  const count = process.argv.includes('--count')
+    ? Number(process.argv[process.argv.indexOf('--count') + 1]) : discGrid.length;
+  const slice = discGrid.slice(from, from + count);
+  const withTagged = slice.filter((c) => !c.skipTagged).length;
+  // Each chunk gets its own area name. The merge step below replaces exactly
+  // the areas it just fetched and keeps the rest, so a shared name would make
+  // every chunk wipe the previous one's results.
+  discAreaName = `disc_${from}`;
+  console.log(`Disc grid: ${discGrid.length} cells total within ${DISC_RADIUS_KM}km of the CBD.`);
+  console.log(`This run: "${discAreaName}" = cells ${from}..${from + slice.length - 1} (${slice.length}), `
+    + `${withTagged} inside the ${TAGGED_QUERY_RADIUS_KM}km tagged-query radius.`);
+  console.log(`Estimated requests: ${slice.length + withTagged}`);
+  AREAS[discAreaName] = {
+    label: `Whole-disc grid cells ${from}..${from + slice.length - 1}`,
+    tileList: slice,
+  };
+}
+
+const areaNames = areaArg === 'all'
+  ? Object.keys(AREAS)
+  : [isDisc ? discAreaName : areaArg];
 
 const features = [];
 const seen = new Set();
@@ -472,7 +574,7 @@ const stats = {};
 
 for (const name of areaNames) {
   if (!AREAS[name]) {
-    console.error(`Unknown area "${name}". Available: ${Object.keys(AREAS).join(', ')}, all`);
+    console.error(`Unknown area "${name}". Available: ${Object.keys(AREAS).join(', ')}, all, disc`);
     process.exit(1);
   }
   const { tagged, base } = await fetchArea(name, AREAS[name]);
