@@ -33,7 +33,11 @@ const AREAS = {
   },
   east: {
     label: 'Eastern suburbs (Bondi, Randwick, Coogee)',
+    // Was un-tiled — a single query over this dense a bbox is exactly the
+    // truncation failure mode `inner` already hit (see above), just never
+    // diagnosed here. Tiled now.
     bbox: [-33.945, 151.22, -33.87, 151.29],
+    tiles: [2, 2],
   },
   innerwest: {
     label: 'Inner West (Marrickville, Ashfield, Leichhardt)',
@@ -98,6 +102,7 @@ const AREAS = {
     label: 'Southern eastern suburbs (Maroubra, Malabar, Chifley, Matraville, La Perouse)',
     // Closes the gap south of `east`/`east_north` (which stop at -33.945) down
     // to La Perouse (~11km from the CBD centre, well inside the 25km disc).
+    // Was un-tiled — same truncation risk as `east`, fixed the same way.
     bbox: [-33.995, 151.22, -33.94, 151.27],
     tiles: [2, 2],
   },
@@ -151,6 +156,28 @@ const AREAS = {
     // 30km disc at Berowra, ~28-30km.
     bbox: [-33.68, 151.02, -33.58, 151.16],
     tiles: [2, 2],
+    skipTagged: true,
+  },
+
+  // -------------------------------------------------------------------------
+  // Northern Beaches — a whole LGA with no coverage at all until now, not
+  // even partially: it sits across the harbour from `north`/`northshore` and
+  // was never in range of any existing bbox. Split in two along its length
+  // (it's a long, thin peninsula — one bbox would be mostly ocean).
+  // -------------------------------------------------------------------------
+  northernbeaches_south: {
+    label: 'Northern Beaches south (Manly, Fairlight, Balgowlah, Seaforth, '
+      + 'Freshwater, Curl Curl, Brookvale, Dee Why, Collaroy, Narrabeen, '
+      + 'Forestville, Belrose)',
+    bbox: [-33.83, 151.18, -33.71, 151.31],
+    tiles: [3, 3],
+    skipTagged: true,
+  },
+  northernbeaches_north: {
+    label: 'Northern Beaches north (Mona Vale, Newport, Avalon, Palm Beach, '
+      + 'Church Point, Terrey Hills, Duffys Forest)',
+    bbox: [-33.71, 151.18, -33.57, 151.33],
+    tiles: [3, 3],
     skipTagged: true,
   },
 };
