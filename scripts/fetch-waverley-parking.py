@@ -180,7 +180,13 @@ def parse_restriction(text, phe=False):
     loading = "loading zone" in t or "truck zone" in t
     permit = phe or "permit holders excepted" in t
 
+    # Two sign formats carry a time limit: "2P" / "1/2P" (number before P, in
+    # hours) and "P 15 minute" / "P 10min" (P before number, always minutes —
+    # short-stay signs near shops/schools). Missing the second format was
+    # silently dropping every short-stay sign in the dataset (dozens of
+    # distinct P-5/10/15-minute signs) as unparseable.
     limits = [_limit_to_min(m) for m in re.findall(r"(\d+/\d+|\d+)\s*p\b", t)]
+    limits += [int(m) for m in re.findall(r"\bp\s+(\d+)\s*min", t)]
     hours = re.findall(r"(\d{1,2})(?:\.(\d{2}))?\s*(am|pm)\s*-\s*(\d{1,2})(?:\.(\d{2}))?\s*(am|pm)", t)
     fee_clauses, cut = [], 0
     for h1, m1, ap1, h2, m2, ap2 in hours:
@@ -310,9 +316,21 @@ def main():
 
     stats = {"signs": 0, "meters": 0, "loading": 0, "pudo": 0}
 
+    # Real extent of Waverley's open-data coverage, from every sign point
+    # (not just the regulatory ones matched below) — used at the end to tell
+    # "inside Waverley, no restriction posted" from "outside Waverley, we
+    # simply have no data". A small buffer avoids falsely excluding streets
+    # right at the LGA boundary where sign density thins out.
+    bounds = {"lat_min": 90.0, "lat_max": -90.0, "lon_min": 180.0, "lon_max": -180.0}
+    BUFFER_DEG = 0.003  # ~300m
+
     # 1 ── traffic & parking signs ──────────────────────────────────────────
     print("▸ Signs…")
     for lat, lon, row in load_layer("signs"):
+        bounds["lat_min"] = min(bounds["lat_min"], lat)
+        bounds["lat_max"] = max(bounds["lat_max"], lat)
+        bounds["lon_min"] = min(bounds["lon_min"], lon)
+        bounds["lon_max"] = max(bounds["lon_max"], lon)
         if not row.get("SignType", "").startswith("reg"):
             continue
         text = row.get("Sign", "")
@@ -365,6 +383,33 @@ def main():
             if st["properties"].get("cat") == "unknown":
                 st["properties"]["cat"] = "no_parking"
             stats["pudo"] += 1
+
+    # 5 ── fill genuine gaps ─────────────────────────────────────────────────
+    # Waverley's sign dataset is a *complete* regulatory-sign census, not a
+    # sample — every restriction (metered, timed, permit-excepted, loading,
+    # no-stopping) is posted on a physical sign and this pipeline just ran
+    # every one of them through `nearest()`. So a street still 'unknown'
+    # inside Waverley's actual data footprint doesn't mean "we don't know" —
+    # it means "no restriction sign exists there", i.e. genuinely free,
+    # unrestricted parking. Outside that footprint we still have no data and
+    # correctly leave 'unknown' alone.
+    print("▸ Filling remaining unknown streets inside Waverley as free (no restriction)…")
+    free_filled = 0
+    lat_lo, lat_hi = bounds["lat_min"] - BUFFER_DEG, bounds["lat_max"] + BUFFER_DEG
+    lon_lo, lon_hi = bounds["lon_min"] - BUFFER_DEG, bounds["lon_max"] + BUFFER_DEG
+    for feat in streets:
+        p = feat["properties"]
+        if p["cat"] != "unknown":
+            continue
+        coords = feat["geometry"]["coordinates"]
+        lon, lat = coords[len(coords) // 2]
+        if not (lat_lo <= lat <= lat_hi and lon_lo <= lon <= lon_hi):
+            continue
+        p["left"] = {"kind": "free"}
+        p["right"] = {"kind": "free"}
+        p["cat"] = "free"
+        free_filled += 1
+    stats["free_filled"] = free_filled
 
     coll.setdefault("metadata", {})["generated"] = __import__("datetime").datetime.now().isoformat()
     prev = coll["metadata"].get("enriched", "")
