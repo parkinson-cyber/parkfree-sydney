@@ -190,8 +190,17 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
         type: 'line',
         source: 'streets',
         filter: ['==', ['get', 'known'], false],
-        minzoom: 14.8,
-        paint: { 'line-color': kindColors.unknown, 'line-width': 1.6, 'line-opacity': 0.55 },
+        // Was 14.8 — invisible until zoomed in almost to street level, which
+        // made every uncategorized suburb (i.e. most of the 30km disc outside
+        // inner Sydney, where OSM's parking:lane tagging is sparse) look like
+        // a data hole when it's actually fetched, just hidden. 8 shows the
+        // whole road network from a whole-of-Sydney zoom.
+        minzoom: 8,
+        paint: {
+          'line-color': kindColors.unknown,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 8, 0.5, 12, 1, 16, 2],
+          'line-opacity': ['interpolate', ['linear'], ['zoom'], 8, 0.35, 13, 0.55],
+        },
         layout: { 'line-cap': 'round' },
       });
       map.addLayer({

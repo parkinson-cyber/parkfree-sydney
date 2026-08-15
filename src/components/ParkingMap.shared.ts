@@ -21,4 +21,7 @@ export interface ParkingMapHandle {
 
 /** Zoom thresholds (in latitudeDelta) for progressive street rendering. */
 export const SHOW_CLASSIFIED_MAX_DELTA = 0.09;
-export const SHOW_UNKNOWN_MAX_DELTA = 0.035;
+// Was 0.035 — roughly street-level zoom only. Matches the web map's minzoom
+// fix: the uncategorized base network (most streets outside inner Sydney)
+// should read as covered from a whole-of-Sydney zoom, not just up close.
+export const SHOW_UNKNOWN_MAX_DELTA = 0.5;
