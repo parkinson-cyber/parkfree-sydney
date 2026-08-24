@@ -177,3 +177,16 @@ from `fetch-randwick-rps-geo.py`.
 Reminder of the standing rule, unchanged: never default `unknown` to `free`
 without a complete regulatory census for that exact footprint, and never write a
 classification that does not trace to a real fetched response.
+
+**Re-confirmed a fifth consecutive time (2026-08-24, ~07:2x UTC).**
+`recentRelayFailures` was empty at session start again, so the four core
+hosts (Randwick mapservices, Sutherland geoserver, data.nsw.gov.au,
+arcgis.com) were re-probed directly — all still `403` to `CONNECT`, no
+change. `origin/main` matched local `HEAD` at session start (previous run's
+push had already landed), so there was nothing to fetch and no data change
+this run either. Per the standing guidance above, no push notification was
+sent — the last one went out on the third run and only ~1h has passed,
+nothing materially new happened. Stop re-probing every host every run: the
+proxy status check plus a 2-4 host spot-check is enough to confirm the
+policy is unchanged; save the remaining runtime rather than repeating the
+same exhaustive sweep.
