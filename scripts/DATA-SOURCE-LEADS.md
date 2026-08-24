@@ -327,3 +327,22 @@ as before), then `npx tsc --noEmit` passed clean and `npx expo export -p web
 the last one (thirteenth run, ~17:18 UTC) was only ~2h ago, short of the
 "similarly long gap" bar (~3h) used previously, and nothing material
 changed since the fourteenth run's re-confirmation.
+
+**Re-confirmed a sixteenth consecutive time (2026-08-24, ~20:17 UTC).** Proxy
+status showed `recentRelayFailures: []` at session start; a direct 5-host
+spot-check (Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, `services.arcgis.com`) via curl again
+returned `403` (`CONNECT tunnel failed, response 403`) for all five, no
+exceptions. `origin/main` matched local `HEAD` at session start (nothing to
+fetch), so no data change this run. `node_modules` was absent this run
+(fresh container); `npm install` succeeded, then `npx tsc --noEmit` passed
+clean and `npx expo export -p web --clear` built successfully — repo stays
+healthy. This is now **16 consecutive hourly runs (~17 hours since the
+original block was first hit) with zero fetchable parking data.** A push
+notification was sent this run — the last one (thirteenth run, ~17:18 UTC)
+was ~3h ago, matching the "similarly long gap" bar this doc has been using.
+Nothing about the blocker itself is new: it remains a session-level egress
+allowlist (GitHub + package registries only) that only a human can widen
+(claude.ai/code → environment settings, per "To unblock" above). Until that
+changes, this schedule can only re-confirm the block and keep the repo
+building — it cannot advance parking-data coverage.
