@@ -313,3 +313,17 @@ fixed it, then `npx tsc --noEmit` passed clean and `npx expo export -p web
 the previous run (thirteenth, ~17:18 UTC) notified only ~1h ago and nothing
 material changed since; per the standing guidance, holding for a similarly
 long gap (~3h) or an actual change before notifying again.
+
+**Re-confirmed a fifteenth consecutive time (2026-08-24, ~19:17 UTC).**
+Proxy status showed `recentRelayFailures: []` at session start; a direct
+4-host spot-check (Randwick mapservices, Sutherland geoserver,
+`data.nsw.gov.au`, `services.arcgis.com`) via curl again returned `403`
+(`CONNECT tunnel failed, response 403`) for all four, no exceptions.
+`origin/main` matched local `HEAD` after `git fetch origin main` at session
+start, so no data change this run. `node_modules` was absent this run
+(fresh container); `npm install` succeeded (`registry.npmjs.org` reachable
+as before), then `npx tsc --noEmit` passed clean and `npx expo export -p web
+--clear` built successfully — repo stays healthy. No notification sent —
+the last one (thirteenth run, ~17:18 UTC) was only ~2h ago, short of the
+"similarly long gap" bar (~3h) used previously, and nothing material
+changed since the fourteenth run's re-confirmation.
