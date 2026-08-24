@@ -346,3 +346,18 @@ allowlist (GitHub + package registries only) that only a human can widen
 (claude.ai/code → environment settings, per "To unblock" above). Until that
 changes, this schedule can only re-confirm the block and keep the repo
 building — it cannot advance parking-data coverage.
+
+**Re-confirmed a seventeenth consecutive time (2026-08-24, ~21:16 UTC).**
+Proxy status showed `recentRelayFailures: []` at session start; a direct
+4-host spot-check (Randwick mapservices, Sutherland geoserver,
+`data.nsw.gov.au`, `services.arcgis.com`) via curl again returned `403`
+(`CONNECT tunnel failed, response 403`) for all four, no exceptions.
+`origin/main` matched local `HEAD` after `git fetch origin main` at session
+start, so no data change this run. `node_modules` was present but
+required a fresh `npm install`; `npx tsc --noEmit` passed clean and
+`npx expo export -p web --clear` built successfully — repo stays healthy.
+No notification sent — the last one (sixteenth run, ~20:17 UTC) was only
+~1h ago, well short of the "similarly long gap" bar (~3h) used previously,
+and nothing material changed. This is now **17 consecutive hourly runs
+(~18 hours since the original block was first hit) with zero fetchable
+parking data.**
