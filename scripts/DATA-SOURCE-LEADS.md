@@ -231,3 +231,21 @@ Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`, and
 `origin/main` matched local `HEAD` at session start, so no data change this
 run either. No notification sent — the last one (sixth run) was ~2h ago and
 nothing material changed since the seventh run's confirmation.
+
+**Re-confirmed a ninth consecutive time (2026-08-24, ~13:1x UTC).** Proxy
+status showed a fresh `recentRelayFailures` entry this time (a stray
+`www.google.com` probe plus `portal.spatial.nsw.gov.au` and
+`data.nsw.gov.au`, all `403 connect_rejected`); a direct 4-host spot-check
+(Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`,
+`services.arcgis.com`) confirmed the same `403 CONNECT` with no exceptions.
+`origin/main` matched local `HEAD` at session start, so no data change this
+run either. This is now **9 consecutive hourly runs (~10 hours) with zero
+fetchable parking data** — a notification was sent this run since the gap
+since the last one (sixth run, ~10:1x UTC) is now ~3 hours, per the standing
+"long gap" exception above. Nothing about the blocker itself is new: it
+remains a session-level egress allowlist that only a human can widen
+(claude.ai/code → environment settings, per "To unblock" above). Future runs
+should keep doing the lightweight proxy-status + 4-host spot-check and stay
+silent unless a similarly long gap has passed or something material changes
+(a host becomes reachable, the policy changes, etc.) — repeating this same
+notification hourly would not serve the user.
