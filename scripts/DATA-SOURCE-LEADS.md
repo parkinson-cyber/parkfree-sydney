@@ -27,6 +27,15 @@ from them has been (or should be) written into `src/data/parking.json`.
 egress policy (claude.ai/code → environment settings). Until then a scheduled
 run can only do offline work.
 
+**Re-confirmed on the next hourly run (2026-08-24, second consecutive run).**
+Same six hosts, same `403` to `CONNECT`, plus `maps.northernbeaches.nsw.gov.au`.
+`curl -sS "$HTTPS_PROXY/__agentproxy/status"` lists each refusal under
+`recentRelayFailures` with `"detail": "gateway answered 403 to CONNECT (policy
+denial or upstream failure)"` — that is the fastest way to confirm the blocker
+in one call at the start of a run. Do not spend a run re-testing hosts one by
+one; check the proxy status, and if the council hosts are still refused, do
+offline bookkeeping and stop.
+
 Offline avenues already checked and exhausted:
 
 - `scripts/data/_recovery/` (28 MB of previously-fetched raw sources) contains
@@ -34,6 +43,24 @@ Offline avenues already checked and exhausted:
   transit maps. Nothing there is applicable to an unenriched council.
 - The cached CKAN/ArcGIS-Hub catalogue searches in `_recovery/` list dataset
   *metadata* whose download URLs all point at blocked hosts.
+- `_recovery/osm-raw.json` — a real cached Overpass response (443 elements,
+  bbox `-33.86,151.18,-33.79,151.245`), **deliberately not applied**, and it
+  should stay that way. Three independent reasons: (a) the bbox is North
+  Sydney / Cremorne / Mosman / Willoughby / Chatswood, all of which already
+  carry *authoritative council* tagging, so applying it could only overwrite
+  better data with worse; (b) the tags are overwhelmingly physical, not
+  regulatory — `parking:both=lane` (154) means "a parking lane exists here",
+  which is **not** evidence of `free`; only ~20 elements carry a real
+  `restriction`/`condition`/`maxstay` value; (c) OSM is crowd-sourced and is
+  neither an ArcGIS query result nor a council open-data feed, so it does not
+  meet this repo's provenance bar. Leave it as a cached artefact.
+- GitHub is the one reachable host, so it was checked as a possible mirror of
+  NSW council parking GIS data. There is none — public Australian GeoJSON
+  repos carry suburb/postcode/state boundaries, not kerbside parking
+  regulation. OSM mirrors (`overpass-api.de`, `overpass.kumi.systems`,
+  `nominatim`, `planet.osm.org`, `download.geofabrik.de`) are all blocked too.
+  Even if a mirror existed, a third-party copy would be weaker provenance than
+  the hard rules allow. This avenue is closed — do not re-search it.
 
 ## Gotcha: the session starts on a detached HEAD
 
@@ -49,10 +76,20 @@ git push origin HEAD:main
 Always confirm with `git rev-parse HEAD origin/main` afterwards; if they match,
 the push landed and Vercel will deploy.
 
-## Current coverage (2026-08-24)
+**Confirmed working:** the next run started at the same detached HEAD and found
+both of the previous run's commits already on `origin/main`, so
+`git push origin HEAD:main` does land. One trap when you verify: the *local*
+`origin/main` ref can be stale at session start, making it look like the last
+run's push failed. `git fetch origin main` before comparing, or note that a
+`git push` reporting "Everything up-to-date" while it simultaneously advances
+your local `origin/main` ref means the remote already had the commits.
 
-78,346 street features; 65,740 still `cat: "unknown"`. Largest gaps, all at or
-near 100% unknown:
+## Current coverage (2026-08-24, unchanged across both blocked runs)
+
+78,346 street features; 65,740 still `cat: "unknown"` (83.9%). Classified
+breakdown: `residents` 7,456, `free` 1,784, `paid` 1,732, `no_parking` 845,
+`free_limited` 442, `no_stopping` 347. Largest gaps, all at or near 100%
+unknown:
 
 | area | unknown / total |
 | --- | --- |
