@@ -190,3 +190,21 @@ nothing materially new happened. Stop re-probing every host every run: the
 proxy status check plus a 2-4 host spot-check is enough to confirm the
 policy is unchanged; save the remaining runtime rather than repeating the
 same exhaustive sweep.
+
+**Re-confirmed a sixth consecutive time (2026-08-24, ~10:1x UTC).** Proxy
+status again showed `recentRelayFailures: []`; a 5-host spot-check
+(Randwick mapservices, Sutherland geoserver, data.nsw.gov.au,
+services.arcgis.com, Northern Beaches maps) via both `curl` and the
+server-side `WebFetch` tool all still returned `403` to `CONNECT` /
+`EGRESS_BLOCKED` — so `WebFetch` running server-side does not bypass this,
+it's the same policy. `WebSearch` (which doesn't fetch the target hosts
+directly) still works and was used to sanity-check Bayside and Georges
+River for anything new: nothing actionable turned up — Bayside's "Resident
+Parking Schemes Map" exists but no ArcGIS REST endpoint surfaced in search
+snippets, and Georges River remains a likely dead end (no online permit
+system, no GIS host found), consistent with the existing notes above. No
+data change; `origin/main` again matched local HEAD at session start. This
+is now 5+ hours and 6 consecutive hourly runs with zero fetchable data —
+notified the user this run, since the blocker has moved from "transient" to
+"this schedule cannot make progress until a human changes the environment's
+network egress policy."
