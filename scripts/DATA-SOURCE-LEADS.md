@@ -262,3 +262,15 @@ clean and `npx expo export -p web --clear` built successfully — repo stays
 healthy. No notification sent — the last one (ninth run) was only ~1h ago and
 nothing material changed, per the standing "stay silent unless a similarly
 long gap or a material change" guidance above.
+
+**Re-confirmed an eleventh consecutive time (2026-08-24, ~15:18 UTC).** Proxy
+status again `recentRelayFailures: []` at session start; a direct 4-host
+spot-check (Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`,
+`services.arcgis.com`) via curl again returned `403 CONNECT` /
+`connect_rejected` for all four, no exceptions. `origin/main` matched local
+`HEAD` at session start, so no data change this run. `node_modules` was
+present this run; `npx tsc --noEmit` passed clean and
+`npx expo export -p web --clear` built successfully — repo stays healthy. No
+notification sent — the last one (ninth run, ~13:1x UTC) was only ~2h ago and
+nothing material changed, below the "similarly long gap" bar (~3h) used for
+the last notification.
