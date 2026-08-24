@@ -295,3 +295,21 @@ package registries only) that only a human can widen (claude.ai/code →
 environment settings, per "To unblock" above). Until that changes, this
 schedule can only re-confirm the block and keep the repo building — it
 cannot advance parking-data coverage.
+
+**Re-confirmed a fourteenth consecutive time (2026-08-24, ~18:1x UTC).**
+`recentRelayFailures` showed a fresh batch at session start (`portal.spatial.
+nsw.gov.au`, `maps.randwick.nsw.gov.au`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, `services.arcgis.com`,
+`www.northernbeaches.nsw.gov.au`, all `403 connect_rejected`); a direct
+4-host spot-check (Randwick mapservices, Sutherland geoserver,
+`data.nsw.gov.au`, `services.arcgis.com`) via curl confirmed the same `403
+CONNECT`, no exceptions. `origin/main` matched local `HEAD` after `git fetch
+origin main` at session start (the detached-HEAD ref was stale by one commit
+until fetched, as this doc's gotcha section predicts), so no data change
+this run. `node_modules` was present but stale/incomplete (bare `npx tsc
+--noEmit` failed on missing `zustand`/`react-native`/etc.); `npm install`
+fixed it, then `npx tsc --noEmit` passed clean and `npx expo export -p web
+--clear` built successfully — repo stays healthy. No notification sent —
+the previous run (thirteenth, ~17:18 UTC) notified only ~1h ago and nothing
+material changed since; per the standing guidance, holding for a similarly
+long gap (~3h) or an actual change before notifying again.
