@@ -208,3 +208,18 @@ is now 5+ hours and 6 consecutive hourly runs with zero fetchable data —
 notified the user this run, since the blocker has moved from "transient" to
 "this schedule cannot make progress until a human changes the environment's
 network egress policy."
+
+**Re-confirmed a seventh consecutive time (2026-08-24, ~11:1x UTC).** Proxy
+status again `recentRelayFailures: []`; re-probed Randwick mapservices,
+Sutherland geoserver, data.nsw.gov.au, and `services.arcgis.com` via curl,
+and Randwick mapservices again via the server-side `WebFetch` tool — all
+still `403 CONNECT` / `EGRESS_BLOCKED`, no change. One new data point:
+`registry.npmjs.org` (already in the proxy's `noProxy` allowlist) was
+reachable this run, so `npm install` succeeded and both `npx tsc --noEmit`
+and `npx expo export -p web --clear` were actually run and pass clean —
+prior blocked runs sometimes had to skip this check when `node_modules` was
+absent; it isn't the registry that's blocked, only the council/gov API
+hosts. This doesn't change the core blocker (no parking-data source is on
+the allowlist) but confirms the repo itself stays healthy. No data change,
+no notification sent — per the standing guidance above, the last
+notification (sixth run) was only ~1h ago and nothing material changed.
