@@ -223,3 +223,11 @@ hosts. This doesn't change the core blocker (no parking-data source is on
 the allowlist) but confirms the repo itself stays healthy. No data change,
 no notification sent — per the standing guidance above, the last
 notification (sixth run) was only ~1h ago and nothing material changed.
+
+**Re-confirmed an eighth consecutive time (2026-08-24, ~12:2x UTC).** Proxy
+status again `recentRelayFailures: []` at session start; spot-checked
+Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`, and
+`services.arcgis.com` via curl — all still `403 CONNECT`, no change.
+`origin/main` matched local `HEAD` at session start, so no data change this
+run either. No notification sent — the last one (sixth run) was ~2h ago and
+nothing material changed since the seventh run's confirmation.
