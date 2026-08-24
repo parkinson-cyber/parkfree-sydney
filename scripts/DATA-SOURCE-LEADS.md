@@ -34,6 +34,20 @@ Same six hosts, same `403` to `CONNECT`, plus `maps.northernbeaches.nsw.gov.au`.
 denial or upstream failure)"` — that is the fastest way to confirm the blocker
 in one call at the start of a run. Do not spend a run re-testing hosts one by
 one; check the proxy status, and if the council hosts are still refused, do
+
+**Re-confirmed a third consecutive time (2026-08-24, ~05:19 UTC).**
+`recentRelayFailures` was empty at session start (nothing had hit the proxy
+yet this run), so a direct probe of `data.nsw.gov.au`,
+`maps.northernbeaches.nsw.gov.au`, `geoserver.ssc.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and `www.arcgis.com` was run instead — all
+five still return `403` to `CONNECT`, confirming the policy is unchanged.
+`origin/main` matched local `HEAD` at session start (previous run's push had
+already landed), so there was nothing to fetch and nothing new to add to the
+offline avenues above — this run made no data change and pushed only this
+note. A push notification was sent flagging the unresolved egress policy so a
+human sees it; if a future run finds the hosts still blocked, prefer silence
+over repeating this same notification unless something has materially
+changed (e.g. a new host observation, or a long gap since the last one).
 offline bookkeeping and stop.
 
 Offline avenues already checked and exhausted:
