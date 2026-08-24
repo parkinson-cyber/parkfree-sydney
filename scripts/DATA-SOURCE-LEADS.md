@@ -249,3 +249,16 @@ should keep doing the lightweight proxy-status + 4-host spot-check and stay
 silent unless a similarly long gap has passed or something material changes
 (a host becomes reachable, the policy changes, etc.) — repeating this same
 notification hourly would not serve the user.
+
+**Re-confirmed a tenth consecutive time (2026-08-24, ~14:1x UTC).** Proxy
+status showed `recentRelayFailures: []` at session start; a direct 4-host
+spot-check (Randwick mapservices, Sutherland geoserver, `data.nsw.gov.au`,
+`services.arcgis.com`) via curl again returned `403` to `CONNECT` /
+`connect_rejected` for all four, no exceptions. `origin/main` matched local
+`HEAD` at session start, so no data change this run. `node_modules` was
+absent this run (fresh container), so `npm install` was run first (succeeded,
+`registry.npmjs.org` reachable as before); `npx tsc --noEmit` then passed
+clean and `npx expo export -p web --clear` built successfully — repo stays
+healthy. No notification sent — the last one (ninth run) was only ~1h ago and
+nothing material changed, per the standing "stay silent unless a similarly
+long gap or a material change" guidance above.
