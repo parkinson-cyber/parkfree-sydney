@@ -361,3 +361,24 @@ No notification sent — the last one (sixteenth run, ~20:17 UTC) was only
 and nothing material changed. This is now **17 consecutive hourly runs
 (~18 hours since the original block was first hit) with zero fetchable
 parking data.**
+
+**Re-confirmed an eighteenth consecutive time (2026-08-24, ~22:17 UTC).**
+Proxy status showed `recentRelayFailures: []` at session start; a direct
+5-host spot-check (Randwick mapservices, Sutherland geoserver,
+`data.nsw.gov.au`, `services.arcgis.com`, `opendata.transport.nsw.gov.au`)
+via curl again returned `403` (`CONNECT tunnel failed, response 403`) for
+all five, no exceptions; a plain non-government control host
+(`example.com`) got the identical `403`, reconfirming this is the blanket
+allowlist policy, not a targeted government-domain block. `origin/main`
+matched local `HEAD` after `git fetch origin main` at session start
+(nothing to fetch), so no data change this run. Also re-did the
+detached-HEAD-at-session-start workaround explicitly this time
+(`git checkout -B main origin/main`) before committing, per this doc's
+gotcha note. `node_modules` was present but required a fresh
+`npm install`; `npx tsc --noEmit` passed clean and `npx expo export -p web
+--clear` built successfully — repo stays healthy. No notification sent —
+the last one (sixteenth run, ~20:17 UTC) was ~2h ago, still short of the
+"similarly long gap" bar (~3h) used previously, and nothing material
+changed since the seventeenth run's re-confirmation. This is now **18
+consecutive hourly runs (~19 hours since the original block was first hit)
+with zero fetchable parking data.**
