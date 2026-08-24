@@ -35,6 +35,20 @@ Offline avenues already checked and exhausted:
 - The cached CKAN/ArcGIS-Hub catalogue searches in `_recovery/` list dataset
   *metadata* whose download URLs all point at blocked hosts.
 
+## Gotcha: the session starts on a detached HEAD
+
+A scheduled run's checkout is not on a branch (`git status -sb` prints
+`## HEAD (no branch)`). `git push origin main` then reports **"Everything
+up-to-date"** and pushes nothing, because local `main` really is unchanged —
+your commit is only on the detached HEAD. Push with:
+
+```sh
+git push origin HEAD:main
+```
+
+Always confirm with `git rev-parse HEAD origin/main` afterwards; if they match,
+the push landed and Vercel will deploy.
+
 ## Current coverage (2026-08-24)
 
 78,346 street features; 65,740 still `cat: "unknown"`. Largest gaps, all at or
