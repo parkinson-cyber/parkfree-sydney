@@ -382,3 +382,26 @@ the last one (sixteenth run, ~20:17 UTC) was ~2h ago, still short of the
 changed since the seventeenth run's re-confirmation. This is now **18
 consecutive hourly runs (~19 hours since the original block was first hit)
 with zero fetchable parking data.**
+
+**Re-confirmed a nineteenth consecutive time (2026-08-24, ~23:16 UTC).**
+Proxy status showed `recentRelayFailures: []` at session start; a direct
+5-host spot-check (Randwick mapservices, `data.nsw.gov.au`,
+`services.arcgis.com`, `opendata.transport.nsw.gov.au`, and a plain
+non-government control host `example.com`) via curl again returned `403`
+(`CONNECT tunnel failed, response 403`) for all five, no exceptions — the
+control host confirms this remains the blanket allowlist policy, not a
+targeted government-domain block. `origin/main` matched local `HEAD` after
+`git fetch origin main` at session start (nothing to fetch); re-did the
+detached-HEAD-at-session-start workaround (`git checkout -B main
+origin/main`) before committing, per this doc's gotcha note. `node_modules`
+was absent this run (fresh container); `npm install` succeeded, then
+`npx tsc --noEmit` passed clean and `npx expo export -p web --clear` built
+successfully — repo stays healthy. This is now **19 consecutive hourly runs
+(~20 hours since the original block was first hit) with zero fetchable
+parking data.** A push notification was sent this run — the last one
+(sixteenth run, ~20:17 UTC) was ~3h ago, matching the "similarly long gap"
+bar this doc has been using. Nothing about the blocker itself is new: it
+remains a session-level egress allowlist (GitHub + package registries only)
+that only a human can widen (claude.ai/code → environment settings, per "To
+unblock" above). Until that changes, this schedule can only re-confirm the
+block and keep the repo building — it cannot advance parking-data coverage.
