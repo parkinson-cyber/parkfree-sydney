@@ -50,6 +50,26 @@ over repeating this same notification unless something has materially
 changed (e.g. a new host observation, or a long gap since the last one).
 offline bookkeeping and stop.
 
+**Re-confirmed a fourth consecutive time (2026-08-24, ~06:20 UTC).** Same
+council hosts still `403` to `CONNECT` (`recentRelayFailures` was empty again
+at session start, so all were re-probed directly). New data point: also
+probed `example.com` — a plain, non-council, non-NSW-gov host — and it was
+refused with the identical `403 CONNECT` error. This confirms the policy is a
+strict allowlist (GitHub + package registries only, per `noProxy` in the
+proxy status), not a targeted block of council/government domains
+specifically — so there is no narrower workaround to hunt for (e.g. trying a
+council's plain marketing site instead of its GIS subdomain would not help
+either). Also tried the four previously-untested "candidate" hosts from the
+list below (`maps.kmc.nsw.gov.au`, `maps.cityofparramatta.nsw.gov.au`,
+`maps.hornsby.nsw.gov.au`, `maps.thehills.nsw.gov.au`) plus
+`services.arcgis.com`, `portal.spatial.nsw.gov.au`, and
+`mapping.northernbeaches.nsw.gov.au` — all `403` to `CONNECT`, no exceptions.
+`origin/main` matched local `HEAD` at session start; no data change, no
+notification sent this run (per the standing guidance above — nothing
+materially new happened, and it has only been ~1h since the last one). The
+next run that finds the hosts still blocked should likewise stay silent
+unless a genuinely new observation or a long gap warrants it.
+
 Offline avenues already checked and exhausted:
 
 - `scripts/data/_recovery/` (28 MB of previously-fetched raw sources) contains
