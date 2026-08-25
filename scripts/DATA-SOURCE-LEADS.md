@@ -548,3 +548,26 @@ the last one (run twenty-five, ~05:22 UTC) was only ~1h ago, well short of
 the ~3h "similarly long gap" bar this doc has used, and nothing material
 changed. This is now **26 consecutive hourly runs (~27 hours since the
 original block was first hit) with zero fetchable parking data.**
+
+**Re-confirmed a twenty-seventh consecutive time (2026-08-25, ~07:17 UTC).**
+Proxy status (`recentRelayFailures: []` at session start) plus a direct
+5-host spot-check via curl (Randwick mapservices —
+`mapservices2.environment.nsw.gov.au`, `data.nsw.gov.au`,
+`services.arcgis.com`, `opendata.transport.nsw.gov.au`, and the
+non-government control host `example.com`) all still return `403`/`CONNECT
+tunnel failed`, control host included — the blanket egress allowlist
+(GitHub + package registries only) is unchanged yet again, nothing new to
+report about the block itself. This run's container also had a stale local
+`main` ref behind the detached `HEAD` it started on; reconciled with
+`git checkout -B main origin/main` — no divergence, both already pointed
+at the same content once aligned. `git fetch origin main` confirmed local
+`HEAD` matches `origin/main` exactly, so no data to fetch and no
+classification change this run (78,346 features, unchanged from run
+twenty-six). `node_modules` was absent this run (fresh container); `npm
+install` succeeded, then `npx tsc --noEmit` passed clean and `npx expo
+export -p web --clear` built successfully — repo stays healthy and
+deployable. No notification sent — the last one (run twenty-five, ~05:22
+UTC) was only ~2h ago, still short of the ~3h "similarly long gap" bar this
+doc has used, and nothing material changed. This is now **27 consecutive
+hourly runs (~28 hours since the original block was first hit) with zero
+fetchable parking data.**
