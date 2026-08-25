@@ -621,3 +621,22 @@ of the ~3h "similarly long gap" bar this doc has used, and nothing
 material changed. This is now **30 consecutive hourly runs (~31 hours
 since the original block was first hit) with zero fetchable parking
 data.**
+
+**Re-confirmed a thirty-first consecutive time (2026-08-25, ~11:17 UTC).**
+Proxy status endpoint itself is healthy and reachable, but a direct 5-host
+spot-check via curl (`mapservices2.environment.nsw.gov.au`,
+`data.nsw.gov.au`, `services.arcgis.com`, `opendata.transport.nsw.gov.au`,
+and the non-government control host `www.google.com`) all still return
+`403`/`CONNECT tunnel failed`, control host included — the blanket egress
+allowlist (GitHub + package registries only) is unchanged yet again.
+Session started detached at origin/main's tip (run thirty's own commit);
+`git fetch origin main && git checkout -B main origin/main` reconciled
+cleanly, no divergence. `src/data/parking.json` unchanged (78,346 features,
+65,740 still `cat=unknown`). `node_modules` was absent this run (fresh
+container); `npm install` succeeded, then `npx tsc --noEmit` passed clean
+and `npx expo export -p web --clear` built successfully — repo stays
+healthy and deployable. A notification **was** sent this run — the last
+one (run twenty-eight, ~08:17 UTC) was now ~3h ago, meeting this doc's own
+"similarly long gap" bar, and the blocker remains unresolved. This is now
+**31 consecutive hourly runs (~32 hours since the original block was first
+hit) with zero fetchable parking data.**
