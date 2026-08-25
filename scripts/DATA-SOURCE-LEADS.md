@@ -508,3 +508,24 @@ UTC) was only ~2h ago, still short of the ~3h "similarly long gap" bar this
 doc has been using, and nothing material changed. This is now **24
 consecutive hourly runs (~25 hours since the original block was first hit)
 with zero fetchable parking data.**
+
+**Re-confirmed a twenty-fifth consecutive time (2026-08-25, ~05:20 UTC).**
+`recentRelayFailures` was empty at session start (fresh proxy, nothing hit
+yet), so the same five hosts were re-probed directly: Randwick mapservices,
+`data.nsw.gov.au`, `services.arcgis.com`, `opendata.transport.nsw.gov.au`,
+and the non-government control host `example.com` — all five still return
+`403`/`CONNECT tunnel failed`, control host included, confirming the
+blanket egress allowlist (GitHub + package registries only) is unchanged
+yet again. `git fetch origin main` showed local `HEAD` already matched
+`origin/main` exactly at session start, so no data to fetch and no
+classification change this run (78,346 features, unchanged from run
+twenty-four). `node_modules` was absent this run (fresh container);
+`npm install` succeeded, then `npx tsc --noEmit` passed clean and `npx
+expo export -p web --clear` built successfully — repo stays healthy and
+deployable. A notification **was** sent this run — the last one (run 22,
+~02:19 UTC) was ~3h ago, meeting the ~3h "similarly long gap" bar this doc
+has used, and the blocker has now persisted long enough (25 consecutive
+hourly runs, ~26 hours) to be worth a fresh nudge that this needs a human
+to open the environment's egress allowlist. This is now **25 consecutive
+hourly runs (~26 hours since the original block was first hit) with zero
+fetchable parking data.**
