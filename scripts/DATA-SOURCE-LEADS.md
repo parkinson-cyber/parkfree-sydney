@@ -571,3 +571,33 @@ UTC) was only ~2h ago, still short of the ~3h "similarly long gap" bar this
 doc has used, and nothing material changed. This is now **27 consecutive
 hourly runs (~28 hours since the original block was first hit) with zero
 fetchable parking data.**
+
+**Re-confirmed a twenty-eighth consecutive time (2026-08-25, ~08:17 UTC).**
+Same blanket egress allowlist (GitHub + package registries only) — every
+council GIS/open-data host still `403`s to `CONNECT`. `src/data/parking.json`
+unchanged (78,346 features, 65,740 still `cat=unknown`). A notification
+**was** sent this run flagging the blocker has now held for 29+ hours (29
+hourly fires) and needs an admin to widen the environment's egress policy.
+(Note: this run's commit landed with no file diff — the doc update below was
+the one omitted; recorded now, retroactively, by run twenty-nine so the
+history stays complete.)
+
+**Re-confirmed a twenty-ninth consecutive time (2026-08-25, ~09:17 UTC).**
+Proxy status (`recentRelayFailures: []` at session start) plus a direct
+5-host spot-check via curl (`mapservices2.environment.nsw.gov.au`,
+`data.nsw.gov.au`, `services.arcgis.com`, `opendata.transport.nsw.gov.au`,
+and the non-government control host `example.com`) all still return
+`403`/`CONNECT tunnel failed`, control host included — the blanket egress
+allowlist is unchanged yet again. Session started in a detached `HEAD`
+matching `origin/main` exactly; reconciled with
+`git checkout -B main origin/main`, no divergence. `git fetch origin main`
+confirmed local `HEAD` matched `origin/main`, so no data to fetch and no
+classification change this run (78,346 features, unchanged from run
+twenty-eight). `node_modules` was absent this run (fresh container); `npm
+install` succeeded, then `npx tsc --noEmit` passed clean and `npx expo
+export -p web --clear` built successfully — repo stays healthy and
+deployable. No notification sent — the last one (run twenty-eight, ~08:17
+UTC) was only ~1h ago, well short of the ~3h "similarly long gap" bar this
+doc has used, and nothing material changed. This is now **29 consecutive
+hourly runs (~30 hours since the original block was first hit) with zero
+fetchable parking data.**
