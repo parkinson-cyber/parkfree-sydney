@@ -775,3 +775,29 @@ data.** This remains an environment configuration issue — the network
 egress allowlist needs to include the NSW council/government/ArcGIS
 hosts this project's scripts depend on, or be relaxed generally — no
 amount of further scheduled runs will fix it without that change.
+
+**Re-confirmed a thirty-eighth consecutive time (2026-08-25, ~18:16 UTC).**
+Proxy status endpoint healthy (`recentRelayFailures: []`), `noProxy`
+allowlist unchanged (GitHub + package registries only). Direct 5-host
+spot-check via curl (`services.arcgis.com`,
+`mapservices2.environment.nsw.gov.au`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and the non-government control host
+`example.com`) all still return `403`/`CONNECT tunnel failed`, control
+host included. Also re-tried `WebFetch` directly against
+`services.arcgis.com` — same `EGRESS_BLOCKED` from the same proxy, so
+this isn't a curl-specific quirk. Session started detached at
+origin/main's tip (run thirty-seven's own commit); `git fetch origin
+main && git checkout -B main origin/main` reconciled cleanly, no
+divergence. `src/data/parking.json` unchanged (78,346 features, 65,740
+still `cat=unknown`). `node_modules` was absent this run (cold
+container); `npm install` succeeded, then `npx tsc --noEmit` passed
+clean and `npx expo export -p web --clear` built successfully — repo
+stays healthy and deployable. A notification **was** sent this run —
+the last one (run 34, ~14:23 UTC) was ~3h53m ago, past the ~3h
+re-notify bar this doc has used. This is now **38 consecutive hourly
+runs (~39 hours since the original block was first hit) with zero
+fetchable parking data.** This remains an environment configuration
+issue — the network egress allowlist needs to include the NSW
+council/government/ArcGIS hosts this project's scripts depend on, or
+be relaxed generally — no amount of further scheduled runs will fix it
+without that change.
