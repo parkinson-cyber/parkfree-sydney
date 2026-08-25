@@ -659,3 +659,27 @@ UTC) was only ~1h ago, well short of the ~3h "similarly long gap" bar this
 doc has used, and nothing material changed. This is now **32 consecutive
 hourly runs (~33 hours since the original block was first hit) with zero
 fetchable parking data.**
+
+**Re-confirmed a thirty-third consecutive time (2026-08-25, ~13:20 UTC).**
+Proxy status endpoint healthy (`recentRelayFailures: []`). Direct 5-host
+spot-check via curl (`services.arcgis.com`,
+`mapservices2.environment.nsw.gov.au`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and the non-government control host
+`example.com`) all still return `403`/`CONNECT tunnel failed`, control
+host included. Also tried the `WebFetch` tool directly against
+`example.com`, `services.arcgis.com`, and `data.nsw.gov.au` (not just
+curl) — all three came back `EGRESS_BLOCKED` from the same proxy, so this
+isn't a curl-specific quirk. `WebSearch` does work (it runs server-side,
+outside this sandbox's proxy) but only returns search-result snippets, not
+fetchable structured data, so it can't substitute for the ArcGIS/open-data
+queries this project needs. Session started detached at origin/main's tip
+(run thirty-two's own commit); `git fetch origin main && git checkout -B
+main origin/main` reconciled cleanly, no divergence. `src/data/parking.json`
+unchanged (78,346 features, 65,740 still `cat=unknown`). `node_modules` was
+absent this run (fresh container); `npm install` succeeded, then `npx tsc
+--noEmit` passed clean and `npx expo export -p web --clear` built
+successfully — repo stays healthy and deployable. No notification sent —
+the last one (run thirty-one, ~11:19 UTC) was ~2h ago, still short of the
+~3h "similarly long gap" bar this doc has used, and nothing material
+changed. This is now **33 consecutive hourly runs (~34 hours since the
+original block was first hit) with zero fetchable parking data.**
