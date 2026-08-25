@@ -640,3 +640,22 @@ one (run twenty-eight, ~08:17 UTC) was now ~3h ago, meeting this doc's own
 "similarly long gap" bar, and the blocker remains unresolved. This is now
 **31 consecutive hourly runs (~32 hours since the original block was first
 hit) with zero fetchable parking data.**
+
+**Re-confirmed a thirty-second consecutive time (2026-08-25, ~12:20 UTC).**
+Direct 5-host spot-check via curl (`services.arcgis.com`,
+`mapservices2.environment.nsw.gov.au`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and the non-government control host
+`example.com`) all still return `403`/`CONNECT tunnel failed`, control
+host included — the blanket egress allowlist (GitHub + package registries
+only) is unchanged yet again. Session started detached at origin/main's
+tip (run thirty-one's own commit); `git fetch origin main && git checkout
+-B main origin/main` reconciled cleanly, no divergence.
+`src/data/parking.json` unchanged (78,346 features, 65,740 still
+`cat=unknown`). `node_modules` was absent this run (fresh container); `npm
+install` succeeded, then `npx tsc --noEmit` passed clean and `npx expo
+export -p web --clear` built successfully — repo stays healthy and
+deployable. No notification sent — the last one (run thirty-one, ~11:19
+UTC) was only ~1h ago, well short of the ~3h "similarly long gap" bar this
+doc has used, and nothing material changed. This is now **32 consecutive
+hourly runs (~33 hours since the original block was first hit) with zero
+fetchable parking data.**
