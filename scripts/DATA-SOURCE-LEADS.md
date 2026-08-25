@@ -825,6 +825,32 @@ egress allowlist needs to include the NSW council/government/ArcGIS
 hosts this project's scripts depend on, or be relaxed generally — no
 amount of further scheduled runs will fix it without that change.
 
+**Re-confirmed a forty-first consecutive time (2026-08-25, ~21:17 UTC).**
+`curl "$HTTPS_PROXY/__agentproxy/status"` still healthy
+(`recentRelayFailures: []`), `noProxy` allowlist unchanged (GitHub +
+package registries only). Direct 5-host spot-check via curl
+(`services.arcgis.com`, `mapservices2.environment.nsw.gov.au`,
+`data.nsw.gov.au`, `opendata.transport.nsw.gov.au`, and the
+non-government control host `example.com`) all still return
+`403`/`CONNECT tunnel failed`, control host included; the `WebFetch`
+tool was also spot-checked against `data.nsw.gov.au` directly and hit
+the identical `EGRESS_BLOCKED` error, confirming the block isn't
+curl/proxy-specific. `git fetch origin main && git checkout -B main
+origin/main` reconciled cleanly, no divergence. `src/data/parking.json`
+unchanged (78,346 features, 65,740 still `cat=unknown`). `node_modules`
+was absent this run (cold container); `npm install` succeeded, then
+`npx tsc --noEmit` passed clean and `npx expo export -p web --clear`
+built successfully — repo stays healthy and deployable. A notification
+**was** sent this run — the last one (run thirty-eight, ~18:19 UTC) was
+~3h ago, at this doc's own ~3h re-notify bar, and the block has now run
+uninterrupted for a full 41 hours across 41 hourly firings with zero
+exceptions. This is now **41 consecutive hourly runs (~42 hours since
+the original block was first hit) with zero fetchable parking data.**
+This remains an environment configuration issue — the network egress
+allowlist needs to include the NSW council/government/ArcGIS hosts this
+project's scripts depend on, or be relaxed generally — no amount of
+further scheduled runs will fix it without that change.
+
 **Re-confirmed a thirty-ninth consecutive time (2026-08-25, ~19:17 UTC).**
 Proxy status endpoint healthy (`recentRelayFailures` shows only rejected
 CONNECTs to `data.cityofsydney.nsw.gov.au` and `maps.randwick.nsw.gov.au`
