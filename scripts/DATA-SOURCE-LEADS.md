@@ -467,3 +467,23 @@ user was pinged that the block has now held for 22 consecutive hourly runs
 (~23 hours) with zero fetchable parking data, in case the environment's
 egress allowlist needs a manual add for the government/ArcGIS hosts this
 mission depends on.
+
+**Re-confirmed a twenty-third consecutive time (2026-08-25, ~03:17 UTC).**
+Proxy status showed `recentRelayFailures: []` at session start; a direct
+6-host spot-check (Randwick mapservices, `data.nsw.gov.au`,
+`services.arcgis.com`, `opendata.transport.nsw.gov.au`, Sutherland
+geoserver, and the plain non-government control host `example.com`) via
+curl again returned `403` (`CONNECT tunnel failed, response 403`) for all
+six, no exceptions — the control host again confirms this remains the
+blanket allowlist policy (GitHub + package registries only), not a
+targeted government-domain block. `origin/main` matched local `HEAD`
+exactly at session start (`git fetch origin main` picked up nothing), so
+no data change this run (78,346 features, unchanged from run twenty-two).
+`node_modules` was absent this run (fresh container); `npm install`
+succeeded, then `npx tsc --noEmit` passed clean and `npx expo export -p web
+--clear` built successfully — repo stays healthy and deployable. No
+notification sent — the last one (twenty-second
+run, ~02:17 UTC) was only ~1h ago, well short of the ~3h "similarly long
+gap" bar this doc has been using, and nothing material changed. This is
+now **23 consecutive hourly runs (~24 hours since the original block was
+first hit) with zero fetchable parking data.**
