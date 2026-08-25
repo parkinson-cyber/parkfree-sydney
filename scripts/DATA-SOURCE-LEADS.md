@@ -487,3 +487,24 @@ run, ~02:17 UTC) was only ~1h ago, well short of the ~3h "similarly long
 gap" bar this doc has been using, and nothing material changed. This is
 now **23 consecutive hourly runs (~24 hours since the original block was
 first hit) with zero fetchable parking data.**
+
+**Re-confirmed a twenty-fourth consecutive time (2026-08-25, ~04:17 UTC).**
+Proxy status endpoint (`$HTTPS_PROXY/__agentproxy/status`) itself showed
+`recentRelayFailures` populated with fresh `403` `connect_rejected` entries
+for all five spot-checked hosts (Randwick mapservices, `data.nsw.gov.au`,
+`services.arcgis.com`, `opendata.transport.nsw.gov.au`, and the plain
+non-government control host `example.com`) timestamped at session start —
+a direct curl re-check against the same five hosts reproduced the identical
+`403`/`CONNECT tunnel failed` result for every one, control host included,
+confirming yet again this is the blanket egress allowlist (GitHub + package
+registries only), not a targeted government-domain block. `git fetch origin
+main` showed local `HEAD` already matched `origin/main` exactly at session
+start, so no data change this run (78,346 features, unchanged from run
+twenty-three). `node_modules` was absent this run (fresh container);
+`npm install` succeeded, then `npx tsc --noEmit` passed clean and `npx
+expo export -p web --clear` built successfully — repo stays healthy and
+deployable. No notification sent — the last one (twenty-second run, ~02:17
+UTC) was only ~2h ago, still short of the ~3h "similarly long gap" bar this
+doc has been using, and nothing material changed. This is now **24
+consecutive hourly runs (~25 hours since the original block was first hit)
+with zero fetchable parking data.**
