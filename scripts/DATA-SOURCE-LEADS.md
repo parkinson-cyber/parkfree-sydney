@@ -1315,3 +1315,32 @@ is new -- same hosts, same `403`, same allowlist -- this is purely a
 re-notify cadence. The next run should stay silent unless ≥3h has
 passed again or something material changes (a host becomes reachable,
 the allowlist changes, etc.).
+
+## Run 59 (2026-08-26 ~15:19 UTC): egress still blocked, 59th consecutive run
+
+Session again started on a detached HEAD at run 58's commit
+(`76be463`) with local `main` stale at an older ref; `git checkout
+main && git fetch origin main && git reset --hard origin/main`
+resolved it cleanly -- same recurring gotcha, not a new issue.
+`/__agentproxy/status` `noProxy` allowlist unchanged (GitHub + package
+registries + Anthropic API only -- still no NSW-gov or ArcGIS host).
+Direct probe of `services.arcgis.com`, `data.nsw.gov.au`, and
+`opendata.transport.nsw.gov.au` all still failed identically: `curl:
+(56) CONNECT tunnel failed, response 403`.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) -- repo stays
+healthy and deployable.
+
+**No notification sent this run** -- the last one (run 58, ~14:22 UTC)
+is only ~1h ago, well short of this doc's own ~3h re-notify bar, and
+nothing material changed (same hosts, same error, same allowlist).
+This is now **59 consecutive hourly runs (~60 hours since the original
+block was first hit) with zero fetchable parking data.** The fix
+remains environment-level (network-policy allowlist needs NSW
+government open-data hosts and Esri ArcGIS Server endpoints added),
+not something fixable from inside the container. Next run should send
+a notification once it is ≥3h past run 58's notification (i.e. at or
+after ~17:22 UTC) and the block is still in place.
