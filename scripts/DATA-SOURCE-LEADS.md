@@ -1116,3 +1116,23 @@ confirm the policy is intentional and this enrichment mission should
 be paused) before any further real progress is possible. The next run
 should stay silent unless ≥3h has passed again or something material
 changes (a host becomes reachable, the allowlist changes, etc.).
+
+**Re-confirmed a fifty-first consecutive time (2026-08-26, ~07:21
+UTC).** Proxy status `recentRelayFailures` was empty at probe time
+(rotating log, not evidence of recovery); `noProxy` allowlist unchanged
+(GitHub + package registries only). Direct probe of the same six hosts
+— `services.arcgis.com`, `services1.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, `mapservices2.environment.nsw.gov.au`,
+and non-government control host `example.com` — all still
+`403`/`CONNECT tunnel failed`, no exceptions. Session started with
+local `HEAD` detached but already matching `origin/main` (`9dacbbe`);
+`git checkout -B main origin/main` was a clean no-op, no divergence.
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) — repo stays
+healthy and deployable. No notification sent — the last one (run
+fifty, ~06:19 UTC) was only ~1h ago, well short of the ~3h re-notify
+bar, and nothing material changed. This is now **51 consecutive hourly
+runs (~52 hours since the original block was first hit) with zero
+fetchable parking data.**
