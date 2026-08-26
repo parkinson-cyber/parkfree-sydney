@@ -1344,3 +1344,36 @@ government open-data hosts and Esri ArcGIS Server endpoints added),
 not something fixable from inside the container. Next run should send
 a notification once it is ≥3h past run 58's notification (i.e. at or
 after ~17:22 UTC) and the block is still in place.
+
+## Run 60 (2026-08-26 ~16:20 UTC): egress still blocked, 60th consecutive run
+
+Session started on a detached HEAD at run 59's commit (`1e0dedf`) with
+local `main` stale relative to `origin/main` (which had actually been
+force-updated to the same commit) -- resolved with `git fetch origin
+main && git checkout -B main origin/main`, same recurring gotcha as
+every prior run. `/__agentproxy/status` `noProxy` allowlist unchanged
+(GitHub + package registries + Anthropic API only -- still no NSW-gov
+or ArcGIS host). Direct probe of `services.arcgis.com`,
+`data.nsw.gov.au`, and `opendata.transport.nsw.gov.au` all failed
+identically via curl: `(56) CONNECT tunnel failed, response 403`.
+Also tried the `WebFetch` tool (a different egress path than the curl
+proxy) against `data.nsw.gov.au` as a sanity check in case it routed
+differently -- it returned a structured `EGRESS_BLOCKED` error for
+that domain, confirming the block is enforced at the network-policy
+level, not just for raw `curl`/proxy traffic.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `npm install` succeeded, `npx tsc --noEmit` passed
+clean, and `npx expo export -p web --clear` built successfully (236
+modules) -- repo stays healthy and deployable.
+
+**No notification sent this run** -- the last one (run 58, ~14:22 UTC)
+is ~2h ago, still short of the ~3h re-notify bar (next eligible time
+is ~17:22 UTC), and nothing material changed. This is now **60
+consecutive hourly runs (~61 hours since the original block was first
+hit) with zero fetchable parking data.** The fix remains
+environment-level (network-policy allowlist needs NSW government
+open-data hosts and Esri ArcGIS Server endpoints added), not something
+fixable from inside the container. Next run should send a notification
+once it is ≥3h past run 58's notification (i.e. at or after ~17:22
+UTC) and the block is still in place.
