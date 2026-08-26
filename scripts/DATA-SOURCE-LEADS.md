@@ -1284,3 +1284,34 @@ open-data hosts and Esri ArcGIS Server endpoints added), not something
 fixable from inside the container. Next run should send a notification
 once it is ≥3h past run 56's notification (i.e. at or after ~15:21 UTC)
 and the block is still in place.
+
+## Run 58 (2026-08-26 ~14:18 UTC): egress still blocked, 58th consecutive run
+
+Session started on a detached HEAD pointing at run 57's commit
+(`278482e`) with local `main` stale at an older ref (`e265e8d`); `git
+checkout main && git fetch origin main && git reset --hard origin/main`
+cleanly resolved it -- same gotcha as several earlier runs, not a new
+issue. `/__agentproxy/status` showed `recentRelayFailures` empty at
+probe time (rotating-log behaviour, not evidence of recovery); direct
+probe of `services.arcgis.com`, `data.nsw.gov.au`, and
+`opendata.transport.nsw.gov.au` all still failed `curl: (56) CONNECT
+tunnel failed, response 403`. `noProxy` allowlist unchanged (Anthropic
+API + npm/pypi/jsr/crates/Go proxy + private ranges only -- still no
+NSW-gov or ArcGIS host, and GitHub itself works via the separate
+`gitConfigInjection`/`gitSshRewrite` path rather than `noProxy`).
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) -- repo stays
+healthy and deployable.
+
+**Notification sent this run.** The last one (run 50, ~06:17 UTC) is
+now ~8h ago, well past this doc's own ~3h re-notify bar, and this run
+marks **58 consecutive hourly runs (~59 hours since the original block
+was first hit) with zero fetchable parking data.** Nothing technical
+is new -- same hosts, same `403`, same allowlist -- this is purely a
+"still stuck, still needs a human" heartbeat per the doc's own
+re-notify cadence. The next run should stay silent unless ≥3h has
+passed again or something material changes (a host becomes reachable,
+the allowlist changes, etc.).
