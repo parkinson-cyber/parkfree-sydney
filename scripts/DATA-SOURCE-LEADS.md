@@ -1377,3 +1377,65 @@ open-data hosts and Esri ArcGIS Server endpoints added), not something
 fixable from inside the container. Next run should send a notification
 once it is ≥3h past run 58's notification (i.e. at or after ~17:22
 UTC) and the block is still in place.
+
+## Run 61 (2026-08-26 ~17:20 UTC): egress still blocked, 61st consecutive run
+
+Probed `services.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and several NSW/council GIS hosts
+(`maps.cityofsydney.nsw.gov.au`, `portal.spatial.nsw.gov.au`,
+`maps.six.nsw.gov.au`, `northsydney.nsw.gov.au`) -- all still return
+403/CONNECT tunnel failed via curl. `/__agentproxy/status` `noProxy`
+allowlist unchanged. `src/data/parking.json` unchanged: 78,346
+features, 65,740 still `cat=unknown`. `npm install` + `npx tsc
+--noEmit` clean, `npx expo export -p web --clear` built successfully.
+
+**Notification sent this run**: ~3h since run 58's notification, and
+the blocker is now a multi-day environment-configuration issue rather
+than transient, so this crossed the re-notify threshold. Recommended
+allowlisting the needed NSW-gov/ArcGIS hosts or pausing the hourly
+trigger until that's done.
+
+## Run 62 (2026-08-26 ~18:19 UTC): egress still blocked, 62nd consecutive run
+
+Session started on a detached HEAD stale relative to `origin/main`
+(same recurring container-restart gotcha); resolved with `reset --hard
+origin/main`. Probed `services.arcgis.com`, `data.nsw.gov.au`, and
+`example.com` -- all still return 403/CONNECT tunnel failed, confirmed
+via `/__agentproxy/status`: `noProxy` allowlist unchanged. `npm
+install` (node_modules absent), `npx tsc --noEmit` clean, `npx expo
+export -p web --clear` built successfully. `src/data/parking.json`
+unchanged: 78,346 features, 65,740 still `cat=unknown`.
+
+**No notification sent this run** -- the previous run (61) already
+notified ~1h ago with the same diagnosis and recommendation, and
+nothing had changed since that would justify pinging again so soon.
+
+## Run 63 (2026-08-26 ~19:16 UTC): egress still blocked, 63rd consecutive run
+
+Session started on a detached HEAD at run 62's commit (`064036d`)
+matching a freshly-force-updated `origin/main` (same recurring
+container-restart gotcha, not a divergence -- confirmed both were the
+same commit after `git fetch`); resolved with `checkout -B main
+origin/main`. `/__agentproxy/status` `noProxy` allowlist unchanged
+(GitHub + package registries + Anthropic API only -- still no NSW-gov
+or ArcGIS host). Direct probe of `services.arcgis.com`,
+`data.nsw.gov.au`, `opendata.transport.nsw.gov.au`, and `example.com`
+all failed identically via curl: `(56) CONNECT tunnel failed, response
+403`.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) -- repo stays
+healthy and deployable.
+
+**No notification sent this run** -- the last one (run 61, ~17:20 UTC)
+is only ~1h56m ago, short of the ~3h re-notify bar, and nothing
+material changed (same hosts, same error, same allowlist). This is now
+**63 consecutive hourly runs (~64 hours since the original block was
+first hit) with zero fetchable parking data.** The fix remains
+environment-level (network-policy allowlist needs NSW government
+open-data hosts and Esri ArcGIS Server endpoints added), not something
+fixable from inside the container. Next run should send a notification
+once it is ≥3h past run 61's notification (i.e. at or after ~20:20
+UTC) and the block is still in place.
