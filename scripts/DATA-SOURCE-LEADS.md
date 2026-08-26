@@ -1089,3 +1089,30 @@ since the original block was first hit) with zero fetchable parking
 data.** The next run that still finds the hosts blocked and is ≥3h
 past the last notification (i.e. at or after ~06:19 UTC) should send
 one.
+
+**Re-confirmed a fiftieth consecutive time (2026-08-26, ~06:17 UTC).**
+Proxy status `recentRelayFailures` was empty at probe time again (same
+rotating-log behaviour, not evidence of recovery). Direct probe of the
+same six hosts — `services.arcgis.com`, `services1.arcgis.com`,
+`data.nsw.gov.au`, `opendata.transport.nsw.gov.au`,
+`mapservices2.environment.nsw.gov.au`, and non-government control host
+`example.com` — all still `403`/`CONNECT tunnel failed`. `noProxy`
+allowlist unchanged (GitHub + package registries only). Session
+started cleanly: local HEAD already matched `origin/main` (`90dc661`),
+no stale-ref issue. `src/data/parking.json` unchanged: 78,346
+features, 65,740 still `cat=unknown`. `node_modules` was absent (cold
+container); `npm install` succeeded, `npx tsc --noEmit` passed clean,
+and `npx expo export -p web --clear` built successfully (236 modules)
+— repo stays healthy and deployable.
+
+**Notification sent this run.** The last one (run forty-seven, ~03:19
+UTC) is now ~3h ago, at this doc's own re-notify bar, and this marks a
+round **50 consecutive hourly runs (~51 hours since the original block
+was first hit) with zero fetchable parking data** — a milestone worth
+flagging on its own even without a new technical observation. A human
+needs to open the environment's egress policy (claude.ai/code →
+environment settings) to any of the council/NSW-gov hosts above (or
+confirm the policy is intentional and this enrichment mission should
+be paused) before any further real progress is possible. The next run
+should stay silent unless ≥3h has passed again or something material
+changes (a host becomes reachable, the allowlist changes, etc.).
