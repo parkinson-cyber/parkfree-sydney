@@ -1160,3 +1160,33 @@ This is now **52 consecutive hourly runs (~53 hours since the original
 block was first hit) with zero fetchable parking data.** The next run
 that still finds the hosts blocked and is ≥3h past the last
 notification (i.e. at or after ~09:19 UTC) should send one.
+
+## Run 53 (2026-08-26 ~09:17 UTC): egress still blocked, 53rd consecutive run
+
+Same blanket network-policy block as all 52 prior runs. Local git remote
+tracking was stale at session start (cached origin/main pointed at
+e265e8d, 52 commits behind); `git fetch origin main` corrected it to the
+real tip (1dd4dce) before this run began -- no data was lost, just a
+stale local ref.
+
+curl to services.arcgis.com, services1.arcgis.com, data.nsw.gov.au,
+opendata.transport.nsw.gov.au, and non-government control host
+example.com all still fail with "CONNECT tunnel failed, response 403"
+(confirmed via /__agentproxy/status: connect_rejected on every host,
+same gateway-level policy denial as before). noProxy allowlist is
+unchanged: only GitHub + package registries (npm/pypi/jsr/etc.) plus
+Anthropic API hosts -- no path exists from this session to any NSW
+government or ArcGIS endpoint.
+
+src/data/parking.json unchanged: 78,346 features, 65,740 still
+cat=unknown (~84% of remaining features). npm install, npx tsc --noEmit,
+and npx expo export -p web --clear all pass clean -- app remains healthy
+and deployable, just with no new parking-rule coverage since this
+blocker began.
+
+This is now 53 consecutive hourly runs (~54 hours) with zero fetchable
+parking data. The fix is environment-level, not something a session can
+resolve: the sandboxed environment's network policy needs to allow
+outbound HTTPS to NSW government open-data hosts and Esri ArcGIS Server
+endpoints (or the specific council domains listed in this file), not
+something fixable from inside the container.
