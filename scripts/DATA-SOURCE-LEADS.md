@@ -1190,3 +1190,38 @@ resolve: the sandboxed environment's network policy needs to allow
 outbound HTTPS to NSW government open-data hosts and Esri ArcGIS Server
 endpoints (or the specific council domains listed in this file), not
 something fixable from inside the container.
+
+## Run 54 (2026-08-26 ~10:19 UTC): egress still blocked, 54th consecutive run
+
+Same blanket network-policy block as all 53 prior runs. Local
+`origin/main` ref was stale/detached at session start again (`git fetch`
+force-updated `e265e8d` -> `9fdf32c`, then `git checkout -B main
+origin/main` re-attached HEAD); no data lost, just the same recurring
+stale-ref quirk as recent runs.
+
+Direct probe of the same five hosts -- `services.arcgis.com`,
+`services1.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and non-government control host
+`example.com` -- all still fail `curl: (56) CONNECT tunnel failed,
+response 403`. `/__agentproxy/status` confirms `noProxy` is unchanged
+(GitHub + package registries + Anthropic API only, no NSW gov or ArcGIS
+host present) and `recentRelayFailures` is empty (rotating log, not
+evidence of recovery). Same gateway-level policy denial as all prior
+runs, not a per-host issue.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) -- repo stays
+healthy and deployable.
+
+**No notification sent this run** -- the last one (run 53, ~09:19 UTC)
+is only ~1h ago, well short of this doc's own ~3h re-notify bar, and
+nothing material changed (same hosts, same error, same allowlist).
+This is now **54 consecutive hourly runs (~55 hours since the original
+block was first hit) with zero fetchable parking data.** The fix
+remains environment-level (network-policy allowlist needs NSW
+government open-data hosts and Esri ArcGIS Server endpoints added), not
+something fixable from inside the container. Next run should send a
+notification only once it is ≥3h past run 53's notification (i.e. at
+or after ~12:19 UTC) and the block is still in place.
