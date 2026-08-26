@@ -951,3 +951,25 @@ council/government/ArcGIS hosts) before any further scheduled run of
 this task can make data progress. This is now **44 consecutive hourly
 runs (~45 hours since the original block was first hit) with zero
 fetchable parking data.**
+
+**Re-confirmed a forty-fifth consecutive time (2026-08-26, ~01:17 UTC).**
+Proxy status endpoint healthy (`recentRelayFailures` empty). Direct
+4-host spot-check via curl (`services.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and the non-government control host
+`example.com`) all still return `403`/`CONNECT tunnel failed` — control
+host included, so this remains a blanket network-policy block, not a
+per-host or government-specific one. `noProxy` allowlist unchanged
+(GitHub + package registries only). Session started from a detached
+HEAD already reconciled to `main` at `origin/main` (no divergence —
+`git checkout -B main origin/main` was a no-op fast-forward).
+`src/data/parking.json` unchanged (78,346 features, 65,740 still
+`cat=unknown`). `node_modules` was absent this run (cold container);
+`npm install` succeeded, then `npx tsc --noEmit` passed clean and `npx
+expo export -p web --clear` built successfully — repo stays healthy and
+deployable.
+
+No notification sent this run — the last one (run forty-four, ~00:20
+UTC) was only ~1h ago, well short of the ~3h re-notify bar this doc has
+used, and nothing material changed. This is now **45 consecutive hourly
+runs (~46 hours since the original block was first hit) with zero
+fetchable parking data.**
