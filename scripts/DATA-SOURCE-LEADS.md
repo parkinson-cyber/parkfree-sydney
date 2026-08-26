@@ -1225,3 +1225,36 @@ government open-data hosts and Esri ArcGIS Server endpoints added), not
 something fixable from inside the container. Next run should send a
 notification only once it is ≥3h past run 53's notification (i.e. at
 or after ~12:19 UTC) and the block is still in place.
+
+## Run 55 (2026-08-26 ~11:18 UTC): egress still blocked, 55th consecutive run
+
+Same blanket network-policy block as all 54 prior runs. Local `main`
+was detached at HEAD (`a8c9d3f`, not tracking `origin/main`) at session
+start again; `git fetch origin main` + `git checkout -B main
+origin/main` re-attached it to the real tip -- no data lost, just the
+same recurring stale/detached-ref quirk as recent runs.
+
+Direct probe of the same five hosts plus three more (`spatial.woollahra
+.nsw.gov.au`, `portal.spatial.nsw.gov.au`, `data.gov.au`,
+`maps.six.nsw.gov.au`, `www.data.nsw.gov.au`) -- all fail `curl: (56)
+CONNECT tunnel failed, response 403`. `/__agentproxy/status` confirms
+`noProxy` is unchanged (GitHub + package registries + Anthropic API
+only, no NSW gov or ArcGIS host present). Same gateway-level policy
+denial as all prior runs, not a per-host or government-specific one.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `node_modules` was absent (cold container); `npm
+install` succeeded, `npx tsc --noEmit` passed clean, and `npx expo
+export -p web --clear` built successfully (236 modules) -- repo stays
+healthy and deployable.
+
+**No notification sent this run** -- the last one (run 53, ~09:19 UTC)
+is only ~2h ago, still short of this doc's own ~3h re-notify bar, and
+nothing material changed (same hosts, same error, same allowlist). This
+is now **55 consecutive hourly runs (~56 hours since the original block
+was first hit) with zero fetchable parking data.** The fix remains
+environment-level (network-policy allowlist needs NSW government
+open-data hosts and Esri ArcGIS Server endpoints added), not something
+fixable from inside the container. Next run should send a notification
+once it is ≥3h past run 53's notification (i.e. at or after ~12:19
+UTC) and the block is still in place.
