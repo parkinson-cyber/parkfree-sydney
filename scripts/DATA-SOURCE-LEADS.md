@@ -997,3 +997,34 @@ This is now **46 consecutive hourly runs (~47 hours since the original
 block was first hit) with zero fetchable parking data.** The next run
 that still finds the hosts blocked and is ≥3h past the last
 notification should send one.
+
+**Re-confirmed a forty-seventh consecutive time (2026-08-26, ~03:17
+UTC).** Proxy status endpoint `recentRelayFailures` at session start
+already showed fresh `connect_rejected` entries for `services1.arcgis.com`
+and `www.google.com` (gateway 403 to CONNECT). A direct probe of six
+hosts -- `services1.arcgis.com`, `services.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, `mapservices2.environment.nsw.gov.au`,
+and non-government control host `example.com` -- all returned
+`403`/`CONNECT tunnel failed` again. `noProxy` allowlist unchanged
+(GitHub + package registries only): still a blanket network-policy
+block, not per-host or government-specific. Session started on a
+detached `HEAD` already matching `origin/main` (`git checkout -B main
+origin/main` was a no-op fast-forward -- previous run's push had
+landed cleanly, no divergence). `src/data/parking.json` unchanged:
+78,346 features, 65,740 still `cat=unknown`. `node_modules` was absent
+(cold container); `npm install` succeeded, then `npx tsc --noEmit`
+passed clean and `npx expo export -p web --clear` built successfully
+(26MB JS bundle, 236 modules) -- repo stays healthy and deployable.
+
+**Notification sent this run** -- the last one (run forty-one, ~21:19
+UTC on 2026-08-25) was ~6h ago, well past this doc's own ~3h re-notify
+bar, and the blocker has now persisted long enough (47 runs / ~48 hours)
+that it needs re-surfacing as an environment configuration item: the
+remote environment's network egress policy must be relaxed (or given a
+targeted allowlist covering `services.arcgis.com`, `services1.arcgis.com`,
+`data.nsw.gov.au`, `opendata.transport.nsw.gov.au`,
+`mapservices2.environment.nsw.gov.au`, and equivalent NSW
+council/government/ArcGIS hosts) before any further scheduled run of
+this task can make data progress. This is now **47 consecutive hourly
+runs (~48 hours since the original block was first hit) with zero
+fetchable parking data.**
