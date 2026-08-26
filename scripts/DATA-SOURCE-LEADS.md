@@ -1028,3 +1028,38 @@ council/government/ArcGIS hosts) before any further scheduled run of
 this task can make data progress. This is now **47 consecutive hourly
 runs (~48 hours since the original block was first hit) with zero
 fetchable parking data.**
+
+**Re-confirmed a forty-eighth consecutive time (2026-08-26, ~04:17
+UTC).** Same six hosts probed again -- `services1.arcgis.com`,
+`services.arcgis.com`, `data.nsw.gov.au`, `opendata.transport.nsw.gov.au`,
+`mapservices2.environment.nsw.gov.au`, and non-government control host
+`example.com` -- all still `403`/`CONNECT tunnel failed`. Proxy status
+`recentRelayFailures` showed fresh `connect_rejected` entries for all
+six at probe time, plus `cdp.expo.dev` (an Expo devtools host, unrelated
+to data fetching, also blocked). `noProxy` allowlist unchanged. No
+material change from run 47.
+
+Session hygiene note: this run's `git checkout -B main origin/main`
+initially landed on a **stale** local `origin/main` ref (commit
+`e265e8d`, dated 2026-08-16 -- 48 commits behind), because the
+remote-tracking ref hadn't been fetched yet in this fresh container.
+Caught it before any data work by checking `git log -1` against the
+expected recent history; `git fetch origin main && git merge --ff-only
+origin/main` corrected it to `bd0b406` with no local changes lost
+(working tree was clean throughout, so nothing was at risk). Worth
+noting for future runs: always `git fetch origin main` before trusting
+a bare `origin/main` ref on a cold checkout.
+
+`src/data/parking.json` unchanged: 78,346 features, 65,740 still
+`cat=unknown`. `npm install` succeeded (cold container, `node_modules`
+absent), `npx tsc --noEmit` passed clean, `npx expo export -p web
+--clear` built successfully (236 modules) -- repo stays healthy and
+deployable.
+
+**No notification sent this run** -- the last one (run forty-seven,
+~03:19 UTC 2026-08-26) is only ~1h ago, well short of this doc's own
+~3h re-notify bar, and nothing material changed (same hosts, same
+error, same allowlist). This is now **48 consecutive hourly runs
+(~49 hours since the original block was first hit) with zero
+fetchable parking data.** The next run that still finds the hosts
+blocked and is ≥3h past the last notification should send one.
