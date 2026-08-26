@@ -973,3 +973,27 @@ UTC) was only ~1h ago, well short of the ~3h re-notify bar this doc has
 used, and nothing material changed. This is now **45 consecutive hourly
 runs (~46 hours since the original block was first hit) with zero
 fetchable parking data.**
+
+**Re-confirmed a forty-sixth consecutive time (2026-08-26, ~02:17 UTC).**
+`recentRelayFailures` at session start was empty, then a fresh direct
+probe of the same four hosts (`services.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, and control host `example.com`) all
+returned `403`/`CONNECT tunnel failed` again — logged in
+`recentRelayFailures` with the identical `"gateway answered 403 to
+CONNECT (policy denial or upstream failure)"` detail. `noProxy`
+allowlist unchanged. Local `HEAD` (detached) already matched
+`origin/main` after `git fetch origin main` (previous run's push had
+landed — the stale-local-ref gotcha from the section above, not an
+actual divergence). `src/data/parking.json` unchanged: 78,346 features,
+65,740 still `cat=unknown`. `node_modules` was absent (cold container);
+`npm install` succeeded, then `npx tsc --noEmit` passed clean and `npx
+expo export -p web --clear` built successfully — repo stays healthy and
+deployable.
+
+No notification sent this run — the last one (run forty-four, ~00:20
+UTC) is only ~2h ago, still short of this doc's own ~3h re-notify bar,
+and nothing material changed (same hosts, same error, same allowlist).
+This is now **46 consecutive hourly runs (~47 hours since the original
+block was first hit) with zero fetchable parking data.** The next run
+that still finds the hosts blocked and is ≥3h past the last
+notification should send one.
