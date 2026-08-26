@@ -921,3 +921,33 @@ environment configuration issue — the network egress allowlist needs to
 include the NSW council/government/ArcGIS hosts this project's scripts
 depend on, or be relaxed generally — no amount of further scheduled
 runs will fix it without that change.
+
+**Re-confirmed a forty-fourth consecutive time (2026-08-26, ~00:18 UTC).**
+Proxy status endpoint healthy (`recentRelayFailures` empty at session
+start). Direct 5-host spot-check via curl (`services.arcgis.com`,
+`data.nsw.gov.au`, `opendata.transport.nsw.gov.au`,
+`mapservices2.environment.nsw.gov.au`, and the non-government control
+host `example.com`) all still return `403`/`CONNECT tunnel failed`,
+control host included — confirms this is a network-policy allowlist,
+not a per-host or government-specific block. `noProxy` allowlist
+unchanged (GitHub + package registries only). Session started from a
+detached HEAD 44 commits behind `main` (stale checkout); reconciled
+with `git checkout -B main origin/main`, no divergence.
+`src/data/parking.json` unchanged (78,346 features, 65,740 still
+`cat=unknown`). `node_modules` was absent this run (cold container);
+`npm install` succeeded, then `npx tsc --noEmit` passed clean and `npx
+expo export -p web --clear` built successfully — repo stays healthy
+and deployable.
+
+**Notification sent this run** — the last one (run forty-one, ~21:19
+UTC) was ~3h ago, at the re-notify bar this doc has used, and the
+blocker has now persisted long enough (44 runs / ~45 hours) that it is
+worth re-surfacing to the user as an environment configuration item
+needing their action: the remote environment's network egress policy
+must be relaxed (or given a targeted allowlist covering
+`services.arcgis.com`, `data.nsw.gov.au`, `opendata.transport.nsw.gov.au`,
+`mapservices2.environment.nsw.gov.au`, and equivalent NSW
+council/government/ArcGIS hosts) before any further scheduled run of
+this task can make data progress. This is now **44 consecutive hourly
+runs (~45 hours since the original block was first hit) with zero
+fetchable parking data.**
