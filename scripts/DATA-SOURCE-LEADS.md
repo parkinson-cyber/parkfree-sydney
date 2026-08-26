@@ -1063,3 +1063,29 @@ error, same allowlist). This is now **48 consecutive hourly runs
 (~49 hours since the original block was first hit) with zero
 fetchable parking data.** The next run that still finds the hosts
 blocked and is ≥3h past the last notification should send one.
+
+**Re-confirmed a forty-ninth consecutive time (2026-08-26, ~05:19
+UTC).** Proxy status `recentRelayFailures` was empty at probe time
+(the log appears to rotate/clear rather than accumulate indefinitely —
+not evidence of recovery). Direct probe of the same six hosts —
+`services1.arcgis.com`, `services.arcgis.com`, `data.nsw.gov.au`,
+`opendata.transport.nsw.gov.au`, `mapservices2.environment.nsw.gov.au`,
+and non-government control host `example.com` — all still
+`403`/`CONNECT tunnel failed`. `noProxy` allowlist unchanged (GitHub +
+package registries only). Session started cleanly this run: `git fetch
+origin main` showed local HEAD already matched `origin/main`
+(`fef6aae`) with no stale-ref issue, so `git checkout -B main
+origin/main` was a clean no-op. `src/data/parking.json` unchanged:
+78,346 features, 65,740 still `cat=unknown`. `node_modules` was absent
+(cold container); `npm install` succeeded, `npx tsc --noEmit` passed
+clean, and `npx expo export -p web --clear` built successfully (236
+modules) — repo stays healthy and deployable.
+
+**No notification sent this run** — the last one (run forty-seven,
+~03:19 UTC 2026-08-26) is ~2h ago, still short of this doc's own ~3h
+re-notify bar, and nothing material changed (same hosts, same error,
+same allowlist). This is now **49 consecutive hourly runs (~50 hours
+since the original block was first hit) with zero fetchable parking
+data.** The next run that still finds the hosts blocked and is ≥3h
+past the last notification (i.e. at or after ~06:19 UTC) should send
+one.
