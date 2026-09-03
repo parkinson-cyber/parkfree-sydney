@@ -37,6 +37,12 @@ interface AppState {
   now: Date;
   tick: () => void;
 
+  /** Time-travel offset in minutes from now (0 = live). Drives the time slider:
+   *  the whole map re-evaluates at now + offset, so you can see which streets
+   *  will be free when you actually get there. */
+  timeOffsetMin: number;
+  setTimeOffset: (min: number) => void;
+
   premium: boolean;
   setPremium: (v: boolean) => void;
   paywallVisible: boolean;
@@ -72,6 +78,9 @@ export const useStore = create<AppState>((set, get) => ({
 
   now: new Date(),
   tick: () => set({ now: new Date() }),
+
+  timeOffsetMin: 0,
+  setTimeOffset: (timeOffsetMin) => set({ timeOffsetMin }),
 
   // Everything is free — no paid tier while we grow the user base and
   // gather parking data. Flip back to false (and restore the purchases
@@ -119,3 +128,14 @@ export const useStore = create<AppState>((set, get) => ({
     }
   },
 }));
+
+/**
+ * The clock the map is drawn against: real time, shifted by the time-slider
+ * offset. Every rule evaluation in the UI goes through this, so "now" and
+ * "9pm tonight" share one code path.
+ */
+export function useViewNow(): Date {
+  const now = useStore((s) => s.now);
+  const offset = useStore((s) => s.timeOffsetMin);
+  return offset === 0 ? now : new Date(now.getTime() + offset * 60_000);
+}

@@ -31,7 +31,8 @@
     "typecheck": "tsc --noEmit",
     "fetch-data": "node scripts/fetch-parking-data.mjs --area all",
     "web:preview": "CI=1 EXPO_NO_TELEMETRY=1 expo start --web --port ${PORT:-8090}",
-    "vercel-build": "expo export -p web"
+    "vercel-build": "expo export -p web",
+    "meter-coverage": "node scripts/meter-coverage.mjs"
   },
   "private": true
 }

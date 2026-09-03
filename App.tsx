@@ -16,6 +16,7 @@ import { StreetSheet } from './src/components/StreetSheet';
 import { LegendModal } from './src/components/LegendModal';
 import { TimerModal, TimerPill } from './src/components/ParkingTimer';
 import { WelcomeOverlay } from './src/components/WelcomeOverlay';
+import { TimeSlider } from './src/components/TimeSlider';
 
 import * as Haptics from 'expo-haptics';
 
@@ -27,15 +28,19 @@ import {
   type ParkSuggestion, type SoonSuggestion,
 } from './src/lib/findPark';
 import { colors } from './src/theme';
-import { SYDNEY_REGION, useStore } from './src/state/store';
+import { SYDNEY_REGION, useStore, useViewNow } from './src/state/store';
 import type { LiveStatus, StreetFeature } from './src/lib/types';
 
 function Main() {
   const insets = useSafeAreaInsets();
   const mapRef = useRef<ParkingMapHandle>(null);
 
-  const now = useStore((s) => s.now);
   const tick = useStore((s) => s.tick);
+  // The clock the whole map is drawn against — real time unless the slider is
+  // pulled forward, in which case every street, the free-count and "find me a
+  // park" all answer for that later moment instead.
+  const viewNow = useViewNow();
+  const timeOffsetMin = useStore((s) => s.timeOffsetMin);
   const filter = useStore((s) => s.filter);
   const showUnknown = useStore((s) => s.showUnknown);
   const selected = useStore((s) => s.selected);
@@ -75,10 +80,10 @@ function Main() {
   const statusById = useMemo(() => {
     const map = new Map<number, LiveStatus>();
     for (const f of classifiedStreets) {
-      map.set(f.properties.id, evaluateStreet(f.properties, now).status);
+      map.set(f.properties.id, evaluateStreet(f.properties, viewNow).status);
     }
     return map;
-  }, [now]);
+  }, [viewNow]);
 
   /** Ids passing the active filter (null = show everything). */
   const visibleIds = useMemo(() => {
@@ -117,21 +122,21 @@ function Main() {
         return;
       }
       // Nothing free this minute — offer the spot that frees up soonest.
-      const soon: SoonSuggestion | null = findSoonestPark(classifiedStreets, now, at);
+      const soon: SoonSuggestion | null = findSoonestPark(classifiedStreets, viewNow, at);
       if (soon) {
         mapRef.current?.animateTo(soon.center, true);
         handleSelect(soon.street);
         flashToast(
-          `Nothing free now — ${soon.street.properties.name ?? 'a spot'} frees in ${soon.inMin} min` +
+          `Nothing free ${timeOffsetMin ? 'then' : 'now'} — ${soon.street.properties.name ?? 'a spot'} frees in ${soon.inMin} min` +
             ` (${soon.at}) · ${formatDistance(soon.meters)} away`,
         );
         return;
       }
-      flashToast('No free parking found within 1.5 km right now.');
+      flashToast(`No free parking found within 1.5 km ${timeOffsetMin ? 'then' : 'right now'}.`);
     } finally {
       setFinding(false);
     }
-  }, [finding, statusById, now, handleSelect, flashToast]);
+  }, [finding, statusById, viewNow, timeOffsetMin, handleSelect, flashToast]);
 
   const onStartTimer = useCallback(
     (street: StreetFeature, suggestedMin?: number) => {
@@ -178,7 +183,7 @@ function Main() {
           <View style={styles.freeNow}>
             <View style={styles.freeNowDot} />
             <Text style={styles.freeNowText}>
-              {freeNow.count} free {freeNow.nearby ? 'nearby' : 'now'}
+              {freeNow.count} free {freeNow.nearby ? 'nearby' : timeOffsetMin ? 'then' : 'now'}
             </Text>
           </View>
         </View>
@@ -191,13 +196,13 @@ function Main() {
       </View>
 
       {toast && (
-        <View style={[styles.toast, { bottom: selected ? 340 : 108 + insets.bottom }]} pointerEvents="none">
+        <View style={[styles.toast, { bottom: selected ? 340 : 186 + insets.bottom }]} pointerEvents="none">
           <Text style={styles.toastText} numberOfLines={2}>{toast}</Text>
         </View>
       )}
 
       {/* right-side utilities — stacked above the primary action */}
-      <View style={[styles.fabs, { bottom: selected ? 330 : 108 + insets.bottom }]}>
+      <View style={[styles.fabs, { bottom: selected ? 330 : 186 + insets.bottom }]}>
         <Pressable
           style={styles.fab}
           onPress={() => mapRef.current?.animateToUser()}
@@ -223,10 +228,14 @@ function Main() {
           accessibilityLabel="Find me a park"
         >
           <Text style={styles.findBtnText}>
-            {finding ? 'Finding a spot…' : 'Find me a park'}
+            {finding ? 'Finding a spot…' : timeOffsetMin ? 'Find a park for then' : 'Find me a park'}
           </Text>
         </Pressable>
       )}
+
+      {/* Time travel sits directly above the primary action, and steps aside for
+          the street sheet — the sheet already carries its own "free from" line. */}
+      {!selected && <TimeSlider bottom={104 + insets.bottom} />}
 
       <TimerPill />
       {selected && <StreetSheet street={selected} onStartTimer={onStartTimer} />}

@@ -7,7 +7,7 @@ import {
 } from '../lib/rules';
 import { featureCenter, sideLabels } from '../lib/geo';
 import { colors, font, statusColors, statusLabels, tracking } from '../theme';
-import { useStore } from '../state/store';
+import { useStore, useViewNow } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
 
 const ZONE_LABEL: Record<ZoneType, string> = {
@@ -37,7 +37,9 @@ export function StreetSheet({
   street: StreetFeature;
   onStartTimer: (street: StreetFeature, suggestedMin?: number) => void;
 }) {
-  const now = useStore((s) => s.now);
+  // Same clock the map is coloured against, so the sheet can never disagree
+  // with the line the user just tapped.
+  const now = useViewNow();
   const select = useStore((s) => s.select);
 
   const p = street.properties;
