@@ -1,0 +1,48 @@
+# Hourly live car-park occupancy → the `data-live` branch.
+#
+# The app fetches raw.githubusercontent.com/<repo>/data-live/carparks.json.
+# The branch is force-pushed as a single orphan commit every run, so history
+# never grows and `main` is never touched. A failed fetch fails the job and
+# pushes nothing — the app then keeps showing the last good snapshot until it
+# goes stale (3 h) and hides the pins.
+#
+# Needs the repo secret TFNSW_API_KEY (Open Data Hub, Car Park API).
+
+name: Live car parks
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: carparks-live
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch occupancy
+        env:
+          TFNSW_API_KEY: ${{ secrets.TFNSW_API_KEY }}
+        run: node scripts/fetch-carparks.mjs out/carparks.json
+      - name: Publish to data-live (single orphan commit)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cd out
+          git init -q -b data-live
+          git config user.name "parkfree-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add carparks.json
+          git commit -q -m "carparks $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data-live

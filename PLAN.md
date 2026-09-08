@@ -38,6 +38,7 @@ Nobody publishes on-street occupancy for Sydney (City of Sydney removed its sens
 Tests: property tests on the log-odds update (monotone, bounded, decays to prior), table snapshot for priors. **Done when:** two users in the same block see the same band, and the sheet explains why.
 
 ## M4 — Hourly data agent, done right (1 session)
+- **Job 1 done 2026-09-08** (see PROGRESS → Live car parks). Job 2 (weekly re-fetch + PR) still open.
 Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 * * * *`, runners have open egress):
 - Job 1 (hourly): TfNSW Car Park API → `api/cron/ingest` (needs the user's API key as a repo secret). Also probes the *Candidate endpoints* list once a day and opens a GitHub issue when a host that was down comes up — no commits.
 - Job 2 (weekly): re-run `fetch-parking-data.mjs` + `apply-enrichment.sh`, open a PR only if `parking.json` changed and the classified count didn't drop.
@@ -67,4 +68,4 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 ### Open questions for the user
 1. Crowd reports: anonymous-only forever, or allow an optional nickname later? (Plan assumes anonymous-only.)
 2. Should the availability bands show on `unknown` streets too? Plan says **no** — no legal gate means no estimate.
-3. TfNSW Car Park API key — only needed for M4 Job 1; everything else works without an account.
+3. ~~TfNSW Car Park API key~~ — done.

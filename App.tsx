@@ -20,6 +20,7 @@ import { WelcomeOverlay } from './src/components/WelcomeOverlay';
 import * as Haptics from 'expo-haptics';
 
 import { classifiedStreets } from './src/lib/parkingData';
+import { useCarparks } from './src/lib/carparks';
 import { featureInRegion } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
 import {
@@ -44,6 +45,7 @@ function Main() {
   const setRegion = useStore((s) => s.setRegion);
   const showLegend = useStore((s) => s.showLegend);
   const hydrate = useStore((s) => s.hydrate);
+  const carparks = useCarparks();
 
   const [timerFor, setTimerFor] = useState<{ street: StreetFeature; suggestedMin?: number } | null>(null);
   const [finding, setFinding] = useState(false);
@@ -164,6 +166,7 @@ function Main() {
         onSelect={handleSelect}
         onRegionChange={setRegion}
         initialRegion={SYDNEY_REGION}
+        carparks={carparks?.facilities ?? []}
       />
 
       {/* top overlays */}

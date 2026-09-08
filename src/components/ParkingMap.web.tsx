@@ -7,11 +7,12 @@ import React, {
   forwardRef, useEffect, useImperativeHandle, useMemo, useRef,
 } from 'react';
 import { View } from 'react-native';
+import { formatUpdated, type CarPark } from '../lib/carparks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { allStreets, streetById } from '../lib/parkingData';
 import { pShort } from '../lib/rules';
-import { statusColors, kindColors } from '../theme';
+import { colors, statusColors, kindColors } from '../theme';
 import type { Region } from '../lib/types';
 
 /** Static sign-style time-limit label per street id (e.g. "2P"). */
@@ -63,8 +64,22 @@ const STATUS_COLOR_EXPR = ['match', ['get', 'status'],
   kindColors.unknown,
 ] as maplibregl.ExpressionSpecification;
 
+function carparksToGeojson(carparks: CarPark[]) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: carparks.map((c) => ({
+      type: 'Feature' as const,
+      geometry: { type: 'Point' as const, coordinates: [c.longitude, c.latitude] },
+      properties: {
+        id: c.id, name: c.name, free: c.free, spots: c.spots, at: c.at,
+        label: `P ${c.free} free`,
+      },
+    })),
+  };
+}
+
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,6 +104,10 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       })),
     };
   }, [statusById, visibleIds]);
+
+  const carparkGeojson = useMemo(() => carparksToGeojson(carparks), [carparks]);
+  const carparkRef = useRef(carparkGeojson);
+  carparkRef.current = carparkGeojson;
 
   // latest state, readable from the deferred 'load' handler without stale closures
   const geojsonRef = useRef(geojson);
@@ -161,6 +180,12 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('carparks') as maplibregl.GeoJSONSource | undefined)?.setData(carparkGeojson as any);
+  }, [carparkGeojson]);
+
   function buildMap(el: HTMLDivElement): maplibregl.Map {
     const map = new maplibregl.Map({
       container: el,
@@ -171,6 +196,8 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     });
     if (process.env.NODE_ENV !== 'production') {
       map.on('error', (e) => console.warn('[map error]', e.error?.message ?? e));
+      // dev-only handle for poking the map from the console / browser tools
+      (window as any).__parkfreeMap = map;
     }
 
     map.on('load', () => {
@@ -235,6 +262,42 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-halo-width': 1.6,
         },
       });
+
+      // Live Park&Ride occupancy — a different kind of thing from a street
+      // rule, so a different mark: a pill with the free count, not a line.
+      map.addSource('carparks', { type: 'geojson', data: carparkRef.current as any });
+      map.addLayer({
+        id: 'carparks-pins',
+        type: 'symbol',
+        source: 'carparks',
+        minzoom: 10,
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 10, 11, 16, 14],
+          'text-allow-overlap': true,
+          'text-padding': 2,
+        },
+        paint: {
+          'text-color': '#0F1115',
+          'text-halo-color': ['case', ['>', ['get', 'free'], 0], colors.accent, colors.danger],
+          'text-halo-width': 6,
+        },
+      });
+      map.on('click', 'carparks-pins', (e) => {
+        const f = e.features?.[0];
+        if (!f) return;
+        const pr = f.properties as { name: string; free: number; spots: number; at: string };
+        new maplibregl.Popup({ closeButton: false, offset: 14, className: 'carpark-popup' })
+          .setLngLat((f.geometry as any).coordinates)
+          .setHTML(
+            `<strong>${pr.name}</strong><br/>${pr.free} of ${pr.spots} spaces free` +
+            `<br/><span style="opacity:.7">TfNSW estimate · updated ${formatUpdated(pr.at)}</span>`,
+          )
+          .addTo(map);
+      });
+      map.on('mouseenter', 'carparks-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'carparks-pins', () => { map.getCanvas().style.cursor = ''; });
 
       // apply whatever state changed while the style was loading
       map.setLayoutProperty(

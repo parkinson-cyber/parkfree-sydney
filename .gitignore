@@ -43,3 +43,4 @@ yarn-error.*
 .vercel
 .env*
 scripts/__pycache__/
+.secrets/

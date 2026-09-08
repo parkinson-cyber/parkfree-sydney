@@ -12,6 +12,7 @@ import * as Location from 'expo-location';
 import { classifiedStreets, unknownStreets, streetById } from '../lib/parkingData';
 import { featureCenter, featureInRegion, nearestStreet } from '../lib/geo';
 import { pShort } from '../lib/rules';
+import { formatUpdated } from '../lib/carparks';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region, StreetFeature } from '../lib/types';
 import {
@@ -34,7 +35,7 @@ async function currentPosition(): Promise<{ latitude: number; longitude: number 
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks },
   ref,
 ) {
   const mapRef = useRef<MapView>(null);
@@ -149,6 +150,20 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           strokeWidth={7}
         />
       )}
+      {region.latitudeDelta <= 0.35 && carparks.map((c) => (
+        <Marker
+          key={`cp-${c.id}`}
+          coordinate={{ latitude: c.latitude, longitude: c.longitude }}
+          anchor={{ x: 0.5, y: 0.5 }}
+          tracksViewChanges={false}
+          title={c.name}
+          description={`${c.free} of ${c.spots} spaces free · TfNSW estimate, updated ${formatUpdated(c.at)}`}
+        >
+          <View style={[styles.cpPill, c.free === 0 && styles.cpPillFull]}>
+            <Text style={styles.cpText}>P {c.free} free</Text>
+          </View>
+        </Marker>
+      ))}
       {pLabels.map((p) => (
         <Marker
           key={`p-${p.id}`}
@@ -176,6 +191,16 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
   },
   pText: { color: colors.text, fontSize: 11, fontWeight: '800' },
+  // Live Park&Ride pin — solid accent so it reads as "a place with N spaces",
+  // not as another street rule.
+  cpPill: {
+    backgroundColor: colors.accent,
+    borderRadius: 8,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+  },
+  cpPillFull: { backgroundColor: colors.danger },
+  cpText: { color: '#0F1115', fontSize: 11, fontWeight: '800' },
 });
 
 export default ParkingMap;

@@ -1,4 +1,5 @@
 import type { LiveStatus, Region, StreetFeature } from '../lib/types';
+import type { CarPark } from '../lib/carparks';
 
 export interface ParkingMapProps {
   /** Live status per street id, re-evaluated on the minute tick. */
@@ -10,6 +11,8 @@ export interface ParkingMapProps {
   onSelect: (f: StreetFeature | null) => void;
   onRegionChange: (r: Region) => void;
   initialRegion: Region;
+  /** Live Park&Ride occupancy pins (empty when the feed is missing or stale). */
+  carparks: CarPark[];
 }
 
 export interface ParkingMapHandle {
