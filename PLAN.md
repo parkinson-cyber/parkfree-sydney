@@ -1,0 +1,64 @@
+# Plan
+
+Goal, in the user's words: *the app up and running, an algorithm to estimate live parking availability, let users note and save their parking spot, open source so other people can share live updates of street parking — because finding a spot in Sydney is always hard.*
+
+Milestones are ordered so each one ships something usable on its own. Estimates are working sessions, not calendar time.
+
+---
+
+## M0 — Housekeeping (½ session)
+- Merge `claude/ios-app-documentation-cscddp` after review (time-travel slider is a real feature). Close the stale North Sydney branch.
+- Squash-free cleanup of `scripts/DATA-SOURCE-LEADS.md`: keep *Candidate endpoints* + the detached-HEAD note, delete the 80 run logs.
+- Confirm the claude.ai/code routine is deleted (user).
+- Fix `LICENSE` copyright, repo description, add topics (`sydney`, `parking`, `expo`, `open-data`).
+
+## M1 — Native build actually running (1 session)
+- `npm run ios` on the Simulator with Xcode 15.4; harvest `eas.json` from the old clone; commit it.
+- EAS preview build so the user can install on their own iPhone (user runs `eas build`; Claude prepares config).
+- **Done when:** the user can open the app on their phone and tap "Find me a park".
+
+## M2 — Crowd layer backend (1 session)
+Port `ParkFreeSyd/server/` into this repo as Vercel functions (`api/`), reshaped for streets:
+- `POST /api/reports` `{ streetId, side?, kind, deviceId }` where `kind ∈ parked | left | looks_full | looks_empty`. Sydney bbox check, 30/device/hour rate limit, anonymous device id.
+- `GET /api/reports?lat&lon&radius` → recent reports, TTL-expired (15 min `left`, 30 min others).
+- Storage: Upstash Redis (free) via REST, GEO index + TTL. In-memory fallback so previews work with no env vars.
+- **Provenance rule applies:** reports are stored with `source: user` and rendered as reports, never merged into `cat`.
+- **Done when:** a report made on one device shows on another within 30 s.
+
+## M3 — Live availability estimate (2 sessions)
+Nobody publishes on-street occupancy for Sydney (City of Sydney removed its sensors). So this is an **estimate**, and the UI must say so. Score each classified segment 0–1 = P(a space is free now):
+
+1. **Legal gate** — `rules.ts` says whether you may park now. If not, score = 0. (Exists.)
+2. **Prior** `p0(segment, weekday, hour)` — a small table keyed by street class × context: metered CBD after cut-off, residential near a station on a weekday, beach suburbs on a summer weekend, etc. Start hand-set from known Sydney patterns (documented in `src/lib/availability.ts`), then replaced by observed rates as reports accumulate.
+3. **Crowd evidence** — each report shifts the score with a weight that decays exponentially (half-life ~10 min for `left`/`looks_empty`, ~20 min for `parked`/`looks_full`). Bayesian-ish log-odds update; five reports never outweigh a legal ban.
+4. **Timer-derived departures** — the existing parking timer already knows *when a user intends to leave*. With opt-in ("share when I'm leaving"), a timer expiring in ≤10 min becomes a soft `left`-soon signal for that segment. This is the one genuinely live signal no one else has.
+5. **Surface:** three bands — *likely free / uncertain / likely full* — as a subtle stripe on the street, plus "estimate · based on N reports" in the sheet. `findPark.ts` uses score as a tiebreaker within 150 m, never to override distance by more than that.
+
+Tests: property tests on the log-odds update (monotone, bounded, decays to prior), table snapshot for priors. **Done when:** two users in the same block see the same band, and the sheet explains why.
+
+## M4 — Hourly data agent, done right (1 session)
+Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 * * * *`, runners have open egress):
+- Job 1 (hourly): TfNSW Car Park API → `api/cron/ingest` (needs the user's API key as a repo secret). Also probes the *Candidate endpoints* list once a day and opens a GitHub issue when a host that was down comes up — no commits.
+- Job 2 (weekly): re-run `fetch-parking-data.mjs` + `apply-enrichment.sh`, open a PR only if `parking.json` changed and the classified count didn't drop.
+- Rule: a run that changes nothing writes nothing.
+
+## M5 — Save my spot (1 session)
+- "I parked here" button: stores `{ lat, lon, streetId, at, note?, photo? }` in AsyncStorage; pin on the map; "Walk me back" opens Apple/Google Maps walking directions; ties into the existing timer + move-your-car notification.
+- Optional share toggle: posts a `parked` report (M2) and, on timer expiry, a `left` report — this is what feeds M3 step 4.
+- **Done when:** park, close the app, reopen an hour later, tap "walk me back".
+
+## M6 — Open source properly (½ session)
+- `CONTRIBUTING.md` with the provenance rules and "how to add a council" (the `fetch-<council>-parking.py` pattern + `scripts/data/` schedule format).
+- CI on PRs: typecheck + tests + a `parking.json` sanity check (feature count, no `unknown→free` diff).
+- Issue templates: *wrong sign data on my street*, *add my council*.
+- Data attribution page in-app (OSM ODbL, each council's licence).
+
+## M7 — App Store (user-driven)
+- Apple Developer account, EAS production build, screenshots, privacy nutrition label (location: while-in-use; anonymous device id; optional shared reports).
+
+---
+
+### Open questions for the user
+1. Crowd reports: anonymous-only forever, or allow an optional nickname later? (Plan assumes anonymous-only.)
+2. Should the availability bands show on `unknown` streets too? Plan says **no** — no legal gate means no estimate.
+3. TfNSW Car Park API key — only needed for M4 Job 1; everything else works without an account.
