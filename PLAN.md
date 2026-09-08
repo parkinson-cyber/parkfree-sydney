@@ -18,7 +18,7 @@ Milestones are ordered so each one ships something usable on its own. Estimates 
 - EAS preview build so the user can install on their own iPhone (user runs `eas build`; Claude prepares config).
 - **Done when:** the user can open the app on their phone and tap "Find me a park".
 
-## M2 — Crowd layer backend (1 session)
+## M2 — Crowd layer backend — DONE 2026-09-09 (pending Upstash provisioning)
 Port `ParkFreeSyd/server/` into this repo as Vercel functions (`api/`), reshaped for streets:
 - `POST /api/reports` `{ streetId, side?, kind, deviceId }` where `kind ∈ parked | left | looks_full | looks_empty`. Sydney bbox check, 30/device/hour rate limit, anonymous device id.
 - `GET /api/reports?lat&lon&radius` → recent reports, TTL-expired (15 min `left`, 30 min others).
@@ -44,7 +44,7 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 - Job 2 (weekly): re-run `fetch-parking-data.mjs` + `apply-enrichment.sh`, open a PR only if `parking.json` changed and the classified count didn't drop.
 - Rule: a run that changes nothing writes nothing.
 
-## M5 — Save my spot (1 session)
+## M5 — Save my spot — DONE 2026-09-09
 - "I parked here" button: stores `{ lat, lon, streetId, at, note?, photo? }` in AsyncStorage; pin on the map; "Walk me back" opens Apple/Google Maps walking directions; ties into the existing timer + move-your-car notification.
 - Optional share toggle: posts a `parked` report (M2) and, on timer expiry, a `left` report — this is what feeds M3 step 4.
 - **Done when:** park, close the app, reopen an hour later, tap "walk me back".
