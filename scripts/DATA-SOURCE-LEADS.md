@@ -147,6 +147,14 @@ unknown:
 - **Randwick** — `extTransport/ResidentParkingZone/MapServer/0` = 699 kerb polylines (streetName, from/toHouseNumber, suburb, zone). Not yet used.
 - Council websites (`willoughby.nsw.gov.au`, `lanecove.nsw.gov.au`) return 403 to curl/WebFetch; a real browser gets through.
 
+## Verified 2026-09-08, later in the day
+
+- **Randwick kerb layers — applied.** `extTransport/ResidentParkingZone/0` and `extCollectorApp/Commercial_Parking/0` via `fetch-randwick-kerbs-parking.py`. Randwick publishes no meter/sign GIS beyond these; councillors rejected beach meters on 30 Jun 2026, so Coogee/Maroubra/Clovelly kerbs are free unless signed. Maroubra Beach's remaining unknowns have no source.
+- **North Sydney meters — nothing new.** The council's "Parking meter and Touch N Go locations" page embeds Google My Map `mid=16KThCLnxfa0NgZr_qWFb9yd4mm1mI5w`; `fetch-northsydney-parking.py` already ingests it (374 machines) with demand tiers. Remaining NS unknowns are unsigned residential streets.
+- **Waverley bundle** unchanged since 2023-08-21 (resources dated then); the Aug 2026 run is current.
+- **Willoughby micro-schemes, not applied (small, needs visual read):** Keary St / Oakville Rd education precinct — `haveyoursaywilloughby.com.au/download_file/583/597` (existing restrictions plan, 2022; school-day No Stopping/No Parking, a 1P and a ¼P section — "School Days" intervals aren't expressible yet); Castle Cove Deepwater Rd / Rosebridge Ave — `download_file/1497/725` (Feb 2024 letter: 5-min and 15-min bays, No Stopping 6am–6pm on Rosebridge up to No. 37). Leisure Centre precinct (Aug 2026) is an undecided proposal — do not apply.
+- **City of Sydney** ArcGIS org has no kerbside sign layer (checked all 196 services: only meters, permits, free-15, ticket rates, car parks, mobility).
+
 ## Candidate endpoints to try first when egress is opened
 
 These are hosts surfaced by search, **not yet verified by an actual fetch**.
