@@ -138,6 +138,15 @@ unknown:
 | `northshore` | 3,729 / 4,085 |
 | `west` | 6,983 / 7,268 |
 
+## Verified 2026-09-08 from a machine with open egress
+
+- **Lane Cove** — the council's *Management Directive – Parking Permits* (DOCX via `ecouncil.lanecove.nsw.gov.au/trim/DocumentLink.asp?Recid=71735/17`) contains the full street-by-zone schedule with property numbers. Applied. Supersedes the raster map.
+- **Willoughby South** — approved scheme map at `haveyoursaywilloughby.com.au/download_file/1411/710` (per-kerb 1P/2P/4P + hours + PHE). Applied via `fetch-willoughby-south-parking.py`. Look for sibling consultations (Naremburn, Artarmon) on the same site.
+- **Mosman** — 2024 RPS policy PDF: no schedule. `maps.mosman.nsw.gov.au` (Spectrum Spatial Analyst): no reachable REST tables. Still raster-only.
+- **Willoughby Exponare** (`mapping.willoughby.nsw.gov.au`) — planning/property layers only, no parking.
+- **Randwick** — `extTransport/ResidentParkingZone/MapServer/0` = 699 kerb polylines (streetName, from/toHouseNumber, suburb, zone). Not yet used.
+- Council websites (`willoughby.nsw.gov.au`, `lanecove.nsw.gov.au`) return 403 to curl/WebFetch; a real browser gets through.
+
 ## Candidate endpoints to try first when egress is opened
 
 These are hosts surfaced by search, **not yet verified by an actual fetch**.

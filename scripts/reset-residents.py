@@ -35,24 +35,40 @@ VISION_FILES = [
 ]
 
 
+# Scheme-map files applied through lib_enrich.apply_rules (timed rules, not
+# just permit areas). Their label is the scheme label; notes are appended
+# after " · ", so match on the prefix.
+SCHEME_FILES = [
+    "willoughby-south-scheme.json",
+]
+
+
 def vision_labels():
     labels = set()
     for fn in VISION_FILES:
         areas = json.load(open(os.path.join(HERE, "data", fn)))
         for key, area in areas.items():
+            if key.startswith("_"):  # provenance notes, not areas
+                continue
             labels.add(area.get("label", key))
     return labels
 
 
+def scheme_labels():
+    return {json.load(open(os.path.join(HERE, "data", fn)))["label"] for fn in SCHEME_FILES}
+
+
 def main():
     labels = vision_labels()
+    schemes = scheme_labels()
     coll = json.load(open(DATA_PATH))
     reset = 0
     for f in coll["features"]:
         p = f["properties"]
-        if p.get("cat") != "residents":
+        if p.get("cat") not in ("residents", "free_limited"):
             continue
-        if (p.get("left") or {}).get("permitLabel") in labels:
+        label = (p.get("left") or {}).get("permitLabel") or ""
+        if label in labels or label.split(" · ")[0] in schemes:
             p["cat"] = "unknown"
             p["left"] = {"kind": "unknown"}
             p.pop("right", None)

@@ -137,13 +137,19 @@ def _permit_map(areas):
     """Flatten {areakey: {...}} into norm(street) -> (label, area, zone)."""
     pmap = {}
     for key, r in areas.items():
+        if key.startswith("_"):  # provenance notes, not areas
+            continue
         label = r.get("label", key)
         area = r.get("area")
         zone = r.get("zone")
+        partial = r.get("partial") or {}
         for s in r["streets"]:
             n = norm(s)
             if n and n not in pmap:
-                pmap[n] = (label, area, zone)
+                # Schedules that only cover some property numbers say so in the
+                # label, since a segment can't carry a house-number range.
+                lbl = f"{label} · part of street ({partial[s]})" if s in partial else label
+                pmap[n] = (lbl, area, zone)
     return pmap
 
 
@@ -243,3 +249,66 @@ def apply_residents(council, bbox, areas, phrase, verbose=True, cluster=True):
         if inb:
             print(f"  {council} bbox: {cls}/{len(inb)} = {100 * cls / len(inb):.1f}% classified")
     return applied, before, after
+
+
+def apply_rules(council, bbox, schedule, phrase, verbose=True):
+    """Tag 'unknown' segments with explicit timed rules from a council scheme map.
+
+    `schedule` is a list of entries:
+        {"street": "Cobar Street",
+         "rule": {...SideRule...}            # both kerbs, or
+         "left": {...}, "right": {...},      # per-kerb when the map differs by side
+         "lonMin"/"lonMax": float,           # optional: only part of a long street
+         "note": "west of Sydney St only"}   # folded into permitLabel
+    Every rule written carries `permitLabel` so reset-residents.py can strip the
+    whole scheme again. Only 'unknown' segments inside `bbox` are touched.
+    """
+    coll = load()
+    streets = coll["features"]
+    before = sum(1 for f in streets if f["properties"]["cat"] != "unknown")
+    by_name = {}
+    for e in schedule:
+        by_name.setdefault(norm(e["street"]), []).append(e)
+
+    order = {"paid": 3, "free_limited": 2, "residents": 2, "free": 2,
+             "no_parking": 1, "no_stopping": 0}
+    applied = 0
+    for f in streets:
+        p = f["properties"]
+        name = p.get("name")
+        coords = f["geometry"]["coordinates"]
+        if not name or p["cat"] != "unknown" or not in_bbox(coords, bbox):
+            continue
+        entries = by_name.get(norm(name))
+        if not entries:
+            continue
+        lon = _seg_point(coords)[1]
+        for e in entries:
+            if "lonMin" in e and lon < e["lonMin"]:
+                continue
+            if "lonMax" in e and lon > e["lonMax"]:
+                continue
+            left = dict(e.get("left") or e["rule"])
+            right = dict(e.get("right") or e["rule"])
+            label = e.get("label") or phrase
+            if e.get("note"):
+                label = f"{label} · {e['note']}"
+            for r in (left, right):
+                r["permitLabel"] = label
+                if r.get("permitExcepted"):
+                    r.setdefault("zone", "residential")
+            p["left"], p["right"] = left, right
+            best = max((left, right), key=lambda r: order.get(r["kind"], 0))
+            p["cat"] = best["kind"]
+            if best.get("zone"):
+                p["zone"] = best["zone"]
+            applied += 1
+            break
+
+    mark_enriched(coll, phrase)
+    save(coll)
+    after = sum(1 for f in streets if f["properties"]["cat"] != "unknown")
+    if verbose:
+        print(f"✓ {council}: {applied} segments tagged from scheme map "
+              f"(classified {before} -> {after})")
+    return applied

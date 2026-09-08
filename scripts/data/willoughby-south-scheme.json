@@ -1,0 +1,29 @@
+{
+  "_source": "Willoughby City Council, 'Willoughby South Resident Parking Scheme and Parking Restrictions' (SCT Consulting map, approved by the Local Traffic Committee 5 Mar 2024), published at haveyoursaywilloughby.com.au/willoughby-south-parking-management (download_file/1411/710). Read visually from the rendered map on 2026-09-08; where a street shows different restrictions on each kerb the two sides are recorded separately. Sydney Street's tiny retained-4P stub and Harris Street's P5 stub are omitted rather than applied to whole streets.",
+  "label": "Willoughby South RPS (approved Mar 2024)",
+  "bbox": [-33.8185, -33.8025, 151.1835, 151.2045],
+  "entries": [
+    {"street": "Nardoo Road",      "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}, "note": "west half only"},
+    {"street": "Cobar Street",     "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Wyalong Street",   "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Lucknow Street",   "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Gorman Street",    "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Armstrong Street", "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Chelmsford Avenue","rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}},
+    {"street": "Artarmon Road", "lonMin": 151.1925, "lonMax": 151.1970,
+     "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-18:00", "permitExcepted": true}, "note": "Chelmsford Ave to Edward St"},
+    {"street": "Artarmon Road", "lonMin": 151.1970, "lonMax": 151.2000,
+     "rule": {"kind": "free_limited", "maxstayMin": 120, "interval": "Mo-Su 08:30-18:00"}, "note": "Edward St to Willoughby Rd, south kerb"},
+    {"street": "Edward Street",    "rule": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-22:00", "permitExcepted": true}, "note": "some kerbs 2P Mon-Sun near Artarmon Rd"},
+    {"street": "Penshurst Street", "rule": {"kind": "free_limited", "maxstayMin": 60,  "interval": "Mo-Fr 08:30-18:00; Sa 08:30-12:30", "permitExcepted": true}},
+    {"street": "Frenchs Road",     "rule": {"kind": "free_limited", "maxstayMin": 60,  "interval": "Mo-Fr 08:30-18:00; Sa 08:30-12:30", "permitExcepted": true}, "note": "Willoughby Rd end"},
+    {"street": "Julian Street",    "rule": {"kind": "free_limited", "maxstayMin": 60}, "note": "existing 1P retained, hours per sign"},
+    {"street": "Borlaise Street",  "rule": {"kind": "free_limited", "maxstayMin": 60}, "note": "existing 1P retained, hours per sign"},
+    {"street": "Richmond Avenue",
+     "left":  {"kind": "free_limited", "maxstayMin": 120, "interval": "Mo-Su 08:30-20:00", "permitExcepted": true},
+     "right": {"kind": "free_limited", "maxstayMin": 240, "interval": "Mo-Fr 08:30-20:00", "permitExcepted": true}},
+    {"street": "Walter Street",
+     "left":  {"kind": "free_limited", "maxstayMin": 120, "interval": "Mo-Su 08:30-20:00", "permitExcepted": true},
+     "right": {"kind": "free_limited", "maxstayMin": 60,  "interval": "Mo-Su 08:30-22:00", "permitExcepted": true}, "note": "south kerb mixes 1P and 4P"}
+  ]
+}

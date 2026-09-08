@@ -32,11 +32,12 @@ SOURCES = [
     "Randwick resident-permit areas (partial, vision-derived)",
     "Inner West (Marrickville) resident-permit areas (partial, vision-derived)",
     "Inner West (Leichhardt/Balmain/Ashfield) resident-permit areas (partial, vision-derived)",
-    "Lane Cove resident-permit zones (vision-derived)",
+    "Lane Cove resident-permit zones (council schedule, TRIM 1211105)",
     "Canada Bay (Five Dock Area 6) resident-permit areas (partial)",
     "Burwood resident-permit areas (vision-derived)",
     "Hunters Hill (Woolwich W1) resident-permit area",
     "Strathfield resident-permit schemes (vision-derived, partial)",
+    "Willoughby South resident parking scheme (council map, Mar 2024)",
 ]
 
 

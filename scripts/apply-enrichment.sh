@@ -13,7 +13,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-for s in northsydney woollahra ryde mosman randwick innerwest innerwest-leichhardt lanecove canadabay burwood huntershill strathfield; do
+for s in northsydney woollahra ryde mosman randwick innerwest innerwest-leichhardt lanecove canadabay burwood huntershill strathfield willoughby-south; do
   echo "── $s ─────────────────────────────"
   python3 "scripts/fetch-${s}-parking.py"
 done

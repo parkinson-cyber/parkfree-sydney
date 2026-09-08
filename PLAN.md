@@ -7,6 +7,7 @@ Milestones are ordered so each one ships something usable on its own. Estimates 
 ---
 
 ## M0 — Housekeeping (½ session)
+- Done 2026-09-08: Lane Cove corrected from council text; Willoughby South scheme applied; overlays fully re-derivable.
 - Merge `claude/ios-app-documentation-cscddp` after review (time-travel slider is a real feature). Close the stale North Sydney branch.
 - Squash-free cleanup of `scripts/DATA-SOURCE-LEADS.md`: keep *Candidate endpoints* + the detached-HEAD note, delete the 80 run logs.
 - Confirm the claude.ai/code routine is deleted (user).
@@ -57,6 +58,11 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 - Apple Developer account, EAS production build, screenshots, privacy nutrition label (location: while-in-use; anonymous device id; optional shared reports).
 
 ---
+
+### Data leads still worth a session (corridor)
+- **Willoughby**: the council has more scheme maps like Willoughby South (Naremburn precinct expansion was consulted on) — search haveyoursaywilloughby.com.au for each, same pipeline. Also its 2020 LTC minutes list RA areas RA1–RA23; no street list found yet.
+- **Randwick**: `extTransport/ResidentParkingZone` kerb polylines (699, with house numbers) → snap by geometry instead of area polygon for exact per-kerb tagging.
+- **Mosman / Ku-ring-gai / North Sydney remainder**: no open source exists; only crowd reports (M2) or a council data request will move these.
 
 ### Open questions for the user
 1. Crowd reports: anonymous-only forever, or allow an optional nickname later? (Plan assumes anonymous-only.)
