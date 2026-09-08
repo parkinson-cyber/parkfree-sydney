@@ -28,12 +28,16 @@ export function ReportSheet({
     if (busy) return;
     setBusy(kind);
     if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
-    const { result, report } = await postReport({ ...at, kind, streetId, streetName });
+    const { result, report, live } = await postReport({ ...at, kind, streetId, streetName });
     setBusy(null);
     if (result === 'ok' && report) {
-      onDone(report, kind === 'left' || kind === 'looks_empty'
+      const base = kind === 'left' || kind === 'looks_empty'
         ? 'Thanks — a free space is on the map for 15 minutes.'
-        : 'Thanks — marked as full for 30 minutes.');
+        : 'Thanks — marked as full for 30 minutes.';
+      // `live: false` means the backend has no shared storage yet, so the
+      // report exists only for whoever hits the same server instance. Say so
+      // rather than implying the whole city can see it.
+      onDone(report, live === false ? `${base.replace('on the map', 'on your map')} (not shared yet)` : base);
     } else {
       onDone(
         { id: 'x', latitude: 0, longitude: 0, kind, streetId: null, streetName: null,

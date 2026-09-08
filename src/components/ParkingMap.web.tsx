@@ -485,12 +485,21 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     map.on('moveend', () => onRegionChange(regionFromMap(map)));
 
     map.on('click', (e) => {
-      // A tap on a car-park pin opens its popup (handler above) and must not
-      // also select the street underneath it.
-      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins', 'reports-pins', 'council-pins'] }).length) return;
+      // This handler is registered before the style finishes loading, and
+      // queryRenderedFeatures throws on a layer that doesn't exist yet — so
+      // only ever ask about layers the map actually has right now.
+      const present = (ids: string[]) => ids.filter((id) => map.getLayer(id));
+
+      // A tap on a pin opens its own popup (handlers above) and must not also
+      // select the street underneath it.
+      const pins = present(['carparks-pins', 'reports-pins', 'council-pins']);
+      if (pins.length && map.queryRenderedFeatures(e.point, { layers: pins }).length) return;
+
+      const streetLayers = present(['streets-classified', 'streets-unknown']);
+      if (!streetLayers.length) return;
       const hits = map.queryRenderedFeatures(
         [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]],
-        { layers: ['streets-classified', 'streets-unknown'] },
+        { layers: streetLayers },
       );
       const id = hits[0]?.properties?.id as number | undefined;
       onSelect(id != null ? streetById(id) ?? null : null);

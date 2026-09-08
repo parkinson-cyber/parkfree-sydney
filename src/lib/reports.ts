@@ -67,7 +67,7 @@ export type PostResult = 'ok' | 'rate_limited' | 'outside' | 'error';
 
 export async function postReport(input: {
   latitude: number; longitude: number; kind: ReportKind; streetId?: number; streetName?: string;
-}): Promise<{ result: PostResult; report?: Report }> {
+}): Promise<{ result: PostResult; report?: Report; live?: boolean }> {
   try {
     const res = await fetch(`${API_BASE}/reports`, {
       method: 'POST',
@@ -81,8 +81,8 @@ export async function postReport(input: {
     if (res.status === 429) return { result: 'rate_limited' };
     if (res.status === 422) return { result: 'outside' };
     if (!res.ok) return { result: 'error' };
-    const json = (await res.json()) as { report: Report };
-    return { result: 'ok', report: json.report };
+    const json = (await res.json()) as { report: Report; live?: boolean };
+    return { result: 'ok', report: json.report, live: json.live };
   } catch {
     return { result: 'error' };
   }
