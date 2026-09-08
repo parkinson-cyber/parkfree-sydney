@@ -46,6 +46,9 @@ export const PLACES: { name: string; latitude: number; longitude: number }[] = [
   { name: 'Crows Nest', latitude: -33.8258, longitude: 151.2016 },
   { name: 'Cammeray', latitude: -33.8199, longitude: 151.2138 },
   { name: 'Chatswood', latitude: -33.7969, longitude: 151.1835 },
+  // Willoughby South resident parking scheme (council map, Mar 2024)
+  { name: 'Artarmon', latitude: -33.8095, longitude: 151.1856 },
+  { name: 'Naremburn', latitude: -33.8135, longitude: 151.1985 },
   { name: 'Bronte', latitude: -33.9036, longitude: 151.2685 },
   { name: 'Bondi Junction', latitude: -33.8916, longitude: 151.2477 },
   { name: 'Mosman', latitude: -33.8279, longitude: 151.2437 },

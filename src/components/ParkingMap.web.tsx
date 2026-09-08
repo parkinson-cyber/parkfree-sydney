@@ -34,22 +34,13 @@ function currentPosition(): Promise<{ latitude: number; longitude: number } | nu
   });
 }
 
-const BASEMAP: maplibregl.StyleSpecification = {
-  version: 8,
-  sources: {
-    carto: {
-      type: 'raster',
-      tiles: [
-        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-      ],
-      tileSize: 256,
-      attribution: '© OpenStreetMap contributors © CARTO',
-    },
-  },
-  glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
-  layers: [{ id: 'carto', type: 'raster', source: 'carto' }],
-};
+// OpenFreeMap's dark style: vector tiles, no API key, no usage cap for a
+// public-good app (https://openfreemap.org). CARTO's free raster basemap began
+// watermarking every tile "API KEY REQUIRED" in 2026, which is what the live
+// site showed until this swap. Our street layers are added on top in
+// buildMap() once the style has loaded, so a style URL works the same as the
+// inline raster style did.
+const BASEMAP = 'https://tiles.openfreemap.org/styles/dark';
 
 function regionFromMap(map: maplibregl.Map): Region {
   const b = map.getBounds();
