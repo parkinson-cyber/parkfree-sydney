@@ -1,5 +1,7 @@
 import type { LiveStatus, Region, StreetFeature } from '../lib/types';
 import type { CarPark } from '../lib/carparks';
+import type { Report } from '../lib/reports';
+import type { SavedSpot } from '../state/store';
 
 export interface ParkingMapProps {
   /** Live status per street id, re-evaluated on the minute tick. */
@@ -13,6 +15,10 @@ export interface ParkingMapProps {
   initialRegion: Region;
   /** Live Park&Ride occupancy pins (empty when the feed is missing or stale). */
   carparks: CarPark[];
+  /** Live crowd reports — drawn as their own mark, never as street rules. */
+  reports: Report[];
+  /** Where the user parked, if saved. */
+  mySpot: SavedSpot | null;
 }
 
 export interface ParkingMapHandle {

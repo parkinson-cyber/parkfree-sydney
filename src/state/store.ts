@@ -21,6 +21,17 @@ export interface ActiveTimer {
 
 export type StatusFilter = 'all' | 'free_now' | 'free_anytime';
 
+/** Where I left the car. Local-first; nothing leaves the phone unless the
+ *  user chose to share a "parked" report. */
+export interface SavedSpot {
+  latitude: number;
+  longitude: number;
+  streetId?: number;
+  streetName?: string;
+  savedAt: number;
+  note?: string;
+}
+
 interface AppState {
   region: Region;
   setRegion: (r: Region) => void;
@@ -45,6 +56,9 @@ interface AppState {
   timer: ActiveTimer | null;
   setTimer: (t: ActiveTimer | null) => void;
 
+  mySpot: SavedSpot | null;
+  setMySpot: (s: SavedSpot | null) => void;
+
   legendVisible: boolean;
   showLegend: (v: boolean) => void;
 
@@ -56,6 +70,7 @@ interface AppState {
 }
 
 const TIMER_KEY = 'parkfree.timer';
+const SPOT_KEY = 'parkfree.myspot';
 const ONBOARDED_KEY = 'parkfree.onboarded';
 
 export const useStore = create<AppState>((set, get) => ({
@@ -88,6 +103,13 @@ export const useStore = create<AppState>((set, get) => ({
     else AsyncStorage.removeItem(TIMER_KEY);
   },
 
+  mySpot: null,
+  setMySpot: (mySpot) => {
+    set({ mySpot });
+    if (mySpot) AsyncStorage.setItem(SPOT_KEY, JSON.stringify(mySpot));
+    else AsyncStorage.removeItem(SPOT_KEY);
+  },
+
   legendVisible: false,
   showLegend: (legendVisible) => set({ legendVisible }),
 
@@ -99,14 +121,21 @@ export const useStore = create<AppState>((set, get) => ({
 
   hydrate: async () => {
     try {
-      const [timerRaw, onboardedRaw] = await Promise.all([
+      const [timerRaw, onboardedRaw, spotRaw] = await Promise.all([
         AsyncStorage.getItem(TIMER_KEY),
         AsyncStorage.getItem(ONBOARDED_KEY),
+        AsyncStorage.getItem(SPOT_KEY),
       ]);
       const updates: Partial<AppState> = {
         premium: true, // free for everyone — see note above
         onboarded: onboardedRaw === 'true',
       };
+      if (spotRaw) {
+        const spot: SavedSpot = JSON.parse(spotRaw);
+        // a spot older than a day is almost certainly stale
+        if (Date.now() - spot.savedAt < 24 * 3600 * 1000) updates.mySpot = spot;
+        else AsyncStorage.removeItem(SPOT_KEY);
+      }
       if (timerRaw) {
         const timer: ActiveTimer = JSON.parse(timerRaw);
         if (timer.expiresAt > Date.now()) updates.timer = timer;

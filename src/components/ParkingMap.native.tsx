@@ -13,6 +13,7 @@ import { classifiedStreets, unknownStreets, streetById } from '../lib/parkingDat
 import { featureCenter, featureInRegion, nearestStreet } from '../lib/geo';
 import { pShort } from '../lib/rules';
 import { formatUpdated } from '../lib/carparks';
+import { ago, isFreeKind } from '../lib/reports';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region, StreetFeature } from '../lib/types';
 import {
@@ -35,7 +36,7 @@ async function currentPosition(): Promise<{ latitude: number; longitude: number 
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot },
   ref,
 ) {
   const mapRef = useRef<MapView>(null);
@@ -150,6 +151,31 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           strokeWidth={7}
         />
       )}
+      {mySpot && (
+        <Marker
+          coordinate={{ latitude: mySpot.latitude, longitude: mySpot.longitude }}
+          anchor={{ x: 0.5, y: 0.5 }}
+          tracksViewChanges={false}
+          title="Your car"
+          description={mySpot.streetName ?? undefined}
+        >
+          <View style={styles.spotPin}><Text style={styles.spotPinText}>🅿️</Text></View>
+        </Marker>
+      )}
+      {reports.map((r) => (
+        <Marker
+          key={r.id}
+          coordinate={{ latitude: r.latitude, longitude: r.longitude }}
+          anchor={{ x: 0.5, y: 0.5 }}
+          tracksViewChanges={false}
+          title={isFreeKind(r.kind) ? 'Someone left a space' : 'Reported full'}
+          description={`${r.streetName ? r.streetName + ' · ' : ''}${ago(r.reportedAt)}`}
+        >
+          <View style={[styles.reportPin, !isFreeKind(r.kind) && styles.reportPinFull]}>
+            <Text style={styles.reportPinText}>{isFreeKind(r.kind) ? '✓' : '✕'}</Text>
+          </View>
+        </Marker>
+      ))}
       {region.latitudeDelta <= 0.35 && carparks.map((c) => (
         <Marker
           key={`cp-${c.id}`}
@@ -201,6 +227,19 @@ const styles = StyleSheet.create({
   },
   cpPillFull: { backgroundColor: colors.danger },
   cpText: { color: '#0F1115', fontSize: 11, fontWeight: '800' },
+  // Crowd reports are round badges — a different shape from the rule lines and
+  // the car-park pills, because they mean "a person said so", not "a sign says".
+  reportPin: {
+    width: 26, height: 26, borderRadius: 13, backgroundColor: colors.accent,
+    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#0F1115',
+  },
+  reportPinFull: { backgroundColor: colors.danger },
+  reportPinText: { color: '#0F1115', fontSize: 13, fontWeight: '900' },
+  spotPin: {
+    width: 30, height: 30, borderRadius: 15, backgroundColor: colors.text,
+    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: colors.accent,
+  },
+  spotPinText: { fontSize: 15 },
 });
 
 export default ParkingMap;

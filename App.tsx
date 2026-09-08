@@ -21,7 +21,10 @@ import * as Haptics from 'expo-haptics';
 
 import { classifiedStreets } from './src/lib/parkingData';
 import { useCarparks } from './src/lib/carparks';
-import { featureInRegion } from './src/lib/geo';
+import { useReports, ago, isFreeKind, type Report } from './src/lib/reports';
+import { ReportSheet } from './src/components/ReportBar';
+import { MySpotCard } from './src/components/MySpotCard';
+import { featureCenter, featureInRegion } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
 import {
   findNearestPark, findSoonestPark, formatDistance,
@@ -46,6 +49,12 @@ function Main() {
   const showLegend = useStore((s) => s.showLegend);
   const hydrate = useStore((s) => s.hydrate);
   const carparks = useCarparks();
+  const mySpot = useStore((s) => s.mySpot);
+  const setMySpot = useStore((s) => s.setMySpot);
+  const [reports, addReport] = useReports(region);
+  const [reportAt, setReportAt] = useState<
+    { at: { latitude: number; longitude: number }; streetId?: number; streetName?: string } | null
+  >(null);
 
   const [timerFor, setTimerFor] = useState<{ street: StreetFeature; suggestedMin?: number } | null>(null);
   const [finding, setFinding] = useState(false);
@@ -135,6 +144,36 @@ function Main() {
     }
   }, [finding, statusById, now, handleSelect, flashToast]);
 
+  /** Report flow: always anchored to where the phone actually is. */
+  const onOpenReport = useCallback(async () => {
+    const at = await mapRef.current?.getUserLocation();
+    if (!at) {
+      flashToast('Turn on location to report a spot near you.');
+      return;
+    }
+    const near = findNearestPark(classifiedStreets, statusById, at, 60);
+    setReportAt({ at, streetId: near?.street.properties.id, streetName: near?.street.properties.name });
+  }, [flashToast, statusById]);
+
+  const onReported = useCallback((report: Report, message: string) => {
+    if (report.id !== 'x') addReport(report);
+    setReportAt(null);
+    flashToast(message);
+  }, [addReport, flashToast]);
+
+  /** "Park here" saves where the car is, then offers the timer. */
+  const onSaveSpot = useCallback((street: StreetFeature) => {
+    const center = featureCenter(street);
+    setMySpot({
+      latitude: center.latitude,
+      longitude: center.longitude,
+      streetId: street.properties.id,
+      streetName: street.properties.name,
+      savedAt: Date.now(),
+    });
+    flashToast(`Saved — your car is on ${street.properties.name ?? 'this street'}.`);
+  }, [setMySpot, flashToast]);
+
   const onStartTimer = useCallback(
     (street: StreetFeature, suggestedMin?: number) => {
       setTimerFor({ street, suggestedMin });
@@ -167,6 +206,8 @@ function Main() {
         onRegionChange={setRegion}
         initialRegion={SYDNEY_REGION}
         carparks={carparks?.facilities ?? []}
+        reports={reports}
+        mySpot={mySpot}
       />
 
       {/* top overlays */}
@@ -193,6 +234,8 @@ function Main() {
         )}
       </View>
 
+      <MySpotCardHost />
+
       {toast && (
         <View style={[styles.toast, { bottom: selected ? 340 : 108 + insets.bottom }]} pointerEvents="none">
           <Text style={styles.toastText} numberOfLines={2}>{toast}</Text>
@@ -215,6 +258,13 @@ function Main() {
         >
           <Text style={styles.fabIcon}>?</Text>
         </Pressable>
+        <Pressable
+          style={[styles.fab, styles.fabReport]}
+          onPress={onOpenReport}
+          accessibilityLabel="Report a free or full spot"
+        >
+          <Text style={styles.fabReportIcon}>＋</Text>
+        </Pressable>
       </View>
 
       {/* the app's headline action — full width, centred, always reachable */}
@@ -232,7 +282,19 @@ function Main() {
       )}
 
       <TimerPill />
-      {selected && <StreetSheet street={selected} onStartTimer={onStartTimer} />}
+      {reportAt ? (
+        <ReportSheet
+          at={reportAt.at}
+          streetId={reportAt.streetId}
+          streetName={reportAt.streetName}
+          onDone={onReported}
+          onCancel={() => setReportAt(null)}
+        />
+      ) : (
+        selected && (
+          <StreetSheet street={selected} onStartTimer={onStartTimer} onSaveSpot={onSaveSpot} />
+        )
+      )}
 
       <WelcomeOverlay onFindPark={onFindPark} />
       <LegendModal />
@@ -243,6 +305,18 @@ function Main() {
       />
 
       <StatusBar style="light" />
+    </View>
+  );
+}
+
+/** Positions the saved-spot card under the search bar. */
+function MySpotCardHost() {
+  const insets = useSafeAreaInsets();
+  const spot = useStore((s) => s.mySpot);
+  if (!spot) return null;
+  return (
+    <View style={{ position: 'absolute', top: insets.top + 108, left: 0, right: 0 }} pointerEvents="box-none">
+      <MySpotCard />
     </View>
   );
 }
@@ -332,6 +406,10 @@ const styles = StyleSheet.create({
     ...shadow(0.4, 14, 5),
   },
   fabIcon: { color: colors.text, fontSize: 20, fontWeight: '700', lineHeight: 24 },
+  // The crowd-report button is the one control that adds data, so it carries
+  // the accent while the utilities stay neutral.
+  fabReport: { backgroundColor: colors.accent },
+  fabReportIcon: { color: '#04291B', fontSize: 24, fontWeight: '800', lineHeight: 26 },
   zoomHint: {
     alignSelf: 'center',
     marginTop: 12,

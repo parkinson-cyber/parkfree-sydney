@@ -32,10 +32,12 @@ function metaChips(rules: (SideRule | undefined)[]): string[] {
 }
 
 export function StreetSheet({
-  street, onStartTimer,
+  street, onStartTimer, onSaveSpot,
 }: {
   street: StreetFeature;
   onStartTimer: (street: StreetFeature, suggestedMin?: number) => void;
+  /** Remember where the car is, so "walk me back" works later. */
+  onSaveSpot: (street: StreetFeature) => void;
 }) {
   const now = useStore((s) => s.now);
   const select = useStore((s) => s.select);
@@ -130,7 +132,10 @@ export function StreetSheet({
         </Pressable>
         <Pressable
           style={[styles.button, styles.buttonSecondary]}
-          onPress={() => onStartTimer(street, overall.maxstayMin)}
+          onPress={() => {
+            onSaveSpot(street);
+            onStartTimer(street, overall.maxstayMin);
+          }}
         >
           {/* sign-style short form ("½P") keeps this on one line — the verbose
               limit is already spelled out in the detail text above */}

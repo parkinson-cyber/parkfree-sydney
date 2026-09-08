@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { View } from 'react-native';
 import { formatUpdated, type CarPark } from '../lib/carparks';
+import { ago, isFreeKind, type Report } from '../lib/reports';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { allStreets, streetById } from '../lib/parkingData';
@@ -78,8 +79,39 @@ function carparksToGeojson(carparks: CarPark[]) {
   };
 }
 
+function reportsToGeojson(reports: Report[]) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: reports.map((r) => ({
+      type: 'Feature' as const,
+      geometry: { type: 'Point' as const, coordinates: [r.longitude, r.latitude] },
+      properties: {
+        id: r.id,
+        free: isFreeKind(r.kind),
+        label: isFreeKind(r.kind) ? '✓' : '✕',
+        title: isFreeKind(r.kind) ? 'Someone left a space' : 'Reported full',
+        when: r.reportedAt,
+        street: r.streetName ?? '',
+      },
+    })),
+  };
+}
+
+function spotToGeojson(spot: { latitude: number; longitude: number; streetName?: string } | null) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: spot
+      ? [{
+          type: 'Feature' as const,
+          geometry: { type: 'Point' as const, coordinates: [spot.longitude, spot.latitude] },
+          properties: { label: 'P', street: spot.streetName ?? '' },
+        }]
+      : [],
+  };
+}
+
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -108,6 +140,14 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   const carparkGeojson = useMemo(() => carparksToGeojson(carparks), [carparks]);
   const carparkRef = useRef(carparkGeojson);
   carparkRef.current = carparkGeojson;
+
+  const reportGeojson = useMemo(() => reportsToGeojson(reports), [reports]);
+  const reportRef = useRef(reportGeojson);
+  reportRef.current = reportGeojson;
+
+  const spotGeojson = useMemo(() => spotToGeojson(mySpot), [mySpot]);
+  const spotRef = useRef(spotGeojson);
+  spotRef.current = spotGeojson;
 
   // latest state, readable from the deferred 'load' handler without stale closures
   const geojsonRef = useRef(geojson);
@@ -185,6 +225,18 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     if (!map || !loadedRef.current) return;
     (map.getSource('carparks') as maplibregl.GeoJSONSource | undefined)?.setData(carparkGeojson as any);
   }, [carparkGeojson]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('reports') as maplibregl.GeoJSONSource | undefined)?.setData(reportGeojson as any);
+  }, [reportGeojson]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('myspot') as maplibregl.GeoJSONSource | undefined)?.setData(spotGeojson as any);
+  }, [spotGeojson]);
 
   function buildMap(el: HTMLDivElement): maplibregl.Map {
     const map = new maplibregl.Map({
@@ -299,6 +351,52 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       map.on('mouseenter', 'carparks-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'carparks-pins', () => { map.getCanvas().style.cursor = ''; });
 
+      // Crowd reports: round badges, visually unlike both the rule lines and
+      // the car-park pills — a person said this, a sign didn't.
+      map.addSource('reports', { type: 'geojson', data: reportRef.current as any });
+      map.addLayer({
+        id: 'reports-pins',
+        type: 'circle',
+        source: 'reports',
+        minzoom: 11,
+        paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 5, 16, 9],
+          'circle-color': ['case', ['get', 'free'], colors.accent, colors.danger],
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#0F1115',
+        },
+      });
+      map.on('click', 'reports-pins', (e) => {
+        const f = e.features?.[0];
+        if (!f) return;
+        const pr = f.properties as { title: string; when: string; street: string };
+        new maplibregl.Popup({ closeButton: false, offset: 12 })
+          .setLngLat((f.geometry as any).coordinates)
+          .setHTML(`<strong>${pr.title}</strong><br/>${pr.street ? pr.street + ' · ' : ''}${ago(pr.when)}`)
+          .addTo(map);
+      });
+      map.on('mouseenter', 'reports-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'reports-pins', () => { map.getCanvas().style.cursor = ''; });
+
+      // Where the car is.
+      map.addSource('myspot', { type: 'geojson', data: spotRef.current as any });
+      map.addLayer({
+        id: 'myspot-pin',
+        type: 'symbol',
+        source: 'myspot',
+        layout: {
+          'text-field': 'P',
+          'text-font': ['Noto Sans Bold'],
+          'text-size': 15,
+          'text-allow-overlap': true,
+        },
+        paint: {
+          'text-color': '#0F1115',
+          'text-halo-color': colors.text,
+          'text-halo-width': 9,
+        },
+      });
+
       // apply whatever state changed while the style was loading
       map.setLayoutProperty(
         'streets-unknown', 'visibility',
@@ -315,7 +413,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     map.on('click', (e) => {
       // A tap on a car-park pin opens its popup (handler above) and must not
       // also select the street underneath it.
-      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins'] }).length) return;
+      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins', 'reports-pins'] }).length) return;
       const hits = map.queryRenderedFeatures(
         [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]],
         { layers: ['streets-classified', 'streets-unknown'] },
