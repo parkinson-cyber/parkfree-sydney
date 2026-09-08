@@ -14,6 +14,7 @@ import { featureCenter, featureInRegion, nearestStreet } from '../lib/geo';
 import { pShort } from '../lib/rules';
 import { formatUpdated } from '../lib/carparks';
 import { ago, isFreeKind } from '../lib/reports';
+import { evaluateCarPark } from '../lib/councilCarparks';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region, StreetFeature } from '../lib/types';
 import {
@@ -36,7 +37,7 @@ async function currentPosition(): Promise<{ latitude: number; longitude: number 
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks },
   ref,
 ) {
   const mapRef = useRef<MapView>(null);
@@ -151,6 +152,23 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           strokeWidth={7}
         />
       )}
+      {region.latitudeDelta <= 0.35 && councilCarParks.map((c) => {
+        const ev = evaluateCarPark(c, new Date());
+        return (
+          <Marker
+            key={c.id}
+            coordinate={{ latitude: c.latitude, longitude: c.longitude }}
+            anchor={{ x: 0.5, y: 0.5 }}
+            tracksViewChanges={false}
+            title={c.name}
+            description={`${ev.detail}${c.openingHours ? ` · ${c.openingHours}` : ''}`}
+          >
+            <View style={[styles.cpPill, !ev.freeNow && styles.cpPillPaid]}>
+              <Text style={styles.cpText}>P {ev.badge}</Text>
+            </View>
+          </Marker>
+        );
+      })}
       {mySpot && (
         <Marker
           coordinate={{ latitude: mySpot.latitude, longitude: mySpot.longitude }}
@@ -226,6 +244,7 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
   },
   cpPillFull: { backgroundColor: colors.danger },
+  cpPillPaid: { backgroundColor: colors.warning },
   cpText: { color: '#0F1115', fontSize: 11, fontWeight: '800' },
   // Crowd reports are round badges — a different shape from the rule lines and
   // the car-park pills, because they mean "a person said so", not "a sign says".

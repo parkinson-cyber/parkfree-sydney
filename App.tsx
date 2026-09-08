@@ -22,6 +22,7 @@ import * as Haptics from 'expo-haptics';
 import { classifiedStreets } from './src/lib/parkingData';
 import { useCarparks } from './src/lib/carparks';
 import { useReports, ago, isFreeKind, type Report } from './src/lib/reports';
+import { councilCarParks } from './src/lib/councilCarparks';
 import { ReportSheet } from './src/components/ReportBar';
 import { MySpotCard } from './src/components/MySpotCard';
 import { featureCenter, featureInRegion } from './src/lib/geo';
@@ -208,6 +209,7 @@ function Main() {
         carparks={carparks?.facilities ?? []}
         reports={reports}
         mySpot={mySpot}
+        councilCarParks={councilCarParks}
       />
 
       {/* top overlays */}

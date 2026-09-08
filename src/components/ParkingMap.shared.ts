@@ -1,6 +1,7 @@
 import type { LiveStatus, Region, StreetFeature } from '../lib/types';
 import type { CarPark } from '../lib/carparks';
 import type { Report } from '../lib/reports';
+import type { CouncilCarPark } from '../lib/councilCarparks';
 import type { SavedSpot } from '../state/store';
 
 export interface ParkingMapProps {
@@ -19,6 +20,8 @@ export interface ParkingMapProps {
   reports: Report[];
   /** Where the user parked, if saved. */
   mySpot: SavedSpot | null;
+  /** Council off-street car parks, with their free periods. */
+  councilCarParks: CouncilCarPark[];
 }
 
 export interface ParkingMapHandle {

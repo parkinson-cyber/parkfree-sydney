@@ -9,6 +9,7 @@ import React, {
 import { View } from 'react-native';
 import { formatUpdated, type CarPark } from '../lib/carparks';
 import { ago, isFreeKind, type Report } from '../lib/reports';
+import { evaluateCarPark, type CouncilCarPark } from '../lib/councilCarparks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { allStreets, streetById } from '../lib/parkingData';
@@ -97,6 +98,28 @@ function reportsToGeojson(reports: Report[]) {
   };
 }
 
+function councilToGeojson(parks: CouncilCarPark[], now: Date) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: parks.map((c) => {
+      const ev = evaluateCarPark(c, now);
+      return {
+        type: 'Feature' as const,
+        geometry: { type: 'Point' as const, coordinates: [c.longitude, c.latitude] },
+        properties: {
+          id: c.id, name: c.name, council: c.council,
+          label: `P ${ev.badge}`, free: ev.freeNow, detail: ev.detail,
+          hours: c.openingHours ?? '', extra: [
+            c.accessibleSpaces ? `${c.accessibleSpaces} accessible` : '',
+            c.evCharging ? 'EV charging' : '',
+            c.clearanceHeight ? `${c.clearanceHeight} clearance` : '',
+          ].filter(Boolean).join(' · '),
+        },
+      };
+    }),
+  };
+}
+
 function spotToGeojson(spot: { latitude: number; longitude: number; streetName?: string } | null) {
   return {
     type: 'FeatureCollection' as const,
@@ -111,7 +134,7 @@ function spotToGeojson(spot: { latitude: number; longitude: number; streetName?:
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -144,6 +167,13 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   const reportGeojson = useMemo(() => reportsToGeojson(reports), [reports]);
   const reportRef = useRef(reportGeojson);
   reportRef.current = reportGeojson;
+
+  const councilGeojson = useMemo(
+    () => councilToGeojson(councilCarParks, new Date()),
+    [councilCarParks],
+  );
+  const councilRef = useRef(councilGeojson);
+  councilRef.current = councilGeojson;
 
   const spotGeojson = useMemo(() => spotToGeojson(mySpot), [mySpot]);
   const spotRef = useRef(spotGeojson);
@@ -237,6 +267,12 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     if (!map || !loadedRef.current) return;
     (map.getSource('myspot') as maplibregl.GeoJSONSource | undefined)?.setData(spotGeojson as any);
   }, [spotGeojson]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('council') as maplibregl.GeoJSONSource | undefined)?.setData(councilGeojson as any);
+  }, [councilGeojson]);
 
   function buildMap(el: HTMLDivElement): maplibregl.Map {
     const map = new maplibregl.Map({
@@ -351,6 +387,44 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       map.on('mouseenter', 'carparks-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'carparks-pins', () => { map.getCanvas().style.cursor = ''; });
 
+      // Council car parks — the off-street option, badged with how long you
+      // get free ("P 3h free"). Green while the free period is running.
+      map.addSource('council', { type: 'geojson', data: councilRef.current as any });
+      map.addLayer({
+        id: 'council-pins',
+        type: 'symbol',
+        source: 'council',
+        minzoom: 11,
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 11, 10, 16, 13],
+          'text-allow-overlap': false,
+          'text-padding': 2,
+        },
+        paint: {
+          'text-color': '#0F1115',
+          'text-halo-color': ['case', ['get', 'free'], colors.accent, colors.warning],
+          'text-halo-width': 6,
+        },
+      });
+      map.on('click', 'council-pins', (e) => {
+        const f = e.features?.[0];
+        if (!f) return;
+        const pr = f.properties as { name: string; detail: string; hours: string; extra: string; council: string };
+        new maplibregl.Popup({ closeButton: true, offset: 14, maxWidth: '280px' })
+          .setLngLat((f.geometry as any).coordinates)
+          .setHTML(
+            `<strong>${pr.name}</strong><br/>${pr.detail}` +
+            (pr.hours ? `<br/><span style="opacity:.7">${pr.hours}</span>` : '') +
+            (pr.extra ? `<br/><span style="opacity:.7">${pr.extra}</span>` : '') +
+            `<br/><span style="opacity:.55">${pr.council} Council</span>`,
+          )
+          .addTo(map);
+      });
+      map.on('mouseenter', 'council-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'council-pins', () => { map.getCanvas().style.cursor = ''; });
+
       // Crowd reports: round badges, visually unlike both the rule lines and
       // the car-park pills — a person said this, a sign didn't.
       map.addSource('reports', { type: 'geojson', data: reportRef.current as any });
@@ -413,7 +487,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     map.on('click', (e) => {
       // A tap on a car-park pin opens its popup (handler above) and must not
       // also select the street underneath it.
-      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins', 'reports-pins'] }).length) return;
+      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins', 'reports-pins', 'council-pins'] }).length) return;
       const hits = map.queryRenderedFeatures(
         [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]],
         { layers: ['streets-classified', 'streets-unknown'] },
