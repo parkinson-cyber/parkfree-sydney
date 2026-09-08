@@ -40,9 +40,15 @@ jobs:
         run: |
           set -euo pipefail
           cd out
+          # Vercel builds every branch it sees. This one carries data, not an
+          # app, so a build here can only fail - and a red deployment every hour
+          # buries real failures. Vercel reads vercel.json from the commit being
+          # pushed, so shipping this file in the branch turns its deployments
+          # off at the source.
+          printf '%s\n' '{ "$schema": "https://openapi.vercel.sh/vercel.json", "git": { "deploymentEnabled": { "data-live": false } } }' > vercel.json
           git init -q -b data-live
           git config user.name "parkfree-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add carparks.json
+          git add carparks.json vercel.json
           git commit -q -m "carparks $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data-live
