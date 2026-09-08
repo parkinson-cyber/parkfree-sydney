@@ -1,0 +1,4 @@
+{
+  "label": "Randwick RPS",
+  "_source": "Randwick City Council ArcGIS (mapservices.randwick.nsw.gov.au): extTransport/ResidentParkingZone/MapServer/0 (699 kerb polylines with street, house range, RPS zone and the signed limit in zoneType) and extCollectorApp/Commercial_Parking/MapServer/0 (77 kerb sections in four shopping strips with the signed restriction, hours and side). Fetched 2026-09-08 into randwick-resident-zone-kerbs.geojson / randwick-commercial-kerbs.geojson so the overlay re-derives offline."
+}

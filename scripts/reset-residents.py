@@ -40,6 +40,7 @@ VISION_FILES = [
 # after " · ", so match on the prefix.
 SCHEME_FILES = [
     "willoughby-south-scheme.json",
+    "randwick-kerbs-scheme.json",
 ]
 
 
@@ -68,7 +69,7 @@ def main():
         if p.get("cat") not in ("residents", "free_limited"):
             continue
         label = (p.get("left") or {}).get("permitLabel") or ""
-        if label in labels or label.split(" · ")[0] in schemes:
+        if label in labels or any(label.startswith(s) for s in schemes):
             p["cat"] = "unknown"
             p["left"] = {"kind": "unknown"}
             p.pop("right", None)

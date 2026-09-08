@@ -38,6 +38,7 @@ SOURCES = [
     "Hunters Hill (Woolwich W1) resident-permit area",
     "Strathfield resident-permit schemes (vision-derived, partial)",
     "Willoughby South resident parking scheme (council map, Mar 2024)",
+    "Randwick kerb signs (council GIS: resident-zone kerbs with limits + shopping-strip kerbs)",
 ]
 
 

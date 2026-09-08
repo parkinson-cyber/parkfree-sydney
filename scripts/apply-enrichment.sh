@@ -18,5 +18,12 @@ for s in northsydney woollahra ryde mosman randwick innerwest innerwest-leichhar
   python3 "scripts/fetch-${s}-parking.py"
 done
 
+# Randwick: area polygons (network, council ArcGIS) then per-kerb signs (offline,
+# committed GeoJSON). The kerb pass upgrades polygon-tagged segments, so order matters.
+echo "── randwick-rps-geo (network) ───────"
+python3 scripts/fetch-randwick-rps-geo.py || echo "  (council server unreachable — polygon tags kept as-is)"
+echo "── randwick-kerbs ───────────────────"
+python3 scripts/fetch-randwick-kerbs-parking.py
+
 echo "── finalize ─────────────────────────"
 python3 scripts/finalize-metadata.py
