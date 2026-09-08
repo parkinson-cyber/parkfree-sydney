@@ -313,6 +313,9 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     map.on('moveend', () => onRegionChange(regionFromMap(map)));
 
     map.on('click', (e) => {
+      // A tap on a car-park pin opens its popup (handler above) and must not
+      // also select the street underneath it.
+      if (map.queryRenderedFeatures(e.point, { layers: ['carparks-pins'] }).length) return;
       const hits = map.queryRenderedFeatures(
         [[e.point.x - 8, e.point.y - 8], [e.point.x + 8, e.point.y + 8]],
         { layers: ['streets-classified', 'streets-unknown'] },
