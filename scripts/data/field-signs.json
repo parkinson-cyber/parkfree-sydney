@@ -1,0 +1,26 @@
+{
+  "_source": "Parking signs photographed on the street. Each entry records what the sign actually says, where and when it was seen, and who saw it — this is the sign itself, not a council's description of it, so it outranks the permit-area schedules for the streets it covers. Photos are kept in docs/field-signs/ so any claim here can be re-checked against the picture. Never extend a sign beyond the extent recorded in `bbox`: a sign governs its own stretch of kerb, not the whole suburb.",
+  "signs": [
+    {
+      "id": "alfred-st-north-9p-2026-09",
+      "street": "Alfred Street North",
+      "suburb": "North Sydney",
+      "observed": "2026-09-09",
+      "observedBy": "owner photo",
+      "photo": "docs/field-signs/2026-09-09-alfred-st-north-9p.jpg",
+      "signText": "9P 9AM-6PM MON-FRI PERMIT HOLDERS EXCEPTED",
+      "note": "Double-headed arrow, so the restriction runs both ways along the kerb from the sign. Seen alongside the new roadworks on Alfred St North. Supersedes the Area 1A permit-schedule tagging, which knew the scheme applied here but not the limit.",
+      "bbox": [-33.8400, -33.8310, 151.2100, 151.2145],
+      "rule": {
+        "kind": "free_limited",
+        "maxstayMin": 540,
+        "interval": "Mo-Fr 09:00-18:00",
+        "permitExcepted": true,
+        "zone": "residential",
+        "permitArea": 1,
+        "permitZone": "A",
+        "permitLabel": "North Sydney Area 1A"
+      }
+    }
+  ]
+}

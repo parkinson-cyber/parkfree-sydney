@@ -8,6 +8,7 @@
 3. Read `PLAN.md` for what's next and why.
 
 ## Rules that don't change
+- **A photographed sign beats a schedule.** `scripts/data/field-signs.json` holds signs seen on the street (photo in `docs/field-signs/`). It outranks permit-area schedules for the kerb it covers, never beyond its `bbox`, and never over a council sign census. Add new photos there rather than editing `parking.json`.
 - **Data provenance is the product.** Never default `unknown` → `free`. Every classification traces to a real fetched council/TfNSW response. OSM `parking:lane` is physical, not regulatory. No Parkopedia. A false "permit required" is the worst error for a free-parking finder.
 - **Estimates look like estimates.** Anything derived (availability score, crowd report, timer-based departure) is rendered as a confidence band, never as a verified rule. Inferred data must never be dressed up as a user's report.
 - **Docs move with code.** Every change that lands updates `PROGRESS.md` (state + dated changelog line). Convention changes update this file. Commit docs in the same commit.

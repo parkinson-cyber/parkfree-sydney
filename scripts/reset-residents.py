@@ -59,13 +59,54 @@ def scheme_labels():
     return {json.load(open(os.path.join(HERE, "data", fn)))["label"] for fn in SCHEME_FILES}
 
 
+def field_signs():
+    """Photographed-sign entries, for resetting their tags.
+
+    Matching is by marker where present, and otherwise by the sign's own rule
+    within its street and bbox — tags written before the marker existed have to
+    reset too, or the overlay stops being re-derivable.
+    """
+    path = os.path.join(HERE, "data", "field-signs.json")
+    if not os.path.exists(path):
+        return []
+    return json.load(open(path))["signs"]
+
+
+def _matches_sign(props, sign):
+    from lib_enrich import norm, in_bbox
+    if norm(props.get("name") or "") != norm(sign["street"]):
+        return False
+    if not in_bbox(props["_coords"], tuple(sign["bbox"])):
+        return False
+    left = props.get("left") or {}
+    rule = sign["rule"]
+    return (left.get("maxstayMin") == rule.get("maxstayMin")
+            and left.get("interval") == rule.get("interval")
+            and left.get("kind") == rule.get("kind"))
+
+
 def main():
     labels = vision_labels()
+    signs = field_signs()
+    field = 0
     schemes = scheme_labels()
     coll = json.load(open(DATA_PATH))
     reset = 0
     for f in coll["features"]:
         p = f["properties"]
+        # Photographed-sign tags carry a marker, so they reset cleanly whatever
+        # category they produced.
+        p["_coords"] = f["geometry"]["coordinates"]
+        is_field = bool((p.get("left") or {}).get("fieldSign")) or any(
+            _matches_sign(p, sign) for sign in signs)
+        p.pop("_coords", None)
+        if is_field:
+            p["cat"] = "unknown"
+            p["left"] = {"kind": "unknown"}
+            p.pop("right", None)
+            p.pop("zone", None)
+            field += 1
+            continue
         if p.get("cat") not in ("residents", "free_limited"):
             continue
         label = (p.get("left") or {}).get("permitLabel") or ""
@@ -77,7 +118,7 @@ def main():
             reset += 1
     json.dump(coll, open(DATA_PATH, "w"))
     print(f"✓ reset {reset} vision-pipeline resident segments to 'unknown' "
-          f"({len(labels)} labels)")
+          f"({len(labels)} labels)" + (f", plus {field} field-sign segments" if field else ""))
 
 
 if __name__ == "__main__":

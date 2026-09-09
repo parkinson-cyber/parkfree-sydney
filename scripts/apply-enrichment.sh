@@ -25,5 +25,10 @@ python3 scripts/fetch-randwick-rps-geo.py || echo "  (council server unreachable
 echo "── randwick-kerbs ───────────────────"
 python3 scripts/fetch-randwick-kerbs-parking.py
 
+# Photographed signs run last: they are the strongest evidence for the exact
+# stretch of kerb they cover, so they get the final say over schedule-derived tags.
+echo "── field-signs ──────────────────────"
+python3 scripts/fetch-field-signs.py
+
 echo "── finalize ─────────────────────────"
 python3 scripts/finalize-metadata.py
