@@ -20,6 +20,9 @@ done
 
 # Randwick: area polygons (network, council ArcGIS) then per-kerb signs (offline,
 # committed GeoJSON). The kerb pass upgrades polygon-tagged segments, so order matters.
+echo "── northern-beaches (offline signs) ─"
+python3 scripts/fetch-northernbeaches-parking.py
+
 echo "── randwick-rps-geo (network) ───────"
 python3 scripts/fetch-randwick-rps-geo.py || echo "  (council server unreachable — polygon tags kept as-is)"
 echo "── randwick-kerbs ───────────────────"

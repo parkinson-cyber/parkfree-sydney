@@ -147,6 +147,12 @@ unknown:
 - **Randwick** — `extTransport/ResidentParkingZone/MapServer/0` = 699 kerb polylines (streetName, from/toHouseNumber, suburb, zone). Not yet used.
 - Council websites (`willoughby.nsw.gov.au`, `lanecove.nsw.gov.au`) return 403 to curl/WebFetch; a real browser gets through.
 
+## Verified 2026-09-10
+
+- **Northern Beaches — APPLIED.** `maps.northernbeaches.nsw.gov.au/arcgis/rest/services/Assets/MapServer/4` ("Road Signs", 29,691 points). `NARR1` holds the RTA sign type; `NARR2`/`NARR3` are just its overflow text. Parking types cover 5 min → 7 hours, No Stopping, No Parking, Bus Zone, Loading Zone, Clearway. **Hours are not in this layer** — time plates exist as their own records without the times. Layer 15 is "Car Parks" (405 polygons, asset fields only, no rates). See `fetch-northernbeaches-parking.py`.
+- **Sutherland Shire — dead end.** `geoserver.ssc.nsw.gov.au` is reachable and has 49 services; none are parking (kerb condition/type, traffic facilities, planning overlays). Cronulla has no published parking data.
+- **Manly permit scheme**: Northern Beaches runs residential permit areas (Little Manly, Ocean Beach, Isthmus/Fairy Bower, Tower Hill, Ivanhoe Park) with an interactive webmap; not yet extracted — the sign register already covers most of Manly's kerbs, so this is a refinement rather than new coverage.
+
 ## Verified 2026-09-08, later in the day
 
 - **Randwick kerb layers — applied.** `extTransport/ResidentParkingZone/0` and `extCollectorApp/Commercial_Parking/0` via `fetch-randwick-kerbs-parking.py`. Randwick publishes no meter/sign GIS beyond these; councillors rejected beach meters on 30 Jun 2026, so Coogee/Maroubra/Clovelly kerbs are free unless signed. Maroubra Beach's remaining unknowns have no source.
