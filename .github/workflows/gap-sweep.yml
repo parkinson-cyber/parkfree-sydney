@@ -1,0 +1,142 @@
+# Three-hourly gap sweep.
+#
+# It cannot invent parking rules, and it doesn't try. What it does is the part
+# that genuinely benefits from repetition: re-run every source that can change,
+# and knock on the doors of the councils that publish nothing yet, so the day
+# one of them opens a layer we find out in three hours rather than three months.
+#
+#   refresh   re-runs the network sources (TfNSW clearways, Northern Beaches
+#             signs, Randwick kerbs) and opens a PR if the map actually moved.
+#   probe     rotates through the councils with no published parking data and
+#             reports anything new in the run summary.
+#
+# Silent when nothing changed — no commits, no issues, no noise.
+
+name: Gap sweep
+
+on:
+  schedule:
+    - cron: "40 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: gap-sweep
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Re-fetch the sources that can change
+        run: |
+          set -euo pipefail
+          cd scripts
+          python3 fetch-tfnsw-clearways.py --fetch
+          python3 fetch-northernbeaches-parking.py --fetch
+          python3 fetch-randwick-kerbs-parking.py --fetch
+
+      - name: Rebuild every offline overlay
+        run: |
+          set -euo pipefail
+          python3 scripts/reset-residents.py
+          bash scripts/apply-enrichment.sh
+
+      - name: Did the map move?
+        id: diff
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/data scripts/data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing changed — no PR." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            node -e '
+              const d = require("./src/data/parking.json");
+              const n = d.features.filter(f => f.properties.cat !== "unknown").length;
+              console.log(`classified now ${n} of ${d.features.length}`);
+            ' | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # A source going down usually looks like "everything is suddenly unknown",
+      # so refuse to propose a diff that loses ground.
+      - name: Refuse a regression
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          BEFORE=$(git show HEAD:src/data/parking.json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).features.filter(f=>f.properties.cat!=="unknown").length))')
+          AFTER=$(node -e 'console.log(require("./src/data/parking.json").features.filter(f=>f.properties.cat!=="unknown").length)')
+          echo "classified $BEFORE -> $AFTER" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$AFTER" -lt $(( BEFORE - BEFORE / 20 )) ]; then
+            echo "::error::Classified count fell more than 5% ($BEFORE -> $AFTER). That is a source outage, not a real change."
+            exit 1
+          fi
+
+      - name: Test before proposing
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          npm ci --no-audit --no-fund
+          npm run typecheck
+          npm test
+
+      - name: Open a PR
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          BRANCH="gap-sweep/$(date -u +%Y-%m-%dT%H%M)"
+          git config user.name "parkfree-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/data scripts/data
+          git commit -m "Gap sweep: upstream parking data changed ($(date -u +%Y-%m-%d\ %H:%MZ))"
+          git push -q --force origin "$BRANCH"
+          COUNT=$(node -e 'const d=require("./src/data/parking.json");console.log(d.features.filter(f=>f.properties.cat!=="unknown").length+" of "+d.features.length)')
+          gh pr create --title "Gap sweep: upstream data changed" --head "$BRANCH" --base main --body "A source this map depends on published something different.
+
+          Classified after this change: **$COUNT**.
+
+          Checks already run: a guard against a >5% drop (that shape means a source outage, not a real change), typecheck, and the full test suite. Read the diff before merging — these are rules drivers act on." || echo "PR already open"
+
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Knock on the doors that are still shut
+        run: |
+          set -euo pipefail
+          echo "## Councils with no published parking data" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| host | status |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          for host in \
+            "https://maps.kmc.nsw.gov.au/arcgis/rest/services" \
+            "https://map.hornsby.nsw.gov.au/intramaps99/ApplicationEngine/Projects/" \
+            "https://mapping.willoughby.nsw.gov.au/Exponare/Rest/" \
+            "https://geoserver.ssc.nsw.gov.au/arcgis/rest/services" \
+            "https://maps.georgesriver.nsw.gov.au/arcgis/rest/services" \
+            "https://maps.cityofparramatta.nsw.gov.au/arcgis/rest/services" \
+            "https://maps.bayside.nsw.gov.au/arcgis/rest/services" \
+            "https://maps.canterbury-bankstown.nsw.gov.au/arcgis/rest/services"; do
+            CODE=$(curl -sS --max-time 20 -o /tmp/probe.json -w '%{http_code}' "$host?f=json" || echo "unreachable")
+            HITS=$(python3 -c "
+          import json
+          try:
+              d=json.load(open('/tmp/probe.json'))
+              names=[s['name'] for s in d.get('services',[])]
+              hits=[n for n in names if any(k in n.lower() for k in ['park','sign','kerb','asset','traffic'])]
+              print(', '.join(hits[:4]) if hits else 'no parking layers')
+          except Exception:
+              print('-')" 2>/dev/null || echo "-")
+            echo "| $(echo "$host" | cut -d/ -f3) | $CODE — $HITS |" >> "$GITHUB_STEP_SUMMARY"
+          done
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "A host that starts answering with a parking or sign layer is worth a session." >> "$GITHUB_STEP_SUMMARY"

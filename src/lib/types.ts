@@ -49,6 +49,14 @@ export interface SideRule {
   zone?: ZoneType;
   /** Derived from a metered rate-zone polygon (rate known, exact hours not). */
   rateZoneFill?: boolean;
+  /**
+   * The ban window is known, but what happens outside it is not. True for a
+   * TfNSW clearway: the clearway hours are published, yet the same kerb on a
+   * main road may also be a bus lane, a loading zone or metered. Saying
+   * "parking allowed now" there would be a false free, so the engine says the
+   * ban and then sends you to the sign.
+   */
+  otherTimesUnknown?: boolean;
 }
 
 export interface StreetProps {

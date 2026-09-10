@@ -88,6 +88,14 @@ published source cannot be filled without inventing data. Status as probed
 | 3 | **Ku-ring-gai rest** (Lindfield, Gordon, Killara, St Ives, Pymble, Turramurra, Wahroonga) | Ku-ring-gai | **Car parks only** (same layer). | Car parks applied. Streets: council request, or accept unknown. |
 | 4 | **Hornsby** | Hornsby | **Lead**: IntraMaps at `map.hornsby.nsw.gov.au/intramaps99/`; `ApplicationEngine/Projects/` returns JSON, so there is an API to walk. | Walk the IntraMaps project/module tree for a parking or sign layer. |
 | 5 | **Northern Beaches (rest)** | Northern Beaches | **Applied** — sign register gave 1,408 segments (Manly 55%). | Refine: Manly permit-scheme areas; the 906 signs that matched no street within 22 m. |
+| 6 | **West — Parramatta, Granville, Merrylands, Auburn** | City of Parramatta / Cumberland | **Main roads applied** via TfNSW clearways (Woodville Rd, James Ruse Dr, The Horsley Dr). Side streets: no council source found yet. | Probe Parramatta + Cumberland GIS (in the 3-hourly sweep). Parramatta CBD may have a meter layer. |
+| 7 | **South — Hurstville, Kogarah, Rockdale, Bankstown** | Georges River / Bayside / Canterbury-Bankstown | **Main roads applied** (Forest Rd, Stoney Creek Rd, Punchbowl Rd, King Georges Rd). Side streets: none. Georges River was checked in July — permit scheme exists but no online GIS. | Probe Georges River / Bayside / Canterbury-Bankstown (in the sweep). |
+
+**Every 3 hours**, `.github/workflows/gap-sweep.yml` re-runs the network sources
+and opens a PR only if the map actually moved, and separately knocks on the
+councils in steps 6–7 that publish nothing, reporting anything new in the run
+summary. It cannot invent rules and does not try; what it automates is
+noticing the day a council opens a layer.
 
 Honest expectation to set: steps 2–4 may all come back "no published source",
 in which case those suburbs stay unknown until someone photographs signs or a

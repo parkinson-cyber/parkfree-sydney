@@ -279,6 +279,20 @@ eq(formatDistance(1240), '1.2 km', 'kilometres');
 eq(walkMinutes(10), 1, 'walk time never rounds to zero');
 eq(walkMinutes(400), 5, 'walk time at 80 m/min');
 
+// --- clearways: a known ban window, unknown the rest of the day ---
+const tfnswClearway = { kind: 'no_stopping', banInterval: 'Mo-Fr 06:00-10:00; Mo-Fr 15:00-19:00',
+                        otherTimesUnknown: true };
+eq(evaluateSide(tfnswClearway, new Date(2026, 6, 15, 7, 0)).status, 'banned',
+   'inside clearway hours it is banned');
+eq(evaluateSide(tfnswClearway, new Date(2026, 6, 15, 12, 0)).status, 'unknown',
+   'outside clearway hours it refuses to claim the kerb is free');
+eq(evaluateSide(tfnswClearway, new Date(2026, 6, 15, 12, 0)).detail.includes('check the sign'), true,
+   'and says why');
+// without the flag, a timed ban still frees up outside its window
+eq(evaluateSide({ kind: 'no_stopping', banInterval: 'Mo-Fr 06:00-10:00' },
+   new Date(2026, 6, 15, 12, 0)).status, 'free',
+   'an ordinary timed ban is still free outside its window');
+
 // --- availability estimate ---
 // The estimate must never contradict the law, never claim certainty, and must
 // always be able to explain itself.

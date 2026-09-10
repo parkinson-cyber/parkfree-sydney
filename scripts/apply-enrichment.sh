@@ -30,6 +30,11 @@ python3 scripts/fetch-randwick-kerbs-parking.py
 
 # Photographed signs run last: they are the strongest evidence for the exact
 # stretch of kerb they cover, so they get the final say over schedule-derived tags.
+# State roads: TfNSW signs the main roads councils don't. Runs before field
+# signs so a photographed sign can still override a clearway.
+echo "── tfnsw-clearways (offline) ────────"
+python3 scripts/fetch-tfnsw-clearways.py
+
 echo "── field-signs ──────────────────────"
 python3 scripts/fetch-field-signs.py
 

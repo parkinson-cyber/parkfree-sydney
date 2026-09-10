@@ -284,6 +284,16 @@ export function evaluateSide(rule: SideRule | undefined, now: Date): SideEvaluat
   // window the kerb is available.
   if (rule.kind === 'no_parking' || rule.kind === 'no_stopping') {
     const what = rule.zone === 'loading' ? 'Loading zone' : `No ${rule.kind === 'no_stopping' ? 'stopping' : 'parking'}`;
+    // A clearway tells us exactly when we may not stop, and nothing about the
+    // rest of the day. On a main road the rest of the day is often a bus lane
+    // or a loading zone, so claiming it free would be the worst kind of wrong.
+    if (rule.otherTimesUnknown) {
+      return {
+        status: 'unknown',
+        detail: `${what} ${formatInterval(rule.banInterval)}. Outside those hours check the sign — main roads often carry other restrictions.`,
+        zone: rule.zone,
+      };
+    }
     return {
       status: 'free',
       detail: `Parking allowed now — ${what.toLowerCase()} ${formatInterval(rule.banInterval)}.`,
