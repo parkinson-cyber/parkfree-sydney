@@ -1,0 +1,249 @@
+{
+ "generated": "2026-09-10",
+ "source": "LGA polygons from NSW Spatial Services (NSW_Administrative_Boundaries_Theme layer 8), coverage counted from src/data/parking.json by point-in-polygon on each street midpoint.",
+ "lgas": [
+  {
+   "lga": "NORTHERN BEACHES",
+   "streets": 6089,
+   "classified": 1483,
+   "pct": 24,
+   "unknown": 4606,
+   "status": "partial",
+   "note": "Sign asset register applied (1,408 segs). Next: Manly permit areas, 906 unmatched signs"
+  },
+  {
+   "lga": "INNER WEST",
+   "streets": 3533,
+   "classified": 889,
+   "pct": 25,
+   "unknown": 2644,
+   "status": "partial",
+   "note": "RPS schedules applied. No sign census published"
+  },
+  {
+   "lga": "RYDE",
+   "streets": 2575,
+   "classified": 347,
+   "pct": 13,
+   "unknown": 2228,
+   "status": "partial",
+   "note": "RPS zones applied. Park\u2019nPay sensors exist but are not published"
+  },
+  {
+   "lga": "CANADA BAY",
+   "streets": 1517,
+   "classified": 245,
+   "pct": 16,
+   "unknown": 1272,
+   "status": "partial",
+   "note": "Five Dock Area 6 only; Areas 1-5 login-walled"
+  },
+  {
+   "lga": "WILLOUGHBY",
+   "streets": 1792,
+   "classified": 567,
+   "pct": 32,
+   "unknown": 1225,
+   "status": "partial",
+   "note": "Chatswood CBD signs + Willoughby South scheme map. Rest of LGA unsourced \u2014 check Have Your Say for more scheme maps"
+  },
+  {
+   "lga": "STRATHFIELD",
+   "streets": 925,
+   "classified": 221,
+   "pct": 24,
+   "unknown": 704,
+   "status": "partial",
+   "note": "RPS 1-50 applied (vision-derived)"
+  },
+  {
+   "lga": "LANE COVE",
+   "streets": 883,
+   "classified": 320,
+   "pct": 36,
+   "unknown": 563,
+   "status": "partial",
+   "note": "Council schedule applied (TRIM directive)"
+  },
+  {
+   "lga": "MOSMAN",
+   "streets": 643,
+   "classified": 95,
+   "pct": 15,
+   "unknown": 548,
+   "status": "partial",
+   "note": "RPS map read visually; no machine-readable source"
+  },
+  {
+   "lga": "BURWOOD",
+   "streets": 785,
+   "classified": 369,
+   "pct": 47,
+   "unknown": 416,
+   "status": "partial",
+   "note": "RPS areas applied (vision-derived)"
+  },
+  {
+   "lga": "HUNTERS HILL",
+   "streets": 237,
+   "classified": 25,
+   "pct": 11,
+   "unknown": 212,
+   "status": "partial",
+   "note": "Woolwich W1 only"
+  },
+  {
+   "lga": "CANTERBURY-BANKSTOWN",
+   "streets": 7216,
+   "classified": 169,
+   "pct": 2,
+   "unknown": 7047,
+   "status": "lead",
+   "note": "Not yet probed \u2014 biggest single gap in Sydney"
+  },
+  {
+   "lga": "BLACKTOWN",
+   "streets": 5245,
+   "classified": 2,
+   "pct": 0,
+   "unknown": 5243,
+   "status": "lead",
+   "note": "Not yet probed"
+  },
+  {
+   "lga": "THE HILLS SHIRE",
+   "streets": 4472,
+   "classified": 59,
+   "pct": 1,
+   "unknown": 4413,
+   "status": "lead",
+   "note": "Not yet probed"
+  },
+  {
+   "lga": "CITY OF PARRAMATTA",
+   "streets": 4820,
+   "classified": 449,
+   "pct": 9,
+   "unknown": 4371,
+   "status": "lead",
+   "note": "Not yet probed; CBD likely has a meter layer"
+  },
+  {
+   "lga": "CUMBERLAND",
+   "streets": 4133,
+   "classified": 154,
+   "pct": 4,
+   "unknown": 3979,
+   "status": "lead",
+   "note": "Not yet probed"
+  },
+  {
+   "lga": "BAYSIDE",
+   "streets": 3353,
+   "classified": 260,
+   "pct": 8,
+   "unknown": 3093,
+   "status": "lead",
+   "note": "Appears as a publisher in TfNSW council-data catalogue \u2014 check for a sign bundle"
+  },
+  {
+   "lga": "FAIRFIELD",
+   "streets": 3054,
+   "classified": 51,
+   "pct": 2,
+   "unknown": 3003,
+   "status": "lead",
+   "note": "Not yet probed"
+  },
+  {
+   "lga": "HORNSBY",
+   "streets": 3074,
+   "classified": 117,
+   "pct": 4,
+   "unknown": 2957,
+   "status": "lead",
+   "note": "IntraMaps at map.hornsby.nsw.gov.au \u2014 ApplicationEngine/Projects answers JSON; walk it"
+  },
+  {
+   "lga": "LIVERPOOL",
+   "streets": 2704,
+   "classified": 4,
+   "pct": 0,
+   "unknown": 2700,
+   "status": "lead",
+   "note": "Not yet probed"
+  },
+  {
+   "lga": "GEORGES RIVER",
+   "streets": 2579,
+   "classified": 93,
+   "pct": 4,
+   "unknown": 2486,
+   "status": "lead",
+   "note": "RPS exists, no online GIS found. Probe maps.georgesriver + Have Your Say"
+  },
+  {
+   "lga": "KU-RING-GAI",
+   "streets": 2590,
+   "classified": 69,
+   "pct": 3,
+   "unknown": 2521,
+   "status": "carparks",
+   "note": "No RPS by policy, no sign register. 53 council car parks applied"
+  },
+  {
+   "lga": "SUTHERLAND SHIRE",
+   "streets": 5060,
+   "classified": 76,
+   "pct": 2,
+   "unknown": 4984,
+   "status": "none",
+   "note": "49 GIS services checked \u2014 no parking layer. Cronulla unsourced"
+  },
+  {
+   "lga": "RANDWICK",
+   "streets": 2591,
+   "classified": 1128,
+   "pct": 44,
+   "unknown": 1463,
+   "status": "done",
+   "note": "Resident-zone + commercial kerbs GIS \u2014 applied"
+  },
+  {
+   "lga": "WOOLLAHRA",
+   "streets": 1352,
+   "classified": 1096,
+   "pct": 81,
+   "unknown": 256,
+   "status": "done",
+   "note": "RPS address-check GIS \u2014 applied"
+  },
+  {
+   "lga": "SYDNEY",
+   "streets": 4391,
+   "classified": 4189,
+   "pct": 95,
+   "unknown": 202,
+   "status": "done",
+   "note": "ArcGIS: meters, rates, free-15, permits \u2014 applied"
+  },
+  {
+   "lga": "NORTH SYDNEY",
+   "streets": 1566,
+   "classified": 1398,
+   "pct": 89,
+   "unknown": 168,
+   "status": "done",
+   "note": "RPS PDFs + meter Google map \u2014 applied"
+  },
+  {
+   "lga": "WAVERLEY",
+   "streets": 1164,
+   "classified": 1132,
+   "pct": 97,
+   "unknown": 32,
+   "status": "done",
+   "note": "Full sign census (TfNSW council bundle) \u2014 applied"
+  }
+ ]
+}

@@ -3,6 +3,12 @@
 @AGENTS.md
 
 ## Start of every session
+0. **Update the docs first, then work.** Re-read `PROGRESS.md` and `PLAN.md`,
+   and correct anything the last session left stale *before* writing code —
+   coverage numbers, what is deployed, what is blocked. These files are the
+   only memory that survives; a wrong line here sends the next session down a
+   path that was already tried. `scripts/data/coverage-queue.json` holds the
+   per-council work order and is regenerated, not hand-edited.
 1. `git fetch origin && git status -sb` — work on `main` in **this** clone (`/Users/abc/Documents/macos/parkfree/repo`). Everything else ParkFree lives under `/Users/abc/Documents/macos/parkfree/` (`docs/`, `archive/`); see its README.
 2. Read `PROGRESS.md` — it is the hand-off between conversations. Trust it over memory.
 3. Read `PLAN.md` for what's next and why.

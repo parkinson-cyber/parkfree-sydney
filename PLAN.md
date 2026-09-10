@@ -102,6 +102,76 @@ in which case those suburbs stay unknown until someone photographs signs or a
 council answers a data request. That is the correct outcome, not a failure —
 the alternative is inventing parking rules.
 
+## M10 — All of Sydney, scheduled (2026-09-10)
+
+Coverage measured per council, not guessed: every street midpoint in
+`parking.json` point-in-polygon'd against **NSW Spatial Services LGA
+boundaries**. The machine-readable queue is `scripts/data/coverage-queue.json`
+— a future session (or the 3-hourly sweep) can pick up from it without this
+conversation.
+
+**Work order.** Councils where a source is already in hand come first: finishing
+a source you have is far cheaper than finding one you don't. Then the biggest
+unmapped councils, largest gap first.
+
+### Wave 1 — finish what's already sourced (14,418 streets)
+
+| LGA | streets | classified | unknown | source status |
+|---|---:|---:|---:|---|
+| Northern Beaches | 6,089 | 24% | 4,606 | Sign asset register applied (1,408 segs). Next: Manly permit areas, 906 unmatched signs |
+| Inner West | 3,533 | 25% | 2,644 | RPS schedules applied. No sign census published |
+| Ryde | 2,575 | 13% | 2,228 | RPS zones applied. Park’nPay sensors exist but are not published |
+| Canada Bay | 1,517 | 16% | 1,272 | Five Dock Area 6 only; Areas 1-5 login-walled |
+| Willoughby | 1,792 | 32% | 1,225 | Chatswood CBD signs + Willoughby South scheme map. Rest of LGA unsourced — check Have Your Say for more scheme maps |
+| Strathfield | 925 | 24% | 704 | RPS 1-50 applied (vision-derived) |
+| Lane Cove | 883 | 36% | 563 | Council schedule applied (TRIM directive) |
+| Mosman | 643 | 15% | 548 | RPS map read visually; no machine-readable source |
+| Burwood | 785 | 47% | 416 | RPS areas applied (vision-derived) |
+| Hunters Hill | 237 | 11% | 212 | Woolwich W1 only |
+
+### Wave 2 — biggest gaps, source unknown (39,292 streets)
+
+| LGA | streets | classified | unknown | source status |
+|---|---:|---:|---:|---|
+| Canterbury-Bankstown | 7,216 | 2% | 7,047 | Not yet probed — biggest single gap in Sydney |
+| Blacktown | 5,245 | 0% | 5,243 | Not yet probed |
+| The Hills Shire | 4,472 | 1% | 4,413 | Not yet probed |
+| City Of Parramatta | 4,820 | 9% | 4,371 | Not yet probed; CBD likely has a meter layer |
+| Cumberland | 4,133 | 4% | 3,979 | Not yet probed |
+| Bayside | 3,353 | 8% | 3,093 | Appears as a publisher in TfNSW council-data catalogue — check for a sign bundle |
+| Fairfield | 3,054 | 2% | 3,003 | Not yet probed |
+| Hornsby | 3,074 | 4% | 2,957 | IntraMaps at map.hornsby.nsw.gov.au — ApplicationEngine/Projects answers JSON; walk it |
+| Liverpool | 2,704 | 0% | 2,700 | Not yet probed |
+| Georges River | 2,579 | 4% | 2,486 | RPS exists, no online GIS found. Probe maps.georgesriver + Have Your Say |
+
+### Wave 3 — checked, nothing published
+
+| LGA | streets | classified | unknown | source status |
+|---|---:|---:|---:|---|
+| Ku-Ring-Gai | 2,590 | 3% | 2,521 | No RPS by policy, no sign register. 53 council car parks applied |
+| Sutherland Shire | 5,060 | 2% | 4,984 | 49 GIS services checked — no parking layer. Cronulla unsourced |
+
+These stay unknown until a council publishes, someone photographs signs, or a
+data request is answered. That is the correct state, not a backlog item to be
+filled by guessing.
+
+### Effectively done
+
+| LGA | streets | classified | unknown | source status |
+|---|---:|---:|---:|---|
+| Randwick | 2,591 | 44% | 1,463 | Resident-zone + commercial kerbs GIS — applied |
+| Woollahra | 1,352 | 81% | 256 | RPS address-check GIS — applied |
+| Sydney | 4,391 | 95% | 202 | ArcGIS: meters, rates, free-15, permits — applied |
+| North Sydney | 1,566 | 89% | 168 | RPS PDFs + meter Google map — applied |
+| Waverley | 1,164 | 97% | 32 | Full sign census (TfNSW council bundle) — applied |
+
+### How this proceeds without a session
+
+The 3-hourly `gap-sweep` workflow already probes the Wave 2 councils and
+reports anything new in its run summary. When a probe comes back with a
+parking or sign layer, that council moves to Wave 1 and is worth a session.
+Nothing here requires a person to remember it.
+
 ### Data leads still worth a session (corridor)
 - **Willoughby**: the council has more scheme maps like Willoughby South (Naremburn precinct expansion was consulted on) — search haveyoursaywilloughby.com.au for each, same pipeline. Also its 2020 LTC minutes list RA areas RA1–RA23; no street list found yet.
 - **Randwick**: `extTransport/ResidentParkingZone` kerb polylines (699, with house numbers) → snap by geometry instead of area polygon for exact per-kerb tagging.
