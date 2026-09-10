@@ -21,7 +21,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="ParkFree" />
 
-    <meta name="theme-color" content="#0F1115" />
+    <meta name="theme-color" content="#F2EFE7" />
     <meta
       name="description"
       content="Find free street parking in Sydney, live. Streets are colour-coded from real parking-sign data and turn green the minute they're free."
@@ -31,14 +31,15 @@
     <link rel="apple-touch-icon" href="/icon-192.png" />
 
     <style>
-      /* Dark ground everywhere so there's no white flash on cold start. */
+      /* Paper ground everywhere so there's no flash of the wrong colour on a
+         cold start, and so the area behind the home indicator matches the app. */
       html,
       body,
       #root {
         height: 100%;
         margin: 0;
         padding: 0;
-        background-color: #0f1115;
+        background-color: #f2efe7;
       }
 
       /*
@@ -52,10 +53,19 @@
       }
 
       body {
-        /* Lock the page: the map pans, the page never scrolls or rubber-bands. */
+        /*
+          Lock the page so the map pans but the document never scrolls. Height
+          is pinned to the *layout* viewport rather than the visual one: when
+          iOS Safari raises the keyboard it shrinks the visual viewport, and
+          anything sized to that would drag the map upward. The chrome lifts
+          itself instead — see src/lib/useKeyboardInset.ts.
+        */
         position: fixed;
+        top: 0;
+        left: 0;
         overflow: hidden;
         width: 100%;
+        height: 100%;
         overscroll-behavior: none;
 
         /* Kill the remaining browser tells: long-press menus, text selection,

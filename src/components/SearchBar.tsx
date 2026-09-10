@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import {
   Keyboard, Pressable, StyleSheet, Text, TextInput, View,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { search, streetById, type SearchResult } from '../lib/parkingData';
 import { colors, font, radius, shadow, tracking } from '../theme';
 import { useStore } from '../state/store';
@@ -45,7 +46,7 @@ export function SearchBar({
         </View>
       )}
       <View style={styles.bar}>
-        <Text style={styles.mark}>P</Text>
+        <Ionicons name="search" size={17} color={colors.textDim} style={styles.mark} />
         <TextInput
           style={styles.input}
           placeholder="Search street or suburb"
@@ -58,8 +59,8 @@ export function SearchBar({
           returnKeyType="search"
         />
         {query.length > 0 ? (
-          <Pressable onPress={() => setQuery('')} hitSlop={10}>
-            <Text style={styles.clear}>✕</Text>
+          <Pressable onPress={() => setQuery('')} hitSlop={10} style={styles.clear}>
+            <Ionicons name="close-circle" size={17} color={colors.textDim} />
           </Pressable>
         ) : freeCount != null ? (
           // The count lives in the bar rather than on its own row: it was
@@ -83,21 +84,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.glassStrong,
     borderRadius: radius.pill,
-    paddingHorizontal: 14,
-    height: 44,
-    ...shadow(0.14, 12, 3),
+    paddingHorizontal: 15,
+    height: 46,
+    // A hairline of paper-white along the rim: what separates glass that looks
+    // like a real material from a rectangle with a blur behind it.
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.glassRim,
+    ...shadow(0.13, 18, 5),
   },
-  mark: {
-    fontFamily: font, color: colors.accent, fontSize: 16, fontWeight: '800',
-    marginRight: 10,
-  },
+  mark: { marginRight: 9 },
   input: {
     flex: 1, color: colors.text, fontSize: 15, height: '100%',
     fontWeight: '500', letterSpacing: tracking.body,
   },
-  clear: { color: colors.textDim, fontSize: 14, paddingLeft: 10 },
+  clear: { paddingLeft: 10 },
   count: {
-    fontFamily: font, color: colors.textDim, fontSize: 12.5, fontWeight: '700',
+    fontFamily: font, color: colors.accent, fontSize: 12, fontWeight: '700',
+    letterSpacing: tracking.caption,
     paddingLeft: 10,
   },
   results: {
@@ -105,7 +108,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     borderRadius: radius.card,
     overflow: 'hidden',
-    ...shadow(0.16, 18, 8),
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.glassRim,
+    ...shadow(0.16, 22, 10),
   },
   result: {
     flexDirection: 'row',

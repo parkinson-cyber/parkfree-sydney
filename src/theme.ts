@@ -55,6 +55,10 @@ export const colors = {
   /** Materials — translucent paper for glass layers. */
   glass: 'rgba(251,249,244,0.72)',
   glassStrong: 'rgba(251,249,244,0.88)',
+  // The rim of a frosted panel. Glass reads as a material only when its edge
+  // catches light; without this every sheet is a blurred rectangle.
+  glassRim: 'rgba(255,255,255,0.75)',
+  accentSoft: 'rgba(110,139,91,0.12)',
   glassBorder: 'rgba(46,43,38,0.08)',
   scrim: 'rgba(46,43,38,0.32)',
 };

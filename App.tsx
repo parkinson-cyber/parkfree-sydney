@@ -3,7 +3,7 @@
  */
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -18,6 +18,7 @@ import { TimerModal, TimerPill } from './src/components/ParkingTimer';
 import { WelcomeOverlay } from './src/components/WelcomeOverlay';
 
 import * as Haptics from 'expo-haptics';
+import { Ionicons } from '@expo/vector-icons';
 
 import { classifiedStreets } from './src/lib/parkingData';
 import { useCarparks } from './src/lib/carparks';
@@ -27,6 +28,9 @@ import { freeCarParks } from './src/lib/freeCarparks';
 import { ReportSheet } from './src/components/ReportBar';
 import { MySpotCard } from './src/components/MySpotCard';
 import { BusySheet } from './src/components/BusySheet';
+import { TabBar } from './src/components/TabBar';
+import { Panel } from './src/components/Panels';
+import { useKeyboardInset } from './src/lib/useKeyboardInset';
 import { estimateAvailability, type Availability } from './src/lib/availability';
 import { featureCenter, featureInRegion } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
@@ -60,6 +64,11 @@ function Main() {
     { at: { latitude: number; longitude: number }; streetId?: number; streetName?: string } | null
   >(null);
   const [explaining, setExplaining] = useState(false);
+  const tab = useStore((s) => s.tab);
+  const setTab = useStore((s) => s.setTab);
+  const countReport = useStore((s) => s.countReport);
+  // The keyboard lifts the bottom chrome. It must never move the map.
+  const keyboard = useKeyboardInset();
 
   const [timerFor, setTimerFor] = useState<{ street: StreetFeature; suggestedMin?: number } | null>(null);
   const [finding, setFinding] = useState(false);
@@ -151,6 +160,7 @@ function Main() {
 
   /** Report flow: always anchored to where the phone actually is. */
   const onOpenReport = useCallback(async () => {
+    setTab('map');
     const at = await mapRef.current?.getUserLocation();
     if (!at) {
       flashToast('Turn on location to report a spot near you.');
@@ -158,13 +168,13 @@ function Main() {
     }
     const near = findNearestPark(classifiedStreets, statusById, at, 60);
     setReportAt({ at, streetId: near?.street.properties.id, streetName: near?.street.properties.name });
-  }, [flashToast, statusById]);
+  }, [flashToast, setTab, statusById]);
 
   const onReported = useCallback((report: Report, message: string) => {
-    if (report.id !== 'x') addReport(report);
+    if (report.id !== 'x') { addReport(report); countReport(); }
     setReportAt(null);
     flashToast(message);
-  }, [addReport, flashToast]);
+  }, [addReport, countReport, flashToast]);
 
   /** "Park here" saves where the car is, then offers the timer. */
   const onSaveSpot = useCallback((street: StreetFeature) => {
@@ -178,6 +188,14 @@ function Main() {
     });
     flashToast(`Saved — your car is on ${street.properties.name ?? 'this street'}.`);
   }, [setMySpot, flashToast]);
+
+  const onWalkBack = useCallback(() => {
+    if (!mySpot) return;
+    const url = Platform.OS === 'ios'
+      ? `http://maps.apple.com/?daddr=${mySpot.latitude},${mySpot.longitude}&dirflg=w`
+      : `https://www.google.com/maps/dir/?api=1&destination=${mySpot.latitude},${mySpot.longitude}&travelmode=walking`;
+    Linking.openURL(url);
+  }, [mySpot]);
 
   const onStartTimer = useCallback(
     (street: StreetFeature, suggestedMin?: number) => {
@@ -239,33 +257,29 @@ function Main() {
       <MySpotCardHost />
 
       {toast && (
-        <View style={[styles.toast, { bottom: (selected ? 210 : 118) + insets.bottom }]} pointerEvents="none">
+        <View style={[styles.toast, { bottom: (selected ? 270 : 178) + insets.bottom }]} pointerEvents="none">
           <Text style={styles.toastText} numberOfLines={2}>{toast}</Text>
         </View>
       )}
 
-      {/* right-side utilities — stacked above the primary action */}
-      <View style={[styles.fabs, { bottom: (selected ? 198 : 106) + insets.bottom }]}>
+      {/* right-side utilities — map only, clear of the tab bar */}
+      <View
+        style={[styles.fabs, { bottom: (selected ? 258 : 166) + insets.bottom }]}
+        pointerEvents={tab === 'map' ? 'auto' : 'none'}
+      >
         <Pressable
           style={styles.fab}
           onPress={() => mapRef.current?.animateToUser()}
           accessibilityLabel="Centre map on my location"
         >
-          <Text style={styles.fabIcon}>◎</Text>
+          <Ionicons name="locate" size={19} color={colors.locate} />
         </Pressable>
         <Pressable
           style={styles.fab}
           onPress={() => showLegend(true)}
           accessibilityLabel="What the colours mean"
         >
-          <Text style={styles.fabIcon}>?</Text>
-        </Pressable>
-        <Pressable
-          style={[styles.fab, styles.fabReport]}
-          onPress={onOpenReport}
-          accessibilityLabel="Report a free or full spot"
-        >
-          <Text style={styles.fabReportIcon}>＋</Text>
+          <Ionicons name="help-circle-outline" size={20} color={colors.text} />
         </Pressable>
       </View>
 
@@ -276,10 +290,15 @@ function Main() {
           context sits directly above the search bar, the way a maps app does
           it. Nothing overlays the top of the screen, so the map stays whole. */}
       <View
-        style={[styles.bottom, { paddingBottom: insets.bottom + 8 }]}
+        style={[
+          styles.bottom,
+          // Sits above the tab bar, and rides up with the keyboard so the map
+          // underneath stays exactly where the driver left it.
+          { paddingBottom: (keyboard > 0 ? keyboard + 8 : insets.bottom + 70) },
+        ]}
         pointerEvents="box-none"
       >
-        {reportAt ? (
+        {tab !== 'map' ? null : reportAt ? (
           <ReportSheet
             at={reportAt.at}
             streetId={reportAt.streetId}
@@ -302,6 +321,7 @@ function Main() {
             disabled={finding}
             accessibilityLabel="Find me a park"
           >
+            <Ionicons name="navigate" size={15} color={colors.onAccent} />
             <Text style={styles.findBtnText}>
               {finding ? 'Finding a spot…' : 'Find me a park'}
             </Text>
@@ -314,6 +334,19 @@ function Main() {
           freeNearby={freeNow.nearby}
         />
       </View>
+
+      <Panel
+        onClose={() => setTab('map')}
+        onWalkBack={onWalkBack}
+        bottomInset={insets.bottom}
+      />
+
+      <TabBar
+        active={tab}
+        onChange={setTab}
+        onReport={onOpenReport}
+        bottomInset={insets.bottom}
+      />
 
       {explaining && (
         <BusySheet
@@ -366,17 +399,23 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
   // Bottom stack: the search bar always last, whatever is in context above it.
   bottom: { position: 'absolute', left: 0, right: 0, bottom: 0, gap: 8 },
+  // Self-sizing rather than a full-width slab: a primary action that spans the
+  // screen reads as a web page's submit button, not as a control floating on a
+  // map. Centred so the thumb finds it without looking.
   findBtn: {
-    marginHorizontal: GUTTER,
+    alignSelf: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
     backgroundColor: colors.accent,
     borderRadius: radius.pill,
-    paddingVertical: 13,
-    alignItems: 'center',
-    ...elevate(0.2, 16, 5),
+    paddingVertical: 12,
+    paddingHorizontal: 22,
+    ...elevate(0.22, 20, 7),
   },
   findBtnBusy: { opacity: 0.55 },
   findBtnText: {
-    color: colors.onAccent, fontSize: 16, fontWeight: '700', letterSpacing: -0.2,
+    color: colors.onAccent, fontSize: 15.5, fontWeight: '700', letterSpacing: -0.2,
   },
   toast: {
     position: 'absolute',
@@ -393,16 +432,13 @@ const styles = StyleSheet.create({
   // 48pt: Apple's minimum comfortable touch target, and big enough that the
   // glyph reads clearly against a busy map.
   fab: {
-    width: 42, height: 42, borderRadius: 21,
+    width: 44, height: 44, borderRadius: 22,
     backgroundColor: colors.glassStrong,
     alignItems: 'center', justifyContent: 'center',
-    ...elevate(0.1, 12, 3),
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.glassRim,
+    ...elevate(0.12, 16, 4),
   },
-  fabIcon: { color: colors.text, fontSize: 17, fontWeight: '600', lineHeight: 20 },
-  // The crowd-report button is the one control that adds data, so it carries
-  // the accent while the utilities stay neutral.
-  fabReport: { backgroundColor: colors.accent },
-  fabReportIcon: { color: colors.onAccent, fontSize: 21, fontWeight: '700', lineHeight: 23 },
   zoomHint: {
     position: 'absolute',
     alignSelf: 'center',

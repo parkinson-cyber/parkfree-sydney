@@ -5,8 +5,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "dark",
-    "backgroundColor": "#0F1115",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F2EFE7",
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.parkfree.sydney",
@@ -22,12 +22,15 @@
     "android": {
       "package": "com.parkfree.sydney",
       "adaptiveIcon": {
-        "backgroundColor": "#0F1115",
+        "backgroundColor": "#F2EFE7",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -37,8 +40,8 @@
       "shortName": "ParkFree",
       "description": "Find free street parking in Sydney, live. Streets turn green the minute they're free.",
       "lang": "en-AU",
-      "themeColor": "#0F1115",
-      "backgroundColor": "#0F1115",
+      "themeColor": "#F2EFE7",
+      "backgroundColor": "#F2EFE7",
       "display": "standalone",
       "orientation": "portrait",
       "startUrl": "/",

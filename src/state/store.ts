@@ -21,6 +21,9 @@ export interface ActiveTimer {
 
 export type StatusFilter = 'all' | 'free_now' | 'free_anytime';
 
+/** Which bottom-bar section is showing. The map stays mounted underneath. */
+export type Tab = 'map' | 'saved' | 'settings' | 'profile';
+
 /** Where I left the car. Local-first; nothing leaves the phone unless the
  *  user chose to share a "parked" report. */
 export interface SavedSpot {
@@ -59,6 +62,13 @@ interface AppState {
   mySpot: SavedSpot | null;
   setMySpot: (s: SavedSpot | null) => void;
 
+  tab: Tab;
+  setTab: (t: Tab) => void;
+
+  /** How many reports this device has contributed. Local, for encouragement. */
+  reportsMade: number;
+  countReport: () => void;
+
   legendVisible: boolean;
   showLegend: (v: boolean) => void;
 
@@ -71,6 +81,7 @@ interface AppState {
 
 const TIMER_KEY = 'parkfree.timer';
 const SPOT_KEY = 'parkfree.myspot';
+const REPORTS_KEY = 'parkfree.reportsMade';
 const ONBOARDED_KEY = 'parkfree.onboarded';
 
 export const useStore = create<AppState>((set, get) => ({
@@ -110,6 +121,16 @@ export const useStore = create<AppState>((set, get) => ({
     else AsyncStorage.removeItem(SPOT_KEY);
   },
 
+  tab: 'map',
+  setTab: (tab) => set({ tab }),
+
+  reportsMade: 0,
+  countReport: () => {
+    const next = get().reportsMade + 1;
+    set({ reportsMade: next });
+    AsyncStorage.setItem(REPORTS_KEY, String(next));
+  },
+
   legendVisible: false,
   showLegend: (legendVisible) => set({ legendVisible }),
 
@@ -121,14 +142,16 @@ export const useStore = create<AppState>((set, get) => ({
 
   hydrate: async () => {
     try {
-      const [timerRaw, onboardedRaw, spotRaw] = await Promise.all([
+      const [timerRaw, onboardedRaw, spotRaw, reportsRaw] = await Promise.all([
         AsyncStorage.getItem(TIMER_KEY),
         AsyncStorage.getItem(ONBOARDED_KEY),
         AsyncStorage.getItem(SPOT_KEY),
+        AsyncStorage.getItem(REPORTS_KEY),
       ]);
       const updates: Partial<AppState> = {
         premium: true, // free for everyone — see note above
         onboarded: onboardedRaw === 'true',
+        reportsMade: Number(reportsRaw) || 0,
       };
       if (spotRaw) {
         const spot: SavedSpot = JSON.parse(spotRaw);
