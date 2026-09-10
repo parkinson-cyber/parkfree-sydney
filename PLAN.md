@@ -60,6 +60,21 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 
 ---
 
+## M8 — iOS-native visual pass (requested 2026-09-10, not started)
+
+The app works; it doesn't yet *feel* like a native iOS app. Wanted: the current
+iOS look — translucent/glass layers over the map, proper depth and blur on the
+sheets, native-weight typography, spring transitions, larger tap targets, a
+real bottom-sheet with detents rather than a fixed card.
+
+Notes for whoever picks this up:
+- `expo-blur` gives real material blur on iOS and degrades on web; the sheets
+  (`StreetSheet`, `BusySheet`, `ReportBar`, `MySpotCard`) are the place to
+  start — they are already the app's whole chrome.
+- Keep the map legible: glass over a dark map kills contrast fast, and the
+  colour of a street is the product. Test at night and in sun.
+- The status page (`public/status.html`) is separate and can stay plain.
+
 ### Data leads still worth a session (corridor)
 - **Willoughby**: the council has more scheme maps like Willoughby South (Naremburn precinct expansion was consulted on) — search haveyoursaywilloughby.com.au for each, same pipeline. Also its 2020 LTC minutes list RA areas RA1–RA23; no street list found yet.
 - **Randwick**: `extTransport/ResidentParkingZone` kerb polylines (699, with house numbers) → snap by geometry instead of area polygon for exact per-kerb tagging.

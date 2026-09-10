@@ -147,6 +147,18 @@ unknown:
 - **Randwick** — `extTransport/ResidentParkingZone/MapServer/0` = 699 kerb polylines (streetName, from/toHouseNumber, suburb, zone). Not yet used.
 - Council websites (`willoughby.nsw.gov.au`, `lanecove.nsw.gov.au`) return 403 to curl/WebFetch; a real browser gets through.
 
+## Meter-payment apps — checked 2026-09-10, and why we don't scrape them
+
+Asked whether Park'nPay / EasyPark / CellOPark / Wilson / Secure could supply meter locations, rates and live bay status. Findings:
+
+- **Park'nPay is NSW Government but publishes no API.** data.nsw returns only the *procurement contract* for the app and an audit report; the TfNSW Open Data Hub has nothing under park'nPay/parknpay. Its meter and bay data reaches the app through a private backend.
+- **City of Ryde's in-ground bay sensors feed Park'nPay** (confirmed in the SmartNSW case study) — this is the real-time on-street occupancy the busy estimate wants, and it is *not* published anywhere. The "Smart Cities Macquarie Park" open dataset is **pedestrian counters**, not parking, and stops in 2020.
+- **City of Sydney's ArcGIS org has no live meter-status service** — only Ticket_parking_rates (13 tariff polygons), Free_15_minute_parking (12) and ParkingPermits (24), all already applied by the CBD pipeline.
+
+**Decision: do not scrape their private APIs.** These are commercial or government apps whose data is deliberately not published; hitting their backends means working around the absence of an API, against their terms, and it is the same call this project already made when it declined Parkopedia. It would also be fragile — an app backend changes without notice and takes the map's accuracy with it.
+
+**The legitimate route, if this data is wanted:** a formal request. Park'nPay/Ryde sensor data via Digital NSW / the Open Data Hub's dataset-request process, and a direct approach to City of Ryde for their sensor feed. A council that already publishes its sign register is often willing; Northern Beaches' register is how Manly got covered.
+
 ## Verified 2026-09-10
 
 - **Northern Beaches — APPLIED.** `maps.northernbeaches.nsw.gov.au/arcgis/rest/services/Assets/MapServer/4` ("Road Signs", 29,691 points). `NARR1` holds the RTA sign type; `NARR2`/`NARR3` are just its overflow text. Parking types cover 5 min → 7 hours, No Stopping, No Parking, Bus Zone, Loading Zone, Clearway. **Hours are not in this layer** — time plates exist as their own records without the times. Layer 15 is "Car Parks" (405 polygons, asset fields only, no rates). See `fetch-northernbeaches-parking.py`.
