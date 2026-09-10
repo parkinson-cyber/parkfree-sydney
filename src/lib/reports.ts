@@ -11,20 +11,10 @@ import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Region } from './types';
 
-export type ReportKind = 'left' | 'looks_empty' | 'parked' | 'looks_full';
+export type { ReportKind, Report } from './reportKinds';
+export { isFreeKind } from './reportKinds';
 
-export interface Report {
-  id: string;
-  latitude: number;
-  longitude: number;
-  kind: ReportKind;
-  streetId: number | null;
-  streetName: string | null;
-  source: 'user';
-  reportedAt: string;
-  expiresAt: string;
-  reportedBy: string;
-}
+import type { Report, ReportKind } from './reportKinds';
 
 export const API_BASE =
   Platform.OS === 'web' && typeof window !== 'undefined' && /^https?:/.test(window.location.origin) && !/localhost|127\.0\.0\.1/.test(window.location.host)
@@ -44,10 +34,6 @@ export async function deviceId(): Promise<string> {
   const fresh = `d_${Math.random().toString(36).slice(2)}${Date.now().toString(36)}`;
   try { await AsyncStorage.setItem(DEVICE_KEY, fresh); } catch { /* memory only */ }
   return (deviceIdCache = fresh);
-}
-
-export function isFreeKind(kind: ReportKind): boolean {
-  return kind === 'left' || kind === 'looks_empty';
 }
 
 export async function fetchReportsNear(center: { latitude: number; longitude: number }, radius = 1500): Promise<Report[]> {

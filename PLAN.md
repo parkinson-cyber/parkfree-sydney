@@ -26,7 +26,7 @@ Port `ParkFreeSyd/server/` into this repo as Vercel functions (`api/`), reshaped
 - **Provenance rule applies:** reports are stored with `source: user` and rendered as reports, never merged into `cat`.
 - **Done when:** a report made on one device shows on another within 30 s.
 
-## M3 — Live availability estimate (2 sessions)
+## M3 — Live availability estimate — SHIPPED 2026-09-10 (priors still hand-set; replace with history.jsonl once ~4 weeks accumulate)
 Nobody publishes on-street occupancy for Sydney (City of Sydney removed its sensors). So this is an **estimate**, and the UI must say so. Score each classified segment 0–1 = P(a space is free now):
 
 1. **Legal gate** — `rules.ts` says whether you may park now. If not, score = 0. (Exists.)

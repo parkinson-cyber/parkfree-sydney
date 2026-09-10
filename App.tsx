@@ -25,6 +25,8 @@ import { useReports, ago, isFreeKind, type Report } from './src/lib/reports';
 import { councilCarParks } from './src/lib/councilCarparks';
 import { ReportSheet } from './src/components/ReportBar';
 import { MySpotCard } from './src/components/MySpotCard';
+import { BusySheet } from './src/components/BusySheet';
+import { estimateAvailability, type Availability } from './src/lib/availability';
 import { featureCenter, featureInRegion } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
 import {
@@ -56,6 +58,7 @@ function Main() {
   const [reportAt, setReportAt] = useState<
     { at: { latitude: number; longitude: number }; streetId?: number; streetName?: string } | null
   >(null);
+  const [explaining, setExplaining] = useState(false);
 
   const [timerFor, setTimerFor] = useState<{ street: StreetFeature; suggestedMin?: number } | null>(null);
   const [finding, setFinding] = useState(false);
@@ -182,6 +185,19 @@ function Main() {
     [],
   );
 
+  /** How busy the selected street probably is, with its evidence. */
+  const estimate: Availability | null = useMemo(() => {
+    if (!selected) return null;
+    return estimateAvailability({
+      props: selected.properties,
+      status: evaluateStreet(selected.properties, now).status,
+      center: featureCenter(selected),
+      reports,
+      carParks: carparks?.facilities ?? [],
+      now,
+    });
+  }, [selected, now, reports, carparks]);
+
   /** Streets free right now — scoped to the viewport once the user zooms in. */
   const freeNow = useMemo(() => {
     const zoomedIn = region.latitudeDelta <= SHOW_CLASSIFIED_MAX_DELTA;
@@ -294,8 +310,22 @@ function Main() {
         />
       ) : (
         selected && (
-          <StreetSheet street={selected} onStartTimer={onStartTimer} onSaveSpot={onSaveSpot} />
+          <StreetSheet
+            street={selected}
+            onStartTimer={onStartTimer}
+            onSaveSpot={onSaveSpot}
+            estimate={estimate}
+            onExplainEstimate={() => setExplaining(true)}
+          />
         )
+      )}
+
+      {explaining && (
+        <BusySheet
+          estimate={estimate}
+          streetName={selected?.properties.name}
+          onClose={() => setExplaining(false)}
+        />
       )}
 
       <WelcomeOverlay onFindPark={onFindPark} />

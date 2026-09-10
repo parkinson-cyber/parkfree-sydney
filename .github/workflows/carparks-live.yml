@@ -46,9 +46,29 @@ jobs:
           # pushed, so shipping this file in the branch turns its deployments
           # off at the source.
           printf '%s\n' '{ "$schema": "https://openapi.vercel.sh/vercel.json", "git": { "deploymentEnabled": { "data-live": false } } }' > vercel.json
+
+          # Keep every snapshot, not just the latest. Real measured occupancy,
+          # hour by hour, is the only ground truth this project has for how
+          # parking demand actually moves - it's what the availability estimate
+          # gets calibrated against. The branch is force-pushed as one commit,
+          # so carry the existing log forward before appending to it.
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/data-live/history.jsonl"
+          curl -sSf --max-time 60 "$RAW" -o history.jsonl || : > history.jsonl
+          python3 - <<'PY' >> history.jsonl
+          import json
+          feed = json.load(open('carparks.json'))
+          for f in feed['facilities']:
+              print(json.dumps({
+                  't': feed['updated'], 'id': f['id'], 'spots': f['spots'],
+                  'occupied': f['occupied'], 'at': f['at'],
+              }, separators=(',', ':')))
+          PY
+          # ~14 months at 40 facilities/hour; trim so the branch stays small.
+          tail -n 400000 history.jsonl > history.trimmed && mv history.trimmed history.jsonl
+          echo "history.jsonl now $(wc -l < history.jsonl) rows"
           git init -q -b data-live
           git config user.name "parkfree-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add carparks.json vercel.json
+          git add carparks.json vercel.json history.jsonl
           git commit -q -m "carparks $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data-live

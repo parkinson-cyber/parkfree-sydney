@@ -4,6 +4,7 @@ const require = createRequire(import.meta.url);
 const { parseIntervals, isNowInWindows, evaluateSide, evaluateStreet, formatInterval, formatMaxstay, pShort, formatClock, formatPrice,
         minutesUntilOutside, nextFreeAt, formatCountdown } =
   require('../.cache/test/rules.js');
+const { estimateAvailability, priorFor, confidenceLabel } = require('../.cache/test/availability.js');
 
 let pass = 0, fail = 0;
 function eq(actual, expected, label) {
@@ -277,6 +278,68 @@ eq(formatDistance(120), '120 m', 'metres');
 eq(formatDistance(1240), '1.2 km', 'kilometres');
 eq(walkMinutes(10), 1, 'walk time never rounds to zero');
 eq(walkMinutes(400), 5, 'walk time at 80 m/min');
+
+// --- availability estimate ---
+// The estimate must never contradict the law, never claim certainty, and must
+// always be able to explain itself.
+const HERE_AV = { latitude: -33.87, longitude: 151.21 };
+const street = (over = {}) => ({ id: 900, cat: 'free_limited', area: 'test',
+  left: { kind: 'free_limited', maxstayMin: 120 }, ...over });
+const report = (kind, minsAgo, over = {}) => ({
+  id: `r${minsAgo}${kind}`, latitude: HERE_AV.latitude, longitude: HERE_AV.longitude,
+  kind, streetId: 900, streetName: 'Test St', source: 'user',
+  reportedAt: new Date(wed10am.getTime() - minsAgo * 60000).toISOString(),
+  expiresAt: new Date(wed10am.getTime() + 900000).toISOString(), reportedBy: 'd',
+});
+const est = (over = {}) => estimateAvailability({
+  props: street(), status: 'free_limited', center: HERE_AV,
+  reports: [], carParks: [], now: wed10am, ...over,
+});
+
+eq(est({ status: 'banned' }).score, 0, 'a legal ban is certainty, not an estimate');
+eq(est({ status: 'banned' }).band, 'unavailable', 'banned street is unavailable');
+eq(est({ status: 'unknown' }).score, null, 'no rules known → refuses to guess');
+eq(est({ status: 'unknown' }).confidence, 0, 'refusing to guess means zero confidence');
+eq(est().score !== null, true, 'a known street always gets a score');
+eq(est().evidence.length > 0, true, 'an estimate always carries its evidence');
+eq(est().confidence <= 0.85, true, 'confidence never claims certainty');
+
+// crowd reports move the estimate the right way, and fade with age
+const fresh = est({ reports: [report('left', 1)] }).score;
+const stale = est({ reports: [report('left', 90)] }).score;
+const baseline = est().score;
+eq(fresh > baseline, true, 'a fresh "space free" raises the estimate');
+eq(Math.abs(stale - baseline) < 0.02, true, 'a 90-minute-old report has faded away');
+eq(est({ reports: [report('looks_full', 1)] }).score < baseline, true, '"full" lowers the estimate');
+eq(est({ reports: [report('left', 1)] }).confidence > est().confidence, true,
+   'reports raise confidence');
+// no pile-on: many reports still cannot claim certainty
+const many = est({ reports: [report('left', 1), report('left', 2), report('looks_empty', 1),
+                             report('looks_empty', 2), report('left', 3)] });
+eq(many.score < 0.97, true, 'a pile of reports still cannot reach certainty');
+eq(many.confidence <= 0.85, true, 'confidence stays capped however many reports arrive');
+
+// measured car-park occupancy is real evidence and is cited as such
+const full = est({ carParks: [{ id: '1', name: 'Test P&R', latitude: -33.871, longitude: 151.211,
+  spots: 100, occupied: 98, free: 2, at: wed10am.toISOString() }] });
+const empty = est({ carParks: [{ id: '1', name: 'Test P&R', latitude: -33.871, longitude: 151.211,
+  spots: 100, occupied: 10, free: 90, at: wed10am.toISOString() }] });
+eq(full.score < empty.score, true, 'a full car park nearby means tighter street parking');
+eq(full.evidence.some((e) => e.includes('98% full')), true, 'cites the measured occupancy');
+eq(full.confidence > est().confidence, true, 'a real measurement raises confidence');
+// a far-away car park is not evidence about this street
+const farAway = est({ carParks: [{ id: "2", name: "Far P&R", latitude: -33.95, longitude: 151.21,
+  spots: 100, occupied: 99, free: 1, at: wed10am.toISOString() }] });
+eq(farAway.score, baseline, 'a car park 9 km away changes nothing');
+
+// the prior is always disclosed as a pattern, never as a measurement
+eq(est().evidence.some((e) => e.includes('not a measurement')), true,
+   'the time-of-day guess is labelled as a guess');
+eq(priorFor({ id: 1, cat: 'residents', area: 't', zone: 'residential' }, wed8pm).p < 0.35, true,
+   'permit streets are tight in the evening');
+eq(priorFor({ id: 1, cat: 'paid', area: 't', zone: 'meter' }, mon3am).p > 0.7, true,
+   'metered streets are open at 3am');
+eq(confidenceLabel(0.55), '55% confidence', 'confidence reads as a percentage');
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

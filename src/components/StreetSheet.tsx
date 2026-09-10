@@ -9,6 +9,8 @@ import { featureCenter, sideLabels } from '../lib/geo';
 import { colors, font, statusColors, statusLabels, tracking } from '../theme';
 import { useStore } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
+import type { Availability } from '../lib/availability';
+import { BusyLine } from './BusySheet';
 
 const ZONE_LABEL: Record<ZoneType, string> = {
   meter: 'Metered',
@@ -32,12 +34,15 @@ function metaChips(rules: (SideRule | undefined)[]): string[] {
 }
 
 export function StreetSheet({
-  street, onStartTimer, onSaveSpot,
+  street, onStartTimer, onSaveSpot, estimate, onExplainEstimate,
 }: {
   street: StreetFeature;
   onStartTimer: (street: StreetFeature, suggestedMin?: number) => void;
   /** Remember where the car is, so "walk me back" works later. */
   onSaveSpot: (street: StreetFeature) => void;
+  /** How busy it probably is — an estimate, opened in full by tapping it. */
+  estimate?: Availability | null;
+  onExplainEstimate?: () => void;
 }) {
   const now = useStore((s) => s.now);
   const select = useStore((s) => s.select);
@@ -105,6 +110,10 @@ export function StreetSheet({
       </View>
 
       <Text style={styles.detail} numberOfLines={2}>{overall.detail}</Text>
+
+      {estimate && onExplainEstimate && (
+        <BusyLine estimate={estimate} onPress={onExplainEstimate} />
+      )}
 
       {soon && (
         <Text style={[styles.soonText, imminent && styles.soonTextImminent]} numberOfLines={1}>
