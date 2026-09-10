@@ -20,39 +20,60 @@ export const tracking = {
   caption: 0.3,
 };
 
+/**
+ * Palette: unbleached paper, in the MUJI sense — undyed cotton, cardboard,
+ * warm greys, and dyes that look mixed from earth rather than printed. Nothing
+ * is fully saturated and nothing is pure white or pure black.
+ *
+ * The map is the product, so the chrome is deliberately quiet: paper-toned
+ * glass floating over a light basemap, letting the coloured streets carry all
+ * the meaning. That is also why the accent is a muted sage rather than the old
+ * neon green — on a light map a bright accent competes with the data.
+ */
 export const colors = {
-  bg: '#0F1115',
-  surface: '#1A1D24',
-  surfaceRaised: '#232733',
-  border: '#2E3340',
-  text: '#F4F6FA',
-  textDim: '#9AA3B2',
-  accent: '#34D399', // signature green — "free parking"
-  accentDark: '#059669',
-  danger: '#F87171',
-  warning: '#FBBF24',
-  premium: '#A78BFA',
+  bg: '#F2EFE7',           // unbleached paper — the app's ground
+  surface: '#FBF9F4',      // a sheet of lighter stock laid on it
+  surfaceRaised: '#FFFFFF',
+  border: '#DED8CB',       // a crease, not a rule
+  text: '#2E2B26',         // soft charcoal, never #000
+  textDim: '#7C776C',      // warm grey
+  accent: '#6E8B5B',       // sage — "you can park here"
+  accentDark: '#54704A',
+  onAccent: '#FBF9F4',     // text on a sage button
+  danger: '#A8574A',       // terracotta
+  warning: '#B5813A',      // ochre
+  premium: '#6A7A93',      // muted indigo
+
+  /** Materials — translucent paper for glass layers. */
+  glass: 'rgba(251,249,244,0.72)',
+  glassStrong: 'rgba(251,249,244,0.88)',
+  glassBorder: 'rgba(46,43,38,0.08)',
+  scrim: 'rgba(46,43,38,0.32)',
 };
 
-/** Map line colours per parking category (static data classification). */
+/**
+ * Map line colours per parking category. Deepened from the palette above so
+ * they stay legible as thin lines on a light basemap — a muted colour that
+ * reads beautifully as a large field disappears at 2px over pale grey roads.
+ */
 export const kindColors: Record<ParkingKind, string> = {
-  free: '#22C55E',
-  free_limited: '#84CC16',
-  paid: '#F59E0B',
-  residents: '#8B5CF6',
-  no_parking: '#EF4444',
-  no_stopping: '#B91C1C',
-  unknown: '#5B6472',
+  free: '#4F7A3F',
+  free_limited: '#7E9046',
+  paid: '#B5813A',
+  residents: '#6A7A93',
+  no_parking: '#A8574A',
+  no_stopping: '#8C3F35',
+  unknown: '#BFB8AA',
 };
 
 /** Colours for the live (time-evaluated) status shown in the detail sheet. */
 export const statusColors: Record<LiveStatus, string> = {
-  free: '#22C55E',
-  free_limited: '#84CC16',
-  paid: '#F59E0B',
-  residents: '#8B5CF6',
-  banned: '#EF4444',
-  unknown: '#9AA3B2',
+  free: '#4F7A3F',
+  free_limited: '#7E9046',
+  paid: '#B5813A',
+  residents: '#6A7A93',
+  banned: '#A8574A',
+  unknown: '#8E887C',
 };
 
 export const statusLabels: Record<LiveStatus, string> = {
@@ -62,4 +83,24 @@ export const statusLabels: Record<LiveStatus, string> = {
   residents: 'Residents only',
   banned: 'No parking now',
   unknown: 'Check signs',
+};
+
+/**
+ * iOS-style elevation: a wide, very soft shadow and no border. Sheets on iOS
+ * separate by depth, not by outline.
+ */
+export const shadow = (opacity = 0.12, radius = 24, y = 10) => ({
+  shadowColor: '#2E2B26',
+  shadowOpacity: opacity,
+  shadowRadius: radius,
+  shadowOffset: { width: 0, height: y },
+  elevation: Math.round(radius / 2),
+});
+
+/** Corner radii, iOS-ish: generous on sheets, tight on controls. */
+export const radius = {
+  sheet: 28,
+  card: 18,
+  control: 14,
+  pill: 999,
 };

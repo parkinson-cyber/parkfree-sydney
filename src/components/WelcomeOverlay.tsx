@@ -97,6 +97,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 24,
   },
-  ctaText: { color: '#04291B', fontSize: 16, fontWeight: '800' },
+  ctaText: { color: colors.onAccent, fontSize: 16, fontWeight: '800' },
   note: { color: colors.textDim, fontSize: 11, textAlign: 'center', marginTop: 12 },
 });

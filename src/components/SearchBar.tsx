@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   bar: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(26,29,36,0.96)',
+    backgroundColor: colors.glassStrong,
     borderRadius: 999,
     paddingHorizontal: 18,
     height: 52,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   clear: { color: colors.textDim, fontSize: 15, paddingLeft: 10 },
   results: {
     marginTop: 8,
-    backgroundColor: 'rgba(26,29,36,0.98)',
+    backgroundColor: colors.surface,
     borderRadius: 18,
     overflow: 'hidden',
     shadowColor: '#000',
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 15,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'rgba(255,255,255,0.07)',
+    borderBottomColor: colors.border,
   },
   resultLabel: { color: colors.text, fontSize: 15, fontWeight: '600' },
   resultSub: { color: colors.textDim, fontSize: 12.5 },

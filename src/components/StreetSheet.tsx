@@ -6,7 +6,8 @@ import {
   nextFreeAt, formatCountdown,
 } from '../lib/rules';
 import { featureCenter, sideLabels } from '../lib/geo';
-import { colors, font, statusColors, statusLabels, tracking } from '../theme';
+import { colors, font, radius, shadow, statusColors, statusLabels, tracking } from '../theme';
+import { Glass } from './Glass';
 import { useStore } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
 import type { Availability } from '../lib/availability';
@@ -76,7 +77,7 @@ export function StreetSheet({
   };
 
   return (
-    <View style={styles.sheet}>
+    <Glass strong style={styles.sheet} intensity={40}>
       <View style={styles.handle} />
 
       <View style={styles.headerRow}>
@@ -153,7 +154,7 @@ export function StreetSheet({
           </Text>
         </Pressable>
       </View>
-    </View>
+    </Glass>
   );
 }
 
@@ -163,23 +164,18 @@ const styles = StyleSheet.create({
     left: 12,
     right: 12,
     bottom: 20,
-    backgroundColor: 'rgba(26,29,36,0.98)',
-    borderRadius: 24,
+    borderRadius: radius.sheet,
     paddingHorizontal: 18,
     paddingTop: 8,
     paddingBottom: 16,
-    shadowColor: '#000',
-    shadowOpacity: 0.45,
-    shadowRadius: 24,
-    shadowOffset: { width: 0, height: 10 },
-    elevation: 12,
+    ...shadow(0.16, 26, 10),
   },
   handle: {
     alignSelf: 'center',
     width: 36,
     height: 5,
     borderRadius: 3,
-    backgroundColor: 'rgba(255,255,255,0.18)',
+    backgroundColor: 'rgba(46,43,38,0.18)',
     marginBottom: 12,
   },
   headerRow: { flexDirection: 'row', alignItems: 'center' },
@@ -194,7 +190,7 @@ const styles = StyleSheet.create({
   // Borderless and barely-there: closing is a fallback, tapping the map works too.
   close: {
     width: 28, height: 28, borderRadius: 14,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: 'rgba(46,43,38,0.07)',
     alignItems: 'center', justifyContent: 'center',
     marginLeft: 8,
   },
@@ -230,7 +226,7 @@ const styles = StyleSheet.create({
   sides: { flexDirection: 'row', gap: 8, marginTop: 12 },
   sideCard: {
     flex: 1,
-    backgroundColor: 'rgba(255,255,255,0.05)',
+    backgroundColor: 'rgba(46,43,38,0.05)',
     borderRadius: 12,
     paddingHorizontal: 12,
     paddingVertical: 9,
@@ -247,16 +243,16 @@ const styles = StyleSheet.create({
   actions: { flexDirection: 'row', gap: 10, marginTop: 16 },
   button: {
     flex: 1,
-    borderRadius: 14,
+    borderRadius: radius.control,
     paddingVertical: 13,
     alignItems: 'center',
   },
   buttonPrimary: { backgroundColor: colors.accent },
   buttonPrimaryText: {
-    fontFamily: font, color: '#04291B', fontSize: 16, fontWeight: '600',
+    fontFamily: font, color: colors.onAccent, fontSize: 16, fontWeight: '600',
     letterSpacing: tracking.body,
   },
-  buttonSecondary: { backgroundColor: 'rgba(255,255,255,0.09)' },
+  buttonSecondary: { backgroundColor: 'rgba(46,43,38,0.07)' },
   buttonSecondaryText: {
     fontFamily: font, color: colors.text, fontSize: 16, fontWeight: '600',
     letterSpacing: tracking.body,

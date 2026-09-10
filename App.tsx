@@ -33,7 +33,7 @@ import {
   findNearestPark, findSoonestPark, formatDistance,
   type ParkSuggestion, type SoonSuggestion,
 } from './src/lib/findPark';
-import { colors } from './src/theme';
+import { colors, radius, shadow as elevate } from './src/theme';
 import { SYDNEY_REGION, useStore } from './src/state/store';
 import type { LiveStatus, StreetFeature } from './src/lib/types';
 
@@ -336,7 +336,7 @@ function Main() {
         onClose={() => setTimerFor(null)}
       />
 
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
     </View>
   );
 }
@@ -365,13 +365,7 @@ export default function App() {
 const GUTTER = 16;
 
 /** Soft elevation. Premium map UIs separate layers with shadow, not borders. */
-const shadow = (opacity: number, radius: number, y: number) => ({
-  shadowColor: '#000',
-  shadowOpacity: opacity,
-  shadowRadius: radius,
-  shadowOffset: { width: 0, height: y },
-  elevation: Math.round(radius / 2),
-});
+const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y);
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
@@ -383,23 +377,28 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     gap: 10,
   },
-  brand: { flexDirection: 'row', alignItems: 'baseline', gap: 6 },
+  brand: {
+    flexDirection: 'row', alignItems: 'baseline', gap: 6,
+    backgroundColor: colors.glassStrong, borderRadius: radius.pill,
+    paddingHorizontal: 12, paddingVertical: 6,
+    ...elevate(0.08, 10, 2),
+  },
+  // On a pale map the brand no longer needs a shadow to survive — it needs
+  // its own small pane of paper so it never sits directly on street detail.
   brandText: {
-    color: colors.text, fontSize: 21, fontWeight: '800', letterSpacing: -0.4,
-    textShadowColor: 'rgba(0,0,0,0.75)', textShadowRadius: 8,
+    color: colors.text, fontSize: 20, fontWeight: '800', letterSpacing: -0.4,
   },
   brandSub: {
-    color: colors.textDim, fontSize: 9.5, fontWeight: '800', letterSpacing: 2.4,
-    textShadowColor: 'rgba(0,0,0,0.75)', textShadowRadius: 8,
+    color: colors.textDim, fontSize: 9.5, fontWeight: '700', letterSpacing: 2.2,
   },
   // Live count reads as a status indicator, not a button — no border, just a
   // dark scrim so it stays legible over both light and dark map areas.
   freeNow: {
     flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: 'rgba(15,17,21,0.78)',
-    borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7,
+    backgroundColor: colors.glassStrong,
+    borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 7,
     marginLeft: 'auto',
-    ...shadow(0.3, 10, 3),
+    ...elevate(0.08, 10, 2),
   },
   freeNowDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.accent },
   freeNowText: { color: colors.text, fontSize: 11.5, fontWeight: '700', letterSpacing: 0.1 },
@@ -408,48 +407,48 @@ const styles = StyleSheet.create({
     left: GUTTER,
     right: GUTTER,
     backgroundColor: colors.accent,
-    borderRadius: 999,
+    borderRadius: radius.pill,
     paddingVertical: 17,
     alignItems: 'center',
-    ...shadow(0.45, 20, 8),
+    ...elevate(0.22, 18, 6),
   },
   findBtnBusy: { opacity: 0.55 },
   findBtnText: {
-    color: '#04291B', fontSize: 17, fontWeight: '800', letterSpacing: -0.2,
+    color: colors.onAccent, fontSize: 17, fontWeight: '700', letterSpacing: -0.2,
   },
   toast: {
     position: 'absolute',
     left: GUTTER,
     right: GUTTER,
-    backgroundColor: 'rgba(26,29,36,0.97)',
-    borderRadius: 16,
+    backgroundColor: colors.text,
+    borderRadius: radius.card,
     paddingHorizontal: 16,
     paddingVertical: 12,
-    ...shadow(0.4, 16, 6),
+    ...elevate(0.22, 16, 6),
   },
-  toastText: { color: colors.text, fontSize: 13.5, fontWeight: '600', textAlign: 'center' },
+  toastText: { color: colors.surface, fontSize: 13.5, fontWeight: '600', textAlign: 'center' },
   fabs: { position: 'absolute', right: GUTTER, gap: 10 },
   // 48pt: Apple's minimum comfortable touch target, and big enough that the
   // glyph reads clearly against a busy map.
   fab: {
     width: 48, height: 48, borderRadius: 24,
-    backgroundColor: 'rgba(26,29,36,0.94)',
+    backgroundColor: colors.glassStrong,
     alignItems: 'center', justifyContent: 'center',
-    ...shadow(0.4, 14, 5),
+    ...elevate(0.1, 12, 3),
   },
-  fabIcon: { color: colors.text, fontSize: 20, fontWeight: '700', lineHeight: 24 },
+  fabIcon: { color: colors.text, fontSize: 20, fontWeight: '600', lineHeight: 24 },
   // The crowd-report button is the one control that adds data, so it carries
   // the accent while the utilities stay neutral.
   fabReport: { backgroundColor: colors.accent },
-  fabReportIcon: { color: '#04291B', fontSize: 24, fontWeight: '800', lineHeight: 26 },
+  fabReportIcon: { color: colors.onAccent, fontSize: 24, fontWeight: '700', lineHeight: 26 },
   zoomHint: {
     alignSelf: 'center',
     marginTop: 12,
-    backgroundColor: 'rgba(15,17,21,0.82)',
-    borderRadius: 999,
+    backgroundColor: colors.glassStrong,
+    borderRadius: radius.pill,
     paddingHorizontal: 14,
     paddingVertical: 8,
-    ...shadow(0.3, 10, 3),
+    ...elevate(0.08, 10, 2),
   },
   zoomHintText: { color: colors.textDim, fontSize: 12, fontWeight: '600' },
 });

@@ -122,7 +122,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       showsMyLocationButton={false}
       showsCompass={false}
       toolbarEnabled={false}
-      userInterfaceStyle="dark"
+      userInterfaceStyle="light"
     >
       {visibleUnknown.map((f) => (
         <Polyline
@@ -148,7 +148,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       {selected && (
         <Polyline
           coordinates={selected.geometry.coordinates.map(([lon, lat]) => ({ latitude: lat, longitude: lon }))}
-          strokeColor="#FFFFFF"
+          strokeColor={colors.text}
           strokeWidth={7}
         />
       )}
@@ -227,14 +227,14 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
 
 const styles = StyleSheet.create({
   pPill: {
-    backgroundColor: colors.surface,
-    borderColor: colors.accent,
-    borderWidth: 1,
-    borderRadius: 6,
-    paddingHorizontal: 5,
-    paddingVertical: 1,
+    backgroundColor: colors.glassStrong,
+    borderColor: colors.glassBorder,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 7,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
   },
-  pText: { color: colors.text, fontSize: 11, fontWeight: '800' },
+  pText: { color: colors.text, fontSize: 11, fontWeight: '700' },
   // Live Park&Ride pin — solid accent so it reads as "a place with N spaces",
   // not as another street rule.
   cpPill: {
@@ -245,18 +245,18 @@ const styles = StyleSheet.create({
   },
   cpPillFull: { backgroundColor: colors.danger },
   cpPillPaid: { backgroundColor: colors.warning },
-  cpText: { color: '#0F1115', fontSize: 11, fontWeight: '800' },
+  cpText: { color: colors.onAccent, fontSize: 11, fontWeight: '700' },
   // Crowd reports are round badges — a different shape from the rule lines and
   // the car-park pills, because they mean "a person said so", not "a sign says".
   reportPin: {
     width: 26, height: 26, borderRadius: 13, backgroundColor: colors.accent,
-    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#0F1115',
+    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: colors.surface,
   },
   reportPinFull: { backgroundColor: colors.danger },
-  reportPinText: { color: '#0F1115', fontSize: 13, fontWeight: '900' },
+  reportPinText: { color: colors.onAccent, fontSize: 13, fontWeight: '800' },
   spotPin: {
-    width: 30, height: 30, borderRadius: 15, backgroundColor: colors.text,
-    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: colors.accent,
+    width: 30, height: 30, borderRadius: 15, backgroundColor: colors.surface,
+    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: colors.text,
   },
   spotPinText: { fontSize: 15 },
 });

@@ -5,7 +5,9 @@
 
 import React from 'react';
 import { Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
-import { colors, font, tracking } from '../theme';
+import { colors, font, radius, shadow } from '../theme';
+import { tracking } from '../theme';
+import { Glass } from './Glass';
 import { useStore } from '../state/store';
 import { distanceM } from '../lib/geo';
 
@@ -33,7 +35,7 @@ export function MySpotCard({ at }: { at?: { latitude: number; longitude: number 
   };
 
   return (
-    <View style={styles.card}>
+    <Glass strong style={styles.card}>
       <Text style={styles.icon}>🅿️</Text>
       <View style={{ flex: 1 }}>
         <Text style={styles.title} numberOfLines={1}>
@@ -49,21 +51,21 @@ export function MySpotCard({ at }: { at?: { latitude: number; longitude: number 
       <Pressable style={styles.clear} onPress={() => setMySpot(null)} hitSlop={10}>
         <Text style={styles.clearText}>✕</Text>
       </Pressable>
-    </View>
+    </Glass>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
     position: 'absolute', left: 16, right: 16, flexDirection: 'row', alignItems: 'center', gap: 10,
-    backgroundColor: 'rgba(26,29,36,0.97)', borderRadius: 16, paddingHorizontal: 14, paddingVertical: 11,
-    shadowColor: '#000', shadowOpacity: 0.4, shadowRadius: 16, shadowOffset: { width: 0, height: 6 }, elevation: 8,
+    borderRadius: radius.card, paddingHorizontal: 14, paddingVertical: 11,
+    ...shadow(0.12, 16, 5),
   },
   icon: { fontSize: 18 },
   title: { fontFamily: font, color: colors.text, fontSize: 14.5, fontWeight: '700', letterSpacing: tracking.body },
   sub: { fontFamily: font, color: colors.textDim, fontSize: 12.5, marginTop: 1 },
-  walk: { backgroundColor: colors.accent, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7 },
-  walkText: { fontFamily: font, color: '#04291B', fontSize: 13, fontWeight: '700' },
+  walk: { backgroundColor: colors.accent, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 7 },
+  walkText: { fontFamily: font, color: colors.onAccent, fontSize: 13, fontWeight: '700' },
   clear: { width: 24, height: 24, alignItems: 'center', justifyContent: 'center' },
   clearText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
 });

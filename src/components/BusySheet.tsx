@@ -10,7 +10,8 @@
 
 import React from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { colors, font, tracking } from '../theme';
+import { colors, font, radius, shadow, tracking } from '../theme';
+import { Glass } from './Glass';
 import { confidenceLabel, type Availability } from '../lib/availability';
 
 const BAND_COLOR: Record<Availability['band'], string> = {
@@ -50,7 +51,8 @@ export function BusySheet({
   return (
     <Modal visible transparent animationType="fade" onRequestClose={onClose}>
       <Pressable style={styles.backdrop} onPress={onClose}>
-        <Pressable style={styles.card} onPress={() => {}}>
+        <Pressable onPress={() => {}} style={styles.cardWrap}>
+        <Glass strong style={styles.card} intensity={45}>
           <View style={styles.headerRow}>
             <Text style={styles.title}>{estimate.headline}</Text>
             <Pressable onPress={onClose} hitSlop={14} style={styles.close}>
@@ -92,6 +94,7 @@ export function BusySheet({
           <Text style={styles.footer}>
             {streetName ? `${streetName} · ` : ''}Always check the sign — it is the only thing that can fine you.
           </Text>
+        </Glass>
         </Pressable>
       </Pressable>
     </Modal>
@@ -99,20 +102,21 @@ export function BusySheet({
 }
 
 const styles = StyleSheet.create({
-  backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', alignItems: 'center', justifyContent: 'center', padding: 20 },
+  backdrop: { flex: 1, backgroundColor: colors.scrim, alignItems: 'center', justifyContent: 'center', padding: 20 },
+  cardWrap: { width: '100%', maxWidth: 480, maxHeight: '80%' },
   card: {
-    width: '100%', maxWidth: 480, maxHeight: '80%',
-    backgroundColor: colors.surface, borderRadius: 24, padding: 20,
-    shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 28, shadowOffset: { width: 0, height: 12 }, elevation: 14,
+    width: '100%', maxHeight: '100%',
+    borderRadius: radius.sheet, padding: 20,
+    ...shadow(0.2, 30, 12),
   },
   headerRow: { flexDirection: 'row', alignItems: 'center' },
   title: { flex: 1, fontFamily: font, color: colors.text, fontSize: 21, fontWeight: '800', letterSpacing: tracking.title },
-  close: { width: 30, height: 30, borderRadius: 15, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center' },
+  close: { width: 30, height: 30, borderRadius: 15, backgroundColor: 'rgba(46,43,38,0.07)', alignItems: 'center', justifyContent: 'center' },
   closeText: { fontFamily: font, color: colors.textDim, fontSize: 14, fontWeight: '600' },
 
   badgeRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 14, flexWrap: 'wrap' },
   badgeIcon: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
-  badgeIconText: { color: '#0F1115', fontSize: 17, fontWeight: '900' },
+  badgeIconText: { color: colors.onAccent, fontSize: 17, fontWeight: '800' },
   pill: { borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
   pillText: { fontFamily: font, fontSize: 13.5, fontWeight: '700' },
   scoreText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
@@ -122,7 +126,7 @@ const styles = StyleSheet.create({
   evidence: { marginTop: 14 },
   evidenceRow: { flexDirection: 'row', gap: 10, marginBottom: 12, alignItems: 'flex-start' },
   tick: { width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginTop: 1 },
-  tickText: { color: '#0F1115', fontSize: 11, fontWeight: '900' },
+  tickText: { color: colors.onAccent, fontSize: 11, fontWeight: '800' },
   evidenceText: { flex: 1, fontFamily: font, color: colors.text, fontSize: 14, lineHeight: 20, letterSpacing: tracking.body },
 
   footer: { fontFamily: font, color: colors.textDim, fontSize: 12, marginTop: 6, textAlign: 'center' },

@@ -37,13 +37,15 @@ function currentPosition(): Promise<{ latitude: number; longitude: number } | nu
   });
 }
 
-// OpenFreeMap's dark style: vector tiles, no API key, no usage cap for a
-// public-good app (https://openfreemap.org). CARTO's free raster basemap began
-// watermarking every tile "API KEY REQUIRED" in 2026, which is what the live
-// site showed until this swap. Our street layers are added on top in
-// buildMap() once the style has loaded, so a style URL works the same as the
-// inline raster style did.
-const BASEMAP = 'https://tiles.openfreemap.org/styles/dark';
+// OpenFreeMap: vector tiles, no API key, no usage cap for a public-good app
+// (https://openfreemap.org). CARTO's free raster basemap began watermarking
+// every tile "API KEY REQUIRED" in 2026, which is what the live site showed
+// until this swap.
+//
+// Positron (light) rather than dark: the palette is unbleached paper, and the
+// street colours are earth dyes that need a pale ground to read against. A
+// dark map also fights the frosted-paper chrome sitting on top of it.
+const BASEMAP = 'https://tiles.openfreemap.org/styles/positron';
 
 function regionFromMap(map: maplibregl.Map): Region {
   const b = map.getBounds();
@@ -326,7 +328,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
         type: 'line',
         source: 'streets',
         filter: ['==', ['get', 'id'], -1],
-        paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.95 },
+        paint: { 'line-color': colors.text, 'line-width': 7, 'line-opacity': 0.95 },
         layout: { 'line-cap': 'round' },
       });
       // Time-limit labels ("2P", "½P"…) hugging the streets that have one.
@@ -345,8 +347,8 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-padding': 4,
         },
         paint: {
-          'text-color': '#FFFFFF',
-          'text-halo-color': '#0F1115',
+          'text-color': colors.text,
+          'text-halo-color': colors.surface,
           'text-halo-width': 1.6,
         },
       });
@@ -367,7 +369,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-padding': 2,
         },
         paint: {
-          'text-color': '#0F1115',
+          'text-color': colors.surface,
           'text-halo-color': ['case', ['>', ['get', 'free'], 0], colors.accent, colors.danger],
           'text-halo-width': 6,
         },
@@ -403,7 +405,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-padding': 2,
         },
         paint: {
-          'text-color': '#0F1115',
+          'text-color': colors.surface,
           'text-halo-color': ['case', ['get', 'free'], colors.accent, colors.warning],
           'text-halo-width': 6,
         },
@@ -437,7 +439,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 5, 16, 9],
           'circle-color': ['case', ['get', 'free'], colors.accent, colors.danger],
           'circle-stroke-width': 2,
-          'circle-stroke-color': '#0F1115',
+          'circle-stroke-color': colors.surface,
         },
       });
       map.on('click', 'reports-pins', (e) => {
@@ -465,7 +467,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-allow-overlap': true,
         },
         paint: {
-          'text-color': '#0F1115',
+          'text-color': colors.surface,
           'text-halo-color': colors.text,
           'text-halo-width': 9,
         },

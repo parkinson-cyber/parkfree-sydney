@@ -109,7 +109,7 @@ export function PaywallModal() {
 
           <Pressable style={styles.cta} onPress={buy} disabled={busy}>
             {busy ? (
-              <ActivityIndicator color="#04291B" />
+              <ActivityIndicator color={colors.onAccent} />
             ) : (
               <Text style={styles.ctaText}>Unlock Premium</Text>
             )}
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     alignItems: 'center',
   },
-  ctaText: { color: '#04291B', fontSize: 17, fontWeight: '800' },
+  ctaText: { color: colors.onAccent, fontSize: 17, fontWeight: '800' },
   restore: { color: colors.textDim, fontSize: 13, textAlign: 'center', marginTop: 14 },
   devNote: { color: colors.warning, fontSize: 11, textAlign: 'center', marginTop: 12 },
 });

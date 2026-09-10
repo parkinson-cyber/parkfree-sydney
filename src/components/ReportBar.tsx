@@ -9,7 +9,8 @@
 import React, { useState } from 'react';
 import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import { colors, font, tracking } from '../theme';
+import { colors, font, radius, shadow, tracking } from '../theme';
+import { Glass } from './Glass';
 import { postReport, type Report, type ReportKind } from '../lib/reports';
 
 export function ReportSheet({
@@ -60,7 +61,7 @@ export function ReportSheet({
   );
 
   return (
-    <View style={styles.sheet}>
+    <Glass strong style={styles.sheet} intensity={40}>
       <View style={styles.handle} />
       <View style={styles.headerRow}>
         <Text style={styles.title}>Help the next driver</Text>
@@ -77,26 +78,26 @@ export function ReportSheet({
       <Option kind="looks_full" label="Street is full" hint="Saves someone the drive · 30 min" tint={colors.danger} />
 
       <Text style={styles.note}>Reports are anonymous and expire on their own.</Text>
-    </View>
+    </Glass>
   );
 }
 
 const styles = StyleSheet.create({
   sheet: {
     position: 'absolute', left: 12, right: 12, bottom: 20,
-    backgroundColor: 'rgba(26,29,36,0.98)', borderRadius: 24,
+    borderRadius: radius.sheet,
     paddingHorizontal: 18, paddingTop: 8, paddingBottom: 16,
-    shadowColor: '#000', shadowOpacity: 0.45, shadowRadius: 24, shadowOffset: { width: 0, height: 10 }, elevation: 12,
+    ...shadow(0.16, 26, 10),
   },
-  handle: { alignSelf: 'center', width: 36, height: 5, borderRadius: 3, backgroundColor: 'rgba(255,255,255,0.18)', marginBottom: 12 },
+  handle: { alignSelf: 'center', width: 36, height: 5, borderRadius: 3, backgroundColor: 'rgba(46,43,38,0.18)', marginBottom: 12 },
   headerRow: { flexDirection: 'row', alignItems: 'center' },
   title: { flex: 1, fontFamily: font, color: colors.text, fontSize: 20, fontWeight: '700', letterSpacing: tracking.title },
-  close: { width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center', marginLeft: 8 },
+  close: { width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(46,43,38,0.07)', alignItems: 'center', justifyContent: 'center', marginLeft: 8 },
   closeText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
   sub: { fontFamily: font, color: colors.textDim, fontSize: 14, letterSpacing: tracking.body, marginTop: 4, marginBottom: 12 },
   option: {
     flexDirection: 'row', alignItems: 'center', gap: 12,
-    backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: 14,
+    backgroundColor: 'rgba(46,43,38,0.05)', borderRadius: radius.control,
     paddingHorizontal: 14, paddingVertical: 12, marginBottom: 8,
   },
   optionBusy: { opacity: 0.5 },
