@@ -40,6 +40,7 @@ SOURCES = [
     "Willoughby South resident parking scheme (council map, Mar 2024)",
     "Randwick kerb signs (council GIS: resident-zone kerbs with limits + shopping-strip kerbs)",
     "Northern Beaches parking signs (council asset register, sign types only)",
+    "City of Parramatta parking (resident-scheme areas, meters, no-stopping lines)",
     "TfNSW clearways (state roads; ban hours published, other times unknown)",
     "field-observed signs (photographed on site)",
 ]

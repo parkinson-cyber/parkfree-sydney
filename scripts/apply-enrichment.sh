@@ -32,6 +32,9 @@ python3 scripts/fetch-randwick-kerbs-parking.py
 # stretch of kerb they cover, so they get the final say over schedule-derived tags.
 # State roads: TfNSW signs the main roads councils don't. Runs before field
 # signs so a photographed sign can still override a clearway.
+echo "── parramatta (offline) ─────────────"
+python3 scripts/fetch-parramatta-parking.py
+
 echo "── tfnsw-clearways (offline) ────────"
 python3 scripts/fetch-tfnsw-clearways.py
 

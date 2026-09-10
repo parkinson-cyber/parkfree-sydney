@@ -113,19 +113,23 @@ jobs:
       - name: Knock on the doors that are still shut
         run: |
           set -euo pipefail
-          echo "## Councils with no published parking data" >> "$GITHUB_STEP_SUMMARY"
+          # Real portals, found rather than guessed. Four earlier entries were
+          # invented hostnames that never resolved, so the sweep was reporting
+          # DNS failures as if they were councils choosing not to publish.
+          # Ku-ring-gai, Parramatta, Canterbury-Bankstown and The Hills are
+          # their actual ArcGIS Online orgs.
+          echo "## Councils probed for parking layers" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "| host | status |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
           for host in \
-            "https://maps.kmc.nsw.gov.au/arcgis/rest/services" \
+            "https://services7.arcgis.com/iKtcKBgui9r9RlAJ/arcgis/rest/services" \
+            "https://services6.arcgis.com/NrOjMi9LSYL3MUze/arcgis/rest/services" \
+            "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services" \
+            "https://services5.arcgis.com/8Wvkixf40BBqM3Kb/arcgis/rest/services" \
             "https://map.hornsby.nsw.gov.au/intramaps99/ApplicationEngine/Projects/" \
             "https://mapping.willoughby.nsw.gov.au/Exponare/Rest/" \
-            "https://geoserver.ssc.nsw.gov.au/arcgis/rest/services" \
-            "https://maps.georgesriver.nsw.gov.au/arcgis/rest/services" \
-            "https://maps.cityofparramatta.nsw.gov.au/arcgis/rest/services" \
-            "https://maps.bayside.nsw.gov.au/arcgis/rest/services" \
-            "https://maps.canterbury-bankstown.nsw.gov.au/arcgis/rest/services"; do
+            "https://geoserver.ssc.nsw.gov.au/arcgis/rest/services"; do
             CODE=$(curl -sS --max-time 20 -o /tmp/probe.json -w '%{http_code}' "$host?f=json" || echo "unreachable")
             HITS=$(python3 -c "
           import json
