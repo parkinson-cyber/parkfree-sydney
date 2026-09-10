@@ -204,6 +204,46 @@ async function northSydney() {
   return out;
 }
 
+async function kuringGai() {
+  // Ku-ring-gai runs no resident parking scheme and publishes no sign register,
+  // so its streets stay unknown - but its council car parks are mapped, with
+  // space counts and what each one serves. For Roseville, Lindfield, Gordon and
+  // St Ives that is the only council parking data that exists.
+  const url = 'https://services7.arcgis.com/iKtcKBgui9r9RlAJ/arcgis/rest/services'
+    + '/Council_Assets/FeatureServer/2/query?where=1%3D1&outFields=*&outSR=4326&f=geojson';
+  const gj = JSON.parse(await get(url));
+  return gj.features.filter((f) => f.geometry).map((f) => {
+    const p = f.properties;
+    // polygons: use the centroid of the outer ring
+    const ring = f.geometry.type === 'Polygon' ? f.geometry.coordinates[0]
+      : f.geometry.coordinates[0][0];
+    const lon = ring.reduce((s, c) => s + c[0], 0) / ring.length;
+    const lat = ring.reduce((s, c) => s + c[1], 0) / ring.length;
+    const spaces = (p.Spaces || '').trim();
+    return {
+      id: `krg-${p.OBJECTID}`,
+      name: (p.Name || p.LMU_Location || 'Council car park').replace(/\s*-\s*CP\d+$/, '').trim(),
+      council: 'Ku-ring-gai',
+      address: (p.LMU_Location || '').trim() || null,
+      latitude: lat,
+      longitude: lon,
+      openingHours: null,
+      // Ku-ring-gai publishes no rates or time limits for these - the limit is
+      // on the sign at the entrance. Saying nothing beats inventing a number.
+      freeMinutes: null,
+      freeWindows: [],
+      freeAllDay: [],
+      unrestrictedOutside: false,
+      feesText: null,
+      restrictionsText: [spaces, (p.Description || '').trim()].filter(Boolean).join(' · ') || null,
+      accessibleSpaces: /disabled/i.test(spaces) ? spaces : null,
+      evCharging: null,
+      clearanceHeight: null,
+      url: 'https://www.krg.nsw.gov.au/Community/Streets-and-transport/Parking/Car-parks',
+    };
+  });
+}
+
 async function cityOfSydney() {
   // CoS publishes locations and operators but NOT rates — so no free/fee data
   // is invented here; the app shows the operator and says to check on site.
@@ -239,13 +279,14 @@ async function cityOfSydney() {
 
 // ---------------------------------------------------------------- main
 
-const carParks = [...(await northSydney()), ...(await cityOfSydney())]
+const carParks = [...(await northSydney()), ...(await kuringGai()), ...(await cityOfSydney())]
   .sort((a, b) => a.council.localeCompare(b.council) || a.name.localeCompare(b.name));
 
 const feed = {
   generated: new Date().toISOString(),
-  source: 'North Sydney Council car parks directory + City of Sydney ArcGIS "Council car parks". '
-    + 'Free periods, fees and hours are quoted from each council\'s own page; City of Sydney publishes no rates.',
+  source: 'North Sydney Council car parks directory + Ku-ring-gai Council_Assets carparks layer '
+    + '+ City of Sydney ArcGIS "Council car parks". Free periods, fees and hours are quoted from '
+    + "each council's own page; Ku-ring-gai and City of Sydney publish no rates, so theirs are left blank.",
   carParks,
 };
 

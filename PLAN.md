@@ -75,6 +75,25 @@ Notes for whoever picks this up:
   colour of a street is the product. Test at night and in sun.
 - The status page (`public/status.html`) is separate and can stay plain.
 
+## M9 — North Shore fill, in the order requested (2026-09-10)
+
+Each step below names the source *before* the work, because a suburb with no
+published source cannot be filled without inventing data. Status as probed
+2026-09-10 from this Mac (open egress):
+
+| # | Target | Council | Source found? | Plan |
+|---|---|---|---|---|
+| 1 | **Roseville** | Ku-ring-gai | **Car parks only** — 53 council car parks with space counts, applied. No RPS (council policy), no sign register. | ✅ car parks done. Streets need field photos or a council request. |
+| 2 | **Castlecrag** | Willoughby | **Not yet** — Willoughby's open sign census is Chatswood CBD only; no asset register on ArcGIS; site is Exponare (planning layers). | Probe Exponare REST + Have Your Say for a Castlecrag/Northbridge scheme map (the Willoughby South pattern). |
+| 3 | **Ku-ring-gai rest** (Lindfield, Gordon, Killara, St Ives, Pymble, Turramurra, Wahroonga) | Ku-ring-gai | **Car parks only** (same layer). | Car parks applied. Streets: council request, or accept unknown. |
+| 4 | **Hornsby** | Hornsby | **Lead**: IntraMaps at `map.hornsby.nsw.gov.au/intramaps99/`; `ApplicationEngine/Projects/` returns JSON, so there is an API to walk. | Walk the IntraMaps project/module tree for a parking or sign layer. |
+| 5 | **Northern Beaches (rest)** | Northern Beaches | **Applied** — sign register gave 1,408 segments (Manly 55%). | Refine: Manly permit-scheme areas; the 906 signs that matched no street within 22 m. |
+
+Honest expectation to set: steps 2–4 may all come back "no published source",
+in which case those suburbs stay unknown until someone photographs signs or a
+council answers a data request. That is the correct outcome, not a failure —
+the alternative is inventing parking rules.
+
 ### Data leads still worth a session (corridor)
 - **Willoughby**: the council has more scheme maps like Willoughby South (Naremburn precinct expansion was consulted on) — search haveyoursaywilloughby.com.au for each, same pipeline. Also its 2020 LTC minutes list RA areas RA1–RA23; no street list found yet.
 - **Randwick**: `extTransport/ResidentParkingZone` kerb polylines (699, with house numbers) → snap by geometry instead of area polygon for exact per-kerb tagging.
