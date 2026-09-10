@@ -84,25 +84,25 @@ export function ReportSheet({
 
 const styles = StyleSheet.create({
   sheet: {
-    position: 'absolute', left: 12, right: 12, bottom: 20,
-    borderRadius: radius.sheet,
-    paddingHorizontal: 18, paddingTop: 8, paddingBottom: 16,
-    ...shadow(0.16, 26, 10),
+    position: 'absolute', left: 10, right: 10, bottom: 14,
+    borderRadius: radius.card,
+    paddingHorizontal: 14, paddingTop: 8, paddingBottom: 12,
+    ...shadow(0.16, 20, 8),
   },
   handle: { alignSelf: 'center', width: 36, height: 5, borderRadius: 3, backgroundColor: 'rgba(46,43,38,0.18)', marginBottom: 12 },
   headerRow: { flexDirection: 'row', alignItems: 'center' },
-  title: { flex: 1, fontFamily: font, color: colors.text, fontSize: 20, fontWeight: '700', letterSpacing: tracking.title },
+  title: { flex: 1, fontFamily: font, color: colors.text, fontSize: 17, fontWeight: '700', letterSpacing: tracking.title },
   close: { width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(46,43,38,0.07)', alignItems: 'center', justifyContent: 'center', marginLeft: 8 },
   closeText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
-  sub: { fontFamily: font, color: colors.textDim, fontSize: 14, letterSpacing: tracking.body, marginTop: 4, marginBottom: 12 },
+  sub: { fontFamily: font, color: colors.textDim, fontSize: 13, letterSpacing: tracking.body, marginTop: 2, marginBottom: 8 },
   option: {
     flexDirection: 'row', alignItems: 'center', gap: 12,
     backgroundColor: 'rgba(46,43,38,0.05)', borderRadius: radius.control,
-    paddingHorizontal: 14, paddingVertical: 12, marginBottom: 8,
+    paddingHorizontal: 12, paddingVertical: 9, marginBottom: 6,
   },
   optionBusy: { opacity: 0.5 },
   optionDot: { width: 10, height: 10, borderRadius: 5 },
-  optionLabel: { fontFamily: font, color: colors.text, fontSize: 16, fontWeight: '600', letterSpacing: tracking.body },
+  optionLabel: { fontFamily: font, color: colors.text, fontSize: 15, fontWeight: '600', letterSpacing: tracking.body },
   optionHint: { fontFamily: font, color: colors.textDim, fontSize: 12.5, marginTop: 1 },
   note: { fontFamily: font, color: colors.textDim, fontSize: 11.5, textAlign: 'center', marginTop: 4 },
 });

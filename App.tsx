@@ -230,23 +230,13 @@ function Main() {
         freeCarParks={freeCarParks}
       />
 
-      {/* top overlays */}
-      <View style={[styles.top, { paddingTop: insets.top + 8, pointerEvents: 'box-none' }]}>
-        <View style={[styles.brandRow, { pointerEvents: 'box-none' }]}>
-          <View style={styles.brand}>
-            <Text style={styles.brandText}>
-              Park<Text style={{ color: colors.accent }}>Free</Text>
-            </Text>
-            <Text style={styles.brandSub}>SYDNEY</Text>
-          </View>
-          <View style={styles.freeNow}>
-            <View style={styles.freeNowDot} />
-            <Text style={styles.freeNowText}>
-              {freeNow.count} free {freeNow.nearby ? 'nearby' : 'now'}
-            </Text>
-          </View>
-        </View>
-        <SearchBar onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)} />
+      {/* Top chrome is one bar, Waze-style: everything else floats. */}
+      <View style={[styles.top, { paddingTop: insets.top + 6, pointerEvents: 'box-none' }]}>
+        <SearchBar
+          onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)}
+          freeCount={freeNow.count}
+          freeNearby={freeNow.nearby}
+        />
         {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
           <View style={styles.zoomHint}>
             <Text style={styles.zoomHintText}>Zoom in to see parking streets</Text>
@@ -257,13 +247,13 @@ function Main() {
       <MySpotCardHost />
 
       {toast && (
-        <View style={[styles.toast, { bottom: selected ? 340 : 108 + insets.bottom }]} pointerEvents="none">
+        <View style={[styles.toast, { bottom: selected ? 190 : 96 + insets.bottom }]} pointerEvents="none">
           <Text style={styles.toastText} numberOfLines={2}>{toast}</Text>
         </View>
       )}
 
       {/* right-side utilities — stacked above the primary action */}
-      <View style={[styles.fabs, { bottom: selected ? 330 : 108 + insets.bottom }]}>
+      <View style={[styles.fabs, { bottom: selected ? 178 : 96 + insets.bottom }]}>
         <Pressable
           style={styles.fab}
           onPress={() => mapRef.current?.animateToUser()}
@@ -349,7 +339,7 @@ function MySpotCardHost() {
   const spot = useStore((s) => s.mySpot);
   if (!spot) return null;
   return (
-    <View style={{ position: 'absolute', top: insets.top + 108, left: 0, right: 0 }} pointerEvents="box-none">
+    <View style={{ position: 'absolute', top: insets.top + 60, left: 0, right: 0 }} pointerEvents="box-none">
       <MySpotCard />
     </View>
   );
@@ -364,7 +354,7 @@ export default function App() {
 }
 
 /** Single side gutter for every floating control, so nothing is off-grid. */
-const GUTTER = 16;
+const GUTTER = 12;
 
 /** Soft elevation. Premium map UIs separate layers with shadow, not borders. */
 const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y);
@@ -372,77 +362,45 @@ const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y)
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
   top: { position: 'absolute', top: 0, left: 0, right: 0 },
-  brandRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: GUTTER,
-    marginBottom: 12,
-    gap: 10,
-  },
-  brand: {
-    flexDirection: 'row', alignItems: 'baseline', gap: 6,
-    backgroundColor: colors.glassStrong, borderRadius: radius.pill,
-    paddingHorizontal: 12, paddingVertical: 6,
-    ...elevate(0.08, 10, 2),
-  },
-  // On a pale map the brand no longer needs a shadow to survive — it needs
-  // its own small pane of paper so it never sits directly on street detail.
-  brandText: {
-    color: colors.text, fontSize: 20, fontWeight: '800', letterSpacing: -0.4,
-  },
-  brandSub: {
-    color: colors.textDim, fontSize: 9.5, fontWeight: '700', letterSpacing: 2.2,
-  },
-  // Live count reads as a status indicator, not a button — no border, just a
-  // dark scrim so it stays legible over both light and dark map areas.
-  freeNow: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: colors.glassStrong,
-    borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 7,
-    marginLeft: 'auto',
-    ...elevate(0.08, 10, 2),
-  },
-  freeNowDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.accent },
-  freeNowText: { color: colors.text, fontSize: 11.5, fontWeight: '700', letterSpacing: 0.1 },
   findBtn: {
     position: 'absolute',
     left: GUTTER,
     right: GUTTER,
     backgroundColor: colors.accent,
     borderRadius: radius.pill,
-    paddingVertical: 17,
+    paddingVertical: 13,
     alignItems: 'center',
-    ...elevate(0.22, 18, 6),
+    ...elevate(0.2, 16, 5),
   },
   findBtnBusy: { opacity: 0.55 },
   findBtnText: {
-    color: colors.onAccent, fontSize: 17, fontWeight: '700', letterSpacing: -0.2,
+    color: colors.onAccent, fontSize: 16, fontWeight: '700', letterSpacing: -0.2,
   },
   toast: {
     position: 'absolute',
     left: GUTTER,
     right: GUTTER,
     backgroundColor: colors.text,
-    borderRadius: radius.card,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    ...elevate(0.22, 16, 6),
+    borderRadius: radius.control,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    ...elevate(0.2, 14, 5),
   },
-  toastText: { color: colors.surface, fontSize: 13.5, fontWeight: '600', textAlign: 'center' },
-  fabs: { position: 'absolute', right: GUTTER, gap: 10 },
+  toastText: { color: colors.surface, fontSize: 13, fontWeight: '600', textAlign: 'center' },
+  fabs: { position: 'absolute', right: GUTTER, gap: 8 },
   // 48pt: Apple's minimum comfortable touch target, and big enough that the
   // glyph reads clearly against a busy map.
   fab: {
-    width: 48, height: 48, borderRadius: 24,
+    width: 42, height: 42, borderRadius: 21,
     backgroundColor: colors.glassStrong,
     alignItems: 'center', justifyContent: 'center',
     ...elevate(0.1, 12, 3),
   },
-  fabIcon: { color: colors.text, fontSize: 20, fontWeight: '600', lineHeight: 24 },
+  fabIcon: { color: colors.text, fontSize: 17, fontWeight: '600', lineHeight: 20 },
   // The crowd-report button is the one control that adds data, so it carries
   // the accent while the utilities stay neutral.
   fabReport: { backgroundColor: colors.accent },
-  fabReportIcon: { color: colors.onAccent, fontSize: 24, fontWeight: '700', lineHeight: 26 },
+  fabReportIcon: { color: colors.onAccent, fontSize: 21, fontWeight: '700', lineHeight: 23 },
   zoomHint: {
     alignSelf: 'center',
     marginTop: 12,

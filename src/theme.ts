@@ -44,6 +44,16 @@ export const colors = {
   warning: '#B5813A',      // ochre
   premium: '#6A7A93',      // muted indigo
 
+  /**
+   * Search is mustard, the data sheet is sage. Both are dyed-cotton tones
+   * rather than UI primaries, so they read as materials next to the paper
+   * chrome instead of as buttons.
+   */
+  search: '#E0BD62',
+  searchInk: '#3A3122',
+  dataSurface: '#DBE4D0',
+  dataInk: '#2B3324',
+
   /** Materials — translucent paper for glass layers. */
   glass: 'rgba(251,249,244,0.72)',
   glassStrong: 'rgba(251,249,244,0.88)',

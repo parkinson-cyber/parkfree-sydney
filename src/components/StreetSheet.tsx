@@ -7,7 +7,6 @@ import {
 } from '../lib/rules';
 import { featureCenter, sideLabels } from '../lib/geo';
 import { colors, font, radius, shadow, statusColors, statusLabels, tracking } from '../theme';
-import { Glass } from './Glass';
 import { useStore } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
 import type { Availability } from '../lib/availability';
@@ -77,9 +76,7 @@ export function StreetSheet({
   };
 
   return (
-    <Glass strong style={styles.sheet} intensity={40}>
-      <View style={styles.handle} />
-
+    <View style={styles.sheet}>
       <View style={styles.headerRow}>
         <Text style={styles.title} numberOfLines={1}>
           {p.name ?? 'Unnamed street'}
@@ -154,85 +151,83 @@ export function StreetSheet({
           </Text>
         </Pressable>
       </View>
-    </Glass>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  // The data panel. Sage rather than paper so it reads as the answer to the
+  // question, and deliberately shallow: it was taking a third of the screen
+  // to say one street's rules, which pushed the map — the actual product —
+  // out of view.
   sheet: {
     position: 'absolute',
-    left: 12,
-    right: 12,
-    bottom: 20,
-    borderRadius: radius.sheet,
-    paddingHorizontal: 18,
-    paddingTop: 8,
-    paddingBottom: 16,
-    ...shadow(0.16, 26, 10),
-  },
-  handle: {
-    alignSelf: 'center',
-    width: 36,
-    height: 5,
-    borderRadius: 3,
-    backgroundColor: 'rgba(46,43,38,0.18)',
-    marginBottom: 12,
+    left: 10,
+    right: 10,
+    bottom: 14,
+    backgroundColor: colors.dataSurface,
+    borderRadius: radius.card,
+    paddingHorizontal: 14,
+    paddingTop: 10,
+    paddingBottom: 10,
+    ...shadow(0.16, 20, 8),
   },
   headerRow: { flexDirection: 'row', alignItems: 'center' },
   title: {
     flex: 1,
     fontFamily: font,
-    color: colors.text,
-    fontSize: 20,
+    color: colors.dataInk,
+    fontSize: 17,
     fontWeight: '700',
     letterSpacing: tracking.title,
   },
   // Borderless and barely-there: closing is a fallback, tapping the map works too.
   close: {
-    width: 28, height: 28, borderRadius: 14,
-    backgroundColor: 'rgba(46,43,38,0.07)',
+    width: 24, height: 24, borderRadius: 12,
+    backgroundColor: 'rgba(43,51,36,0.09)',
     alignItems: 'center', justifyContent: 'center',
     marginLeft: 8,
   },
   closeText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
 
-  metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 7 },
+  metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 4 },
   dot: { width: 7, height: 7, borderRadius: 4, marginRight: 7 },
   metaStatus: {
     flexShrink: 0,
-    fontFamily: font, fontSize: 14, fontWeight: '600', letterSpacing: tracking.body,
+    fontFamily: font, fontSize: 13, fontWeight: '700', letterSpacing: tracking.body,
   },
   metaChips: {
     flexShrink: 1,
-    fontFamily: font, color: colors.textDim, fontSize: 14, fontWeight: '500',
+    fontFamily: font, color: colors.dataInk, opacity: 0.7, fontSize: 13, fontWeight: '500',
     letterSpacing: tracking.body,
   },
 
   detail: {
     fontFamily: font,
-    color: colors.textDim,
-    fontSize: 14,
-    lineHeight: 19,
+    color: colors.dataInk,
+    opacity: 0.78,
+    fontSize: 13,
+    lineHeight: 17,
     letterSpacing: tracking.body,
-    marginTop: 8,
+    marginTop: 5,
   },
   // A plain line of text, not a boxed callout — the colour carries the urgency.
   soonText: {
-    fontFamily: font, color: colors.textDim, fontSize: 14, fontWeight: '600',
-    letterSpacing: tracking.body, marginTop: 7,
+    fontFamily: font, color: colors.dataInk, opacity: 0.8, fontSize: 13, fontWeight: '600',
+    letterSpacing: tracking.body, marginTop: 4,
   },
   soonTextImminent: { color: colors.accent },
 
-  sides: { flexDirection: 'row', gap: 8, marginTop: 12 },
+  sides: { flexDirection: 'row', gap: 8, marginTop: 8 },
   sideCard: {
     flex: 1,
-    backgroundColor: 'rgba(46,43,38,0.05)',
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 9,
+    backgroundColor: 'rgba(43,51,36,0.07)',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
   sideLabel: {
-    fontFamily: font, color: colors.textDim, fontSize: 11, fontWeight: '600',
+    fontFamily: font, color: colors.dataInk, opacity: 0.6, fontSize: 10.5, fontWeight: '600',
     textTransform: 'uppercase', letterSpacing: tracking.caption,
   },
   sideStatus: {
@@ -240,21 +235,21 @@ const styles = StyleSheet.create({
     letterSpacing: tracking.body, marginTop: 2,
   },
 
-  actions: { flexDirection: 'row', gap: 10, marginTop: 16 },
+  actions: { flexDirection: 'row', gap: 8, marginTop: 10 },
   button: {
     flex: 1,
     borderRadius: radius.control,
-    paddingVertical: 13,
+    paddingVertical: 10,
     alignItems: 'center',
   },
   buttonPrimary: { backgroundColor: colors.accent },
   buttonPrimaryText: {
-    fontFamily: font, color: colors.onAccent, fontSize: 16, fontWeight: '600',
+    fontFamily: font, color: colors.onAccent, fontSize: 15, fontWeight: '600',
     letterSpacing: tracking.body,
   },
-  buttonSecondary: { backgroundColor: 'rgba(46,43,38,0.07)' },
+  buttonSecondary: { backgroundColor: 'rgba(43,51,36,0.10)' },
   buttonSecondaryText: {
-    fontFamily: font, color: colors.text, fontSize: 16, fontWeight: '600',
+    fontFamily: font, color: colors.dataInk, fontSize: 15, fontWeight: '600',
     letterSpacing: tracking.body,
   },
 });

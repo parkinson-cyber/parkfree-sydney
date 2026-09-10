@@ -60,7 +60,7 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 
 ---
 
-## M8 — iOS-native visual pass — palette + glass DONE 2026-09-10; still to do: bottom-sheet detents, spring transitions, haptics on sheet open
+## M8 — iOS-native visual pass — palette, glass and the phone-first layout DONE 2026-09-10 (mustard search bar, sage data panel, chrome 25% → 6% of screen). Still to do: bottom-sheet detents (drag between peek/full), spring transitions, haptics on sheet open
 
 The app works; it doesn't yet *feel* like a native iOS app. Wanted: the current
 iOS look — translucent/glass layers over the map, proper depth and blur on the

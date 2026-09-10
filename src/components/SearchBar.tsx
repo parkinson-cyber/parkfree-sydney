@@ -3,13 +3,16 @@ import {
   Keyboard, Pressable, StyleSheet, Text, TextInput, View,
 } from 'react-native';
 import { search, streetById, type SearchResult } from '../lib/parkingData';
-import { colors } from '../theme';
+import { colors, font, radius, shadow, tracking } from '../theme';
 import { useStore } from '../state/store';
 
 export function SearchBar({
-  onGo,
+  onGo, freeCount, freeNearby,
 }: {
   onGo: (r: SearchResult) => void;
+  /** Live count, shown inside the bar so it costs no extra height. */
+  freeCount?: number;
+  freeNearby?: boolean;
 }) {
   const [query, setQuery] = useState('');
   const [focused, setFocused] = useState(false);
@@ -30,10 +33,10 @@ export function SearchBar({
   return (
     <View style={styles.wrap}>
       <View style={styles.bar}>
-        <Text style={styles.icon}>🔍</Text>
+        <Text style={styles.mark}>P</Text>
         <TextInput
           style={styles.input}
-          placeholder="Search street or suburb…"
+          placeholder="Search street or suburb"
           placeholderTextColor={colors.textDim}
           value={query}
           onChangeText={setQuery}
@@ -42,11 +45,17 @@ export function SearchBar({
           autoCorrect={false}
           returnKeyType="search"
         />
-        {query.length > 0 && (
+        {query.length > 0 ? (
           <Pressable onPress={() => setQuery('')} hitSlop={10}>
             <Text style={styles.clear}>✕</Text>
           </Pressable>
-        )}
+        ) : freeCount != null ? (
+          // The count lives in the bar rather than on its own row: it was
+          // costing a whole band of screen to say one number.
+          <Text style={styles.count} numberOfLines={1}>
+            {freeCount} free{freeNearby ? ' here' : ''}
+          </Text>
+        ) : null}
       </View>
       {focused && results.length > 0 && (
         <View style={styles.results}>
@@ -63,48 +72,48 @@ export function SearchBar({
 }
 
 const styles = StyleSheet.create({
-  wrap: { paddingHorizontal: 16 },
-  // A fully-rounded pill floating over the map, separated by shadow rather
-  // than a border — the same treatment as every other control.
+  wrap: { paddingHorizontal: 12 },
+  // One slim mustard bar carrying the mark, the field and the live count.
+  // It replaced a brand row, a count pill and a taller search box stacked on
+  // top of each other, which between them ate a quarter of the screen.
   bar: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: colors.glassStrong,
-    borderRadius: 999,
-    paddingHorizontal: 18,
-    height: 52,
-    shadowColor: '#000',
-    shadowOpacity: 0.4,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 6 },
-    elevation: 8,
+    backgroundColor: colors.search,
+    borderRadius: radius.pill,
+    paddingHorizontal: 14,
+    height: 44,
+    ...shadow(0.14, 12, 3),
   },
-  icon: { fontSize: 15, marginRight: 10, opacity: 0.85 },
+  mark: {
+    fontFamily: font, color: colors.searchInk, fontSize: 16, fontWeight: '800',
+    marginRight: 10, opacity: 0.75,
+  },
   input: {
-    flex: 1, color: colors.text, fontSize: 16, height: '100%',
-    fontWeight: '500',
+    flex: 1, color: colors.searchInk, fontSize: 15, height: '100%',
+    fontWeight: '500', letterSpacing: tracking.body,
   },
-  clear: { color: colors.textDim, fontSize: 15, paddingLeft: 10 },
+  clear: { color: colors.searchInk, fontSize: 14, paddingLeft: 10, opacity: 0.7 },
+  count: {
+    fontFamily: font, color: colors.searchInk, fontSize: 12.5, fontWeight: '700',
+    paddingLeft: 10, opacity: 0.8,
+  },
   results: {
-    marginTop: 8,
+    marginTop: 6,
     backgroundColor: colors.surface,
-    borderRadius: 18,
+    borderRadius: radius.card,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOpacity: 0.4,
-    shadowRadius: 18,
-    shadowOffset: { width: 0, height: 8 },
-    elevation: 10,
+    ...shadow(0.16, 18, 8),
   },
   result: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 18,
-    paddingVertical: 15,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: colors.border,
   },
-  resultLabel: { color: colors.text, fontSize: 15, fontWeight: '600' },
-  resultSub: { color: colors.textDim, fontSize: 12.5 },
+  resultLabel: { fontFamily: font, color: colors.text, fontSize: 15, fontWeight: '600' },
+  resultSub: { fontFamily: font, color: colors.textDim, fontSize: 12.5 },
 });
