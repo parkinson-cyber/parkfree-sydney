@@ -45,14 +45,12 @@ export const colors = {
   premium: '#6A7A93',      // muted indigo
 
   /**
-   * Search is mustard, the data sheet is sage. Both are dyed-cotton tones
-   * rather than UI primaries, so they read as materials next to the paper
-   * chrome instead of as buttons.
+   * "You are here" is the one place a saturated colour earns its keep: the
+   * blue dot is a convention every map app shares, and a driver should find
+   * themselves without reading anything.
    */
-  search: '#E0BD62',
-  searchInk: '#3A3122',
-  dataSurface: '#DBE4D0',
-  dataInk: '#2B3324',
+  locate: '#2C6FD1',
+  locateRing: '#FBF9F4',
 
   /** Materials — translucent paper for glass layers. */
   glass: 'rgba(251,249,244,0.72)',

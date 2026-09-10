@@ -230,30 +230,22 @@ function Main() {
         freeCarParks={freeCarParks}
       />
 
-      {/* Top chrome is one bar, Waze-style: everything else floats. */}
-      <View style={[styles.top, { paddingTop: insets.top + 6, pointerEvents: 'box-none' }]}>
-        <SearchBar
-          onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)}
-          freeCount={freeNow.count}
-          freeNearby={freeNow.nearby}
-        />
-        {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
-          <View style={styles.zoomHint}>
-            <Text style={styles.zoomHintText}>Zoom in to see parking streets</Text>
-          </View>
-        )}
-      </View>
+      {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
+        <View style={[styles.zoomHint, { top: insets.top + 10 }]}>
+          <Text style={styles.zoomHintText}>Zoom in to see parking streets</Text>
+        </View>
+      )}
 
       <MySpotCardHost />
 
       {toast && (
-        <View style={[styles.toast, { bottom: selected ? 190 : 96 + insets.bottom }]} pointerEvents="none">
+        <View style={[styles.toast, { bottom: (selected ? 210 : 118) + insets.bottom }]} pointerEvents="none">
           <Text style={styles.toastText} numberOfLines={2}>{toast}</Text>
         </View>
       )}
 
       {/* right-side utilities — stacked above the primary action */}
-      <View style={[styles.fabs, { bottom: selected ? 178 : 96 + insets.bottom }]}>
+      <View style={[styles.fabs, { bottom: (selected ? 198 : 106) + insets.bottom }]}>
         <Pressable
           style={styles.fab}
           onPress={() => mapRef.current?.animateToUser()}
@@ -277,31 +269,25 @@ function Main() {
         </Pressable>
       </View>
 
-      {/* the app's headline action — full width, centred, always reachable */}
-      {!selected && (
-        <Pressable
-          style={[styles.findBtn, { bottom: 34 + insets.bottom }, finding && styles.findBtnBusy]}
-          onPress={onFindPark}
-          disabled={finding}
-          accessibilityLabel="Find me a park"
-        >
-          <Text style={styles.findBtnText}>
-            {finding ? 'Finding a spot…' : 'Find me a park'}
-          </Text>
-        </Pressable>
-      )}
 
       <TimerPill />
-      {reportAt ? (
-        <ReportSheet
-          at={reportAt.at}
-          streetId={reportAt.streetId}
-          streetName={reportAt.streetName}
-          onDone={onReported}
-          onCancel={() => setReportAt(null)}
-        />
-      ) : (
-        selected && (
+
+      {/* Everything the thumb needs lives in one bottom stack: whatever is in
+          context sits directly above the search bar, the way a maps app does
+          it. Nothing overlays the top of the screen, so the map stays whole. */}
+      <View
+        style={[styles.bottom, { paddingBottom: insets.bottom + 8 }]}
+        pointerEvents="box-none"
+      >
+        {reportAt ? (
+          <ReportSheet
+            at={reportAt.at}
+            streetId={reportAt.streetId}
+            streetName={reportAt.streetName}
+            onDone={onReported}
+            onCancel={() => setReportAt(null)}
+          />
+        ) : selected ? (
           <StreetSheet
             street={selected}
             onStartTimer={onStartTimer}
@@ -309,8 +295,25 @@ function Main() {
             estimate={estimate}
             onExplainEstimate={() => setExplaining(true)}
           />
-        )
-      )}
+        ) : (
+          <Pressable
+            style={[styles.findBtn, finding && styles.findBtnBusy]}
+            onPress={onFindPark}
+            disabled={finding}
+            accessibilityLabel="Find me a park"
+          >
+            <Text style={styles.findBtnText}>
+              {finding ? 'Finding a spot…' : 'Find me a park'}
+            </Text>
+          </Pressable>
+        )}
+
+        <SearchBar
+          onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)}
+          freeCount={freeNow.count}
+          freeNearby={freeNow.nearby}
+        />
+      </View>
 
       {explaining && (
         <BusySheet
@@ -339,7 +342,7 @@ function MySpotCardHost() {
   const spot = useStore((s) => s.mySpot);
   if (!spot) return null;
   return (
-    <View style={{ position: 'absolute', top: insets.top + 60, left: 0, right: 0 }} pointerEvents="box-none">
+    <View style={{ position: 'absolute', top: insets.top + 10, left: 0, right: 0 }} pointerEvents="box-none">
       <MySpotCard />
     </View>
   );
@@ -361,11 +364,10 @@ const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y)
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
-  top: { position: 'absolute', top: 0, left: 0, right: 0 },
+  // Bottom stack: the search bar always last, whatever is in context above it.
+  bottom: { position: 'absolute', left: 0, right: 0, bottom: 0, gap: 8 },
   findBtn: {
-    position: 'absolute',
-    left: GUTTER,
-    right: GUTTER,
+    marginHorizontal: GUTTER,
     backgroundColor: colors.accent,
     borderRadius: radius.pill,
     paddingVertical: 13,
@@ -402,8 +404,8 @@ const styles = StyleSheet.create({
   fabReport: { backgroundColor: colors.accent },
   fabReportIcon: { color: colors.onAccent, fontSize: 21, fontWeight: '700', lineHeight: 23 },
   zoomHint: {
+    position: 'absolute',
     alignSelf: 'center',
-    marginTop: 12,
     backgroundColor: colors.glassStrong,
     borderRadius: radius.pill,
     paddingHorizontal: 14,

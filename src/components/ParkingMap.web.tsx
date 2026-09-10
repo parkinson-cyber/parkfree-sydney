@@ -197,6 +197,13 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   freeRef.current = freeGeojson;
 
   const spotGeojson = useMemo(() => spotToGeojson(mySpot), [mySpot]);
+
+  // "You are here". Native maps draw this themselves; on the web it has to be
+  // built, and it is the one thing on the map a driver should find without
+  // reading a word — so it gets the conventional blue dot, watched live.
+  const userRef = useRef<{ type: 'FeatureCollection'; features: unknown[] }>({
+    type: 'FeatureCollection', features: [],
+  });
   const spotRef = useRef(spotGeojson);
   spotRef.current = spotGeojson;
 
@@ -301,19 +308,50 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     (map.getSource('freeparks') as maplibregl.GeoJSONSource | undefined)?.setData(freeGeojson as any);
   }, [freeGeojson]);
 
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !('geolocation' in navigator)) return;
+    const watch = navigator.geolocation.watchPosition(
+      (pos) => {
+        const { latitude, longitude, accuracy } = pos.coords;
+        userRef.current = {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [longitude, latitude] },
+            properties: { accuracy: accuracy ?? 0 },
+          }],
+        };
+        const map = mapRef.current;
+        if (map && loadedRef.current) {
+          (map.getSource('userloc') as maplibregl.GeoJSONSource | undefined)
+            ?.setData(userRef.current as any);
+        }
+      },
+      // A denied or failed fix simply means no dot; nothing else depends on it.
+      () => {},
+      { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 },
+    );
+    return () => navigator.geolocation.clearWatch(watch);
+  }, []);
+
   function buildMap(el: HTMLDivElement): maplibregl.Map {
     const map = new maplibregl.Map({
       container: el,
       style: BASEMAP,
       center: [initialRegion.longitude, initialRegion.latitude],
       zoom: 14.2,
-      attributionControl: { compact: true },
+      // OSM's licence requires the attribution stay visible, but the default
+      // bottom-right corner is now where the search bar lives — so it moves to
+      // the top, which is otherwise empty.
+      attributionControl: false,
     });
     if (process.env.NODE_ENV !== 'production') {
       map.on('error', (e) => console.warn('[map error]', e.error?.message ?? e));
       // dev-only handle for poking the map from the console / browser tools
       (window as any).__parkfreeMap = map;
     }
+
+    map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-right');
 
     map.on('load', () => {
       map.addSource('streets', { type: 'geojson', data: geojsonRef.current as any });
@@ -530,6 +568,37 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-color': colors.surface,
           'text-halo-color': colors.text,
           'text-halo-width': 9,
+        },
+      });
+
+      // The blue dot goes on last so nothing can cover it.
+      map.addSource('userloc', { type: 'geojson', data: userRef.current as any });
+      map.addLayer({
+        id: 'userloc-accuracy',
+        type: 'circle',
+        source: 'userloc',
+        paint: {
+          // GPS accuracy drawn to scale, so a poor fix looks uncertain
+          // instead of pretending to be a precise point.
+          'circle-radius': [
+            'interpolate', ['exponential', 2], ['zoom'],
+            10, ['/', ['get', 'accuracy'], 40],
+            18, ['/', ['get', 'accuracy'], 0.6],
+          ],
+          'circle-color': colors.locate,
+          'circle-opacity': 0.12,
+          'circle-stroke-width': 0,
+        },
+      });
+      map.addLayer({
+        id: 'userloc-dot',
+        type: 'circle',
+        source: 'userloc',
+        paint: {
+          'circle-radius': 7,
+          'circle-color': colors.locate,
+          'circle-stroke-width': 3,
+          'circle-stroke-color': colors.locateRing,
         },
       });
 

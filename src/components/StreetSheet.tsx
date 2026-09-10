@@ -7,6 +7,7 @@ import {
 } from '../lib/rules';
 import { featureCenter, sideLabels } from '../lib/geo';
 import { colors, font, radius, shadow, statusColors, statusLabels, tracking } from '../theme';
+import { Glass } from './Glass';
 import { useStore } from '../state/store';
 import type { SideRule, ZoneType } from '../lib/types';
 import type { Availability } from '../lib/availability';
@@ -76,7 +77,7 @@ export function StreetSheet({
   };
 
   return (
-    <View style={styles.sheet}>
+    <Glass strong style={styles.sheet} intensity={40}>
       <View style={styles.headerRow}>
         <Text style={styles.title} numberOfLines={1}>
           {p.name ?? 'Unnamed street'}
@@ -151,21 +152,15 @@ export function StreetSheet({
           </Text>
         </Pressable>
       </View>
-    </View>
+    </Glass>
   );
 }
 
 const styles = StyleSheet.create({
-  // The data panel. Sage rather than paper so it reads as the answer to the
-  // question, and deliberately shallow: it was taking a third of the screen
-  // to say one street's rules, which pushed the map — the actual product —
-  // out of view.
+  // Deliberately shallow: it was taking a third of the screen to state one
+  // street's rules, which pushed the map — the actual product — out of view.
+  // Positioned by the caller, since it sits directly above the search bar.
   sheet: {
-    position: 'absolute',
-    left: 10,
-    right: 10,
-    bottom: 14,
-    backgroundColor: colors.dataSurface,
     borderRadius: radius.card,
     paddingHorizontal: 14,
     paddingTop: 10,
@@ -176,7 +171,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     fontFamily: font,
-    color: colors.dataInk,
+    color: colors.text,
     fontSize: 17,
     fontWeight: '700',
     letterSpacing: tracking.title,
@@ -184,7 +179,7 @@ const styles = StyleSheet.create({
   // Borderless and barely-there: closing is a fallback, tapping the map works too.
   close: {
     width: 24, height: 24, borderRadius: 12,
-    backgroundColor: 'rgba(43,51,36,0.09)',
+    backgroundColor: 'rgba(46,43,38,0.07)',
     alignItems: 'center', justifyContent: 'center',
     marginLeft: 8,
   },
@@ -198,14 +193,13 @@ const styles = StyleSheet.create({
   },
   metaChips: {
     flexShrink: 1,
-    fontFamily: font, color: colors.dataInk, opacity: 0.7, fontSize: 13, fontWeight: '500',
+    fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '500',
     letterSpacing: tracking.body,
   },
 
   detail: {
     fontFamily: font,
-    color: colors.dataInk,
-    opacity: 0.78,
+    color: colors.textDim,
     fontSize: 13,
     lineHeight: 17,
     letterSpacing: tracking.body,
@@ -213,7 +207,7 @@ const styles = StyleSheet.create({
   },
   // A plain line of text, not a boxed callout — the colour carries the urgency.
   soonText: {
-    fontFamily: font, color: colors.dataInk, opacity: 0.8, fontSize: 13, fontWeight: '600',
+    fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600',
     letterSpacing: tracking.body, marginTop: 4,
   },
   soonTextImminent: { color: colors.accent },
@@ -221,13 +215,13 @@ const styles = StyleSheet.create({
   sides: { flexDirection: 'row', gap: 8, marginTop: 8 },
   sideCard: {
     flex: 1,
-    backgroundColor: 'rgba(43,51,36,0.07)',
+    backgroundColor: 'rgba(46,43,38,0.05)',
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 6,
   },
   sideLabel: {
-    fontFamily: font, color: colors.dataInk, opacity: 0.6, fontSize: 10.5, fontWeight: '600',
+    fontFamily: font, color: colors.textDim, fontSize: 10.5, fontWeight: '600',
     textTransform: 'uppercase', letterSpacing: tracking.caption,
   },
   sideStatus: {
@@ -247,9 +241,9 @@ const styles = StyleSheet.create({
     fontFamily: font, color: colors.onAccent, fontSize: 15, fontWeight: '600',
     letterSpacing: tracking.body,
   },
-  buttonSecondary: { backgroundColor: 'rgba(43,51,36,0.10)' },
+  buttonSecondary: { backgroundColor: 'rgba(46,43,38,0.07)' },
   buttonSecondaryText: {
-    fontFamily: font, color: colors.dataInk, fontSize: 15, fontWeight: '600',
+    fontFamily: font, color: colors.text, fontSize: 15, fontWeight: '600',
     letterSpacing: tracking.body,
   },
 });
