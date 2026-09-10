@@ -1474,3 +1474,47 @@ open-data hosts and Esri ArcGIS Server endpoints added), not something
 fixable from inside the container. Next run should send a notification
 once it is ≥3h past run 61's notification (i.e. at or after ~20:20
 UTC) and the block is still in place.
+
+
+## Probed 2026-09-11 (`scripts/probe-councils.py`)
+
+Two method notes worth keeping, because both cost a session before:
+
+1. **Search the ArcGIS Online catalogue unquoted.** A phrase search for
+   `"Blacktown City Council"` returns **zero** items — their layers are titled
+   things like `BCC Road Network`. The quoted form is why several councils were
+   previously recorded as publishing nothing.
+2. **Then walk the org's own service directory**, not just the catalogue hits.
+   Items that were never shared to a group are invisible to search but listed
+   in `/arcgis/rest/services?f=json`. That is where Parramatta's parking layers
+   were actually found.
+
+### Canterbury-Bankstown — `Traffic_Committee_Signs` is not a sign register
+
+`services2.arcgis.com/Ax17MufLaTdpFneh/.../Traffic_Committee_Signs/FeatureServer`
+has 1,726 points and exactly the name you would hope for. It is a **works
+tracker**: year/month of traffic committee, SAP work order, installer name,
+"JobCompleted", "JobVerified", ward, suburb. There is no field carrying the
+sign's legend or type — nothing that says 2P, No Stopping or permit area.
+Layer 1 (`Traffic_Committee_Plans`) is the same shape for work zones. So the
+points mark *where council installed something*, which is not a parking rule,
+and Canterbury-Bankstown's 7,047 unknown streets stay unknown. Do not re-probe
+this layer; the gap needs the committee's plan attachments read by a human, or
+photographed signs.
+
+### Hornsby — IntraMaps walked, carries the LEP only
+
+`map.hornsby.nsw.gov.au/intramaps99/ApplicationEngine`: POST `Projects/?project=HornsbyPublic`
+opens a session, `Modules/` lists one module (*HLEP 2013*), `layers/` returns
+301 layers — all planning (zoning, heritage, biodiversity, one "Load Limited
+Roads"). No parking, sign or kerb layer. The `HornsbyCouncil` and `HornsbyField`
+projects require staff IntraMaps logins.
+
+### A trap: `services3.arcgis.com/TUZOXGJ0VXTtmQu3`
+
+This org surfaces under several council searches with promising names
+(`Car_Park_availability`, `Centroids_for_Ticket_parking_rates12`). It is a
+**shared training/geodesign org** — the same directory mixes Penrith, Blacktown
+and Bondi Junction exercises, buffers named "Travel_from_..." and student
+submissions. Provenance is unknown and it is not a council publication, so
+nothing from it may enter the map.

@@ -1,0 +1,1201 @@
+{
+ "canterbury-bankstown": [
+  {
+   "title": "AGOL_Covid_Restrictions_NSW_Announced",
+   "url": "https://services2.arcgis.com/Yb2UeNWvQYEwyYDl/arcgis/rest/services/AGOL_Covid_Restrictions_NSW_Announced/FeatureServer/0",
+   "layer": "Covid_Restrictions_NSW_Total",
+   "features": 151,
+   "strong": true
+  },
+  {
+   "title": "AGOL_Covid_Restrictions_NSW_Total",
+   "url": "https://services2.arcgis.com/Yb2UeNWvQYEwyYDl/arcgis/rest/services/AGOL_Covid_Restrictions_NSW_Total/FeatureServer/0",
+   "layer": "Covid_Restrictions_NSW_Total",
+   "features": 138,
+   "strong": true
+  },
+  {
+   "title": "Covid_Restrictions_LGA",
+   "url": "https://services2.arcgis.com/Yb2UeNWvQYEwyYDl/arcgis/rest/services/Covid_Restrictions_LGA/FeatureServer/0",
+   "layer": "Covid_Restrictions_LGA",
+   "features": 130,
+   "strong": true
+  },
+  {
+   "title": "CovidRestrictions_Area",
+   "url": "https://services2.arcgis.com/Yb2UeNWvQYEwyYDl/arcgis/rest/services/CovidRestrictions_Area/FeatureServer/0",
+   "layer": "Covid_Restrictions_Area",
+   "features": 4,
+   "strong": true
+  },
+  {
+   "title": "CovidRestrictions_LGA_Suburb_View",
+   "url": "https://services2.arcgis.com/Yb2UeNWvQYEwyYDl/arcgis/rest/services/CovidRestrictions_LGA_Suburb_View/FeatureServer/0",
+   "layer": "Covid_Restrictions",
+   "features": 5198,
+   "strong": true
+  },
+  {
+   "title": "Accessible_Parking_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Accessible_Parking_Map/FeatureServer/0",
+   "layer": "Accessible_Parking_Zone",
+   "features": 88,
+   "strong": true
+  },
+  {
+   "title": "Active_Parks",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Active_Parks/FeatureServer/0",
+   "layer": "Active_Parks",
+   "features": 86,
+   "strong": false
+  },
+  {
+   "title": "ASA_Alcohol_Signs",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/ASA_Alcohol_Signs/FeatureServer/0",
+   "layer": "ASA_Alcohol_Signs",
+   "features": 173,
+   "strong": false
+  },
+  {
+   "title": "Assets",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Assets/FeatureServer/4",
+   "layer": "Signs_contain",
+   "features": 37,
+   "strong": false
+  },
+  {
+   "title": "Assets",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Assets/FeatureServer/10",
+   "layer": "Kerb_Metro",
+   "features": 7,
+   "strong": true
+  },
+  {
+   "title": "Assets",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Assets/FeatureServer/17",
+   "layer": "Parks_Gardens_intersect",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "Assets",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Assets/FeatureServer/18",
+   "layer": "Parks_Gardens_contains",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Assets",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Assets/FeatureServer/20",
+   "layer": "CarPark_metro",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "building_and_carpark",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/building_and_carpark/FeatureServer/1",
+   "layer": "carpark_final_50m_buffer_point",
+   "features": 54,
+   "strong": false
+  },
+  {
+   "title": "Building_next_to_carpark_w",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Building_next_to_carpark_w/FeatureServer/0",
+   "layer": "Building_next_to_carpark_w",
+   "features": 27,
+   "strong": false
+  },
+  {
+   "title": "carpark",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/carpark/FeatureServer/0",
+   "layer": "carpark_final_point",
+   "features": 63,
+   "strong": false
+  },
+  {
+   "title": "carpark_50m_buffer",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/carpark_50m_buffer/FeatureServer/0",
+   "layer": "carpark_final_50m_buffer_point",
+   "features": 54,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Condition",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Condition/FeatureServer/0",
+   "layer": "Carpark_condition_Found_2022",
+   "features": 32,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Condition",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Condition/FeatureServer/1",
+   "layer": "Carpark_Condition_2022",
+   "features": 713,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Defect",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Defect/FeatureServer/0",
+   "layer": "Carpark_Defect",
+   "features": 164,
+   "strong": false
+  },
+  {
+   "title": "CARPARK_GOAL2",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CARPARK_GOAL2/FeatureServer/0",
+   "layer": "CARPARK_GOAL2",
+   "features": 9,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/0",
+   "layer": "West Terrace Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/1",
+   "layer": "Stanley Street Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/2",
+   "layer": "Meredith Street Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/3",
+   "layer": "Marion Street Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/4",
+   "layer": "Greenfield Parade Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/5",
+   "layer": "Dale Parade Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/6",
+   "layer": "Civic Tower Open Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/7",
+   "layer": "Civic Tower Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/8",
+   "layer": "Brandon Avenue Carpark",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/9",
+   "layer": "brandon_avenue_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/10",
+   "layer": "brandon_avenue_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/11",
+   "layer": "civic_tower_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/12",
+   "layer": "civic_tower_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/13",
+   "layer": "civic_tower_open_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/14",
+   "layer": "civic_tower_open_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/15",
+   "layer": "dale_parade_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/16",
+   "layer": "dale_parade_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/17",
+   "layer": "greenfield_parade_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/18",
+   "layer": "greenfield_parade_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/19",
+   "layer": "greenfield_parade_carpark_ExcelToTable1",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/20",
+   "layer": "marion_street_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/21",
+   "layer": "marion_street_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/22",
+   "layer": "meredith_street_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/23",
+   "layer": "meredith_street_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/24",
+   "layer": "stanley_street_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/25",
+   "layer": "stanley_street_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/26",
+   "layer": "west_terrace_carpark$",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_Map/FeatureServer/27",
+   "layer": "west_terrace_carpark_ExcelToTable",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Carpark_more_than_100_space",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Carpark_more_than_100_space/FeatureServer/0",
+   "layer": "Carpark_more_than_100_space",
+   "features": 10,
+   "strong": false
+  },
+  {
+   "title": "carpark_seprate_entrance_and_exit",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/carpark_seprate_entrance_and_exit/FeatureServer/0",
+   "layer": "carpark_seprate entrance and exit",
+   "features": 18,
+   "strong": false
+  },
+  {
+   "title": "carpark_seprate_entrance_and_exit",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/carpark_seprate_entrance_and_exit/FeatureServer/1",
+   "layer": "building_close_to_carpark_point",
+   "features": 53,
+   "strong": false
+  },
+  {
+   "title": "CARPARK_update",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CARPARK_update/FeatureServer/0",
+   "layer": "CARPARK_update",
+   "features": 15,
+   "strong": false
+  },
+  {
+   "title": "CBC_Carpark",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CBC_Carpark/FeatureServer/0",
+   "layer": "CBC_Carpark",
+   "features": 9,
+   "strong": false
+  },
+  {
+   "title": "CBC_PARK_BIN",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CBC_PARK_BIN/FeatureServer/0",
+   "layer": "CBC_PARK_BIN",
+   "features": 666,
+   "strong": false
+  },
+  {
+   "title": "CBC_PARK_POLYLINE",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CBC_PARK_POLYLINE/FeatureServer/0",
+   "layer": "CBC_PARK_POLYLINE",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "CBC_PARK_REGION",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CBC_PARK_REGION/FeatureServer/0",
+   "layer": "CBC_PARK_REGION",
+   "features": 618,
+   "strong": false
+  },
+  {
+   "title": "CBC_PARKS_POINT",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/CBC_PARKS_POINT/FeatureServer/0",
+   "layer": "CBC_PARKS_POINT",
+   "features": 4,
+   "strong": false
+  },
+  {
+   "title": "City_Design_Projects",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/City_Design_Projects/FeatureServer/0",
+   "layer": "City_Design_Projects",
+   "features": 20,
+   "strong": false
+  },
+  {
+   "title": "City_Design_Projects_CBC",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/City_Design_Projects_CBC/FeatureServer/0",
+   "layer": "City_Design_Projects_CBC",
+   "features": 13,
+   "strong": false
+  },
+  {
+   "title": "Cooks_River_Parklands",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Cooks_River_Parklands/FeatureServer/0",
+   "layer": "Cooks_River_Parklands",
+   "features": 72,
+   "strong": false
+  },
+  {
+   "title": "Council_Assets_on_land_owned_by_others",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Council_Assets_on_land_owned_by_others/FeatureServer/0",
+   "layer": "All_Council_Assets_Parks_v2_font_point",
+   "features": 1347,
+   "strong": false
+  },
+  {
+   "title": "Council_Assets_on_land_owned_by_others",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Council_Assets_on_land_owned_by_others/FeatureServer/1",
+   "layer": "All_Council_Assets_Parks_v2_point",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "Council_Assets_on_land_owned_by_others",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Council_Assets_on_land_owned_by_others/FeatureServer/2",
+   "layer": "All_Council_Assets_Parks_v2_polyline",
+   "features": 498,
+   "strong": false
+  },
+  {
+   "title": "Council_Assets_on_land_owned_by_others",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Council_Assets_on_land_owned_by_others/FeatureServer/3",
+   "layer": "All_Council_Assets_Parks_v2_region",
+   "features": 519,
+   "strong": false
+  },
+  {
+   "title": "Georges_River_Parklands",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Georges_River_Parklands/FeatureServer/0",
+   "layer": "Georges_River_Parklands",
+   "features": 117,
+   "strong": false
+  },
+  {
+   "title": "GRIFFITH_PARK_BUILDINGS",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/GRIFFITH_PARK_BUILDINGS/FeatureServer/0",
+   "layer": "GRIFFITH_PARK_BUILDINGS",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "Griffith_Park_Precinct",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Griffith_Park_Precinct/FeatureServer/0",
+   "layer": "Griffith_Park_Precinct",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Kerb_and_Gutter_Condition",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_and_Gutter_Condition/FeatureServer/0",
+   "layer": "KGC-Kerb_and_Gutter_Condition copy_polyline",
+   "features": 22552,
+   "strong": true
+  },
+  {
+   "title": "Kerb_and_Gutter_Condition_2021",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_and_Gutter_Condition_2021/FeatureServer/0",
+   "layer": "Kerb_and_Gutter_Condition_2021",
+   "features": 24177,
+   "strong": true
+  },
+  {
+   "title": "Kerb_and_Gutter_Condition_2021_(Poor_Condition)",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_and_Gutter_Condition_2021_(Poor_Condition)/FeatureServer/0",
+   "layer": "Kerb_and_Gutter_Condition_2021",
+   "features": 726,
+   "strong": true
+  },
+  {
+   "title": "kerb_and_gutter_condition_update",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/kerb_and_gutter_condition_update/FeatureServer/0",
+   "layer": "KGC-Kerb_and_Gutter_Condition copy_polyline",
+   "features": 22552,
+   "strong": true
+  },
+  {
+   "title": "kerb_and_gutter_conditions",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/kerb_and_gutter_conditions/FeatureServer/0",
+   "layer": "kerb_and_gutter_conditions",
+   "features": 921,
+   "strong": true
+  },
+  {
+   "title": "Kerb_Condition_1_3view",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_Condition_1_3view/FeatureServer/0",
+   "layer": "Kerb_Condition_1_5",
+   "features": 23372,
+   "strong": true
+  },
+  {
+   "title": "Kerb_Condition_1_5",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_Condition_1_5/FeatureServer/0",
+   "layer": "Kerb_Condition_1_5",
+   "features": 24314,
+   "strong": true
+  },
+  {
+   "title": "Kerb_Ramp_Programs",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_Ramp_Programs/FeatureServer/0",
+   "layer": "Kerb_Ramp_Programs",
+   "features": 164,
+   "strong": true
+  },
+  {
+   "title": "Kerb_Ramp_Programs_CBC",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Kerb_Ramp_Programs_CBC/FeatureServer/0",
+   "layer": "Kerb_Ramp_Programs_CBC",
+   "features": 147,
+   "strong": true
+  },
+  {
+   "title": "LGA_Carpark",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/LGA_Carpark/FeatureServer/0",
+   "layer": "carpark_CBC",
+   "features": 706,
+   "strong": false
+  },
+  {
+   "title": "Open_Car_Parks_Projects",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Open_Car_Parks_Projects/FeatureServer/0",
+   "layer": "Open_Car_Parks_Projects",
+   "features": 416,
+   "strong": false
+  },
+  {
+   "title": "Open_Car_Parks_Projects_CBC",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Open_Car_Parks_Projects_CBC/FeatureServer/0",
+   "layer": "Open_Car_Parks_Projects_CBC",
+   "features": 22,
+   "strong": false
+  },
+  {
+   "title": "park_bin_update2_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/park_bin_update2_Map/FeatureServer/0",
+   "layer": "park_Bin2",
+   "features": 630,
+   "strong": false
+  },
+  {
+   "title": "Park_Bins",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Park_Bins/FeatureServer/0",
+   "layer": "Park_Bins",
+   "features": 553,
+   "strong": false
+  },
+  {
+   "title": "Park_Furniture",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Park_Furniture/FeatureServer/0",
+   "layer": "Park_Furniture",
+   "features": 72,
+   "strong": false
+  },
+  {
+   "title": "PARK_FURNITURE_new_layer",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/PARK_FURNITURE_new_layer/FeatureServer/0",
+   "layer": "PARK_FURNITURE_new_layer",
+   "features": 13018,
+   "strong": false
+  },
+  {
+   "title": "Park_Furniture_Projects",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Park_Furniture_Projects/FeatureServer/0",
+   "layer": "Park_Furniture_point",
+   "features": 33,
+   "strong": false
+  },
+  {
+   "title": "park_Map",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/park_Map/FeatureServer/0",
+   "layer": "park",
+   "features": 6093,
+   "strong": false
+  },
+  {
+   "title": "PARK_SIGN",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/PARK_SIGN/FeatureServer/0",
+   "layer": "PARK_SIGN",
+   "features": 3153,
+   "strong": false
+  },
+  {
+   "title": "Park_Smart_Signs",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Park_Smart_Signs/FeatureServer/0",
+   "layer": "ParkSmartSigns",
+   "features": 50,
+   "strong": false
+  },
+  {
+   "title": "Proposed_Parks",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Proposed_Parks/FeatureServer/0",
+   "layer": "Proposed_Parks",
+   "features": 9,
+   "strong": false
+  },
+  {
+   "title": "Regional_Parklands",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Regional_Parklands/FeatureServer/0",
+   "layer": "Regional_Parklands",
+   "features": 8,
+   "strong": false
+  },
+  {
+   "title": "Traffic_Committee_Signs",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Traffic_Committee_Signs/FeatureServer/0",
+   "layer": "Traffic_Committee_Signs",
+   "features": 1726,
+   "strong": false
+  },
+  {
+   "title": "Travel_from_BCC_Buildings_(500_Meters)",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Travel_from_BCC_Buildings_(500_Meters)/FeatureServer/0",
+   "layer": "Travel_from_BCC_Buildings_(500_Meters)",
+   "features": 99,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_CBC_Toilets_Tab_(500_Meters)",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Travel_from_CBC_Toilets_Tab_(500_Meters)/FeatureServer/0",
+   "layer": "Travel_from_CBC_Toilets_Tab_(500_Meters)",
+   "features": 295,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_Stations_(250_Meters)",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Travel_from_Stations_(250_Meters)/FeatureServer/0",
+   "layer": "Travel_from_Stations_(250_Meters)",
+   "features": 8,
+   "strong": true
+  },
+  {
+   "title": "Travel_to_CBC_Toilets_Tab_(300_400_500_Meters)",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Travel_to_CBC_Toilets_Tab_(300_400_500_Meters)/FeatureServer/0",
+   "layer": "Travel_to_CBC_Toilets_Tab_(300_400_500_Meters)",
+   "features": 924,
+   "strong": true
+  },
+  {
+   "title": "Wolli_Creek_Regional_Park",
+   "url": "https://services2.arcgis.com/Ax17MufLaTdpFneh/arcgis/rest/services/Wolli_Creek_Regional_Park/FeatureServer/0",
+   "layer": "Wolli_Creek_Regional_Park",
+   "features": 22,
+   "strong": false
+  },
+  {
+   "title": "1811Parks",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/1811Parks/FeatureServer/1",
+   "layer": "Parks within 800m",
+   "features": 93,
+   "strong": false
+  },
+  {
+   "title": "400m_buffers_around_District_Parks",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/400m_buffers_around_District_Parks/FeatureServer/0",
+   "layer": "400m_buffers_around_District_Parks",
+   "features": 544,
+   "strong": false
+  },
+  {
+   "title": "400m_Catchment_District_Parks",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/400m_Catchment_District_Parks/FeatureServer/0",
+   "layer": "400m_Catchment_District_Parks",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "50_Meters_Network_Buffer_From_Schools_W9",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/50_Meters_Network_Buffer_From_Schools_W9/FeatureServer/0",
+   "layer": "50_Meters_Network_Buffer_From_Schools_W9",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Bicycle_Network_Geodesign",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Bicycle_Network_Geodesign/FeatureServer/0",
+   "layer": "Bicycle_Network_Geodesign",
+   "features": 6373,
+   "strong": false
+  },
+  {
+   "title": "Bicycle_Parking_400m_Buffer",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Bicycle_Parking_400m_Buffer/FeatureServer/0",
+   "layer": "Bicycle_Parking_400m_Buffer",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Bicycle_Parking_800m_Buffer",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Bicycle_Parking_800m_Buffer/FeatureServer/0",
+   "layer": "Bicycle_Parking_800m_Buffer",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Bushfire_Prone_Land_Geodesign",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Bushfire_Prone_Land_Geodesign/FeatureServer/0",
+   "layer": "Bushfire_Prone_Land_Geodesign",
+   "features": 764,
+   "strong": false
+  },
+  {
+   "title": "Car_Park_availability",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Car_Park_availability/FeatureServer/0",
+   "layer": "carparkpolygons_text",
+   "features": 13,
+   "strong": false
+  },
+  {
+   "title": "Car_Park_availability",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Car_Park_availability/FeatureServer/1",
+   "layer": "carparkpolygons_region",
+   "features": 28,
+   "strong": false
+  },
+  {
+   "title": "Car_Park_availability",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Car_Park_availability/FeatureServer/2",
+   "layer": "carparkpolygons_rectangle",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Centroids_for_Ticket_parking_rates12",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Centroids_for_Ticket_parking_rates12/FeatureServer/0",
+   "layer": "Centroids_for_Ticket_parking_rates12",
+   "features": 13,
+   "strong": true
+  },
+  {
+   "title": "Clipped_Trees_Canopy_within_Parks",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Clipped_Trees_Canopy_within_Parks/FeatureServer/0",
+   "layer": "Clipped_Trees_Canopy_within_Parks",
+   "features": 137,
+   "strong": false
+  },
+  {
+   "title": "Enriched_Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Enriched_Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Enriched_Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Enriched_Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Enriched_Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Enriched_Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Existing_dog_park",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Existing_dog_park/FeatureServer/0",
+   "layer": "Existing_dog_park",
+   "features": 2,
+   "strong": false
+  },
+  {
+   "title": "Geodesign_Western_Sydney_boundary",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Geodesign_Western_Sydney_boundary/FeatureServer/0",
+   "layer": "Geodesign_Western_Sydney_boundary",
+   "features": 11,
+   "strong": false
+  },
+  {
+   "title": "Geodesign_WS_CV_Charger2",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Geodesign_WS_CV_Charger2/FeatureServer/0",
+   "layer": "Geodesign_WS_CV_Charger2",
+   "features": 216,
+   "strong": false
+  },
+  {
+   "title": "HNRFS_2024_Design100AEP_15mGrid_extent_4mRemap_clipped_final",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/HNRFS_2024_Design100AEP_15mGrid_extent_4mRemap_clipped_final/FeatureServer/0",
+   "layer": "HNRFS_2024_Design100AEP_15mGrid_extent_4mRemap_clipped_final",
+   "features": 1245,
+   "strong": false
+  },
+  {
+   "title": "HNRFS_2024_Design10AEP_15mGrid_extent_4mRemap_clipped_final",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/HNRFS_2024_Design10AEP_15mGrid_extent_4mRemap_clipped_final/FeatureServer/0",
+   "layer": "HNRFS_2024_Design10AEP_15mGrid_extent_4mRemap_clipped_final",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "HNRFS_2024_Design2000AEP_15mGrid_extent_4mRemap_clipped_final",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/HNRFS_2024_Design2000AEP_15mGrid_extent_4mRemap_clipped_final/FeatureServer/0",
+   "layer": "HNRFS_2024_Design2000AEP_15mGrid_extent_4mRemap_clipped_final",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "HNRFS_2024_Design20AEP_15mGrid_extent_4mRemap_clipped_final",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/HNRFS_2024_Design20AEP_15mGrid_extent_4mRemap_clipped_final/FeatureServer/0",
+   "layer": "HNRFS_2024_Design20AEP_15mGrid_extent_4mRemap_clipped_final",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "HNRFS_2024_DesignPMF_15mGrid_extent_4mRemap_clipped_final",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/HNRFS_2024_DesignPMF_15mGrid_extent_4mRemap_clipped_final/FeatureServer/0",
+   "layer": "HNRFS_2024_DesignPMF_15mGrid_extent_4mRemap_clipped_final",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Intersect_of_Travel_from_Bondi_Junction_TS(800_Meters)_and_Waverly_LNZ_Landuse",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Intersect_of_Travel_from_Bondi_Junction_TS(800_Meters)_and_Waverly_LNZ_Landuse/FeatureServer/0",
+   "layer": "Intersect_of_Travel_from_Bondi_Junction_TS(800_Meters)_and_Waverly_LNZ_Landuse",
+   "features": 6,
+   "strong": true
+  },
+  {
+   "title": "Network_buffer_from_Schools_Within_Waverly_(50_Meters)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Network_buffer_from_Schools_Within_Waverly_(50_Meters)/FeatureServer/0",
+   "layer": "Network_buffer_from_Schools_Within_Waverly_(50_Meters)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "New_folder_street_light_and_PARKS_IN_PENRTIH",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/New_folder_street_light_and_PARKS_IN_PENRTIH/FeatureServer/0",
+   "layer": "Parks_Recreation_POI_point",
+   "features": 142,
+   "strong": false
+  },
+  {
+   "title": "New_folder_street_light_and_PARKS_IN_PENRTIH",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/New_folder_street_light_and_PARKS_IN_PENRTIH/FeatureServer/2",
+   "layer": "Parks_Recreation_POI_region",
+   "features": 686,
+   "strong": false
+  },
+  {
+   "title": "NRW_NATIONAL_PARK",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/NRW_NATIONAL_PARK/FeatureServer/0",
+   "layer": "NRW_NATIONAL_PARK",
+   "features": 3,
+   "strong": false
+  },
+  {
+   "title": "nswclearways_20181003_0",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/nswclearways_20181003_0/FeatureServer/0",
+   "layer": "nswclearways_20181003_0",
+   "features": 15522,
+   "strong": true
+  },
+  {
+   "title": "park",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/park/FeatureServer/0",
+   "layer": "park_polygons",
+   "features": 3700,
+   "strong": false
+  },
+  {
+   "title": "park_centroids_storymap",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/park_centroids_storymap/FeatureServer/0",
+   "layer": "park_centroids_storymap",
+   "features": 51169,
+   "strong": false
+  },
+  {
+   "title": "Park_locations",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Park_locations/FeatureServer/0",
+   "layer": "Park_locations",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "park_reserves_playgrounds_region",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/park_reserves_playgrounds_region/FeatureServer/0",
+   "layer": "park_reserves_playgrounds_region",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "parking_400m_buffer",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parking_400m_buffer/FeatureServer/0",
+   "layer": "parking_400m_buffer",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "parking_800m_buffer",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parking_800m_buffer/FeatureServer/0",
+   "layer": "parking_800m_buffer",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Parking_lane_buffer_100m_Chan_2025",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parking_lane_buffer_100m_Chan_2025/FeatureServer/0",
+   "layer": "Parking_lane_buffer_100m_Chan_2025",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "parking_lane_Chan_2025",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parking_lane_Chan_2025/FeatureServer/0",
+   "layer": "parking_lane_Chan_2025",
+   "features": 712,
+   "strong": true
+  },
+  {
+   "title": "ParkingBays",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/ParkingBays/FeatureServer/0",
+   "layer": "ParkingBays",
+   "features": 84,
+   "strong": true
+  },
+  {
+   "title": "Parkland_(Asset_Name_and_PerVegetation)_(1)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parkland_(Asset_Name_and_PerVegetation)_(1)/FeatureServer/0",
+   "layer": "Parkland_(Asset_Name_and_PerVegetation)_(1)",
+   "features": 3087,
+   "strong": false
+  },
+  {
+   "title": "parkpoint",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parkpoint/FeatureServer/0",
+   "layer": "parkpoint_polygons",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "parkpoint",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parkpoint/FeatureServer/1",
+   "layer": "parkpoint_points",
+   "features": 333,
+   "strong": false
+  },
+  {
+   "title": "parkpoint",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parkpoint/FeatureServer/2",
+   "layer": "parkpoint_lines",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Parks_2",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_2/FeatureServer/0",
+   "layer": "Parks_2",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "Parks_3",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_3/FeatureServer/0",
+   "layer": "Parks_3",
+   "features": 686,
+   "strong": false
+  },
+  {
+   "title": "parks_800m_buffer",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_800m_buffer/FeatureServer/0",
+   "layer": "parks_800m_buffer",
+   "features": 1,
+   "strong": false
+  },
+  {
+   "title": "Parks_and_Open_Space_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_and_Open_Space_/FeatureServer/0",
+   "layer": "Parks_and_Open_Space_",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "PARKS_AND_REC_RITH",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/PARKS_AND_REC_RITH/FeatureServer/0",
+   "layer": "Parks_Recreation_POI_point",
+   "features": 142,
+   "strong": false
+  },
+  {
+   "title": "PARKS_AND_REC_RITH",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/PARKS_AND_REC_RITH/FeatureServer/1",
+   "layer": "Parks_Recreation_POI_region",
+   "features": 686,
+   "strong": false
+  },
+  {
+   "title": "Parks_and_recreation_in_Penrith",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_and_recreation_in_Penrith/FeatureServer/0",
+   "layer": "Parks_Recreation_POI_point",
+   "features": 142,
+   "strong": false
+  },
+  {
+   "title": "Parks_and_recreation_in_Penrith",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_and_recreation_in_Penrith/FeatureServer/1",
+   "layer": "Parks_Recreation_POI_region",
+   "features": 686,
+   "strong": false
+  },
+  {
+   "title": "Parks_and_Recreation_Penrith_Robbie",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_and_Recreation_Penrith_Robbie/FeatureServer/0",
+   "layer": "Parks_and_Recreation_Penrith_Robbie",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "parks_and_reserves",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_and_reserves/FeatureServer/0",
+   "layer": "parks_and_reserves",
+   "features": 3700,
+   "strong": false
+  },
+  {
+   "title": "Parks_in_Penrith_City_Council",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_in_Penrith_City_Council/FeatureServer/0",
+   "layer": "Parks_in_Penrith_City_Council",
+   "features": 643,
+   "strong": false
+  },
+  {
+   "title": "Parks_Layer_Map_1",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_Layer_Map_1/FeatureServer/0",
+   "layer": "Parks_Layer_Map_1",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "Parks_Parramatta_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_Parramatta_/FeatureServer/0",
+   "layer": "Parks_Parramatta_",
+   "features": 50,
+   "strong": false
+  },
+  {
+   "title": "parks_playground",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_playground/FeatureServer/0",
+   "layer": "parks_playground",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "parks_recreation_poi_dev_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_recreation_poi_dev_/FeatureServer/0",
+   "layer": "parks_recreation_poi_dev_",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "parks_recreation_poi_dev_hanshuo",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_recreation_poi_dev_hanshuo/FeatureServer/0",
+   "layer": "parks_recreation_poi_dev_hanshuo",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "parks_recreation_poi_dev_QIANYU_SHEN",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_recreation_poi_dev_QIANYU_SHEN/FeatureServer/0",
+   "layer": "parks_recreation_poi_dev_QIANYU_SHEN",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "parks_recreation_poi_devJackLonnon",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_recreation_poi_devJackLonnon/FeatureServer/0",
+   "layer": "parks_recreation_poi_devJackLonnon",
+   "features": 979,
+   "strong": false
+  },
+  {
+   "title": "Parks_Recreation_region",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_Recreation_region/FeatureServer/0",
+   "layer": "Parks_Recreation_region",
+   "features": 686,
+   "strong": false
+  },
+  {
+   "title": "parks_reserves_playgrounds_ISABEL",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_reserves_playgrounds_ISABEL/FeatureServer/0",
+   "layer": "Parks_Reserves Playgrounds Combined_point",
+   "features": 190,
+   "strong": false
+  },
+  {
+   "title": "parks_reserves_playgrounds_ISABEL",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/parks_reserves_playgrounds_ISABEL/FeatureServer/1",
+   "layer": "Parks_Reserves Playgrounds Combined_region",
+   "features": 645,
+   "strong": false
+  },
+  {
+   "title": "Parks_V2_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_V2_/FeatureServer/2",
+   "layer": "Parks",
+   "features": 713,
+   "strong": false
+  },
+  {
+   "title": "Parks_within_5_mins_Drive",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Parks_within_5_mins_Drive/FeatureServer/0",
+   "layer": "main.\"Parks within 5 mins Drive\"",
+   "features": 137,
+   "strong": false
+  },
+  {
+   "title": "Penrith_bus_stops_and_parks",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Penrith_bus_stops_and_parks/FeatureServer/0",
+   "layer": "Penrith_bus_stops_and_parks",
+   "features": 1668,
+   "strong": false
+  },
+  {
+   "title": "Penrith_Parks_and_Recreation",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Penrith_Parks_and_Recreation/FeatureServer/0",
+   "layer": "Penrith_Parks_and_Recreation",
+   "features": 81,
+   "strong": false
+  },
+  {
+   "title": "St_Marys_Proposed_Active_Transport_Network",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/St_Marys_Proposed_Active_Transport_Network/FeatureServer/6",
+   "layer": "Proposed Open Space Network Park_Plaza",
+   "features": 23,
+   "strong": false
+  },
+  {
+   "title": "Travel_from_Blacktown_Train_Stations_2_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Travel_from_Blacktown_Train_Stations_2_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Travel_from_Blacktown_Train_Stations_2_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_Blacktown_Train_Stations_GIS_CH_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Travel_from_Blacktown_Train_Stations_GIS_CH_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Travel_from_Blacktown_Train_Stations_GIS_CH_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Travel_from_Blacktown_Train_Stations3_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_Bondi_Junction_TS_LA_(800_Meters)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Travel_from_Bondi_Junction_TS_LA_(800_Meters)/FeatureServer/0",
+   "layer": "Travel_from_Bondi_Junction_TS_LA_(800_Meters)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)/FeatureServer/0",
+   "layer": "Travel_from_sevenhills_Train_Stations_TUT_(1_6_Kilometers)",
+   "features": 1,
+   "strong": true
+  },
+  {
+   "title": "week5_submission_POIs_Parks_and_Parks_Community_and_Recreation_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/week5_submission_POIs_Parks_and_Parks_Community_and_Recreation_/FeatureServer/5",
+   "layer": "main park",
+   "features": 5,
+   "strong": false
+  },
+  {
+   "title": "week5_submission_POIs_Parks_and_Parks_Community_and_Recreation_",
+   "url": "https://services3.arcgis.com/TUZOXGJ0VXTtmQu3/arcgis/rest/services/week5_submission_POIs_Parks_and_Parks_Community_and_Recreation_/FeatureServer/7",
+   "layer": "park recreation",
+   "features": 979,
+   "strong": false
+  }
+ ]
+}

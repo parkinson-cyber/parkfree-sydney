@@ -86,7 +86,7 @@ published source cannot be filled without inventing data. Status as probed
 | 1 | **Roseville** | Ku-ring-gai | **Car parks only** — 53 council car parks with space counts, applied. No RPS (council policy), no sign register. | ✅ car parks done. Streets need field photos or a council request. |
 | 2 | **Castlecrag** | Willoughby | **Not yet** — Willoughby's open sign census is Chatswood CBD only; no asset register on ArcGIS; site is Exponare (planning layers). | Probe Exponare REST + Have Your Say for a Castlecrag/Northbridge scheme map (the Willoughby South pattern). |
 | 3 | **Ku-ring-gai rest** (Lindfield, Gordon, Killara, St Ives, Pymble, Turramurra, Wahroonga) | Ku-ring-gai | **Car parks only** (same layer). | Car parks applied. Streets: council request, or accept unknown. |
-| 4 | **Hornsby** | Hornsby | **Lead**: IntraMaps at `map.hornsby.nsw.gov.au/intramaps99/`; `ApplicationEngine/Projects/` returns JSON, so there is an API to walk. | Walk the IntraMaps project/module tree for a parking or sign layer. |
+| 4 | **Hornsby** | Hornsby | **Walked, and it is empty.** The IntraMaps API opens (`Projects/` → session → `Modules/` → `layers/`), but the only anonymous project is `HornsbyPublic`, its only module is *HLEP 2013*, and its **301 layers are all planning** — zoning, heritage, biodiversity, one "Load Limited Roads". No parking, sign or kerb layer. `HornsbyCouncil` and `HornsbyField` require IntraMaps staff logins. | Nothing to fetch. Hornsby streets stay unknown unless council publishes or signs are photographed. |
 | 5 | **Northern Beaches (rest)** | Northern Beaches | **Applied** — sign register gave 1,408 segments (Manly 55%). | Refine: Manly permit-scheme areas; the 906 signs that matched no street within 22 m. |
 | 6 | **West — Parramatta, Granville, Merrylands, Auburn** | City of Parramatta / Cumberland | **Main roads applied** via TfNSW clearways (Woodville Rd, James Ruse Dr, The Horsley Dr). Side streets: no council source found yet. | Probe Parramatta + Cumberland GIS (in the 3-hourly sweep). Parramatta CBD may have a meter layer. |
 | 7 | **South — Hurstville, Kogarah, Rockdale, Bankstown** | Georges River / Bayside / Canterbury-Bankstown | **Main roads applied** (Forest Rd, Stoney Creek Rd, Punchbowl Rd, King Georges Rd). Side streets: none. Georges River was checked in July — permit scheme exists but no online GIS. | Probe Georges River / Bayside / Canterbury-Bankstown (in the sweep). |
@@ -140,7 +140,7 @@ unmapped councils, largest gap first.
 | Cumberland | 4,133 | 4% | 3,979 | Not yet probed |
 | Bayside | 3,353 | 8% | 3,093 | Appears as a publisher in TfNSW council-data catalogue — check for a sign bundle |
 | Fairfield | 3,054 | 2% | 3,003 | Not yet probed |
-| Hornsby | 3,074 | 4% | 2,957 | IntraMaps at map.hornsby.nsw.gov.au — ApplicationEngine/Projects answers JSON; walk it |
+| Hornsby | 3,074 | 4% | 2,957 | **Walked 2026-09-11: nothing published.** Public IntraMaps carries the LEP only (301 planning layers, 0 parking); parking modules are staff-login. Move to wave 3 |
 | Liverpool | 2,704 | 0% | 2,700 | Not yet probed |
 | Georges River | 2,579 | 4% | 2,486 | RPS exists, no online GIS found. Probe maps.georgesriver + Have Your Say |
 
