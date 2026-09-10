@@ -34,6 +34,9 @@ jobs:
         env:
           TFNSW_API_KEY: ${{ secrets.TFNSW_API_KEY }}
         run: node scripts/fetch-carparks.mjs out/carparks.json
+      - name: Build status.json
+        run: node scripts/build-status.mjs out/status.json
+
       - name: Publish to data-live (single orphan commit)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -69,6 +72,6 @@ jobs:
           git init -q -b data-live
           git config user.name "parkfree-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add carparks.json vercel.json history.jsonl
+          git add carparks.json vercel.json history.jsonl status.json
           git commit -q -m "carparks $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data-live

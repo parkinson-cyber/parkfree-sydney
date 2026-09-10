@@ -1,0 +1,149 @@
+# Daily supervision — the part that used to depend on a laptop being open.
+#
+# Two jobs, both of which write nothing when nothing is wrong:
+#   council-data  re-scrapes the council car-park pages and opens a PR only if
+#                 a council actually changed something. Never pushes to main:
+#                 a parking rule changing is a thing a human should read.
+#   feed-health   opens (or closes) a single issue if the live occupancy feed
+#                 goes stale, so a silent breakage can't hide for days.
+#
+# Deliberately a PR and an issue rather than a commit and a notification: both
+# survive a closed laptop, both are visible from a phone, and neither can
+# quietly rewrite the map.
+
+name: Daily supervision
+
+on:
+  schedule:
+    - cron: "20 19 * * *"   # 05:20 Sydney, after the councils' overnight edits
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: supervise
+  cancel-in-progress: false
+
+jobs:
+  council-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Re-scrape council car parks
+        id: scrape
+        run: |
+          set -euo pipefail
+          node scripts/fetch-council-carparks.mjs
+          if git diff --quiet -- src/data/council-carparks.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No council changed anything today."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- src/data/council-carparks.json
+          fi
+
+      # A council page can fail to load and still parse as "no free parking",
+      # so refuse to propose a change that wipes free periods out.
+      - name: Sanity-check the change
+        if: steps.scrape.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          BEFORE=$(git show HEAD:src/data/council-carparks.json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).carParks.filter(c=>c.freeMinutes).length))')
+          AFTER=$(node -e 'console.log(require("./src/data/council-carparks.json").carParks.filter(c=>c.freeMinutes).length)')
+          echo "car parks with a free period: $BEFORE -> $AFTER"
+          if [ "$AFTER" -lt $(( BEFORE / 2 )) ]; then
+            echo "::error::Free periods more than halved ($BEFORE -> $AFTER). That looks like a failed fetch, not a real change."
+            exit 1
+          fi
+
+      - name: Verify the app still builds on the new data
+        if: steps.scrape.outputs.changed == 'true'
+        run: |
+          npm ci --no-audit --no-fund
+          npm run typecheck
+          npm test
+
+      - name: Open a PR with the change
+        if: steps.scrape.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          BRANCH="council-data/$(date -u +%Y-%m-%d)"
+          git config user.name "parkfree-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/data/council-carparks.json
+          git commit -m "Council car parks changed on their own pages ($(date -u +%Y-%m-%d))"
+          git push -q --force origin "$BRANCH"
+          SUMMARY=$(node -e '
+            const c = require("./src/data/council-carparks.json").carParks.filter(x => x.freeMinutes);
+            console.log(c.map(x => `- ${x.name}: ${x.freeMinutes >= 60 ? x.freeMinutes/60 + "h" : x.freeMinutes + "m"} free`).join("\n"));
+          ')
+          gh pr create --title "Council car park data changed" --head "$BRANCH" --base main --body "$(cat <<EOF
+          A council edited its own parking page since the last run, so the scraped data no longer matches what is committed.
+
+          **Read the diff before merging** — a changed free period or fee is a real-world change drivers will act on.
+
+          Free periods after this change:
+          $SUMMARY
+
+          Checks already run: typecheck, full test suite, and a guard that this is not a failed fetch masquerading as "no free parking".
+          EOF
+          )" || echo "PR already open for $BRANCH"
+
+  feed-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the live occupancy feed
+        id: check
+        run: |
+          set -euo pipefail
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/data-live/carparks.json"
+          if ! curl -sSf --max-time 60 "$RAW" -o feed.json; then
+            echo "state=unreachable" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          AGE_H=$(python3 -c "
+          import json,datetime
+          d=json.load(open('feed.json'))
+          t=datetime.datetime.fromisoformat(d['updated'].replace('Z','+00:00'))
+          print(round((datetime.datetime.now(datetime.timezone.utc)-t).total_seconds()/3600,1))")
+          echo "age=$AGE_H" >> "$GITHUB_OUTPUT"
+          echo "Feed is ${AGE_H}h old"
+          # hourly job, so anything past 6h means several runs have failed
+          python3 -c "import sys; sys.exit(0 if $AGE_H < 6 else 1)" \
+            && echo "state=ok" >> "$GITHUB_OUTPUT" \
+            || echo "state=stale" >> "$GITHUB_OUTPUT"
+
+      - name: Raise or clear the alert
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TITLE="Live car park feed is stale"
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ "${{ steps.check.outputs.state }}" = "ok" ]; then
+            if [ -n "$EXISTING" ]; then
+              gh issue close "$EXISTING" --comment "Feed is healthy again (${{ steps.check.outputs.age }}h old)."
+            fi
+            echo "Feed healthy — nothing to report."
+          else
+            BODY="The hourly \`Live car parks\` workflow has not published a fresh \`carparks.json\` (state: ${{ steps.check.outputs.state }}, age: ${{ steps.check.outputs.age }}h).
+
+          The app hides car park pins once the feed passes 3 hours old, so this is user-visible.
+
+          Most likely causes, in order: the \`TFNSW_API_KEY\` repo secret expired, the TfNSW Car Park API is down, or the workflow itself is failing — check its recent runs."
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --body "Still stale: age ${{ steps.check.outputs.age }}h."
+            else
+              gh issue create --title "$TITLE" --body "$BODY"
+            fi
+          fi
