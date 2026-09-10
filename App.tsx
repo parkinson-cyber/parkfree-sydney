@@ -23,6 +23,7 @@ import { classifiedStreets } from './src/lib/parkingData';
 import { useCarparks } from './src/lib/carparks';
 import { useReports, ago, isFreeKind, type Report } from './src/lib/reports';
 import { councilCarParks } from './src/lib/councilCarparks';
+import { freeCarParks } from './src/lib/freeCarparks';
 import { ReportSheet } from './src/components/ReportBar';
 import { MySpotCard } from './src/components/MySpotCard';
 import { BusySheet } from './src/components/BusySheet';
@@ -226,6 +227,7 @@ function Main() {
         reports={reports}
         mySpot={mySpot}
         councilCarParks={councilCarParks}
+        freeCarParks={freeCarParks}
       />
 
       {/* top overlays */}

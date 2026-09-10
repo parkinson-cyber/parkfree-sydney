@@ -15,6 +15,7 @@ import { pShort } from '../lib/rules';
 import { formatUpdated } from '../lib/carparks';
 import { ago, isFreeKind } from '../lib/reports';
 import { evaluateCarPark } from '../lib/councilCarparks';
+import { freeBadge, freeDetail } from '../lib/freeCarparks';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region, StreetFeature } from '../lib/types';
 import {
@@ -37,7 +38,7 @@ async function currentPosition(): Promise<{ latitude: number; longitude: number 
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks },
   ref,
 ) {
   const mapRef = useRef<MapView>(null);
@@ -152,6 +153,24 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           strokeWidth={7}
         />
       )}
+      {region.latitudeDelta <= 0.045 && freeCarParks
+        .filter((c) => c.latitude > region.latitude - region.latitudeDelta
+          && c.latitude < region.latitude + region.latitudeDelta
+          && c.longitude > region.longitude - region.longitudeDelta
+          && c.longitude < region.longitude + region.longitudeDelta)
+        .slice(0, 120)
+        .map((c) => (
+          <Marker
+            key={c.id}
+            coordinate={{ latitude: c.latitude, longitude: c.longitude }}
+            anchor={{ x: 0.5, y: 0.5 }}
+            tracksViewChanges={false}
+            title={c.name}
+            description={freeDetail(c)}
+          >
+            <View style={styles.freePill}><Text style={styles.freeText}>P {freeBadge(c)}</Text></View>
+          </Marker>
+        ))}
       {region.latitudeDelta <= 0.35 && councilCarParks.map((c) => {
         const ev = evaluateCarPark(c, new Date());
         return (
@@ -245,6 +264,14 @@ const styles = StyleSheet.create({
   },
   cpPillFull: { backgroundColor: colors.danger },
   cpPillPaid: { backgroundColor: colors.warning },
+  // Quieter than a council car park: free, but usually conditional on being a
+  // customer, so it should not shout as loudly as a public facility.
+  freePill: {
+    backgroundColor: colors.glassStrong,
+    borderColor: colors.accent, borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 7, paddingHorizontal: 6, paddingVertical: 2,
+  },
+  freeText: { color: colors.text, fontSize: 10.5, fontWeight: '700' },
   cpText: { color: colors.onAccent, fontSize: 11, fontWeight: '700' },
   // Crowd reports are round badges — a different shape from the rule lines and
   // the car-park pills, because they mean "a person said so", not "a sign says".

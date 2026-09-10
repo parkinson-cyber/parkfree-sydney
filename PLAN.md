@@ -172,6 +172,31 @@ reports anything new in its run summary. When a probe comes back with a
 parking or sign layer, that council moves to Wave 1 and is worth a session.
 Nothing here requires a person to remember it.
 
+## M11 — Crowd-flow signal for the busy estimate (assessed 2026-09-10)
+
+Asked whether Google Maps "Popular times" / live busyness could drive the
+availability estimate. **It cannot be used**, and the reason matters:
+
+- Popular Times and live busyness are **not fields in the Google Places API**
+  — they exist only in the Maps UI. Every route to them is a scraper
+  (populartimes, ScrapingBee, Apify), which breaches Google Maps Platform
+  terms and would contradict the calls this project already made on Parkopedia
+  and the meter-payment apps. It is also the most aggressively enforced ToS of
+  any source we've touched.
+
+**The same signal, from sources we may actually use:**
+
+| Source | What it gives | Status |
+|---|---|---|
+| TfNSW car park occupancy | Real measured occupancy, hourly, 40 facilities | **Already banked** — `history.jsonl`, growing every hour, and already an input to the estimate |
+| Opal tap-on/tap-off patronage | Station-level trip counts by hour — genuine crowd flow, official, free | Not yet used. The closest legitimate substitute for "flow of people" |
+| City of Sydney pedestrian sensors | Automated pedestrian counts at fixed sites | Not yet used |
+| Our own crowd reports + parking timers | Departures and arrivals on the exact kerb | Live |
+
+Next step for M11: ingest Opal patronage by hour and use it to replace the
+hand-set time-of-day priors in `src/lib/availability.ts`, which is exactly
+what those priors were written to be replaced by.
+
 ### Data leads still worth a session (corridor)
 - **Willoughby**: the council has more scheme maps like Willoughby South (Naremburn precinct expansion was consulted on) — search haveyoursaywilloughby.com.au for each, same pipeline. Also its 2020 LTC minutes list RA areas RA1–RA23; no street list found yet.
 - **Randwick**: `extTransport/ResidentParkingZone` kerb polylines (699, with house numbers) → snap by geometry instead of area polygon for exact per-kerb tagging.

@@ -10,6 +10,7 @@ import { View } from 'react-native';
 import { formatUpdated, type CarPark } from '../lib/carparks';
 import { ago, isFreeKind, type Report } from '../lib/reports';
 import { evaluateCarPark, type CouncilCarPark } from '../lib/councilCarparks';
+import { freeBadge, freeDetail, type FreeCarPark } from '../lib/freeCarparks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { allStreets, streetById } from '../lib/parkingData';
@@ -100,6 +101,20 @@ function reportsToGeojson(reports: Report[]) {
   };
 }
 
+function freeToGeojson(parks: FreeCarPark[]) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: parks.map((c) => ({
+      type: 'Feature' as const,
+      geometry: { type: 'Point' as const, coordinates: [c.longitude, c.latitude] },
+      properties: {
+        id: c.id, name: c.name, label: freeBadge(c),
+        detail: freeDetail(c), customers: c.customersOnly,
+      },
+    })),
+  };
+}
+
 function councilToGeojson(parks: CouncilCarPark[], now: Date) {
   return {
     type: 'FeatureCollection' as const,
@@ -136,7 +151,7 @@ function spotToGeojson(spot: { latitude: number; longitude: number; streetName?:
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -176,6 +191,10 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   );
   const councilRef = useRef(councilGeojson);
   councilRef.current = councilGeojson;
+
+  const freeGeojson = useMemo(() => freeToGeojson(freeCarParks), [freeCarParks]);
+  const freeRef = useRef(freeGeojson);
+  freeRef.current = freeGeojson;
 
   const spotGeojson = useMemo(() => spotToGeojson(mySpot), [mySpot]);
   const spotRef = useRef(spotGeojson);
@@ -275,6 +294,12 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     if (!map || !loadedRef.current) return;
     (map.getSource('council') as maplibregl.GeoJSONSource | undefined)?.setData(councilGeojson as any);
   }, [councilGeojson]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('freeparks') as maplibregl.GeoJSONSource | undefined)?.setData(freeGeojson as any);
+  }, [freeGeojson]);
 
   function buildMap(el: HTMLDivElement): maplibregl.Map {
     const map = new maplibregl.Map({
@@ -389,6 +414,41 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       map.on('mouseenter', 'carparks-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'carparks-pins', () => { map.getCanvas().style.cursor = ''; });
 
+      // Free off-street car parks. There are ~1,700, so they only appear once
+      // you're close enough for them to be a real choice, and they read as a
+      // quieter mark than a council car park — a supermarket lot is free but
+      // conditional, not a public facility.
+      map.addSource('freeparks', { type: 'geojson', data: freeRef.current as any });
+      map.addLayer({
+        id: 'freeparks-pins',
+        type: 'symbol',
+        source: 'freeparks',
+        minzoom: 13.5,
+        layout: {
+          'text-field': ['concat', 'P ', ['get', 'label']],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 13.5, 9.5, 17, 12],
+          'text-allow-overlap': false,
+          'text-padding': 3,
+        },
+        paint: {
+          'text-color': colors.text,
+          'text-halo-color': colors.surface,
+          'text-halo-width': 4.5,
+        },
+      });
+      map.on('click', 'freeparks-pins', (e) => {
+        const f = e.features?.[0];
+        if (!f) return;
+        const pr = f.properties as { name: string; detail: string };
+        new maplibregl.Popup({ closeButton: true, offset: 12, maxWidth: '260px' })
+          .setLngLat((f.geometry as any).coordinates)
+          .setHTML(`<strong>${pr.name}</strong><br/>${pr.detail}`)
+          .addTo(map);
+      });
+      map.on('mouseenter', 'freeparks-pins', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'freeparks-pins', () => { map.getCanvas().style.cursor = ''; });
+
       // Council car parks — the off-street option, badged with how long you
       // get free ("P 3h free"). Green while the free period is running.
       map.addSource('council', { type: 'geojson', data: councilRef.current as any });
@@ -494,7 +554,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
 
       // A tap on a pin opens its own popup (handlers above) and must not also
       // select the street underneath it.
-      const pins = present(['carparks-pins', 'reports-pins', 'council-pins']);
+      const pins = present(['carparks-pins', 'reports-pins', 'council-pins', 'freeparks-pins']);
       if (pins.length && map.queryRenderedFeatures(e.point, { layers: pins }).length) return;
 
       const streetLayers = present(['streets-classified', 'streets-unknown']);

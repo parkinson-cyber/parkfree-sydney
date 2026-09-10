@@ -2,6 +2,7 @@ import type { LiveStatus, Region, StreetFeature } from '../lib/types';
 import type { CarPark } from '../lib/carparks';
 import type { Report } from '../lib/reports';
 import type { CouncilCarPark } from '../lib/councilCarparks';
+import type { FreeCarPark } from '../lib/freeCarparks';
 import type { SavedSpot } from '../state/store';
 
 export interface ParkingMapProps {
@@ -22,6 +23,8 @@ export interface ParkingMapProps {
   mySpot: SavedSpot | null;
   /** Council off-street car parks, with their free periods. */
   councilCarParks: CouncilCarPark[];
+  /** Off-street car parks that cost nothing (OSM fee=no). */
+  freeCarParks: FreeCarPark[];
 }
 
 export interface ParkingMapHandle {
