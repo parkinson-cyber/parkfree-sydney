@@ -16,19 +16,45 @@ name: Gap sweep
 
 on:
   schedule:
-    - cron: "40 */3 * * *"
+    - cron: "25 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  actions: read
 
 concurrency:
   group: gap-sweep
   cancel-in-progress: false
 
 jobs:
+  # GitHub's scheduler is best-effort: a plain 3-hourly cron here delivered
+  # only about half its slots on 2026-09-10. So ask hourly and let this job
+  # decide, from when the sweep last actually succeeded, whether one is due.
+  due:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          MIN_GAP: "10200"
+        run: |
+          set -uo pipefail
+          if [ "$FORCE" = "true" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          LAST=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/gap-sweep.yml/runs?status=success&per_page=1" \
+            --jq '.workflow_runs[0].created_at' 2>/dev/null || echo "")
+          if [ -z "$LAST" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          AGE=$(python3 -c 'import sys,datetime as d;print(int((d.datetime.now(d.timezone.utc)-d.datetime.fromisoformat(sys.argv[1].replace("Z","+00:00"))).total_seconds()))' "$LAST")
+          echo "last successful run was ${AGE}s ago (min gap ${MIN_GAP}s)"
+          if [ "$AGE" -ge "$MIN_GAP" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "due=false" >> "$GITHUB_OUTPUT"; fi
+
   refresh:
+    needs: due
+    if: needs.due.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -108,6 +134,8 @@ jobs:
           Checks already run: a guard against a >5% drop (that shape means a source outage, not a real change), typecheck, and the full test suite. Read the diff before merging — these are rules drivers act on." || echo "PR already open"
 
   probe:
+    needs: due
+    if: needs.due.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Knock on the doors that are still shut

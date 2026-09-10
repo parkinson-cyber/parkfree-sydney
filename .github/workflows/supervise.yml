@@ -15,20 +15,47 @@ name: Daily supervision
 
 on:
   schedule:
-    - cron: "20 19 * * *"   # 05:20 Sydney, after the councils' overnight edits
+    - cron: "20 19,23 * * *"   # 05:20 and 09:20 Sydney, after the councils' overnight edits
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+  actions: read
 
 concurrency:
   group: supervise
   cancel-in-progress: false
 
 jobs:
+  # GitHub's scheduler is best-effort and drops runs under load, so a
+  # once-a-day cron can silently skip a day. Ask twice (05:20 and 09:20
+  # Sydney) and let this job decide, from when supervision last actually
+  # succeeded, whether the second ask is redundant.
+  due:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          MIN_GAP: "72000"
+        run: |
+          set -uo pipefail
+          if [ "$FORCE" = "true" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          LAST=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/supervise.yml/runs?status=success&per_page=1" \
+            --jq '.workflow_runs[0].created_at' 2>/dev/null || echo "")
+          if [ -z "$LAST" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          AGE=$(python3 -c 'import sys,datetime as d;print(int((d.datetime.now(d.timezone.utc)-d.datetime.fromisoformat(sys.argv[1].replace("Z","+00:00"))).total_seconds()))' "$LAST")
+          echo "last successful run was ${AGE}s ago (min gap ${MIN_GAP}s)"
+          if [ "$AGE" -ge "$MIN_GAP" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "due=false" >> "$GITHUB_OUTPUT"; fi
+
   council-data:
+    needs: due
+    if: needs.due.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -100,6 +127,8 @@ jobs:
           )" || echo "PR already open for $BRANCH"
 
   feed-health:
+    needs: due
+    if: needs.due.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

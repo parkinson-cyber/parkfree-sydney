@@ -7,13 +7,27 @@
 # goes stale (3 h) and hides the pins.
 #
 # Needs the repo secret TFNSW_API_KEY (Open Data Hub, Car Park API).
+#
+# WHY THIS FIRES THREE TIMES AN HOUR FOR AN HOURLY JOB: GitHub's scheduler is
+# best-effort and drops runs under load — a plain `0 * * * *` here actually
+# delivered 07:21, 10:28, 14:44, 18:00, 21:20 UTC on 2026-09-10, gaps of over
+# three hours, which is exactly the age at which the app hides the pins. So we
+# ask three times an hour on unpopular minutes (the top of the hour is the most
+# contended slot on the platform) and the `freshness` job below does nothing
+# unless the published feed is genuinely ~an hour old. Two of the three runs
+# cost about fifteen seconds each and push nothing.
 
 name: Live car parks
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Refresh even if the published feed is still fresh"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -23,7 +37,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Is the feed actually due? Cheap enough to run three times an hour.
+  freshness:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+    steps:
+      - id: check
+        env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.force }}
+        run: |
+          set -uo pipefail
+          if [ "${FORCE:-false}" = "true" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"; echo "forced"; exit 0
+          fi
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/data-live/carparks.json"
+          AGE=$(curl -sSf --max-time 30 "$RAW" |
+            python3 -c 'import sys,json,datetime as d;u=json.load(sys.stdin)["updated"];print(int((d.datetime.now(d.timezone.utc)-d.datetime.fromisoformat(u.replace("Z","+00:00"))).total_seconds()))' \
+            2>/dev/null || echo 99999)
+          echo "published feed is ${AGE}s old"
+          # 50 min, not 60: a run that lands at :47 should still refresh a feed
+          # written at :07, or the effective period drifts out to 80 minutes.
+          if [ "$AGE" -ge 3000 ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "due=false" >> "$GITHUB_OUTPUT"; fi
+
   refresh:
+    needs: freshness
+    if: needs.freshness.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
