@@ -10,7 +10,12 @@
       "photo": "docs/field-signs/2026-09-09-alfred-st-north-9p.jpg",
       "signText": "9P 9AM-6PM MON-FRI PERMIT HOLDERS EXCEPTED",
       "note": "Double-headed arrow, so the restriction runs both ways along the kerb from the sign. Seen alongside the new roadworks on Alfred St North. Supersedes the Area 1A permit-schedule tagging, which knew the scheme applied here but not the limit.",
-      "bbox": [-33.8400, -33.8310, 151.2100, 151.2145],
+      "bbox": [
+        -33.84,
+        -33.831,
+        151.21,
+        151.2145
+      ],
       "rule": {
         "kind": "free_limited",
         "maxstayMin": 540,
@@ -20,6 +25,32 @@
         "permitArea": 1,
         "permitZone": "A",
         "permitLabel": "North Sydney Area 1A"
+      }
+    },
+    {
+      "id": "angelo-st-cammeray-2p-meter-2026-09",
+      "street": "Angelo Street",
+      "suburb": "Cammeray (North Sydney)",
+      "observed": "2026-09-11",
+      "observedBy": "owner photo",
+      "photo": "docs/field-signs/2026-09-11-angelo-st-cammeray-2p-meter.jpg",
+      "signText": "2P METER 8:30AM-6PM MON-FRI, 8:30AM-12:30PM SAT (left arrow). Adjacent plate: P MOTOR CYCLES ONLY (right arrow). PayStay zone 20603005.",
+      "note": "Corrects the council meter feed, which had this kerb as paid Mo-Su 08:30-24:00. The sign carries no Sunday and no evening hours, so the kerb is FREE after 6pm weekdays, after 12:30pm Saturday, and all day Sunday. Single left arrow: the restriction runs one way from the sign, so the bbox is kept to the metered stretch. The right-hand plate makes the other direction motorcycles-only, which is not free parking for a car and is deliberately not tagged as free. pricePerHour is carried forward from North Sydney's published meter rate, not read off the sign.",
+      "overrides": [
+        "paid"
+      ],
+      "bbox": [
+        -33.837,
+        -33.8344,
+        151.205,
+        151.2066
+      ],
+      "rule": {
+        "kind": "paid",
+        "zone": "meter",
+        "maxstayMin": 120,
+        "feeInterval": "Mo-Fr 08:30-18:00; Sa 08:30-12:30",
+        "pricePerHour": 7.4
       }
     }
   ]

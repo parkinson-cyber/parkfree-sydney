@@ -31,6 +31,14 @@ PHRASE = "field-observed signs (photographed on site)"
 # Only these are less specific than a photographed sign.
 UPGRADABLE = ("unknown", "residents")
 
+# A sign may name categories it is allowed to overwrite beyond those, via
+# `"overrides": ["paid"]`. That exists because a meter *fee schedule* and a
+# meter *sign* are different things: the schedule says what an hour costs, the
+# sign says when you have to pay at all. Angelo Street was tagged paid
+# Mo-Su 08:30-24:00 from the fee feed while the sign on the pole reads
+# Mon-Fri 8:30-6 and Sat 8:30-12:30 - so the feed was charging for Sunday.
+# The photograph wins, per CLAUDE.md, but only where an entry says so.
+
 
 def apply():
     signs = json.load(open(SIGNS_PATH))["signs"]
@@ -51,7 +59,12 @@ def apply():
                 continue
             # A permit tag that already carries a time limit came from a sign
             # census; don't touch it.
-            if p["cat"] not in UPGRADABLE or (p.get("left") or {}).get("maxstayMin"):
+            allowed = UPGRADABLE + tuple(sign.get("overrides", ()))
+            if p["cat"] not in allowed:
+                continue
+            # An existing time limit came from a sign census, which is at least
+            # as good as one photo - unless this entry explicitly overrides it.
+            if (p.get("left") or {}).get("maxstayMin") and not sign.get("overrides"):
                 continue
             rule = dict(sign["rule"])
             # Marks the tag as coming from this pipeline so reset-residents.py

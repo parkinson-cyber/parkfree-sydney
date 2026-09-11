@@ -50,6 +50,17 @@ eq(evaluateSide(meter, wed8pm).status, 'free', 'meter free after 8pm');
 // paid with explicit free window
 const meterSunFree = { kind: 'paid', freeInterval: 'Su' };
 eq(evaluateSide(meterSunFree, sun10am).status, 'free', 'explicit sunday-free meter');
+
+// Angelo Street, Cammeray — photographed 2026-09-11. The council fee feed had
+// this kerb as paid Mo-Su 08:30-24:00; the sign on the pole reads Mon-Fri
+// 8:30-6 and Sat 8:30-12:30 only. These pin the hours the photo bought back.
+const angelo = { kind: 'paid', zone: 'meter', maxstayMin: 120,
+                 feeInterval: 'Mo-Fr 08:30-18:00; Sa 08:30-12:30', pricePerHour: 7.4 };
+eq(evaluateSide(angelo, sun10am).status, 'free', 'Angelo St free on Sunday');
+eq(evaluateSide(angelo, wed8pm).status, 'free', 'Angelo St free after 6pm weekday');
+eq(evaluateSide(angelo, new Date(2026, 6, 18, 14, 0)).status, 'free', 'Angelo St free Sat afternoon');
+eq(evaluateSide(angelo, new Date(2026, 6, 18, 10, 0)).status, 'paid', 'Angelo St metered Sat morning');
+eq(evaluateSide(angelo, wed10am).status, 'paid', 'Angelo St metered midweek');
 eq(evaluateSide(meterSunFree, wed10am).status, 'paid', 'meter otherwise paid');
 
 // clearway ban windows
