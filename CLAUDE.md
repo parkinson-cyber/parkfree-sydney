@@ -1,5 +1,12 @@
 # ParkFree Sydney — read this first
 
+**What this is:** a personal tool. The owner built it to find free parking in
+Sydney for himself — it is not a product, has no users to serve, and is not
+being maintained as an open-source project (owner, 2026-09-11). Keep that in
+mind when weighing effort: polish that only matters to strangers is wasted,
+and the accuracy rules below matter *more*, not less — a wrong "free" here is
+a fine the owner personally pays.
+
 @AGENTS.md
 
 ## Start of every session
@@ -20,6 +27,7 @@
 - **Docs move with code.** Every change that lands updates `PROGRESS.md` (state + dated changelog line). Convention changes update this file. Commit docs in the same commit.
 - **Scheduled jobs are silent when nothing changed.** No "re-confirmed, no change" commits, ever. Data jobs run in GitHub Actions, not in a cloud routine (see PROGRESS.md → "Hourly agent").
 - Accounts, API keys, App Store, Vercel login: the user does these. Claude gives exact steps and takes the resulting key.
+- **The repo is still public on GitHub** while the app is personal. That is a decision the owner has been asked about, not an oversight; until it changes, anything published here (data, photos of signs, location history) is world-readable, so keep personal detail out of commits.
 
 ## Verify before claiming done
 ```bash

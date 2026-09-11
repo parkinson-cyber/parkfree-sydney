@@ -1535,3 +1535,38 @@ This org surfaces under several council searches with promising names
 and Bondi Junction exercises, buffers named "Travel_from_..." and student
 submissions. Provenance is unknown and it is not a council publication, so
 nothing from it may enter the map.
+
+
+## Street imagery: Mapillary, not Street View (2026-09-11)
+
+The owner's suggestion — just look at the signs in street imagery — is the
+right instinct, and it is now wired up as `scripts/fetch-mapillary-signs.py`.
+
+**Why not Google Street View.** Two reasons, in order of how much they bite.
+Volume: 62,863 unknown segments at even 20 seconds each is ~350 hours of
+someone looking. And Google's terms forbid building a derived dataset from
+their imagery — the same reasoning that already ruled out scraping Park'nPay
+and Parkopedia. Opening Street View by hand to settle one street is fine and
+stays in the toolkit; a pipeline over it is not.
+
+**Why Mapillary.** Same kind of photography, CC BY-SA 4.0, free API, and the
+detection has already been run: parking signs come back as points with a class
+and a link to the image. Attribution is a licence condition and is carried on
+every record.
+
+**What it honestly gives us.** The detector's 1,500 classes are MUTCD and
+European. An Australian time plate ("2P 8:30AM-6PM MON-FRI") is not among them,
+so a detection says *a parking sign stands here*, not what it says. That is
+still worth having — it marks which kerbs are signed at all, which is exactly
+what is unknown across the western and southern suburbs — but the hours have to
+be read off the image afterwards. Coverage is crowd-sourced: solid on main
+roads, thin in back streets.
+
+**Hard rule.** Detections are observations, not law. The script writes
+`scripts/data/mapillary-sign-leads.json` and never touches `parking.json`. A
+lead becomes a rule only when a human (or a vision pass) has read the sign in
+the photo, at which point it belongs in `field-signs.json` with the image
+credited — the tier that already outranks council schedules.
+
+Blocked on: a free token from https://www.mapillary.com/dashboard/developers
+(owner creates it, as with TfNSW).
