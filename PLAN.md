@@ -131,18 +131,27 @@ unmapped councils, largest gap first.
 
 ### Wave 2 — biggest gaps, source unknown (39,292 streets)
 
+**All eight were probed on 2026-09-11 and none publishes parking data to
+ArcGIS Online.** That is the finding, not a failure to look: `scripts/probe-councils.py`
+searched the catalogue unquoted, walked each org's own service directory, and
+gated every candidate layer on whether its extent actually overlaps Sydney —
+without that gate the "parking" hits are Ohio State's campus lots, a north-coast
+council and California fire perimeters. What is left for these councils is not
+more GIS probing: it is their own map hosts, formal data requests, and
+photographed signs.
+
 | LGA | streets | classified | unknown | source status |
 |---|---:|---:|---:|---|
-| Canterbury-Bankstown | 7,216 | 2% | 7,047 | Not yet probed — biggest single gap in Sydney |
-| Blacktown | 5,245 | 0% | 5,243 | Not yet probed |
-| The Hills Shire | 4,472 | 1% | 4,413 | Not yet probed |
-| City Of Parramatta | 4,820 | 9% | 4,371 | Not yet probed; CBD likely has a meter layer |
-| Cumberland | 4,133 | 4% | 3,979 | Not yet probed |
-| Bayside | 3,353 | 8% | 3,093 | Appears as a publisher in TfNSW council-data catalogue — check for a sign bundle |
-| Fairfield | 3,054 | 2% | 3,003 | Not yet probed |
+| Canterbury-Bankstown | 7,216 | 2% | 7,047 | **Probed 2026-09-11: nothing usable.** Org has kerb-condition (24k) and 88 accessible-parking bays; `Traffic_Committee_Signs` (1,726) is a works tracker with no sign legend |
+| Blacktown | 5,245 | 0% | 5,243 | **Probed 2026-09-11: no ArcGIS Online presence at all.** Next: their own GIS host, or a data request |
+| The Hills Shire | 4,472 | 1% | 4,413 | **Probed 2026-09-11: nothing.** The parking layers that surfaced were Parramatta's (already ingested) and a north-coast council's |
+| City Of Parramatta | 4,820 | 9% | 4,371 | Meters + no-stopping + permit areas ingested 2026-09-10; CBD 47%. Remaining streets have no published source |
+| Cumberland | 4,133 | 4% | 3,979 | **Probed 2026-09-11: nothing.** Every hit was US National Park Service (Joshua Tree, Grand Teton) |
+| Bayside | 3,353 | 8% | 3,093 | **Probed 2026-09-11: no ArcGIS Online presence.** The TfNSW council-data catalogue lead is still unchecked |
+| Fairfield | 3,054 | 2% | 3,003 | **Probed 2026-09-11: nothing.** Hits were Ohio State and Pocatello campus lots |
 | Hornsby | 3,074 | 4% | 2,957 | **Walked 2026-09-11: nothing published.** Public IntraMaps carries the LEP only (301 planning layers, 0 parking); parking modules are staff-login. Move to wave 3 |
-| Liverpool | 2,704 | 0% | 2,700 | Not yet probed |
-| Georges River | 2,579 | 4% | 2,486 | RPS exists, no online GIS found. Probe maps.georgesriver + Have Your Say |
+| Liverpool | 2,704 | 0% | 2,700 | **Probed 2026-09-11: nothing council-published.** Only TfNSW's clearway layer, already ingested |
+| Georges River | 2,579 | 4% | 2,486 | **Probed 2026-09-11: nothing in ArcGIS Online** (hits were US orgs). RPS exists on paper — `maps.georgesriver` + Have Your Say still unchecked |
 
 ### Wave 3 — checked, nothing published
 

@@ -83,6 +83,39 @@ def layers_of(service_url):
     return out
 
 
+# Greater Sydney, generously. The unquoted catalogue search reaches the whole
+# world, so without this the "parking" hits are Ohio State's campus lots,
+# Minneapolis bee permits and California fire perimeters.
+SYDNEY = (150.4, -34.3, 151.5, -33.4)
+
+
+def in_sydney(layer_url):
+    """True only if the layer's own extent overlaps Sydney. Returns None when
+    the service won't say, which is reported rather than assumed either way."""
+    try:
+        d = get(layer_url + '?f=json', timeout=30)
+    except Exception:
+        return None
+    e = d.get('extent') or {}
+    if not e or e.get('xmax') is None:
+        return None
+    wkt = str((e.get('spatialReference') or {}).get('wkt', ''))
+    wkid = (e.get('spatialReference') or {}).get('latestWkid') or (e.get('spatialReference') or {}).get('wkid')
+    x0, y0, x1, y1 = e['xmin'], e['ymin'], e['xmax'], e['ymax']
+    if wkid in (102100, 3857) or 'Mercator' in wkt and abs(x0) > 1e6:
+        import math
+        to_lon = lambda x: x / 20037508.34 * 180
+        to_lat = lambda y: math.degrees(2 * math.atan(math.exp(math.radians(y / 20037508.34 * 180))) - math.pi / 2)
+        x0, x1, y0, y1 = to_lon(x0), to_lon(x1), to_lat(y0), to_lat(y1)
+    elif wkid == 28356 or 'MGA zone 56' in wkt:
+        # Rough inverse is enough for a bbox test: zone 56 covers 150-156E.
+        x0, x1 = 150.0 + (x0 - 500000) / 96000, 150.0 + (x1 - 500000) / 96000
+        y0, y1 = (y0 - 10000000) / 110900, (y1 - 10000000) / 110900
+    elif abs(x0) > 180:
+        return None
+    return not (x1 < SYDNEY[0] or x0 > SYDNEY[2] or y1 < SYDNEY[1] or y0 > SYDNEY[3])
+
+
 def count(service_url, layer_id):
     try:
         d = get(f'{service_url}/{layer_id}/query?where=1%3D1&returnCountOnly=true&f=json', timeout=30)
@@ -115,10 +148,13 @@ def probe(key, term):
             low = name.lower()
             if not any(k in low for k in KEYS):
                 continue
+            here = in_sydney(f'{url}/{lid}')
+            if here is False:
+                continue        # Ohio State's campus lots are not Sydney parking
             n = count(url, lid)
             strong = any(k in low for k in STRONG)
             hits.append({'title': title, 'url': f'{url}/{lid}', 'layer': name,
-                         'features': n, 'strong': strong})
+                         'features': n, 'strong': strong, 'inSydney': here})
             print(f'  {"**" if strong else "  "} {name}  ({n} features)\n      {url}/{lid}')
         time.sleep(0.3)
     if not hits:

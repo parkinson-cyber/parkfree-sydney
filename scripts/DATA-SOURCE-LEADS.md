@@ -1510,6 +1510,23 @@ opens a session, `Modules/` lists one module (*HLEP 2013*), `layers/` returns
 Roads"). No parking, sign or kerb layer. The `HornsbyCouncil` and `HornsbyField`
 projects require staff IntraMaps logins.
 
+### The wave-2 councils, all eight: nothing published
+
+Blacktown and Bayside have **no ArcGIS Online presence at all**. The Hills,
+Cumberland, Fairfield, Liverpool and Georges River returned hits that all
+belonged to somebody else once checked — Parramatta's already-ingested meter
+layer, TfNSW's already-ingested clearways, a north-coast council near Byron,
+Ohio State and Pocatello campus parking, US National Park Service lots at
+Joshua Tree and Grand Teton. Canterbury-Bankstown's own org publishes 24k
+kerb-condition lines and 88 accessible-parking bays, neither of which is a
+parking rule.
+
+So the probe now gates every candidate on **whether the layer's extent overlaps
+Sydney** (`in_sydney()`), which is the check that turns "1,499 parking
+features!" back into "that is a university in Ohio". For these councils the
+remaining routes are their own map hosts, a formal data request, and
+photographed signs — not more ArcGIS probing.
+
 ### A trap: `services3.arcgis.com/TUZOXGJ0VXTtmQu3`
 
 This org surfaces under several council searches with promising names
