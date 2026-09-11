@@ -1570,3 +1570,30 @@ credited — the tier that already outranks council schedules.
 
 Blocked on: a free token from https://www.mapillary.com/dashboard/developers
 (owner creates it, as with TfNSW).
+
+
+## Reading a council's own map viewer (the method that settled Blacktown)
+
+ArcGIS Online is not where most councils publish. Their public viewer is, and
+every one of these single-page apps fetches its own layer list at load. So:
+open the viewer in the Browser pane, then read its config rather than guessing
+REST paths — guessed hostnames are what produced four fake "publishes nothing"
+entries earlier in this project.
+
+**Blacktown, 2026-09-11.** `maps.blacktown.nsw.gov.au` is Spectrum Spatial
+(Precisely/Pitney Bowes), not ArcGIS or IntraMaps. `config/server-config.json`
+gives the service roots (`/gss`, `/maps`, WFS/REST paths — all of which 404
+without a service name), and `config/map-config.json` lists every layer the
+viewer can draw:
+
+  Aerial Photo 1977 · Aerial Photo 2025 (Nearmap) · LGA Boundary · Council
+  Places of Interest · Land Base · Parks and Reserves · Street Directory ·
+  Suburbs · Wards · Garbage Collection · DCP Items · Landuse Zones · Bushfire
+  Zones · Flooding Precincts · Creek Catchment · Low & Midrise Housing
+
+Sixteen layers, and **no parking, sign or kerb layer among them** — "Parks and
+Reserves" is open space, not parking. Blacktown's 5,243 unknown streets need a
+data request, not more probing.
+
+Same trick works on IntraMaps (`ApplicationEngine/Projects/` → session →
+`Modules/` → `layers/`, which is how Hornsby was settled) and on Exponare.
