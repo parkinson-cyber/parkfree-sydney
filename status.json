@@ -1,0 +1,139 @@
+{
+ "generated": "2026-09-12T16:33:24.825Z",
+ "commit": "9b47120",
+ "coverage": {
+  "total": 78346,
+  "classified": 15483,
+  "pct": 19.8,
+  "byCat": {
+   "free": 1752,
+   "unknown": 62863,
+   "paid": 1809,
+   "no_parking": 1355,
+   "free_limited": 985,
+   "residents": 7408,
+   "no_stopping": 2174
+  },
+  "sources": 24
+ },
+ "places": [
+  {
+   "name": "Bondi Beach",
+   "total": 350,
+   "classified": 349,
+   "pct": 100
+  },
+  {
+   "name": "Sydney CBD",
+   "total": 1204,
+   "classified": 1183,
+   "pct": 98
+  },
+  {
+   "name": "Coogee",
+   "total": 234,
+   "classified": 163,
+   "pct": 70
+  },
+  {
+   "name": "Chatswood",
+   "total": 401,
+   "classified": 279,
+   "pct": 70
+  },
+  {
+   "name": "Randwick",
+   "total": 1676,
+   "classified": 1127,
+   "pct": 67
+  },
+  {
+   "name": "North Sydney",
+   "total": 2677,
+   "classified": 1775,
+   "pct": 66
+  },
+  {
+   "name": "Manly",
+   "total": 522,
+   "classified": 286,
+   "pct": 55
+  },
+  {
+   "name": "Lane Cove",
+   "total": 3278,
+   "classified": 1587,
+   "pct": 48
+  },
+  {
+   "name": "Parramatta",
+   "total": 1370,
+   "classified": 645,
+   "pct": 47
+  },
+  {
+   "name": "Dee Why",
+   "total": 1012,
+   "classified": 399,
+   "pct": 39
+  }
+ ],
+ "councilCarParks": {
+  "total": 66,
+  "withFreePeriod": 9,
+  "freeExamples": [
+   {
+    "name": "Parraween Street car park, Cremorne",
+    "free": "3h"
+   },
+   {
+    "name": "Alexander Street car park, Crows Nest",
+    "free": "2h"
+   },
+   {
+    "name": "Barry Street car park, Neutral Bay",
+    "free": "2h"
+   },
+   {
+    "name": "Holtermann Street car park, Crows Nest",
+    "free": "2h"
+   },
+   {
+    "name": "Hume Street car park, Crows Nest",
+    "free": "2h"
+   }
+  ]
+ },
+ "liveFeed": {
+  "updated": "2026-09-12T13:46:23.333Z",
+  "ageHours": 2.8,
+  "facilities": 40,
+  "healthy": true,
+  "fullest": [
+   {
+    "name": "Manly Vale",
+    "pct": 54
+   },
+   {
+    "name": "Cherrybrook",
+    "pct": 28
+   },
+   {
+    "name": "Ashfield",
+    "pct": 17
+   }
+  ]
+ },
+ "calibration": {
+  "historyRows": 800
+ },
+ "crowdReports": {
+  "sharedStorage": false
+ },
+ "recentWork": [
+  {
+   "date": "2026-09-11",
+   "subject": "Blacktown: read their own viewer's config, and it has no parking layer"
+  }
+ ]
+}
