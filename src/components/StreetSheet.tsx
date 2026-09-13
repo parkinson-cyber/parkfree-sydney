@@ -50,6 +50,7 @@ export function StreetSheet({
 
   const p = street.properties;
   const overall = evaluateStreet(p, now);
+  const streetViewDate = [p.left, p.right].find((r) => r?.seenVia === 'streetview')?.imageryDate;
   const compass = sideLabels(street);
   const sides = [
     { label: compass.left, rule: p.left },
@@ -110,6 +111,14 @@ export function StreetSheet({
 
       <Text style={styles.detail} numberOfLines={2}>{overall.detail}</Text>
 
+      {/* Fine print for the weakest evidence tier: a sign read off Street View
+          imagery, which can be years older than the pole it shows. */}
+      {streetViewDate && (
+        <Text style={styles.finePrint} numberOfLines={1}>
+          Seen in Street View · imagery {formatImageryDate(streetViewDate)} · check the sign
+        </Text>
+      )}
+
       {estimate && onExplainEstimate && (
         <BusyLine estimate={estimate} onPress={onExplainEstimate} />
       )}
@@ -156,6 +165,13 @@ export function StreetSheet({
   );
 }
 
+/** "2022-03" → "Mar 2022". */
+function formatImageryDate(ym: string): string {
+  const [y, m] = ym.split('-').map(Number);
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return m >= 1 && m <= 12 ? `${months[m - 1]} ${y}` : ym;
+}
+
 const styles = StyleSheet.create({
   // Deliberately shallow: it was taking a third of the screen to state one
   // street's rules, which pushed the map — the actual product — out of view.
@@ -197,6 +213,10 @@ const styles = StyleSheet.create({
     letterSpacing: tracking.body,
   },
 
+  finePrint: {
+    fontFamily: font, color: colors.textDim, fontSize: 11, fontStyle: 'italic',
+    marginTop: 3,
+  },
   detail: {
     fontFamily: font,
     color: colors.textDim,

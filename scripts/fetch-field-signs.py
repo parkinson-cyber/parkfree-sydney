@@ -40,8 +40,19 @@ UPGRADABLE = ("unknown", "residents")
 # The photograph wins, per CLAUDE.md, but only where an entry says so.
 
 
+# Street View entries are the owner reading a sign off Google imagery, which
+# can be years old. They are the weakest tier: they only ever fill a street
+# that is still unknown, never upgrade a permit tag, never use `overrides`,
+# and run after every photographed sign so a photo always wins.
+STREETVIEW_UPGRADABLE = ("unknown",)
+
+
 def apply():
     signs = json.load(open(SIGNS_PATH))["signs"]
+    for s_ in signs:
+        if s_.get("method") == "streetview" and not s_.get("imageryDate"):
+            raise SystemExit(f"{s_['id']}: a Street View entry needs imageryDate (YYYY-MM)")
+    signs.sort(key=lambda s: s.get("method") == "streetview")
     coll = load()
     feats = coll["features"]
     before = sum(1 for f in feats if f["properties"]["cat"] != "unknown")
@@ -59,7 +70,8 @@ def apply():
                 continue
             # A permit tag that already carries a time limit came from a sign
             # census; don't touch it.
-            allowed = UPGRADABLE + tuple(sign.get("overrides", ()))
+            streetview = sign.get("method") == "streetview"
+            allowed = STREETVIEW_UPGRADABLE if streetview else UPGRADABLE + tuple(sign.get("overrides", ()))
             if p["cat"] not in allowed:
                 continue
             # An existing time limit came from a sign census, which is at least
@@ -70,19 +82,22 @@ def apply():
             # Marks the tag as coming from this pipeline so reset-residents.py
             # can strip it and the overlay stays fully re-derivable.
             rule["fieldSign"] = sign["id"]
+            if streetview:
+                rule["seenVia"] = "streetview"
+                rule["imageryDate"] = sign["imageryDate"]
             p["left"], p["right"] = dict(rule), dict(rule)
             p["cat"] = rule["kind"]
             if rule.get("zone"):
                 p["zone"] = rule["zone"]
             applied += 1
         total += applied
-        print(f"  {sign['street']} ({sign['suburb']}): {applied} segments ← \"{sign['signText']}\" "
-              f"[seen {sign['observed']}]")
+        how = f"Street View imagery {sign['imageryDate']}" if sign.get("method") == "streetview" else f"seen {sign['observed']}"
+        print(f"  {sign['street']} ({sign['suburb']}): {applied} segments ← \"{sign['signText']}\" [{how}]")
 
     mark_enriched(coll, PHRASE)
     save(coll)
     after = sum(1 for f in feats if f["properties"]["cat"] != "unknown")
-    print(f"✓ field signs: {total} segments tagged from {len(signs)} photographed sign(s) "
+    print(f"✓ field signs: {total} segments tagged from {len(signs)} field sign(s) "
           f"(classified {before} -> {after})")
 
 

@@ -57,6 +57,16 @@ export interface SideRule {
    * ban and then sends you to the sign.
    */
   otherTimesUnknown?: boolean;
+  /** Id of the field-signs.json entry this rule came from. */
+  fieldSign?: string;
+  /**
+   * How the sign was seen when it was not photographed on the street.
+   * 'streetview' = read off Google Street View imagery by the owner: weaker
+   * than a photo (the imagery can be years old), so the sheet says so.
+   */
+  seenVia?: 'streetview';
+  /** Capture date of the Street View imagery, "YYYY-MM". */
+  imageryDate?: string;
 }
 
 export interface StreetProps {
