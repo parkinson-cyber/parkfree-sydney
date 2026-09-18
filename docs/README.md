@@ -25,7 +25,7 @@ npm run fetch-plan      # what is left to fetch — works offline
 
 **The app is healthy. The data is stale.**
 
-`npm run typecheck` and `npm test` (122 cases) both pass. `src/data/parking.json`
+`npm run typecheck` and `npm test` (146 cases) both pass. `src/data/parking.json`
 holds 78,346 street segments generated **2026-08-16** and has not moved since,
 because the sessions that refresh it cannot reach the internet. Fixing that is an
 environment setting, not a code change — see UNBLOCK-NETWORK.md.

@@ -5,6 +5,9 @@ const { parseIntervals, isNowInWindows, evaluateSide, evaluateStreet, formatInte
         minutesUntilOutside, nextFreeAt, formatCountdown } =
   require('../.cache/test/rules.js');
 
+const { distanceM, distanceToFeatureM, featureInRegion, featureCenter, nearestStreet, sideLabels } =
+  require('../.cache/test/geo.js');
+
 let pass = 0, fail = 0;
 function eq(actual, expected, label) {
   if (JSON.stringify(actual) === JSON.stringify(expected)) { pass++; }
@@ -204,7 +207,6 @@ eq(nextFreeAt({ id: 9, cat: 'no_stopping', area: 'inner', left: cwSide }, wed10a
 
 // --- find me a park ---
 const { findNearestPark, findSoonestPark, formatDistance, walkMinutes } = require('../.cache/test/findPark.js');
-const { distanceToFeatureM } = require('../.cache/test/geo.js');
 
 // A street laid out due east at a fixed latitude; 0.001° lon ≈ 92 m here.
 const streetAt = (id, lat, lon, name) => ({
@@ -277,6 +279,87 @@ eq(formatDistance(120), '120 m', 'metres');
 eq(formatDistance(1240), '1.2 km', 'kilometres');
 eq(walkMinutes(10), 1, 'walk time never rounds to zero');
 eq(walkMinutes(400), 5, 'walk time at 80 m/min');
+
+// ---------------------------------------------------------------------------
+// geo.ts — tap-matching, viewport culling and kerb-side naming
+//
+// Untested until now, and load-bearing: nearestStreet decides which street the
+// user just tapped, featureInRegion decides what gets drawn, and sideLabels
+// decides whether a rule is shown as the north or the south kerb.
+// ---------------------------------------------------------------------------
+
+/** Assert within a tolerance — distances are floating point. */
+function approx(actual, expected, tol, label) {
+  if (Math.abs(actual - expected) <= tol) { pass++; }
+  else { fail++; console.log(`FAIL: ${label}\n  expected ${expected} ±${tol}\n  got      ${actual}`); }
+}
+
+/** A street as a LineString, from [lon, lat] pairs. */
+const street = (id, coords, props = {}) => ({
+  type: 'Feature',
+  properties: { id, cat: 'free', area: 'test', ...props },
+  geometry: { type: 'LineString', coordinates: coords },
+});
+
+// --- distanceM ---
+approx(distanceM(-33.8688, 151.2093, -33.8688, 151.2093), 0, 0.001, 'distance to self is zero');
+// One minute of latitude is a nautical mile, 1852 m, anywhere on Earth.
+approx(distanceM(-33.8688, 151.2093, -33.8521333, 151.2093), 1852, 2, 'one arc-minute of latitude ≈ 1852 m');
+// Sydney CBD → Bondi Beach, ~7 km east.
+approx(distanceM(-33.8688, 151.2093, -33.8908, 151.2743), 6600, 400, 'CBD to Bondi ≈ 6.6 km');
+approx(distanceM(-33.8688, 151.2093, -33.8688, 151.2193), 925, 20, '0.01° of longitude at Sydney ≈ 925 m');
+
+// --- distanceToFeatureM: measures to the kerb, not the midpoint ---
+// A 1 km east-west street. Standing at its western end should read ~0 m, which
+// is the whole point of measuring against the geometry.
+const longStreet = street(1, [[151.200, -33.87], [151.211, -33.87]]);
+approx(distanceToFeatureM(longStreet, -33.87, 151.2005), 0, 60, 'standing on the street reads ~0 m');
+approx(distanceToFeatureM(longStreet, -33.87, 151.2055), 0, 60, 'midpoint of the street also reads ~0 m');
+// 0.001° of latitude ≈ 111 m, perpendicular to the street.
+approx(distanceToFeatureM(longStreet, -33.871, 151.2055), 111, 15, 'perpendicular offset measured correctly');
+// Beyond the end of the line, distance is to the endpoint, not the infinite line.
+approx(distanceToFeatureM(longStreet, -33.87, 151.221), 925, 60, 'past the end clamps to the endpoint');
+eq(distanceToFeatureM(street(2, [[151.2093, -33.8688]]), -33.8688, 151.2093) < 1, true,
+   'single-point geometry does not divide by zero');
+
+// --- nearestStreet ---
+const a = street(10, [[151.200, -33.870], [151.210, -33.870]]);
+const b = street(11, [[151.200, -33.872], [151.210, -33.872]]);
+eq(nearestStreet([a, b], -33.8701, 151.205, 100)?.properties.id, 10, 'picks the closer of two streets');
+eq(nearestStreet([a, b], -33.8719, 151.205, 100)?.properties.id, 11, 'picks the other one from the other side');
+eq(nearestStreet([a, b], -33.880, 151.205, 40), null, 'a tap on empty map selects nothing');
+eq(nearestStreet([a, b], -33.880, 151.205, 2000)?.properties.id, 11, 'a generous tolerance still finds one');
+eq(nearestStreet([], -33.870, 151.205, 100), null, 'no candidates, no crash');
+
+// --- featureInRegion ---
+const region = { latitude: -33.870, longitude: 151.205, latitudeDelta: 0.01, longitudeDelta: 0.01 };
+eq(featureInRegion(a, region), true, 'street through the viewport is visible');
+eq(featureInRegion(street(12, [[151.30, -33.95], [151.31, -33.95]]), region), false,
+   'street far outside the viewport is culled');
+// Padding (1.2 by default) keeps lines just off-screen drawn, so panning does
+// not reveal a bare edge.
+eq(featureInRegion(street(13, [[151.205, -33.8755], [151.206, -33.8755]]), region), true,
+   'just outside the viewport is kept by the padding');
+eq(featureInRegion(street(14, [[151.205, -33.8755], [151.206, -33.8755]]), region, 1), false,
+   'the same street is culled with no padding');
+
+// --- featureCenter ---
+const centre = featureCenter(street(15, [[151.200, -33.870], [151.205, -33.870], [151.210, -33.870]]));
+eq([centre.latitude, centre.longitude], [-33.87, 151.205], 'centre is the middle vertex');
+
+// --- sideLabels: OSM left/right are relative to the way's drawing direction ---
+eq(sideLabels(street(20, [[151.200, -33.870], [151.210, -33.870]])),
+   { left: 'North side', right: 'South side' }, 'street drawn eastward: left is north');
+eq(sideLabels(street(21, [[151.210, -33.870], [151.200, -33.870]])),
+   { left: 'South side', right: 'North side' }, 'same street drawn westward: sides swap');
+eq(sideLabels(street(22, [[151.200, -33.880], [151.200, -33.870]])),
+   { left: 'West side', right: 'East side' }, 'street drawn northward: left is west');
+eq(sideLabels(street(23, [[151.200, -33.870], [151.200, -33.880]])),
+   { left: 'East side', right: 'West side' }, 'street drawn southward: left is east');
+// Only the endpoints set the bearing, so a curved street gets its overall
+// direction rather than the direction of its last bend.
+eq(sideLabels(street(24, [[151.200, -33.870], [151.205, -33.8695], [151.210, -33.870]])).left,
+   'North side', 'a curved street uses its overall bearing');
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

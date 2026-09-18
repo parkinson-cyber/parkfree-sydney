@@ -44,9 +44,19 @@ App.tsx                          Composition root
 npm install
 npm run web        # browser preview (MapLibre map)
 npm run ios        # iOS simulator / Expo Go (needs Xcode or a device)
-npm test           # rules-engine test suite (36 cases)
+npm test           # rules + geo test suite (146 cases)
 npm run typecheck  # tsc --noEmit
 ```
+
+### Data audits (no network needed)
+
+```bash
+npm run coverage        # how much of Sydney is classified at all — currently 16.1%
+npm run meter-coverage  # meter price/hours depth on the paid subset
+npm run fetch-plan      # what is left to fetch, and the resume commands
+```
+
+See [docs/](docs/) for what the numbers mean and where the gaps are.
 
 > Node ≥ 20.19 is recommended (Expo SDK 57 warns on older versions).
 
@@ -103,6 +113,7 @@ strings, notification config and the export-compliance flag.
 ### Pre-release checklist
 
 - [ ] `npm run fetch-data` (refreshes all-Sydney street data)
+- [ ] `npm run coverage` — check the classified share has not gone backwards
 - [ ] `npm test` and `npm run typecheck` pass
 - [ ] RevenueCat key set + sandbox purchase tested on TestFlight
 - [ ] Bump `version` / `buildNumber` in app.json
