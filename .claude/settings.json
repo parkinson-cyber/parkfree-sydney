@@ -1,5 +1,32 @@
 {
   "enabledPlugins": {
     "expo@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/abc/Documents/macos/parkfree/repo)",
+      "Bash(git fetch origin)",
+      "Bash(git -C /Users/abc/Documents/macos/parkfree/repo fetch origin)",
+      "Bash(git status)",
+      "Bash(git status -sb)",
+      "Bash(git -C /Users/abc/Documents/macos/parkfree/repo status -sb)",
+      "Bash(git diff)",
+      "Bash(git diff --stat)",
+      "Bash(git -C /Users/abc/Documents/macos/parkfree/repo diff*)",
+      "Bash(git checkout -- src/data/council-carparks.json)",
+      "Bash(git -C /Users/abc/Documents/macos/parkfree/repo checkout -- src/data/council-carparks.json)",
+      "Bash(curl -sS -o /dev/null -w '%{http_code}' https://parkfree-sydney.vercel.app/)",
+      "Bash(curl -sS 'https://parkfree-sydney.vercel.app/api/reports?lat=-33.87&lon=151.21')",
+      "Bash(curl -sS https://raw.githubusercontent.com/parkinson-cyber/parkfree-sydney/data-live/carparks.json)",
+      "Bash(node scripts/fetch-council-carparks.mjs --check)",
+      "Bash(node scripts/fetch-council-carparks.mjs)",
+      "Bash(cd /Users/abc/Documents/macos/parkfree/repo && node scripts/fetch-council-carparks.mjs --check)",
+      "Bash(cd /Users/abc/Documents/macos/parkfree/repo && node scripts/fetch-council-carparks.mjs)",
+      "Bash(gh run list -R parkinson-cyber/parkfree-sydney --workflow carparks-live.yml --limit 3)",
+      "Bash(gh run view *)",
+      "Bash(gh api repos/parkinson-cyber/parkfree-sydney/commits/*)",
+      "Bash(npm run typecheck)",
+      "Bash(npm test)"
+    ]
   }
 }
