@@ -2,8 +2,19 @@ import React from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors, statusColors, statusLabels } from '../theme';
 import { useStore } from '../state/store';
-import { parkingData } from '../lib/parkingData';
+import { parkingData, allStreets, classifiedStreets } from '../lib/parkingData';
 import type { LiveStatus } from '../lib/types';
+
+/**
+ * Live coverage figure, computed from the bundle rather than written down, so
+ * it can never drift from what actually shipped. Today it is ~16% — worth
+ * stating plainly instead of letting a grey map imply the app is broken.
+ */
+const COVERAGE = {
+  verified: classifiedStreets.length,
+  total: allStreets.length,
+  pct: Math.round((100 * classifiedStreets.length) / allStreets.length),
+};
 
 const ORDER: LiveStatus[] = [
   'free', 'free_limited', 'paid', 'residents', 'banned', 'unknown',
@@ -49,6 +60,9 @@ export function LegendModal() {
           <Text style={styles.attribution}>
             Line colours update live with the clock — a metered street turns green when the
             meter hours end.{'\n\n'}
+            {COVERAGE.verified.toLocaleString()} of {COVERAGE.total.toLocaleString()} mapped streets
+            have verified parking rules ({COVERAGE.pct}%). Coverage is strongest in the city,
+            the eastern suburbs and the inner west, and grows with every data refresh.{'\n\n'}
             Data © OpenStreetMap contributors (ODbL), updated {parkingData.metadata.generated.slice(0, 10)}.
             Always check street signs — rules change.
           </Text>

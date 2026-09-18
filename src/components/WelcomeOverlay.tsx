@@ -12,12 +12,19 @@ const POINTS = [
   {
     swatches: [kindColors.paid, kindColors.no_parking],
     title: 'Colours follow the clock',
-    desc: 'A metered street turns green the minute the meter hours end. The map always shows this exact moment.',
+    desc: 'A metered street turns green the minute the meter hours end. Drag the time slider to see which streets will be free when you actually get there.',
   },
   {
-    swatches: [kindColors.unknown],
+    swatches: [kindColors.residents],
     title: 'Tap any street',
     desc: 'See the rules for each side of the road, get directions, and set a timer so you never overstay.',
+  },
+  // Said up front, not discovered later: most of the network outside the inner
+  // suburbs has no mapped rules, and a grey map is honest rather than broken.
+  {
+    swatches: [kindColors.unknown],
+    title: 'Grey means we don\u2019t know',
+    desc: 'Coverage is best in the city, the east and the inner west. Elsewhere the map shows the street but not its rules — yet.',
   },
 ];
 

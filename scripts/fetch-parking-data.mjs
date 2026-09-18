@@ -11,6 +11,7 @@
  * Usage:
  *   node scripts/fetch-parking-data.mjs             # inner Sydney (default)
  *   node scripts/fetch-parking-data.mjs --area all  # every configured area
+ *   node scripts/fetch-parking-data.mjs --plan      # what's left to fetch (offline)
  */
 
 import { writeFileSync, readFileSync, mkdirSync } from 'node:fs';
@@ -530,6 +531,77 @@ function wayCoords(el) {
 }
 
 // ---------------------------------------------------------------------------
+// Offline planner
+// ---------------------------------------------------------------------------
+
+/**
+ * Print the disc-sweep plan against whatever is already in parking.json.
+ *
+ * The sweep is chunked (`--from N --count M`), each chunk landing under its own
+ * `disc_<N>` area name, so progress is recoverable from the bundled data alone:
+ * an area key tells us that chunk ran, and the chunk size tells us how far it
+ * reached. Pure arithmetic — no requests, so it works with egress blocked.
+ */
+function printPlan({ gapsOnly }) {
+  const grid = discCells({ gapsOnly });
+  const tagged = grid.filter((c) => !c.skipTagged).length;
+
+  let done = [];
+  try {
+    const bundle = JSON.parse(readFileSync(OUT_FILE, 'utf8'));
+    const areas = new Set(bundle.features.map((f) => f.properties.area));
+    done = [...areas].filter((a) => a.startsWith('disc_'))
+      .map((a) => Number(a.slice(5)))
+      .sort((a, b) => a - b);
+    console.log(`Bundle: ${bundle.features.length.toLocaleString()} segments, generated ${bundle.metadata.generated}`);
+  } catch {
+    console.log('Bundle: none found — this would be a first run.');
+  }
+
+  console.log(`\nDisc grid: ${grid.length} cells of ~${(CELL_DEG * 111.32).toFixed(1)}km `
+    + `within ${DISC_RADIUS_KM}km of the CBD${gapsOnly ? ' (gaps only)' : ''}.`);
+  console.log(`  ${tagged} inside the ${TAGGED_QUERY_RADIUS_KM}km tagged-query radius `
+    + `(2 requests each), ${grid.length - tagged} outside it (1 request each).`);
+  console.log(`  Full sweep = ${grid.length + tagged} Overpass requests.`);
+
+  if (done.length === 0) {
+    console.log('\nNo disc_* chunks present. Start with:');
+    console.log(`  node scripts/fetch-parking-data.mjs --area disc --from 0 --count 30`);
+    return;
+  }
+
+  // Chunks are named by their start index; the gap to the next start is the
+  // count that run used. The last chunk's size is unknowable from names alone,
+  // so assume it matched the previous gap.
+  const gaps = done.slice(1).map((v, i) => v - done[i]);
+  const step = gaps.length ? Math.min(...gaps) : 30;
+  const reached = done[done.length - 1] + step;
+  const left = Math.max(0, grid.length - reached);
+
+  console.log(`\nChunks already fetched: ${done.map((n) => `disc_${n}`).join(', ')}`);
+  // Chunk indices only mean anything against the grid they were fetched with.
+  // --gaps-only builds a smaller grid, so a recorded index can overshoot it.
+  if (reached > grid.length) {
+    console.log(`  ...but those indices exceed this ${grid.length}-cell grid, so they were`);
+    console.log(`  fetched against a different grid variant. Re-run --plan without`);
+    console.log(`  --gaps-only to compare like with like, or treat this grid as unswept.`);
+    return;
+  }
+  console.log(`  chunk size looks like ${step} cells; sweep reached cell ~${reached} of ${grid.length}`);
+  console.log(`  ${((100 * reached) / grid.length).toFixed(1)}% of the disc swept, ${left} cells left`);
+
+  if (left === 0) {
+    console.log('\nDisc sweep complete — nothing left to resume.');
+    return;
+  }
+  console.log('\nResume with (one chunk at a time, each is resumable):');
+  for (let from = reached, n = 0; from < grid.length && n < 6; from += step, n++) {
+    console.log(`  node scripts/fetch-parking-data.mjs --area disc --from ${from} --count ${step}`);
+  }
+  if (reached + step * 6 < grid.length) console.log('  … and so on to the end of the grid.');
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 const areaArg = process.argv.includes('--area')
@@ -541,6 +613,14 @@ const areaArg = process.argv.includes('--area')
 // one process that has to survive hours of a rate-limited public API.
 const isDisc = areaArg === 'disc';
 const gapsOnly = process.argv.includes('--gaps-only');
+
+// `--plan` answers "how much of Sydney is left to fetch?" without touching the
+// network, so the sweep can be costed (and resumed) even while egress is shut.
+if (process.argv.includes('--plan')) {
+  printPlan({ gapsOnly });
+  process.exit(0);
+}
+
 let discAreaName = null;
 if (isDisc) {
   const discGrid = discCells({ gapsOnly });

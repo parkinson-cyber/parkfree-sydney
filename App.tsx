@@ -145,18 +145,29 @@ function Main() {
     [],
   );
 
-  /** Streets free right now — scoped to the viewport once the user zooms in. */
+  /**
+   * Streets free right now, plus how much of this viewport we can describe at
+   * all — one pass, because both walk the same list.
+   *
+   * Only 16% of the shipped network is classified (see docs/COVERAGE.md), so
+   * whole councils render as bare grey. `covered` lets the UI say why instead
+   * of leaving the driver to assume the app is broken.
+   */
   const freeNow = useMemo(() => {
     const zoomedIn = region.latitudeDelta <= SHOW_CLASSIFIED_MAX_DELTA;
     let n = 0;
+    let covered = 0;
     for (const f of classifiedStreets) {
-      const s = statusById.get(f.properties.id);
-      if (s !== 'free' && s !== 'free_limited') continue;
       if (zoomedIn && !featureInRegion(f, region)) continue;
-      n++;
+      covered++;
+      const s = statusById.get(f.properties.id);
+      if (s === 'free' || s === 'free_limited') n++;
     }
-    return { count: n, nearby: zoomedIn };
+    return { count: n, nearby: zoomedIn, covered };
   }, [statusById, region]);
+
+  /** Zoomed into somewhere we have no parking rules for at all. */
+  const inBlankArea = freeNow.nearby && freeNow.covered === 0;
 
   return (
     <View style={styles.root}>
@@ -181,9 +192,11 @@ function Main() {
             <Text style={styles.brandSub}>SYDNEY</Text>
           </View>
           <View style={styles.freeNow}>
-            <View style={styles.freeNowDot} />
+            <View style={[styles.freeNowDot, inBlankArea && styles.freeNowDotBlank]} />
             <Text style={styles.freeNowText}>
-              {freeNow.count} free {freeNow.nearby ? 'nearby' : timeOffsetMin ? 'then' : 'now'}
+              {inBlankArea
+                ? 'Not mapped yet'
+                : `${freeNow.count} free ${freeNow.nearby ? 'nearby' : timeOffsetMin ? 'then' : 'now'}`}
             </Text>
           </View>
         </View>
@@ -191,6 +204,13 @@ function Main() {
         {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
           <View style={styles.zoomHint}>
             <Text style={styles.zoomHintText}>Zoom in to see parking streets</Text>
+          </View>
+        )}
+        {inBlankArea && (
+          <View style={styles.zoomHint}>
+            <Text style={styles.zoomHintText}>
+              No parking rules mapped here yet — check the signs
+            </Text>
           </View>
         )}
       </View>
@@ -302,6 +322,8 @@ const styles = StyleSheet.create({
     ...shadow(0.3, 10, 3),
   },
   freeNowDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.accent },
+  // Grey, not red: "we have no data here" is not an error state.
+  freeNowDotBlank: { backgroundColor: colors.textDim },
   freeNowText: { color: colors.text, fontSize: 11.5, fontWeight: '700', letterSpacing: 0.1 },
   findBtn: {
     position: 'absolute',

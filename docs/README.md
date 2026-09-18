@@ -2,6 +2,7 @@
 
 | Doc | What it covers |
 |---|---|
+| [COVERAGE.md](COVERAGE.md) | How much of Sydney the app can describe at all (16.1%), where the sweep stopped, and the bundle-size problem |
 | [UNBLOCK-NETWORK.md](UNBLOCK-NETWORK.md) | Why every data refresh since 16 Aug did nothing, and the exact allowlist that fixes it |
 | [METER-DATA-COVERAGE.md](METER-DATA-COVERAGE.md) | Meter price/hours coverage per council, the gaps, and what to fetch to close them |
 | [UI-TIME-SLIDER.md](UI-TIME-SLIDER.md) | The time-travel slider: what it does and how it is wired |
@@ -11,6 +12,14 @@ Also useful:
 - [`../README.md`](../README.md) — project overview, dev setup, App Store release steps
 - [`../scripts/DATA-SOURCE-LEADS.md`](../scripts/DATA-SOURCE-LEADS.md) — researched
   candidate endpoints per council, plus the blocked-run log
+
+## Audit commands
+
+```bash
+npm run coverage        # classification coverage, per area
+npm run meter-coverage  # meter price/hours depth on the paid subset
+npm run fetch-plan      # what is left to fetch — works offline
+```
 
 ## The short version
 
