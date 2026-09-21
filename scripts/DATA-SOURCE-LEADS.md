@@ -1660,11 +1660,58 @@ fill the map. Total cost of establishing this: ~40 of the 10,000 free images.
   storage/exchange standard, not a source. Worth matching our schema to it if
   we ever publish.
 
+### Mapillary, measured in Sydney (2026-09-21) — not the bulk route either
+
+Queried with the owner's free token, filtered to the parking/no-stopping sign
+families. **Parking-family detections per area** (bbox ~4-6 km across):
+
+| area | parking-family signs | of which regulatory | seen 2023+ |
+|---|---:|---:|---:|
+| Sydney CBD | 251 | 68 | 13 |
+| North Sydney | 127 | 20 | 3 |
+| Bondi–Coogee | 20 | 14 | 0 |
+| Manly–Narrabeen | 8 | 1 | 0 |
+| Parramatta | 12 | 5 | 5 |
+| Blacktown | 14 | 4 | 0 |
+| Bankstown | 10 | 6 | 0 |
+| Hornsby | 8 | 4 | 0 |
+
+Against 62,863 unclassified streets, that is a rounding error.
+
+**And it is not for want of photographs.** A 600 m box in each centre hits the
+200-image cap, with recent capture dates everywhere — Bankstown 2024-09 to
+**2026-09**, Blacktown to 2026-07, North Sydney to 2026-07, Bondi to 2026-07.
+The imagery exists and is current; what is missing is *classified detections*.
+Most sign detections sit in the generic `object--traffic-sign--front` bucket
+(60–71 per small CBD box).
+
+**The resolution is genuinely better than Google's.** Native frames are
+4032x3024 with 2048 thumbs, against Google's hard 640x640 cap, and Mapillary
+imagery is CC-BY-SA so deriving data from it is permitted. A crop taken 2 m
+from a sign is pin-sharp — "NO LEFT TURN" is completely legible.
+
+**But the classifier is wrong on Australian signs.** Image 530022526336361
+carries **six** detections labelled `regulatory--no-parking--g9`. Cropped to
+Mapillary's own detection boxes, they are **NO LEFT TURN and NO RIGHT TURN**
+signs — red-circle-on-white roundels confused with the international no-parking
+roundel. Small sample (the features checked in one CBD box), but it means the
+class label cannot be trusted as a rule on its own.
+
+Two more practical notes: detection boxes are tiny unless the camera passed
+within a few metres (48x93 px at ~11 m in a 4032-wide frame, 1.2% of width, and
+upscaling invents nothing), and some image records return a persistent HTTP 500
+on the metadata endpoint while the endpoint itself is fine.
+
+**Verdict:** Mapillary is a *lead generator* — "there is a sign here, facing
+this way, photographed on this date" — not a source of rules. Anything from it
+must be looked at by a human before it touches the map, which is the same
+labour problem we started with.
+
 **What this means for us.** Stop trying to read hours from imagery. Split the
 problem by what each source can honestly answer:
-  - *type-only rules* (No Stopping, No Parking, bus lane) — Mapillary
-    detections, free, and these are the rules that need no hours and are the
-    most expensive to get wrong for a driver;
+  - *type-only rules* — the idea was Mapillary detections, but the measurement
+    above kills it for Sydney: too few, and mislabelled when present. Revisit
+    only if their AU classification improves or coverage jumps;
   - *hours* — council sign registers and schedules, as now;
   - *this kerb, right now* — the driver's own eyes, via an in-app Street View
     button and the photograph pipeline.
