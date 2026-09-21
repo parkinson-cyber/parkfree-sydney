@@ -28,6 +28,19 @@
  *   GOOGLE_MAPS_KEY=... node scripts/fetch-streetview-signs.mjs cbd --max-images 200
  *
  * Areas: cbd, northsydney, eastern-beaches, northern-beaches
+ *
+ * MEASURED YIELD (2026-09-21, 38 images over 5 CBD streets) — read this before
+ * planning a big run. Wide shots across the kerb (fov 45-90, both sides, at the
+ * segment midpoint) produced **0 readable parking rules in 12 views**: they
+ * frame facades, hedges and garden beds, because a pano sits on the road
+ * centreline and a midpoint is rarely where a sign is. A narrow second shot
+ * (fov 28, the most angular resolution 640px allows on the free tier) aimed
+ * where a pole appeared DID find the signpost on a known-metered street — but
+ * only the sign *types* were legible (yellow clearway plate, red NO STOPPING,
+ * BUS LANE, a small P), not the times. That is the same limit as the Northern
+ * Beaches sign register: type known, hours not. So this script can tell you a
+ * kerb is No Stopping; it cannot tell you a kerb is 2P 8:30am-6pm, and it must
+ * never be used to guess one.
  */
 
 import { mkdir, writeFile } from 'node:fs/promises';

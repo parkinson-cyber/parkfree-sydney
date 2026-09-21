@@ -1597,3 +1597,36 @@ data request, not more probing.
 
 Same trick works on IntraMaps (`ApplicationEngine/Projects/` → session →
 `Modules/` → `layers/`, which is how Hornsby was settled) and on Exponare.
+
+
+## Street View, measured (2026-09-21)
+
+Ran the sweep on the CBD with the owner's Maps key. 38 images, 5 streets.
+
+**Wide shots are useless here: 0 readable rules in 12 views.** A Street View
+pano sits on the road centreline, and a segment's midpoint is rarely where a
+sign stands, so a 90-degree look across the kerb frames the building behind it.
+Samples: a UTS facade, a hedge and garden bed on Barcom Avenue, a laneway wall,
+a "NO RIGHT TURN" roundel.
+
+**A narrow second shot does find signs, but not their hours.** On Castlereagh
+Street (already known metered, so a sign certainly exists) fov 28 at the bearing
+where a pole appeared showed the post clearly: yellow clearway plate, red NO
+STOPPING, a BUS LANE plate, a small P below. The *types* are legible; the time
+plates are not, at the 640x640 the free tier caps images to. This is exactly the
+Northern Beaches problem — type without hours — and the project's rule holds: we
+publish "No Stopping" if that is what is readable, and never invent "2P 8:30-6".
+
+**Also learned: the CBD "missing" set was never the prize.** The 37 unclassified
+CBD streets are mostly not ordinary kerbs — Darling Drive (5), Wharf Crescent
+(4), Darling Island Road (3), Mrs Macquaries Road (3), Barangaroo Avenue,
+Watermans Quay, Waterfront Promenade, Art Gallery Road, Hospital Road,
+Conservatorium Road: Barangaroo/Darling Harbour promenades and Domain/Botanic
+Gardens roads, many with no kerbside parking to classify at all. The real CBD
+gap is the 851 streets that are classified but vague (metered rate-zone fills
+with no hours).
+
+Conclusion: Street View is worth a targeted look at a specific street, and is
+worth offering to the driver in-app ("see the sign"), but at ~7-8 images per
+street for a mostly-unreadable result it is not a way to fill the map. Bulk
+route stays Mapillary.
