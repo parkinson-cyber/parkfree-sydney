@@ -1,22 +1,72 @@
 import type { ParkingCollection, StreetFeature } from './types';
+import { loadClassified, loadUnknown } from './parkingSource';
 
-// Bundled dataset produced by scripts/fetch-parking-data.mjs.
+// Dataset produced by scripts/fetch-parking-data.mjs.
 // Regenerate with:  node scripts/fetch-parking-data.mjs --area all
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const raw = require('../data/parking.json') as ParkingCollection;
+//
+// These arrays start empty and are *filled* by loadParkingData() rather than
+// reassigned. That keeps every `import { allStreets }` in the app pointing at
+// the same array it always did, so nothing downstream had to change when the
+// web build stopped bundling the data and started fetching it. Call
+// loadParkingData() before rendering anything that reads them — App.tsx does.
 
-export const parkingData: ParkingCollection = raw;
-export const allStreets: StreetFeature[] = raw.features;
+export const allStreets: StreetFeature[] = [];
 
 /** Streets with explicit parking rules (drawn prominently). */
-export const classifiedStreets = allStreets.filter((f) => f.properties.cat !== 'unknown');
+export const classifiedStreets: StreetFeature[] = [];
 
 /** Base network streets without verified rules (drawn subtly when zoomed in). */
-export const unknownStreets = allStreets.filter((f) => f.properties.cat === 'unknown');
+export const unknownStreets: StreetFeature[] = [];
 
-const byId = new Map<number, StreetFeature>(allStreets.map((f) => [f.properties.id, f]));
+/** Dataset metadata; null until the first load resolves. */
+export const parkingData: { metadata: ParkingCollection['metadata'] | null } = { metadata: null };
+
+const byId = new Map<number, StreetFeature>();
 export function streetById(id: number): StreetFeature | undefined {
   return byId.get(id);
+}
+
+function ingest(features: StreetFeature[]): void {
+  for (const f of features) {
+    allStreets.push(f);
+    (f.properties.cat === 'unknown' ? unknownStreets : classifiedStreets).push(f);
+    byId.set(f.properties.id, f);
+  }
+}
+
+/** Notified when the grey base network arrives after the rules. */
+const listeners = new Set<() => void>();
+export function onParkingDataChange(fn: () => void): () => void {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+
+let loading: Promise<void> | null = null;
+
+/**
+ * Resolves as soon as the streets with rules are in — the map is useful at
+ * that point. The base network keeps loading in the background and fires the
+ * listeners when it lands; a failure there leaves the app working with rules
+ * only, which is the right trade rather than blocking on 2.8 MB of grey.
+ */
+export function loadParkingData(): Promise<void> {
+  if (!loading) {
+    loading = (async () => {
+      const { features, metadata } = await loadClassified();
+      ingest(features);
+      parkingData.metadata = metadata;
+
+      loadUnknown()
+        .then((rest) => {
+          ingest(rest);
+          for (const fn of listeners) fn();
+        })
+        .catch(() => {
+          /* rules still work without the base network */
+        });
+    })();
+  }
+  return loading;
 }
 
 /** Well-known Sydney locations for search / quick jumps. */

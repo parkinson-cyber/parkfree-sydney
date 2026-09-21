@@ -4,7 +4,7 @@
  */
 
 import React, {
-  forwardRef, useEffect, useImperativeHandle, useMemo, useRef,
+  forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState,
 } from 'react';
 import { View } from 'react-native';
 import { formatUpdated, type CarPark } from '../lib/carparks';
@@ -13,16 +13,25 @@ import { evaluateCarPark, type CouncilCarPark } from '../lib/councilCarparks';
 import { freeBadge, freeDetail, type FreeCarPark } from '../lib/freeCarparks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { allStreets, streetById } from '../lib/parkingData';
+import { allStreets, streetById, onParkingDataChange } from '../lib/parkingData';
 import { pShort } from '../lib/rules';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region } from '../lib/types';
 
-/** Static sign-style time-limit label per street id (e.g. "2P"). */
+/**
+ * Sign-style time-limit label per street id (e.g. "2P"). Built on first use
+ * rather than at import: the dataset is fetched at runtime on web now, so at
+ * module scope `allStreets` is still empty.
+ */
 const P_LABEL_BY_ID = new Map<number, string>();
-for (const f of allStreets) {
-  const min = f.properties.left?.maxstayMin ?? f.properties.right?.maxstayMin;
-  if (min) P_LABEL_BY_ID.set(f.properties.id, pShort(min));
+let pLabelsFor = 0;
+function ensurePLabels(): void {
+  if (pLabelsFor === allStreets.length) return;
+  pLabelsFor = allStreets.length;
+  for (const f of allStreets) {
+    const min = f.properties.left?.maxstayMin ?? f.properties.right?.maxstayMin;
+    if (min) P_LABEL_BY_ID.set(f.properties.id, pShort(min));
+  }
 }
 import type { ParkingMapHandle, ParkingMapProps } from './ParkingMap.shared';
 
@@ -158,7 +167,12 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   const mapRef = useRef<maplibregl.Map | null>(null);
   const loadedRef = useRef(false);
 
+  // The base network lands after the rules do; redraw when it arrives.
+  const [dataVersion, setDataVersion] = useState(0);
+  useEffect(() => onParkingDataChange(() => setDataVersion((v) => v + 1)), []);
+
   const geojson = useMemo(() => {
+    ensurePLabels();
     return {
       type: 'FeatureCollection' as const,
       features: allStreets.map((f) => ({
@@ -175,7 +189,7 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
         },
       })),
     };
-  }, [statusById, visibleIds]);
+  }, [statusById, visibleIds, dataVersion]);
 
   const carparkGeojson = useMemo(() => carparksToGeojson(carparks), [carparks]);
   const carparkRef = useRef(carparkGeojson);

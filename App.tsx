@@ -20,7 +20,7 @@ import { WelcomeOverlay } from './src/components/WelcomeOverlay';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 
-import { classifiedStreets } from './src/lib/parkingData';
+import { classifiedStreets, loadParkingData } from './src/lib/parkingData';
 import { useCarparks } from './src/lib/carparks';
 import { useReports, ago, isFreeKind, type Report } from './src/lib/reports';
 import { councilCarParks } from './src/lib/councilCarparks';
@@ -38,7 +38,7 @@ import {
   findNearestPark, findSoonestPark, formatDistance,
   type ParkSuggestion, type SoonSuggestion,
 } from './src/lib/findPark';
-import { colors, radius, shadow as elevate } from './src/theme';
+import { colors, font, radius, shadow as elevate, tracking } from './src/theme';
 import { SYDNEY_REGION, useStore } from './src/state/store';
 import type { LiveStatus, StreetFeature } from './src/lib/types';
 
@@ -381,10 +381,44 @@ function MySpotCardHost() {
   );
 }
 
+/**
+ * The dataset is fetched at runtime on web (see lib/parkingSource.web.ts), so
+ * nothing that reads the street arrays may mount until the first load
+ * resolves — that happens once the streets carrying *rules* are in, roughly
+ * 0.7 MB, not the whole network. Native resolves this effectively instantly
+ * because its data is bundled.
+ */
+function Boot() {
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    loadParkingData()
+      .then(() => alive && setReady(true))
+      .catch(() => alive && setFailed(true));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  if (ready) return <Main />;
+  return (
+    <View style={styles.boot}>
+      <Text style={styles.bootMark}>
+        Park<Text style={styles.bootMarkAccent}>Free</Text>
+      </Text>
+      <Text style={styles.bootNote}>
+        {failed ? "Couldn't load the parking data — check your connection." : 'Loading Sydney’s streets…'}
+      </Text>
+    </View>
+  );
+}
+
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Main />
+      <Boot />
     </SafeAreaProvider>
   );
 }
@@ -397,6 +431,20 @@ const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y)
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.bg },
+  // Shown only while the rules load. Deliberately plain paper — a spinner on a
+  // blank screen reads as broken; a wordmark reads as starting.
+  boot: {
+    flex: 1, backgroundColor: colors.bg,
+    alignItems: 'center', justifyContent: 'center', gap: 10, padding: 24,
+  },
+  bootMark: {
+    fontFamily: font, color: colors.text, fontSize: 28,
+    fontWeight: '800', letterSpacing: tracking.title,
+  },
+  bootMarkAccent: { color: colors.accent },
+  bootNote: {
+    fontFamily: font, color: colors.textDim, fontSize: 13.5, textAlign: 'center',
+  },
   // Bottom stack: the search bar always last, whatever is in context above it.
   bottom: { position: 'absolute', left: 0, right: 0, bottom: 0, gap: 8 },
   // Self-sizing rather than a full-width slab: a primary action that spans the

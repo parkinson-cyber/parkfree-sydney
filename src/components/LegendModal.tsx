@@ -49,7 +49,7 @@ export function LegendModal() {
           <Text style={styles.attribution}>
             Line colours update live with the clock — a metered street turns green when the
             meter hours end.{'\n\n'}
-            Data © OpenStreetMap contributors (ODbL), updated {parkingData.metadata.generated.slice(0, 10)}.
+            Data © OpenStreetMap contributors (ODbL), updated {parkingData.metadata?.generated.slice(0, 10) ?? 'loading'}.
             Always check street signs — rules change.
           </Text>
         </Pressable>
