@@ -1626,7 +1626,45 @@ Gardens roads, many with no kerbside parking to classify at all. The real CBD
 gap is the 851 streets that are classified but vague (metered rate-zone fills
 with no hours).
 
+**There is no resolution headroom.** The Static API silently caps images at
+640x640: `size=1024x1024` and `size=2048x2048` both returned the identical
+640x640, 52 KB file. Zooming further only narrows the field of view over the
+same 640 pixels. So reading a time plate is not achievable on this endpoint —
+not with better angles, not with more spend.
+
 Conclusion: Street View is worth a targeted look at a specific street, and is
-worth offering to the driver in-app ("see the sign"), but at ~7-8 images per
-street for a mostly-unreadable result it is not a way to fill the map. Bulk
-route stays Mapillary.
+worth offering to the driver in-app ("see the sign"), but it is not a way to
+fill the map. Total cost of establishing this: ~40 of the 10,000 free images.
+
+## How other people actually do this (researched 2026-09-21)
+
+- **Mapillary + OCR is the industrial method.** Mapillary detects 1,500 traffic
+  sign classes, including `regulatory--no-parking--g1..g9`, `no-stopping`,
+  `no-parking-or-no-stopping`, `parking-restrictions`, and a *complementary*
+  category covering `time-restrictions` / `working-days` plates. In 2018 they
+  ran Amazon Rekognition text-in-image over their corpus to extract parking
+  sign *text* for a US city's parking app — i.e. the hours came from a separate
+  OCR pass they built, not from the detection API.
+- **The Mapillary API returns classes, not text.** A map feature gives `id`,
+  `value`, `geometry`, `first_seen_at`, `last_seen_at`, `aligned_direction` and
+  contributing `images`. No field carries recognised sign text. Query is
+  `graph.mapillary.com/map_features?bbox=...` with a free token; the bbox must
+  be under 0.01 square degrees, and limits are generous (50k tile requests/day).
+- **OSM is not a source here, but is a place to give back.** Inner Sydney
+  (-33.90..-33.85, 151.19..151.24) has **35** ways tagged
+  `parking:right:restriction` and **105** with any `parking:right` tag. The
+  scheme exists (`parking:condition:*`, `parking:*:restriction:conditional`)
+  but Sydney is essentially unmapped, so there is nothing to import.
+- **CurbLR / SharedStreets** is how cities publish kerb rules once they have
+  them — linear-referenced segments built from point sign inventories. It is a
+  storage/exchange standard, not a source. Worth matching our schema to it if
+  we ever publish.
+
+**What this means for us.** Stop trying to read hours from imagery. Split the
+problem by what each source can honestly answer:
+  - *type-only rules* (No Stopping, No Parking, bus lane) — Mapillary
+    detections, free, and these are the rules that need no hours and are the
+    most expensive to get wrong for a driver;
+  - *hours* — council sign registers and schedules, as now;
+  - *this kerb, right now* — the driver's own eyes, via an in-app Street View
+    button and the photograph pipeline.

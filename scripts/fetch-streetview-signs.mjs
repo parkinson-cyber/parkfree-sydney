@@ -41,6 +41,13 @@
  * Beaches sign register: type known, hours not. So this script can tell you a
  * kerb is No Stopping; it cannot tell you a kerb is 2P 8:30am-6pm, and it must
  * never be used to guess one.
+ *
+ * And there is no resolution headroom to fix that: the Static API silently
+ * CAPS every image at 640x640. Requesting size=1024x1024 and size=2048x2048
+ * both returned the identical 640x640, 52 KB file. So "zoom in and read the
+ * time plate" is not a thing that can be built on this endpoint, at any price
+ * tier reachable from a normal key. Total cost of learning all this: ~40 of
+ * the 10,000 free monthly images.
  */
 
 import { mkdir, writeFile } from 'node:fs/promises';
