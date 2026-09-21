@@ -34,22 +34,22 @@ a fine the owner personally pays.
 npm run typecheck && npm test        # 122 rules cases
 npm run web:preview                  # http://localhost:8090 — start in background Bash, then attach the Browser pane by URL
 ```
-Native: **Xcode 16.2 lives at `/Applications/Xcode 2.app`** (installed 2026-09-21;
-RN 0.86 requires ≥16.1, so the old 15.4 could not build at all). `xcode-select`
-still points at the standalone Command Line Tools and changing it needs the
-owner's password, so export `DEVELOPER_DIR` instead — no sudo required:
+Native: **this Mac cannot build the app locally. Do not try again.** Xcode 16.2
+is installed at `/Applications/Xcode 2.app` and gets further than the old 15.4
+(CocoaPods now succeeds), but the build dies in `ExpoModulesJSI` with:
 
-```bash
-export DEVELOPER_DIR="/Applications/Xcode 2.app/Contents/Developer"
-npx expo run:ios --device "iPhone 16 Pro Max" --configuration Release
+```
+xcodebuild: error: Could not resolve package dependencies:
+  package 'apple' is using Swift tools version 6.2.0 but the installed version is 6.0.0
 ```
 
-This Mac is a 2018 Intel MacBookPro15,1: macOS tops out at Sequoia 15.8 and
-**Xcode 26 can never run on it**, so EAS cloud builds (Xcode 26.6, iOS 26 SDK)
-produce binaries that will not launch on any simulator runtime available here —
-that is expected, not a bug. Build locally for screenshots and device testing;
-use EAS for the App Store binary. Metro file-watching is unreliable here —
-restart the server after edits.
+**Expo SDK 57 requires Swift 6.2, which ships only with Xcode 26.** This is a
+2018 Intel MacBookPro15,1: macOS tops out at Sequoia 15.8, whose newest Xcode is
+16.4 (Swift 6.1). So no local build, no local Simulator run, and no free
+on-device install are possible here for SDK 57 — the ceiling is a Swift version,
+not a setting. **Build in EAS** (`eas build -p ios`, ~4½ min, Xcode 26.6) and
+test through TestFlight on a real iPhone. Metro file-watching is unreliable here
+— restart the web server after edits.
 
 ## Where things are
 | | |
