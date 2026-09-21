@@ -77,6 +77,11 @@ hurry — start it first, everything else can happen while it processes.
    listed in the same doc.
 7. **`eas submit --platform ios --profile production`**, then hit Submit for Review.
 
+**Done (2026-09-21, later):** Upstash live and verified · duplicate Vercel
+project deleted · deployment retention tightened · Xcode 16.2 installed (use
+`DEVELOPER_DIR`, no sudo) · EAS project registered · cloud simulator build
+green in ~4½ min (but cannot run on this Mac's runtimes — Xcode 26 SDK).
+
 **Done (2026-09-21):**
 - `eas.json` with development / preview / device / production profiles.
 - App icon **alpha channel stripped** — App Store Connect rejects any icon with
