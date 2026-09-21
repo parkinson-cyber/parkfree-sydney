@@ -34,7 +34,22 @@ a fine the owner personally pays.
 npm run typecheck && npm test        # 122 rules cases
 npm run web:preview                  # http://localhost:8090 — start in background Bash, then attach the Browser pane by URL
 ```
-Native: `npm run ios` (Xcode 15.4 is installed). Metro file-watching is unreliable here — restart the server after edits.
+Native: **Xcode 16.2 lives at `/Applications/Xcode 2.app`** (installed 2026-09-21;
+RN 0.86 requires ≥16.1, so the old 15.4 could not build at all). `xcode-select`
+still points at the standalone Command Line Tools and changing it needs the
+owner's password, so export `DEVELOPER_DIR` instead — no sudo required:
+
+```bash
+export DEVELOPER_DIR="/Applications/Xcode 2.app/Contents/Developer"
+npx expo run:ios --device "iPhone 16 Pro Max" --configuration Release
+```
+
+This Mac is a 2018 Intel MacBookPro15,1: macOS tops out at Sequoia 15.8 and
+**Xcode 26 can never run on it**, so EAS cloud builds (Xcode 26.6, iOS 26 SDK)
+produce binaries that will not launch on any simulator runtime available here —
+that is expected, not a bug. Build locally for screenshots and device testing;
+use EAS for the App Store binary. Metro file-watching is unreliable here —
+restart the server after edits.
 
 ## Where things are
 | | |
