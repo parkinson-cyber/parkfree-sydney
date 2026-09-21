@@ -68,6 +68,21 @@ export function StreetSheet({
     (sideEvals[0].ev.status !== sideEvals[1].ev.status ||
       (sideEvals[0].rule!.maxstayMin ?? 0) !== (sideEvals[1].rule!.maxstayMin ?? 0));
 
+  /**
+   * Street View at this kerb. Uses Google's public Maps URLs scheme — no API
+   * key, no quota, and no terms problem, because the imagery stays inside
+   * Google's own viewer and nothing is extracted from it. The driver reads the
+   * sign with their own eyes, which is the one thing Street View is reliably
+   * good for: we measured that the Static API caps at 640px and cannot render
+   * a legible time plate.
+   */
+  const openStreetView = () => {
+    const { latitude, longitude } = featureCenter(street);
+    Linking.openURL(
+      `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${latitude},${longitude}`,
+    );
+  };
+
   const openDirections = () => {
     const { latitude, longitude } = featureCenter(street);
     const url =
@@ -110,6 +125,10 @@ export function StreetSheet({
       </View>
 
       <Text style={styles.detail} numberOfLines={2}>{overall.detail}</Text>
+
+      <Pressable onPress={openStreetView} hitSlop={8}>
+        <Text style={styles.signLink}>See the sign in Street View ↗</Text>
+      </Pressable>
 
       {/* Fine print for the weakest evidence tier: a sign read off Street View
           imagery, which can be years older than the pole it shows. */}
@@ -213,6 +232,10 @@ const styles = StyleSheet.create({
     letterSpacing: tracking.body,
   },
 
+  signLink: {
+    fontFamily: font, color: colors.accent, fontSize: 12,
+    fontWeight: '600', marginTop: 5,
+  },
   finePrint: {
     fontFamily: font, color: colors.textDim, fontSize: 11, fontStyle: 'italic',
     marginTop: 3,
