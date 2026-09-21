@@ -88,6 +88,17 @@ hurry — start it first, everything else can happen while it processes.
 - `docs/app-store-listing.md` — name, subtitle, keywords, description,
   the exact privacy-label answers, export-compliance answer, review notes.
 
+**Local builds need Xcode ≥ 16.1 — this Mac has 15.4.** Found by actually
+running it: `pod install` dies with "Please upgrade XCode" from
+`react-native/scripts/cocoapods/utils.rb`, which checks against
+`min_xcode_version_supported = '16.1'` (RN 0.86). **This does not block the
+launch** — EAS builds in the cloud on modern Xcode, and the account is already
+logged in (`chrislee123400`). It blocks only local Simulator runs and the
+store screenshots, which `scripts/store-screenshots.sh` is ready to take
+(iPhone 15 Pro Max reports exactly 1290x2796, the 6.7-inch slot). macOS here is
+14.8.7, so Xcode 16.1/16.2 is installable without a macOS upgrade; 16.3+ would
+need macOS 15.
+
 **Known state at submission:** ~19.8% of Sydney streets carry confirmed rules.
 That is a feature of the listing, not a thing to hide — the description says so
 plainly, and grey means "no published data", never "free".
