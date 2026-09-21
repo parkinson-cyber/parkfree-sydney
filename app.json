@@ -29,7 +29,9 @@
       },
       "permissions": [
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION"
+        "ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ],
       "predictiveBackGestureEnabled": false
     },
@@ -60,6 +62,12 @@
           "color": "#34D399"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "02c36c69-795e-4529-8dfb-bb2f7eb86f74"
+      }
+    },
+    "owner": "chrislee123400"
   }
 }
