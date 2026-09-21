@@ -1,5 +1,6 @@
 // Crowd-report storage. Upstash Redis over REST when the Vercel Marketplace
-// integration has injected UPSTASH_REDIS_REST_URL/TOKEN; otherwise a
+// integration has injected REST credentials under any of its naming schemes
+// (see pick() below); otherwise a
 // per-instance in-memory map so the API still works before storage is
 // provisioned (reports then live only as long as that lambda instance).
 //
@@ -7,8 +8,27 @@
 //                report:<id>  JSON with TTL
 //                reports:exp  ZSET score = expiry epoch (lazy purge of geo)
 
-const REST_URL = process.env.UPSTASH_REDIS_REST_URL;
-const REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+// The Vercel Marketplace integration names these after whatever prefix was
+// chosen when the database was connected, and it inserts its own KV_ segment:
+// connecting with prefix "UPSTASH_REDIS" produced UPSTASH_REDIS_KV_REST_API_URL,
+// not UPSTASH_REDIS_REST_URL. Rather than hand-editing variables that get
+// regenerated whenever the integration is reconnected, accept any of the names
+// these integrations are known to use.
+const pick = (...names) => {
+  for (const n of names) if (process.env[n]) return process.env[n];
+  return undefined;
+};
+const REST_URL = pick(
+  'UPSTASH_REDIS_REST_URL',
+  'UPSTASH_REDIS_KV_REST_API_URL',
+  'KV_REST_API_URL',
+);
+const REST_TOKEN = pick(
+  'UPSTASH_REDIS_REST_TOKEN',
+  'UPSTASH_REDIS_KV_REST_API_TOKEN',
+  'UPSTASH_REDIS_REST_API_TOKEN',
+  'KV_REST_API_TOKEN',
+);
 const usingRedis = Boolean(REST_URL && REST_TOKEN);
 
 async function pipeline(commands) {
