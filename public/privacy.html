@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — ParkFree Sydney</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0 auto; padding: 32px 20px 72px; max-width: 46rem;
+    background: #F2EFE7; color: #2E2B26;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.7rem; letter-spacing: -0.4px; margin: 0 0 4px; }
+  h2 { font-size: 1.05rem; margin: 32px 0 8px; letter-spacing: -0.2px; }
+  .sub { color: #7C776C; margin: 0 0 28px; }
+  p, li { color: #3A372F; }
+  ul { padding-left: 1.1rem; }
+  strong { font-weight: 650; }
+  code { background: #E7E2D6; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  .box { background: #FBF9F4; border: 1px solid #DED8CB; border-radius: 12px; padding: 16px 18px; margin: 20px 0; }
+  footer { margin-top: 44px; color: #7C776C; font-size: 0.85rem; }
+  a { color: #5A7449; }
+</style>
+</head>
+<body>
+<h1>Privacy</h1>
+<p class="sub">ParkFree Sydney · last updated 21 September 2026</p>
+
+<div class="box">
+  <strong>The short version.</strong> There are no accounts, no ads, no analytics
+  and no trackers. Your location stays on your phone unless you tap the report
+  button. Where you parked is stored only on your device.
+</div>
+
+<h2>Your location</h2>
+<p>
+  ParkFree asks for location only while you are using the app, and only to do two
+  things: centre the map on you, and — if you tap the report button — work out
+  which street you are standing on so the report lands on the right kerb.
+</p>
+<p>
+  Your position is <strong>not</strong> sent anywhere while you are simply looking
+  at the map. It is not logged, not stored on a server, and not shared. If you
+  decline the permission the app still works; it just won't know where you are.
+</p>
+
+<h2>Crowd reports</h2>
+<p>
+  When you report a spot as free or full, the app sends the <em>report's</em>
+  location (snapped to the nearest street), what you reported, and the time. It
+  also sends an anonymous identifier generated on your device at install, used
+  only to rate-limit abuse (30 reports per device per hour).
+</p>
+<ul>
+  <li>That identifier is a random value. It is not your Apple ID, your advertising
+      ID, your phone number or your email, and it cannot be traced back to you.</li>
+  <li>Reports expire automatically — 15 minutes for "someone left", 30 minutes for
+      "it's full" — and are deleted when they expire.</li>
+  <li>Reports are not attributed to anyone. Nobody, including us, can see who
+      reported what.</li>
+</ul>
+
+<h2>Where you parked, and your timer</h2>
+<p>
+  "Park here" and the parking timer are stored <strong>only on your phone</strong>
+  (in the app's local storage) and cleared after 24 hours. They are never uploaded.
+  Timer reminders are local notifications generated on the device.
+</p>
+
+<h2>What we never collect</h2>
+<ul>
+  <li>No account, email address, or name — there is nothing to sign up for.</li>
+  <li>No contacts, photos, calendar, microphone or camera roll access.</li>
+  <li>No advertising identifiers, no third-party SDKs, no analytics.</li>
+  <li>No location history, no trip tracking, no background location.</li>
+</ul>
+
+<h2>Services the app talks to</h2>
+<ul>
+  <li><strong>OpenFreeMap / OpenMapTiles</strong> — map tiles. Your device requests
+      the tiles for the area you are viewing.</li>
+  <li><strong>GitHub</strong> — the live car-park occupancy feed is a static file
+      fetched from the project's public repository.</li>
+  <li><strong>The ParkFree API</strong> (hosted on Vercel) — only for crowd reports,
+      as described above.</li>
+</ul>
+<p>
+  Each of these sees your IP address the way any website you visit does. We do not
+  combine that with anything else, and we keep no server logs of your browsing of
+  the map.
+</p>
+
+<h2>Parking data itself</h2>
+<p>
+  The map's rules come from published council and NSW Government data, sign
+  registers, and photographs of signs. Sources are listed in the open-source
+  repository. <strong>A sign on the street always beats this app.</strong>
+</p>
+
+<h2>Children</h2>
+<p>ParkFree collects nothing that identifies anyone, of any age.</p>
+
+<h2>Changes and contact</h2>
+<p>
+  If this policy changes, the date at the top changes with it and the previous
+  version stays in the repository's history. Questions, or want a report removed?
+  Open an issue at
+  <a href="https://github.com/parkinson-cyber/parkfree-sydney">github.com/parkinson-cyber/parkfree-sydney</a>.
+</p>
+
+<footer>
+  ParkFree Sydney is open source under the MIT licence. Map geometry ©
+  OpenStreetMap contributors (ODbL).
+</footer>
+</body>
+</html>

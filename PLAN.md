@@ -55,8 +55,42 @@ Replace the egress-blocked cloud routine with **GitHub Actions** (`schedule: 0 *
 - Issue templates: *wrong sign data on my street*, *add my council*.
 - Data attribution page in-app (OSM ODbL, each council's licence).
 
-## M7 — App Store (user-driven)
-- Apple Developer account, EAS production build, screenshots, privacy nutrition label (location: while-in-use; anonymous device id; optional shared reports).
+## M7 — App Store, shipping before 1 October 2026
+
+Target: submitted by **26 Sep**, leaving buffer for review (usually 24–48 h,
+occasionally longer). The critical path is Apple's enrolment, which nobody can
+hurry — start it first, everything else can happen while it processes.
+
+**Owner's steps (account-gated, Claude cannot do these):**
+1. **Enrol in the Apple Developer Program** — developer.apple.com/programs, A$149/yr.
+   Identity verification can take 24–48 h. *Do this first; it blocks 4–7.*
+2. **Connect Upstash** — Vercel → parkfree-sydney → Storage → Create Database →
+   Upstash for Redis (free) → connect → Redeploy. Two minutes, and without it
+   crowd reports are not shared between phones (`/api/reports` answers
+   `"live": false` today). Ship without it and the report button is decorative.
+3. **Expo account** — expo.dev signup, then `eas login` in the repo.
+4. **`eas build --platform ios --profile production`** — signs in with the Apple
+   account, creates certificates automatically.
+5. **Create the app record** in App Store Connect with bundle id
+   `com.parkfree.sydney`, then paste everything from `docs/app-store-listing.md`.
+6. **Screenshots** — 1290×2796 from the Simulator; the five shots to take are
+   listed in the same doc.
+7. **`eas submit --platform ios --profile production`**, then hit Submit for Review.
+
+**Done (2026-09-21):**
+- `eas.json` with development / preview / device / production profiles.
+- App icon **alpha channel stripped** — App Store Connect rejects any icon with
+  transparency; it was RGBA and would have failed at upload.
+- `LICENSE` rewritten: it still carried Expo's template copyright (650
+  Industries). Now MIT in the project's name, with a note on data provenance.
+- `public/privacy.html` and `public/support.html` — both URLs are *required*
+  fields in App Store Connect, and neither existed.
+- `docs/app-store-listing.md` — name, subtitle, keywords, description,
+  the exact privacy-label answers, export-compliance answer, review notes.
+
+**Known state at submission:** ~19.8% of Sydney streets carry confirmed rules.
+That is a feature of the listing, not a thing to hide — the description says so
+plainly, and grey means "no published data", never "free".
 
 ---
 
