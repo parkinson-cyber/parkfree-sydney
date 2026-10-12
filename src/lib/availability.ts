@@ -12,12 +12,16 @@
  *      a lot for ten minutes and nothing an hour later).
  *   3. Measured demand nearby. The TfNSW Park&Ride feed reports real occupancy
  *      hourly; a commuter car park at 98% within walking distance is hard
- *      evidence that the whole area is under pressure. This is the only
- *      *measured* input, so it carries real weight.
- *   4. A time-of-day prior for the street's kind (metered strip, residential
- *      permit street, beach front). Hand-set from known Sydney patterns and
- *      labelled as such — it is the weakest input and is meant to be replaced
- *      by the occupancy history the hourly job is now accumulating.
+ *      evidence that the whole area is under pressure.
+ *   4. **Transit flow from Opal tap data** (`demand.ts`). Transport for NSW
+ *      publishes tap-ons and tap-offs by location and quarter-hour, and the
+ *      running difference at a station people leave from is proportional to
+ *      the cars parked around it. That replaced the hand-set prior below for
+ *      every street within walking distance of a station or inside a
+ *      bus-served postcode — about where this app is actually used.
+ *   5. A time-of-day prior for the street's kind (metered strip, residential
+ *      permit street, beach front). Still hand-set, still labelled as such,
+ *      but now only the fallback for where the tap data says nothing.
  *
  * Confidence is deliberately capped below certainty: without a sensor in the
  * kerb we can never be sure, and a number that claims to be is worse than
@@ -28,8 +32,12 @@ import type { LiveStatus, StreetProps } from './types';
 import type { CarPark } from './carparks';
 import { isFreeKind, type Report } from './reportKinds';
 import { distanceM } from './geo';
+import { demandPrior } from './demand';
 
 export type Band = 'likely' | 'mixed' | 'unlikely' | 'unavailable' | 'unknown';
+
+/** Where the headline number mostly came from. */
+export type Basis = 'law' | 'reports' | 'measured' | 'transit' | 'prior' | 'none';
 
 export interface Availability {
   /** P(a space is free), 0–1. Null when we decline to guess. */
@@ -42,7 +50,7 @@ export interface Availability {
   /** The reasons, most important first — shown as a checklist. */
   evidence: string[];
   /** Named so the sheet can say where the number came from. */
-  basis: 'law' | 'reports' | 'measured' | 'prior' | 'none';
+  basis: Basis;
 }
 
 const HALF_LIFE_FREE_MIN = 10;   // "I'm leaving" ages fast — someone takes it
@@ -99,10 +107,15 @@ export interface AvailabilityInput {
   reports: Report[];
   carParks: CarPark[];
   now: Date;
+  /**
+   * The street's postcode, from its gazetted suburb. Lets the Opal bus taps
+   * join exactly rather than by nearest centroid.
+   */
+  postcode?: number | null;
 }
 
 export function estimateAvailability({
-  props, status, center, reports, carParks, now,
+  props, status, center, reports, carParks, now, postcode,
 }: AvailabilityInput): Availability {
   // 1. The law comes first and overrides everything.
   if (status === 'banned') {
@@ -123,10 +136,26 @@ export function estimateAvailability({
   }
 
   const evidence: string[] = [];
+
+  // The prior used to be a hand-written guess for every street in Sydney.
+  // Where Opal tap data reaches — within walking distance of a station, or
+  // inside a postcode the buses serve — it is now derived from measured
+  // passenger flow instead, and says so in its own evidence lines.
+  const transit = demandPrior(props, center, now, postcode);
   const prior = priorFor(props, now);
-  let odds = logit(prior.p);
-  let confidence = 0.25;
-  let basis: Availability['basis'] = 'prior';
+  let odds: number;
+  let confidence: number;
+  let basis: Basis;
+  if (transit) {
+    odds = logit(transit.p);
+    confidence = 0.25 + transit.confidence;
+    basis = 'transit';
+    evidence.push(...transit.evidence);
+  } else {
+    odds = logit(prior.p);
+    confidence = 0.25;
+    basis = 'prior';
+  }
 
   // 2. Crowd reports on this street.
   const near = reports.filter(
@@ -165,14 +194,18 @@ export function estimateAvailability({
     // Centred at 70% full: busier than that pushes down, emptier pushes up.
     odds += (0.7 - occ) * 1.6;
     confidence += 0.2;
-    if (basis === 'prior') basis = 'measured';
+    if (basis === 'prior' || basis === 'transit') basis = 'measured';
     evidence.push(
       `${nearby.c.name} car park, ${Math.round(nearby.d)} m away, is ${Math.round(occ * 100)}% full right now (measured by Transport for NSW)`,
     );
   }
 
-  // 4. The prior always gets said out loud, so nobody mistakes it for data.
-  evidence.push(`${prior.why} (typical pattern, not a measurement)`);
+  // 4. The hand-set prior gets said out loud only when it is what produced
+  //    the number — repeating it under a measured estimate would read as a
+  //    second piece of evidence for something it did not contribute to.
+  if (!transit) {
+    evidence.push(`${prior.why} (typical pattern, not a measurement)`);
+  }
   if (status === 'free_limited' && props.left?.maxstayMin) {
     evidence.push('Time limit here keeps spaces turning over');
     odds += 0.25;

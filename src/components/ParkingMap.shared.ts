@@ -29,6 +29,11 @@ export interface ParkingMapProps {
 
 export interface ParkingMapHandle {
   animateTo: (center: { latitude: number; longitude: number }, zoomedIn?: boolean) => void;
+  /**
+   * Frame a whole area: [west, south, east, north]. A suburb search should
+   * show the suburb, not drop you at a point inside it at street zoom.
+   */
+  fitBounds: (bbox: [number, number, number, number]) => void;
   animateToUser: () => Promise<boolean>;
   /** The driver's current position, or null if unavailable/denied. */
   getUserLocation: () => Promise<{ latitude: number; longitude: number } | null>;

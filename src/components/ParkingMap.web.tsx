@@ -237,6 +237,14 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
         duration: 700,
       });
     },
+    fitBounds([west, south, east, north]) {
+      // Padded on the bottom because the search bar and the tab bar live
+      // there: without it half of a coastal suburb lands behind the chrome.
+      mapRef.current?.fitBounds(
+        [[west, south], [east, north]],
+        { padding: { top: 70, right: 40, bottom: 190, left: 40 }, maxZoom: 16.5, duration: 700 },
+      );
+    },
     getUserLocation: currentPosition,
     async animateToUser() {
       const at = await currentPosition();

@@ -26,11 +26,11 @@ Port `ParkFreeSyd/server/` into this repo as Vercel functions (`api/`), reshaped
 - **Provenance rule applies:** reports are stored with `source: user` and rendered as reports, never merged into `cat`.
 - **Done when:** a report made on one device shows on another within 30 s.
 
-## M3 — Live availability estimate — SHIPPED 2026-09-10 (priors still hand-set; replace with history.jsonl once ~4 weeks accumulate)
+## M3 — Live availability estimate — DONE 2026-10-12 (priors replaced; see docs/DEMAND-MODEL.md)
 Nobody publishes on-street occupancy for Sydney (City of Sydney removed its sensors). So this is an **estimate**, and the UI must say so. Score each classified segment 0–1 = P(a space is free now):
 
 1. **Legal gate** — `rules.ts` says whether you may park now. If not, score = 0. (Exists.)
-2. **Prior** `p0(segment, weekday, hour)` — a small table keyed by street class × context: metered CBD after cut-off, residential near a station on a weekday, beach suburbs on a summer weekend, etc. Start hand-set from known Sydney patterns (documented in `src/lib/availability.ts`), then replaced by observed rates as reports accumulate.
+2. **Prior** `p0(segment, weekday, hour)` — **done 2026-10-12**, and from measured data rather than the planned hand-set table. Opal tap-on/tap-off flow gives a per-station departure curve (`src/lib/demand.ts`); the hand-set table survives only as the fallback where the tap data does not reach. Calibrated against the Park&Ride occupancy history. Next refinement when it is wanted: refit every few weeks (`python3 scripts/train-occupancy-model.py --write --refresh`) — the history grows ~1,000 readings a week and the fit tightens as it covers more of the year.
 3. **Crowd evidence** — each report shifts the score with a weight that decays exponentially (half-life ~10 min for `left`/`looks_empty`, ~20 min for `parked`/`looks_full`). Bayesian-ish log-odds update; five reports never outweigh a legal ban.
 4. **Timer-derived departures** — the existing parking timer already knows *when a user intends to leave*. With opt-in ("share when I'm leaving"), a timer expiring in ≤10 min becomes a soft `left`-soon signal for that segment. This is the one genuinely live signal no one else has.
 5. **Surface:** three bands — *likely free / uncertain / likely full* — as a subtle stripe on the street, plus "estimate · based on N reports" in the sheet. `findPark.ts` uses score as a tiebreaker within 150 m, never to override distance by more than that.

@@ -11,7 +11,7 @@ import ParkingMap from './src/components/ParkingMap';
 import {
   type ParkingMapHandle, SHOW_CLASSIFIED_MAX_DELTA,
 } from './src/components/ParkingMap.shared';
-import { SearchBar } from './src/components/SearchBar';
+import { SearchBar, SearchPanel } from './src/components/SearchBar';
 import { StreetSheet } from './src/components/StreetSheet';
 import { LegendModal } from './src/components/LegendModal';
 import { TimerModal, TimerPill } from './src/components/ParkingTimer';
@@ -32,6 +32,8 @@ import { TabBar } from './src/components/TabBar';
 import { Panel } from './src/components/Panels';
 import { useKeyboardInset } from './src/lib/useKeyboardInset';
 import { estimateAvailability, type Availability } from './src/lib/availability';
+import { installDemandModel } from './src/lib/demandModel';
+import { suburbByName } from './src/lib/suburbs';
 import { featureCenter, featureInRegion } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
 import {
@@ -70,6 +72,7 @@ function Main() {
   // The keyboard lifts the bottom chrome. It must never move the map.
   const keyboard = useKeyboardInset();
 
+  const [searching, setSearching] = useState(false);
   const [timerFor, setTimerFor] = useState<{ street: StreetFeature; suggestedMin?: number } | null>(null);
   const [finding, setFinding] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -214,6 +217,9 @@ function Main() {
       reports,
       carParks: carparks?.facilities ?? [],
       now,
+      // The gazetted suburb gives an exact postcode, which is how the Opal
+      // bus taps join on — no nearest-centroid guessing.
+      postcode: suburbByName(selected.properties.sub)?.postcode ?? null,
     });
   }, [selected, now, reports, carparks]);
 
@@ -329,7 +335,7 @@ function Main() {
         )}
 
         <SearchBar
-          onGo={(r) => mapRef.current?.animateTo(r, !!r.streetId)}
+          onOpen={() => setSearching(true)}
           freeCount={freeNow.count}
           freeNearby={freeNow.nearby}
         />
@@ -353,6 +359,19 @@ function Main() {
           estimate={estimate}
           streetName={selected?.properties.name}
           onClose={() => setExplaining(false)}
+        />
+      )}
+
+      {/* Above everything: search owns the screen while it is open, which is
+          what keeps the field clear of the keyboard. */}
+      {searching && (
+        <SearchPanel
+          onClose={() => setSearching(false)}
+          onGo={(r) => {
+            setTab('map');
+            if (r.bbox) mapRef.current?.fitBounds(r.bbox);
+            else mapRef.current?.animateTo(r, !!r.streetId);
+          }}
         />
       )}
 
@@ -394,6 +413,7 @@ function Boot() {
 
   useEffect(() => {
     let alive = true;
+    installDemandModel();
     loadParkingData()
       .then(() => alive && setReady(true))
       .catch(() => alive && setFailed(true));

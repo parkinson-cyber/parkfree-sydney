@@ -55,6 +55,22 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
         450,
       );
     },
+    fitBounds([west, south, east, north]) {
+      // 25% of slack around the box so the suburb isn't jammed against the
+      // bezel, and a floor on the span so a one-street suburb doesn't zoom
+      // past the level at which streets are drawn at all.
+      const latitudeDelta = Math.max((north - south) * 1.25, 0.008);
+      const longitudeDelta = Math.max((east - west) * 1.25, 0.008);
+      mapRef.current?.animateToRegion(
+        {
+          latitude: (north + south) / 2,
+          longitude: (east + west) / 2,
+          latitudeDelta,
+          longitudeDelta,
+        },
+        600,
+      );
+    },
     getUserLocation: currentPosition,
     async animateToUser() {
       const at = await currentPosition();

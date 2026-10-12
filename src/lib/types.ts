@@ -74,6 +74,14 @@ export interface StreetProps {
   cat: ParkingKind;
   area: string;
   name?: string;
+  /**
+   * Gazetted suburb containing the segment's midpoint, from NSW Spatial
+   * Services' suburb boundaries (scripts/fetch-suburbs.py). Absent when the
+   * midpoint falls outside every polygon — never guessed from the nearest
+   * place name, because "Alfred Street, Milsons Point" is the only thing that
+   * tells one of eleven Alfred Streets from the others.
+   */
+  sub?: string;
   left?: SideRule;
   right?: SideRule;
   /** Dominant kerbside zone for the street, when known. */

@@ -23,7 +23,7 @@ a fine the owner personally pays.
 ## Rules that don't change
 - **A photographed sign beats a schedule.** `scripts/data/field-signs.json` holds signs seen on the street (photo in `docs/field-signs/`). It outranks permit-area schedules for the kerb it covers, never beyond its `bbox`, and never over a council sign census. Add new photos there rather than editing `parking.json`. **Street View is the weakest tier**: the owner may read the odd sign off Street View for this personal tool; store it with `"method": "streetview"` and `imageryDate`, it fills only still-unknown streets, a photo always beats it, and the app labels it. Sweep an area with `scripts/fetch-streetview-signs.mjs` (queue only — it never writes `parking.json`, and images stay out of the repo). For all-Sydney bulk, Mapillary.
 - **Data provenance is the product.** Never default `unknown` → `free`. Every classification traces to a real fetched council/TfNSW response. OSM `parking:lane` is physical, not regulatory. No Parkopedia. A false "permit required" is the worst error for a free-parking finder.
-- **Estimates look like estimates.** Anything derived (availability score, crowd report, timer-based departure) is rendered as a confidence band, never as a verified rule. Inferred data must never be dressed up as a user's report.
+- **Estimates look like estimates.** Anything derived (availability score, crowd report, timer-based departure) is rendered as a confidence band, never as a verified rule. Inferred data must never be dressed up as a user's report. The Opal demand model (`docs/DEMAND-MODEL.md`) is an estimate too: it may move the availability score and must never touch a street's `cat`.
 - **Docs move with code.** Every change that lands updates `PROGRESS.md` (state + dated changelog line). Convention changes update this file. Commit docs in the same commit.
 - **Scheduled jobs are silent when nothing changed.** No "re-confirmed, no change" commits, ever. Data jobs run in GitHub Actions, not in a cloud routine (see PROGRESS.md → "Hourly agent").
 - Accounts, API keys, App Store, Vercel login: the user does these. Claude gives exact steps and takes the resulting key.
@@ -31,7 +31,7 @@ a fine the owner personally pays.
 
 ## Verify before claiming done
 ```bash
-npm run typecheck && npm test        # 122 rules cases
+npm run typecheck && npm test        # 172 cases: rules, availability, demand model
 npm run web:preview                  # http://localhost:8090 — start in background Bash, then attach the Browser pane by URL
 ```
 Native: **this Mac cannot build the app locally. Do not try again.** Xcode 16.2
@@ -58,6 +58,8 @@ test through TestFlight on a real iPhone. Metro file-watching is unreliable here
 | Rules engine | `src/lib/rules.ts` · tests `scripts/test-rules.mjs` |
 | Find-me-a-park | `src/lib/findPark.ts` |
 | Schema | `src/lib/types.ts` |
-| Data | `src/data/parking.json` (28 MB, 78k segments) · pipeline `scripts/` · offline overlays `scripts/apply-enrichment.sh` |
+| Data | `src/data/parking.json` (30 MB, 78k segments) · pipeline `scripts/` · offline overlays `scripts/apply-enrichment.sh` |
+| Suburb index | `src/data/suburbs.json` (498 suburbs) · `scripts/fetch-suburbs.py` · every street carries `properties.sub` |
+| Demand model | `src/data/demand-model.json` · `src/lib/demand.ts` · **read `docs/DEMAND-MODEL.md` before touching it** |
 | State | `src/state/store.ts` (zustand) |
 | Data-source leads | `scripts/DATA-SOURCE-LEADS.md` → "Candidate endpoints" section only |

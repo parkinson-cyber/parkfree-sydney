@@ -13,6 +13,7 @@ import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import { colors, font, radius, shadow, tracking } from '../theme';
 import { Glass } from './Glass';
 import { confidenceLabel, type Availability } from '../lib/availability';
+import { demandBasisLine } from '../lib/demand';
 
 const BAND_COLOR: Record<Availability['band'], string> = {
   likely: colors.accent,
@@ -81,6 +82,15 @@ export function BusySheet({
           </Text>
 
           <ScrollView style={styles.evidence} showsVerticalScrollIndicator={false}>
+            {estimate.basis === 'transit' && !!demandBasisLine() && (
+              // Where the number came from, in the sheet rather than buried in
+              // a commit message: this estimate leans on passenger-flow data,
+              // and whether that model has ever been checked against measured
+              // occupancy is exactly what a reader should get to weigh.
+              <View style={styles.sourceRow}>
+                <Text style={styles.sourceText}>{demandBasisLine()}</Text>
+              </View>
+            )}
             {estimate.evidence.map((line, i) => (
               <View key={i} style={styles.evidenceRow}>
                 <View style={[styles.tick, { backgroundColor: tint }]}>
@@ -122,6 +132,13 @@ const styles = StyleSheet.create({
   scoreText: { fontFamily: font, color: colors.textDim, fontSize: 13, fontWeight: '600' },
 
   lede: { fontFamily: font, color: colors.textDim, fontSize: 14, lineHeight: 20, marginTop: 14, letterSpacing: tracking.body },
+  sourceRow: {
+    backgroundColor: 'rgba(46,43,38,0.05)',
+    borderRadius: radius.control,
+    paddingHorizontal: 12, paddingVertical: 10,
+    marginBottom: 10,
+  },
+  sourceText: { fontFamily: font, color: colors.textDim, fontSize: 12, lineHeight: 17 },
 
   evidence: { marginTop: 14 },
   evidenceRow: { flexDirection: 'row', gap: 10, marginBottom: 12, alignItems: 'flex-start' },

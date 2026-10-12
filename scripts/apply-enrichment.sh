@@ -41,5 +41,10 @@ python3 scripts/fetch-tfnsw-clearways.py
 echo "── field-signs ──────────────────────"
 python3 scripts/fetch-field-signs.py
 
+# Suburb names last: they depend on nothing above and nothing above depends on
+# them, but every street needs one before `finalize` counts anything.
+echo "── suburbs (offline boundaries) ─────"
+python3 scripts/fetch-suburbs.py
+
 echo "── finalize ─────────────────────────"
 python3 scripts/finalize-metadata.py

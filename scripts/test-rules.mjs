@@ -366,5 +366,126 @@ eq(priorFor({ id: 1, cat: 'paid', area: 't', zone: 'meter' }, mon3am).p > 0.7, t
    'metered streets are open at 3am');
 eq(confidenceLabel(0.55), '55% confidence', 'confidence reads as a percentage');
 
+
+// ─── the Opal transit-demand model (src/lib/demand.ts) ───────────────────────
+// The real 150 KB model is not loaded here; a synthetic one is injected, so
+// these assert the *modelling* rather than the contents of a data file.
+
+const { setDemandModel, demandPrior, exposure, DEFAULT_WEIGHTS } =
+  require('../.cache/test/demand.js');
+
+// A kerb 200 m from a busy origin station, whose cars-on-kerb curve is empty
+// overnight and at its peak through the middle of the weekday.
+const flat = (v) => Array(24).fill(v);
+const parkedCurve = flat(0).map((_, h) => (h >= 7 && h <= 15 ? 100 : h >= 4 && h < 7 ? 20 : 0));
+const STATION = {
+  name: 'Testville Station', mode: 'train',
+  latitude: undefined,
+  lat: HERE_AV.latitude + 0.0018, lon: HERE_AV.longitude,   // ~200 m north
+  taps: 20000, now: 1, origin: 0.9,
+  parked: { wd: parkedCurve, sa: flat(0), su: flat(0) },
+  arrivals: { wd: flat(50), sa: flat(50), su: flat(50) },
+};
+const PC = {
+  pc: 2000, lat: HERE_AV.latitude, lon: HERE_AV.longitude,
+  taps: 50000, origin: 0.5, parked: null,
+  arrivals: { wd: flat(90), sa: flat(20), su: flat(20) },
+};
+
+// With no model installed the estimate must fall back, not crash or invent.
+setDemandModel(null);
+eq(demandPrior(street(), HERE_AV, wed10am, 2000), null,
+   'no demand model → no transit prior, and the hand-set one is used');
+eq(est().evidence.some((e) => e.includes('not a measurement')), true,
+   'without the model the prior is still labelled a guess');
+
+setDemandModel({
+  generated: '2026-10-12', week: '2020-02-24', sources: [],
+  calibration: { state: 'uncalibrated', samples: 0, weights: null, fittedAt: null },
+  stations: [STATION], postcodes: [PC],
+});
+
+const freeStreet = { id: 9, cat: 'free', area: 't' };
+const permitStreet = { id: 9, cat: 'residents', area: 't', zone: 'residential' };
+const meteredStreet = { id: 9, cat: 'paid', area: 't', zone: 'meter' };
+
+const peak = demandPrior(freeStreet, HERE_AV, wed10am, 2000);
+const night = demandPrior(freeStreet, HERE_AV, mon3am, 2000);
+eq(peak !== null, true, 'a station within walking distance produces a transit prior');
+eq(peak.p < night.p, true,
+   'commuter kerb is tighter at 10am than at 3am, from the tap curve alone');
+eq(peak.evidence.some((e) => e.includes('Opal tap data')), true,
+   'the transit prior cites Opal as its source');
+eq(peak.measured, true, 'the transit prior reports itself as derived from data');
+
+// The law decides whether commuter pressure can land on this kerb at all.
+eq(demandPrior(permitStreet, HERE_AV, wed10am, 2000).p
+     > demandPrior(freeStreet, HERE_AV, wed10am, 2000).p, true,
+   'a permit street keeps commuter pressure off: better odds than a free kerb');
+eq(exposure(permitStreet) < exposure(meteredStreet), true,
+   'permit rules shut out more commuters than a meter does');
+eq(exposure(meteredStreet) < exposure(freeStreet), true,
+   'a meter shuts out some commuters; an unrestricted kerb shuts out none');
+eq(exposure({ id: 9, cat: 'free_limited', area: 't', left: { kind: 'free_limited', maxstayMin: 120 } })
+     < exposure(freeStreet), true,
+   'a 2P limit shuts out the all-day commuter');
+
+// One departure curve, read from both ends: the morning that *fills* an
+// unrestricted kerb beside a station *empties* the permit street behind it,
+// because the cars on a permit street belong to the people who just left.
+eq(demandPrior(permitStreet, HERE_AV, wed10am, 2000).p
+     > demandPrior(permitStreet, HERE_AV, mon3am, 2000).p, true,
+   'a permit street is freer once its residents have driven to work');
+eq(demandPrior(freeStreet, HERE_AV, wed10am, 2000).p
+     < demandPrior(freeStreet, HERE_AV, mon3am, 2000).p, true,
+   'the unrestricted kerb beside it moves the other way at the same hour');
+eq(demandPrior(permitStreet, HERE_AV, wed10am, 2000)
+     .evidence.some((e) => e.includes('residents')), true,
+   'and it says whose cars those are, rather than showing a bare number');
+
+// Area activity is visitors arriving. It must not be read as kerb pressure in
+// a suburb people *leave* in the morning, or as anything at all on a street
+// whose cars belong to residents.
+const area = (origin, level, props) => {
+  setDemandModel({
+    generated: 'x', week: '2020-02-24', sources: [],
+    calibration: { state: 'uncalibrated', samples: 0, weights: null, fittedAt: null },
+    stations: [],
+    postcodes: [{ ...PC, origin, parked: null,
+      arrivals: { wd: flat(level), sa: flat(level), su: flat(level) } }],
+  });
+  return demandPrior(props, HERE_AV, wed10am, 2000);
+};
+// A destination area — people arrive here — so a busy hour means a busy kerb.
+eq(area(0.15, 95, meteredStreet).p < area(0.15, 5, meteredStreet).p, true,
+   'in an area people arrive at, a busy hour means a tighter metered strip');
+eq(area(0.15, 95, meteredStreet).evidence.some((e) => e.includes('arriving')), true,
+   'and it says the pressure is people arriving');
+// The same busyness in a dormitory suburb is residents leaving, not visitors.
+const dormitory = Math.abs(area(0.9, 95, meteredStreet).p - area(0.9, 5, meteredStreet).p);
+const destination = Math.abs(area(0.15, 95, meteredStreet).p - area(0.15, 5, meteredStreet).p);
+eq(dormitory < destination, true,
+   'the same number in a suburb people leave from counts for much less');
+eq(area(0.15, 95, permitStreet), null,
+   'and on a residential street it is not evidence at all');
+
+// An uncalibrated model must not claim much confidence for itself.
+eq(area(0.15, 95, meteredStreet).confidence <= 0.22, true,
+   'an uncalibrated model is capped low, however much flow it sees');
+
+// Distance matters: the same station 5 km away is not evidence about this kerb.
+setDemandModel({
+  generated: 'x', week: '2020-02-24', sources: [],
+  calibration: { state: 'uncalibrated', samples: 0, weights: null, fittedAt: null },
+  stations: [{ ...STATION, lat: HERE_AV.latitude + 0.05 }], postcodes: [],
+});
+eq(demandPrior(freeStreet, HERE_AV, wed10am, null), null,
+   'a station 5 km away says nothing about this street');
+eq(DEFAULT_WEIGHTS.walkMaxM <= 1200, true,
+   'the walk radius stays within what a commuter actually walks');
+
+// Leave the harness as it found it, so later cases are unaffected.
+setDemandModel(null);
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

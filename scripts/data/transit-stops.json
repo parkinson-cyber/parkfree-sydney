@@ -1,0 +1,2681 @@
+{
+"_source": "Transport for NSW GTFS static feeds (Sydney Trains, Metro, light rail, Sydney Ferries), via the Open Data Hub.",
+"_fetched": "2026-10-12",
+"stops": {
+"Albury Station": {
+"lat": -36.084,
+"lon": 146.92462,
+"mode": "train"
+},
+"Aberdeen Station": {
+"lat": -32.16704,
+"lon": 150.89203,
+"mode": "train"
+},
+"Allawah Station": {
+"lat": -33.96961,
+"lon": 151.11425,
+"mode": "train"
+},
+"Albion Park Station": {
+"lat": -34.56289,
+"lon": 150.79872,
+"mode": "train"
+},
+"Armidale Station": {
+"lat": -30.51529,
+"lon": 151.65173,
+"mode": "train"
+},
+"Arncliffe Station": {
+"lat": -33.93652,
+"lon": 151.14728,
+"mode": "train"
+},
+"Artarmon Station": {
+"lat": -33.80869,
+"lon": 151.18494,
+"mode": "train"
+},
+"Ashfield Station": {
+"lat": -33.88763,
+"lon": 151.12567,
+"mode": "train"
+},
+"Asquith Station": {
+"lat": -33.68865,
+"lon": 151.10811,
+"mode": "train"
+},
+"Adamstown Station": {
+"lat": -32.93367,
+"lon": 151.72016,
+"mode": "train"
+},
+"Auburn Station": {
+"lat": -33.8493,
+"lon": 151.03286,
+"mode": "train"
+},
+"Austinmer Station": {
+"lat": -34.30645,
+"lon": 150.92925,
+"mode": "train"
+},
+"Awaba Station": {
+"lat": -33.01296,
+"lon": 151.5419,
+"mode": "train"
+},
+"Beecroft Station": {
+"lat": -33.7496,
+"lon": 151.06645,
+"mode": "train"
+},
+"Bardwell Park Station": {
+"lat": -33.93154,
+"lon": 151.12499,
+"mode": "train"
+},
+"Bungendore Station": {
+"lat": -35.25588,
+"lon": 149.44639,
+"mode": "train"
+},
+"Berowra Station": {
+"lat": -33.62352,
+"lon": 151.15314,
+"mode": "train"
+},
+"Bargo Station": {
+"lat": -34.29115,
+"lon": 150.58014,
+"mode": "train"
+},
+"Blackheath Station": {
+"lat": -33.63338,
+"lon": 150.28435,
+"mode": "train"
+},
+"Birrong Station": {
+"lat": -33.8929,
+"lon": 151.02418,
+"mode": "train"
+},
+"Bondi Junction Station": {
+"lat": -33.8912,
+"lon": 151.24837,
+"mode": "train"
+},
+"Broken Hill Station": {
+"lat": -31.95936,
+"lon": 141.46668,
+"mode": "train"
+},
+"Banksia Station": {
+"lat": -33.94514,
+"lon": 151.14052,
+"mode": "train"
+},
+"Blayney Station": {
+"lat": -33.52707,
+"lon": 149.25449,
+"mode": "train"
+},
+"Bullaburra Station": {
+"lat": -33.72351,
+"lon": 150.41479,
+"mode": "train"
+},
+"Bulli Station": {
+"lat": -34.33436,
+"lon": 150.91479,
+"mode": "train"
+},
+"Bell Station": {
+"lat": -33.5058,
+"lon": 150.27897,
+"mode": "train"
+},
+"Bellata Station": {
+"lat": -29.91773,
+"lon": 149.79053,
+"mode": "train"
+},
+"Bombo Station": {
+"lat": -34.65832,
+"lon": 150.85391,
+"mode": "train"
+},
+"Broadmeadow Station": {
+"lat": -32.92285,
+"lon": 151.7348,
+"mode": "train"
+},
+"Bellambi Station": {
+"lat": -34.36294,
+"lon": 150.91002,
+"mode": "train"
+},
+"Belmore Station": {
+"lat": -33.91721,
+"lon": 151.08863,
+"mode": "train"
+},
+"Brisbane Station": {
+"lat": -27.46557,
+"lon": 153.01952,
+"mode": "train"
+},
+"Bankstown Station": {
+"lat": -33.91786,
+"lon": 151.0345,
+"mode": "train"
+},
+"Branxton Station": {
+"lat": -32.66224,
+"lon": 151.34559,
+"mode": "train"
+},
+"Boggabri Station": {
+"lat": -30.70371,
+"lon": 150.03995,
+"mode": "train"
+},
+"Burradoo Station": {
+"lat": -34.49408,
+"lon": 150.3982,
+"mode": "train"
+},
+"Booragul Station": {
+"lat": -32.97157,
+"lon": 151.60483,
+"mode": "train"
+},
+"Bowral Station": {
+"lat": -34.47816,
+"lon": 150.41662,
+"mode": "train"
+},
+"Berala Station": {
+"lat": -33.87184,
+"lon": 151.03244,
+"mode": "train"
+},
+"Berry Station": {
+"lat": -34.78032,
+"lon": 150.69685,
+"mode": "train"
+},
+"Beresfield Station": {
+"lat": -32.79913,
+"lon": 151.65809,
+"mode": "train"
+},
+"Bathurst Station": {
+"lat": -33.42567,
+"lon": 149.58318,
+"mode": "train"
+},
+"Blacktown Station": {
+"lat": -33.76841,
+"lon": 150.9074,
+"mode": "train"
+},
+"Bundanoon Station": {
+"lat": -34.65604,
+"lon": 150.29917,
+"mode": "train"
+},
+"Buxton Bus": {
+"lat": -34.25481,
+"lon": 150.53427,
+"mode": "train"
+},
+"Buxton Bus 1": {
+"lat": -34.25458,
+"lon": 150.53388,
+"mode": "train"
+},
+"Broadmeadows Station": {
+"lat": -37.68285,
+"lon": 144.91977,
+"mode": "train"
+},
+"Beverly Hills Station": {
+"lat": -33.94901,
+"lon": 151.08124,
+"mode": "train"
+},
+"Benalla Station": {
+"lat": -36.54468,
+"lon": 145.98388,
+"mode": "train"
+},
+"Burwood Station": {
+"lat": -33.8772,
+"lon": 151.10429,
+"mode": "train"
+},
+"Blaxland Station": {
+"lat": -33.74367,
+"lon": 150.60968,
+"mode": "train"
+},
+"Bexley North Station": {
+"lat": -33.93752,
+"lon": 151.11362,
+"mode": "train"
+},
+"Cabramatta Station": {
+"lat": -33.89489,
+"lon": 150.93883,
+"mode": "train"
+},
+"Casula Station": {
+"lat": -33.95009,
+"lon": 150.91186,
+"mode": "train"
+},
+"Canterbury Station": {
+"lat": -33.91185,
+"lon": 151.11837,
+"mode": "train"
+},
+"Canterbury Station Goods Platform": {
+"lat": -33.91192,
+"lon": 151.11865,
+"mode": "train"
+},
+"Coalcliff Station": {
+"lat": -34.24224,
+"lon": 150.97728,
+"mode": "train"
+},
+"Cockle Creek Station": {
+"lat": -32.94268,
+"lon": 151.62371,
+"mode": "train"
+},
+"Circular Quay Station": {
+"lat": -33.86132,
+"lon": 151.21032,
+"mode": "train"
+},
+"Cardiff Station": {
+"lat": -32.94161,
+"lon": 151.66281,
+"mode": "train"
+},
+"Clarendon Station": {
+"lat": -33.60873,
+"lon": 150.78816,
+"mode": "train"
+},
+"Central Station": {
+"lat": -33.88376,
+"lon": 151.20656,
+"mode": "train"
+},
+"Coffs Harbour Station": {
+"lat": -30.30618,
+"lon": 153.1378,
+"mode": "train"
+},
+"Chester Hill Station": {
+"lat": -33.88362,
+"lon": 150.99993,
+"mode": "train"
+},
+"Cheltenham Station": {
+"lat": -33.75579,
+"lon": 151.07867,
+"mode": "train"
+},
+"Coledale Station": {
+"lat": -34.28949,
+"lon": 150.94327,
+"mode": "train"
+},
+"Clyde Station": {
+"lat": -33.83602,
+"lon": 151.01713,
+"mode": "train"
+},
+"Carlton Station": {
+"lat": -33.96828,
+"lon": 151.12434,
+"mode": "train"
+},
+"Corrimal Station": {
+"lat": -34.37558,
+"lon": 150.90502,
+"mode": "train"
+},
+"Coolamon Station": {
+"lat": -34.81603,
+"lon": 147.20175,
+"mode": "train"
+},
+"Como Station": {
+"lat": -34.00435,
+"lon": 151.06805,
+"mode": "train"
+},
+"Campsie Station": {
+"lat": -33.91049,
+"lon": 151.10293,
+"mode": "train"
+},
+"Campsie Station Goods Platform": {
+"lat": -33.91038,
+"lon": 151.10305,
+"mode": "train"
+},
+"Canberra Station": {
+"lat": -35.31922,
+"lon": 149.14891,
+"mode": "train"
+},
+"Caringbah Station": {
+"lat": -34.04159,
+"lon": 151.12246,
+"mode": "train"
+},
+"Cronulla Station": {
+"lat": -34.05591,
+"lon": 151.15146,
+"mode": "train"
+},
+"Coniston Station": {
+"lat": -34.43766,
+"lon": 150.88534,
+"mode": "train"
+},
+"Canley Vale Station": {
+"lat": -33.88713,
+"lon": 150.94372,
+"mode": "train"
+},
+"Condobolin Station": {
+"lat": -33.08398,
+"lon": 147.15314,
+"mode": "train"
+},
+"Concord West Station": {
+"lat": -33.84839,
+"lon": 151.0856,
+"mode": "train"
+},
+"Cringila Station": {
+"lat": -34.46716,
+"lon": 150.87841,
+"mode": "train"
+},
+"Couridjah Bus": {
+"lat": -34.23282,
+"lon": 150.54851,
+"mode": "train"
+},
+"Couridjah Bus 1": {
+"lat": -34.23254,
+"lon": 150.54908,
+"mode": "train"
+},
+"Carramar Station": {
+"lat": -33.88436,
+"lon": 150.96137,
+"mode": "train"
+},
+"Casino Station": {
+"lat": -28.86083,
+"lon": 153.03825,
+"mode": "train"
+},
+"Cootamundra Station": {
+"lat": -34.64108,
+"lon": 148.03059,
+"mode": "train"
+},
+"Campbelltown Station": {
+"lat": -34.06378,
+"lon": 150.81421,
+"mode": "train"
+},
+"Culcairn Station": {
+"lat": -35.66603,
+"lon": 147.03819,
+"mode": "train"
+},
+"Chatswood Station": {
+"lat": -33.79736,
+"lon": 151.1809,
+"mode": "train"
+},
+"Cowan Station": {
+"lat": -33.59334,
+"lon": 151.17175,
+"mode": "train"
+},
+"Croydon Station": {
+"lat": -33.88318,
+"lon": 151.11544,
+"mode": "train"
+},
+"Dapto Station": {
+"lat": -34.49252,
+"lon": 150.79205,
+"mode": "train"
+},
+"Dubbo Station": {
+"lat": -32.24504,
+"lon": 148.60813,
+"mode": "train"
+},
+"Dora Creek Station": {
+"lat": -33.08364,
+"lon": 151.50099,
+"mode": "train"
+},
+"Dulwich Hill Station": {
+"lat": -33.91104,
+"lon": 151.14099,
+"mode": "train"
+},
+"Dungog Station": {
+"lat": -32.40238,
+"lon": 151.75941,
+"mode": "train"
+},
+"Darnick Station": {
+"lat": -32.85101,
+"lon": 143.62512,
+"mode": "train"
+},
+"Denistone Station": {
+"lat": -33.79972,
+"lon": 151.08715,
+"mode": "train"
+},
+"Doonside Station": {
+"lat": -33.76393,
+"lon": 150.8687,
+"mode": "train"
+},
+"Douglas Park Station": {
+"lat": -34.18325,
+"lon": 150.71024,
+"mode": "train"
+},
+"Edgecliff Station": {
+"lat": -33.87925,
+"lon": 151.23604,
+"mode": "train"
+},
+"Edmondson Park Station": {
+"lat": -33.96933,
+"lon": 150.85878,
+"mode": "train"
+},
+"Engadine Station": {
+"lat": -34.06787,
+"lon": 151.0147,
+"mode": "train"
+},
+"East Hills Station": {
+"lat": -33.96167,
+"lon": 150.98486,
+"mode": "train"
+},
+"East Maitland Station": {
+"lat": -32.74487,
+"lon": 151.58742,
+"mode": "train"
+},
+"Eungai Station": {
+"lat": -30.84934,
+"lon": 152.90012,
+"mode": "train"
+},
+"Epping Station": {
+"lat": -33.77285,
+"lon": 151.08214,
+"mode": "train"
+},
+"Emu Plains Station": {
+"lat": -33.74566,
+"lon": 150.67173,
+"mode": "train"
+},
+"East Richmond Station": {
+"lat": -33.60178,
+"lon": 150.75913,
+"mode": "train"
+},
+"Erskineville Station": {
+"lat": -33.90042,
+"lon": 151.18543,
+"mode": "train"
+},
+"Euabalong West Station": {
+"lat": -33.05463,
+"lon": 146.39208,
+"mode": "train"
+},
+"Eastwood Station": {
+"lat": -33.79012,
+"lon": 151.08224,
+"mode": "train"
+},
+"Exeter Station": {
+"lat": -34.61364,
+"lon": 150.31745,
+"mode": "train"
+},
+"Faulconbridge Station": {
+"lat": -33.6965,
+"lon": 150.53502,
+"mode": "train"
+},
+"Fairfield Station": {
+"lat": -33.87238,
+"lon": 150.95703,
+"mode": "train"
+},
+"Flemington Station": {
+"lat": -33.86497,
+"lon": 151.07041,
+"mode": "train"
+},
+"Fairy Meadow Station": {
+"lat": -34.39548,
+"lon": 150.89633,
+"mode": "train"
+},
+"Fassifern Station": {
+"lat": -32.98561,
+"lon": 151.58108,
+"mode": "train"
+},
+"Glenbrook Station": {
+"lat": -33.76908,
+"lon": 150.6209,
+"mode": "train"
+},
+"Gloucester Station": {
+"lat": -32.0047,
+"lon": 151.96684,
+"mode": "train"
+},
+"Gunnedah Station": {
+"lat": -30.97931,
+"lon": 150.24793,
+"mode": "train"
+},
+"Glenfield Station": {
+"lat": -33.97214,
+"lon": 150.89317,
+"mode": "train"
+},
+"Goulburn Station": {
+"lat": -34.75812,
+"lon": 149.71956,
+"mode": "train"
+},
+"Guildford Station": {
+"lat": -33.85439,
+"lon": 150.98444,
+"mode": "train"
+},
+"Gunning Station": {
+"lat": -34.77974,
+"lon": 149.26116,
+"mode": "train"
+},
+"Gerringong Station": {
+"lat": -34.74479,
+"lon": 150.81758,
+"mode": "train"
+},
+"Gosford Station": {
+"lat": -33.42364,
+"lon": 151.34166,
+"mode": "train"
+},
+"Green Square Station": {
+"lat": -33.90608,
+"lon": 151.20254,
+"mode": "train"
+},
+"Gordon Station": {
+"lat": -33.75578,
+"lon": 151.15432,
+"mode": "train"
+},
+"Geurie Station": {
+"lat": -32.39808,
+"lon": 148.83054,
+"mode": "train"
+},
+"Griffith Station": {
+"lat": -34.2868,
+"lon": 146.04786,
+"mode": "train"
+},
+"Greta Station": {
+"lat": -32.68671,
+"lon": 151.38413,
+"mode": "train"
+},
+"Granville Station": {
+"lat": -33.83297,
+"lon": 151.0122,
+"mode": "train"
+},
+"Gymea Station": {
+"lat": -34.03489,
+"lon": 151.08545,
+"mode": "train"
+},
+"Hamilton Station": {
+"lat": -32.91854,
+"lon": 151.74863,
+"mode": "train"
+},
+"Harden Station": {
+"lat": -34.55354,
+"lon": 148.37145,
+"mode": "train"
+},
+"Hornsby Station": {
+"lat": -33.70313,
+"lon": 151.09843,
+"mode": "train"
+},
+"Heathcote Station": {
+"lat": -34.08803,
+"lon": 151.0082,
+"mode": "train"
+},
+"Hilldale Station": {
+"lat": -32.50453,
+"lon": 151.64975,
+"mode": "train"
+},
+"Helensburgh Station": {
+"lat": -34.17695,
+"lon": 150.9946,
+"mode": "train"
+},
+"Holsworthy Station": {
+"lat": -33.9632,
+"lon": 150.95677,
+"mode": "train"
+},
+"Homebush Station": {
+"lat": -33.86682,
+"lon": 151.08636,
+"mode": "train"
+},
+"Harris Park Station": {
+"lat": -33.82348,
+"lon": 151.0076,
+"mode": "train"
+},
+"Hurlstone Park Station": {
+"lat": -33.91037,
+"lon": 151.1322,
+"mode": "train"
+},
+"Hawkesbury River Station": {
+"lat": -33.54688,
+"lon": 151.2265,
+"mode": "train"
+},
+"High Street Station": {
+"lat": -32.74146,
+"lon": 151.56387,
+"mode": "train"
+},
+"Henty Station": {
+"lat": -35.51775,
+"lon": 147.03536,
+"mode": "train"
+},
+"Hurstville Station": {
+"lat": -33.96748,
+"lon": 151.10275,
+"mode": "train"
+},
+"Hexham Station": {
+"lat": -32.82914,
+"lon": 151.68427,
+"mode": "train"
+},
+"Hazelbrook Station": {
+"lat": -33.72383,
+"lon": 150.45435,
+"mode": "train"
+},
+"Ingleburn Station": {
+"lat": -33.99725,
+"lon": 150.8648,
+"mode": "train"
+},
+"Ivanhoe Station": {
+"lat": -32.91431,
+"lon": 144.31171,
+"mode": "train"
+},
+"Jannali Station": {
+"lat": -34.016,
+"lon": 151.06464,
+"mode": "train"
+},
+"Junee Station": {
+"lat": -34.87035,
+"lon": 147.58381,
+"mode": "train"
+},
+"Katoomba Station": {
+"lat": -33.71186,
+"lon": 150.31143,
+"mode": "train"
+},
+"Kendall Station": {
+"lat": -31.63534,
+"lon": 152.70637,
+"mode": "train"
+},
+"Kempsey Station": {
+"lat": -31.07695,
+"lon": 152.83296,
+"mode": "train"
+},
+"Kingsgrove Station": {
+"lat": -33.94057,
+"lon": 151.10061,
+"mode": "train"
+},
+"Kings Cross Station": {
+"lat": -33.87439,
+"lon": 151.22203,
+"mode": "train"
+},
+"Kiama Station": {
+"lat": -34.67253,
+"lon": 150.85466,
+"mode": "train"
+},
+"Killara Station": {
+"lat": -33.76553,
+"lon": 151.16173,
+"mode": "train"
+},
+"Kembla Grange Station": {
+"lat": -34.47018,
+"lon": 150.81746,
+"mode": "train"
+},
+"Kogarah Station": {
+"lat": -33.96256,
+"lon": 151.13248,
+"mode": "train"
+},
+"Kootingal Station": {
+"lat": -31.0587,
+"lon": 151.05624,
+"mode": "train"
+},
+"Kirrawee Station": {
+"lat": -34.03498,
+"lon": 151.0715,
+"mode": "train"
+},
+"Kotara Station": {
+"lat": -32.94151,
+"lon": 151.69812,
+"mode": "train"
+},
+"Kingswood Station": {
+"lat": -33.75827,
+"lon": 150.71995,
+"mode": "train"
+},
+"Koolewong Station": {
+"lat": -33.4665,
+"lon": 151.31853,
+"mode": "train"
+},
+"Kyogle Station": {
+"lat": -28.62025,
+"lon": 153.00128,
+"mode": "train"
+},
+"Lakemba Station": {
+"lat": -33.92009,
+"lon": 151.07596,
+"mode": "train"
+},
+"Lapstone Station": {
+"lat": -33.77354,
+"lon": 150.64279,
+"mode": "train"
+},
+"Lawson Station": {
+"lat": -33.71911,
+"lon": 150.42986,
+"mode": "train"
+},
+"Lidcombe Station": {
+"lat": -33.86383,
+"lon": 151.04529,
+"mode": "train"
+},
+"Lindfield Station": {
+"lat": -33.77537,
+"lon": 151.16918,
+"mode": "train"
+},
+"Leppington Station": {
+"lat": -33.95445,
+"lon": 150.80818,
+"mode": "train"
+},
+"Leeton Station": {
+"lat": -34.55443,
+"lon": 146.3977,
+"mode": "train"
+},
+"Lewisham Station": {
+"lat": -33.89331,
+"lon": 151.14737,
+"mode": "train"
+},
+"Loftus Station": {
+"lat": -34.04517,
+"lon": 151.0513,
+"mode": "train"
+},
+"Linden Station": {
+"lat": -33.71495,
+"lon": 150.50531,
+"mode": "train"
+},
+"Liverpool Station": {
+"lat": -33.92496,
+"lon": 150.92729,
+"mode": "train"
+},
+"Lochinvar Station": {
+"lat": -32.72057,
+"lon": 151.44988,
+"mode": "train"
+},
+"Leura Station": {
+"lat": -33.71193,
+"lon": 150.33064,
+"mode": "train"
+},
+"Lisarow Station": {
+"lat": -33.38221,
+"lon": 151.36998,
+"mode": "train"
+},
+"Lysaghts Station": {
+"lat": -34.45471,
+"lon": 150.87608,
+"mode": "train"
+},
+"Lithgow Station": {
+"lat": -33.48056,
+"lon": 150.15719,
+"mode": "train"
+},
+"Leightonfield Station": {
+"lat": -33.88151,
+"lon": 150.98501,
+"mode": "train"
+},
+"Leumeah Station": {
+"lat": -34.05089,
+"lon": 150.83037,
+"mode": "train"
+},
+"Marulan Station": {
+"lat": -34.70951,
+"lon": 150.00628,
+"mode": "train"
+},
+"Macarthur Station": {
+"lat": -34.072,
+"lon": 150.79702,
+"mode": "train"
+},
+"Mascot Station": {
+"lat": -33.92319,
+"lon": 151.18727,
+"mode": "train"
+},
+"Macdonaldtown Station": {
+"lat": -33.89684,
+"lon": 151.18597,
+"mode": "train"
+},
+"Meadowbank Station": {
+"lat": -33.81601,
+"lon": 151.09009,
+"mode": "train"
+},
+"Murrurundi Station": {
+"lat": -31.7684,
+"lon": 150.83934,
+"mode": "train"
+},
+"Mindaribba Station": {
+"lat": -32.66883,
+"lon": 151.58439,
+"mode": "train"
+},
+"Mount Druitt Station": {
+"lat": -33.7695,
+"lon": 150.81953,
+"mode": "train"
+},
+"Medlow Bath Station": {
+"lat": -33.67376,
+"lon": 150.28074,
+"mode": "train"
+},
+"Metford Station": {
+"lat": -32.76502,
+"lon": 151.61803,
+"mode": "train"
+},
+"Menangle Station": {
+"lat": -34.12529,
+"lon": 150.74439,
+"mode": "train"
+},
+"Menangle Park Station": {
+"lat": -34.10366,
+"lon": 150.74496,
+"mode": "train"
+},
+"Minto Station": {
+"lat": -34.02729,
+"lon": 150.84255,
+"mode": "train"
+},
+"Millthorpe Station": {
+"lat": -33.44871,
+"lon": 149.1828,
+"mode": "train"
+},
+"Mittagong Station": {
+"lat": -34.45261,
+"lon": 150.44811,
+"mode": "train"
+},
+"Mount Kuring-gai Station": {
+"lat": -33.65332,
+"lon": 151.13684,
+"mode": "train"
+},
+"Macksville Station": {
+"lat": -30.70938,
+"lon": 152.91315,
+"mode": "train"
+},
+"Marrickville Station": {
+"lat": -33.91395,
+"lon": 151.1536,
+"mode": "train"
+},
+"Maitland Station": {
+"lat": -32.73799,
+"lon": 151.55195,
+"mode": "train"
+},
+"Menindee Station": {
+"lat": -32.38934,
+"lon": 142.42464,
+"mode": "train"
+},
+"Martin Place Station": {
+"lat": -33.86787,
+"lon": 151.21174,
+"mode": "train"
+},
+"Milsons Point Station": {
+"lat": -33.84566,
+"lon": 151.21173,
+"mode": "train"
+},
+"Macquarie Fields Station": {
+"lat": -33.98481,
+"lon": 150.87889,
+"mode": "train"
+},
+"Miranda Station": {
+"lat": -34.0363,
+"lon": 151.10241,
+"mode": "train"
+},
+"Moree Station": {
+"lat": -29.47361,
+"lon": 149.84818,
+"mode": "train"
+},
+"Martins Creek Station": {
+"lat": -32.55866,
+"lon": 151.61852,
+"mode": "train"
+},
+"Mortdale Station": {
+"lat": -33.97085,
+"lon": 151.08112,
+"mode": "train"
+},
+"Museum Station": {
+"lat": -33.87601,
+"lon": 151.20997,
+"mode": "train"
+},
+"Morisset Station": {
+"lat": -33.10911,
+"lon": 151.4879,
+"mode": "train"
+},
+"Mount Colah Station": {
+"lat": -33.67162,
+"lon": 151.11481,
+"mode": "train"
+},
+"Mount Victoria Station": {
+"lat": -33.58812,
+"lon": 150.25694,
+"mode": "train"
+},
+"Mulgrave Station": {
+"lat": -33.6266,
+"lon": 150.8303,
+"mode": "train"
+},
+"Minnamurra Station": {
+"lat": -34.62593,
+"lon": 150.85246,
+"mode": "train"
+},
+"Muswellbrook Station": {
+"lat": -32.2675,
+"lon": 150.89037,
+"mode": "train"
+},
+"Moss Vale Station": {
+"lat": -34.54796,
+"lon": 150.37184,
+"mode": "train"
+},
+"Marayong Station": {
+"lat": -33.74629,
+"lon": 150.90019,
+"mode": "train"
+},
+"Merrylands Station": {
+"lat": -33.8365,
+"lon": 150.99271,
+"mode": "train"
+},
+"Nambucca Heads Station": {
+"lat": -30.62907,
+"lon": 152.97752,
+"mode": "train"
+},
+"Narrabri Station": {
+"lat": -30.32525,
+"lon": 149.79204,
+"mode": "train"
+},
+"Narrandera Station": {
+"lat": -34.74056,
+"lon": 146.5571,
+"mode": "train"
+},
+"Niagara Park Station": {
+"lat": -33.38321,
+"lon": 151.35441,
+"mode": "train"
+},
+"Normanhurst Station": {
+"lat": -33.72073,
+"lon": 151.0972,
+"mode": "train"
+},
+"Bomaderry (Nowra) Station": {
+"lat": -34.85376,
+"lon": 150.60986,
+"mode": "train"
+},
+"Narara Station": {
+"lat": -33.39472,
+"lon": 151.3444,
+"mode": "train"
+},
+"Narwee Station": {
+"lat": -33.9476,
+"lon": 151.07022,
+"mode": "train"
+},
+"North Strathfield Station": {
+"lat": -33.85899,
+"lon": 151.08807,
+"mode": "train"
+},
+"North Sydney Station": {
+"lat": -33.84121,
+"lon": 151.20731,
+"mode": "train"
+},
+"Newtown Station": {
+"lat": -33.89791,
+"lon": 151.17988,
+"mode": "train"
+},
+"North Wollongong Station": {
+"lat": -34.41244,
+"lon": 150.89137,
+"mode": "train"
+},
+"Newcastle Interchange Station": {
+"lat": -32.924,
+"lon": 151.75902,
+"mode": "train"
+},
+"Oak Flats Station": {
+"lat": -34.57211,
+"lon": 150.82063,
+"mode": "train"
+},
+"Oatley Station": {
+"lat": -33.98055,
+"lon": 151.079,
+"mode": "train"
+},
+"Olympic Park Station": {
+"lat": -33.84661,
+"lon": 151.06929,
+"mode": "train"
+},
+"Orange Station": {
+"lat": -33.28687,
+"lon": 149.1037,
+"mode": "train"
+},
+"Otford Station": {
+"lat": -34.21051,
+"lon": 151.0059,
+"mode": "train"
+},
+"Ourimbah Station": {
+"lat": -33.35959,
+"lon": 151.36996,
+"mode": "train"
+},
+"Padstow Station": {
+"lat": -33.9519,
+"lon": 151.03245,
+"mode": "train"
+},
+"Panania Station": {
+"lat": -33.9543,
+"lon": 150.998,
+"mode": "train"
+},
+"Point Clare Station": {
+"lat": -33.44607,
+"lon": 151.32846,
+"mode": "train"
+},
+"Perth Station": {
+"lat": -31.94329,
+"lon": 115.87702,
+"mode": "train"
+},
+"Pendle Hill Station": {
+"lat": -33.80149,
+"lon": 150.95646,
+"mode": "train"
+},
+"Penrith Station": {
+"lat": -33.75005,
+"lon": 150.69615,
+"mode": "train"
+},
+"Petersham Station": {
+"lat": -33.8939,
+"lon": 151.15528,
+"mode": "train"
+},
+"Picton Station": {
+"lat": -34.17918,
+"lon": 150.61259,
+"mode": "train"
+},
+"Port Kembla Station": {
+"lat": -34.47721,
+"lon": 150.90228,
+"mode": "train"
+},
+"Port Kembla North Station": {
+"lat": -34.47274,
+"lon": 150.88774,
+"mode": "train"
+},
+"Parkes Station": {
+"lat": -33.14215,
+"lon": 148.17312,
+"mode": "train"
+},
+"Penshurst Station": {
+"lat": -33.96617,
+"lon": 151.08909,
+"mode": "train"
+},
+"Pennant Hills Station": {
+"lat": -33.73782,
+"lon": 151.07259,
+"mode": "train"
+},
+"Penrose Station": {
+"lat": -34.67244,
+"lon": 150.21189,
+"mode": "train"
+},
+"Parramatta Station": {
+"lat": -33.81746,
+"lon": 151.00529,
+"mode": "train"
+},
+"Paterson Station": {
+"lat": -32.60236,
+"lon": 151.61468,
+"mode": "train"
+},
+"Punchbowl Station": {
+"lat": -33.9254,
+"lon": 151.05572,
+"mode": "train"
+},
+"Pymble Station": {
+"lat": -33.74473,
+"lon": 151.14213,
+"mode": "train"
+},
+"Quirindi Station": {
+"lat": -31.50544,
+"lon": 150.68107,
+"mode": "train"
+},
+"Quakers Hill Station": {
+"lat": -33.72782,
+"lon": 150.88655,
+"mode": "train"
+},
+"Queanbeyan Station": {
+"lat": -35.34289,
+"lon": 149.22773,
+"mode": "train"
+},
+"Raglan Bus": {
+"lat": -33.42226,
+"lon": 149.64726,
+"mode": "train"
+},
+"Raglan Bus 1": {
+"lat": -33.42226,
+"lon": 149.64726,
+"mode": "train"
+},
+"Raglan Bus 2": {
+"lat": -33.42239,
+"lon": 149.64727,
+"mode": "train"
+},
+"Redfern Station": {
+"lat": -33.89207,
+"lon": 151.19875,
+"mode": "train"
+},
+"Rydal Station": {
+"lat": -33.48376,
+"lon": 150.03179,
+"mode": "train"
+},
+"Rhodes Station": {
+"lat": -33.83073,
+"lon": 151.08703,
+"mode": "train"
+},
+"Richmond Station": {
+"lat": -33.59895,
+"lon": 150.75284,
+"mode": "train"
+},
+"Riverstone Station": {
+"lat": -33.67918,
+"lon": 150.86034,
+"mode": "train"
+},
+"Rockdale Station": {
+"lat": -33.95207,
+"lon": 151.13681,
+"mode": "train"
+},
+"Brisbane (Roma St) Station": {
+"lat": -27.46578,
+"lon": 153.01947,
+"mode": "train"
+},
+"Regents Park Station": {
+"lat": -33.88304,
+"lon": 151.02414,
+"mode": "train"
+},
+"Roseville Station": {
+"lat": -33.7843,
+"lon": 151.17743,
+"mode": "train"
+},
+"Robertson Bus": {
+"lat": -34.58931,
+"lon": 150.59777,
+"mode": "train"
+},
+"Robertson Bus 1": {
+"lat": -34.58944,
+"lon": 150.59754,
+"mode": "train"
+},
+"Rooty Hill Station": {
+"lat": -33.7716,
+"lon": 150.84477,
+"mode": "train"
+},
+"Revesby Station": {
+"lat": -33.95249,
+"lon": 151.01493,
+"mode": "train"
+},
+"Riverwood Station": {
+"lat": -33.9515,
+"lon": 151.05217,
+"mode": "train"
+},
+"Sandgate Station": {
+"lat": -32.87219,
+"lon": 151.70274,
+"mode": "train"
+},
+"Ranelagh House Bus": {
+"lat": -34.5909,
+"lon": 150.6106,
+"mode": "train"
+},
+"Ranelagh House Station": {
+"lat": -34.59092,
+"lon": 150.61056,
+"mode": "train"
+},
+"Scone Station": {
+"lat": -32.04685,
+"lon": 150.86693,
+"mode": "train"
+},
+"Schofields Station": {
+"lat": -33.7046,
+"lon": 150.87398,
+"mode": "train"
+},
+"Scarborough Station": {
+"lat": -34.26526,
+"lon": 150.96559,
+"mode": "train"
+},
+"Domestic Airport Station": {
+"lat": -33.93366,
+"lon": 151.18079,
+"mode": "train"
+},
+"Domestic Station": {
+"lat": -33.93363,
+"lon": 151.18076,
+"mode": "train"
+},
+"Seymour Station": {
+"lat": -37.02436,
+"lon": 145.13852,
+"mode": "train"
+},
+"Sefton Station": {
+"lat": -33.88525,
+"lon": 151.01146,
+"mode": "train"
+},
+"Singleton Station": {
+"lat": -32.57191,
+"lon": 151.16539,
+"mode": "train"
+},
+"Shellharbour Junction Station": {
+"lat": -34.5913,
+"lon": 150.84477,
+"mode": "train"
+},
+"Dunmore Station": {
+"lat": -34.60612,
+"lon": 150.84005,
+"mode": "train"
+},
+"Southern Cross Station": {
+"lat": -37.81785,
+"lon": 144.95311,
+"mode": "train"
+},
+"International Airport Station": {
+"lat": -33.93499,
+"lon": 151.16589,
+"mode": "train"
+},
+"International Station": {
+"lat": -33.93497,
+"lon": 151.16583,
+"mode": "train"
+},
+"Summer Hill Station": {
+"lat": -33.89044,
+"lon": 151.13907,
+"mode": "train"
+},
+"Stanmore Station": {
+"lat": -33.89454,
+"lon": 151.16404,
+"mode": "train"
+},
+"Grafton Station": {
+"lat": -29.70371,
+"lon": 152.94173,
+"mode": "train"
+},
+"Springwood Station": {
+"lat": -33.69895,
+"lon": 150.56382,
+"mode": "train"
+},
+"Sutherland Station": {
+"lat": -34.03172,
+"lon": 151.05725,
+"mode": "train"
+},
+"St James Station": {
+"lat": -33.87068,
+"lon": 151.21184,
+"mode": "train"
+},
+"St Leonards Station": {
+"lat": -33.82212,
+"lon": 151.19411,
+"mode": "train"
+},
+"St Marys Station": {
+"lat": -33.76218,
+"lon": 150.77557,
+"mode": "train"
+},
+"St Peters Station": {
+"lat": -33.90736,
+"lon": 151.18048,
+"mode": "train"
+},
+"Strathfield Station": {
+"lat": -33.87152,
+"lon": 151.09402,
+"mode": "train"
+},
+"Stuart Town Station": {
+"lat": -32.80134,
+"lon": 149.07843,
+"mode": "train"
+},
+"Seven Hills Station": {
+"lat": -33.77437,
+"lon": 150.93621,
+"mode": "train"
+},
+"Stanwell Park Station": {
+"lat": -34.22645,
+"lon": 150.98104,
+"mode": "train"
+},
+"Sawtell Station": {
+"lat": -30.35941,
+"lon": 153.09752,
+"mode": "train"
+},
+"Sydenham Station": {
+"lat": -33.91427,
+"lon": 151.16696,
+"mode": "train"
+},
+"Tahmoor Station": {
+"lat": -34.22349,
+"lon": 150.59002,
+"mode": "train"
+},
+"Tallong Station": {
+"lat": -34.71833,
+"lon": 150.0864,
+"mode": "train"
+},
+"Tamworth Station": {
+"lat": -31.08738,
+"lon": 150.93085,
+"mode": "train"
+},
+"Tarana Station": {
+"lat": -33.5242,
+"lon": 149.90799,
+"mode": "train"
+},
+"Tascott Station": {
+"lat": -33.45105,
+"lon": 151.31844,
+"mode": "train"
+},
+"Teralba Station": {
+"lat": -32.96252,
+"lon": 151.6036,
+"mode": "train"
+},
+"Toongabbie Station": {
+"lat": -33.78731,
+"lon": 150.95145,
+"mode": "train"
+},
+"Tarago Station": {
+"lat": -35.06998,
+"lon": 149.65135,
+"mode": "train"
+},
+"Thirroul Station": {
+"lat": -34.31816,
+"lon": 150.91888,
+"mode": "train"
+},
+"Town Hall Station": {
+"lat": -33.87364,
+"lon": 151.2069,
+"mode": "train"
+},
+"Thirlmere Bus": {
+"lat": -34.20368,
+"lon": 150.5725,
+"mode": "train"
+},
+"Thirlmere Bus 1": {
+"lat": -34.2039,
+"lon": 150.57256,
+"mode": "train"
+},
+"Thornleigh Station": {
+"lat": -33.73188,
+"lon": 151.07826,
+"mode": "train"
+},
+"Telarah Station": {
+"lat": -32.72367,
+"lon": 151.53971,
+"mode": "train"
+},
+"Tempe Station": {
+"lat": -33.92419,
+"lon": 151.15654,
+"mode": "train"
+},
+"Thornton Station": {
+"lat": -32.78361,
+"lon": 151.63987,
+"mode": "train"
+},
+"Taree Station": {
+"lat": -31.90643,
+"lon": 152.45713,
+"mode": "train"
+},
+"The Rock Station": {
+"lat": -35.27176,
+"lon": 147.11842,
+"mode": "train"
+},
+"Turrella Station": {
+"lat": -33.92989,
+"lon": 151.14008,
+"mode": "train"
+},
+"Tarro Station": {
+"lat": -32.80913,
+"lon": 151.66974,
+"mode": "train"
+},
+"Tuggerah Station": {
+"lat": -33.30782,
+"lon": 151.4202,
+"mode": "train"
+},
+"Turramurra Station": {
+"lat": -33.73238,
+"lon": 151.12845,
+"mode": "train"
+},
+"Towradgi Station": {
+"lat": -34.38444,
+"lon": 150.90135,
+"mode": "train"
+},
+"Unanderra Station": {
+"lat": -34.4547,
+"lon": 150.84602,
+"mode": "train"
+},
+"Urunga Station": {
+"lat": -30.49939,
+"lon": 153.01867,
+"mode": "train"
+},
+"Uralla Station": {
+"lat": -30.64413,
+"lon": 151.50507,
+"mode": "train"
+},
+"Valley Heights Station": {
+"lat": -33.70442,
+"lon": 150.58377,
+"mode": "train"
+},
+"Villawood Station": {
+"lat": -33.88087,
+"lon": 150.97644,
+"mode": "train"
+},
+"Vineyard Station": {
+"lat": -33.65048,
+"lon": 150.85121,
+"mode": "train"
+},
+"Victoria Street Station": {
+"lat": -32.75096,
+"lon": 151.59385,
+"mode": "train"
+},
+"Wahroonga Station": {
+"lat": -33.71772,
+"lon": 151.11721,
+"mode": "train"
+},
+"Waitara Station": {
+"lat": -33.71017,
+"lon": 151.10462,
+"mode": "train"
+},
+"Waverton Station": {
+"lat": -33.83796,
+"lon": 151.1976,
+"mode": "train"
+},
+"Wombarra Station": {
+"lat": -34.27565,
+"lon": 150.95339,
+"mode": "train"
+},
+"Wolli Creek Station": {
+"lat": -33.92836,
+"lon": 151.15414,
+"mode": "train"
+},
+"Werris Creek Station": {
+"lat": -31.34971,
+"lon": 150.64641,
+"mode": "train"
+},
+"Wondabyne Station": {
+"lat": -33.49218,
+"lon": 151.25698,
+"mode": "train"
+},
+"Woodford Station": {
+"lat": -33.73557,
+"lon": 150.48189,
+"mode": "train"
+},
+"Waterfall Station": {
+"lat": -34.13462,
+"lon": 150.99452,
+"mode": "train"
+},
+"Wentworth Falls Station": {
+"lat": -33.70965,
+"lon": 150.37637,
+"mode": "train"
+},
+"Wagga Wagga Station": {
+"lat": -35.12037,
+"lon": 147.36832,
+"mode": "train"
+},
+"Wingham Station": {
+"lat": -31.86805,
+"lon": 152.36746,
+"mode": "train"
+},
+"Wingello Station": {
+"lat": -34.69217,
+"lon": 150.15841,
+"mode": "train"
+},
+"Windsor Station": {
+"lat": -33.61382,
+"lon": 150.81126,
+"mode": "train"
+},
+"Wirragulla Station": {
+"lat": -32.46239,
+"lon": 151.74293,
+"mode": "train"
+},
+"Warwick Farm Station": {
+"lat": -33.91319,
+"lon": 150.93511,
+"mode": "train"
+},
+"Wallarobba Station": {
+"lat": -32.49614,
+"lon": 151.69567,
+"mode": "train"
+},
+"Walcha Road Station": {
+"lat": -30.94107,
+"lon": 151.40223,
+"mode": "train"
+},
+"Wollstonecraft Station": {
+"lat": -33.83194,
+"lon": 151.19182,
+"mode": "train"
+},
+"Woolooware Station": {
+"lat": -34.04766,
+"lon": 151.14394,
+"mode": "train"
+},
+"Wiley Park Station": {
+"lat": -33.92293,
+"lon": 151.06745,
+"mode": "train"
+},
+"Westmead Station": {
+"lat": -33.80849,
+"lon": 150.98793,
+"mode": "train"
+},
+"Wallerawang Bus": {
+"lat": -33.4111,
+"lon": 150.0665,
+"mode": "train"
+},
+"Wallerawang Bus 1": {
+"lat": -33.4111,
+"lon": 150.0665,
+"mode": "train"
+},
+"Wallerawang Bus 2": {
+"lat": -33.41131,
+"lon": 150.0652,
+"mode": "train"
+},
+"Wollongong Station": {
+"lat": -34.42736,
+"lon": 150.88812,
+"mode": "train"
+},
+"Woonona Station": {
+"lat": -34.34978,
+"lon": 150.91511,
+"mode": "train"
+},
+"Woy Woy Station": {
+"lat": -33.48515,
+"lon": 151.32361,
+"mode": "train"
+},
+"West Ryde Station": {
+"lat": -33.80716,
+"lon": 151.09022,
+"mode": "train"
+},
+"Warnervale Station": {
+"lat": -33.24745,
+"lon": 151.44871,
+"mode": "train"
+},
+"Werrington Station": {
+"lat": -33.75921,
+"lon": 150.75792,
+"mode": "train"
+},
+"Warabrook Station": {
+"lat": -32.88724,
+"lon": 151.71003,
+"mode": "train"
+},
+"Warrimoo Station": {
+"lat": -33.72131,
+"lon": 150.60239,
+"mode": "train"
+},
+"Warrawee Station": {
+"lat": -33.72429,
+"lon": 151.12177,
+"mode": "train"
+},
+"Willow Tree Station": {
+"lat": -31.65012,
+"lon": 150.72612,
+"mode": "train"
+},
+"Waratah Station": {
+"lat": -32.90245,
+"lon": 151.73131,
+"mode": "train"
+},
+"Wellington Station": {
+"lat": -32.55396,
+"lon": 148.94677,
+"mode": "train"
+},
+"Wauchope Station": {
+"lat": -31.456,
+"lon": 152.73653,
+"mode": "train"
+},
+"Wentworthville Station": {
+"lat": -33.80714,
+"lon": 150.97253,
+"mode": "train"
+},
+"Wangaratta Station": {
+"lat": -36.35505,
+"lon": 146.31691,
+"mode": "train"
+},
+"Wyee Station": {
+"lat": -33.18027,
+"lon": 151.4871,
+"mode": "train"
+},
+"Wyong Station": {
+"lat": -33.28549,
+"lon": 151.42527,
+"mode": "train"
+},
+"Wynyard Station": {
+"lat": -33.86591,
+"lon": 151.20579,
+"mode": "train"
+},
+"Yagoona Station": {
+"lat": -33.90691,
+"lon": 151.02441,
+"mode": "train"
+},
+"Yass Junction Station": {
+"lat": -34.8089,
+"lon": 148.9153,
+"mode": "train"
+},
+"Yennora Station": {
+"lat": -33.86472,
+"lon": 150.97101,
+"mode": "train"
+},
+"Yerrinbool Station": {
+"lat": -34.37173,
+"lon": 150.5435,
+"mode": "train"
+},
+"Zig Zag Station": {
+"lat": -33.47182,
+"lon": 150.20206,
+"mode": "train"
+},
+"Tallawong Station": {
+"lat": -33.69167,
+"lon": 150.90593,
+"mode": "metro"
+},
+"Rouse Hill Station": {
+"lat": -33.69199,
+"lon": 150.92431,
+"mode": "metro"
+},
+"Kellyville Station": {
+"lat": -33.71351,
+"lon": 150.9353,
+"mode": "metro"
+},
+"Bella Vista Station": {
+"lat": -33.73068,
+"lon": 150.94406,
+"mode": "metro"
+},
+"Norwest Station": {
+"lat": -33.7343,
+"lon": 150.96391,
+"mode": "metro"
+},
+"Hills Showground Station": {
+"lat": -33.72781,
+"lon": 150.98743,
+"mode": "metro"
+},
+"Castle Hill Station": {
+"lat": -33.73151,
+"lon": 151.00775,
+"mode": "metro"
+},
+"Cherrybrook Station": {
+"lat": -33.73673,
+"lon": 151.03202,
+"mode": "metro"
+},
+"Macquarie University Station": {
+"lat": -33.77746,
+"lon": 151.11816,
+"mode": "metro"
+},
+"Macquarie Park Station": {
+"lat": -33.78504,
+"lon": 151.12848,
+"mode": "metro"
+},
+"North Ryde Station": {
+"lat": -33.79431,
+"lon": 151.13801,
+"mode": "metro"
+},
+"Paddy's Markets Light Rail": {
+"lat": -33.87932,
+"lon": 151.20268,
+"mode": "light_rail"
+},
+"Capitol Square Light Rail": {
+"lat": -33.87977,
+"lon": 151.20563,
+"mode": "light_rail"
+},
+"Central Grand Concourse Light Rail": {
+"lat": -33.88238,
+"lon": 151.20672,
+"mode": "light_rail"
+},
+"Convention Centre Light Rail": {
+"lat": -33.8726,
+"lon": 151.1981,
+"mode": "light_rail"
+},
+"Exhibition Centre Light Rail": {
+"lat": -33.8772,
+"lon": 151.19963,
+"mode": "light_rail"
+},
+"Wentworth Park Light Rail": {
+"lat": -33.8744,
+"lon": 151.19403,
+"mode": "light_rail"
+},
+"Bank Street Light Rail": {
+"lat": -33.87091,
+"lon": 151.19241,
+"mode": "light_rail"
+},
+"John Street Square Light Rail": {
+"lat": -33.86741,
+"lon": 151.19205,
+"mode": "light_rail"
+},
+"The Star Light Rail": {
+"lat": -33.86744,
+"lon": 151.19511,
+"mode": "light_rail"
+},
+"Pyrmont Bay Light Rail": {
+"lat": -33.86928,
+"lon": 151.19768,
+"mode": "light_rail"
+},
+"Jubilee Park Light Rail": {
+"lat": -33.87542,
+"lon": 151.17873,
+"mode": "light_rail"
+},
+"Glebe Light Rail": {
+"lat": -33.87721,
+"lon": 151.18739,
+"mode": "light_rail"
+},
+"Rozelle Bay Light Rail": {
+"lat": -33.87185,
+"lon": 151.17271,
+"mode": "light_rail"
+},
+"Lilyfield Light Rail": {
+"lat": -33.87414,
+"lon": 151.16498,
+"mode": "light_rail"
+},
+"Taverners Hill Light Rail": {
+"lat": -33.889,
+"lon": 151.14527,
+"mode": "light_rail"
+},
+"Marion Light Rail": {
+"lat": -33.88385,
+"lon": 151.14512,
+"mode": "light_rail"
+},
+"Hawthorne Light Rail": {
+"lat": -33.87953,
+"lon": 151.14722,
+"mode": "light_rail"
+},
+"Leichhardt North Light Rail": {
+"lat": -33.87498,
+"lon": 151.15417,
+"mode": "light_rail"
+},
+"Lewisham West Light Rail": {
+"lat": -33.89382,
+"lon": 151.1434,
+"mode": "light_rail"
+},
+"Dulwich Hill Light Rail": {
+"lat": -33.91033,
+"lon": 151.14011,
+"mode": "light_rail"
+},
+"Dulwich Grove Light Rail": {
+"lat": -33.90502,
+"lon": 151.13906,
+"mode": "light_rail"
+},
+"Arlington Light Rail": {
+"lat": -33.90181,
+"lon": 151.13814,
+"mode": "light_rail"
+},
+"Waratah Mills Light Rail": {
+"lat": -33.8988,
+"lon": 151.14015,
+"mode": "light_rail"
+},
+"Haymarket Light Rail": {
+"lat": -33.88145,
+"lon": 151.20534,
+"mode": "light_rail"
+},
+"Chinatown Light Rail": {
+"lat": -33.87859,
+"lon": 151.20557,
+"mode": "light_rail"
+},
+"QVB Light Rail": {
+"lat": -33.87158,
+"lon": 151.20696,
+"mode": "light_rail"
+},
+"Bridge Street Light Rail": {
+"lat": -33.86413,
+"lon": 151.20746,
+"mode": "light_rail"
+},
+"Central Chalmers Street Light Rail": {
+"lat": -33.88423,
+"lon": 151.20766,
+"mode": "light_rail"
+},
+"Circular Quay Light Rail": {
+"lat": -33.86152,
+"lon": 151.21004,
+"mode": "light_rail"
+},
+"Wynyard Light Rail": {
+"lat": -33.86668,
+"lon": 151.20717,
+"mode": "light_rail"
+},
+"Town Hall Light Rail": {
+"lat": -33.87386,
+"lon": 151.20689,
+"mode": "light_rail"
+},
+"Surry Hills Light Rail": {
+"lat": -33.8881,
+"lon": 151.21188,
+"mode": "light_rail"
+},
+"Moore Park Light Rail": {
+"lat": -33.89376,
+"lon": 151.22178,
+"mode": "light_rail"
+},
+"Royal Randwick Light Rail": {
+"lat": -33.90519,
+"lon": 151.22884,
+"mode": "light_rail"
+},
+"UNSW High Street Light Rail": {
+"lat": -33.91637,
+"lon": 151.23554,
+"mode": "light_rail"
+},
+"Wansey Road Light Rail": {
+"lat": -33.91053,
+"lon": 151.23521,
+"mode": "light_rail"
+},
+"Randwick Light Rail": {
+"lat": -33.91713,
+"lon": 151.24054,
+"mode": "light_rail"
+},
+"Kingsford Light Rail": {
+"lat": -33.92187,
+"lon": 151.22688,
+"mode": "light_rail"
+},
+"Juniors Kingsford Light Rail": {
+"lat": -33.92506,
+"lon": 151.22918,
+"mode": "light_rail"
+},
+"ES Marks Light Rail": {
+"lat": -33.90582,
+"lon": 151.22392,
+"mode": "light_rail"
+},
+"Kensington Light Rail": {
+"lat": -33.90937,
+"lon": 151.22336,
+"mode": "light_rail"
+},
+"UNSW Anzac Parade Light Rail": {
+"lat": -33.91665,
+"lon": 151.22591,
+"mode": "light_rail"
+},
+"Yallamundi Light Rail": {
+"lat": -33.80995,
+"lon": 151.02928,
+"mode": "light_rail"
+},
+"Telopea Light Rail": {
+"lat": -33.79439,
+"lon": 151.04115,
+"mode": "light_rail"
+},
+"Dundas Light Rail": {
+"lat": -33.8038,
+"lon": 151.03324,
+"mode": "light_rail"
+},
+"Carlingford Light Rail": {
+"lat": -33.78196,
+"lon": 151.04719,
+"mode": "light_rail"
+},
+"Rosehill Gardens Light Rail": {
+"lat": -33.81813,
+"lon": 151.0245,
+"mode": "light_rail"
+},
+"Childrens Hospital Light Rail": {
+"lat": -33.80258,
+"lon": 150.99303,
+"mode": "light_rail"
+},
+"Westmead Hospital Light Rail": {
+"lat": -33.8047,
+"lon": 150.99008,
+"mode": "light_rail"
+},
+"Westmead Light Rail": {
+"lat": -33.80761,
+"lon": 150.9876,
+"mode": "light_rail"
+},
+"Tramway Avenue Light Rail": {
+"lat": -33.81721,
+"lon": 151.01853,
+"mode": "light_rail"
+},
+"Robin Thomas Light Rail": {
+"lat": -33.81693,
+"lon": 151.01122,
+"mode": "light_rail"
+},
+"Parramatta Square Light Rail": {
+"lat": -33.81556,
+"lon": 151.00515,
+"mode": "light_rail"
+},
+"Church Street Light Rail": {
+"lat": -33.81293,
+"lon": 151.00362,
+"mode": "light_rail"
+},
+"Prince Alfred Square Light Rail": {
+"lat": -33.80905,
+"lon": 151.00526,
+"mode": "light_rail"
+},
+"Fennell Street Light Rail": {
+"lat": -33.80517,
+"lon": 151.00583,
+"mode": "light_rail"
+},
+"Benaud Oval Light Rail": {
+"lat": -33.8008,
+"lon": 151.00455,
+"mode": "light_rail"
+},
+"Ngara Light Rail": {
+"lat": -33.80145,
+"lon": 151.0014,
+"mode": "light_rail"
+},
+"Abbotsford Wharf": {
+"lat": -33.84367,
+"lon": 151.12817,
+"mode": "ferry"
+},
+"Balmain East Wharf": {
+"lat": -33.85682,
+"lon": 151.19617,
+"mode": "ferry"
+},
+"Balmain East Wharf, Side A": {
+"lat": -33.85683,
+"lon": 151.19622,
+"mode": "ferry"
+},
+"Balmain East Wharf, Side B": {
+"lat": -33.85682,
+"lon": 151.19611,
+"mode": "ferry"
+},
+"Balmain West Wharf": {
+"lat": -33.855,
+"lon": 151.1685,
+"mode": "ferry"
+},
+"Balmain Wharf": {
+"lat": -33.85456,
+"lon": 151.18626,
+"mode": "ferry"
+},
+"Barangaroo Wharf 1": {
+"lat": -33.86438,
+"lon": 151.20059,
+"mode": "ferry"
+},
+"Barangaroo, Wharf 1, Side A": {
+"lat": -33.86425,
+"lon": 151.20052,
+"mode": "ferry"
+},
+"Barangaroo, Wharf 1, Side B": {
+"lat": -33.86439,
+"lon": 151.20043,
+"mode": "ferry"
+},
+"Barangaroo Wharf 2": {
+"lat": -33.86497,
+"lon": 151.20065,
+"mode": "ferry"
+},
+"Barangaroo, Wharf 2, Side A": {
+"lat": -33.8648,
+"lon": 151.20052,
+"mode": "ferry"
+},
+"Barangaroo, Wharf 2, Side B": {
+"lat": -33.86495,
+"lon": 151.20042,
+"mode": "ferry"
+},
+"Birchgrove Wharf": {
+"lat": -33.84646,
+"lon": 151.18634,
+"mode": "ferry"
+},
+"Blackwattle Bay Wharf": {
+"lat": -33.87136,
+"lon": 151.1852,
+"mode": "ferry"
+},
+"Cabarita Wharf": {
+"lat": -33.84096,
+"lon": 151.11649,
+"mode": "ferry"
+},
+"Cabarita Wharf, Side A": {
+"lat": -33.84067,
+"lon": 151.11693,
+"mode": "ferry"
+},
+"Cabarita Wharf, Side B": {
+"lat": -33.84077,
+"lon": 151.1169,
+"mode": "ferry"
+},
+"Chiswick Wharf": {
+"lat": -33.84555,
+"lon": 151.14178,
+"mode": "ferry"
+},
+"Circular Quay Wharf 2": {
+"lat": -33.86071,
+"lon": 151.21206,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 2, Side A": {
+"lat": -33.86078,
+"lon": 151.21212,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 2, Side B": {
+"lat": -33.86077,
+"lon": 151.21195,
+"mode": "ferry"
+},
+"Circular Quay Wharf 3": {
+"lat": -33.86067,
+"lon": 151.21152,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 3, Side A": {
+"lat": -33.86075,
+"lon": 151.2116,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 3, Side B": {
+"lat": -33.86073,
+"lon": 151.21141,
+"mode": "ferry"
+},
+"Circular Quay Wharf 4": {
+"lat": -33.86062,
+"lon": 151.211,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 4, Side A": {
+"lat": -33.86068,
+"lon": 151.21106,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 4, Side B": {
+"lat": -33.86066,
+"lon": 151.21091,
+"mode": "ferry"
+},
+"Circular Quay Wharf 5": {
+"lat": -33.86057,
+"lon": 151.2105,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 5, Side A": {
+"lat": -33.86062,
+"lon": 151.21058,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 5, Side B": {
+"lat": -33.8606,
+"lon": 151.21042,
+"mode": "ferry"
+},
+"Circular Quay Wharf 6": {
+"lat": -33.86051,
+"lon": 151.21002,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 6, Side A": {
+"lat": -33.86056,
+"lon": 151.21008,
+"mode": "ferry"
+},
+"Circular Quay, Wharf 6, Side B": {
+"lat": -33.86054,
+"lon": 151.20992,
+"mode": "ferry"
+},
+"Clarke Road": {
+"lat": -33.84125,
+"lon": 151.17428,
+"mode": "ferry"
+},
+"Cockatoo Island Wharf": {
+"lat": -33.8456,
+"lon": 151.17324,
+"mode": "ferry"
+},
+"Cockatoo Island Wharf, Side A": {
+"lat": -33.84551,
+"lon": 151.17347,
+"mode": "ferry"
+},
+"Cockatoo Island Wharf, Side B": {
+"lat": -33.8456,
+"lon": 151.17347,
+"mode": "ferry"
+},
+"Cremorne Point Wharf": {
+"lat": -33.84788,
+"lon": 151.23086,
+"mode": "ferry"
+},
+"Darling Point Wharf": {
+"lat": -33.86645,
+"lon": 151.23949,
+"mode": "ferry"
+},
+"Double Bay Wharf": {
+"lat": -33.87279,
+"lon": 151.24258,
+"mode": "ferry"
+},
+"Drummoyne Wharf": {
+"lat": -33.84549,
+"lon": 151.1571,
+"mode": "ferry"
+},
+"Garden Island Wharf": {
+"lat": -33.85814,
+"lon": 151.22992,
+"mode": "ferry"
+},
+"Greenwich Point Wharf": {
+"lat": -33.8421,
+"lon": 151.1808,
+"mode": "ferry"
+},
+"Greenwich Wharf": {
+"lat": -33.83418,
+"lon": 151.18234,
+"mode": "ferry"
+},
+"Huntleys Point Wharf": {
+"lat": -33.84216,
+"lon": 151.14193,
+"mode": "ferry"
+},
+"Kirribilli Wharf": {
+"lat": -33.84937,
+"lon": 151.22028,
+"mode": "ferry"
+},
+"Kissing Point Wharf": {
+"lat": -33.83169,
+"lon": 151.10198,
+"mode": "ferry"
+},
+"Kurraba Point Wharf": {
+"lat": -33.84343,
+"lon": 151.22183,
+"mode": "ferry"
+},
+"Manly, Wharf 1": {
+"lat": -33.80046,
+"lon": 151.2838,
+"mode": "ferry"
+},
+"Manly, Wharf 2": {
+"lat": -33.80051,
+"lon": 151.28396,
+"mode": "ferry"
+},
+"Manly, Wharf 3": {
+"lat": -33.80059,
+"lon": 151.28462,
+"mode": "ferry"
+},
+"McMahons Point Wharf": {
+"lat": -33.84885,
+"lon": 151.2066,
+"mode": "ferry"
+},
+"McMahons Point Wharf, Side A": {
+"lat": -33.8489,
+"lon": 151.20667,
+"mode": "ferry"
+},
+"McMahons Point Wharf, Side B": {
+"lat": -33.84891,
+"lon": 151.20657,
+"mode": "ferry"
+},
+"Meadowbank Wharf": {
+"lat": -33.82126,
+"lon": 151.09013,
+"mode": "ferry"
+},
+"Milsons Point Wharf": {
+"lat": -33.8494,
+"lon": 151.21064,
+"mode": "ferry"
+},
+"Milsons Point Wharf, Side A": {
+"lat": -33.84936,
+"lon": 151.2105,
+"mode": "ferry"
+},
+"Milsons Point Wharf, Side B": {
+"lat": -33.85002,
+"lon": 151.21117,
+"mode": "ferry"
+},
+"Mosman Bay Wharf": {
+"lat": -33.83848,
+"lon": 151.23234,
+"mode": "ferry"
+},
+"Neutral Bay Wharf": {
+"lat": -33.84232,
+"lon": 151.21931,
+"mode": "ferry"
+},
+"North Sydney Wharf": {
+"lat": -33.84496,
+"lon": 151.21873,
+"mode": "ferry"
+},
+"Old Cremorne Wharf": {
+"lat": -33.84092,
+"lon": 151.2305,
+"mode": "ferry"
+},
+"Parramatta Wharf": {
+"lat": -33.81392,
+"lon": 151.01058,
+"mode": "ferry"
+},
+"Pirrama Park Wharf": {
+"lat": -33.86474,
+"lon": 151.19088,
+"mode": "ferry"
+},
+"Pyrmont Bay Wharf": {
+"lat": -33.8682,
+"lon": 151.1988,
+"mode": "ferry"
+},
+"Rose Bay Public Wharf": {
+"lat": -33.87095,
+"lon": 151.26212,
+"mode": "ferry"
+},
+"Rose Bay Wharf": {
+"lat": -33.87065,
+"lon": 151.26216,
+"mode": "ferry"
+},
+"Rydalmere Wharf": {
+"lat": -33.81799,
+"lon": 151.04375,
+"mode": "ferry"
+},
+"South Mosman Wharf": {
+"lat": -33.84327,
+"lon": 151.2326,
+"mode": "ferry"
+},
+"Sydney Olympic Park Wharf": {
+"lat": -33.82199,
+"lon": 151.07884,
+"mode": "ferry"
+},
+"Sydney Olympic Park Wharf, Side A": {
+"lat": -33.82196,
+"lon": 151.07883,
+"mode": "ferry"
+},
+"Sydney Olympic Park Wharf, Side B": {
+"lat": -33.82202,
+"lon": 151.0788,
+"mode": "ferry"
+},
+"Taronga Zoo Wharf": {
+"lat": -33.84634,
+"lon": 151.23951,
+"mode": "ferry"
+},
+"Watsons Bay Wharf": {
+"lat": -33.84344,
+"lon": 151.28104,
+"mode": "ferry"
+},
+"Woolwich Wharf": {
+"lat": -33.83876,
+"lon": 151.17604,
+"mode": "ferry"
+}
+}
+}
