@@ -61,6 +61,8 @@ export function Panel({
   const setMySpot = useStore((s) => s.setMySpot);
   const timer = useStore((s) => s.timer);
   const showUnknown = useStore((s) => s.showUnknown);
+  const showAvailability = useStore((s) => s.showAvailability);
+  const setShowAvailability = useStore((s) => s.setShowAvailability);
   const setShowUnknown = useStore((s) => s.setShowUnknown);
   const reportsMade = useStore((s) => s.reportsMade);
 
@@ -126,6 +128,18 @@ export function Panel({
                   <Switch
                     value={showUnknown}
                     onValueChange={setShowUnknown}
+                    trackColor={{ true: colors.accent, false: colors.border }}
+                  />
+                }
+              />
+              <Row
+                icon="stats-chart-outline"
+                title="Show the chance of a space"
+                sub="A ~% on each street you could park on, zoomed in. An estimate, not a count."
+                right={
+                  <Switch
+                    value={showAvailability}
+                    onValueChange={setShowAvailability}
                     trackColor={{ true: colors.accent, false: colors.border }}
                   />
                 }

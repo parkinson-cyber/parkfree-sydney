@@ -216,7 +216,7 @@ eq(nextFreeAt({ id: 9, cat: 'no_stopping', area: 'inner', left: cwSide }, wed10a
 
 // --- find me a park ---
 const { findNearestPark, findSoonestPark, formatDistance, walkMinutes } = require('../.cache/test/findPark.js');
-const { distanceToFeatureM } = require('../.cache/test/geo.js');
+const { distanceToFeatureM, featureMidpoint, bearingDeg } = require('../.cache/test/geo.js');
 
 // A street laid out due east at a fixed latitude; 0.001° lon ≈ 92 m here.
 const streetAt = (id, lat, lon, name) => ({
@@ -486,6 +486,53 @@ eq(DEFAULT_WEIGHTS.walkMaxM <= 1200, true,
 
 // Leave the harness as it found it, so later cases are unaffected.
 setDemandModel(null);
+
+// ─── where the middle of a street actually is (src/lib/geo.ts) ───────────────
+// This used to be the middle *vertex*, which OSM puts wherever the road bends.
+// On a long street that lands at an end, and everything that points at a
+// street — the fly-to, directions, "Park here", the Street View link — went
+// there with it.
+
+const line = (coords) => ({
+  type: 'Feature', properties: { id: 1, cat: 'free', area: 't' },
+  geometry: { type: 'LineString', coordinates: coords },
+});
+
+// Due north, 0.01° ≈ 1.11 km, evenly spaced: the middle is the middle either way.
+const even = line([[151.2, -33.9], [151.2, -33.895], [151.2, -33.89]]);
+const evenMid = featureMidpoint(even);
+eq(Math.abs(evenMid.latitude - -33.895) < 1e-6, true,
+   'an evenly spaced street has its midpoint in the middle');
+
+// The regression: one long straight leg, then four vertices crammed into a
+// bend at the far end. The middle *vertex* is inside the bend; the middle of
+// the street is half-way down the straight.
+const lopsided = line([
+  [151.2, -33.9],
+  [151.2, -33.89],      // 1.11 km of straight
+  [151.2001, -33.8899], // then a cluster of tiny bend segments
+  [151.2002, -33.8898],
+  [151.2003, -33.8897],
+]);
+const lopMid = featureMidpoint(lopsided);
+eq(lopMid.latitude < -33.894, true,
+   'a street with its vertices bunched at one end still gets a midpoint in the middle');
+eq(distanceToFeatureM(lopsided, lopMid.latitude, lopMid.longitude) < 1, true,
+   'and that midpoint is on the street, not beside it');
+// The old behaviour, for contrast: coords[length/2] is the third of five points.
+const oldWay = lopsided.geometry.coordinates[2];
+eq(Math.abs(oldWay[1] - -33.8899) < 1e-6 && lopMid.latitude < -33.894, true,
+   'the middle vertex really was at the far end — that is the bug being fixed');
+
+// Bearings, which is what points the Street View camera across the kerb.
+eq(Math.round(bearingDeg(-33.9, 151.2, -33.89, 151.2)), 0, 'due north is 0°');
+eq(Math.round(bearingDeg(-33.9, 151.2, -33.9, 151.21)), 90, 'due east is 90°');
+eq(Math.round(bearingDeg(-33.9, 151.2, -33.91, 151.2)), 180, 'due south is 180°');
+// A street running north: its OSM "left" kerb is west, so the camera turns to 270°.
+eq((Math.round(featureMidpoint(even).bearing) - 90 + 360) % 360, 270,
+   'looking at the left kerb of a north-running street means facing west');
+eq(Math.round(featureMidpoint(even).lengthM) > 1000, true,
+   'and the street knows how long it is');
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

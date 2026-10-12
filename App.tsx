@@ -34,7 +34,7 @@ import { useKeyboardInset } from './src/lib/useKeyboardInset';
 import { estimateAvailability, type Availability } from './src/lib/availability';
 import { installDemandModel } from './src/lib/demandModel';
 import { suburbByName } from './src/lib/suburbs';
-import { featureCenter, featureInRegion } from './src/lib/geo';
+import { featureCenter, featureInRegion, featureMidpoint } from './src/lib/geo';
 import { evaluateStreet } from './src/lib/rules';
 import {
   findNearestPark, findSoonestPark, formatDistance,
@@ -52,6 +52,7 @@ function Main() {
   const tick = useStore((s) => s.tick);
   const filter = useStore((s) => s.filter);
   const showUnknown = useStore((s) => s.showUnknown);
+  const showAvailability = useStore((s) => s.showAvailability);
   const selected = useStore((s) => s.selected);
   const select = useStore((s) => s.select);
   const region = useStore((s) => s.region);
@@ -223,6 +224,41 @@ function Main() {
     });
   }, [selected, now, reports, carparks]);
 
+  /**
+   * The availability estimate, on the map itself.
+   *
+   * Only for streets you could actually park on this minute: a "60% chance of
+   * a space" beside a kerb that is metered or permit-only right now reads as a
+   * claim about the rules, which it is not. Only when zoomed in past the point
+   * where individual streets are legible, only inside the viewport, and capped
+   * — the estimate is cheap but not free, and a map carrying two hundred
+   * numbers is a spreadsheet.
+   */
+  const availById = useMemo(() => {
+    const map = new Map<number, number>();
+    if (!showAvailability || region.latitudeDelta > SHOW_AVAIL_MAX_DELTA) return map;
+    let n = 0;
+    for (const f of classifiedStreets) {
+      const status = statusById.get(f.properties.id);
+      if (status !== 'free' && status !== 'free_limited') continue;
+      if (visibleIds && !visibleIds.has(f.properties.id)) continue;
+      if (!featureInRegion(f, region, 1)) continue;
+      if (featureMidpoint(f).lengthM < MIN_AVAIL_LENGTH_M) continue;
+      const est = estimateAvailability({
+        props: f.properties,
+        status,
+        center: featureCenter(f),
+        reports,
+        carParks: carparks?.facilities ?? [],
+        now,
+        postcode: suburbByName(f.properties.sub)?.postcode ?? null,
+      });
+      if (est.score !== null) map.set(f.properties.id, est.score);
+      if (++n >= MAX_AVAIL_LABELS) break;
+    }
+    return map;
+  }, [showAvailability, region, statusById, visibleIds, reports, carparks, now]);
+
   /** Streets free right now — scoped to the viewport once the user zooms in. */
   const freeNow = useMemo(() => {
     const zoomedIn = region.latitudeDelta <= SHOW_CLASSIFIED_MAX_DELTA;
@@ -252,6 +288,7 @@ function Main() {
         mySpot={mySpot}
         councilCarParks={councilCarParks}
         freeCarParks={freeCarParks}
+        availById={availById}
       />
 
       {Platform.OS !== 'web' && region.latitudeDelta > SHOW_CLASSIFIED_MAX_DELTA && (
@@ -445,6 +482,31 @@ export default function App() {
 
 /** Single side gutter for every floating control, so nothing is off-grid. */
 const GUTTER = 12;
+
+/**
+ * Zoom at which the availability numbers appear — much tighter than the
+ * threshold for drawing the streets themselves. The first attempt switched
+ * them on at a whole-suburb zoom and Surry Hills came back with roughly two
+ * hundred numbers on screen: every one individually correct, the map as a
+ * whole unreadable. At a suburb zoom the streets are worth seeing as colour;
+ * a number only earns its place once you are looking at the few blocks you
+ * might actually walk.
+ *
+ * Note this is a *latitude* delta on a portrait phone, so it is about 2.2x the
+ * longitude span on screen — 0.013 here is roughly four blocks across, not
+ * forty. Guessing that wrong is how the first attempt at tightening it closed
+ * the labels off entirely.
+ */
+const SHOW_AVAIL_MAX_DELTA = 0.013;
+
+/** Hard cap on how many estimates are computed and drawn per frame. */
+const MAX_AVAIL_LABELS = 90;
+
+/**
+ * Don't label a stub. Inner Sydney is full of 20 m service lanes that would
+ * each take a number and crowd out the street you are actually driving down.
+ */
+const MIN_AVAIL_LENGTH_M = 45;
 
 /** Soft elevation. Premium map UIs separate layers with shadow, not borders. */
 const shadow = (opacity: number, r: number, y: number) => elevate(opacity, r, y);

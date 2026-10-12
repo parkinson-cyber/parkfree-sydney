@@ -244,8 +244,23 @@ the departure curve already counts, running backwards.
 
 ## What the app shows
 
-Where the tap data reaches, the street sheet's "how busy is it?" explanation
-now reads something like:
+**On the map**, zoomed in to a few blocks, each street you could park on right
+now carries a `~60%` in its band colour. Rounded to the nearest ten, and with
+the tilde, because the fit's RMSE is 19 percentage points and a number to the
+nearest 1% would be claiming precision the model has not got. It is drawn
+smaller and lighter than the `2P` time-limit labels above it, deliberately: a
+time limit is a rule read off a sign and this is a guess read off a model, and
+the map must not let the two read as the same kind of fact. The legend says so
+in as many words, and there is a switch to turn it off.
+
+The first attempt switched the numbers on at a whole-suburb zoom, which put
+about two hundred of them on screen over Surry Hills — every one individually
+correct, the map as a whole unreadable. They now need a four-block zoom, skip
+streets under 45 m so inner-city service lanes do not each take a number, and
+are capped at 90 with MapLibre's own collision detection thinning what is left.
+
+**In the street sheet**, tapping the estimate opens the full explanation, which
+reads something like:
 
 > At this hour everyone who drives to the train has already gone around Gordon
 > Station, 222 m away — 96% of the daily peak, from Transport for NSW Opal tap

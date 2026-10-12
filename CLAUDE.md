@@ -31,7 +31,7 @@ a fine the owner personally pays.
 
 ## Verify before claiming done
 ```bash
-npm run typecheck && npm test        # 172 cases: rules, availability, demand model
+npm run typecheck && npm test        # 181 cases: rules, availability, demand model, geometry
 npm run web:preview                  # http://localhost:8090 — start in background Bash, then attach the Browser pane by URL
 ```
 Native: **this Mac cannot build the app locally. Do not try again.** Xcode 16.2
@@ -61,5 +61,6 @@ test through TestFlight on a real iPhone. Metro file-watching is unreliable here
 | Data | `src/data/parking.json` (30 MB, 78k segments) · pipeline `scripts/` · offline overlays `scripts/apply-enrichment.sh` |
 | Suburb index | `src/data/suburbs.json` (498 suburbs) · `scripts/fetch-suburbs.py` · every street carries `properties.sub` |
 | Demand model | `src/data/demand-model.json` · `src/lib/demand.ts` · **read `docs/DEMAND-MODEL.md` before touching it** |
+| Street geometry | `src/lib/geo.ts` — use `featureMidpoint`, never `coords[len/2]`: the middle vertex is not the middle of the street |
 | State | `src/state/store.ts` (zustand) |
 | Data-source leads | `scripts/DATA-SOURCE-LEADS.md` → "Candidate endpoints" section only |

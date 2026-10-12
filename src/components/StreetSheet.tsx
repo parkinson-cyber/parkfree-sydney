@@ -5,7 +5,7 @@ import {
   evaluateSide, evaluateStreet, formatClock, formatPrice, pShort,
   nextFreeAt, formatCountdown,
 } from '../lib/rules';
-import { featureCenter, sideLabels } from '../lib/geo';
+import { featureCenter, featureMidpoint, sideLabels } from '../lib/geo';
 import { colors, font, radius, shadow, statusColors, statusLabels, tracking } from '../theme';
 import { Glass } from './Glass';
 import { useStore } from '../state/store';
@@ -75,11 +75,39 @@ export function StreetSheet({
    * sign with their own eyes, which is the one thing Street View is reliably
    * good for: we measured that the Static API caps at 640px and cannot render
    * a legible time plate.
+   *
+   * Two things decide whether that link is any use, and both used to be wrong.
+   *
+   * **Where.** It passed `featureCenter`, which was the middle *vertex* of the
+   * geometry rather than the middle of the street — on a long street that lands
+   * at an end (Taren Point Road's was 48% of its length off). `featureMidpoint`
+   * walks the geometry and stops at half its length, so a long street opens in
+   * the middle of itself.
+   *
+   * **Which way.** Without a heading Google picks one, and you arrive looking
+   * down the road at the vanishing point. A parking sign is on a pole at the
+   * kerb, so the camera has to face *across* the street: the bearing of the
+   * segment we are standing on, turned 90° toward the side in question. Same
+   * reasoning as the Street View sweep script, which found the pole only when
+   * it looked across rather than along. `fov` is tightened only slightly, from
+   * Google's default 90 to 80: the sweep script wanted 28 because a Static API
+   * image has to be legible in one shot, but here the driver has the real
+   * viewer and can zoom with two fingers. What they cannot do is find a sign
+   * that is outside the frame, so context beats magnification — checked on
+   * Hastings Parade, where 60 clipped the pole at the edge and 80 put it
+   * comfortably inside.
    */
-  const openStreetView = () => {
-    const { latitude, longitude } = featureCenter(street);
+  const openStreetView = (side?: 'left' | 'right') => {
+    const { latitude, longitude, bearing } = featureMidpoint(street);
+    // OSM's "left" is 90° counter-clockwise from the way's direction. The local
+    // segment bearing is used rather than the street's overall one: on a curved
+    // street the camera should face across the kerb where it is standing, even
+    // if that is not quite the compass direction the side is named after.
+    const facing = side ?? (p.left ? 'left' : 'right');
+    const heading = (bearing + (facing === 'left' ? -90 : 90) + 360) % 360;
     Linking.openURL(
-      `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${latitude},${longitude}`,
+      'https://www.google.com/maps/@?api=1&map_action=pano'
+      + `&viewpoint=${latitude},${longitude}&heading=${Math.round(heading)}&pitch=0&fov=80`,
     );
   };
 
@@ -126,8 +154,11 @@ export function StreetSheet({
 
       <Text style={styles.detail} numberOfLines={2}>{overall.detail}</Text>
 
-      <Pressable onPress={openStreetView} hitSlop={8}>
-        <Text style={styles.signLink}>See the sign in Street View ↗</Text>
+      <Pressable onPress={() => openStreetView()} hitSlop={8}>
+        <Text style={styles.signLink}>
+          See the sign in Street View ↗
+          {sidesDiffer ? '' : `  ·  ${p.left ? compass.left : compass.right}`}
+        </Text>
       </Pressable>
 
       {/* Fine print for the weakest evidence tier: a sign read off Street View
@@ -148,16 +179,24 @@ export function StreetSheet({
         </Text>
       )}
 
+      {/* When the two kerbs have different rules, each card opens Street View
+          looking at *that* kerb — the sign you need is the one on the side you
+          are about to park on, and a single link can only face one way. */}
       {sidesDiffer && (
         <View style={styles.sides}>
-          {sideEvals.map(({ label, rule, ev }) => (
-            <View key={label} style={styles.sideCard}>
-              <Text style={styles.sideLabel}>{label}</Text>
+          {sideEvals.map(({ label, rule, ev }, i) => (
+            <Pressable
+              key={label}
+              style={styles.sideCard}
+              onPress={() => openStreetView(i === 0 ? 'left' : 'right')}
+              accessibilityLabel={`See the ${label} in Street View`}
+            >
+              <Text style={styles.sideLabel}>{label} ↗</Text>
               <Text style={[styles.sideStatus, { color: statusColors[ev.status] }]} numberOfLines={1}>
                 {statusLabels[ev.status]}
                 {rule!.maxstayMin ? ` · ${pShort(rule!.maxstayMin)}` : ''}
               </Text>
-            </View>
+            </Pressable>
           ))}
         </View>
       )}

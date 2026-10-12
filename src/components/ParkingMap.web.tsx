@@ -14,6 +14,7 @@ import { freeBadge, freeDetail, type FreeCarPark } from '../lib/freeCarparks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { allStreets, streetById, onParkingDataChange } from '../lib/parkingData';
+import { featureMidpoint } from '../lib/geo';
 import { pShort } from '../lib/rules';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region } from '../lib/types';
@@ -33,7 +34,10 @@ function ensurePLabels(): void {
     if (min) P_LABEL_BY_ID.set(f.properties.id, pShort(min));
   }
 }
-import type { ParkingMapHandle, ParkingMapProps } from './ParkingMap.shared';
+import {
+  availColor, availLabel,
+  type ParkingMapHandle, type ParkingMapProps,
+} from './ParkingMap.shared';
 
 /** Browser geolocation; null when unsupported, denied or timed out. */
 function currentPosition(): Promise<{ latitude: number; longitude: number } | null> {
@@ -160,7 +164,7 @@ function spotToGeojson(spot: { latitude: number; longitude: number; streetName?:
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks, availById },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -211,6 +215,31 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   freeRef.current = freeGeojson;
 
   const spotGeojson = useMemo(() => spotToGeojson(mySpot), [mySpot]);
+
+  /**
+   * The availability estimate as its own point layer rather than a property on
+   * the street features. The street source holds 78,346 features and is
+   * rebuilt only when the rules change; these labels change every time the map
+   * moves, and rebuilding 78k objects on every pan to move 140 numbers would
+   * be an absurd trade. MapLibre's own collision detection then thins them
+   * out as you zoom, which is the decluttering we would otherwise have to
+   * write.
+   */
+  const availGeojson = useMemo(() => ({
+    type: 'FeatureCollection' as const,
+    features: [...availById].flatMap(([id, score]) => {
+      const f = streetById(id);
+      if (!f) return [];
+      const { latitude, longitude } = featureMidpoint(f);
+      return [{
+        type: 'Feature' as const,
+        geometry: { type: 'Point' as const, coordinates: [longitude, latitude] },
+        properties: { id, label: availLabel(score), color: availColor(score) },
+      }];
+    }),
+  }), [availById]);
+  const availRef = useRef(availGeojson);
+  availRef.current = availGeojson;
 
   // "You are here". Native maps draw this themselves; on the web it has to be
   // built, and it is the one thing on the map a driver should find without
@@ -317,6 +346,12 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
     if (!map || !loadedRef.current) return;
     (map.getSource('myspot') as maplibregl.GeoJSONSource | undefined)?.setData(spotGeojson as any);
   }, [spotGeojson]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    (map.getSource('avail') as maplibregl.GeoJSONSource | undefined)?.setData(availGeojson as any);
+  }, [availGeojson]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -435,6 +470,38 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           'text-color': colors.text,
           'text-halo-color': colors.surface,
           'text-halo-width': 1.6,
+        },
+      });
+
+      // The availability estimate. Deliberately quieter than the "2P" labels
+      // above it — smaller, band-coloured, and marked "~" — because a time
+      // limit is a rule off a sign and this is a guess off a model, and the
+      // map must not let the two read as the same kind of fact.
+      map.addSource('avail', { type: 'geojson', data: availRef.current as any });
+      map.addLayer({
+        id: 'avail-labels',
+        type: 'symbol',
+        source: 'avail',
+        // A second gate behind the one in App.tsx: the caller decides what is
+        // worth computing, MapLibre decides what still fits once it has
+        // collided them against each other and against the "2P" labels.
+        minzoom: 15,
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 15, 10.5, 18, 13],
+          'text-offset': [0, 1.1],
+          'text-allow-overlap': false,
+          // Generous, so the labels thin themselves out rather than tiling the
+          // screen. Dropping one is fine — tapping the street still gives the
+          // number, and the colour of the line is the primary signal.
+          'text-padding': 14,
+        },
+        paint: {
+          'text-color': ['get', 'color'],
+          'text-halo-color': colors.surface,
+          'text-halo-width': 1.8,
+          'text-opacity': 0.95,
         },
       });
 

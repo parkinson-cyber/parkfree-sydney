@@ -19,6 +19,7 @@ import { freeBadge, freeDetail } from '../lib/freeCarparks';
 import { colors, statusColors, kindColors } from '../theme';
 import type { Region, StreetFeature } from '../lib/types';
 import {
+  availColor, availLabel,
   type ParkingMapHandle, type ParkingMapProps,
   SHOW_CLASSIFIED_MAX_DELTA, SHOW_UNKNOWN_MAX_DELTA,
 } from './ParkingMap.shared';
@@ -38,7 +39,7 @@ async function currentPosition(): Promise<{ latitude: number; longitude: number 
 }
 
 const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function ParkingMap(
-  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks },
+  { statusById, visibleIds, showUnknown, selectedId, onSelect, onRegionChange, initialRegion, carparks, reports, mySpot, councilCarParks, freeCarParks, availById },
   ref,
 ) {
   const mapRef = useRef<MapView>(null);
@@ -127,6 +128,28 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       .filter((x): x is { id: number; label: string; latitude: number; longitude: number } => !!x)
       .slice(0, 80);
   }, [visibleClassified, region.latitudeDelta]);
+
+  /**
+   * The availability estimate, drawn on the street it belongs to. The caller
+   * has already decided which streets are worth it; this just places them at
+   * the true midpoint so a long street's number is not sitting on the corner.
+   */
+  const availPins = useMemo(() => {
+    if (availById.size === 0) return [];
+    const out: { id: number; label: string; color: string; latitude: number; longitude: number }[] = [];
+    for (const f of visibleClassified) {
+      const score = availById.get(f.properties.id);
+      if (score == null) continue;
+      out.push({
+        id: f.properties.id,
+        label: availLabel(score),
+        color: availColor(score),
+        ...featureCenter(f),
+      });
+      if (out.length >= 80) break;
+    }
+    return out;
+  }, [visibleClassified, availById]);
 
   return (
     <MapView
@@ -256,11 +279,37 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
           </View>
         </Marker>
       ))}
+
+      {/* Sits below the time-limit pill rather than on it: the limit is a rule
+          and the percentage is a guess, so they must not read as one label. */}
+      {availPins.map((a) => (
+        <Marker
+          key={`a-${a.id}`}
+          coordinate={{ latitude: a.latitude, longitude: a.longitude }}
+          anchor={{ x: 0.5, y: -0.35 }}
+          tracksViewChanges={false}
+          onPress={() => onSelect(streetById(a.id) ?? null)}
+        >
+          <View style={[styles.availPill, { borderColor: a.color }]}>
+            <Text style={[styles.availText, { color: a.color }]}>{a.label}</Text>
+          </View>
+        </Marker>
+      ))}
     </MapView>
   );
 });
 
 const styles = StyleSheet.create({
+  // Outlined rather than filled, and a size down from the time-limit pill:
+  // an estimate should look lighter on the map than a rule does.
+  availPill: {
+    backgroundColor: colors.glassStrong,
+    borderWidth: 1,
+    borderRadius: 7,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+  },
+  availText: { fontSize: 10, fontWeight: '700', letterSpacing: -0.1 },
   pPill: {
     backgroundColor: colors.glassStrong,
     borderColor: colors.glassBorder,

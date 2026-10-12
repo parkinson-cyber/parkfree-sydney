@@ -47,6 +47,16 @@ interface AppState {
   showUnknown: boolean;
   setShowUnknown: (v: boolean) => void;
 
+  /**
+   * Draw the availability estimate on the map itself, not only in the sheet.
+   * It is an estimate, so it is a preference: a number on every green street
+   * is the difference between "these are free" and "this one probably has a
+   * space", and which of those you want depends on whether you are browsing
+   * or arriving.
+   */
+  showAvailability: boolean;
+  setShowAvailability: (v: boolean) => void;
+
   /** Ticks every 30 s so "free now" stays live. */
   now: Date;
   tick: () => void;
@@ -95,6 +105,8 @@ export const useStore = create<AppState>((set, get) => ({
   setFilter: (filter) => set({ filter }),
   showUnknown: true,
   setShowUnknown: (showUnknown) => set({ showUnknown }),
+  showAvailability: true,
+  setShowAvailability: (showAvailability) => set({ showAvailability }),
 
   now: new Date(),
   tick: () => set({ now: new Date() }),

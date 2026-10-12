@@ -2,10 +2,10 @@
 
 The hand-off between conversations. Update the **State** block and add a **Changelog** line with every change that lands.
 
-## State (2026-10-12)
+## State (2026-10-13)
 
 - **Live:** https://parkfree-sydney.vercel.app · repo `parkinson-cyber/parkfree-sydney` · `main` (single Vercel project `parkfree-sydney`; the duplicate `parkfree-sydney-rdh3` was deleted 2026-09-21). **Vercel account is `chris0209lee`** — not `leewinghimchris2012`, which is the TfNSW Open Data login; signing into Vercel with that one shows a different account's old projects.
-- **Build health:** `npm run typecheck` clean · `npm test` 172/172
+- **Build health:** `npm run typecheck` clean · `npm test` 181/181
 - **Every street now carries its gazetted suburb** (`properties.sub`, 77,881 of 78,346 — 465 fall outside every polygon and are left blank rather than guessed), from NSW Spatial Services' suburb boundaries. That is what makes suburb search work and what joins the Opal bus taps (reported by postcode) onto the street network. Re-derivable offline: `python3 scripts/fetch-suburbs.py`, boundaries committed at `scripts/data/suburbs-nsw.json`.
 - **Availability priors are no longer hand-set** where Opal tap data reaches — see `docs/DEMAND-MODEL.md`. 160 stations + 133 postcodes, fitted against 3,292 measured Park&Ride readings. **PLAN M3's open item is closed.**
 - **Data:** 78,346 segments, 15,483 classified (19.8%), 24 sources. Corridor eastern suburbs → Chatswood, % unknown by area (2026-09-08): Waverley 4 · Woollahra 9 · CBD 14 · Randwick north 35 / south 90 · North Sydney 35 · Chatswood CBD 30 · Willoughby rest 52–76 · Lane Cove 54 · Mosman 80 · Ku-ring-gai 98. Largest LGA gaps overall: Hills, Sutherland, Bankstown, Parramatta/west, Northern Beaches — see `scripts/DATA-SOURCE-LEADS.md` → *Candidate endpoints*.
@@ -26,6 +26,16 @@ The hand-off between conversations. Update the **State** block and add a **Chang
 - **Accounts pending (user):** Apple Developer + Expo/EAS for the App Store build. (TfNSW key: done.)
 
 ## Changelog
+
+- **2026-10-13 (the estimate on the map, and a Street View link that looks at the right thing)** — Two follow-ups from the owner.
+
+  **The % availability is now on the map itself**, not only in the sheet: a `~60%` in its band colour on every street you could park on this minute, zoomed in to about four blocks. Four decisions worth keeping. It is **rounded to the nearest ten and carries a tilde**, because the model's RMSE is 19 percentage points and a number to the nearest 1% would claim precision it has not got. It is **smaller and lighter than the `2P` labels** — a time limit is a rule off a sign, this is a guess off a model, and the map must not let them read as the same kind of fact. It is **only on kerbs that are parkable right now**, because "60% chance of a space" beside a metered or permit-only kerb reads as a claim about the rules. And it is **off by one switch** (legend, and Settings → Map). First attempt switched them on at a suburb zoom and put ~200 numbers over Surry Hills — each correct, the map unreadable; now gated at `latitudeDelta ≤ 0.013` + `minzoom 15`, streets under 45 m skipped, capped at 90, MapLibre collision thinning the rest. Watch the units: on a portrait phone a latitude delta is ~2.2× the longitude span, and getting that backwards in the first fix closed the labels off entirely.
+
+  **`featureCenter` was returning the middle *vertex*, not the middle of the street** — and that was the Street View complaint. OSM puts a vertex wherever the road bends, so a street that runs straight then curves has most of its vertices in the curve and its "centre" lands at an end. Measured over the dataset: **1,663 classified streets over 150 m long were more than 50 m out, worst 354 m (Braeside Street, Wahroonga); Taren Point Road's was 48% of its length off**, i.e. at the edge. `featureMidpoint` now walks the geometry and stops at half its length. That fixes the fly-to, directions, "Park here" and the report anchor at the same time.
+
+  **And the Street View link now faces across the kerb.** Without a heading Google picks one and you arrive looking down the road at the vanishing point; a parking sign is on a pole at the kerb, so the camera takes the local segment bearing turned 90° toward the side in question — the same finding as the Street View sweep script, which only found poles when it looked across rather than along. `fov` goes from Google's default 90 to **80**, not the sweep's 28: that script needed one legible Static API image, but here the driver has the real viewer and can zoom, and what they cannot do is find a sign outside the frame. Checked on Hastings Parade — 60 clipped the pole at the edge, 80 put it comfortably inside. When the two kerbs have different rules each side card is now its own link, because one link can only face one way.
+
+  9 new test cases (172 → 181), including the midpoint regression and the bearings that aim the camera.
 
 - **2026-10-12 (search by suburb, a search bar the keyboard can't eat, and the Opal demand model)** — Three things the owner asked for in one session.
 
