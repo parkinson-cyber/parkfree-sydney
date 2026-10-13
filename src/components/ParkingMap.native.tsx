@@ -137,19 +137,22 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
   const availPins = useMemo(() => {
     if (availById.size === 0) return [];
     const out: { id: number; label: string; color: string; latitude: number; longitude: number }[] = [];
-    for (const f of visibleClassified) {
-      const score = availById.get(f.properties.id);
-      if (score == null) continue;
+    // Walk availById, not visibleClassified: the latter is sliced to MAX_LINES
+    // for drawing, so in dense inner Sydney a street the caller had chosen to
+    // label could fall past the 1,600th line and lose its number here while
+    // keeping it on web. The caller already decided what is worth labelling.
+    for (const [id, score] of availById) {
+      const f = streetById(id);
+      if (!f) continue;
       out.push({
-        id: f.properties.id,
+        id,
         label: availLabel(score),
         color: availColor(score),
         ...featureCenter(f),
       });
-      if (out.length >= 80) break;
     }
     return out;
-  }, [visibleClassified, availById]);
+  }, [availById]);
 
   return (
     <MapView
@@ -281,17 +284,23 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
       ))}
 
       {/* Sits below the time-limit pill rather than on it: the limit is a rule
-          and the percentage is a guess, so they must not read as one label. */}
+          and the percentage is a guess, so they must not read as one label.
+          The offset is a transparent spacer inside the marker, not a negative
+          anchor — react-native-maps documents anchor as a 0–1 fraction of the
+          view, and iOS happens to extrapolate past that while Android's
+          setAnchor clamps, which would drop the pill back onto the line. */}
       {availPins.map((a) => (
         <Marker
           key={`a-${a.id}`}
           coordinate={{ latitude: a.latitude, longitude: a.longitude }}
-          anchor={{ x: 0.5, y: -0.35 }}
+          anchor={{ x: 0.5, y: 0 }}
           tracksViewChanges={false}
           onPress={() => onSelect(streetById(a.id) ?? null)}
         >
-          <View style={[styles.availPill, { borderColor: a.color }]}>
-            <Text style={[styles.availText, { color: a.color }]}>{a.label}</Text>
+          <View style={styles.availHolder}>
+            <View style={[styles.availPill, { borderColor: a.color }]}>
+              <Text style={[styles.availText, { color: a.color }]}>{a.label}</Text>
+            </View>
           </View>
         </Marker>
       ))}
@@ -300,6 +309,9 @@ const ParkingMap = forwardRef<ParkingMapHandle, ParkingMapProps>(function Parkin
 });
 
 const styles = StyleSheet.create({
+  // Transparent clearance between the street line and the pill, so the number
+  // reads as attached to the street without sitting on top of it.
+  availHolder: { paddingTop: 9, alignItems: 'center' },
   // Outlined rather than filled, and a size down from the time-limit pill:
   // an estimate should look lighter on the map than a rule does.
   availPill: {

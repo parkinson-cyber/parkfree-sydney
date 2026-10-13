@@ -5,7 +5,7 @@ The hand-off between conversations. Update the **State** block and add a **Chang
 ## State (2026-10-13)
 
 - **Live:** https://parkfree-sydney.vercel.app · repo `parkinson-cyber/parkfree-sydney` · `main` (single Vercel project `parkfree-sydney`; the duplicate `parkfree-sydney-rdh3` was deleted 2026-09-21). **Vercel account is `chris0209lee`** — not `leewinghimchris2012`, which is the TfNSW Open Data login; signing into Vercel with that one shows a different account's old projects.
-- **Build health:** `npm run typecheck` clean · `npm test` 181/181
+- **Build health:** `npm run typecheck` clean · `npm test` 184/184
 - **Every street now carries its gazetted suburb** (`properties.sub`, 77,881 of 78,346 — 465 fall outside every polygon and are left blank rather than guessed), from NSW Spatial Services' suburb boundaries. That is what makes suburb search work and what joins the Opal bus taps (reported by postcode) onto the street network. Re-derivable offline: `python3 scripts/fetch-suburbs.py`, boundaries committed at `scripts/data/suburbs-nsw.json`.
 - **Availability priors are no longer hand-set** where Opal tap data reaches — see `docs/DEMAND-MODEL.md`. 160 stations + 133 postcodes, fitted against 3,292 measured Park&Ride readings. **PLAN M3's open item is closed.**
 - **Data:** 78,346 segments, 15,483 classified (19.8%), 24 sources. Corridor eastern suburbs → Chatswood, % unknown by area (2026-09-08): Waverley 4 · Woollahra 9 · CBD 14 · Randwick north 35 / south 90 · North Sydney 35 · Chatswood CBD 30 · Willoughby rest 52–76 · Lane Cove 54 · Mosman 80 · Ku-ring-gai 98. Largest LGA gaps overall: Hills, Sutherland, Bankstown, Parramatta/west, Northern Beaches — see `scripts/DATA-SOURCE-LEADS.md` → *Candidate endpoints*.
@@ -26,6 +26,20 @@ The hand-off between conversations. Update the **State** block and add a **Chang
 - **Accounts pending (user):** Apple Developer + Expo/EAS for the App Store build. (TfNSW key: done.)
 
 ## Changelog
+
+- **2026-10-13 (audit of the last two commits, and the nine stations that had gone missing)** — Reviewed `7535519..a478f4b` properly and fixed what it turned up. Nine findings, all fixed.
+
+  **The one that mattered: nine stations had silently fallen out of the demand model.** `fetch-opal-demand.py` rounded the modern-level scale to three decimal places, so Campsie — 17,407 Opal taps a day in 2020 — came out as exactly `now: 0` once the Bankstown line closed in 2024 and the monthly feed went to suppressed placeholders. The runtime multiplied its taps by that, the pull fell under the `<= 0.01` cutoff, and the station disappeared. Same for Marrickville, Lakemba, Canterbury, Punchbowl, Dulwich Hill, Belmore, Wiley Park and Hurlstone Park. Verified user-visible: a permit street 220 m from Campsie returned **no transit signal at any hour** and fell back to the hand-set prior, while the identical street at Sutherland got 41% / 59% / 43%. The *outcome* was right — a closed line puts no commuters on the kerb — but it was reached by a rounding artefact, and the same artefact would have removed a healthy station. Now: five decimal places, under-5%-of-2020 named in `dormant`, listed-but-always-suppressed named in `levelSuppressed` (suppression is a measured upper bound, not an absence), and `now: null` reserved for genuine absence from the feed. The runtime's `?? 1` — which assumed "nothing has changed since 2020" against a median of 0.685 — is now the median of the stations the feed *can* measure, with dormant ones excluded from that median.
+
+  **Search still flew to the middle vertex.** `a478f4b` replaced `coords[len/2]` with `featureMidpoint` everywhere except the one inline copy inside `search()`, so picking a search result still dropped you at the end of a long street — the exact bug that commit's message claimed to fix.
+
+  **"Nothing matches 'a'".** `search()` declines queries under two characters, but the panel's empty-results branch did not know that, so the first keystroke of every search rendered a dead-end message with advice that did not apply. The nearby-suburbs list now holds until there are two characters to search with.
+
+  **Counting free streets per suburb cost ~21 ms a keystroke** on this desktop (Sydney's 565 streets measured 5.3 ms, four rows remount on every character, and `rules.ts` caches nothing) — several times that on a phone, in the one place the UI has to feel instant. Cached per suburb per minute, which is the only rate at which the answer can change.
+
+  **Native map, two fixes:** the availability pill positioned itself with `anchor={{y: -0.35}}`, outside react-native-maps' documented 0–1 range — iOS extrapolates, Android's `setAnchor` clamps, which would have dropped the pill onto the street line. It is a transparent spacer now. And the pins walked `visibleClassified`, which is sliced to 1,600 for drawing, so in dense inner Sydney a street the caller had chosen to label could lose its number on native while keeping it on web; it walks `availById` directly now.
+
+  Also removed an unreachable comma branch in `splitQuery` — `normalise()` turns commas into spaces before it runs, so it documented a path that could not execute. 181 → 184 tests.
 
 - **2026-10-13 (the estimate on the map, and a Street View link that looks at the right thing)** — Two follow-ups from the owner.
 

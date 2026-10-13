@@ -31,7 +31,7 @@ a fine the owner personally pays.
 
 ## Verify before claiming done
 ```bash
-npm run typecheck && npm test        # 181 cases: rules, availability, demand model, geometry
+npm run typecheck && npm test        # 184 cases: rules, availability, demand model, geometry
 npm run web:preview                  # http://localhost:8090 — start in background Bash, then attach the Browser pane by URL
 ```
 Native: **this Mac cannot build the app locally. Do not try again.** Xcode 16.2

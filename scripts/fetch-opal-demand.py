@@ -135,6 +135,10 @@ DISC_KM = 32.0
 # Below this, the privacy floor has eaten too much of the day to trust a shape.
 MIN_DAILY_TAPS = 1500
 
+# A station running under this share of its 2020 patronage is out of service
+# rather than quiet — recorded by name so the model says so out loud.
+DORMANT_BELOW = 0.05
+
 HOURS = 24
 DAYTYPES = ("wd", "sa", "su")
 
@@ -357,7 +361,7 @@ def modern_levels():
     with open(path, newline="") as fh:
         rows = list(csv.DictReader(fh))
     if not rows:
-        return {}
+        return {}, []
     cols = {c.lower(): c for c in rows[0]}
     name_col = next((cols[c] for c in cols if "station" in c and "name" in c), None) \
         or next((cols[c] for c in cols if c in ("station", "stn_name")), None)
@@ -367,40 +371,62 @@ def modern_levels():
     if not name_col or not trip_col:
         print(f"  ! monthly usage columns not recognised ({list(rows[0])[:6]}) — "
               "shipping curves without a current-era scale")
-        return {}
+        return {}, []
 
     acc = {}
     months = {}
+    real = {}          # names with at least one month the feed actually counted
     suppressed = 0
     for r in rows:
         raw = str(r[trip_col]).replace(",", "").strip()
-        try:
-            v = float(raw)
-        except (TypeError, ValueError):
-            # The feed writes "Less than 50" rather than a number when a month's
-            # count is small enough to identify people. Take the midpoint: it is
-            # only ever used to scale a station that is quiet either way.
-            if raw.lower().startswith("less than"):
-                v = 25.0
-                suppressed += 1
-            else:
-                continue
         # Names in this feed carry double spaces ("Aberdeen  Station") where the
         # Opal release does not. One normalisation, or nothing joins at all.
         name = " ".join((r[name_col] or "").split())
         if not name:
             continue
+        try:
+            v = float(raw)
+            real[name] = True
+        except (TypeError, ValueError):
+            # The feed writes "Less than 50" rather than a number when a month's
+            # count is small enough to identify people. Take the midpoint so a
+            # genuinely quiet month still contributes something — but remember
+            # that it was a placeholder, because a station where *every* month
+            # is a placeholder has not been measured at all.
+            if raw.lower().startswith("less than"):
+                v = 25.0
+                suppressed += 1
+            else:
+                continue
         acc[name] = acc.get(name, 0.0) + v
         if month_col:
             months.setdefault(name, set()).add(r[month_col])
+
     # Monthly totals → an average day.
+    #
+    # A station the feed never mentions is unknown. A station the feed *does*
+    # list but suppresses every month of is a different thing: suppression
+    # means the count fell under the publication threshold, so it is a measured
+    # upper bound, not an absence. Both used to come out the same way and the
+    # difference mattered — the nine Bankstown-line stations (closed in 2024
+    # for the Metro conversion) split arbitrarily between the two depending on
+    # whether one stray month happened to clear the threshold.
+    #
+    # So: suppressed-only stations keep their placeholder level, which lands
+    # them below DORMANT_BELOW and gets them named as dormant. Only genuine
+    # absence from the feed returns unknown.
     out = {}
     for name, total in acc.items():
         n_months = max(1, len(months.get(name, {1})))
         out[name] = total / n_months / 30.4
+    unmeasured = sorted(n for n in acc if not real.get(n))
     print(f"  · current-era level for {len(out)} stations"
           f"{f' ({suppressed} suppressed months taken as 25)' if suppressed else ''}")
-    return out
+    if unmeasured:
+        print(f"  · {len(unmeasured)} stations are listed but suppressed every "
+              f"month — a measured upper bound, so they fall out as dormant "
+              f"(e.g. {', '.join(unmeasured[:4])})")
+    return out, unmeasured
 
 
 # ─── build ───────────────────────────────────────────────────────────────────
@@ -415,9 +441,9 @@ def main():
     print(f"── Opal {CHECK_WEEK} ({OPAL_WEEKS[CHECK_WEEK][2]}) — reproducibility check ──")
     check, check_days = read_week(CHECK_WEEK)
 
-    levels = modern_levels()
+    levels, unmeasured_now = modern_levels()
 
-    stations, postcodes = [], []
+    stations, postcodes, dormant = [], [], []
     dropped_quiet = dropped_nogeo = 0
     corrs = []
 
@@ -460,14 +486,23 @@ def main():
 
         score = origin_score(rec)
         level = levels.get(loc)
+        # How busy the station is today against its 2020 self.
+        #
+        # Five decimal places, not three. At three, a station running at a
+        # thousandth of its 2020 patronage rounded to exactly 0.0, the runtime
+        # multiplied its taps by that, the product fell under the pull
+        # threshold, and the station vanished from the model with nothing
+        # anywhere recording it. Campsie — 17,407 taps a day in 2020 — went
+        # that way, along with eight other Bankstown-line stations.
+        now = (level / c["taps"]["wd"]) if (level and c["taps"]["wd"]) else None
+        if now is not None and now < DORMANT_BELOW:
+            dormant.append(loc)
         stations.append({
             "name": loc,
             "mode": stop["mode"],
             "lat": stop["lat"], "lon": stop["lon"],
             "taps": c["taps"]["wd"],
-            # How busy the station is today against its 2020 self. null where
-            # the modern feed does not name it — better than a silent 1.0.
-            "now": round(level / c["taps"]["wd"], 3) if (level and c["taps"]["wd"]) else None,
+            "now": round(now, 5) if now is not None else None,
             "origin": round(score, 3),
             # Only an origin station's cumulative-net curve describes cars on a
             # kerb. At a destination station the same arithmetic describes the
@@ -527,6 +562,18 @@ def main():
             "stationsCompared": len(corrs),
         },
         "openedSince2020": missing_now,
+        # Named rather than silently dropped: the modern feed suppresses every
+        # month for these, so how busy they are today is unknown. The runtime
+        # falls back to the median known scale for them.
+        # Listed by the modern feed but suppressed in every month: a measured
+        # upper bound rather than an absence, which is why they end up dormant
+        # below rather than unknown.
+        "levelSuppressed": [n for n in unmeasured_now],
+        # Measured, and measured as all but shut. The Bankstown line closed in
+        # 2024 for its Metro conversion, so its stations really do put no train
+        # commuters on the kerb — but that has to be stated, not left to a
+        # rounding artefact and a threshold to accomplish by accident.
+        "dormant": sorted(dormant),
         # Filled in by train-occupancy-model.py once there is measured
         # occupancy to fit against. Until then the runtime says so.
         "calibration": {"state": "uncalibrated", "samples": 0,
@@ -550,6 +597,10 @@ def main():
     if missing_now:
         print(f"  {len(missing_now)} stations are busy today but absent from 2020 "
               f"(e.g. {', '.join(missing_now[:4])})")
+    if dormant:
+        print(f"  {len(dormant)} stations run at under {DORMANT_BELOW:.0%} of their "
+              f"2020 patronage — named in the model as dormant, not dropped "
+              f"(e.g. {', '.join(sorted(dormant)[:4])})")
 
 
 if __name__ == "__main__":

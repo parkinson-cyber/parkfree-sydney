@@ -95,6 +95,10 @@ export interface DemandModel {
   week: string;
   weekNote?: string;
   sources: string[];
+  /** Stations the modern feed lists but suppresses every month of. */
+  levelSuppressed?: string[];
+  /** Stations measured at under 5% of their 2020 patronage — out of service. */
+  dormant?: string[];
   reproducibility?: { meanCorrelationOfParkedCurve: number | null; stationsCompared: number };
   calibration: {
     state: 'uncalibrated' | 'fitted';
@@ -174,9 +178,40 @@ export const DEFAULT_WEIGHTS: Weights = {
 let MODEL: DemandModel | null = null;
 let WEIGHTS: Weights = DEFAULT_WEIGHTS;
 
+/**
+ * What to assume about a station the 2024-25 monthly feed cannot measure.
+ *
+ * Not 1.0. That would say "nothing has changed since 2020", when the median
+ * station in this model sits at 0.69 of its 2020 patronage — a 45%
+ * overstatement of its pull. Not 0 either: the pipeline used to let a
+ * suppressed count become a near-zero level, and the station then fell below
+ * the pull threshold and vanished from the model altogether. Nine real
+ * Bankstown-line stations disappeared that way.
+ *
+ * So an unknown station is treated as a typical one, and the typical one is
+ * measured from this model rather than hard-coded.
+ */
+let MEDIAN_NOW = 0.7;
+
+/** A station running under this share of 2020 is out of service, not quiet. */
+const DORMANT_BELOW = 0.05;
+
+function medianKnownLevel(m: DemandModel): number {
+  // Dormant stations are excluded: a closed line's near-zero levels are facts
+  // about that line, not about what a typical Sydney station looks like, and
+  // letting nine of them into the median would drag down the stand-in for
+  // every station the feed cannot measure.
+  const known = m.stations
+    .map((s) => s.now)
+    .filter((n): n is number => typeof n === 'number' && n >= DORMANT_BELOW)
+    .sort((a, b) => a - b);
+  return known.length ? known[Math.floor(known.length / 2)] : 0.7;
+}
+
 /** Called once at boot by demandModel.ts; left unset in the test harness. */
 export function setDemandModel(m: DemandModel | null): void {
   MODEL = m;
+  MEDIAN_NOW = m ? medianKnownLevel(m) : 0.7;
   WEIGHTS = m?.calibration?.weights
     ? { ...DEFAULT_WEIGHTS, ...m.calibration.weights,
         exposure: { ...DEFAULT_WEIGHTS.exposure, ...(m.calibration.weights.exposure ?? {}) },
@@ -262,8 +297,9 @@ export function demandSignal(
     const d = distanceM(center.latitude, center.longitude, s.lat, s.lon);
     if (d > w.walkMaxM) continue;
     // `now` is a level, not a shape: a station at 60% of its 2020 patronage
-    // puts 60% as many cars on the kerb.
-    const level = s.taps * (s.now ?? 1);
+    // puts 60% as many cars on the kerb. A station the modern feed cannot
+    // measure gets the median of the ones it can — see MEDIAN_NOW.
+    const level = s.taps * (s.now ?? MEDIAN_NOW);
     const pull = Math.exp(-d / w.walkDecayM) * Math.min(1, level / w.refTaps);
     if (pull <= 0.01) continue;
     num += at(s.parked, now) * pull;

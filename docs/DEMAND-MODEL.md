@@ -294,6 +294,25 @@ not a kerb. What transfers is the response to commuter flow, not the level.
 - **Stations that opened since 2020** (most of the Metro, the Parramatta light
   rail) have a modern level and no 2020 curve. They are listed by name in
   `openedSince2020` in the model file rather than silently treated as quiet.
+- **Stations that closed since 2020** are the mirror image, and they bit. The
+  Bankstown line shut in 2024 for its Metro conversion, so the monthly feed
+  reports its nine stations as suppressed or near-nothing. The first version of
+  this pipeline rounded `now` to three decimal places, which turned Campsie's
+  real level of 0.0001 into exactly `0`; the runtime then multiplied 17,407
+  taps by zero, the result fell under the pull threshold, and **nine stations
+  vanished from the model with nothing anywhere recording it**. Streets around
+  them quietly fell back to the hand-set prior while their neighbours two
+  suburbs away got the full model.
+
+  The outcome was right — a closed line really does put no commuters on the
+  kerb — but it was reached by accident, and the same accident would have
+  removed a perfectly healthy station whose level merely rounded small. Now
+  `now` keeps five decimal places, anything under 5% of its 2020 patronage is
+  named in `dormant`, and stations the feed lists but suppresses every month of
+  are named in `levelSuppressed`. Suppression is a measured upper bound, not an
+  absence, so those count as dormant too; only genuine absence from the feed
+  leaves `now: null`, and the runtime then uses the **median level of the
+  stations it can measure** rather than assuming 2020 levels.
 - **It is an estimate, and it stays one.** Nothing here ever changes a street's
   classification. A kerb's rules come from a council or TfNSW response or a
   photographed sign, and this model cannot touch them.

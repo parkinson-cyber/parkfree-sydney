@@ -83,11 +83,15 @@ export function SearchPanel({
     return () => clearTimeout(t);
   }, []);
 
-  const results = useMemo(() => search(query), [query]);
+  // search() declines anything under two characters, so the first keystroke
+  // returns [] without ever having looked. Track that separately: showing
+  // "Nothing matches 'a'" on the way to "alfred" is both wrong and a dead end.
+  const tooShort = query.trim().length < 2;
+  const results = useMemo(() => (tooShort ? [] : search(query)), [query, tooShort]);
 
   /** With nothing typed, offer the suburbs around where the map is looking. */
   const nearby = useMemo(() => {
-    if (query.length > 0) return [];
+    if (query.trim().length >= 2) return [];
     return [...SUBURBS]
       .filter((s) => s.classified > 0)
       .map((s) => ({
@@ -149,7 +153,7 @@ export function SearchPanel({
         // to keep the last row from sitting under the keys.
         contentContainerStyle={{ paddingBottom: keyboard + insets.bottom + 24 }}
       >
-        {query.length === 0 ? (
+        {query.length === 0 || tooShort ? (
           <>
             <Section title="Suburbs near you" />
             {nearby.map((s) => (
@@ -215,17 +219,39 @@ function statusOf(id: number | undefined, now: Date): LiveStatus | undefined {
   return evaluateStreet(f.properties, now).status;
 }
 
+/**
+ * How many free streets a suburb has — cached across keystrokes.
+ *
+ * Counting means evaluating every street's rules, and rules.ts caches nothing:
+ * Sydney's 565 streets measured 5.3 ms, so four suburb rows cost ~21 ms on a
+ * desktop and several times that on a phone. A `useMemo` inside the row does
+ * not help, because every keystroke builds new rows and remounts them. The
+ * answer only changes when the clock does, so key the cache on the minute.
+ */
+const freeCountCache = new Map<string, number>();
+
+function freeInSuburb(suburb: string, now: Date): number {
+  const key = `${suburb}|${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`
+    + `-${now.getHours()}-${now.getMinutes()}`;
+  const hit = freeCountCache.get(key);
+  if (hit !== undefined) return hit;
+
+  let free = 0;
+  for (const f of streetsInSuburb(suburb)) {
+    if (f.properties.cat === 'unknown') continue;
+    const s = evaluateStreet(f.properties, now).status;
+    if (s === 'free' || s === 'free_limited') free++;
+  }
+  // One entry per suburb per minute; a search session touches a handful, and
+  // the map is cleared rather than left to grow across an evening of use.
+  if (freeCountCache.size > 200) freeCountCache.clear();
+  freeCountCache.set(key, free);
+  return free;
+}
+
 /** "14 free now" beside a suburb — the reason you'd pick one over another. */
 function FreeNow({ suburb, now }: { suburb: string; now: Date }) {
-  const n = useMemo(() => {
-    let free = 0;
-    for (const f of streetsInSuburb(suburb)) {
-      if (f.properties.cat === 'unknown') continue;
-      const s = evaluateStreet(f.properties, now).status;
-      if (s === 'free' || s === 'free_limited') free++;
-    }
-    return free;
-  }, [suburb, now]);
+  const n = useMemo(() => freeInSuburb(suburb, now), [suburb, now]);
   if (n === 0) return null;
   return <Text style={styles.freeNow}>{n} free now</Text>;
 }

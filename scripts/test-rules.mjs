@@ -484,6 +484,40 @@ eq(demandPrior(freeStreet, HERE_AV, wed10am, null), null,
 eq(DEFAULT_WEIGHTS.walkMaxM <= 1200, true,
    'the walk radius stays within what a commuter actually walks');
 
+// A station the modern feed cannot measure must be treated as a typical one,
+// not as untouched since 2020 and not as dead. Both of those were real: `?? 1`
+// overstated it by ~45% against a median of 0.69, and a level that rounded to
+// zero dropped the station out of the model entirely — which is how nine
+// Bankstown-line stations silently disappeared.
+const withLevels = (nowValues) => {
+  setDemandModel({
+    generated: 'x', week: '2020-02-24', sources: [],
+    calibration: { state: 'uncalibrated', samples: 0, weights: null, fittedAt: null },
+    stations: nowValues.map((n, i) => ({
+      ...STATION, name: `S${i}`, now: n,
+      lat: HERE_AV.latitude + 0.0018 + i * 0.4, lon: HERE_AV.longitude,
+    })),
+    postcodes: [],
+  });
+};
+// One station on top of us with an unknown level, plus far-away ones that only
+// exist to establish what "typical" is.
+withLevels([null, 0.7, 0.7, 0.7]);
+const unknownLevel = demandPrior(freeStreet, HERE_AV, wed10am, null);
+withLevels([0.7, 0.7, 0.7, 0.7]);
+const typicalLevel = demandPrior(freeStreet, HERE_AV, wed10am, null);
+eq(unknownLevel !== null, true,
+   'a station with no modern level still contributes — it is unknown, not absent');
+eq(Math.abs(unknownLevel.p - typicalLevel.p) < 0.001, true,
+   'and it is weighted as a typical station rather than a 2020-level one');
+
+// The dormant case: a measured near-zero level means no commuters, and it must
+// not drag down the stand-in used for the unknown ones.
+withLevels([null, 0.0001, 0.0001, 0.7]);
+const besideDormant = demandPrior(freeStreet, HERE_AV, wed10am, null);
+eq(Math.abs(besideDormant.p - typicalLevel.p) < 0.001, true,
+   'dormant stations are kept out of the median that stands in for unknowns');
+
 // Leave the harness as it found it, so later cases are unaffected.
 setDemandModel(null);
 

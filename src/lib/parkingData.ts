@@ -83,6 +83,7 @@ export function loadParkingData(): Promise<void> {
 // So the index is the 498 real suburbs, and a street is identified by its
 // name *and* its suburb — which is how anyone would say it out loud.
 
+import { featureMidpoint } from './geo';
 import { ALIASES, SUBURBS, suburbByName, type Suburb } from './suburbs';
 
 export type SearchKind = 'suburb' | 'street';
@@ -160,18 +161,17 @@ function suburbResult(s: Suburb): SearchResult {
 /**
  * Split "crown street surry hills" into a street part and a suburb part.
  *
- * A comma settles it outright. Without one, the longest trailing run of words
- * that names a real suburb wins — "alfred street milsons point" splits after
- * "street", and "milsons point" on its own stays a suburb search because the
- * street half comes back empty.
+ * The longest trailing run of words that names a real suburb wins — "alfred
+ * street milsons point" splits after "street", and "milsons point" on its own
+ * stays a suburb search because the street half comes back empty.
+ *
+ * There is no special case for a comma, and there must not be one: `normalise`
+ * has already turned every comma into a space by the time this runs, so a
+ * comma branch here would be unreachable code describing behaviour that does
+ * not exist. "Alfred Street, Milsons Point" is handled by the loop below like
+ * any other phrasing.
  */
 function splitQuery(q: string): { street: string; suburb: Suburb | null } {
-  const comma = q.indexOf(',');
-  if (comma >= 0) {
-    const tail = normalise(q.slice(comma + 1));
-    const named = suburbByName(tail) ?? suburbByName(ALIASES[tail] ?? '');
-    if (named) return { street: normalise(q.slice(0, comma)), suburb: named };
-  }
   const words = q.split(' ');
   for (let i = 0; i < words.length; i++) {
     const tail = words.slice(i).join(' ');
@@ -224,14 +224,18 @@ export function search(query: string, limit = 12): SearchResult[] {
       const key = `${name}|${f.properties.sub ?? ''}`;
       if (seen.has(key)) continue;
       seen.set(key, 1);
-      const mid = f.geometry.coordinates[Math.floor(f.geometry.coordinates.length / 2)];
+      // The middle of the street, not its middle vertex. This was the last
+      // place still doing `coords[len / 2]` after geo.ts stopped: picking a
+      // search result flew the map to the end of a long street, which is the
+      // very bug the midpoint helper exists to prevent.
+      const mid = featureMidpoint(f);
       streetHits.push({
         r: {
           kind: 'street',
           label: name,
           sub: f.properties.sub ?? 'Sydney',
-          latitude: mid[1],
-          longitude: mid[0],
+          latitude: mid.latitude,
+          longitude: mid.longitude,
           streetId: f.properties.id,
           suburb: f.properties.sub,
         },
